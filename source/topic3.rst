@@ -405,6 +405,35 @@ References
 Contact List Class
 ------------------
 
+* We need a way to keep track of our ``Friend`` objects
+* To do this, we will make a new class called ``ContactList``
+* What fields should this have?
+    * A list of the ``Friends`` we're keeping track of
+        * For this we can use an array
+    * A count of how many ``Friend`` objects our ``ContactList`` contains
+        * Just an ``int``
+
+
+Setting Fields and Writing the Constructor
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Adding Friends
+^^^^^^^^^^^^^^
+
+
+Remove Friends
+^^^^^^^^^^^^^^
+
+Update Friend's Email
+^^^^^^^^^^^^^^^^^^^^^
+
+Clear Friends
+^^^^^^^^^^^^^
+
+
+toString
+^^^^^^^^
 
 
 What We Get
