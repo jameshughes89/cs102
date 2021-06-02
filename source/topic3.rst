@@ -215,6 +215,8 @@ toString
 * When we wrote our own classes, we ended up overriding the ``__repr__`` we got for free
     * The default one simply prints out the object name and a memory address, which wasn't very helpful
     * ``<__main__.Friend object at 0x7f130d9c52e0>``
+    * *Technically*, the behaviour we get for free is inherited from the closest parent class
+        * We will learn more about this later
 
 * An example of a ``__repr__`` for our ``Friend`` class might look something like this
 * We just print out the name of the ``Friend`` and their email
@@ -233,8 +235,9 @@ toString
 * We can do the same thing in Java, but in java it's called ``toString()``
 * If we do not write our own, the default behaviour is to return a string of the class name and a *hash code*
     * ``Friend@77459877``
+    * Again, *technically* the behaviour we get for free is inherited
 
-.. code-block:: python
+.. code-block:: java
     :linenos:
 
     public String toString() {
@@ -252,6 +255,56 @@ toString
 equals
 ^^^^^^
 
+* We had another special function that we liked to use called ``__eq__``
+* ``__eq__`` let us define what it means for two of the objects to be equivalent
+* It also let us call ``==`` on the objects too
+
+* In Java, we use the ``equals()`` method to define what it means for two of the objects to be equivalent
+* **HOWEVER**, unlike Python, this doesn't hijack the ``==`` operator
+    * ``==`` for the objects is reserved to check if the objects are literally the same object
+    * Same memory address --- it compares the memory addresses
+
+* On the other hand, ``.equals()`` is used to actually compare the content of the objects in some way
+    * We need to think about what it means for two objects of the type to be &equivalent*
+
+* The default behaviour is to is to check if the objects are in the same memory address (``==``)
+    * Similar to ``toString``, the behaviour we get for free is inherited from the closest parent class
+
+
+* So, what should it mean for two ``Friend`` objects to be *equal*?
+* Well, **we** get to define this
+* We can make it whatever we want
+    * Same eye colour?
+    * Same height and weight?
+    * Same number of skin cells?
+
+* But, we need to really think about what makes sense in our context
+    * Let's go with their ``firstName`` and ``lastName`` being equal
+
+.. code-block:: java
+    :linenos:
+
+    /**
+     * Sample equals method for comparing two friend objects.
+     * In this example, we will simply compare first and last
+     * names.
+     *
+     * This example is deliberately kept very simple
+     *
+     * @return      if the two friend objects are equal
+     */
+    public boolean equals(Friend other) {
+        return this.firstName.equals(other.firstName)
+                && this.lastName.equals(other.lastName);
+    }
+
+* Notice how we actually use the string's `equals` too
+* In the above example, using ``this`` is not necessary, but may be helpful in eliminating ambiguity
+
+.. warning::
+
+    The example ``equals()`` included in the ``Friend.java`` file is a little more complex,
+    but is a more complete ``equals``
 
 
 Contact List Class

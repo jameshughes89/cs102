@@ -1,3 +1,5 @@
+import java.beans.PersistenceDelegate;
+
 public class Friend {
 
     // Class Attribute Declaration
@@ -47,4 +49,44 @@ public class Friend {
     public String toString() {
         return firstName + " " + lastName + ":\t" + email;
     }
+
+
+//    /**
+//     * Sample equals method for comparing two friend objects.
+//     * In this example, we will simply compare first and last
+//     * names
+//     *
+//     * This example is deliberately kept very simple
+//     *
+//     * @return      if the two friend objects are equal
+//     */
+//    public boolean equals(Friend other) {
+//        return this.firstName.equals(other.firstName)
+//                && this.lastName.equals(other.lastName);
+//    }
+
+
+    /**
+     * Sample equals method for comparing two friend objects.
+     * In this example, we will simply compare first and last
+     * names
+     *
+     * @return      if the two friend objects are equal
+     */
+    public boolean equals(Object o) {
+        // If o is actually in the same memory address of this
+        if (o == this) {
+            return true;
+        }
+        // if o and this are of different classes, they're not the same
+        if (o.getClass() != this.getClass()) {
+            return false;
+        }
+        // Cast o as a friend
+        Friend other = (Friend) o;
+        return this.firstName.equals(other.firstName)
+                && this.lastName.equals(other.lastName);
+    }
+
+
 }
