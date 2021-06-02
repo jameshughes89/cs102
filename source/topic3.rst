@@ -400,7 +400,7 @@ References
 .. warning::
 
     You may think that assignment works differently for primitive types when compared and objects,
-    but, think about what is actually stored in the variable. 
+    but, think about what is actually stored in the variable.
 
 
 Contact List Class
