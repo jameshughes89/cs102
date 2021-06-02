@@ -307,6 +307,71 @@ equals
     but is a more complete ``equals``
 
 
+Creating an Instance of a Friend
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: java
+    :linenos:
+
+    public class SomeClass {
+        public static void main(String[] args) {
+
+            // Declare a Friend variable
+            // Create an instance of a Friend
+            // Assign the variable to reference the newly created Friend
+            Friend aFriend = new Friend("Bob", "Smith", "bsmith@gmail.com");
+
+        }
+    }
+
+* Here's an example of us actually creating an instance of the ``Friend`` class
+* This is a really really really simple example where we create it and do nothing with it
+
+* There is a bit going on here:
+    * Declare a ``Friend`` variable
+        * ``Friend aFriend``
+    * Create an instance of a ``Friend``
+        * ``new Friend("Bob", "Smith", "bsmith@gmail.com")``
+    * Assign the variable to reference the newly created object
+        * The equals bit
+        * We have to be careful about what is actually stored in the ``aFriend``
+
+        .. image:: ../img/reference_aFriend.png
+           :width: 250 px
+           :align: center
+
+
+
+* If I were to write another line of code like this
+    * ``Friend bFriend = new Friend("Jane", "Doe", "jdoe@gmail.com");``
+* ``aFriend`` would have a ``firstName`` of Bob
+* ``bFriend`` has a ``firstName`` of Jane
+* They both have the ``firstName`` field, but the actual value associated with it differs
+
+    .. image:: ../img/reference_aFriend_bFriend.png
+       :width: 500 px
+       :align: center
+
+
+* Below is an example of two``Friend`` objects being created and being used
+    * We get ``aFriend``'s first name
+    * Use the ``toString`` method
+    * Use the ``equals`` method
+
+.. code-block:: java
+    :linenos:
+
+    Friend aFriend = new Friend("Bob", "Smith", "bsmith@gmail.com");
+    Friend bFriend = new Friend("Jane", "Doe", "jdoe@gmail.com");
+
+    System.out.println(aFriend.getFirstName());
+    System.out.println(aFriend);
+    System.out.println(bFriend);
+    System.out.println(aFriend.equals(bFriend));
+
+
+* What do you think the output of this would be?
+
 Contact List Class
 ------------------
 

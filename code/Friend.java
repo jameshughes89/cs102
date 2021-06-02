@@ -50,7 +50,7 @@ public class Friend {
         return firstName + " " + lastName + ":\t" + email;
     }
 
-
+//      This is what is included in topic3
 //    /**
 //     * Sample equals method for comparing two friend objects.
 //     * In this example, we will simply compare first and last
