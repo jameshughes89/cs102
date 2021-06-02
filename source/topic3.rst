@@ -192,7 +192,6 @@ Getters and Setters
 
 .. code-block:: java
     :linenos:
-    :emphasize-lines: 2
 
     /**
      * Update the email address. Will only work if the email address
