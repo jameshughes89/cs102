@@ -7,5 +7,5 @@ Your typical computer science 102 class focusing on abstraction.
 `pip install requirements.txt`
 
 # build
-`sphinx-build -b html SOURCEDIR OUTPUTDIR
+`sphinx-build -b html SOURCEDIR OUTPUTDIR`
 
