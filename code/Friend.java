@@ -1,5 +1,3 @@
-import java.beans.PersistenceDelegate;
-
 public class Friend {
 
     // Class Attribute Declaration
