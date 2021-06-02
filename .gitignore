@@ -27,4 +27,8 @@ build.sh
 code/CompSci162.java
 code/PythonExamples.py
 
-
+# venv
+env/
+env
+venv/
+venv
