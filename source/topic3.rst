@@ -119,11 +119,12 @@ Setting Fields and Writing the Constructor
         # Python --- Constructor and
         # creating and setting fields
         def __init__(self, first_name, last_name, email):
-            self.first_name = first_name
-            self.last_name = last_name
-            self.email = email
+            self._first_name = first_name
+            self._last_name = last_name
+            self._email = email
 
 * Remember, in Python we use ``self`` to refer to an instance of the class
+* Putting the underscore in front of the field name is a convention to mean private
 
 
 **Java**
@@ -208,6 +209,44 @@ Getters and Setters
 toString
 ^^^^^^^^
 
+* You may remember that ``__repr__`` in python was a special method that would return a string version of the object
+    * And, if you called ``print(some_object)``, the ``__repr__`` would automatically get called
+
+* When we wrote our own classes, we ended up overriding the ``__repr__`` we got for free
+    * The default one simply prints out the object name and a memory address, which wasn't very helpful
+    * ``<__main__.Friend object at 0x7f130d9c52e0>``
+
+* An example of a ``__repr__`` for our ``Friend`` class might look something like this
+* We just print out the name of the ``Friend`` and their email
+
+**Python**
+
+.. code-block:: python
+    :linenos:
+
+    # Python --- __repr__
+    def __repr__(self):
+        return self._firstName + " " + self._lastName \
+               + ":\t" + self._email
+
+
+* We can do the same thing in Java, but in java it's called ``toString()``
+* If we do not write our own, the default behaviour is to return a string of the class name and a *hash code*
+    * ``Friend@77459877``
+
+.. code-block:: python
+    :linenos:
+
+    public String toString() {
+        return firstName + " " + lastName + ":\t" + email;
+    }
+
+* And like Python, we can simply print it and ``toString`` will automatically get called
+    * ``System.out.println(aFriend);``
+
+.. warning::
+
+    The idea is that this *returns* a string; we do not want to just print something
 
 
 equals

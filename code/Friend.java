@@ -43,4 +43,8 @@ public class Friend {
             this.email = email;
         }
     }
+
+    public String toString() {
+        return firstName + " " + lastName + ":\t" + email;
+    }
 }
