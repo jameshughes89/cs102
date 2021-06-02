@@ -372,6 +372,37 @@ Creating an Instance of a Friend
 
 * What do you think the output of this would be?
 
+References
+^^^^^^^^^^
+
+* We have to be careful about what is actually stored in these variables
+* We're not storing the object in that variable --- we store a reference to where the object is in memory
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 4
+
+    Friend aFriend = new Friend("Bob", "Smith", "bsmith@gmail.com");
+    Friend bFriend = new Friend("Jane", "Doe", "jdoe@gmail.com");
+
+    bFriend = aFriend;
+
+
+* In the above example, ``bFriend = aFriend`` copies the contents of ``aFriend`` and puts the copy in ``bFriend``
+    * So, the reference stored in ``aFriend`` gets copied
+
+* This also means that the object that ``bFriend`` used to point to now has no reference to it
+
+    .. image:: ../img/reference_lost.png
+       :width: 500 px
+       :align: center
+
+.. warning::
+
+    You may think that assignment works differently for primitive types when compared and objects,
+    but, think about what is actually stored in the variable. 
+
+
 Contact List Class
 ------------------
 
