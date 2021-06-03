@@ -672,7 +672,6 @@ Get Friend
 Clear Friends
 ^^^^^^^^^^^^^
 
-<<<<<<< HEAD
 .. code-block:: java
     :linenos:
 
