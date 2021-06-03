@@ -18,6 +18,10 @@ Topic #3 Aside -- Equals
 * We check if they are of the same class or not
     * If they are not, we say they are not equal
 
+* We then need to *downcast* the ``Object`` to something of class ``Friend``
+    * This lets us access the fields and methods for ``Friend`` from ``o``
+    * Again, more on this later in the course
+
 * Lastly, we check if the ``firstName`` and ``lastName`` are the same
 
 .. code-block:: java
