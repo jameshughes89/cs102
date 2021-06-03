@@ -537,7 +537,7 @@ Adding Friends
 * Our solution is to ``expandCapacity``
     1. Create a new array twice as big as the original
     2. Copy over the contents of the original array to the new bigger array
-        * `You could also use this instead <https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#arraycopy%28java.lang.Object,%20int,%20java.lang.Object,%20int,%20int%29>`_
+        * `You could also use this instead <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Arrays.html#copyOf(T%5B%5D,int)>`_
     3. Make out friends array now reference the new bigger array
 
 .. image:: ../img/expandcapacity.png
@@ -603,15 +603,123 @@ Remove Friends
        :width: 600 px
        :align: center
 
+
 Update Friend's Email
 ^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: java
+    :linenos:
+
+    public void updateEmail(String firstName, String lastName, String newEmail) {
+        // Create a temp friend object for easy
+        // use of the Friend class' equals()
+        Friend toUpdate = new Friend(firstName, lastName, "");
+
+        // Linear search for the friend we are trying to update
+        for (int i = 0; i < friendCount; ++i) {
+            if (toUpdate.equals(friends[i])) {
+                friends[i].setEmail(newEmail);
+            }
+        }
+    }
+
+Get Friend
+^^^^^^^^^^
+
+* You may have noticed that ``remove`` and ``updateEmail`` look very similar
+* Perhaps we should make another method called ``get`` that does a linear search through the array
+* If we find the thing, we'll return its index, otherwise return -1
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 18, 29
+
+    public int get(String firstName, String lastName) {
+        // Create a temp friend object for easy
+        // use of the Friend class' equals()
+        Friend toFind = new Friend(firstName, lastName, "");
+
+        // Linear search for the friend we are trying to find
+        for (int i = 0; i < friendCount; ++i) {
+            if (toFind.equals(friends[i])) {
+                return i;
+            }
+        }
+        // -1 will signify that we didn't find
+        // what we were looking for
+        return -1;
+    }
+
+    public void remove(String firstName, String lastName) {
+        int friendIndex = get(firstName, lastName);
+        if (friendIndex != -1) {
+            // Have friend at the end of the array be referenced
+            // by the array index we removed from
+            friends[friendIndex] = friends[friendCount - 1];
+            friends[friendCount - 1] = null;
+            friendCount--;
+        }
+    }
+
+    public void updateEmail(String firstName, String lastName, String newEmail) {
+        int friendIndex = get(firstName, lastName);
+        if (friendIndex != -1) {
+            friends[friendIndex].setEmail(newEmail);
+        }
+    }
+
 
 Clear Friends
 ^^^^^^^^^^^^^
 
+.. code-block:: java
+    :linenos:
+
+    public void clear() {
+        friends = new Friend[friends.length];
+        friendCount = 0;
+    }
+
+* For this, just make a new, empty array of the same size of the original array
+* Since the old array referenced by ``friends`` has no more reference, it get managed by the garbage collector
+
+* We could have gone through the array and set each index to reference ``null``, but the above is easier
+
+
 toString
 ^^^^^^^^
 
+* What should the string representation of our ``ContactList`` class be?
+* How about we simply print out the friend's information, one per line
+* To make a ``toString`` for the ``ContactList`` class,
+
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 4
+
+    public String toString() {
+        String s = "";
+        for (int i = 0; i < friendCount; ++i) {
+            s = s + friends[i].toString() + "\n";
+        }
+        return s;
+    }
+
+* Notice that we can actually make good use of the ``Friend`` class' ``toString`` method
+
+
+.. warning::
+
+    Although the above example is correct, in practice we'd want to use something called a ``StringBuilder``.
+    :doc:`See this aside for more details. </topic3-builder>`
+
+
+Remove Unnecessary Getters and Setters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* You hay have noticed that the only getter or setter we used in the ``Friend`` class was ``setEmail``
+* Since, based on our needs, these extra methods are not needed, let's remove them to protect our data
 
 What We Get
 ===========
@@ -634,3 +742,51 @@ For next time
 =============
 
 * Read Chapter X of your text
+
+
+
+
+
+Code
+====
+
+* If everything was done correctly, the following code should work
+
+.. code-block:: java
+    :linenos:
+
+    public class SomeClass {
+        public static void main(String[] args) {
+
+            ContactList myFriends = new ContactList(5);
+
+            myFriends.add("Bob", "Smith", "bsmith@gmail.com");
+            myFriends.add("Jane", "Doe", "jdoe@gmail.com");
+            myFriends.add("Clarence", "Cartwrite", "treelover1523@hotmail.com");
+            myFriends.add("Sandy", "Seaside", "boatsboatsboats@yachtclub500.com");
+            myFriends.add("Adam", "Fluffson", "fluffyman28@hotmail.com");
+            myFriends.add("Adam", "Andrews", "aandrews@hotmail.com");
+
+            System.out.println("Print after adds and expand");
+            System.out.println(myFriends);
+
+
+            myFriends.updateEmail("Clarence", "Cartwrite", "supertreelover1523@hotmail.com");
+
+            System.out.println("Print after update");
+            System.out.println(myFriends);
+
+
+            myFriends.remove("Bob", "Smith");
+
+            System.out.println("Print after remove");
+            System.out.println(myFriends);
+
+
+            myFriends.clear();
+
+            System.out.println("Print after clear");
+            System.out.println(myFriends);
+
+        }
+    }
