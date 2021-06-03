@@ -2,12 +2,21 @@
 Topic #4 --- Collections
 ************************
 
+* Collections
+* Abstract Data Types
+* Data Structures
+* Implementations
+* Abstraction
 
 Collections and ADTs
 ====================
 
+
+
 Abstraction
 ===========
+
+
 
 Data Structures
 ===============
