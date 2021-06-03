@@ -76,6 +76,10 @@ public class Friend {
         if (o == this) {
             return true;
         }
+        // If o is null, then it's not equal
+        if (o == null) {
+            return false;
+        }
         // if o and this are of different classes, they're not the same
         if (o.getClass() != this.getClass()) {
             return false;
