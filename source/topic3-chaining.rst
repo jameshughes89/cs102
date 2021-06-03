@@ -8,7 +8,7 @@ Topic #3 Aside --- Constructor Chaining
 
 .. code-block:: java
     :linenos:
-    :emphasize-lines: 3
+    :emphasize-lines: 4
 
     public ContactList() {
         // Call the constructor that
@@ -17,7 +17,6 @@ Topic #3 Aside --- Constructor Chaining
     }
 
     public ContactList(int capacity) {
-        this.capacity = capacity;
         friendCount = 0;
         friends = new Friend[capacity];
     }

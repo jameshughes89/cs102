@@ -422,7 +422,7 @@ Setting Fields and Writing the Constructor
 
 **Python**
 
-.. code-block:: Python
+.. code-block:: python
     :linenos:
 
     def __init__(self):
@@ -435,23 +435,21 @@ Setting Fields and Writing the Constructor
 
 **Java**
 
-.. code-block:: Java
+.. code-block:: java
     :linenos:
 
     static final int DEFAULT_CAPACITY = 10;
 
-    int capacity;
-    int friendCount;
-    Friend[] friends;
+    private int capacity;
+    private int friendCount;
+    private Friend[] friends;
 
     public ContactList() {
-        capacity = DEFAULT_CAPACITY;
         friendCount = 0;
-        friends = new Friend[capacity];
+        friends = new Friend[DEFAULT_CAPACITY];
     }
 
     public ContactList(int capacity) {
-        this.capacity = capacity;
         friendCount = 0;
         friends = new Friend[capacity];
 
@@ -476,6 +474,83 @@ Setting Fields and Writing the Constructor
 Adding Friends
 ^^^^^^^^^^^^^^
 
+**Python**
+
+.. code-block:: python
+    :linenos:
+
+    def add(self, first_name, last_name, email):
+        # Make the friend object
+        new_friend = Friend(first_name, last_name, email)
+
+        # Append friend to our friends list
+        # and update friend count
+        self._friends.append(new_friend)
+        self._friends_count += 1
+
+
+**Java**
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 16, 17, 18
+
+    /**
+     * Add a new friend to the friends array. Will create an instance
+     * of a Friend based on parameters. If our array runs out of space
+     * we will expand capacity to manage the situation.
+     *
+     * @param firstName     friends first name
+     * @param lastName      friends last name
+     * @param email         friends email address
+     */
+    public void add(String firstName, String lastName, String email) {
+        // Create the Friend object
+        Friend newFriend = new Friend(firstName, lastName, email);
+
+        // If we have run out of space in our array
+        // we need to deal with it
+        if (friendCount == friends.length) {
+            expandCapacity();
+        }
+        // Add friend to the next available spot
+        friends[friendCount] = newFriend;
+        friendCount++;
+    }
+
+    private void expandCapacity() {
+        // Make a new array of twice the size of the previous
+        Friend[] newFriends = new Friend[friends.length * 2];
+
+        // Copy over the contents of the friends list
+        // to the new bigger friends list
+        for(int i = 0; i < friends.length; ++i) {
+            newFriends[i] = friends[i];
+        }
+        // Have friends now reference the new friends
+        friends = newFriends;
+    }
+
+* Since our array has a fixed size, we can't simply keep adding to it
+* Our solution is to ``expandCapacity``
+    1. Create a new array twice as big as the original
+    2. Copy over the contents of the original array to the new bigger array
+        * `You could also use this instead <https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#arraycopy%28java.lang.Object,%20int,%20java.lang.Object,%20int,%20int%29>`_
+    3. Make out friends array now reference the new bigger array
+
+.. image:: ../img/expandcapacity.png
+       :width: 600 px
+       :align: center
+
+* The ``expandCapacity`` method gets called automatically by the ``add`` method if our array has run out of space
+* If the array had enough room, ``expand capacity`` is never called
+* Either way, when we add the ``newFriend`` to our array, we are now guaranteed to have room
+
+* You will also see that the ``expandCapacity`` method is ``private``
+    * This method is important for the inner workings of the ``ContactList`` class
+    * This method is not something I want the user of my class to care about
+        * Abstraction
+
 
 Remove Friends
 ^^^^^^^^^^^^^^
@@ -485,7 +560,6 @@ Update Friend's Email
 
 Clear Friends
 ^^^^^^^^^^^^^
-
 
 toString
 ^^^^^^^^

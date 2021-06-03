@@ -1,6 +1,6 @@
-************************
-Topic #3 Aside -- Equals
-************************
+*************************
+Topic #3 Aside --- Equals
+*************************
 
 * Below is a better and more correct implementation of the ``equals`` method
 * You will notice the type of the parameter has changed from ``Friend`` too ``Object``
