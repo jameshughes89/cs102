@@ -227,7 +227,7 @@ toString
 
     # Python --- __repr__
     def __repr__(self):
-        return self._firstName + " " + self._lastName \
+        return self._first_name + " " + self._last_name \
                + ":\t" + self._email
 
 
@@ -418,20 +418,196 @@ Contact List Class
 Setting Fields and Writing the Constructor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+* In the below examples, ``class ContactList:`` and ``public class ContactList {`` are excluded
+
+**Python**
+
+.. code-block:: python
+    :linenos:
+
+    def __init__(self):
+        self._friend_count = 0
+        self._friends = []
+
+
+* In this Python example, keeping track of ``_friend_count`` is perhaps not necessary since we can simply use ``len(self._friends)``
+* We can keep appending and appending to our ``_friends`` list
+
+**Java**
+
+.. code-block:: java
+    :linenos:
+
+    static final int DEFAULT_CAPACITY = 10;
+
+    private int capacity;
+    private int friendCount;
+    private Friend[] friends;
+
+    public ContactList() {
+        friendCount = 0;
+        friends = new Friend[DEFAULT_CAPACITY];
+    }
+
+    public ContactList(int capacity) {
+        friendCount = 0;
+        friends = new Friend[capacity];
+
+* First, notice that we actually wrote two constructors
+    * Overloading
+    * We can even do something called :doc:`constructor chaining </topic3-chaining>`
+
+* Since arrays have a fixed size, our strategy here is to make an array with a sufficiently large size, but only use what we need
+* The first constructor will make use of some constant value set in the class to make the array
+* The second will take a capacity as a parameter and make the array that size
+
+* If we create a ``ContactList`` object
+    * ``ContactList contacts = new ContactList(5);``
+
+* We will have something like this created
+
+    .. image:: ../img/contacts.png
+       :width: 600 px
+       :align: center
+
 
 Adding Friends
 ^^^^^^^^^^^^^^
 
+**Python**
+
+.. code-block:: python
+    :linenos:
+
+    def add(self, first_name, last_name, email):
+        # Make the friend object
+        new_friend = Friend(first_name, last_name, email)
+
+        # Append friend to our friends list
+        # and update friend count
+        self._friends.append(new_friend)
+        self._friends_count += 1
+
+
+**Java**
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 16, 17, 18
+
+    /**
+     * Add a new friend to the friends array. Will create an instance
+     * of a Friend based on parameters. If our array runs out of space
+     * we will expand capacity to manage the situation.
+     *
+     * @param firstName     friends first name
+     * @param lastName      friends last name
+     * @param email         friends email address
+     */
+    public void add(String firstName, String lastName, String email) {
+        // Create the Friend object
+        Friend newFriend = new Friend(firstName, lastName, email);
+
+        // If we have run out of space in our array
+        // we need to deal with it
+        if (friendCount == friends.length) {
+            expandCapacity();
+        }
+        // Add friend to the next available spot
+        friends[friendCount] = newFriend;
+        friendCount++;
+    }
+
+    private void expandCapacity() {
+        // Make a new array of twice the size of the previous
+        Friend[] newFriends = new Friend[friends.length * 2];
+
+        // Copy over the contents of the friends list
+        // to the new bigger friends list
+        for(int i = 0; i < friends.length; ++i) {
+            newFriends[i] = friends[i];
+        }
+        // Have friends now reference the new friends
+        friends = newFriends;
+    }
+
+* You may notice that ``friendCount`` plays double duty here --- friends count and next available spot in the array
+
+* Since our array has a fixed size, we can't simply keep adding to it
+* Our solution is to ``expandCapacity``
+    1. Create a new array twice as big as the original
+    2. Copy over the contents of the original array to the new bigger array
+        * `You could also use this instead <https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#arraycopy%28java.lang.Object,%20int,%20java.lang.Object,%20int,%20int%29>`_
+    3. Make out friends array now reference the new bigger array
+
+.. image:: ../img/expandcapacity.png
+       :width: 600 px
+       :align: center
+
+* The ``expandCapacity`` method gets called automatically by the ``add`` method if our array has run out of space
+* If the array had enough room, ``expand capacity`` is never called
+* Either way, when we add the ``newFriend`` to our array, we are now guaranteed to have room
+
+* You will also see that the ``expandCapacity`` method is ``private``
+    * This method is important for the inner workings of the ``ContactList`` class
+    * This method is not something I want the user of my class to care about
+        * Abstraction
+
 
 Remove Friends
 ^^^^^^^^^^^^^^
+
+**Java**
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 8, 11
+
+    public void remove(String firstName, String lastName) {
+        // Create a temp friend object for easy
+        // use of the Friend class' equals()
+        Friend toDelete = new Friend(firstName, lastName, "");
+
+        // Linear search for the friend we are trying to delete
+        for (int i = 0; i < friendCount; ++i) {
+            if (toDelete.equals(friends[i])) {
+                // Have friend at the end of the array be referenced
+                // by the array index we removed from
+                friends[i] = friends[friendCount - 1];
+                friends[friendCount - 1] = null;
+                friendCount--;
+            }
+        }
+    }
+
+* We'll create a temporary ``Friend`` based on the parameters so we can make use of our ``Friend`` class' ``.equals``
+* To remove the ``Friend`` all we need to do it lose reference to it
+    * Garbage
+* In the above example, we made the array at the index of the removed ``Friend`` to reference the ``Friend`` at the end of the array
+    * ``friendCount - 1``
+* After this, the array has no reference to the ``Friend`` that was removed
+
+* You may notice that the array at index ``friendCount - 1`` is set to ``null``
+    * This is done to deal with the edge case of removing the last friend
+
+* You may also notice that this method, as it is written, will not do anything special if the ``Friend`` we try to remove does not exist
+* What should we do in this scenario?
+    * Ignore it?
+    * Return a boolean?
+    * Crash the program?
+    * Explode?
+
+* This will be discussed further a little later in the course
+
+.. image:: ../img/remove.png
+       :width: 600 px
+       :align: center
 
 Update Friend's Email
 ^^^^^^^^^^^^^^^^^^^^^
 
 Clear Friends
 ^^^^^^^^^^^^^
-
 
 toString
 ^^^^^^^^
