@@ -214,7 +214,7 @@ toString
 * When we wrote our own classes, we ended up overriding the ``__repr__`` we got for free
     * The default one simply prints out the object name and a memory address, which wasn't very helpful
     * ``<__main__.Friend object at 0x7f130d9c52e0>``
-    * *Technically*, the behaviour we get for free is inherited from the closest parent class
+    * *Technically*, the behaviour we get for free is inherited from the closest "super" class
         * We will learn more about this later
 
 * An example of a ``__repr__`` for our ``Friend`` class might look something like this
@@ -259,7 +259,7 @@ equals
 * It also let us call ``==`` on the objects too
 
 * In Java, we use the ``equals()`` method to define what it means for two of the objects to be equivalent
-* **HOWEVER**, unlike Python, this doesn't hijack the ``==`` operator
+* **HOWEVER**, unlike Python, this doesn't overload the ``==`` operator
     * ``==`` for the objects is reserved to check if the objects are literally the same object
     * Same memory address --- it compares the memory addresses
 
@@ -267,7 +267,7 @@ equals
     * We need to think about what it means for two objects of the type to be &equivalent*
 
 * The default behaviour is to is to check if the objects are in the same memory address (``==``)
-    * Similar to ``toString``, the behaviour we get for free is inherited from the closest parent class
+    * Similar to ``toString``, the behaviour we get for free is inherited
 
 
 * So, what should it mean for two ``Friend`` objects to be *equal*?
@@ -279,6 +279,7 @@ equals
 
 * But, we need to really think about what makes sense in our context
     * Let's go with their ``firstName`` and ``lastName`` being equal
+        * Although, this example is perhaps still not overly great
 
 .. code-block:: java
     :linenos:
@@ -303,7 +304,7 @@ equals
 .. warning::
 
     The example ``equals()`` included in the ``Friend.java`` file is a little more complex,
-    but is a more complete ``equals``
+    but is a more complete and correct ``equals``. :doc:`See this aside for more details. </topic3-equals>`
 
 
 Creating an Instance of a Friend

@@ -54,7 +54,8 @@ public class Friend {
 //     * In this example, we will simply compare first and last
 //     * names
 //     *
-//     * This example is deliberately kept very simple
+//     * This example is deliberately kept very simple and does
+//     * not actually override the toString properly.
 //     *
 //     * @return      if the two friend objects are equal
 //     */
@@ -67,7 +68,9 @@ public class Friend {
     /**
      * Sample equals method for comparing two friend objects.
      * In this example, we will simply compare first and last
-     * names
+     * names.
+     *
+     * @param o     an "object" being compared to
      *
      * @return      if the two friend objects are equal
      */
