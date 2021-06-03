@@ -672,6 +672,7 @@ Get Friend
 Clear Friends
 ^^^^^^^^^^^^^
 
+<<<<<<< HEAD
 .. code-block:: java
     :linenos:
 
@@ -684,6 +685,7 @@ Clear Friends
 * Since the old array referenced by ``friends`` has no more reference, it get managed by the garbage collector
 
 * We could have gone through the array and set each index to reference ``null``, but the above is easier
+
 
 
 toString
@@ -742,10 +744,6 @@ For next time
 =============
 
 * Read Chapter X of your text
-
-
-
-
 
 Code
 ====
