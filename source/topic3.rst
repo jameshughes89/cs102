@@ -418,6 +418,60 @@ Contact List Class
 Setting Fields and Writing the Constructor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+* In the below examples, ``class ContactList:`` and ``public class ContactList {`` are excluded
+
+**Python**
+
+.. code-block:: Python
+    :linenos:
+
+    def __init__(self):
+        self._friend_count = 0
+        self._friends = []
+
+
+* In this Python example, keeping track of ``_friend_count`` is perhaps not necessary since we can simply use ``len(self._friends)``
+* We can keep appending and appending to our ``_friends`` list
+
+**Java**
+
+.. code-block:: Java
+    :linenos:
+
+    static final int DEFAULT_CAPACITY = 10;
+
+    int capacity;
+    int friendCount;
+    Friend[] friends;
+
+    public ContactList() {
+        capacity = DEFAULT_CAPACITY;
+        friendCount = 0;
+        friends = new Friend[capacity];
+    }
+
+    public ContactList(int capacity) {
+        this.capacity = capacity;
+        friendCount = 0;
+        friends = new Friend[capacity];
+
+* First, notice that we actually wrote two constructors
+    * Overloading
+    * We can even do something called :doc:`constructor chaining </topic3-chaining>`
+
+* Since arrays have a fixed size, our strategy here is to make an array with a sufficiently large size, but only use what we need
+* The first constructor will make use of some constant value set in the class to make the array
+* The second will take a capacity as a parameter and make the array that size
+
+* If we create a ``ContactList`` object
+    * ``ContactList contacts = new ContactList(5);``
+
+* We will have something like this created
+
+    .. image:: ../img/contacts.png
+       :width: 600 px
+       :align: center
+
 
 Adding Friends
 ^^^^^^^^^^^^^^
