@@ -227,7 +227,7 @@ toString
 
     # Python --- __repr__
     def __repr__(self):
-        return self._firstName + " " + self._lastName \
+        return self._first_name + " " + self._last_name \
                + ":\t" + self._email
 
 
@@ -531,6 +531,8 @@ Adding Friends
         friends = newFriends;
     }
 
+* You may notice that ``friendCount`` plays double duty here --- friends count and next available spot in the array
+
 * Since our array has a fixed size, we can't simply keep adding to it
 * Our solution is to ``expandCapacity``
     1. Create a new array twice as big as the original
@@ -554,6 +556,52 @@ Adding Friends
 
 Remove Friends
 ^^^^^^^^^^^^^^
+
+**Java**
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 8, 11
+
+    public void remove(String firstName, String lastName) {
+        // Create a temp friend object for easy
+        // use of the Friend class' equals()
+        Friend toDelete = new Friend(firstName, lastName, "");
+
+        // Linear search for the friend we are trying to delete
+        for (int i = 0; i < friendCount; ++i) {
+            if (toDelete.equals(friends[i])) {
+                // Have friend at the end of the array be referenced
+                // by the array index we removed from
+                friends[i] = friends[friendCount - 1];
+                friends[friendCount - 1] = null;
+                friendCount--;
+            }
+        }
+    }
+
+* We'll create a temporary ``Friend`` based on the parameters so we can make use of our ``Friend`` class' ``.equals``
+* To remove the ``Friend`` all we need to do it lose reference to it
+    * Garbage
+* In the above example, we made the array at the index of the removed ``Friend`` to reference the ``Friend`` at the end of the array
+    * ``friendCount - 1``
+* After this, the array has no reference to the ``Friend`` that was removed
+
+* You may notice that the array at index ``friendCount - 1`` is set to ``null``
+    * This is done to deal with the edge case of removing the last friend
+
+* You may also notice that this method, as it is written, will not do anything special if the ``Friend`` we try to remove does not exist
+* What should we do in this scenario?
+    * Ignore it?
+    * Return a boolean?
+    * Crash the program?
+    * Explode?
+
+* This will be discussed further a little later in the course
+
+.. image:: ../img/remove.png
+       :width: 600 px
+       :align: center
 
 Update Friend's Email
 ^^^^^^^^^^^^^^^^^^^^^

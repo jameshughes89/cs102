@@ -57,5 +57,22 @@ public class ContactList {
         friends = newFriends;
     }
 
+    public void remove(String firstName, String lastName) {
+        // Create a temp friend object for easy
+        // use of the Friend class' equals()
+        Friend toDelete = new Friend(firstName, lastName, "");
+
+        // Linear search for the friend we are trying to delete
+        for (int i = 0; i < friendCount; ++i) {
+            if (toDelete.equals(friends[i])) {
+                // Have friend at the end of the array be referenced
+                // by the array index we removed from
+                friends[i] = friends[friendCount - 1];
+                friends[friendCount - 1] = null;
+                friendCount--;
+            }
+        }
+    }
+
 
 }
