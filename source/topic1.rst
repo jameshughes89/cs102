@@ -145,7 +145,7 @@ Can we Write Code Now?
     :emphasize-lines: 4
 
     // Java --- hello world
-    public class LectureOne {
+    public class SomeClass {
         public static void main(String[] args){
             System.out.println("Hello, world!");
         }
