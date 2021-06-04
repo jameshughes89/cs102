@@ -12,6 +12,7 @@ Abstraction
 Data Structures
 ===============
 
+* A data structure is an actual implementation of
 
 For next time
 =============
