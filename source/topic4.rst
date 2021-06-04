@@ -27,6 +27,29 @@ Abstraction
     * In fact, maybe there are multiple options for *how* for a given *what*
 
 
+Layering
+--------
+
+* If our systems are large, we may start to have multiple levels, or, *layers*, of abstraction
+* If this is the case, we may want to group our components and restrict how our layers of abstraction interact
+
+* In real life, we can play the layers game
+    * Tell me how to cook pasta?
+        * Boil salted water and then add pasta
+    * Tell me in more detail
+        * Get a pot, fill with water, put on stove, and ....
+    * ...
+    * ...
+    * ...
+    * Tell me in more detail
+        * Neurons start to fire and muscles contract...
+    * MORE DETAIL
+        * Ion pumps and ....
+
+* The point is, it's `*turtles all the way down*<https://en.wikipedia.org/wiki/Infinite_regress>`_
+* If I want to make pasta for dinner, I don't care, and I don't want to care about ion pumps
+
+
 Data Structures
 ===============
 
