@@ -24,4 +24,5 @@ Examples
 For next time
 =============
 
-* Read Chapter X of your text
+* Read Chapter 2 of your text
+    * 14 pages

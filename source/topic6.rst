@@ -17,4 +17,5 @@ Exceptional Situations
 For next time
 =============
 
-* Read Chapter X of your text
+* Finish reading Chapter 3
+    * 16 pages

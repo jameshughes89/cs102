@@ -775,7 +775,9 @@ What We Get
 For next time
 =============
 
-* Read Chapter X of your text
+* Assuming you have not done it, read Chapter 1 of your text
+    * 15 pages
+
 
 Code
 ====
