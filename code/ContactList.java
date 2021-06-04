@@ -26,9 +26,9 @@ public class ContactList {
      * of a Friend based on parameters. If our array runs out of space
      * we will expand capacity to manage the situation.
      *
-     * @param firstName     friends first name
-     * @param lastName      friends last name
-     * @param email         friends email address
+     * @param firstName friends first name
+     * @param lastName  friends last name
+     * @param email     friends email address
      */
     public void add(String firstName, String lastName, String email) {
         // Create the Friend object
@@ -50,14 +50,14 @@ public class ContactList {
 
         // Copy over the contents of the friends list
         // to the new bigger friends list
-        for(int i = 0; i < friends.length; ++i) {
+        for (int i = 0; i < friends.length; ++i) {
             newFriends[i] = friends[i];
         }
         // Have friends now reference the new friends
         friends = newFriends;
     }
 
-    public int get(String firstName, String lastName) {
+    public int indexOf(String firstName, String lastName) {
         // Create a temp friend object for easy
         // use of the Friend class' equals()
         Friend toFind = new Friend(firstName, lastName, "");
@@ -71,6 +71,21 @@ public class ContactList {
         // -1 will signify that we didn't find
         // what we were looking for
         return -1;
+    }
+
+    public Friend get(int index) {
+        // Make sure the index provided is valid
+        if (index > -1 && index < friendCount) {
+            return friends[index];
+        }
+        else {
+            return null;
+        }
+    }
+
+    public Friend get(String firstName, String lastName) {
+        int index = indexOf(firstName, lastName);
+        return get(index);
     }
 
 
@@ -92,7 +107,7 @@ public class ContactList {
 //    }
 
     public void remove(String firstName, String lastName) {
-        int friendIndex = get(firstName, lastName);
+        int friendIndex = indexOf(firstName, lastName);
         if (friendIndex != -1) {
             // Have friend at the end of the array be referenced
             // by the array index we removed from
@@ -118,7 +133,7 @@ public class ContactList {
 
 
     public void updateEmail(String firstName, String lastName, String newEmail) {
-        int friendIndex = get(firstName, lastName);
+        int friendIndex = indexOf(firstName, lastName);
         if (friendIndex != -1) {
             friends[friendIndex].setEmail(newEmail);
         }
@@ -146,5 +161,7 @@ public class ContactList {
         }
         return builder.toString();
     }
+
+}
 
 

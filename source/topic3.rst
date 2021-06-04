@@ -623,18 +623,18 @@ Update Friend's Email
         }
     }
 
-Get Friend
-^^^^^^^^^^
+Index Of Friend
+^^^^^^^^^^^^^^^
 
 * You may have noticed that ``remove`` and ``updateEmail`` look very similar
-* Perhaps we should make another method called ``get`` that does a linear search through the array
+* Perhaps we should make another method called ``indexOf`` that does a linear search through the array
 * If we find the thing, we'll return its index, otherwise return -1
 
 .. code-block:: java
     :linenos:
     :emphasize-lines: 18, 29
 
-    public int get(String firstName, String lastName) {
+    public int indexOf(String firstName, String lastName) {
         // Create a temp friend object for easy
         // use of the Friend class' equals()
         Friend toFind = new Friend(firstName, lastName, "");
@@ -651,7 +651,7 @@ Get Friend
     }
 
     public void remove(String firstName, String lastName) {
-        int friendIndex = get(firstName, lastName);
+        int friendIndex = indexOf(firstName, lastName);
         if (friendIndex != -1) {
             // Have friend at the end of the array be referenced
             // by the array index we removed from
@@ -662,11 +662,51 @@ Get Friend
     }
 
     public void updateEmail(String firstName, String lastName, String newEmail) {
-        int friendIndex = get(firstName, lastName);
+        int friendIndex = indexOf(firstName, lastName);
         if (friendIndex != -1) {
             friends[friendIndex].setEmail(newEmail);
         }
     }
+
+.. warning::
+
+    The above change actually altered the functionality of the ``remove`` and ``updateEmail`` methods.
+    Try to figure out what has changed. Is this change good or bad? **Hint:** What happens if there are
+    multiple ``Friend`` objects with the same ``firstName`` and ``lastName``?
+
+
+Get
+^^^
+
+* We will want a method to return an actual ``Friend`` object based on a given index
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 3
+
+    public Friend get(int index) {
+        // Make sure the index provided is valid
+        if (index > -1 && index < friendCount) {
+            return friends[index];
+        }
+        else {
+            return null;
+        }
+    }
+
+* Realistically, the check on the index here could be much better, but we will talk about this stuff later in the course
+
+* We could overload ``get`` and add another version that will take the ``firstName`` and ``lastName`` of a ``Friend`` and return that ``Friend``
+
+.. code-block:: java
+    :linenos:
+
+    public Friend get(String firstName, String lastName) {
+        int index = indexOf(firstName, lastName);
+        return get(index);
+    }
+
+* Easy to write since we make use of the functions that exist that do all the work for us already
 
 
 Clear Friends
@@ -715,13 +755,6 @@ toString
     Although the above example is correct, in practice we'd want to use something called a ``StringBuilder``.
     :doc:`See this aside for more details. </topic3-builder>`
 
-
-Remove Unnecessary Getters and Setters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-* You hay have noticed that the only getter or setter we used in the ``Friend`` class was ``setEmail``
-* Since, based on our needs, these extra methods are not needed, let's remove them to protect our data
-
 What We Get
 ===========
 
@@ -762,7 +795,7 @@ Code
             myFriends.add("Clarence", "Cartwrite", "treelover1523@hotmail.com");
             myFriends.add("Sandy", "Seaside", "boatsboatsboats@yachtclub500.com");
             myFriends.add("Adam", "Fluffson", "fluffyman28@hotmail.com");
-            myFriends.add("Adam", "Andrews", "aandrews@hotmail.com");
+            myFriends.add("Adrian", "Andrews", "aandrews@hotmail.com");
 
             System.out.println("Print after adds and expand");
             System.out.println(myFriends);
