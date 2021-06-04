@@ -755,6 +755,20 @@ toString
     Although the above example is correct, in practice we'd want to use something called a ``StringBuilder``.
     :doc:`See this aside for more details. </topic3-builder>`
 
+Friend Count
+^^^^^^^^^^^^
+
+* We will want to be able to know how many ``Friend`` objects we have in our ``ContactList``
+* Basically a getter for the ``friendCount`` field
+
+.. code-block:: java
+    :linenos:
+
+    public int size() {
+        return friendCount;
+    }
+
+
 What We Get
 ===========
 
