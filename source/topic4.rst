@@ -12,7 +12,8 @@ Abstraction
 Data Structures
 ===============
 
-* A data structure is an actual implementation of
+* A data structure is an actual implementation of an ADT
+
 
 For next time
 =============
