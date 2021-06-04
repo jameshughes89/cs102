@@ -21,4 +21,5 @@ Generics
 For next time
 =============
 
-* Read Chapter X of your text
+* Read Chapter 3 Sections 2 -- 6
+    * 13 pages

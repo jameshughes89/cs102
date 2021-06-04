@@ -16,4 +16,5 @@ Interface
 For next time
 =============
 
-* Read Chapter X of your text
+* Read Chapter 5 Sections 1 -- 5
+    * 14 pages

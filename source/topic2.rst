@@ -814,4 +814,5 @@ For next time
 
 * `Check out Java's code conventions <https://www.oracle.com/java/technologies/javase/codeconventions-contents.html>`_
 
-* Read Chapter X of your text
+* Read Chapter 1 of your text
+    * 15 pages

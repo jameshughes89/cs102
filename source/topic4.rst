@@ -113,4 +113,5 @@ Data Structures
 For next time
 =============
 
-* Read Chapter X of your text
+* Read Chapter 3 Section 1 of your text
+    * 3 pages

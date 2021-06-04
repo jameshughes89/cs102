@@ -10,4 +10,5 @@ Implementing a Stack --- Linked Container
 For next time
 =============
 
-* Read Chapter X of your text
+* Read Chapter 4 Section 6
+    * 13 pages
