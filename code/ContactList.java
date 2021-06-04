@@ -144,6 +144,10 @@ public class ContactList {
         friendCount = 0;
     }
 
+    public int size() {
+        return friendCount;
+    }
+
 
 //    public String toString() {
 //        String s = "";
