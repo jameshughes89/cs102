@@ -112,6 +112,13 @@ Data Structures
 * A data structure is an actual implementation of an ADT
 
 
+
+
+.. warning::
+
+    It is not uncommon for people to use data structure as a catch all to mean both the ADT and the specific implementation.
+
+
 For next time
 =============
 
