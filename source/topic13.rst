@@ -7,4 +7,5 @@ Topic #13 --- Inheritance
 For next time
 =============
 
-* Read Chapter X of your text
+* Go back and read Chapter 3 Section 3
+    * 3 pages

@@ -17,7 +17,7 @@ Topic #2 --- Java vs. Python
     :linenos:
 
     // Java --- hello world
-    public class LectureOne {
+    public class SomeClass {
         public static void main(String[] args){
             System.out.println("Hello, world!");
         }
@@ -48,7 +48,7 @@ Variables and Types
     :emphasize-lines: 4,5,6
 
     // Java --- Declaring and assigning variables
-    public class LectureOne {
+    public class SomeClass {
         public static void main(String[] args){
             int anInt = 5;
             double aFloat = 5.5;    // doubles now for float
@@ -814,4 +814,5 @@ For next time
 
 * `Check out Java's code conventions <https://www.oracle.com/java/technologies/javase/codeconventions-contents.html>`_
 
-* Read Chapter X of your text
+* Read Chapter 1 of your text
+    * 15 pages

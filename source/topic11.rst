@@ -27,4 +27,5 @@ Priority Queue
 For next time
 =============
 
-* Read Chapter X of your text
+* Read Chapter 5 Section 6
+    * 6 pages
