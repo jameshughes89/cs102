@@ -339,7 +339,7 @@ Input & Output
     import java.io.InputStreamReader;
     import java.io.IOException;
 
-    public class CompSci162 {
+    public class SomeClass {
         public static void main(String[] args){
 
             // Create a Stream Reader with the standard input
@@ -391,7 +391,7 @@ Input & Output
     import java.io.InputStreamReader;
     import java.io.IOException;
 
-    public class CompSci162 {
+    public class SomeClass {
         public static void main(String[] args) throws IOException {
 
             // Create a Stream Reader with the standard input
@@ -433,7 +433,7 @@ Functions
     :emphasize-lines: 5, 10
 
     // Java
-    public class CompSci162 {
+    public class SomeClass {
         public static void main(String[] args) {
             // Call the function
             int result = someFunction(1, 2);
@@ -456,7 +456,7 @@ Functions
 
 * In the above example, the function is ``static``
     * This is a function that belongs to the class, not an instance of the class
-        * In fact, we could have used this instead ``int result = CompSci162.someFunction(1, 2);``
+        * In fact, we could have used this instead ``int result = SomeClass.someFunction(1, 2);``
     * It's not a function we will call on an instance of some object
 
 * You will also see that, unlike in the Python example, we can declare the functions after the calling code
