@@ -17,9 +17,9 @@ Collection Operations
 * However, the way these are done may differ between collections
 
 * Other things we will want to do with our collections are:
-    * `isEmpty` --- see if the collection is empty
-    * `size` --- Check how many things are in the collection
-    * `toString` --- Get a string version of the collection
+    * ``isEmpty`` --- see if the collection is empty
+    * ``size`` --- Check how many things are in the collection
+    * ``toString`` --- Get a string version of the collection
 
 
 Stack Context
@@ -34,7 +34,7 @@ Stack Context
 * **Peek**
     * Look at the thing on the *top* of the stack, but do **not** remove it
 
-* And we will also want out `isEmpty`, `size` and `toString`
+* And we will also want out ``isEmpty``, ``size`` and ``toString``
 
 
 .. warning::
