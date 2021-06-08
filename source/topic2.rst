@@ -433,7 +433,7 @@ Functions
     :emphasize-lines: 5, 10
 
     // Java
-    public class CompSci162 {
+    public class SomeClass {
         public static void main(String[] args) {
             // Call the function
             int result = someFunction(1, 2);
