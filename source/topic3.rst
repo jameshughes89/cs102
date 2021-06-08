@@ -755,6 +755,39 @@ toString
     Although the above example is correct, in practice we'd want to use something called a ``StringBuilder``.
     :doc:`See this aside for more details. </topic3-builder>`
 
+Friend Count
+^^^^^^^^^^^^
+
+* We will want to be able to know how many ``Friend`` objects we have in our ``ContactList``
+* Basically a getter for the ``friendCount`` field
+
+.. code-block:: java
+    :linenos:
+
+    public int size() {
+        return friendCount;
+    }
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 4
+
+    public String toString() {
+        String s = "";
+        for (int i = 0; i < friendCount; ++i) {
+            s = s + friends[i].toString() + "\n";
+        }
+        return s;
+    }
+
+* Notice that we can actually make good use of the ``Friend`` class' ``toString`` method
+
+
+.. warning::
+
+    Although the above example is correct, in practice we'd want to use something called a ``StringBuilder``.
+    :doc:`See this aside for more details. </topic3-builder>`
+
 What We Get
 ===========
 
@@ -775,10 +808,14 @@ What We Get
 For next time
 =============
 
-* Read Chapter X of your text
+* Assuming you have not done it, read Chapter 1 of your text
+    * 15 pages
+
 
 Code
 ====
+
+* Download and play with the  :download:`Friend <../src/main/java/Friend.java>` and  :download:`ContactList <../src/main/java/ContactList.java>` code.
 
 * If everything was done correctly, the following code should work
 

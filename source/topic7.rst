@@ -57,4 +57,5 @@ Doubly Linked
 For next time
 =============
 
-* Read Chapter X of your text
+* Read Chapter 4 Sections 1 -- 3
+    * 7 pages
