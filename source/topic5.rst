@@ -17,13 +17,13 @@ Postfix Expressions
 -------------------
 
 * We as humans prefer *infix* notation for our mathematical expressions
-    * 3 + 4 * 2 = 11
-    * (7 + 2) / 3 = 3
+    * ``3 + 4 * 2 = 11``
+    * ``(7 + 2) / 3 = 3``
 
 * But this is just a convention
 * We can use other notations, like *postfix* notation
-    * 3 4 2 * + = 11
-    * 7 2 + 3 / = 3
+    * ``3 4 2 * + = 11``
+    * ``7 2 + 3 / = 3``
 
 
 Pseudocode for Evaluating Postfix Expressions
@@ -44,7 +44,7 @@ Pseudocode for Evaluating Postfix Expressions
 Evaluate
 ^^^^^^^^
 
-* With the pseudocode, evaluate 7 4 -3 * 1 5 + / *
+* With the pseudocode, evaluate ``7 4 -3 * 1 5 + / *``
 
 .. image:: ../img/stack_postfix.png
    :width: 500 px
