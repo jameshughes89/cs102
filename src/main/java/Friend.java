@@ -1,3 +1,5 @@
+package main.java;
+
 public class Friend {
 
     // Class Attribute Declaration
@@ -59,7 +61,7 @@ public class Friend {
 //     *
 //     * @return      if the two friend objects are equal
 //     */
-//    public boolean equals(Friend other) {
+//    public boolean equals(main.java.Friend other) {
 //        return this.firstName.equals(other.firstName)
 //                && this.lastName.equals(other.lastName);
 //    }

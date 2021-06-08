@@ -24,8 +24,8 @@ source/asn*
 build.sh
 
 # Test java and python files
-code/CompSci162.java
-code/PythonExamples.py
+src/main/java/CompSci162.java
+src/PythonExamples.py
 
 # venv
 env/

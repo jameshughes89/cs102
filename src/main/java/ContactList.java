@@ -1,3 +1,5 @@
+package main.java;
+
 public class ContactList {
 
     static final int DEFAULT_CAPACITY = 10;
@@ -5,9 +7,9 @@ public class ContactList {
     private int friendCount;
     private Friend[] friends;
 
-//    public ContactList() {
+//    public main.java.ContactList() {
 //        friendCount = 0;
-//        friends = new Friend[DEFAULT_CAPACITY];
+//        friends = new main.java.Friend[DEFAULT_CAPACITY];
 //    }
 
     public ContactList() {
@@ -23,7 +25,7 @@ public class ContactList {
 
     /**
      * Add a new friend to the friends array. Will create an instance
-     * of a Friend based on parameters. If our array runs out of space
+     * of a main.java.Friend based on parameters. If our array runs out of space
      * we will expand capacity to manage the situation.
      *
      * @param firstName friends first name
@@ -31,7 +33,7 @@ public class ContactList {
      * @param email     friends email address
      */
     public void add(String firstName, String lastName, String email) {
-        // Create the Friend object
+        // Create the main.java.Friend object
         Friend newFriend = new Friend(firstName, lastName, email);
 
         // If we have run out of space in our array
@@ -59,7 +61,7 @@ public class ContactList {
 
     public int indexOf(String firstName, String lastName) {
         // Create a temp friend object for easy
-        // use of the Friend class' equals()
+        // use of the main.java.Friend class' equals()
         Friend toFind = new Friend(firstName, lastName, "");
 
         // Linear search for the friend we are trying to find
@@ -91,8 +93,8 @@ public class ContactList {
 
 //    public void remove(String firstName, String lastName) {
 //        // Create a temp friend object for easy
-//        // use of the Friend class' equals()
-//        Friend toDelete = new Friend(firstName, lastName, "");
+//        // use of the main.java.Friend class' equals()
+//        main.java.Friend toDelete = new main.java.Friend(firstName, lastName, "");
 //
 //        // Linear search for the friend we are trying to delete
 //        for (int i = 0; i < friendCount; ++i) {
@@ -120,8 +122,8 @@ public class ContactList {
 
 //    public void updateEmail(String firstName, String lastName, String newEmail) {
 //        // Create a temp friend object for easy
-//        // use of the Friend class' equals()
-//        Friend toUpdate = new Friend(firstName, lastName, "");
+//        // use of the main.java.Friend class' equals()
+//        main.java.Friend toUpdate = new main.java.Friend(firstName, lastName, "");
 //
 //        // Linear search for the friend we are trying to update
 //        for (int i = 0; i < friendCount; ++i) {
