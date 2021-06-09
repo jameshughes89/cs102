@@ -20,8 +20,9 @@ public class ArrayStack<T> implements Stack<T> {
     @SuppressWarnings("unchecked")
     public ArrayStack(int size) {
         top = 0;
-        // Generic types cannot be instantiated so we cast
-        // This does generate a compile time warning
+        // Generic types cannot be instantiated so we cast.
+        // This does generate a compile time warning that
+        // is being suppressed with the @ annotation.
         stack = (T[]) new Object[size];
     }
 
