@@ -34,6 +34,8 @@ Implementation
 
 * We want our ``ArrayStack`` to implement the ``Stack`` interface
     * This way anyone using our implementation knows that it is a ``Stack``
+        * The ``ArrayStack`` **is a** ``Stack``
+            * Anything expecting a ``Stack`` will be happy getting an ``ArrayStack`` since **it is a stack**
     * Note line 1 where we specifically say ``ArrayStack<T> implements Stack<T>``
 
 * Since our ``ArrayStack`` is generic, we don't know what type the array should be at this stage, so we make it an array of type ``T``
