@@ -5,6 +5,7 @@ public class ArrayStack<T> implements Stack<T> {
     private int top;
 
 
+
     /**
      * Create an ArrayStack of the default capacity.
      */
