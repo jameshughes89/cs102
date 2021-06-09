@@ -13,6 +13,9 @@ Topic #6 --- ArrayStack
 Implementing a Stack --- Array Container
 ========================================
 
+Implementation Issues
+---------------------
+
 * We've already seen that arrays are great for storing contiguous data
 
 .. image:: ../img/array.png
