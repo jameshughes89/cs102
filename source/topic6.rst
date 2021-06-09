@@ -202,12 +202,47 @@ Push
 Pop and Peek
 ^^^^^^^^^^^^
 
+* ``pop`` and ``peek`` will be similar, except peek leaves the top alone
 
 
+.. code-block:: Java
+    :linenos:
+    :emphasize-lines: 1, 2, 3, 4, 11, 12, 13, 14
 
+        public T pop() throws EmptyStackException {
+            if (isEmpty()) {
+                throw new EmptyStackException();
+            }
+            top--;
+            T returnElement = stack[top];
+            stack[top] = null;
+            return returnElement;
+        }
+
+        public T peek() throws EmptyStackException {
+            if (isEmpty()) {
+                throw new EmptyStackException();
+            }
+            return stack[top - 1];
+        }
 
 
 **Exceptional Situations**
+
+* What should we do when someone tries to ``pop`` or ``peek`` from an empty stack?
+    * Ignore and do nothing?
+    * Crash the program?
+    * ...
+
+* Hard to say
+
+* What should be done is not up to us as the people implementing the stack
+* Remember, we are implementing a stack that can be used somewhere else
+* What should be done will depend on what the code using the stack is doing
+* The point is, I cannot possibly know what you will want to do tomorrow with my stack implementation
+
+* What I can do however is throw an exception to let the user know something exceptional happened
+* It is up to them to deal with the situation
 
 
 

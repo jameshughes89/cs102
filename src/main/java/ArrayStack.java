@@ -1,3 +1,5 @@
+import java.util.EmptyStackException;
+
 public class ArrayStack<T> implements Stack<T> {
 
     private static final int DEFAULT_CAPACITY = 100;
@@ -44,9 +46,46 @@ public class ArrayStack<T> implements Stack<T> {
     @SuppressWarnings("unchecked")
     private void expandCapacity() {
         T[] newStack = (T[]) new Object[stack.length * 2];
-        for (int i = 0; i < stack.length; ++i) {
-            newStack[i] = stack[i];
-        }
+        System.arraycopy(stack, 0, newStack, 0, stack.length);
         stack = newStack;
     }
+
+    public T pop() throws EmptyStackException {
+        if (isEmpty()) {
+            throw new EmptyStackException();
+        }
+        top--;
+        T returnElement = stack[top];
+        stack[top] = null;
+        return returnElement;
+    }
+
+    public T peek() throws EmptyStackException {
+        if (isEmpty()) {
+            throw new EmptyStackException();
+        }
+        return stack[top - 1];
+    }
+
+    @Override
+    public int size() {
+        return top;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return size() == 0;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < top; ++i) {
+            builder.append(stack[i]);
+            builder.append(", ");
+        }
+        builder.append("<-- Top\n");
+        return builder.toString();
+    }
+
 }
