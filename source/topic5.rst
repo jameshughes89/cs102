@@ -230,10 +230,7 @@ There has to be a Better Way!
 For next time
 =============
 
-<<<<<<< HEAD
 * Checkout the :doc:`Postfix expression evaluation stack example. </topic5-postfix>`
-=======
 * Checkout the :download:`Stack.java<../src/main/java/Stack.java>` interface.
->>>>>>> main
 * Read Chapter 3 Sections 2 -- 6
     * 13 pages
