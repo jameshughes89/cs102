@@ -5,12 +5,14 @@ public class ArrayStack<T> implements Stack<T> {
     private int top;
 
 
+
     /**
      * Create an ArrayStack of the default capacity.
      */
     public ArrayStack() {
         this(DEFAULT_CAPACITY);
     }
+
 
     /**
      * Create an ArrayStack with the specified size.
