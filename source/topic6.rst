@@ -245,6 +245,43 @@ Pop and Peek
 * It is up to them to deal with the situation
 
 
+size and isEmpty
+^^^^^^^^^^^^^^^^
+
+.. code-block:: Java
+    :linenos:
+    :emphasize-lines: 2
+
+        public int size() {
+            return top;
+        }
+
+        public boolean isEmpty() {
+            return size() == 0;
+        }
+
+* Notice how, because of zero based indexing
+    * ``top`` tells us the next available spot in the array
+    * And the number of things in the stack
+
+toString
+^^^^^^^^
+
+.. code-block:: Java
+    :linenos:
+
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < top; ++i) {
+            builder.append(stack[i]);
+            builder.append(", ");
+        }
+        builder.append("<-- Top\n");
+        return builder.toString();
+    }
+
+* See if you can figure out what the toString will return based on this code
+
 
 For next time
 =============
