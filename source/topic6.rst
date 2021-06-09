@@ -13,11 +13,52 @@ Topic #6 --- ArrayStack
 Implementing a Stack --- Array Container
 ========================================
 
+ArrayStack Implementation Issues
+--------------------------------
+
+* We've already seen that arrays are great for storing contiguous data
+
+.. image:: ../img/array.png
+   :width: 500 px
+   :align: center
+
+* If this is the case, how should we keep track of the top of the stack?
+
+* What are the pros and cons of making keeping the top index 0?
+    * We always know where the top is
+    * Every time we ``push`` or ``pop`` we'd need to move everything in the stack
+
+* What are the pros and cons of making the top the other end?
+    * We'd need another variable to keep track of where the top is
+    * We do not need to shuffle anything around
+
+* The strategy we will use is a variable to keep track of *the next available spot* in the array
+    * ``push`` at the ``top`` index and update ``top``
+    * ``pop`` at the ``top - 1`` index and update ``top``
+* Also, due to zero based indexing, the variable keeping track of ``top`` will always be the number of things in the stack (``size``)
+
+.. image:: ../img/arraystack0.png
+   :width: 500 px
+   :align: center
+
+.. image:: ../img/arraystack1.png
+   :width: 500 px
+   :align: center
+
+.. image:: ../img/arraystack2.png
+   :width: 500 px
+   :align: center
+
+.. image:: ../img/arraystack3.png
+   :width: 500 px
+   :align: center
+
 
 
 
 Expand Capacity
 ---------------
+
 
 
 Exceptional Situations
