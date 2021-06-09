@@ -132,7 +132,6 @@ Evaluate
 
 
 
-
 Interface
 =========
 
@@ -146,5 +145,6 @@ Generics
 For next time
 =============
 
+* Checkout the :doc:`Postfix expression evaluation stack example. </topic5-postfix>`
 * Read Chapter 3 Sections 2 -- 6
     * 13 pages
