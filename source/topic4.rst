@@ -141,7 +141,7 @@ Layering
     * MORE DETAIL
         * Ion pumps and ....
 
-* The point is, it's `*turtles all the way down*<https://en.wikipedia.org/wiki/Infinite_regress>`_
+* The point is, it's `turtles all the way down <https://en.wikipedia.org/wiki/Infinite_regress>`_
 * If I want to make pasta for dinner, I don't care, and I don't want to care about ion pumps
 
 
@@ -151,7 +151,7 @@ Data Structures
 
 * A data structure is an actual implementation of an ADT
 
-* Using the `ContactList` example, the *what* would be:
+* Using the ``ContactList`` example, the *what* would be:
     * Keep track of ``Friend`` objects
     * Add and remove ``Friend`` objects
     * Get a ``Friend``
@@ -161,7 +161,7 @@ Data Structures
     * We used an array to keep track of the ``Friend`` objects
     * Do a linear search through the array to find a specific ``Friend``
 
-* A large focus in this class will be both the *what* and the *how and how to keep them seperate
+* A large focus in this class will be both the *what* and the *how and how to keep them separate
     * The interface and the implementation
 
 .. warning::
