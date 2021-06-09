@@ -36,6 +36,7 @@ Stack Interface
 
     public interface Stack <T> {
 
+        // Javadoc comments within Stack.java file
         void push(T element);
         T pop();
         T peek();
@@ -96,5 +97,6 @@ There has to be a Better Way!
 For next time
 =============
 
+* Checkout the :download:`Stack.java<../src/main/java/Stack.java>` interface.
 * Read Chapter 3 Sections 2 -- 6
     * 13 pages
