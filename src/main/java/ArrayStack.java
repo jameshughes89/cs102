@@ -26,5 +26,8 @@ public class ArrayStack<T> implements Stack<T> {
         stack = (T[]) new Object[size];
     }
 
+    @Override
+    public void push(T element) {
 
+    }
 }

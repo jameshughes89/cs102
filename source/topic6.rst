@@ -51,7 +51,8 @@ Implementation
            :align: center
 
 
-**Constructors**
+Constructors
+^^^^^^^^^^^^
 
 * Like the ``ContactList`` example, we will make two constructors
     * One will use the default value
@@ -85,10 +86,12 @@ Implementation
     * ``@SuppressWarnings("unchecked")``
 
 
+Push
+^^^^
 
 
-Expand Capacity
-^^^^^^^^^^^^^^^
+**Expand Capacity**
+
 
 
 Exceptional Situations
