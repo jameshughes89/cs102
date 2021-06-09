@@ -25,23 +25,22 @@ Interface
     * Abstract methods are the method signature/header and no actual body
     * Our methods will be ``public``
         * ``public int someMethod(int a, int b);``
+        * Although, we don't actually have to say ``public`` here since it has to be
     * Constants will be ``static final``
 
-StackADT Interface
+Stack Interface
 ------------------
 
 .. code-block:: java
     :linenos:
 
-    public interface StackADT <T> {
+    public interface Stack <T> {
 
-        public void push(T element);
-        public T pop();
-        public T peek();
-        public boolean isEmpty();
-        public int size();
-        public String toString();
-
+        void push(T element);
+        T pop();
+        T peek();
+        boolean isEmpty();
+        int size();
     }
 
 
@@ -51,8 +50,8 @@ Generics
 * You are probably wondering what ``<T>`` is
 
 * Imagine you wanted to have a stack of type ``Integer``, then you'd have to make
-    * ``public push(int element);``
-    * ``public int pop();``
+    * ``public void push(Integer element);``
+    * ``public Integer pop();``
     * ...
 
 * Then, maybe you want to make a stack of Strings
@@ -83,9 +82,9 @@ There has to be a Better Way!
     public class SomeClass {
         public static void main(String[] args) {
 
-            StackADT<Integer> myIntegerStack = new ArrayStack<Integer>();
-            StackADT<String> myStringStack = new ArrayStack<String>();
-            StackADT<Friend> myFriendStack = new ArrayStack<Friend>();
+            Stack<Integer> myIntegerStack = new ArrayStack<Integer>();
+            Stack<String> myStringStack = new ArrayStack<String>();
+            Stack<Friend> myFriendStack = new ArrayStack<Friend>();
         }
     }
 
