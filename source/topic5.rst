@@ -142,6 +142,7 @@ Example
 * Try to see where the ``push``, ``pop``, and ``peek`` operations are happening
 
 * Again, notice that we were able to use the idea of a stack to solve a problem easily despite not knowing the implementation
+    
 
 Interface
 =========
