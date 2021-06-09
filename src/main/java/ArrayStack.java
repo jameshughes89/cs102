@@ -30,6 +30,23 @@ public class ArrayStack<T> implements Stack<T> {
 
     @Override
     public void push(T element) {
+        if (top == stack.length) {
+            expandCapacity();
+        }
+        stack[top] = element;
+        top++;
+    }
 
+    /**
+     * Doubles the size of the stack array and copy the
+     * contents over.
+     */
+    @SuppressWarnings("unchecked")
+    private void expandCapacity() {
+        T[] newStack = (T[]) new Object[stack.length * 2];
+        for (int i = 0; i < stack.length; ++i) {
+            newStack[i] = stack[i];
+        }
+        stack = newStack;
     }
 }
