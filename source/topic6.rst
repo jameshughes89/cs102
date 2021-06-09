@@ -13,13 +13,21 @@ Topic #6 --- ArrayStack
 Implementing a Stack --- Array Container
 ========================================
 
+* We've already seen that arrays are great for storing contiguous data
+
+.. image:: ../img/array.png
+   :width: 500 px
+   :align: center
+
+* If this is the case, how should we keep track of the top of the stack?
+
+* What are the pros and cons of making keeping the top index 0?
+* What are the pros and cons of making the top the other end?
 
 
 
 Expand Capacity
 ---------------
-
-* We've already seen that arrays are great for storing contiguous data
 
 
 
