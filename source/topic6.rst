@@ -35,7 +35,7 @@ Implementation
 * We want our ``ArrayStack`` to implement the ``Stack`` interface
     * This way anyone using our implementation knows that it is a ``Stack``
         * The ``ArrayStack`` **is a** ``Stack``
-            * Anything expecting a ``Stack`` will be happy getting an ``ArrayStack`` since **it is a stack**
+        * Anything expecting a ``Stack`` will be happy getting an ``ArrayStack`` since **it is a stack**
     * Note line 1 where we specifically say ``ArrayStack<T> implements Stack<T>``
 
 * Since our ``ArrayStack`` is generic, we don't know what type the array should be at this stage, so we make it an array of type ``T``
@@ -56,6 +56,34 @@ Implementation
 * Like the ``ContactList`` example, we will make two constructors
     * One will use the default value
     * The other will allow us ot provide a starting size of the array
+
+
+.. code-block:: Java
+    :linenos:
+    :emphasize-lines: 2, 9
+
+        public ArrayStack() {
+            this(DEFAULT_CAPACITY);
+        }
+
+        public ArrayStack(int size) {
+            top = 0;
+            // Generic types cannot be instantiated so we cast
+            // This does generate a compile time warning
+            stack = (T[]) new Object[size];
+        }
+
+* You will see what we are doing overloading and  :doc:`constructor chaining </topic3-chaining>`
+* You will also see that we are creating an array of type ``Object`` and then *casting* it to the generic type `T`
+    * We cannot actually instantiate (create) a generic type
+    * This includes instantiating arrays of the generic type like above
+
+* When doing this, Java will warn us that there is now an unchecked type conversion
+    * Java can't guarantee that the cast will work right
+
+* We can actually suppress the warning by adding the following before the constructor
+    * ``@SuppressWarnings("unchecked")``
+
 
 
 

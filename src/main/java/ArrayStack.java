@@ -5,10 +5,19 @@ public class ArrayStack<T> implements Stack<T> {
     private int top;
 
 
+    /**
+     * Create an ArrayStack of the default capacity.
+     */
     public ArrayStack() {
         this(DEFAULT_CAPACITY);
     }
 
+    /**
+     * Create an ArrayStack with the specified size.
+     *
+     * @param size      Starting size of the fixed length array.
+     */
+    @SuppressWarnings("unchecked")
     public ArrayStack(int size) {
         top = 0;
         // Generic types cannot be instantiated so we cast
