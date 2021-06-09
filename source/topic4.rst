@@ -149,6 +149,25 @@ Layering
 Data Structures
 ===============
 
+* A data structure is an actual implementation of an ADT
+
+* Using the `ContactList` example, the *what* would be:
+    * Keep track of ``Friend`` objects
+    * Add and remove ``Friend`` objects
+    * Get a ``Friend``
+    * ...
+
+* And, the *how* would be the actual code we see
+    * We used an array to keep track of the ``Friend`` objects
+    * Do a linear search through the array to find a specific ``Friend``
+
+* A large focus in this class will be both the *what* and the *how and how to keep them seperate
+    * The interface and the implementation
+
+.. warning::
+
+    It is not uncommon for people to use data structure as a catch all to mean both the ADT and the specific implementation.
+
 
 For next time
 =============
