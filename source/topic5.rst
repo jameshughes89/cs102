@@ -100,8 +100,8 @@ Postfix Expressions
 
 * But this is just a convention
 * We can use other notations, like *postfix* notation
-    * ``3 4 2 * + = 11``
-    * ``7 2 + 3 / = 3``
+    * ``3 4 2 * + = (3 (4 2 *) +) = 11``
+    * ``7 2 + 3 / = (7 2 +) 3 /) = 3``
 
 
 Pseudocode for Evaluating Postfix Expressions
