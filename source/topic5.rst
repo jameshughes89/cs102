@@ -83,8 +83,6 @@ Stack ADT
 * This is just the definition of the stack ADT
 
 
-
-
 Example Use
 ===========
 
@@ -94,7 +92,23 @@ Example Use
 Maze Solving
 ------------
 
+    .. image:: ../img/maze.png
+       :width: 250 px
+       :align: center
 
+
+* It is easy to find a path through a maze with a simple *depth first search* algorithm
+* The high-level idea is simple
+    * Pick path you have not visited yet,
+    * Keep going until you find the end or hit a dead end
+    * If you hit the end, you're done
+    * If you hit a dead end, just backtrack until you can find another path you haven't visited yet
+    * Repeat
+
+* The backtracking is very easily handled by a stack
+    * The top is the last thing we looked at
+    * The thing after the top is the second last thing we looked at
+    * ...
 
 Pseudocode for Traversing a Maze
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -102,19 +116,32 @@ Pseudocode for Traversing a Maze
 .. code-block::
     :linenos:
 
+    Add the start of the maze to the stack
+
+    While the stack is not empty
+        Get the top of the stack with a peek (current cell)
+        If the top is the end
+            Huzzah, done!
+
+        If an unvisited neighbour of the current cell exists
+            Push the neighbour onto the stack
+        If no admissible neighbour exists
+            Pop from the stack
+
+    If we leave the loop with an empty stack, there is no solution
 
 
+Example
+^^^^^^^
 
-Evaluate
-^^^^^^^^
+    .. image:: ../img/maze_gif.gif
+       :width: 250 px
+       :align: center
 
 
-
-
+* Try to see where the ``push``, ``pop``, and ``peek`` operations are happening
 
 * Again, notice that we were able to use the idea of a stack to solve a problem easily despite not knowing the implementation
-
-
 
 
 Interface
