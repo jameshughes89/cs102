@@ -1,5 +1,5 @@
 # All built stuff
-out
+out/*
 
 # Log file
 *.log

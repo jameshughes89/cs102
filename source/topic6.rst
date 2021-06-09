@@ -38,6 +38,24 @@ Implementation
 
 * Since our ``ArrayStack`` is generic, we don't know what type the array should be at this stage, so we make it an array of type ``T``
 
+.. warning::
+
+    When you start implementing an interface, you may see your IDE to tell you there is an error. This is because, since
+    you are saying that you are implementing the interface, Java is expecting you to implement all abstract methods from
+    the interface.
+
+        .. image:: ../img/warning_implement.png
+           :width: 500 px
+           :align: center
+
+
+**Constructors**
+
+* Like the ``ContactList`` example, we will make two constructors
+    * One will use the default value
+    * The other will allow us ot provide a starting size of the array
+
+
 
 Expand Capacity
 ^^^^^^^^^^^^^^^
