@@ -34,7 +34,7 @@ ArrayStack Implementation Issues
 
 * The strategy we will use is a variable to keep track of *the next available spot* in the array
     * ``push`` at the ``top`` index and update ``top``
-    * ``pop at the ``top - 1`` index and update ``top``
+    * ``pop`` at the ``top - 1`` index and update ``top``
 * Also, due to zero based indexing, the variable keeping track of ``top`` will always be the number of things in the stack (``size``)
 
 .. image:: ../img/arraystack0.png
