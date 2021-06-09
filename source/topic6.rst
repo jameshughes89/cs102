@@ -85,6 +85,11 @@ Implementation
     * ``@SuppressWarnings("unchecked")``
 
 
+* Creating an instance ``Stack<Integer> s = new ArrayStacm<Integer>(5);``
+
+        .. image:: ../img/arraystack_empty.png
+           :width: 500 px
+           :align: center
 
 
 Expand Capacity
