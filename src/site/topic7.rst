@@ -6,6 +6,20 @@ Topic #7 --- Links
 Linked Structure
 ================
 
+* A linked data structure is one that consists of objects referencing other objects
+
+    .. image:: img/links_example0.png
+       :width: 500 px
+       :align: center
+
+
+* With this linking idea, we do not need to store the data in consecutive memory locations
+    * Successors can be anywhere
+
+* We can insert and delete things without having to shift data
+* Linked structures do not have a fixed size
+
+
 Nodes
 =====
 
