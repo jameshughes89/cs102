@@ -48,5 +48,30 @@ public class ArrayStack<T> implements Stack<T> {
             newStack[i] = stack[i];
         }
         stack = newStack;
+
+    @Override
+    public void push(T element) {
+
+    }
+
+    @Override
+    public T pop() {
+        return null;
+    }
+
+    @Override
+    public T peek() {
+        return null;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return false;
+    }
+
+    @Override
+    public int size() {
+        return 0;
+
     }
 }

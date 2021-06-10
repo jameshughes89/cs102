@@ -16,13 +16,13 @@ Topic #5 --- The Stack ADT
 
 **Adding to a Stack**
 
-.. image:: ../img/stack_add.png
+.. image:: img/stack_add.png
    :width: 500 px
    :align: center
 
 **Removing from a Stack**
 
-.. image:: ../img/stack_remove.png
+.. image:: img/stack_remove.png
    :width: 500 px
    :align: center
 
@@ -92,7 +92,7 @@ Example Use
 Maze Solving
 ------------
 
-    .. image:: ../img/maze.png
+    .. image:: img/maze.png
        :width: 250 px
        :align: center
 
@@ -134,7 +134,7 @@ Pseudocode for Traversing a Maze
 Example
 ^^^^^^^
 
-    .. image:: ../img/maze_gif.gif
+    .. image:: img/maze_gif.gif
        :width: 250 px
        :align: center
 
@@ -189,12 +189,12 @@ Generics
     * ...
 
 * Then, maybe you want to make a stack of Strings
-    * ``public push(String element);``
+    * ``public void push(String element);``
     * ``public String pop();``
     * ...
 
 * Then maybe a stack of Friends
-    * ``public push(Friend element);``
+    * ``public void push(Friend element);``
     * ``public Friend pop();``
     * ...
 
@@ -202,7 +202,7 @@ Generics
 There has to be a Better Way!
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* There is, **genetics**
+* There is, **generics**
 
 * ``<T>`` is a stand-in for a specific type that we can specify later when we want to create a stack with a specific type
     * You can think of it as like a variable for a type
@@ -231,6 +231,6 @@ For next time
 =============
 
 * Checkout the :doc:`Postfix expression evaluation stack example. </topic5-postfix>`
-* Checkout the :download:`Stack.java<../src/main/java/Stack.java>` interface.
+* Checkout the :download:`Stack.java<../main/java/Stack.java>` interface.
 * Read Chapter 3 Sections 2 -- 6
     * 13 pages
