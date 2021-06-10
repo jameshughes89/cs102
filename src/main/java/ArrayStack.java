@@ -46,7 +46,9 @@ public class ArrayStack<T> implements Stack<T> {
     @SuppressWarnings("unchecked")
     private void expandCapacity() {
         T[] newStack = (T[]) new Object[stack.length * 2];
-        System.arraycopy(stack, 0, newStack, 0, stack.length);
+        for (int i = 0; i < stack.length; ++i) {
+            newStack[i] = stack[i];
+        }
         stack = newStack;
 
     }

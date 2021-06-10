@@ -201,16 +201,22 @@ Pop and Peek
     * ...
 
 * Hard to say
-
 * What should be done is not up to us as the people implementing the stack
+
+* As a rule, you should follow `the principal of least surprise<https://en.wikipedia.org/wiki/Principle_of_least_astonishment>`_
+* Should we expect to get nothing back when requesting the top?
+* Perhaps it's more reasonable that the request was invalid in the first place
+
+* Imagine having two apples and asking the two apple for the third apple
+* The natural response the apples would have is "...wut?"
+    * An exception
+
 * Remember, we are implementing a stack that can be used somewhere else
 * What should be done will depend on what the code using the stack is doing
 * The point is, I cannot possibly know what you will want to do tomorrow with my stack implementation
 
 * What I can do however is throw an exception to let the user know something exceptional happened
 * It is up to them to deal with the situation
-
-
 
 For next time
 =============
