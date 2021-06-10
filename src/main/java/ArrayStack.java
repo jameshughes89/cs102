@@ -48,6 +48,31 @@ public class ArrayStack<T> implements Stack<T> {
         T[] newStack = (T[]) new Object[stack.length * 2];
         System.arraycopy(stack, 0, newStack, 0, stack.length);
         stack = newStack;
+
+    @Override
+    public void push(T element) {
+
+    }
+
+    @Override
+    public T pop() {
+        return null;
+    }
+
+    @Override
+    public T peek() {
+        return null;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return false;
+    }
+
+    @Override
+    public int size() {
+        return 0;
+
     }
 
     public T pop() throws EmptyStackException {
