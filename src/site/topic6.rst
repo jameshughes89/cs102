@@ -75,49 +75,6 @@ Implementation
 * We want our ``ArrayStack`` to implement the ``Stack`` interface
     * This way anyone using our implementation knows that it is a ``Stack``
         * The ``ArrayStack`` **is a** ``Stack``
-            * Anything expecting a ``Stack`` will be happy getting an ``ArrayStack`` since **it is a stack**
-    * Note line 1 where we specifically say ``ArrayStack<T> implements Stack<T>``
-
-* Since our ``ArrayStack`` is generic, we don't know what type the array should be at this stage, so we make it an array of type ``T``
-
-.. warning::
-
-    When you start implementing an interface, you may see your IDE to tell you there is an error. This is because, since
-    you are saying that you are implementing the interface, Java is expecting you to implement all abstract methods from
-    the interface.
-
-        .. image:: img/warning_implement.png
-           :width: 500 px
-           :align: center
-
-
-**Constructors**
-
-* Like the ``ContactList`` example, we will make two constructors
-    * One will use the default value
-    * The other will allow us ot provide a starting size of the array
-
-Implementation
---------------
-
-* Let's start our implementation of the ``ArrayStack``
-
-.. code-block:: Java
-    :linenos:
-    :emphasize-lines: 1
-
-    public class ArrayStack<T> implements Stack<T> {
-
-        private static final int DEFAULT_CAPACITY = 100;
-        private T[] stack;
-        private int top;
-
-    }
-
-
-* We want our ``ArrayStack`` to implement the ``Stack`` interface
-    * This way anyone using our implementation knows that it is a ``Stack``
-        * The ``ArrayStack`` **is a** ``Stack``
         * Anything expecting a ``Stack`` will be happy getting an ``ArrayStack`` since **it is a stack**
     * Note line 1 where we specifically say ``ArrayStack<T> implements Stack<T>``
 
