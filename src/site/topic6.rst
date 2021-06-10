@@ -126,12 +126,7 @@ Constructors
     * ``@SuppressWarnings("unchecked")``
 
 
-<<<<<<< HEAD:src/site/topic6.rst
 * Creating an instance ``Stack<Integer> s = new ArrayStack<Integer>(5);``
-
-=======
-* Creating an instance ``Stack<Integer> s = new ArrayStacm<Integer>(5);``
->>>>>>> 1a63e13d3b829f2534d07527a3cb0861e50e0844:source/topic6.rst
 
         .. image:: ../img/arraystack_empty.png
            :width: 500 px
