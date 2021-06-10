@@ -164,15 +164,16 @@ Push
 * Like the ``ContactList`` example, we will need to watch the size of our array
 
 
+Pop and Peek
+^^^^^^^^^^^^
 
 * ``pop`` and ``peek`` will be similar, except peek leaves the top alone
 
-
 .. code-block:: Java
     :linenos:
-    :emphasize-lines: 1, 2, 3, 4, 11, 12, 13, 14
+    :emphasize-lines: 2, 3, 4, 12, 13, 14
 
-        public T pop() throws EmptyStackException {
+        public T pop() {
             if (isEmpty()) {
                 throw new EmptyStackException();
             }
@@ -182,7 +183,7 @@ Push
             return returnElement;
         }
 
-        public T peek() throws EmptyStackException {
+        public T peek() {
             if (isEmpty()) {
                 throw new EmptyStackException();
             }
@@ -190,8 +191,7 @@ Push
         }
 
 
-Pop and Peek
-^^^^^^^^^^^^
+
 
 **Exceptional Situations**
 

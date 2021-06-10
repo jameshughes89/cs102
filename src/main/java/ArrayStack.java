@@ -49,33 +49,9 @@ public class ArrayStack<T> implements Stack<T> {
         System.arraycopy(stack, 0, newStack, 0, stack.length);
         stack = newStack;
 
-    @Override
-    public void push(T element) {
-
     }
 
-    @Override
     public T pop() {
-        return null;
-    }
-
-    @Override
-    public T peek() {
-        return null;
-    }
-
-    @Override
-    public boolean isEmpty() {
-        return false;
-    }
-
-    @Override
-    public int size() {
-        return 0;
-
-    }
-
-    public T pop() throws EmptyStackException {
         if (isEmpty()) {
             throw new EmptyStackException();
         }
@@ -85,7 +61,7 @@ public class ArrayStack<T> implements Stack<T> {
         return returnElement;
     }
 
-    public T peek() throws EmptyStackException {
+    public T peek() {
         if (isEmpty()) {
             throw new EmptyStackException();
         }
