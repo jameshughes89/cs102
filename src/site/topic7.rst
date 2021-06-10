@@ -11,7 +11,7 @@ Topic #7 --- Links
 
 * When using an array, we may have to shift things around when adding and removing
 * Traditionally speaking, arrays are in contiguous memory addresses
-
+    * JVM asterisk
 
 Linked Structure
 ================
