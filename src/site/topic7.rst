@@ -8,11 +8,11 @@ Topic #7 --- Links
 
 
 * Arrays have a fixed size
-    * But we can expand capacity
+    * But we can change capacity
 
 * When using an array, we may have to shift things around when adding and removing
 * Traditionally speaking, arrays are in contiguous memory addresses
-    * JVM asterisk
+    * JVM asterisk --- In Java, arrays are objects, and objects go into the *heap*, which isn't necessarily contiguous.
 
 
 Linked Structure
