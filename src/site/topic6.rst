@@ -18,7 +18,7 @@ ArrayStack Implementation Issues
 
 * We've already seen that arrays are great for storing contiguous data
 
-.. image:: ../img/array.png
+.. image:: img/array.png
    :width: 500 px
    :align: center
 
@@ -37,19 +37,19 @@ ArrayStack Implementation Issues
     * ``pop`` at the ``top - 1`` index and update ``top``
 * Also, due to zero based indexing, the variable keeping track of ``top`` will always be the number of things in the stack (``size``)
 
-.. image:: ../img/arraystack0.png
+.. image:: img/arraystack0.png
    :width: 500 px
    :align: center
 
-.. image:: ../img/arraystack1.png
+.. image:: img/arraystack1.png
    :width: 500 px
    :align: center
 
-.. image:: ../img/arraystack2.png
+.. image:: img/arraystack2.png
    :width: 500 px
    :align: center
 
-.. image:: ../img/arraystack3.png
+.. image:: img/arraystack3.png
    :width: 500 px
    :align: center
 
@@ -86,7 +86,7 @@ Implementation
     you are saying that you are implementing the interface, Java is expecting you to implement all abstract methods from
     the interface.
 
-        .. image:: ../img/warning_implement.png
+        .. image:: img/warning_implement.png
            :width: 500 px
            :align: center
 
