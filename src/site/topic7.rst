@@ -2,6 +2,16 @@
 Topic #7 --- Links
 ******************
 
+.. warning::
+
+    We are not yet defining a new ADT. We're just prepping to start implementing other ADTs with something other than an array.
+
+* Arrays have a fixed size
+    * But we can expand capacity
+
+* When using an array, we may have to shift things around when adding and removing
+* Traditionally speaking, arrays are in contiguous memory addresses
+
 
 Linked Structure
 ================
