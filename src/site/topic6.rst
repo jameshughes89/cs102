@@ -125,7 +125,9 @@ Constructors
 * We can actually suppress the warning by adding the following before the constructor
     * ``@SuppressWarnings("unchecked")``
 
-* Creating an instance ``Stack<Integer> s = new ArrayStacm<Integer>(5);``
+
+* Creating an instance ``Stack<Integer> s = new ArrayStack<Integer>(5);``
+
 
         .. image:: ../img/arraystack_empty.png
            :width: 500 px
