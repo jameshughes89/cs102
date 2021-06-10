@@ -35,7 +35,7 @@ Linear Collections
 Stack
 ^^^^^
 
-.. image:: ../img/stack_example.png
+.. image:: img/stack_example.png
    :width: 500 px
    :align: center
 
@@ -46,7 +46,7 @@ Stack
 Queue
 ^^^^^
 
-.. image:: ../img/queue_example.png
+.. image:: img/queue_example.png
    :width: 500 px
    :align: center
 
@@ -56,7 +56,7 @@ Queue
 List
 ^^^^
 
-.. image:: ../img/ordered_list_example.png
+.. image:: img/ordered_list_example.png
    :width: 500 px
    :align: center
 
@@ -77,7 +77,7 @@ Nonlinear Collections
 Trees
 ^^^^^
 
-.. image:: ../img/tree_example.png
+.. image:: img/tree_example.png
    :width: 500 px
    :align: center
 
@@ -89,7 +89,7 @@ Trees
 Graphs
 ^^^^^^
 
-.. image:: ../img/graph_example.png
+.. image:: img/graph_example.png
    :width: 500 px
    :align: center
 
