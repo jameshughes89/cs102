@@ -189,12 +189,12 @@ Generics
     * ...
 
 * Then, maybe you want to make a stack of Strings
-    * ``public push(String element);``
+    * ``public void push(String element);``
     * ``public String pop();``
     * ...
 
 * Then maybe a stack of Friends
-    * ``public push(Friend element);``
+    * ``public void push(Friend element);``
     * ``public Friend pop();``
     * ...
 
@@ -202,7 +202,7 @@ Generics
 There has to be a Better Way!
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* There is, **genetics**
+* There is, **generics**
 
 * ``<T>`` is a stand-in for a specific type that we can specify later when we want to create a stack with a specific type
     * You can think of it as like a variable for a type
