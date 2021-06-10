@@ -86,7 +86,7 @@ Implementation
     you are saying that you are implementing the interface, Java is expecting you to implement all abstract methods from
     the interface.
 
-        .. image:: ../img/warning_implement.png
+        .. image:: img/warning_implement.png
            :width: 500 px
            :align: center
 
@@ -127,7 +127,7 @@ Implementation
 
 * Creating an instance ``Stack<Integer> s = new ArrayStack<Integer>(5);``
 
-        .. image:: ../img/arraystack_empty.png
+        .. image:: img/arraystack_empty.png
            :width: 500 px
            :align: center
 
