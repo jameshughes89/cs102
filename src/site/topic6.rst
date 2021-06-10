@@ -207,7 +207,7 @@ Pop and Peek
 * Should we expect to get nothing back when requesting the top?
 * Perhaps it's more reasonable that the request was invalid in the first place
 
-* Imagine having two apples and asking the two apple for the third apple
+* Imagine having two apples and asking the two apples for the third apple
 * The natural response the apples would have is "...wut?"
     * An exception
 
