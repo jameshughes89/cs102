@@ -14,7 +14,7 @@ out/*
 *.rar
 
 # Assignments
-asn*
+asn* 
 
 # IntelliJ stuff
 .idea
