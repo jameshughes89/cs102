@@ -116,7 +116,9 @@ Implementation
 * You will see what we are doing overloading and  :doc:`constructor chaining </topic3-chaining>`
 * You will also see that we are creating an array of type ``Object`` and then *casting* it to the generic type `T`
     * We cannot actually instantiate (create) a generic type
-    * This includes instantiating arrays of the generic type like above
+        * Asterisk
+    * Java also forbids creating a generic array
+        * `Details are outside the scope of this topic and likely class <https://dzone.com/articles/covariance-and-contravariance>`_
 
 * When doing this, Java will warn us that there is now an unchecked type conversion
     * Java can't guarantee that the cast will work right
