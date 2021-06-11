@@ -336,7 +336,7 @@ Creating an Instance of a Friend
         * The equals bit
         * We have to be careful about what is actually stored in the ``aFriend``
 
-        .. image:: ../img/reference_aFriend.png
+        .. image:: img/reference_aFriend.png
            :width: 250 px
            :align: center
 
@@ -348,7 +348,7 @@ Creating an Instance of a Friend
 * ``bFriend`` has a ``firstName`` of Jane
 * They both have the ``firstName`` field, but the actual value associated with it differs
 
-    .. image:: ../img/reference_aFriend_bFriend.png
+    .. image:: img/reference_aFriend_bFriend.png
        :width: 500 px
        :align: center
 
@@ -393,7 +393,7 @@ References
 
 * This also means that the object that ``bFriend`` used to point to now has no reference to it
 
-    .. image:: ../img/reference_lost.png
+    .. image:: img/reference_lost.png
        :width: 500 px
        :align: center
 
@@ -466,7 +466,7 @@ Setting Fields and Writing the Constructor
 
 * We will have something like this created
 
-    .. image:: ../img/contacts.png
+    .. image:: img/contacts.png
        :width: 600 px
        :align: center
 
@@ -540,7 +540,7 @@ Adding Friends
         * `You could also use this instead <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Arrays.html#copyOf(T%5B%5D,int)>`_
     3. Make out friends array now reference the new bigger array
 
-.. image:: ../img/expandcapacity.png
+.. image:: img/expandcapacity.png
        :width: 600 px
        :align: center
 
@@ -599,7 +599,7 @@ Remove Friends
 
 * This will be discussed further a little later in the course
 
-.. image:: ../img/remove.png
+.. image:: img/remove.png
        :width: 600 px
        :align: center
 

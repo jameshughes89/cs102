@@ -46,11 +46,15 @@ public class ArrayStack<T> implements Stack<T> {
     @SuppressWarnings("unchecked")
     private void expandCapacity() {
         T[] newStack = (T[]) new Object[stack.length * 2];
-        System.arraycopy(stack, 0, newStack, 0, stack.length);
+        for (int i = 0; i < stack.length; ++i) {
+            newStack[i] = stack[i];
+        }
         stack = newStack;
+
     }
 
-    public T pop() throws EmptyStackException {
+    @Override
+    public T pop() {
         if (isEmpty()) {
             throw new EmptyStackException();
         }
@@ -60,7 +64,8 @@ public class ArrayStack<T> implements Stack<T> {
         return returnElement;
     }
 
-    public T peek() throws EmptyStackException {
+    @Override
+    public T peek() {
         if (isEmpty()) {
             throw new EmptyStackException();
         }

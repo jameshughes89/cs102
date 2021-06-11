@@ -18,7 +18,7 @@ ArrayStack Implementation Issues
 
 * We've already seen that arrays are great for storing contiguous data
 
-.. image:: ../img/array.png
+.. image:: img/array.png
    :width: 500 px
    :align: center
 
@@ -37,65 +37,22 @@ ArrayStack Implementation Issues
     * ``pop`` at the ``top - 1`` index and update ``top``
 * Also, due to zero based indexing, the variable keeping track of ``top`` will always be the number of things in the stack (``size``)
 
-.. image:: ../img/arraystack0.png
+.. image:: img/arraystack0.png
    :width: 500 px
    :align: center
 
-.. image:: ../img/arraystack1.png
+.. image:: img/arraystack1.png
    :width: 500 px
    :align: center
 
-.. image:: ../img/arraystack2.png
+.. image:: img/arraystack2.png
    :width: 500 px
    :align: center
 
-.. image:: ../img/arraystack3.png
+.. image:: img/arraystack3.png
    :width: 500 px
    :align: center
 
-
-Implementation
---------------
-
-* Let's start our implementation of the ``ArrayStack``
-
-.. code-block:: Java
-    :linenos:
-    :emphasize-lines: 1
-
-    public class ArrayStack<T> implements Stack<T> {
-
-        private static final int DEFAULT_CAPACITY = 100;
-        private T[] stack;
-        private int top;
-
-    }
-
-
-* We want our ``ArrayStack`` to implement the ``Stack`` interface
-    * This way anyone using our implementation knows that it is a ``Stack``
-        * The ``ArrayStack`` **is a** ``Stack``
-            * Anything expecting a ``Stack`` will be happy getting an ``ArrayStack`` since **it is a stack**
-    * Note line 1 where we specifically say ``ArrayStack<T> implements Stack<T>``
-
-* Since our ``ArrayStack`` is generic, we don't know what type the array should be at this stage, so we make it an array of type ``T``
-
-.. warning::
-
-    When you start implementing an interface, you may see your IDE to tell you there is an error. This is because, since
-    you are saying that you are implementing the interface, Java is expecting you to implement all abstract methods from
-    the interface.
-
-        .. image:: ../img/warning_implement.png
-           :width: 500 px
-           :align: center
-
-
-**Constructors**
-
-* Like the ``ContactList`` example, we will make two constructors
-    * One will use the default value
-    * The other will allow us ot provide a starting size of the array
 
 Implementation
 --------------
@@ -169,6 +126,14 @@ Constructors
     * ``@SuppressWarnings("unchecked")``
 
 
+* Creating an instance ``Stack<Integer> s = new ArrayStack<Integer>(5);``
+
+        .. image:: ../img/arraystack_empty.png
+           :width: 500 px
+           :align: center
+           
+
+
 Push
 ^^^^
 
@@ -204,12 +169,11 @@ Pop and Peek
 
 * ``pop`` and ``peek`` will be similar, except peek leaves the top alone
 
-
 .. code-block:: Java
     :linenos:
-    :emphasize-lines: 1, 2, 3, 4, 11, 12, 13, 14
+    :emphasize-lines: 2, 3, 4, 12, 13, 14
 
-        public T pop() throws EmptyStackException {
+        public T pop() {
             if (isEmpty()) {
                 throw new EmptyStackException();
             }
@@ -219,12 +183,14 @@ Pop and Peek
             return returnElement;
         }
 
-        public T peek() throws EmptyStackException {
+        public T peek() {
             if (isEmpty()) {
                 throw new EmptyStackException();
             }
             return stack[top - 1];
         }
+
+
 
 
 **Exceptional Situations**
@@ -235,8 +201,16 @@ Pop and Peek
     * ...
 
 * Hard to say
-
 * What should be done is not up to us as the people implementing the stack
+
+* As a rule, you should follow `the principal of least surprise<https://en.wikipedia.org/wiki/Principle_of_least_astonishment>`_
+* Should we expect to get nothing back when requesting the top?
+* Perhaps it's more reasonable that the request was invalid in the first place
+
+* Imagine having two apples and asking the two apples for the third apple
+* The natural response the apples would have is "...wut?"
+    * An exception
+
 * Remember, we are implementing a stack that can be used somewhere else
 * What should be done will depend on what the code using the stack is doing
 * The point is, I cannot possibly know what you will want to do tomorrow with my stack implementation
