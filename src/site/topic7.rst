@@ -21,7 +21,7 @@ Linked Structure
 Nodes
 =====
 
-* A _node_ is a basic unit in our linked structures
+* A *node* is a basic unit in our linked structures
 * Here we are focusing on *singly linked structures*
     * Each node has only one *link*
 
