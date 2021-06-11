@@ -2,6 +2,18 @@
 Topic #7 --- Links
 ******************
 
+.. warning::
+
+    We are not yet defining a new ADT. We're just prepping to start implementing other ADTs with something other than an array.
+
+
+* Arrays have a fixed size
+    * But we can change capacity
+
+* When using an array, we may have to shift things around when adding and removing
+* Traditionally speaking, arrays are in contiguous memory addresses
+    * JVM asterisk --- In Java, arrays are objects, and objects go into the *heap*, which isn't necessarily contiguous.
+
 
 Linked Structure
 ================
