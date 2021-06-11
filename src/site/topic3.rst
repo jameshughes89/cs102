@@ -815,7 +815,7 @@ For next time
 Code
 ====
 
-* Download and play with the  :download:`Friend <../main/java/Friend.java>` and  :download:`ContactList <../main/java/ContactList.java>` code.
+* Download and play with the :download:`Friend <../src/main/java/Friend.java>` and  :download:`ContactList <../src/main/java/ContactList.java>` code.
 
 * If everything was done correctly, the following code should work
 
