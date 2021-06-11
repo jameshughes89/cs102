@@ -218,8 +218,122 @@ Pop and Peek
 * What I can do however is throw an exception to let the user know something exceptional happened
 * It is up to them to deal with the situation
 
+.. warning::
+
+    To use the ``EmptyStackException``, we will need to import it --- ``import java.util.EmptyStackException;``
+
+size and isEmpty
+^^^^^^^^^^^^^^^^
+
+.. code-block:: Java
+    :linenos:
+    :emphasize-lines: 2
+
+        public int size() {
+            return top;
+        }
+
+        public boolean isEmpty() {
+            return size() == 0;
+        }
+
+* Notice how, because of zero based indexing
+    * ``top`` tells us the next available spot in the array
+    * And the number of things in the stack
+
+toString
+^^^^^^^^
+
+.. code-block:: Java
+    :linenos:
+
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < top; ++i) {
+            builder.append(stack[i]);
+            builder.append(", ");
+        }
+        builder.append("<-- Top\n");
+        return builder.toString();
+    }
+
+* See if you can figure out what the toString will return based on this code
+
+
 For next time
 =============
 
+* Download and test the :download:`Stack <../main/java/Stack.java>` and  :download:`ArrayStack <../main/java/ArrayStack.java>` code
 * Finish reading Chapter 3
     * 16 pages
+
+Code
+====
+
+* If everything was done correctly, the following code should work
+
+.. code-block:: java
+    :linenos:
+
+    // Create an ArrayStack
+    Stack<Integer> myStack = new ArrayStack<Integer>(5);
+
+    // Check stack is empty
+    System.out.println(myStack.size());
+    System.out.println(myStack.isEmpty());
+    System.out.println(myStack);
+
+    // Test push
+    myStack.push(0);
+    myStack.push(1);
+    myStack.push(2);
+    myStack.push(3);
+    myStack.push(4);
+    System.out.println(myStack.size());
+    System.out.println(myStack.isEmpty());
+    System.out.println(myStack);
+
+    // Test expand capacity
+    myStack.push(10);
+    myStack.push(11);
+    myStack.push(12);
+    myStack.push(13);
+    myStack.push(14);
+    System.out.println(myStack.size());
+    System.out.println(myStack.isEmpty());
+    System.out.println(myStack);
+
+    // Test peek
+    System.out.println(myStack.peek());
+    System.out.println(myStack.size());
+    System.out.println(myStack.isEmpty());
+    System.out.println(myStack);
+
+    // Test Pop
+    System.out.println(myStack.pop());
+    System.out.println(myStack.pop());
+    System.out.println(myStack.pop());
+    System.out.println(myStack.pop());
+    System.out.println(myStack.pop());
+    System.out.println(myStack.pop());
+    System.out.println(myStack.pop());
+    System.out.println(myStack.pop());
+    System.out.println(myStack.pop());
+    System.out.println(myStack.pop());
+    System.out.println(myStack.size());
+    System.out.println(myStack.isEmpty());
+    System.out.println(myStack);
+
+    // Test peek and pop throwing exception
+    try {
+        myStack.peek();
+    }
+    catch (EmptyStackException e) {
+        System.out.println("Caught exception on peek.");
+    }
+    try {
+        myStack.pop();
+    }
+    catch (EmptyStackException e) {
+        System.out.println("Caught exception on pop.");
+    }
