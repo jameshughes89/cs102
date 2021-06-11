@@ -16,15 +16,16 @@ Nodes
 * The series of nodes linked together is what makes up the singly linked structure
     * They link to their successor
 
+.. image:: img/node_example.png
+   :width: 500 px
+   :align: center
+
 * A node for a singly linked structure typically has only two fields
     * **data** --- the stuff we want to hold
         * To compare to the array, this would be the stuff we're putting into the cells of the array
     * **next** --- a reference to the successor/next node
         * Arrays don't have this because the successor is just in the next index in the array
             * Asterisk
-
-
-
 
 
 Inserting into a Linked Structure
