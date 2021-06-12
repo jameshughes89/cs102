@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'ru.vyarus.use-python' version '2.3.0'
+}
+
+group 'ca.stfx.jhughes'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+python {
+    pip 'sphinx:4.0.1'
+    pip 'sphinx-adc-theme:0.1.7'
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+task site(type:PythonTask) {
+    dependsOn(tasks.pipInstall)
+    module = 'sphinx'
+    command = '-b html src/site build/site'
+}
