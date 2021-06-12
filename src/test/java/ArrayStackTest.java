@@ -19,7 +19,6 @@ class ArrayStackTest {
     @DisplayName("An empty stack has size 0.")
     void emptyStackHasSizeZero() {
         Stack<Integer> stack = new ArrayStack<>();
-        assumeTrue(stack.isEmpty());
         assertEquals(0, stack.size());
     }
 
@@ -28,7 +27,6 @@ class ArrayStackTest {
     void nonEmptyStackIsEmptyReturnsFalse() {
         Stack<Integer> stack = new ArrayStack<>();
         stack.push(99);
-        assumeTrue(stack.size() == 1);
         assertFalse(stack.isEmpty());
     }
 
