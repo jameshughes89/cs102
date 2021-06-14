@@ -103,8 +103,38 @@ Adding to the Front
 Adding to the Middle
 --------------------
 
+.. image:: img/links_addmiddle0.png
+   :width: 500 px
+   :align: center
+
+* Locate the node the new node will come after
+    * In this example, it is referred to as ``current``
+
+.. image:: img/links_addmiddle1.png
+   :width: 500 px
+   :align: center
+
+* Make the new node's ``next``  reference the preceding node's (``current``) ``next``
+
+.. image:: img/links_addmiddle2.png
+   :width: 500 px
+   :align: center
+
+* Have the preceding node's (``current``) ``next`` reference the new node
+
+.. image:: img/links_addmiddle3.png
+   :width: 500 px
+   :align: center
+
+
 Adding to the End
 -----------------
+
+* We see that adding to the middle is a more general case compared to adding to the front
+    * Adding to the front is a special case
+
+* Is adding to the rear a special case?
+
 
 Removing from a Linked Structure
 =================================
