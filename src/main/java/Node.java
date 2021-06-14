@@ -1,3 +1,11 @@
+/**
+ * A Node class for a singly linked structure. Each node
+ * contains a reference to data of type T, which may be
+ * null, and a reference to the next/subsequent/successor
+ * singly linked node, which may also be null.
+ *
+ * @param <T>   Type of the data being stored in the node
+ */
 public class Node<T> {
 
     private T data;
