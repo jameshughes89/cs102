@@ -98,6 +98,19 @@ Removing from a Linked Structure
 Deleting from the Front
 -----------------------
 
+* Removing from the front may be the easiest operation
+
+.. image:: img/links_removefront0.png
+   :width: 500 px
+   :align: center
+
+* Make head, the reference to the start of the linked structure, point to the first node's ``next``
+
+.. image:: img/links_removefront1.png
+   :width: 500 px
+   :align: center
+
+
 Deleting from the Middle
 ------------------------
 
