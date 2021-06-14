@@ -10,13 +10,13 @@ Topic #3 Aside --- Constructor Chaining
     :linenos:
     :emphasize-lines: 4
 
-    public ContactList() {
-        // Call the constructor that
-        // takes an int as param
-        this(DEFAULT_CAPACITY);
-    }
+        public ContactList() {
+            // Call the constructor that
+            // takes an int as param
+            this(DEFAULT_CAPACITY);
+        }
 
-    public ContactList(int capacity) {
-        friendCount = 0;
-        friends = new Friend[capacity];
-    }
+        public ContactList(int capacity) {
+            friendCount = 0;
+            friends = new Friend[capacity];
+        }
