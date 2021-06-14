@@ -135,6 +135,31 @@ Size and isEmpty
     * Can you think of another way to check if it's empty?
 
 
+toString
+^^^^^^^^
+
+.. code-block:: java
+    :linenos:
+
+        @Override
+        public String toString() {
+            StringBuilder builder = new StringBuilder();
+            builder.append(", ");
+            Node<T> currentNode = top;
+            while (currentNode != null) {
+                builder.insert(0, currentNode.getData());
+                builder.insert(0, ", ");
+                currentNode = currentNode.getNext();
+            }
+            builder.delete(0, 2);
+            builder.append("<-- Top\n");
+            return builder.toString();
+        }
+
+* It's a little ugly here
+* We have it matching the output format that the ``ArrayStack``'s ``toString`` had
+
+
 For next time
 =============
 
