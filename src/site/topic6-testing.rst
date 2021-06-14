@@ -28,8 +28,43 @@ Unit Testing
 JUnit
 =====
 
-* JUnit
-* Automate tests
+* JUnit is a very popular unit testing framework for Java
+* It's easy to use and automates testing for us
+* We will focus on three special things (there is a lot more too it then what will be covered here)
+    * ``@Test`` annotation
+    * ``@DisplayName`` annotation
+    * asserts
+
+* Assuming you are using IntelliJ, here is an easy way to setup JUnit
+
+
+1. Make a new folder/directory called ``test`` in your project next to ``src``
+
+.. image:: img/test_folder.png
+   :width: 500 px
+   :align: center
+
+2. Right-click the project name and select *Open Module Settings*
+
+.. image:: img/test_module.png
+   :width: 500 px
+   :align: center
+
+3. Select the ``test`` folder ans select the *Tests*, the green folder, near the top
+
+.. image:: img/test_tests.png
+   :width: 500 px
+   :align: center
+
+4. Create a new class for testing called something appropriate
+    * Perhaps ``TestArrayStack`` for the below example
+
+5. We need to add JUnit to our class path and an easy way to do it is write ``@Test`` in the new class and hit Alt-Enter
+6. Select *Add 'JUnit5....*
+
+.. image:: img/test_altenter.png
+   :width: 500 px
+   :align: center
 
 
 
