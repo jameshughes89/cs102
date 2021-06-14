@@ -44,23 +44,17 @@ JUnit
    :width: 500 px
    :align: center
 
-2. Right-click the project name and select *Open Module Settings*
+2. Right click the ``test`` folder and select *Mark Directory as -> Test Sources Root*
 
-.. image:: img/test_module.png
+.. image:: img/test_marktests.png
    :width: 500 px
    :align: center
 
-3. Select the ``test`` folder ans select the *Tests*, the green folder, near the top
-
-.. image:: img/test_tests.png
-   :width: 500 px
-   :align: center
-
-4. Create a new class for testing called something appropriate
+3. Create a new class for testing called something appropriate
     * Perhaps ``ArrayStackTest`` for the below example
 
-5. We need to add JUnit to our class path and a simple way to do it is write ``@Test`` in the new class and hit Alt-Enter
-6. Select *Add 'JUnit5....*
+4. We need to add JUnit to our class path and a simple way to do it is write ``@Test`` in the new class and hit Alt-Enter
+5. Select *Add 'JUnit5....*
 
 .. image:: img/test_altenter.png
    :width: 500 px
