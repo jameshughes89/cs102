@@ -158,8 +158,27 @@ Deleting from the Front
 Deleting from the Middle
 ------------------------
 
+.. image:: img/links_removemiddle0.png
+   :width: 500 px
+   :align: center
+
+* Locate the node to be deleted (``current``) and the node immediately before it (``previous``)
+
+.. image:: img/links_removemiddle1.png
+   :width: 500 px
+   :align: center
+
+* Make the proceeding node's (``previous``) ``next`` reference the node to be deleted's (``current``) ``next``
+
+.. image:: img/links_removemiddle2.png
+   :width: 500 px
+   :align: center
+
 Deleting from the End
 ---------------------
+
+* Is deleting from the end a special case?
+
 
 Node Implementation
 ===================
