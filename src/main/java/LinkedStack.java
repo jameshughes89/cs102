@@ -47,20 +47,6 @@ public class LinkedStack<T> implements Stack<T> {
         return size;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append(", ");
-        Node<T> currentNode = top;
-        while (currentNode != null) {
-            builder.insert(0, currentNode.getData());
-            builder.insert(0, ", ");
-            currentNode = currentNode.getNext();
-        }
-        builder.delete(0, 2);
-        builder.append("<-- Top\n");
-        return builder.toString();
-    }
 
     /**
      * A Node class for a singly linked structure. Each node
