@@ -45,6 +45,14 @@ Implementing a Stack --- Linked Container
    :align: center
 
 
+Testing
+-------
+
+* To ensure correctness, we will write tests with JUnit
+    * :doc:`If you have not yet, read the testing aside </topic6-testing>`
+
+
+
 
 For next time
 =============
