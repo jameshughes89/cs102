@@ -67,7 +67,45 @@ JUnit
    :align: center
 
 
-
-
+Testing ArrayStack
+==================
 
 * Checkout the :download:`ArrayStackTest.java<../test/java/ArrayStackTest.java>` for testing the ``ArrayStack``.
+* Have a look at all the methods, the imports, function names, etc.
+
+* Below are some examples from the file:
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 5
+
+    @Test
+    @DisplayName("A new stack starts empty.")
+    void aNewStackIsEmpty() {
+        Stack<Integer> stack = new ArrayStack<>();
+        assertTrue(stack.isEmpty());
+    }
+
+* Things to note:
+    * We add ``@Test`` before the function name
+    * We include ``@DisplayName`` to provide a good description of what is being tested
+        * This is not actually needed
+    * The function name ``aNewStackIsEmpty`` is descriptive
+
+* The ``assertTrue`` is being used to test a specific thing here
+    * If the stack is in fact empty after it is created
+
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 5
+
+    @Test
+    @DisplayName("An empty stack has size 0.")
+    void emptyStackHasSizeZero() {
+        Stack<Integer> stack = new ArrayStack<>();
+        assertEquals(0, stack.size());
+    }
+
+* Given that we have a test for ``aNewStackIsEmpty``, if this passes, we know our newly created stack is empty
+* We can now test if the ``size`` of the stack is 0 when it is empty
