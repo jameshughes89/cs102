@@ -29,13 +29,13 @@ JUnit
 =====
 
 * JUnit is a very popular unit testing framework for Java
-* It's easy to use and automates testing for us
-* We will focus on three special things (there is a lot more too it then what will be covered here)
+* It's simple to use and automates testing for us
+* We will focus on three special things (there is a lot more to it then what will be covered here)
     * ``@Test`` annotation
     * ``@DisplayName`` annotation
-    * asserts
+    * Assertions 
 
-* Assuming you are using IntelliJ, here is an easy way to setup JUnit
+* Assuming you are using IntelliJ, here is a simple way to setup JUnit
 
 
 1. Make a new folder/directory called ``test`` in your project next to ``src``
@@ -59,7 +59,7 @@ JUnit
 4. Create a new class for testing called something appropriate
     * Perhaps ``TestArrayStack`` for the below example
 
-5. We need to add JUnit to our class path and an easy way to do it is write ``@Test`` in the new class and hit Alt-Enter
+5. We need to add JUnit to our class path and a simple way to do it is write ``@Test`` in the new class and hit Alt-Enter
 6. Select *Add 'JUnit5....*
 
 .. image:: img/test_altenter.png
