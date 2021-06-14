@@ -138,5 +138,6 @@ Size and isEmpty
 For next time
 =============
 
+* Look into the :doc:`nested node class aside. </topic8-nested>`
 * Read Chapter 4 Section 6
     * 13 pages
