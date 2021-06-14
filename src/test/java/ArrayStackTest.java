@@ -62,7 +62,7 @@ class ArrayStackTest {
     @Test
     @DisplayName("Push and Pop returns in LIFO order.")
     void pushingAndPoppingReturnsElementsInLIFOOrder() {
-        Stack<Integer> stack = new ArrayStack<>(5);
+        Stack<Integer> stack = new ArrayStack<>();
         for (int i = 0; i < 6; ++i) {
             stack.push(i);
         }
@@ -74,14 +74,14 @@ class ArrayStackTest {
     @Test
     @DisplayName("Pop throws EmptyStackException when stack is empty.")
     void popEmptyStackThrowsException() {
-        Stack<Integer> stack = new ArrayStack<>(5);
+        Stack<Integer> stack = new ArrayStack<>();
         assertThrows(EmptyStackException.class, () -> stack.pop());
     }
 
     @Test
     @DisplayName("Peek throws EmptyStackException when stack is empty.")
     void peekEmptyStackThrowsException() {
-        Stack<Integer> stack = new ArrayStack<>(5);
+        Stack<Integer> stack = new ArrayStack<>();
         assertThrows(EmptyStackException.class, () -> stack.peek());
     }
 }

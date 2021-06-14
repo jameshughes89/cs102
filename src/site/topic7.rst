@@ -165,6 +165,14 @@ Node Implementation
 ===================
 
 
+.. image:: img/links_reference.png
+   :width: 500 px
+   :align: center
+
+* Remember, reference variables contain a reference to an object
+* The linked structure uses these references to link it together
+
+
 * The node implementation for the singly linked structure is kept simple
     * A field to keep track of the data
     * A field to keep track of the next/successor node
@@ -204,6 +212,7 @@ Node Implementation
             this.next = next;
         }
     }
+
 
 Explore the Implementation
 --------------------------
@@ -247,7 +256,11 @@ Variations
 Doubly Linked
 -------------
 
+.. image:: img/links_double.png
+   :width: 500 px
+   :align: center
 
+* How would our ``Node`` implementation need to change to achieve this?
 
 For next time
 =============
