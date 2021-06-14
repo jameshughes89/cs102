@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 import java.util.EmptyStackException;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 class ArrayStackTest {
 
@@ -19,7 +18,6 @@ class ArrayStackTest {
     @DisplayName("An empty stack has size 0.")
     void emptyStackHasSizeZero() {
         Stack<Integer> stack = new ArrayStack<>();
-        assumeTrue(stack.isEmpty());
         assertEquals(0, stack.size());
     }
 
@@ -28,7 +26,6 @@ class ArrayStackTest {
     void nonEmptyStackIsEmptyReturnsFalse() {
         Stack<Integer> stack = new ArrayStack<>();
         stack.push(99);
-        assumeTrue(stack.size() == 1);
         assertFalse(stack.isEmpty());
     }
 
@@ -69,7 +66,6 @@ class ArrayStackTest {
         for (int i = 0; i < 6; ++i) {
             stack.push(i);
         }
-        assumeTrue(stack.size() == 6);
         for (int i = 5; i >= 0; --i) {
             assertEquals(i, stack.pop());
         }
