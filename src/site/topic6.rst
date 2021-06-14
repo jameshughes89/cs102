@@ -266,6 +266,7 @@ For next time
 =============
 
 * Download and test the :download:`Stack <../main/java/Stack.java>` and  :download:`ArrayStack <../main/java/ArrayStack.java>` code
+* :doc:`Check out the aside on testing </topic6-testing>`
 * Finish reading Chapter 3
     * 16 pages
 
