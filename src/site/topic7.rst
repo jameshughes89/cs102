@@ -21,7 +21,7 @@ Linked Structure
 Nodes
 =====
 
-* A _node_ is a basic unit in our linked structures
+* A *node* is a basic unit in our linked structures
 * Here we are focusing on *singly linked structures*
     * Each node has only one *link*
 
@@ -71,7 +71,9 @@ Adding to the Front
    :width: 500 px
    :align: center
 
+
 * Make the node we want to insert's ``next`` reference the current head
+
 
 .. image:: img/links_addfront1.png
    :width: 500 px

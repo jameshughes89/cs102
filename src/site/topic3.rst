@@ -168,13 +168,13 @@ Getters and Setters
     :linenos:
     :emphasize-lines: 2
 
-    public String getFirstName() {
-        return firstName;
-    }
+        public String getFirstName() {
+            return firstName;
+        }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+        public void setFirstName(String firstName) {
+            this.firstName = firstName;
+        }
 
 * Getter and setter for ``firstName``
     * Would be the same for ``lastName``
@@ -193,17 +193,17 @@ Getters and Setters
 .. code-block:: java
     :linenos:
 
-    /**
-     * Update the email address. Will only work if the email address
-     * contains the @ symbol for simple data correctness check
-     *
-     * @param email     new email address
-     */
-    public void setEmail(String email) {
-        if (email.contains("@")) {
-            this.email = email;
+        /**
+         * Update the email address. Will only work if the email address
+         * contains the @ symbol for simple data correctness check
+         *
+         * @param email     new email address
+         */
+        public void setEmail(String email) {
+            if (email.contains("@")) {
+                this.email = email;
+            }
         }
-    }
 
 toString
 ^^^^^^^^
@@ -239,9 +239,9 @@ toString
 .. code-block:: java
     :linenos:
 
-    public String toString() {
-        return firstName + " " + lastName + ":\t" + email;
-    }
+        public String toString() {
+            return firstName + " " + lastName + ":\t" + email;
+        }
 
 * And like Python, we can simply print it and ``toString`` will automatically get called
     * ``System.out.println(aFriend);``
@@ -284,19 +284,19 @@ equals
 .. code-block:: java
     :linenos:
 
-    /**
-     * Sample equals method for comparing two friend objects.
-     * In this example, we will simply compare first and last
-     * names.
-     *
-     * This example is deliberately kept very simple
-     *
-     * @return      if the two friend objects are equal
-     */
-    public boolean equals(Friend other) {
-        return this.firstName.equals(other.firstName)
-                && this.lastName.equals(other.lastName);
-    }
+        /**
+         * Sample equals method for comparing two friend objects.
+         * In this example, we will simply compare first and last
+         * names.
+         *
+         * This example is deliberately kept very simple
+         *
+         * @return      if the two friend objects are equal
+         */
+        public boolean equals(Friend other) {
+            return this.firstName.equals(other.firstName)
+                    && this.lastName.equals(other.lastName);
+        }
 
 * Notice how we actually use the string's `equals` too
 * In the above example, using ``this`` is not necessary, but may be helpful in eliminating ambiguity
@@ -438,20 +438,25 @@ Setting Fields and Writing the Constructor
 .. code-block:: java
     :linenos:
 
-    static final int DEFAULT_CAPACITY = 10;
+    public class ContactList {
 
-    private int capacity;
-    private int friendCount;
-    private Friend[] friends;
+        static final int DEFAULT_CAPACITY = 10;
 
-    public ContactList() {
-        friendCount = 0;
-        friends = new Friend[DEFAULT_CAPACITY];
+        private int capacity;
+        private int friendCount;
+        private Friend[] friends;
+
+        public ContactList() {
+            friendCount = 0;
+            friends = new Friend[DEFAULT_CAPACITY];
+        }
+
+        public ContactList(int capacity) {
+            friendCount = 0;
+            friends = new Friend[capacity];
+        }
     }
 
-    public ContactList(int capacity) {
-        friendCount = 0;
-        friends = new Friend[capacity];
 
 * First, notice that we actually wrote two constructors
     * Overloading
@@ -495,41 +500,41 @@ Adding Friends
     :linenos:
     :emphasize-lines: 16, 17, 18
 
-    /**
-     * Add a new friend to the friends array. Will create an instance
-     * of a Friend based on parameters. If our array runs out of space
-     * we will expand capacity to manage the situation.
-     *
-     * @param firstName     friends first name
-     * @param lastName      friends last name
-     * @param email         friends email address
-     */
-    public void add(String firstName, String lastName, String email) {
-        // Create the Friend object
-        Friend newFriend = new Friend(firstName, lastName, email);
+        /**
+         * Add a new friend to the friends array. Will create an instance
+         * of a Friend based on parameters. If our array runs out of space
+         * we will expand capacity to manage the situation.
+         *
+         * @param firstName     friends first name
+         * @param lastName      friends last name
+         * @param email         friends email address
+         */
+        public void add(String firstName, String lastName, String email) {
+            // Create the Friend object
+            Friend newFriend = new Friend(firstName, lastName, email);
 
-        // If we have run out of space in our array
-        // we need to deal with it
-        if (friendCount == friends.length) {
-            expandCapacity();
+            // If we have run out of space in our array
+            // we need to deal with it
+            if (friendCount == friends.length) {
+                expandCapacity();
+            }
+            // Add friend to the next available spot
+            friends[friendCount] = newFriend;
+            friendCount++;
         }
-        // Add friend to the next available spot
-        friends[friendCount] = newFriend;
-        friendCount++;
-    }
 
-    private void expandCapacity() {
-        // Make a new array of twice the size of the previous
-        Friend[] newFriends = new Friend[friends.length * 2];
+        private void expandCapacity() {
+            // Make a new array of twice the size of the previous
+            Friend[] newFriends = new Friend[friends.length * 2];
 
-        // Copy over the contents of the friends list
-        // to the new bigger friends list
-        for(int i = 0; i < friends.length; ++i) {
-            newFriends[i] = friends[i];
+            // Copy over the contents of the friends list
+            // to the new bigger friends list
+            for(int i = 0; i < friends.length; ++i) {
+                newFriends[i] = friends[i];
+            }
+            // Have friends now reference the new friends
+            friends = newFriends;
         }
-        // Have friends now reference the new friends
-        friends = newFriends;
-    }
 
 * You may notice that ``friendCount`` plays double duty here --- friends count and next available spot in the array
 
@@ -563,22 +568,22 @@ Remove Friends
     :linenos:
     :emphasize-lines: 8, 11
 
-    public void remove(String firstName, String lastName) {
-        // Create a temp friend object for easy
-        // use of the Friend class' equals()
-        Friend toDelete = new Friend(firstName, lastName, "");
+        public void remove(String firstName, String lastName) {
+            // Create a temp friend object for easy
+            // use of the Friend class' equals()
+            Friend toDelete = new Friend(firstName, lastName, "");
 
-        // Linear search for the friend we are trying to delete
-        for (int i = 0; i < friendCount; ++i) {
-            if (toDelete.equals(friends[i])) {
-                // Have friend at the end of the array be referenced
-                // by the array index we removed from
-                friends[i] = friends[friendCount - 1];
-                friends[friendCount - 1] = null;
-                friendCount--;
+            // Linear search for the friend we are trying to delete
+            for (int i = 0; i < friendCount; ++i) {
+                if (toDelete.equals(friends[i])) {
+                    // Have friend at the end of the array be referenced
+                    // by the array index we removed from
+                    friends[i] = friends[friendCount - 1];
+                    friends[friendCount - 1] = null;
+                    friendCount--;
+                }
             }
         }
-    }
 
 * We'll create a temporary ``Friend`` based on the parameters so we can make use of our ``Friend`` class' ``.equals``
 * To remove the ``Friend`` all we need to do it lose reference to it
@@ -610,18 +615,18 @@ Update Friend's Email
 .. code-block:: java
     :linenos:
 
-    public void updateEmail(String firstName, String lastName, String newEmail) {
-        // Create a temp friend object for easy
-        // use of the Friend class' equals()
-        Friend toUpdate = new Friend(firstName, lastName, "");
+        public void updateEmail(String firstName, String lastName, String newEmail) {
+            // Create a temp friend object for easy
+            // use of the Friend class' equals()
+            Friend toUpdate = new Friend(firstName, lastName, "");
 
-        // Linear search for the friend we are trying to update
-        for (int i = 0; i < friendCount; ++i) {
-            if (toUpdate.equals(friends[i])) {
-                friends[i].setEmail(newEmail);
+            // Linear search for the friend we are trying to update
+            for (int i = 0; i < friendCount; ++i) {
+                if (toUpdate.equals(friends[i])) {
+                    friends[i].setEmail(newEmail);
+                }
             }
         }
-    }
 
 Index Of Friend
 ^^^^^^^^^^^^^^^
@@ -634,39 +639,39 @@ Index Of Friend
     :linenos:
     :emphasize-lines: 18, 29
 
-    public int indexOf(String firstName, String lastName) {
-        // Create a temp friend object for easy
-        // use of the Friend class' equals()
-        Friend toFind = new Friend(firstName, lastName, "");
+        public int indexOf(String firstName, String lastName) {
+            // Create a temp friend object for easy
+            // use of the Friend class' equals()
+            Friend toFind = new Friend(firstName, lastName, "");
 
-        // Linear search for the friend we are trying to find
-        for (int i = 0; i < friendCount; ++i) {
-            if (toFind.equals(friends[i])) {
-                return i;
+            // Linear search for the friend we are trying to find
+            for (int i = 0; i < friendCount; ++i) {
+                if (toFind.equals(friends[i])) {
+                    return i;
+                }
+            }
+            // -1 will signify that we didn't find
+            // what we were looking for
+            return -1;
+        }
+
+        public void remove(String firstName, String lastName) {
+            int friendIndex = indexOf(firstName, lastName);
+            if (friendIndex != -1) {
+                // Have friend at the end of the array be referenced
+                // by the array index we removed from
+                friends[friendIndex] = friends[friendCount - 1];
+                friends[friendCount - 1] = null;
+                friendCount--;
             }
         }
-        // -1 will signify that we didn't find
-        // what we were looking for
-        return -1;
-    }
 
-    public void remove(String firstName, String lastName) {
-        int friendIndex = indexOf(firstName, lastName);
-        if (friendIndex != -1) {
-            // Have friend at the end of the array be referenced
-            // by the array index we removed from
-            friends[friendIndex] = friends[friendCount - 1];
-            friends[friendCount - 1] = null;
-            friendCount--;
+        public void updateEmail(String firstName, String lastName, String newEmail) {
+            int friendIndex = indexOf(firstName, lastName);
+            if (friendIndex != -1) {
+                friends[friendIndex].setEmail(newEmail);
+            }
         }
-    }
-
-    public void updateEmail(String firstName, String lastName, String newEmail) {
-        int friendIndex = indexOf(firstName, lastName);
-        if (friendIndex != -1) {
-            friends[friendIndex].setEmail(newEmail);
-        }
-    }
 
 .. warning::
 
@@ -684,15 +689,15 @@ Get
     :linenos:
     :emphasize-lines: 3
 
-    public Friend get(int index) {
-        // Make sure the index provided is valid
-        if (index > -1 && index < friendCount) {
-            return friends[index];
+        public Friend get(int index) {
+            // Make sure the index provided is valid
+            if (index > -1 && index < friendCount) {
+                return friends[index];
+            }
+            else {
+                return null;
+            }
         }
-        else {
-            return null;
-        }
-    }
 
 * Realistically, the check on the index here could be much better, but we will talk about this stuff later in the course
 
@@ -701,10 +706,10 @@ Get
 .. code-block:: java
     :linenos:
 
-    public Friend get(String firstName, String lastName) {
-        int index = indexOf(firstName, lastName);
-        return get(index);
-    }
+        public Friend get(String firstName, String lastName) {
+            int index = indexOf(firstName, lastName);
+            return get(index);
+        }
 
 * Easy to write since we make use of the functions that exist that do all the work for us already
 
@@ -715,10 +720,10 @@ Clear Friends
 .. code-block:: java
     :linenos:
 
-    public void clear() {
-        friends = new Friend[friends.length];
-        friendCount = 0;
-    }
+        public void clear() {
+            friends = new Friend[friends.length];
+            friendCount = 0;
+        }
 
 * For this, just make a new, empty array of the same size of the original array
 * Since the old array referenced by ``friends`` has no more reference, it get managed by the garbage collector
@@ -739,13 +744,13 @@ toString
     :linenos:
     :emphasize-lines: 4
 
-    public String toString() {
-        String s = "";
-        for (int i = 0; i < friendCount; ++i) {
-            s = s + friends[i].toString() + "\n";
+        public String toString() {
+            String s = "";
+            for (int i = 0; i < friendCount; ++i) {
+                s = s + friends[i].toString() + "\n";
+            }
+            return s;
         }
-        return s;
-    }
 
 * Notice that we can actually make good use of the ``Friend`` class' ``toString`` method
 
@@ -754,6 +759,7 @@ toString
 
     Although the above example is correct, in practice we'd want to use something called a ``StringBuilder``.
     :doc:`See this aside for more details. </topic3-builder>`
+
 
 Friend Count
 ^^^^^^^^^^^^
@@ -764,29 +770,10 @@ Friend Count
 .. code-block:: java
     :linenos:
 
-    public int size() {
-        return friendCount;
-    }
-
-.. code-block:: java
-    :linenos:
-    :emphasize-lines: 4
-
-    public String toString() {
-        String s = "";
-        for (int i = 0; i < friendCount; ++i) {
-            s = s + friends[i].toString() + "\n";
+        public int size() {
+            return friendCount;
         }
-        return s;
-    }
 
-* Notice that we can actually make good use of the ``Friend`` class' ``toString`` method
-
-
-.. warning::
-
-    Although the above example is correct, in practice we'd want to use something called a ``StringBuilder``.
-    :doc:`See this aside for more details. </topic3-builder>`
 
 What We Get
 ===========
