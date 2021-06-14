@@ -208,6 +208,33 @@ Node Implementation
 Explore the Implementation
 --------------------------
 
+.. code-block:: java
+    :linenos:
+
+    // Create a Node
+    Node<Integer> head = new Node<Integer>(5);
+    System.out.println(head.getData());
+
+    // Make a linked structure of the numbers 0 -- 9
+    Node<Integer> currentNode = head;
+    Node<Integer> newNode;
+
+    for (int i = 1; i < 10; ++i) {
+        newNode = new Node<Integer>(i);
+        currentNode.setNext(newNode);
+        currentNode = currentNode.getNext();
+    }
+
+    // Print the contents of the linked structure
+    currentNode = head;
+    while (currentNode!= null) {
+        System.out.println(currentNode.getData());
+        currentNode = currentNode.getNext();
+    }
+
+    // Try adding to the front, middle, and end of the structure
+
+    // Try removing from the front, middle, and end of the structure
 
 
 Variations
@@ -225,5 +252,7 @@ Doubly Linked
 For next time
 =============
 
+* Download and play with the :download:`Node.java <../main/java/Node.java>` file
+* Try writing code to add/remove from the front/middle/end of the linked structure
 * Read Chapter 4 Sections 1 -- 3
     * 7 pages
