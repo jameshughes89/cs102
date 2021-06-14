@@ -164,6 +164,47 @@ Deleting from the End
 Node Implementation
 ===================
 
+
+* The node implementation for the singly linked structure is kept simple
+    * A field to keep track of the data
+    * A field to keep track of the next/successor node
+    * Constructors
+    * Getters and setters
+
+.. code-block:: java
+    :linenos:
+
+    public class Node<T> {
+
+        private T data;
+        private Node<T> next;
+
+        public Node() {
+            this(null);
+        }
+
+        public Node(T data) {
+            this.data = data;
+            this.next = null;
+        }
+
+        public T getData() {
+            return data;
+        }
+
+        public void setData(T data) {
+            this.data = data;
+        }
+
+        public Node<T> getNext() {
+            return next;
+        }
+
+        public void setNext(Node<T> next) {
+            this.next = next;
+        }
+    }
+
 Explore the Implementation
 --------------------------
 
