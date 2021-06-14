@@ -128,7 +128,7 @@ Size and isEmpty
 
         @Override
         public int size() {
-            return size;m
+            return size;
         }
 
 * The ``LinkedStack`` is empty if its ``size == 0``
