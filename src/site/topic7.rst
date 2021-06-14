@@ -49,6 +49,27 @@ Adding to the Front
 Adding to the Middle
 --------------------
 
+.. image:: img/links_addmiddle0.png
+   :width: 500 px
+   :align: center
+
+* Make the node we want to insert's next point to the current head
+
+.. image:: img/links_addmiddle1.png
+   :width: 500 px
+   :align: center
+
+* Make head, the reference to the start of the linked structure, point to the new node
+
+.. image:: img/links_addmiddle2.png
+   :width: 500 px
+   :align: center
+
+.. image:: img/links_addmiddle3.png
+   :width: 500 px
+   :align: center
+
+
 Adding to the End
 -----------------
 
