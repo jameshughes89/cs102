@@ -122,7 +122,11 @@ Variations
 Doubly Linked
 -------------
 
+.. image:: img/links_double.png
+   :width: 500 px
+   :align: center
 
+* How would our ``Node`` implementation need to change to achieve this?
 
 For next time
 =============
