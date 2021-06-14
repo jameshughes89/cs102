@@ -33,7 +33,7 @@ JUnit
 * We will focus on three special things (there is a lot more to it then what will be covered here)
     * ``@Test`` annotation
     * ``@DisplayName`` annotation
-    * Assertions 
+    * Assertions
 
 * Assuming you are using IntelliJ, here is a simple way to setup JUnit
 
@@ -57,7 +57,7 @@ JUnit
    :align: center
 
 4. Create a new class for testing called something appropriate
-    * Perhaps ``TestArrayStack`` for the below example
+    * Perhaps ``ArrayStackTest`` for the below example
 
 5. We need to add JUnit to our class path and a simple way to do it is write ``@Test`` in the new class and hit Alt-Enter
 6. Select *Add 'JUnit5....*
