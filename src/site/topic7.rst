@@ -212,7 +212,7 @@ Explore the Implementation
     :linenos:
 
     // Create a Node
-    Node<Integer> head = new Node<Integer>(5);
+    Node<Integer> head = new Node<>(5);
     System.out.println(head.getData());
 
     // Make a linked structure of the numbers 0 -- 9
@@ -220,7 +220,7 @@ Explore the Implementation
     Node<Integer> newNode;
 
     for (int i = 1; i < 10; ++i) {
-        newNode = new Node<Integer>(i);
+        newNode = new Node<>(i);
         currentNode.setNext(newNode);
         currentNode = currentNode.getNext();
     }
