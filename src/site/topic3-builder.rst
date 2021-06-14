@@ -15,11 +15,11 @@ Topic #3 Aside --- Builder
 .. code-block:: java
     :linenos:
 
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < friendCount; ++i) {
-            builder.append(friends[i]);
-            builder.append("\n");
+        public String toString() {
+            StringBuilder builder = new StringBuilder();
+            for (int i = 0; i < friendCount; ++i) {
+                builder.append(friends[i]);
+                builder.append("\n");
+            }
+            return builder.toString();
         }
-        return builder.toString();
-    }
