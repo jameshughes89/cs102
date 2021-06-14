@@ -45,6 +45,10 @@ Implementing a Stack --- Linked Container
    :align: center
 
 
+Implementation
+--------------
+
+
 
 For next time
 =============
