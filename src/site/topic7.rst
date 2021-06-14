@@ -107,6 +107,13 @@ Deleting from the End
 Node Implementation
 ===================
 
+.. image:: img/links_reference.png
+   :width: 500 px
+   :align: center
+
+* Remember, reference variables contain a reference to an object
+* The linked structure uses these references to link it together
+
 Explore the Implementation
 --------------------------
 
