@@ -48,6 +48,91 @@ Implementing a Stack --- Linked Container
 Implementation
 --------------
 
+.. code-block:: java
+    :linenos:
+
+    import java.util.EmptyStackException;
+
+    public class LinkedStack<T> implements Stack<T> {
+
+        private Node<T> top;
+        private int size;
+
+        public LinkedStack() {
+            top = null;
+            size = 0;
+        }
+
+* Like the ``ArrayStack``, we want our ``LinkedStack`` to implement the ``Stack`` interface
+* The constructor starts the stack as empty with nothing on it
+
+
+Push
+^^^^
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 4, 5
+
+        @Override
+        public void push(T element) {
+            Node<T> toPush = new Node<T>(element);
+            toPush.setNext(top);
+            top = toPush;
+            size++;
+        }
+
+* In ``push``, notice how this is just *adding to the front of a linked structure*
+
+
+Pop & Peek
+^^^^^^^^^^
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 7
+
+        @Override
+        public T pop() {
+            if (isEmpty()) {
+                throw new EmptyStackException();
+            }
+            T returnElement = top.getData();
+            top = top.getNext();
+            size--;
+            return returnElement;
+        }
+
+        @Override
+        public T peek() {
+            if (isEmpty()) {
+                throw new EmptyStackException();
+            }
+            return top.getData();
+        }
+
+* Like the ``ArrayStack``, popping or peeking from an empty stack throws an exception
+* Notice how ``pop`` does a *remove/delete from the front of a linked structure*
+
+
+Size and isEmpty
+^^^^^^^^^^^^^^^^
+
+.. code-block:: java
+    :linenos:
+
+        @Override
+        public boolean isEmpty() {
+            return size == 0;
+        }
+
+        @Override
+        public int size() {
+            return size;
+        }
+
+* The ``LinkedStack`` is empty if its ``size == 0``
+    * Can you think of another way to check if it's empty?
 
 
 For next time
