@@ -13,6 +13,7 @@ Topic #8 Aside --- Nested Node Class
 
 * Also consider that the ``Node`` class would only be used for a linked implementation of something
     * As far as the user of a ``LinkedStack`` is concerned, they don't care about the ``Node`` class, they just care that the ``LinkedStack`` works
+        * *I don't know, I don't want to know*
     * Kinda like the private method ``expandCapacity`` in the ``ArrayStack``
 
 * Does it make sense to have the ``Node`` class accessible from everywhere?
@@ -30,6 +31,7 @@ Nested Classes
 * If we nest it within a class using the doubly linked structure, we can call it ``Node``, but give it ``next`` and ``previous``
 * And we will not introduce any ambiguity since the singly linked and doubly linked structure nodes are nested within their respective classes
 
+* We can achieve similar results with packages, but since the two classes are inextricably connected, nesting ``Node`` just makes sense
 
 Nesting in LinkedStack
 ======================
