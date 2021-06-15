@@ -128,7 +128,7 @@ Constructors
     * ``@SuppressWarnings("unchecked")``
 
 
-* Creating an instance ``Stack<Integer> s = new ArrayStack<Integer>(5);``
+* Creating an instance ``Stack<Integer> s = new ArrayStack<>(5);``
 
         .. image:: img/arraystack_empty.png
            :width: 500 px
@@ -279,7 +279,7 @@ Code
     :linenos:
 
     // Create an ArrayStack
-    Stack<Integer> myStack = new ArrayStack<Integer>(5);
+    Stack<Integer> myStack = new ArrayStack<>(5);
 
     // Check stack is empty
     System.out.println(myStack.size());
