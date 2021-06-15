@@ -78,7 +78,8 @@ Also keep in mind that there are categories of content
     * If we cannot understand, it will not be addressed
 * Use the style guide below
 * [Link to any relevant issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-issues/linking-a-pull-request-to-an-issue)  
-* Not all headers make sense in all cases, so write N/A where appropriate
+* Not all headers make sense in all cases, remove header where appropriate
+    * If you feel it necessary to include the header still, write N/A or Self-Explanatory where appropriate 
 
 ## Style Guidelines
 
