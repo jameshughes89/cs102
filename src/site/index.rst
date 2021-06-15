@@ -25,7 +25,7 @@ Professor
 GitHub Repo
 ===========
 
-* The course content is available on `GitHub<https://github.com/jameshughes89/cs102>`_
+* The course content is available on `GitHub <https://github.com/jameshughes89/cs102>`_
 * Feel free to submit issues, fork the repo, and submit pull requests
    * Follow the guidelines
 * In other words, feel free to make contributions to the course content
