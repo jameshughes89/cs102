@@ -1,19 +1,22 @@
-# Pull Request Template
-1. Copy the template from below
-2. Replace this text with the template
-3. Fill in template
-4. Select "Create pull request"
-    
-## :memo: :lipstick: :new: :bomb: :bug: :art: Template :memo: :lipstick: :new: :bomb: :bug: :art: 
-* Fill out the template below
-    * If all points do not make sense for your Issue, that's OK, just use what you need
-* [Link to any relevant issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-issues/linking-a-pull-request-to-an-issue)
+:memo: :lipstick: :new: :bomb: :bug: :art: Replace this line with only relevant emojis
 
-**Delete this and everything above**
-* Start with relevant emojis on the same line
-* Add links to Issues and/or PRs on the emoji line
-* In a new paragraph, what is the change? Explain in detail.
-* In a new paragraph, why make the change? What value does it create?
-* In a new paragraph, why does the change occur where it does?
-    * Should it be an aside?
-* In a new paragraph, is there any potential copyright issue with your change?
+## Issues or PRs
+If applicable, replace this text with links to issues and other PRs. [Link with a keyword if you can.](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-issues/linking-a-pull-request-to-an-issue)
+
+## What
+Replace this text with a detailed description of what the change is.
+
+## Why
+Replace this text with a detailed description of why this is important.
+
+## Where
+Replace this text with a detailed description of where the change is and why (should it be an aside?).
+
+## How
+Replace this text with a detailed description of how it is addressed.
+
+## Testing
+If applicable, replace this text with a detailed description of how changes were tested. Include manual testing.
+
+## Additional Notes
+If applicable, replace this text with additional notes. Copyright concerns? etc.

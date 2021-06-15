@@ -1,8 +1,52 @@
 # Contributing to cs102
 
-Keep in mind that this is a first year CS course. 
+## This is a First Year Course
 
-Also keep in mind that there are categories of content:
+Keep content contributions at an appropriate level for students.
+
+At this stage they should be familiar with:
+* Variables
+* Types
+* I/O
+* Functions
+* Conditionals
+* Loops
+* Strings
+* Arrays/Lists (linear collection)
+* Objects
+* A little searching and sorting  
+* A little complexity analysis
+* Very little recursion
+
+The core learning objectives and topics for this course are:
+* Abstraction
+* Objects 
+* Linked Structures  
+* Linear Data Structures
+    * Stacks
+    * Queues
+    * Lists
+* Nonlinear Data Structures
+    * Some Trees
+* Interfaces
+* Inheritance
+* Iterators  
+* Algorithm Analysis
+* Recursion
+* Searching and Sorting Algorithms
+
+Topics at a similar level that are considered out of scope may be:
+* General Inserts/Removals from a Tree
+* Self-Balancing Trees  
+* Graphs
+* Graph Algorithms
+* Hashing/Maps
+
+Although no programming language is a learning objective, Java-*isms* are presented where necessary. Additional Java design ideas are welcome, but keep them simple enough to be accessible for the level of studnet. 
+
+
+## Content Categories
+Also keep in mind that there are categories of content
 * Topics
   * Asides
 * Code
@@ -25,12 +69,16 @@ Also keep in mind that there are categories of content:
 * Use issues to suggest content
 * Use issues to suggest changes
 
-#### Submitting a Good Issue
-* Use the template
-
 ### Pull Requests
-* Use the template
-* Follow the style guidelines below
+* Fork and submit PRs to contribute to the repo
+
+### Submitting a Good Issue/Pull Request
+* Complete the provided template by leaving the headers filling in the sections
+* Communicate effectively
+    * If we cannot understand, it will not be addressed
+* Use the style guide below
+* [Link to any relevant issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-issues/linking-a-pull-request-to-an-issue)  
+* Not all headers make sense in all cases, so write N/A where appropriate
 
 ## Style Guidelines
 ### Git Commit Messages

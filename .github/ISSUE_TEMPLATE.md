@@ -1,21 +1,22 @@
-# Issue Template
-1. Remove this text
-2. Fill in template
-3. Select "Create pull request"
-    
-## :memo: :lipstick: :new: :bomb: :bug: :art: Template :memo: :lipstick: :new: :bomb: :bug: :art: 
-* Fill out the template below
-    * If all points do not make sense for your Issue, that's OK, just use what you need
-* [Link to any relevant issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-issues/linking-a-pull-request-to-an-issue)
+:memo: :lipstick: :new: :bomb: :bug: :art: Replace this line with relevant emojis
 
-**Delete this and everything above** 
-* Start with relevant emojis on the same line
-* Add links to Issues and/or PRs on the emoji line  
-* In a new paragraph, what is the issue or idea/suggestion? Explain in detail.
-* In a new paragraph, why is this important?
-* In a new paragraph, where should this be addressed?
-* If a bug, in a new paragraph, how to reproduce
+## Issues or PRs
+Replace this text with links to issues and other PRs. [Link with a keyword if you can.](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-issues/linking-a-pull-request-to-an-issue)
 
+## What 
+Replace this text with a detailed description of what the issue or idea/suggestion is.
 
+## Why
+Replace this text with a detailed description of why this is important.
 
+## Where
+Replace this text with a detailed description of where the issue is or where it should be addressed.
 
+## How
+Replace this text with a detailed description of any suggestions on how to address.
+
+## Reproduce
+If applicable, replace this text with a detailed description of how to reproduce a bug.
+
+## Additional Notes
+If applicable, replace this text with additional notes.
