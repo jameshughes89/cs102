@@ -78,7 +78,8 @@ Also keep in mind that there are categories of content
     * If we cannot understand, it will not be addressed
 * Use the style guide below
 * [Link to any relevant issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-issues/linking-a-pull-request-to-an-issue)  
-* Not all headers make sense in all cases, so write N/A where appropriate
+* Not all headers make sense in all cases, remove header where appropriate
+    * If you feel it necessary to include the header still, write N/A or Self-Explanatory where appropriate 
 
 ## Style Guidelines
 
@@ -90,10 +91,10 @@ Also keep in mind that there are categories of content
 * If appropriate, include Topic# in titles
   * e.g., _Topic4 Add details on ..._
 * Feel free to use the following emojis (multiple where applicable):
-    * :memo: `:memo:` when changing/updating content/files
-    * :lipstick: `:lipstick:` when improving the format/structure/layout of content/files    
     * :new: `:new:` when adding new content/files
+    * :memo: `:memo:` when changing/updating content/files
     * :bomb: `:bomb:` when removing content/files
+    * :lipstick: `:lipstick:` when improving the format/structure/layout of content/files
     * :bug: `:bug:` when fixing a bug or typo
     * :art: `:art:` when adding/updating an image
   
