@@ -42,7 +42,7 @@ Topics at a similar level that are considered out of scope may be:
 * Graph Algorithms
 * Hashing/Maps
 
-Although no programming language is a learning objective, Java-*isms* are presented where necessary. Additional Java design ideas are welcome, but keep them simple enough to be accessible for the level of studnet. 
+Although no programming language is a learning objective, Java-*isms* are presented where necessary. Additional Java design ideas are welcome, but keep them simple enough to be accessible for the level of student. 
 
 
 ## Content Categories
