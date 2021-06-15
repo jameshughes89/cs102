@@ -81,12 +81,14 @@ Also keep in mind that there are categories of content
 * Not all headers make sense in all cases, so write N/A where appropriate
 
 ## Style Guidelines
-### Git Commit Messages
+
 * Use present tense
     * Good: "Add", "Change", "Update", "Remove"
     * Bad: "Added", "Changing", "Updated", "Removing"
 * Keep messages brief, but descriptive
 * Reference issues and pull requests liberally
+* If appropriate, include Topic# in titles
+  * e.g., _Topic4 Add details on ..._
 * Feel free to use the following emojis (multiple where applicable):
     * :memo: `:memo:` when changing/updating content/files
     * :lipstick: `:lipstick:` when improving the format/structure/layout of content/files    
@@ -95,6 +97,3 @@ Also keep in mind that there are categories of content
     * :bug: `:bug:` when fixing a bug or typo
     * :art: `:art:` when adding/updating an image
   
-### Issue and Pull Request Titles
-* If appropriate, include Topic# in title
-  * e.g., _Topic4 Add details on ..._ 
