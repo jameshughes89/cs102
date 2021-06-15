@@ -1,3 +1,4 @@
+:memo: :lipstick: :new: :bomb: :bug: :art: Add relevant emojis to title. [See style guide.](https://github.com/jameshughes89/cs102/blob/contribute/CONTRIBUTING.md#style-guidelines)
 :memo: :lipstick: :new: :bomb: :bug: :art: Replace this line with only relevant emojis
 
 ### Issues or PRs
