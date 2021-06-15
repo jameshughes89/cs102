@@ -226,6 +226,18 @@ There has to be a Better Way!
 * We have gotten a little ahead of ourselves, but the takeaway is, when we create the instance of the stack, we specify the type we want within the ``<`` and ``>`` brackets
     * We will talk a little more about this in the next topic
 
+.. warning::
+
+    We do not actually need to include the ``<Type>`` on the instantiation side. From now on, for simplicity, I will use the *diamond operator*(``<>``) like so:
+
+        .. code-block:: java
+            :linenos:
+
+                    Stack<Integer> myIntegerStack = new ArrayStack<>();
+                    Stack<String> myStringStack = new ArrayStack<>();
+                    Stack<Friend> myFriendStack = new ArrayStack<>();
+
+
 
 For next time
 =============
