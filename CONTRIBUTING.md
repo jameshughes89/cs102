@@ -90,10 +90,10 @@ Also keep in mind that there are categories of content
 * If appropriate, include Topic# in titles
   * e.g., _Topic4 Add details on ..._
 * Feel free to use the following emojis (multiple where applicable):
-    * :memo: `:memo:` when changing/updating content/files
-    * :lipstick: `:lipstick:` when improving the format/structure/layout of content/files    
     * :new: `:new:` when adding new content/files
+    * :memo: `:memo:` when changing/updating content/files
     * :bomb: `:bomb:` when removing content/files
+    * :lipstick: `:lipstick:` when improving the format/structure/layout of content/files
     * :bug: `:bug:` when fixing a bug or typo
     * :art: `:art:` when adding/updating an image
   
