@@ -1,22 +1,22 @@
 :memo: :lipstick: :new: :bomb: :bug: :art: Replace this line with only relevant emojis
 
-## Issues or PRs
+### Issues or PRs
 If applicable, replace this text with links to issues and other PRs. [Link with a keyword if you can.](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-issues/linking-a-pull-request-to-an-issue)
 
-## What
+### What
 Replace this text with a detailed description of what the change is.
 
-## Why
+### Why
 Replace this text with a detailed description of why this is important.
 
-## Where
+### Where
 Replace this text with a detailed description of where the change is and why (should it be an aside?).
 
-## How
+### How
 Replace this text with a detailed description of how it is addressed.
 
-## Testing
+### Testing
 If applicable, replace this text with a detailed description of how changes were tested. Include manual testing.
 
-## Additional Notes
+### Additional Notes
 If applicable, replace this text with additional notes. Copyright concerns? etc.
