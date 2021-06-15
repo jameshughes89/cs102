@@ -1,6 +1,6 @@
-
+************************
 CSCI 162 --- Winter 2022
-========================
+************************
 
 .. warning::
 
@@ -13,7 +13,7 @@ used (e.g. searching and sorting) are used to introduce algorithm analysis.
 
 
 Professor
-^^^^^^^^^
+=========
 
 * Dr. James Hughes
 * jhughes at stfx.ca
@@ -22,8 +22,18 @@ Professor
 * `Twitch "Office Hours" <https://www.twitch.tv/conlabx>`_
 
 
+GitHub Repo
+===========
+
+* The course content is available on `GitHub<https://github.com/jameshughes89/cs102>`_
+* Feel free to submit issues, fork the repo, and submit pull requests
+   * Follow the guidelines
+* In other words, feel free to make contributions to the course content
+   * In fact, I encourage this
+
+
 Class Times
-^^^^^^^^^^^
+===========
 
 * Tue 11:15 - 12:05 (K4), TBD
 * Wed 13:15 - 14:05 (K5), TBD
@@ -31,14 +41,14 @@ Class Times
 
 
 Labs
-^^^^
+====
 
 * Sec 1: Thr 14:15 -- 16:05 (L8-A9), TBD
 * Sec 2: Fri 14:15 -- 16:05 (C9-K9), TBD
 
 
 Office Hours
-^^^^^^^^^^^^
+============
 
 `Office Hours Etiquette --- Don't Do This. <https://www.youtube.com/watch?v=lOTyUfOHgas>`_
 
@@ -55,12 +65,13 @@ Office Hours
 
 
 Learning Centre
-^^^^^^^^^^^^^^^
-`We have a *learning centre* that provides help. <https://www2.mystfx.ca/mscs/learning-centre>`_
+===============
+
+`We have a learning centre that provides help. <https://www2.mystfx.ca/mscs/learning-centre>`_
 
 
 MSCS Tutorial Nights
-^^^^^^^^^^^^^^^^^^^^
+====================
 
 The Math, Stats, and CS Society now has a time and location for our free tutorial sessions. 
 
@@ -68,7 +79,7 @@ The Math, Stats, and CS Society now has a time and location for our free tutoria
 
 
 Getting Started
-^^^^^^^^^^^^^^^
+===============
 
 .. toctree::
     :maxdepth: 1
@@ -77,8 +88,7 @@ Getting Started
 
 
 Course Notes
-^^^^^^^^^^^^
-
+============
 
 .. toctree::
     :maxdepth: 2
@@ -112,8 +122,9 @@ Course Notes
     topic23
     topic24
 
+
 Labs
-^^^^
+====
 
 .. toctree::
     :maxdepth: 1
@@ -122,7 +133,7 @@ Labs
 
     
 Assignments
-^^^^^^^^^^^
+===========
 
 .. toctree::
     :maxdepth: 1
@@ -131,7 +142,7 @@ Assignments
 
    
 Course Outline
-^^^^^^^^^^^^^^
+==============
 
 .. toctree::
     :maxdepth: 1
