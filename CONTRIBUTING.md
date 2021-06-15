@@ -91,10 +91,17 @@ Also keep in mind that there are categories of content
 * If appropriate, include Topic# in titles
   * e.g., _Topic4 Add details on ..._
 * Feel free to use the following emojis (multiple where applicable):
-    * :new: `:new:` when adding new content/files
-    * :memo: `:memo:` when changing/updating content/files
-    * :bomb: `:bomb:` when removing content/files
-    * :lipstick: `:lipstick:` when improving the format/structure/layout of content/files
-    * :bug: `:bug:` when fixing a bug or typo
-    * :art: `:art:` when adding/updating an image
+    * :new: `:new:` New feature, content, files, or request
+    * :bomb: `:bomb:` Remove feature, content, or files
+    * :mortar_board: `:mortar_board:` Related to course content (topics, code, assignments, etc.)
+    * :memo: `:memo:` Documentation related (repo stuff)
+    * :robot: `:robot:` Related to deploying the website
+    * :lipstick: `:lipstick:` Improving the format/structure/layout of content/files
+    * :bug: `:bug:` Bug in Code or Typo
+    * :telescope: `:telescope:` Using different words/code for the same ideas
+    * :art: `:art:` Relating to figures/image
+    * :dancers: `:dancers:` This issue or pull request already exists
+    * :baby: `:baby:` Good for newcomers
+    * :eyes: `:eyes:` Extra attention is needed
+    * :question: `:question:` Further information is requested
   
