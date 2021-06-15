@@ -285,7 +285,7 @@ Playing
     :linenos:
     
     // Create an ArrayStack
-    Stack<Integer> myStack = new LinkedStack<Integer>();
+    Stack<Integer> myStack = new LinkedStack<>();
 
     // Check stack is empty
     System.out.println(myStack.size());
