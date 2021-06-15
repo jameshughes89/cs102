@@ -8,7 +8,7 @@
 * Fill out the template below
 * [Link to any relevant issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-issues/linking-a-pull-request-to-an-issue)
 
-### Description of Change 
+**Delete this and everything above**
 * Start with relevant emojis
 * What is the change? Explain in detail.
 * Why make the change? What value does it create?

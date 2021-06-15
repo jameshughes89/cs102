@@ -49,4 +49,4 @@ Also keep in mind that there are categories of content:
   
 ### Issue and Pull Request Titles
 * If appropriate, include Topic# in title
-  * e.g. _Topic4 Add details on ..._ 
+  * e.g., _Topic4 Add details on ..._ 
