@@ -90,6 +90,11 @@ Growth Function
     highlight that it's about change and growth.
 
 
+Deriving Growth Functions
+==========================
+
+
+
 Asymptotic Growth
 =================
 
