@@ -10,7 +10,7 @@ Queue Operations
     * Remove something from the collection
     * Look at something, but do not remove it
 
-* Within the context of a Queue, we have
+* Within the context of a queue, we have
     * **Enqueue**
         * Add something to the rear/tail
     * **Dequeue**
