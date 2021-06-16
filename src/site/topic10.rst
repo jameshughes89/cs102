@@ -67,6 +67,23 @@ Example Uses
 Interface
 =========
 
+
+.. code-block:: java
+    :linenos:
+
+    public interface Queue <T> {
+
+        // Javadoc comments within Queue.java file
+        void enqueue(T element);
+        T dequeue();
+        T first();
+        boolean isEmpty();
+        int size();
+    }
+
+* Just like the ``Stack`` interface, any implementation of a queue will implement the ``Queue`` interface
+
+
 For next time
 =============
 
