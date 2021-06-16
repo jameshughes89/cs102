@@ -42,6 +42,11 @@ Asymptotic Growth
 * We **do** care about *asymptotic complexity*
     * Fancy way of saying *The time the algorithm takes as a function of* :math:`n` *will grow like...*
 
+* We care about the *order* of the algorithm
+* We specify the order by using *Big-O notation*
+* In our example, :math:`t(n) = 15n^{2} + 45n` is :math:`O(n^{2})` since it grows like :math:`n^{2}`
+
+
 
 Big-O Notation
 ==============
