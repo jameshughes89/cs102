@@ -108,12 +108,70 @@ Statements
 .. code-block:: java
     :linenos:
 
-    int x = 0;
-    int y = 1;
-    int z = x + y;
+    int x = 0;      // 1 unit of work
+    int y = 1;      // 1 unit of work
+    int z = x + y;  // 1 unit of work
 
 **Growth Function:** :math:`t(n) = 3`
 **Order:** :math:`O(1)`
+
+Loops
+-----
+
+* The number of times a loop executes may dependant on some value :math:`n`
+
+.. code-block:: java
+    :linenos:
+
+    int x = 0;                      // 1 unit of work
+    for (int i = 0; i < n; ++i) {
+        x = x + 1;                  // 1 unit of work n times (1*n)
+    }
+
+**Growth Function:** :math:`t(n) = 1 + 1n`
+**Order:** :math:`O(n)`
+
+* We can think of the loop and a number line
+* Every time the loop runs, we put our finger on the next number
+
+.. image:: img/complexity_linear.png
+   :width: 750 px
+   :align: center
+
+* How many things did we put our finger on?
+
+
+Nested Loops
+------------
+
+* Can get hairy, but there's no secret trick beyond the rules we've seen so far
+
+.. code-block:: java
+    :linenos:
+
+    int x = 0;                          // 1 unit of work
+    int y = 0;                          // 1 unit of work
+    for (int i = 0; i < n; ++i) {       // Everything in loop runs n times
+        x = x + 1;                      // 1 unit of work n times (1*n)
+        for (int j = 0; j < n; ++j) {   // Runs n times and everything in this loop runs another n times
+            y = y - 1;                  // 1 unit of work n times, n times
+        }
+    }
+
+* It may be easier to work from the inside out
+
+**Growth Function:** :math:`t(n) = (1n + 1)n + 2 = n^{2} + 1n + 2`
+**Order:** :math:`O(n^{2})`
+
+.. image:: img/complexity_quadratic.png
+   :width: 750 px
+   :align: center
+
+* ``y = y - 1;`` runs :math:`n` times (a single row)
+* And the loop that ``y = y - 1`` is within is run :math:`n` times (all rows)
+* How many things did we put our finger on?
+
+
 
 
 Asymptotic Growth
