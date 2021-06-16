@@ -51,7 +51,7 @@ Example Growth Functions and Their Order
 ----------------------------------------
 
 +--------------------------------------+------------------------+
-| Growth Function                      | Order                  |
+| *Growth Function*                    | *Order*                |
 +======================================+========================+
 | :math:`t(n) = 17`                    | :math:`O(1)`           |
 +--------------------------------------+------------------------+
@@ -64,16 +64,13 @@ Example Growth Functions and Their Order
 | :math:`t(n) = 2^{2} + 3n`            | :math:`O(2^{n})`       |
 +--------------------------------------+------------------------+
 
+    .. image:: img/complexity_growth1.png
+       :width: 500 px
+       :align: center
+
+* `We often try to keep the expression in the Big-O notation simple <https://en.wikipedia.org/wiki/Big_O_notation#Orders_of_common_functions>`_
 
 
-
-
-Big-O Notation
-==============
-
-
-Examples
-========
 
 
 
