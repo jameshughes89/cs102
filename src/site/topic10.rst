@@ -11,8 +11,9 @@ Topic #10 --- The Queue ADT
 * Given this, the **F**\ irst thing **I**\ n will be the **F**\ irst thing **O**\ ut
     * FIFO
 
-* For example, any ordinary line you have ever lined up in
+* For example, any ordinary single file line you have ever lined up in
     * Assuming people were following the rules and not cutting in line
+
 
 Queue Operations
 ================
