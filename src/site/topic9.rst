@@ -237,6 +237,80 @@ Examples
 
 
 
+Stack Comparisons
+=================
+
+* We saw two implementations of a stack
+* Stacks are pretty efficient in general, but which is better?
+    * ``LinkedStack`` vs ``ArrayStack``
+
+
+Popping
+-------
+
+.. code-block:: java
+    :linenos:
+
+    // LinkedStack's pop
+    public T pop() {
+        if (isEmpty()) {
+            throw new EmptyStackException();
+        }
+        T returnElement = top.getData();
+        top = top.getNext();
+        size--;
+        return returnElement;
+    }
+
+.. code-block:: java
+    :linenos:
+
+    // ArrayStack's pop
+    public T pop() {
+        if (isEmpty()) {
+            throw new EmptyStackException();
+        }
+        top--;
+        T returnElement = stack[top];
+        stack[top] = null;
+        return returnElement;
+    }
+
+
+Pushing
+-------
+
+.. code-block:: java
+    :linenos:
+
+    // LinkedStack's push
+    public void push(T element) {
+        Node<T> toPush = new Node<T>(element);
+        toPush.setNext(top);
+        top = toPush;
+        size++;
+    }
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 4, 12, 13, 14
+
+    // ArrayStack's push
+    public void push(T element) {
+        if (top == stack.length) {
+            expandCapacity();
+        }
+        stack[top] = element;
+        top++;
+    }
+
+    private void expandCapacity() {
+        T[] newStack = (T[]) new Object[stack.length * 2];
+        for (int i = 0; i < stack.length; ++i) {
+            newStack[i] = stack[i];
+        }
+        stack = newStack;
+    }
 
 
 For next time
