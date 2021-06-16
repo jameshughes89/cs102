@@ -53,7 +53,7 @@ Growth Function
 * This table shows how each of the parts of the :math:`t(n)` growth function change as :math:`n` grows
 * Take note as to which part can be blamed for most of the whole :math:`t(n)`
 
-* When :math:`n` is small, which part of the expression gives a larger calue?
+* When :math:`n` is small, which part of the expression gives a larger value?
 * As :math:`n` **grows**, which becomes bigger?
 * How much do the constants (:math:`15` and :math:`45`) impact the values?
     * Do they affect how big the numbers change as :math:`n` increases?
