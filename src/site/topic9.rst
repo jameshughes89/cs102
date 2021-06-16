@@ -277,10 +277,6 @@ Tests
 **Order:** :math:`O(??)`
 
 
-Asymptotic Growth
-=================
-
-
 
 
 
