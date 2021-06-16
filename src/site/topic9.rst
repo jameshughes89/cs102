@@ -172,6 +172,57 @@ Nested Loops
 * How many things did we put our finger on?
 
 
+Tests
+-----
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 5
+
+    int x = 0;
+    int y = 0;
+    for (int i = 0; i < n; ++i) {
+        x = x + 1;
+        for (int j = i; j < n; ++j) {
+            y = y - 1;
+        }
+    }
+
+* **HINT:** I like to connect this to the :math:`n \times n` square to help
+
+**Growth Function:** :math:`t(n) = ??`
+**Order:** :math:`O(??)`
+
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 2
+
+    int x = 0;
+    for (int i = 0; i < n; i = i + 2) {     // i = i + 2
+        x = x + 1;
+    }
+
+* **HINT:** I like to connect this to the number line of length :math:`n` to help
+
+**Growth Function:** :math:`t(n) = ??`
+**Order:** :math:`O(??)`
+
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 2
+
+    int x = 0;
+    for (int i = 1; i < n; i = i * 2) {     // i = i * 2
+        x = x + 1;
+    }
+
+* **HINT:** I like to connect this to the number line of length :math:`n` to help
+* **HINT:** How quickly will we run out of number in the number line?
+
+**Growth Function:** :math:`t(n) = ??`
+**Order:** :math:`O(??)`
 
 
 Asymptotic Growth
