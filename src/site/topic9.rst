@@ -158,7 +158,7 @@ Nested Loops
         }
     }
 
-* It may be easier to work from the inside out
+* It may be more clear to work from the inside out
 
 **Growth Function:** :math:`t(n) = (1n + 1)n + 2 = n^{2} + 1n + 2`
 **Order:** :math:`O(n^{2})`
