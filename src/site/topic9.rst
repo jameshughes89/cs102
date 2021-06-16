@@ -97,6 +97,23 @@ Deriving Growth Functions
 * How do we get :math:`t(n)` in the first place?
     * Look at the code!
 
+.. warning::
+
+    For simplicity, we will pretend some constant time (:math:`O(1)`) statements take :math:`1` unit of work when in
+    reality they may take more. This is safe to do since constants are ignored.
+
+Statements
+----------
+
+.. code-block:: java
+    :linenos:
+
+    int x = 0;
+    int y = 1;
+    int z = x + y;
+
+**Growth Function:** :math:`t(n) = 3`
+**Order:** :math:`O(1)`
 
 
 Asymptotic Growth
