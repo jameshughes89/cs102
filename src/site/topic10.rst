@@ -38,6 +38,16 @@ Queue Operations
 Example Uses
 ============
 
+* Example
+    * Your typical queueing line, like at a grocery store checkout
+    * Cars at a stoplight
+    * Input buffers
+
+* We can get a little more sophisticated
+
+Caesar Cipher
+-------------
+
 
 Interface
 =========
