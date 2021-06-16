@@ -84,7 +84,7 @@ Caesar Cipher
     * ``z`` becomes ``e``
         * ``z -> a -> b -> c -> d -> e``
 
-Caesar Cipher++
+Rotating Cipher
 ---------------
 
 * The Caesar Cipher can be broken with a brute force algorithm fairly easily
