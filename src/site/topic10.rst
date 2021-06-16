@@ -105,6 +105,10 @@ Caesar Cipher++
    :width: 500 px
    :align: center
 
+* A queue makes this simple:
+    * Dequeue the key
+    * Apply key to letter
+    * Enqueue the key again
 
 Interface
 =========
