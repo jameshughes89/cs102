@@ -22,7 +22,7 @@ Queue Operations
 
 .. warning::
 
-    If you look at `Java's Queue Interface <https://docs.oracle.com/javase/7/docs/api/java/util/Queue.html>`_, you will
+    If you look at `Java's Queue Interface <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Queue.html>`_, you will
     see that they use ``add``, ``remove``, and ``element`` along with ``offer``, ``poll``, and ``peek``. The first three
     are the same as our ``enqueue``, ``dequeue``, and ``first`` and the other three are the same, but do not throw
     exceptions.
