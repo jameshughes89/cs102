@@ -90,6 +90,58 @@ Growth Function
     highlight that it's about change and growth.
 
 
+Asymptotic Growth & Big-O
+=========================
+
+* We **don't** care about constants
+* We **don't** care about non dominant terms
+
+* We **do** care about *asymptotic complexity*
+    * Fancy way of saying *The time the algorithm takes as a function of* :math:`n` *will grow like...*
+
+* We care about the *order* of the algorithm
+* We specify the order by using *Big-O notation*
+* In our example, :math:`t(n) = 15n^{2} + 45n` is :math:`O(n^{2})` since it grows like :math:`n^{2}`
+
+
+Example Growth Functions and Their Order
+----------------------------------------
+
++--------------------------------------+------------------------+
+| *Growth Function*                    | *Order*                |
++======================================+========================+
+| :math:`t(n) = 17`                    | :math:`O(1)`           |
++--------------------------------------+------------------------+
+| :math:`t(n) = 20n - 4`               | :math:`O(n)`           |
++--------------------------------------+------------------------+
+| :math:`t(n) = 12n \log_{2}(n) + 100n`| :math:`O(n\log_{2}(n))`|
++--------------------------------------+------------------------+
+| :math:`t(n) = 3n^{2} + 5n - 2`       | :math:`O(n^{2})`       |
++--------------------------------------+------------------------+
+| :math:`t(n) = 2^{n} + 3n`            | :math:`O(2^{n})`       |
++--------------------------------------+------------------------+
+
+    .. image:: img/complexity_growth1.png
+       :width: 500 px
+       :align: center
+
+* `We often try to keep the expression in the Big-O notation simple <https://en.wikipedia.org/wiki/Big_O_notation#Orders_of_common_functions>`_
+
++---------------------------------------+------------------------+
+| *Growth Function*                     | *Order*                |
++=======================================+========================+
+| :math:`t(n) = 5n^{2} + 3n`            | :math:`O(?)`           |
++---------------------------------------+------------------------+
+| :math:`t(n) = n^{3} + \log_{2}(n) - 4`| :math:`O(?)`           |
++---------------------------------------+------------------------+
+| :math:`t(n) = 10n \log_{2}(n) + 5`    | :math:`O(?)`           |
++---------------------------------------+------------------------+
+| :math:`t(n) = 3n^{2} + 3n^{3} + 3`    | :math:`O(?)`           |
++---------------------------------------+------------------------+
+| :math:`t(n) = 2^{n} + 18n^{100}`      | :math:`O(?)`           |
++---------------------------------------+------------------------+
+
+
 Deriving Growth Functions
 ==========================
 
@@ -225,15 +277,6 @@ Tests
 **Order:** :math:`O(??)`
 
 
-Asymptotic Growth
-=================
-
-Big-O Notation
-==============
-
-
-Examples
-========
 
 
 
