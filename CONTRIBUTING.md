@@ -99,9 +99,9 @@ Also keep in mind that there are categories of content
     * :lipstick: `:lipstick:` Improving the format/structure/layout of content/files
     * :bug: `:bug:` Bug in Code or Typo
     * :telescope: `:telescope:` Using different words/code for the same ideas
-    * :art: `:art:` Relating to figures/image
+    * :art: `:art:` Relating to figures/images
     * :dancers: `:dancers:` This issue or pull request already exists
-    * :baby: `:baby:` Good for newcomers
+    * :medal_sports: `:medal_sports:` Good for newcomers
     * :eyes: `:eyes:` Extra attention is needed
     * :question: `:question:` Further information is requested
   
