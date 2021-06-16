@@ -59,6 +59,27 @@ Caesar Cipher
     * ``z`` becomes ``e``
         * ``z -> a -> b -> c -> d -> e``
 
+Caesar Cipher++
+---------------
+
+* The Caesar Cipher can be broken with a brute force algorithm fairly easily
+* We can make the code breaking much harder with a *rotating key*
+
+* For example, our rotating key may be ``3, 1, 7, 4, 2, 5``
+    * Shift the first letter of the message to be encoded by ``3``
+    * The second by ``1``
+    * The third by ``7``
+    * Fourth ``4``
+    * Fifth ``2``
+    * Sixth ``5``
+    * Then for the seventh, we start over at ``3``
+    * Eigth by ``1``
+    * ...
+
+.. image:: img/queue_cipher.png
+   :width: 500 px
+   :align: center
+
 
 Interface
 =========
