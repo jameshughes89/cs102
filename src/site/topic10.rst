@@ -67,7 +67,6 @@ Example Uses
 Interface
 =========
 
-
 .. code-block:: java
     :linenos:
 
