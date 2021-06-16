@@ -33,8 +33,8 @@ Growth Function
 ===============
 
 
-Asymptotic Growth
-=================
+Asymptotic Growth & Big-O
+=========================
 
 * We **don't** care about constants
 * We **don't** care about non dominant terms
