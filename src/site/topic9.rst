@@ -37,7 +37,7 @@ Growth Function
     * How does the time to run the algorithm :math:`t(n)` change as :math:`n` changes?
 
 * We call :math:`t(n)` the *growth function*
-* Notice how :math:`t(n)` is a function of :math:`n'
+* Notice how :math:`t(n)` is a function of :math:`n`
     * This means the amount of time needed depends on :math:`n`
 
 * Here is an arbitrary growth function
