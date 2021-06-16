@@ -8,3 +8,6 @@ Your typical computer science 102 class focusing on abstraction.
 ./gradlew build test site
 ```
 The website is then built into `./build/site`.
+
+# Contribute
+Check out the [CONTRIBUTING](CONTRIBUTING.md) guidelines.
