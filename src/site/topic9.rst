@@ -316,5 +316,6 @@ Pushing
 For next time
 =============
 
+* Read the :doc:`amortized time complexity aside. </topic9-amortized>`
 * Read Chapter 2 of your text
     * 14 pages
