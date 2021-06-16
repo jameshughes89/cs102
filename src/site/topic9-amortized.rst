@@ -46,6 +46,11 @@ Amortization
 * Notice how we only needed to call an :math:`O(n)` operation once every :math:`n` constant time :math:`O(1)` calls of ``push``
 * We can think of amortizing/spreading out this :math:`O(n)` work over the :math:`n` constant time calls
 
+* We think of all these parts as a whole expression
+* :math:`(n O(1) + O(n)) / (n + 1) = n O(1) / (n + 1) + O(n) / (n + 1)`
+* This tells us how much work is being done on average over the :math:`n +1` ``push`` calls
+* If we roughly divide this out, each term comes out to :math:`O(n)`
+
 .. image:: img/complexity_amortization0.png
    :width: 500 px
    :align: center
@@ -55,3 +60,4 @@ Amortization
 .. image:: img/complexity_amortization1.png
    :width: 500 px
    :align: center
+
