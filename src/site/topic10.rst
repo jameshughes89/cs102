@@ -63,6 +63,52 @@ Queue Operations
 Example Uses
 ============
 
+* Example
+    * Your typical queueing line, like at a grocery store checkout
+    * Cars at a stoplight
+    * Input buffers
+
+* We can get a little more sophisticated
+
+Caesar Cipher
+-------------
+
+* A caesar cipher is a simple way to encode a message
+* The idea is, shift each letter in the message by some constant amount ``k``
+* If ``k=5``
+    * ``a`` becomes ``f``
+        * ``a -> b -> c -> d -> e -> f``
+    * ``b`` becomes ``g``
+        * ``b -> c -> d -> e -> f -> g``
+    * ...
+    * ``z`` becomes ``e``
+        * ``z -> a -> b -> c -> d -> e``
+
+Rotating Cipher
+---------------
+
+* The Caesar Cipher can be broken with a brute force algorithm fairly easily
+* We can make the code breaking much harder with a *rotating key*
+
+* For example, our rotating key may be ``3, 1, 7, 4, 2, 5``
+    * Shift the first letter of the message to be encoded by ``3``
+    * The second by ``1``
+    * The third by ``7``
+    * Fourth ``4``
+    * Fifth ``2``
+    * Sixth ``5``
+    * Then for the seventh, we start over at ``3``
+    * Eigth by ``1``
+    * ...
+
+.. image:: img/queue_cipher.png
+   :width: 500 px
+   :align: center
+
+* A queue makes this simple:
+    * Dequeue the key
+    * Apply key to letter
+    * Enqueue the key again
 
 Interface
 =========
