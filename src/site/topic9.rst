@@ -93,6 +93,10 @@ Growth Function
 Deriving Growth Functions
 ==========================
 
+* We learned how to go from :math:`t(n)` to :math:`O(n)`
+* How do we get :math:`t(n)` in the first place?
+    * Look at the code!
+
 
 
 Asymptotic Growth
