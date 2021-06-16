@@ -46,3 +46,12 @@ Amortization
 * Notice how we only needed to call an :math:`O(n)` operation once every :math:`n` constant time :math:`O(1)` calls of ``push``
 * We can think of amortizing/spreading out this :math:`O(n)` work over the :math:`n` constant time calls
 
+.. image:: img/complexity_amortization0.png
+   :width: 500 px
+   :align: center
+
+* Spread out the :math:`O(n)` work over the previous :math:`n` calls to ``push``
+
+.. image:: img/complexity_amortization1.png
+   :width: 500 px
+   :align: center
