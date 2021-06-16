@@ -87,5 +87,6 @@ Interface
 For next time
 =============
 
+* Download the :download:`Queue.java<../main/java/Queue.java>` interface.
 * Read Chapter 5 Sections 1 -- 5
     * 14 pages
