@@ -48,6 +48,17 @@ Example Uses
 Caesar Cipher
 -------------
 
+* A caesar cipher is a simple way to encode a message
+* The idea is, shift each letter in the message by some constant amount ``k``
+* If ``k=5``
+    * ``a`` becomes ``f``
+        * ``a -> b -> c -> d -> e -> f``
+    * ``b`` becomes ``g``
+        * ``b -> c -> d -> e -> f -> g``
+    * ...
+    * ``z`` becomes ``e``
+        * ``z -> a -> b -> c -> d -> e``
+
 
 Interface
 =========
