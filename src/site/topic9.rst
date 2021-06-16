@@ -36,6 +36,13 @@ Growth Function
 Asymptotic Growth
 =================
 
+* We **don't** care about constants
+* We **don't** care about non dominant terms
+
+* We **do** care about *asymptotic complexity*
+    * Fancy way of saying *The time the algorithm takes as a function of* :math:`n` *will grow like...*
+
+
 Big-O Notation
 ==============
 
