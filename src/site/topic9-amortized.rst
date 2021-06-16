@@ -49,7 +49,7 @@ Amortization
 * We think of all these parts as a whole expression
 * :math:`(n O(1) + O(n)) / (n + 1) = n O(1) / (n + 1) + O(n) / (n + 1)`
 * This tells us how much work is being done on average over the :math:`n +1` ``push`` calls
-* If we roughly divide this out, each term comes out to :math:`O(n)`
+* If we roughly divide this out, each term comes out to :math:`O(1)`
 
 .. image:: img/complexity_amortization0.png
    :width: 500 px
