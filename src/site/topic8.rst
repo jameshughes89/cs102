@@ -284,7 +284,7 @@ Playing
 .. code-block:: java
     :linenos:
     
-    // Create an ArrayStack
+    // Create a LinkedStack
     Stack<Integer> myStack = new LinkedStack<>();
 
     // Check stack is empty
@@ -302,7 +302,9 @@ Playing
     System.out.println(myStack.isEmpty());
     System.out.println(myStack);
 
-    // Test expand capacity
+    // No test for expandCapacity since LinkedStack
+    // doesn't need it, but test more pushes anyways
+    // as the functionality does not change either way
     myStack.push(10);
     myStack.push(11);
     myStack.push(12);
