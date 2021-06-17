@@ -72,8 +72,20 @@ Dequeue & First
         return front.getData();
     }
 
-* Like ``LinkedStack`` and ``ArrayStack``, trying to access something from the empty collection throws an exception
+* Like ``LinkedStack`` and ``ArrayStack``, trying to access something from the empty queue throws an exception
 
+* Notice in ``dequeue`` that, if it's not empty, we just *remove/delete from the front of a linked structure*
+    * This was the same as ``pop`` in the ``LinkedStack``
+
+* In addition to being empty, the only other edge case we need to watch out for is if the ``dequeue`` makes the queue empty
+* If this happens, we must set ``front`` to ``null``
+    * This is actually taken care of already since ``front``'s next would be ``null``, and saying ``front = front.getNext()`` makes ``front`` ``null``
+
+* We must also set ``rear`` to ``null``, otherwise it will continue to point to a node that should not be in the queue anymore
+    * Imagine ``enqueuing`` after this and messing up our counts
+    * If we ``enqueue`` in this case, we might end up saying ``rear.setNext(toEnqueue)``
+    * What would that mean?
+    * What would that look like?
 
 Variations
 ==========
