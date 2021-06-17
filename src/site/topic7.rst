@@ -43,7 +43,7 @@ Nodes
     * They link to their successor
 
 .. image:: img/node_example.png
-   :width: 500 px
+   :width: 400 px
    :align: center
 
 * A node for a singly linked structure typically has only two fields
@@ -185,7 +185,7 @@ Node Implementation
 
 
 .. image:: img/links_reference.png
-   :width: 500 px
+   :width: 400 px
    :align: center
 
 * Remember, reference variables contain a reference to an object
@@ -276,7 +276,7 @@ Doubly Linked
 -------------
 
 .. image:: img/links_double.png
-   :width: 500 px
+   :width: 400 px
    :align: center
 
 * How would our ``Node`` implementation need to change to achieve this?

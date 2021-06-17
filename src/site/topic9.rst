@@ -60,7 +60,7 @@ Growth Function
 
 
 .. image:: img/complexity_growth0.png
-   :width: 750 px
+   :width: 600 px
    :align: center
 
 * This plot compares the parts of the function to the function itself

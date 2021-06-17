@@ -14,15 +14,15 @@ Topic #10 --- The Queue ADT
 * For example, any ordinary single file line you have ever lined up in
     * Assuming people were following the rules and not cutting in line
 
-.. image:: img/queue.png
-   :width: 500 px
-   :align: center
+    .. image:: img/queue.png
+       :width: 300 px
+       :align: center
 
 **Adding to a Queue**
 
-.. image:: img/queue_add.png
-   :width: 500 px
-   :align: center
+    .. image:: img/queue_add.png
+       :width: 500 px
+       :align: center
 
 **Removing from a Queue**
 
