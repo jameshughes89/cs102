@@ -52,8 +52,7 @@ Enqueue
 
         if (isEmpty()) {
             front = toEnqueue;
-        }
-        else {
+        } else {
            rear.setNext(toEnqueue);
         }
         rear = toEnqueue;
