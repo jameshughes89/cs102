@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.NoSuchElementException;
+import java.util.EmptyStackException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -72,16 +72,16 @@ class ArrayStackTest {
     }
 
     @Test
-    @DisplayName("Pop throws NoSuchElementException when stack is empty.")
+    @DisplayName("Pop throws EmptyStackException when stack is empty.")
     void popEmptyStackThrowsException() {
         Stack<Integer> stack = new ArrayStack<>();
-        assertThrows(NoSuchElementException.class, () -> stack.pop());
+        assertThrows(EmptyStackException.class, () -> stack.pop());
     }
 
     @Test
-    @DisplayName("Peek throws NoSuchElementException when stack is empty.")
+    @DisplayName("Peek throws EmptyStackException when stack is empty.")
     void peekEmptyStackThrowsException() {
         Stack<Integer> stack = new ArrayStack<>();
-        assertThrows(NoSuchElementException.class, () -> stack.peek());
+        assertThrows(EmptyStackException.class, () -> stack.peek());
     }
 }

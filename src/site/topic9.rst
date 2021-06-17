@@ -297,7 +297,7 @@ Popping
     // LinkedStack's pop
     public T pop() {
         if (isEmpty()) {
-            throw new NoSuchElementException();
+            throw new EmptyStackException();
         }
         T returnElement = top.getData();
         top = top.getNext();
@@ -311,7 +311,7 @@ Popping
     // ArrayStack's pop
     public T pop() {
         if (isEmpty()) {
-            throw new NoSuchElementException();
+            throw new EmptyStackException();
         }
         top--;
         T returnElement = stack[top];

@@ -40,7 +40,7 @@ Nesting in LinkedStack
     :linenos:
     :emphasize-lines: 65-94
 
-    import java.util.NoSuchElementException;
+    import java.util.EmptyStackException;
 
     public class LinkedStack<T> implements Stack<T> {
 
@@ -63,7 +63,7 @@ Nesting in LinkedStack
         @Override
         public T pop() {
             if (isEmpty()) {
-                throw new NoSuchElementException("Popping from an empty stack.");
+                throw new EmptyStackException();
             }
             T returnElement = top.getData();
             top = top.getNext();
@@ -74,7 +74,7 @@ Nesting in LinkedStack
         @Override
         public T peek() {
             if (isEmpty()) {
-                throw new NoSuchElementException("Popping from an empty stack.");
+                throw new EmptyStackException();
             }
             return top.getData();
         }
