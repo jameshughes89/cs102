@@ -89,7 +89,7 @@ public class ArrayStack<T> implements Stack<T> {
             builder.append(stack[i]);
             builder.append(", ");
         }
-        builder.append("<-- Top\n");
+        builder.append("<-- Top");
         return builder.toString();
     }
 

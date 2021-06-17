@@ -74,7 +74,6 @@ public class LinkedQueue<T> implements Queue<T> {
             builder.append(", ");
             currentNode = currentNode.getNext();
         }
-        builder.append("\n");
         return builder.toString();
     }
 
