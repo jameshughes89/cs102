@@ -44,8 +44,12 @@ Enqueue
 -------
 
 
-Dequeue
--------
+Dequeue & First
+---------------
+
+.. code-block:: java
+    :linenos:
+
 
 
 Variations
