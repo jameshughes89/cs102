@@ -76,7 +76,7 @@ Enqueuing into an Empty Queue
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * **If** the queue is empty, both ``front`` and ``rear`` reference ``null``
-* When this is the case, the thing being enqueued will be the only element in the queue
+* When this is the case, the thing being enqueued will end up being the only element in the queue
     * Thus, both ``front`` and ``rear`` need to reference the new node
     * The new node will be both the first and last thing in the queue
 
