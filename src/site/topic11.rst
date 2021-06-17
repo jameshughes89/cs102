@@ -11,6 +11,7 @@ Topic #11 --- LinkedQueue
     * A way to keep track of the rear/tail
     * A way to keep track of the size
 
+
 Implementing a Queue --- Linked Container
 =========================================
 
@@ -99,6 +100,7 @@ Enqueuing into a Nonempty Queue
     3. Setting the ``rear`` to reference the new node
     4. Updating the count
 
+* What is the computational complexity of an ``enqueue``?
 
 Dequeue & First
 ---------------
@@ -147,10 +149,13 @@ Dequeue & First
     * What would that look like?
 
 
+* What is the computational complexity of a ``dequeue``?
+
 Variations
 ==========
 
 * We can define any variation we could want
+
 
 Priority Queue
 --------------
@@ -162,6 +167,7 @@ Priority Queue
 * But if you are there for a cut thumb and someone comes in with an arrow sticking out of their knee, they will likely be helped first
 * In other words, it's first-come-first-serve, but those with a priority value deemed more important will be jump the line
 
+
 What
 ^^^^
 
@@ -169,6 +175,7 @@ What
 * Everything would be the same except ``dequeue``
 * We would need to get the element with the most important priority of all those in the queue
     * If there is a tie, then use first-come-first-serve to break the tie
+
 
 How
 ^^^
