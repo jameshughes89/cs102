@@ -302,16 +302,6 @@ Playing
     System.out.println(myStack.isEmpty());
     System.out.println(myStack);
 
-    // Test expand capacity
-    myStack.push(10);
-    myStack.push(11);
-    myStack.push(12);
-    myStack.push(13);
-    myStack.push(14);
-    System.out.println(myStack.size());
-    System.out.println(myStack.isEmpty());
-    System.out.println(myStack);
-
     // Test peek
     System.out.println(myStack.peek());
     System.out.println(myStack.size());
@@ -319,11 +309,6 @@ Playing
     System.out.println(myStack);
 
     // Test Pop
-    System.out.println(myStack.pop());
-    System.out.println(myStack.pop());
-    System.out.println(myStack.pop());
-    System.out.println(myStack.pop());
-    System.out.println(myStack.pop());
     System.out.println(myStack.pop());
     System.out.println(myStack.pop());
     System.out.println(myStack.pop());
