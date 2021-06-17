@@ -1,3 +1,5 @@
+import java.util.NoSuchElementException;
+
 public class LinkedQueue<T> implements Queue<T> {
 
     private Node<T> front;
@@ -32,24 +34,51 @@ public class LinkedQueue<T> implements Queue<T> {
 
     @Override
     public T dequeue() {
-        return null;
+        if (isEmpty()) {
+            throw new NoSuchElementException("Dequeueing from an empty queue.");
+        }
+        T returnElement = front.getData();
+        front = front.getNext();
+        size--;
+        // Although front will update properly regardless, rear
+        // will need to be set to null if we dequeue the last
+        // element.
+        if (isEmpty()) {
+            rear = null;
+        }
+        return returnElement;
     }
 
     @Override
     public T first() {
-        return null;
+        if (isEmpty()) {
+            throw new NoSuchElementException("First from an empty queue.");
+        }
+        return front.getData();
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return size == 0;
     }
 
     @Override
     public int size() {
-        return 0;
+        return size;
     }
 
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("Head --> ");
+        Node<T> currentNode = front;
+        while (currentNode != null) {
+            builder.append(currentNode.getData());
+            builder.append(", ");
+            currentNode = currentNode.getNext();
+        }
+        builder.append("\n");
+        return builder.toString();
+    }
 
     /**
      * A Node class for a singly linked structure. Each node
@@ -66,7 +95,7 @@ public class LinkedQueue<T> implements Queue<T> {
     private static class Node<T> {
 
         private T data;
-        private LinkedQueue.Node<T> next;
+        private Node<T> next;
 
         public Node() {
             this(null);
@@ -85,11 +114,11 @@ public class LinkedQueue<T> implements Queue<T> {
             this.data = data;
         }
 
-        public LinkedQueue.Node<T> getNext() {
+        public Node<T> getNext() {
             return next;
         }
 
-        public void setNext(LinkedQueue.Node<T> next) {
+        public void setNext(Node<T> next) {
             this.next = next;
         }
     }
