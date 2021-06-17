@@ -274,6 +274,17 @@ Introduction Errors for Fun
    :align: center
 
 
+For next time
+=============
+
+
+* Look into the :doc:`nested node class aside. </topic8-nested>`
+* Download and play with the :download:`LinkedStack <../main/java/LinkedStack.java>` code
+* Download and run the :download:`LinkedStackTest <../test/java/LinkedStackTest.java>` tests
+* Read Chapter 4 Section 6
+    * 13 pages
+
+
 Playing
 =======
 
@@ -283,7 +294,7 @@ Playing
 
 .. code-block:: java
     :linenos:
-    
+
     // Create a LinkedStack
     Stack<Integer> myStack = new LinkedStack<>();
 
@@ -348,13 +359,3 @@ Playing
     catch (NoSuchElementException e) {
         e.printStackTrace();
     }
-
-For next time
-=============
-
-
-* Look into the :doc:`nested node class aside. </topic8-nested>`
-* Download and play with the :download:`LinkedStack <../main/java/LinkedStack.java>` code
-* Download and run the :download:`LinkedStackTest <../test/java/LinkedStackTest.java>` tests
-* Read Chapter 4 Section 6
-    * 13 pages
