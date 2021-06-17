@@ -5,7 +5,7 @@ Topic #8 Aside --- Nested Node Class
 * Consider the doubly linked structure
 
 .. image:: img/links_double.png
-   :width: 500 px
+   :width: 400 px
    :align: center
 
 * Since we need a reference to both the ``next`` and ``previous`` nodes, we can't use our existing ``Node`` :class:

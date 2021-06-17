@@ -270,7 +270,7 @@ Introduction Errors for Fun
 * Once the change is made, run the tests to see what happens
 
 .. image:: img/linkedstack_assertfail.png
-   :width: 500 px
+   :width: 600 px
    :align: center
 
 

@@ -41,13 +41,13 @@ JUnit
 1. Make a new folder/directory called ``test`` in your project next to ``src``
 
 .. image:: img/test_folder.png
-   :width: 500 px
+   :width: 600 px
    :align: center
 
 2. Right click the ``test`` folder and select *Mark Directory as -> Test Sources Root*
 
 .. image:: img/test_marktests.png
-   :width: 500 px
+   :width: 600 px
    :align: center
 
 3. Create a new class for testing called something appropriate
@@ -57,7 +57,7 @@ JUnit
 5. Select *Add 'JUnit5....*
 
 .. image:: img/test_altenter.png
-   :width: 500 px
+   :width: 600 px
    :align: center
 
 
