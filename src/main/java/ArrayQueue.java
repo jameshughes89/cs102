@@ -1,3 +1,5 @@
+import java.util.NoSuchElementException;
+
 public class ArrayQueue<T> implements Queue<T>{
 
     private static final int DEFAULT_CAPACITY = 100;
@@ -10,17 +12,24 @@ public class ArrayQueue<T> implements Queue<T>{
         this(DEFAULT_CAPACITY);
     }
 
+    @SuppressWarnings("unchecked")
     public ArrayQueue(int initialCapacity) {
         front = 0;
         rear = 0;
         size = 0;
-
-        stack = (T[]) new Object[initialCapacity];
+        queue = (T[]) new Object[initialCapacity];
     }
 
     @Override
     public void enqueue(T element) {
-
+        if (size == queue.length) {
+            expandCapacity();
+        }
+        queue[rear] = element;
+        // rear will wrap back to 0 if it is bigger than
+        // the capacity of the array
+        rear = (rear + 1) % queue.length;
+        size++;
     }
 
     /**
@@ -39,25 +48,42 @@ public class ArrayQueue<T> implements Queue<T>{
 
     @Override
     public T dequeue() {
-        return null;
+        if (isEmpty()) {
+            throw new NoSuchElementException("Dequeueing from an empty queue.");
+        }
+        T returnElement = queue[front];
+        front = (front + 1) % queue.length;
+        size--;
+        return returnElement;
     }
 
     @Override
     public T first() {
-        return null;
+        if (isEmpty()) {
+            throw new NoSuchElementException("First from an empty queue.");
+        }
+        return queue[front];
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return size == 0;
     }
 
     @Override
     public int size() {
-        return 0;
+        return size;
     }
 
     public String toString() {
-
+        StringBuilder builder = new StringBuilder();
+        builder.append("Front --> ");
+        int currentIndex = front;
+        for (int i = 0; i < size; ++i) {
+            builder.append(queue[currentIndex]);
+            builder.append(", ");
+            currentIndex = (currentIndex + 1) % queue.length;
+        }
+        return builder.toString();
     }
 }
