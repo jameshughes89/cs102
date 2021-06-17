@@ -340,13 +340,13 @@ Playing
         myStack.peek();
     }
     catch (NoSuchElementException e) {
-        System.out.println(e.getMessage());
+        e.printStackTrace();
     }
     try {
         myStack.pop();
     }
     catch (NoSuchElementException e) {
-        System.out.println(e.getMessage());
+        e.printStackTrace();
     }
 
 For next time

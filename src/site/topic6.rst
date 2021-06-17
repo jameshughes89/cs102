@@ -332,11 +332,11 @@ Code
         myStack.peek();
     }
     catch (NoSuchElementException e) {
-        System.out.println("Caught exception on peek.");
+        e.printStackTrace();
     }
     try {
         myStack.pop();
     }
     catch (NoSuchElementException e) {
-        System.out.println("Caught exception on pop.");
+        e.printStackTrace();
     }
