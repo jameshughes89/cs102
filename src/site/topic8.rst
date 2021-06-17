@@ -284,7 +284,7 @@ Playing
 .. code-block:: java
     :linenos:
     
-    // Create an ArrayStack
+    // Create an LinkedStack
     Stack<Integer> myStack = new LinkedStack<>();
 
     // Check stack is empty
