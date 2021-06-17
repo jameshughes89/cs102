@@ -60,7 +60,7 @@ Priority Queue
 * One that comes to my mind is a *priority queue*
 * Think of triage at a hospital
 * Sure, it's kinda' first-come-first-serve
-* But if you are there for a cut thumb and someone comes in with an arrow sticking out of them, they will likely be helped first
+* But if you are there for a cut thumb and someone comes in with an arrow sticking out of their knee, they will likely be helped first
 * In other words, it's first-come-first-serve, but those with a priority value deemed more important will be jump the line
 
 What
