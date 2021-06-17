@@ -50,6 +50,29 @@ Dequeue & First
 .. code-block:: java
     :linenos:
 
+    @Override
+    public T dequeue() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("Dequeueing from an empty queue.");
+        }
+        T returnElement = front.getData();
+        front = front.getNext();
+        size--;
+        if (isEmpty()) {
+            rear = null;
+        }
+        return returnElement;
+    }
+
+    @Override
+    public T first() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("First from an empty queue.");
+        }
+        return front.getData();
+    }
+
+* Like ``LinkedStack`` and ``ArrayStack``, trying to access something from the empty collection throws an exception
 
 
 Variations
