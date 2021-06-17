@@ -1,4 +1,4 @@
-import java.util.EmptyStackException;
+import java.util.NoSuchElementException;
 
 public class ArrayStack<T> implements Stack<T> {
 
@@ -56,7 +56,7 @@ public class ArrayStack<T> implements Stack<T> {
     @Override
     public T pop() {
         if (isEmpty()) {
-            throw new EmptyStackException();
+            throw new NoSuchElementException("Popping from an empty stack.");
         }
         top--;
         T returnElement = stack[top];
@@ -67,7 +67,7 @@ public class ArrayStack<T> implements Stack<T> {
     @Override
     public T peek() {
         if (isEmpty()) {
-            throw new EmptyStackException();
+            throw new NoSuchElementException("Popping from an empty stack.");
         }
         return stack[top - 1];
     }

@@ -51,7 +51,7 @@ Implementation
 .. code-block:: java
     :linenos:
 
-    import java.util.EmptyStackException;
+    import java.util.NoSuchElementException;
 
     public class LinkedStack<T> implements Stack<T> {
 
@@ -95,7 +95,7 @@ Pop & Peek
         @Override
         public T pop() {
             if (isEmpty()) {
-                throw new EmptyStackException();
+                throw new NoSuchElementException();
             }
             T returnElement = top.getData();
             top = top.getNext();
@@ -106,7 +106,7 @@ Pop & Peek
         @Override
         public T peek() {
             if (isEmpty()) {
-                throw new EmptyStackException();
+                throw new NoSuchElementException();
             }
             return top.getData();
         }
@@ -224,17 +224,17 @@ Testing LinkedStack
         }
 
         @Test
-        @DisplayName("Pop throws EmptyStackException when stack is empty.")
+        @DisplayName("Pop throws NoSuchElementException when stack is empty.")
         void popEmptyStackThrowsException() {
             Stack<Integer> stack = new LinkedStack<>();
-            assertThrows(EmptyStackException.class, () -> stack.pop());
+            assertThrows(NoSuchElementException.class, () -> stack.pop());
         }
 
         @Test
-        @DisplayName("Peek throws EmptyStackException when stack is empty.")
+        @DisplayName("Peek throws NoSuchElementException when stack is empty.")
         void peekEmptyStackThrowsException() {
             Stack<Integer> stack = new LinkedStack<>();
-            assertThrows(EmptyStackException.class, () -> stack.peek());
+            assertThrows(NoSuchElementException.class, () -> stack.peek());
         }
 
 
@@ -259,7 +259,7 @@ Introduction Errors for Fun
         @Override
         public T pop() {
             if (isEmpty()) {
-                throw new EmptyStackException();
+                throw new NoSuchElementException();
             }
             T returnElement = top.getData();
             top = top.getNext();
@@ -339,14 +339,14 @@ Playing
     try {
         myStack.peek();
     }
-    catch (EmptyStackException e) {
-        System.out.println("Caught exception on peek.");
+    catch (NoSuchElementException e) {
+        e.printStackTrace();
     }
     try {
         myStack.pop();
     }
-    catch (EmptyStackException e) {
-        System.out.println("Caught exception on pop.");
+    catch (NoSuchElementException e) {
+        e.printStackTrace();
     }
 
 For next time

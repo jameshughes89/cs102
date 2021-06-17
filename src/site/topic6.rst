@@ -177,7 +177,7 @@ Pop and Peek
 
         public T pop() {
             if (isEmpty()) {
-                throw new EmptyStackException();
+                throw new NoSuchElementException();
             }
             top--;
             T returnElement = stack[top];
@@ -187,7 +187,7 @@ Pop and Peek
 
         public T peek() {
             if (isEmpty()) {
-                throw new EmptyStackException();
+                throw new NoSuchElementException();
             }
             return stack[top - 1];
         }
@@ -222,7 +222,7 @@ Pop and Peek
 
 .. warning::
 
-    To use the ``EmptyStackException``, we will need to import it --- ``import java.util.EmptyStackException;``
+    To use the ``NoSuchElementException``, we will need to import it --- ``import java.util.NoSuchElementException;``
 
 size and isEmpty
 ^^^^^^^^^^^^^^^^
@@ -331,12 +331,12 @@ Code
     try {
         myStack.peek();
     }
-    catch (EmptyStackException e) {
-        System.out.println("Caught exception on peek.");
+    catch (NoSuchElementException e) {
+        e.printStackTrace();
     }
     try {
         myStack.pop();
     }
-    catch (EmptyStackException e) {
-        System.out.println("Caught exception on pop.");
+    catch (NoSuchElementException e) {
+        e.printStackTrace();
     }
