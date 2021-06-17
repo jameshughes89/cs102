@@ -84,8 +84,8 @@ Dequeue & First
 * We should also set ``rear`` to ``null``
 * This helps with garbage collection and keeping the state of the queue *correct*
 * If we don't do this, ``rear`` will continue to point to a node that should not be in the queue anymore
-    * Our current implementation will handel this scenario fine as an enqueue on an empty queue sets both ``front`` and ``rear`` to ``null``
-    * But imagine also haveing a messed up count and ``enqueuing`` after this without setting ``rear`` to ``null``
+    * Our current implementation will handle this scenario fine as an enqueue on an empty queue sets both ``front`` and ``rear`` to ``null``
+    * But imagine also having a messed up count and ``enqueuing`` after this without setting ``rear`` to ``null``
     * If we ``enqueue`` in this case, we might end up saying ``rear.setNext(toEnqueue)``
     * What would that mean?
     * What would that look like?
