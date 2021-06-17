@@ -152,7 +152,7 @@ toString
                 currentNode = currentNode.getNext();
             }
             builder.delete(0, 2);
-            builder.append("<-- Top\n");
+            builder.append("<-- Top");
             return builder.toString();
         }
 
