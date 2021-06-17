@@ -196,7 +196,7 @@ Testing LinkedStack
 
         @Test
         @DisplayName("Pushing items updates the size of the stack.")
-        void PushingUpdatesSize() {
+        void pushingUpdatesSize() {
             Stack<Integer> stack = new LinkedStack<>();
             stack.push(99);
             stack.push(101);
@@ -205,7 +205,7 @@ Testing LinkedStack
 
         @Test
         @DisplayName("Pushing an item results in it being on the top.")
-        void PushedItemIsTopOfStack() {
+        void pushedItemIsTopOfStack() {
             Stack<Integer> stack = new LinkedStack<>();
             stack.push(99);
             assertEquals(99, stack.peek());
