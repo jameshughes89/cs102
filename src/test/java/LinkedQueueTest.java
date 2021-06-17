@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.EmptyStackException;
 import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -36,6 +37,49 @@ class LinkedQueueTest {
         queue.enqueue(99);
         queue.enqueue(101);
         assertEquals(2, queue.size());
+    }
+
+    @Test
+    @DisplayName("Enqueuing one item results in it being the front.")
+    void enqueuingOneItemIsFront() {
+        Queue<Integer> queue = new LinkedQueue<>();
+        queue.enqueue(99);
+        assertEquals(99, queue.first());
+    }
+
+    @Test
+    @DisplayName("Enqueuing two items results in second not being the front.")
+    void enqueuingSecondItemIsNotFront() {
+        Queue<Integer> queue = new LinkedQueue<>();
+        queue.enqueue(99);
+        queue.enqueue(101);
+        assertNotEquals(101, queue.first());
+    }
+
+    @Test
+    @DisplayName("Enqueueing and Dequeuing returns in FIFO order.")
+    void enqueueingAndDequeuingReturnsElementsInFIFOOrder() {
+        Queue<Integer> queue = new LinkedQueue<>();
+        for (int i = 0; i < 6; ++i) {
+            queue.enqueue(i);
+        }
+        for (int i = 0; i < 6; ++i) {
+            assertEquals(i, queue.dequeue());
+        }
+    }
+
+    @Test
+    @DisplayName("Dequeuing throws NoSuchElementException when queue is empty.")
+    void dequeueEmptyQueueThrowsException() {
+        Queue<Integer> queue = new LinkedQueue<>();
+        assertThrows(NoSuchElementException.class, () -> queue.dequeue());
+    }
+
+    @Test
+    @DisplayName("First throws NoSuchElementException when queue is empty.")
+    void firstEmptyQueueThrowsException() {
+        Queue<Integer> queue = new LinkedQueue<>();
+        assertThrows(NoSuchElementException.class, () -> queue.first());
     }
 
 }
