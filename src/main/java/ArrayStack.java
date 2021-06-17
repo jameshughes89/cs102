@@ -6,8 +6,6 @@ public class ArrayStack<T> implements Stack<T> {
     private T[] stack;
     private int top;
 
-
-
     /**
      * Create an ArrayStack of the default capacity.
      */
@@ -19,15 +17,15 @@ public class ArrayStack<T> implements Stack<T> {
     /**
      * Create an ArrayStack with the specified size.
      *
-     * @param size      Starting size of the fixed length array.
+     * @param initialCapacity Starting capacity of the fixed length array.
      */
     @SuppressWarnings("unchecked")
-    public ArrayStack(int size) {
+    public ArrayStack(int initialCapacity) {
         top = 0;
         // Generic types cannot be instantiated so we cast.
         // This does generate a compile time warning that
         // is being suppressed with the @ annotation.
-        stack = (T[]) new Object[size];
+        stack = (T[]) new Object[initialCapacity];
     }
 
     @Override
