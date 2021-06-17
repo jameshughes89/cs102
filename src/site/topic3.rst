@@ -693,8 +693,7 @@ Get
             // Make sure the index provided is valid
             if (index > -1 && index < friendCount) {
                 return friends[index];
-            }
-            else {
+            } else {
                 return null;
             }
         }
