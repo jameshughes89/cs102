@@ -48,15 +48,6 @@ class LinkedQueueTest {
     }
 
     @Test
-    @DisplayName("Enqueuing two items results in second not being the front.")
-    void enqueuingSecondItemIsNotFront() {
-        Queue<Integer> queue = new LinkedQueue<>();
-        queue.enqueue(99);
-        queue.enqueue(101);
-        assertNotEquals(101, queue.first());
-    }
-
-    @Test
     @DisplayName("Enqueueing and Dequeuing returns in FIFO order.")
     void enqueueingAndDequeuingReturnsElementsInFIFOOrder() {
         Queue<Integer> queue = new LinkedQueue<>();
