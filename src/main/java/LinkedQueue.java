@@ -12,7 +12,22 @@ public class LinkedQueue<T> implements Queue<T> {
 
     @Override
     public void enqueue(T element) {
+        Node<T> toEnqueue = new Node<>(element);
 
+        // If nothing is in the queue, then the front is null
+        // and the enqueued element will become the front,
+        // otherwise, the enqueued element is added after the
+        // current rear.
+        if (isEmpty()) {
+            front = toEnqueue;
+        }
+        else {
+           rear.setNext(toEnqueue);
+        }
+        // Either way, the rear of the queue will be the newly
+        // enqueued element.
+        rear = toEnqueue;
+        size++;
     }
 
     @Override
