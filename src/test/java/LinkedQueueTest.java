@@ -40,8 +40,8 @@ class LinkedQueueTest {
     }
 
     @Test
-    @DisplayName("Enqueuing one item results in it being the front.")
-    void enqueuingOneItemIsFront() {
+    @DisplayName("Enqueuing one item results in it being the first.")
+    void enqueuingOneItemIsFirst() {
         Queue<Integer> queue = new LinkedQueue<>();
         queue.enqueue(99);
         assertEquals(99, queue.first());

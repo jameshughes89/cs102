@@ -22,8 +22,7 @@ public class LinkedQueue<T> implements Queue<T> {
         // current rear.
         if (isEmpty()) {
             front = toEnqueue;
-        }
-        else {
+        } else {
            rear.setNext(toEnqueue);
         }
         // Either way, the rear of the queue will be the newly
@@ -41,8 +40,7 @@ public class LinkedQueue<T> implements Queue<T> {
         front = front.getNext();
         size--;
         // Although front will update properly regardless, rear
-        // will need to be set to null if we dequeue the last
-        // element.
+        // should be set to null if we dequeue the last element
         if (isEmpty()) {
             rear = null;
         }
