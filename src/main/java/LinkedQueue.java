@@ -1,8 +1,8 @@
 public class LinkedQueue<T> implements Queue<T> {
 
-    Node<T> front;
-    Node<T> rear;
-    int size;
+    private Node<T> front;
+    private Node<T> rear;
+    private int size;
 
     public LinkedQueue() {
         front = null;
