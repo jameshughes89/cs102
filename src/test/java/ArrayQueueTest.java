@@ -48,11 +48,16 @@ public class ArrayQueueTest {
 
     @Test
     @DisplayName("Enqueuing 6 elements into the queue expands capacity.")
-    void pushingBeyondCapacityCallsExpandCapacityToMakeRoom() {
+    void enqueuingBeyondCapacityCallsExpandCapacityToMakeRoom() {
         Queue<Integer> queue = new ArrayQueue<>(5);
         for (int i = 0; i < 6; ++i) {
             queue.enqueue(i);
         }
+        for (int i = 0; i < 5; ++i) {
+            queue.dequeue();
+        }
+        // After 6 enqueues, expandCapacity is called
+        // After 5 dequeues, the 6th element will be first
         assertEquals(5, queue.first());
     }
 
