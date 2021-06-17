@@ -52,8 +52,7 @@ Enqueue
 
         if (isEmpty()) {
             front = toEnqueue;
-        }
-        else {
+        } else {
            rear.setNext(toEnqueue);
         }
         rear = toEnqueue;
@@ -101,8 +100,51 @@ Enqueuing into a Nonempty Queue
     4. Updating the count
 
 
-Dequeue
--------
+Dequeue & First
+---------------
+
+.. code-block:: java
+    :linenos:
+
+    @Override
+    public T dequeue() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("Dequeueing from an empty queue.");
+        }
+        T returnElement = front.getData();
+        front = front.getNext();
+        size--;
+        if (isEmpty()) {
+            rear = null;
+        }
+        return returnElement;
+    }
+
+    @Override
+    public T first() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("First from an empty queue.");
+        }
+        return front.getData();
+    }
+
+* Like ``LinkedStack`` and ``ArrayStack``, trying to access something from the empty queue throws an exception
+
+* Notice in ``dequeue`` that, if it's not empty, we just *remove/delete from the front of a linked structure*
+    * This was the same as ``pop`` in the ``LinkedStack``
+
+* In addition to being empty, the only other edge case we need to watch out for is if the ``dequeue`` makes the queue empty
+* If this happens, we must set ``front`` to ``null``
+    * This is actually taken care of already since ``front``'s next would be ``null``, and saying ``front = front.getNext()`` makes ``front`` ``null``
+
+* We should also set ``rear`` to ``null``
+* This helps with garbage collection and keeping the state of the queue *correct*
+* If we don't do this, ``rear`` will continue to point to a node that should not be in the queue anymore
+    * Our current implementation will handle this scenario fine as an enqueue on an empty queue sets both ``front`` and ``rear`` to ``null``
+    * But imagine also having a messed up count and ``enqueuing`` after this without setting ``rear`` to ``null``
+    * If we ``enqueue`` in this case, we might end up saying ``rear.setNext(toEnqueue)``
+    * What would that mean?
+    * What would that look like?
 
 
 Variations
@@ -153,3 +195,73 @@ For next time
 * Download and run the :download:`LinkedQueueTest <../test/java/LinkedQueueTest.java>` tests
 * Read Chapter 5 Section 6
     * 6 pages
+
+
+Playing Code
+============
+
+.. code-block:: java
+    :linenos:
+
+        // Create a LinkedQueue
+        Queue<Integer> myQueue = new LinkedQueue<>();
+
+        // Check queue is empty
+        System.out.println(myQueue.size());
+        System.out.println(myQueue.isEmpty());
+        System.out.println(myQueue);
+
+        // Test enqueue
+        myQueue.enqueue(0);
+        myQueue.enqueue(1);
+        myQueue.enqueue(2);
+        myQueue.enqueue(3);
+        myQueue.enqueue(4);
+        System.out.println(myQueue.size());
+        System.out.println(myQueue.isEmpty());
+        System.out.println(myQueue);
+
+        // Test enqueue more
+        myQueue.enqueue(10);
+        myQueue.enqueue(11);
+        myQueue.enqueue(12);
+        myQueue.enqueue(13);
+        myQueue.enqueue(14);
+        System.out.println(myQueue.size());
+        System.out.println(myQueue.isEmpty());
+        System.out.println(myQueue);
+
+        // Test first
+        System.out.println(myQueue.first());
+        System.out.println(myQueue.size());
+        System.out.println(myQueue.isEmpty());
+        System.out.println(myQueue);
+
+        // Test dequeue
+        System.out.println(myQueue.dequeue());
+        System.out.println(myQueue.dequeue());
+        System.out.println(myQueue.dequeue());
+        System.out.println(myQueue.dequeue());
+        System.out.println(myQueue.dequeue());
+        System.out.println(myQueue.dequeue());
+        System.out.println(myQueue.dequeue());
+        System.out.println(myQueue.dequeue());
+        System.out.println(myQueue.dequeue());
+        System.out.println(myQueue.dequeue());
+        System.out.println(myQueue.size());
+        System.out.println(myQueue.isEmpty());
+        System.out.println(myQueue);
+
+        // Test first and dequeue throwing exception
+        try {
+            myQueue.first();
+        }
+        catch (NoSuchElementException e) {
+            e.printStackTrace();
+        }
+        try {
+            myQueue.dequeue();
+        }
+        catch (NoSuchElementException e) {
+            e.printStackTrace();
+        }
