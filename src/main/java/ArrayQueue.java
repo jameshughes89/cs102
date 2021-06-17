@@ -26,7 +26,7 @@ public class ArrayQueue<T> implements Queue<T>{
             expandCapacity();
         }
         queue[rear] = element;
-        // rear will wrap back to 0 if it is bigger than
+        // rear will wrap back to 0 if it is more than
         // the capacity of the array
         rear = (rear + 1) % queue.length;
         size++;
@@ -52,6 +52,8 @@ public class ArrayQueue<T> implements Queue<T>{
             throw new NoSuchElementException("Dequeueing from an empty queue.");
         }
         T returnElement = queue[front];
+        // front will wrap back to 0 if it is more than
+        // the capacity of the array
         front = (front + 1) % queue.length;
         size--;
         return returnElement;
