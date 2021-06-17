@@ -46,6 +46,7 @@ Enqueue
 .. code-block:: java
     :linenos:
 
+    @Override
     public void enqueue(T element) {
         Node<T> toEnqueue = new Node<>(element);
 
