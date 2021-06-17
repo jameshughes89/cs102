@@ -67,7 +67,7 @@ public class LinkedQueue<T> implements Queue<T> {
 
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("Head --> ");
+        builder.append("Front --> ");
         Node<T> currentNode = front;
         while (currentNode != null) {
             builder.append(currentNode.getData());
