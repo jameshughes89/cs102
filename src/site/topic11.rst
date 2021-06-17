@@ -43,6 +43,62 @@ Edge Cases
 Enqueue
 -------
 
+.. code-block:: java
+    :linenos:
+
+    public void enqueue(T element) {
+        Node<T> toEnqueue = new Node<>(element);
+
+        if (isEmpty()) {
+            front = toEnqueue;
+        }
+        else {
+           rear.setNext(toEnqueue);
+        }
+        rear = toEnqueue;
+        size++;
+    }
+
+* Take your time looking at the ``enqueue`` method
+* The easier things to notice are
+    * Create a new node with the element being added
+        * ``Node<T> toEnqueue = new Node<>(element);``
+    * Once everything is done, set the rear to be the new enqueued node
+        * ``rear = toEnqueue;``
+    * Update the size
+        * ``size++;``
+
+* The ``if`` statement may be a little harder to chew on
+* The trick to understanding it is to take your time, look at the code, and think carefully
+
+
+Enqueuing into an Empty Queue
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* **If** the queue is empty, both ``front`` and ``rear`` reference ``null``
+* When this is the case, the thing being enqueued will be the only element in the queue
+    * Thus, both ``front`` and ``rear`` need to reference the new node
+    * The new node will be both the first and last thing in the queue
+
+* When looking at the code, this would result in
+    1. Making a new node with the element being enqueued
+    2. Setting ``front`` to reference the new node
+    3. Setting ``rear`` to reference the new node
+    4. Updating the count
+
+
+Enqueuing into a Nonempty Queue
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* **If** the queue is not empty there is at least one element in it
+    * It may be the case that both ``front`` and ``rear`` reference the same node (if there is only 1 thing in the queue)
+
+* When looking at the code, this would result in
+    1. Making a new node with the element being enqueued
+    2. Setting the ``rear``'s next to be the new node
+    3. Setting the ``rear`` to reference the new node
+    4. Updating the count
+
 
 Dequeue
 -------
