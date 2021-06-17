@@ -302,6 +302,18 @@ Playing
     System.out.println(myStack.isEmpty());
     System.out.println(myStack);
 
+    // No test for expandCapacity since LinkedStack
+    // doesn't need it, but test more pushes anyways
+    // as the functionality does not change either way
+    myStack.push(10);
+    myStack.push(11);
+    myStack.push(12);
+    myStack.push(13);
+    myStack.push(14);
+    System.out.println(myStack.size());
+    System.out.println(myStack.isEmpty());
+    System.out.println(myStack);
+
     // Test peek
     System.out.println(myStack.peek());
     System.out.println(myStack.size());
@@ -309,6 +321,11 @@ Playing
     System.out.println(myStack);
 
     // Test Pop
+    System.out.println(myStack.pop());
+    System.out.println(myStack.pop());
+    System.out.println(myStack.pop());
+    System.out.println(myStack.pop());
+    System.out.println(myStack.pop());
     System.out.println(myStack.pop());
     System.out.println(myStack.pop());
     System.out.println(myStack.pop());
