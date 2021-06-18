@@ -49,6 +49,12 @@ Modulo
 * If ``rear`` is any other number ``< 10``, the number is not divisible by ``10`` and the ``%`` will effectively make no difference
 
 
+Discussion
+----------
+
+* With this special expression for updating the ``rear``, do we need it for updating the ``front``?
+* With this idea, will we ever run out of room in our array?
+
 Implementing a Queue --- Array Container
 ========================================
 
