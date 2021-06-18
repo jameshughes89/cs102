@@ -11,6 +11,11 @@ Idea #2
 Idea #3
 =======
 
+
+Expand Capacity
+---------------
+
+
 Implementing a Queue --- Array Container
 ========================================
 
