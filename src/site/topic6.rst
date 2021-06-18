@@ -276,7 +276,6 @@ Code
 * If everything was done correctly, the following code should work
 
 .. code-block:: java
-    :linenos:
 
     // Create an ArrayStack
     Stack<Integer> myStack = new ArrayStack<>(5);
