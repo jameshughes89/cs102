@@ -51,6 +51,24 @@ Idea #3
    :align: center
 
 
+* With this idea, we can think of our idea #3 implementation as this
+
+.. image:: img/arrayqueue_2idea0.png
+   :width: 500 px
+   :align: center
+
+* After a bunch of ``enqueues`` and ``dequeues`` it will loop around like this
+
+.. image:: img/arrayqueue_2idea1.png
+   :width: 500 px
+   :align: center
+
+* Here is the same scenario, but with the array shown as a linear array
+
+.. image:: img/arrayqueue_2idea2.png
+   :width: 500 px
+   :align: center
+
 
 Implementing a Queue --- Array Container
 ========================================
