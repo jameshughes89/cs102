@@ -197,6 +197,22 @@ Discussion
 * With this special expression for updating the ``rear``, do we need it for updating the ``front``?
 * With this idea, will we ever run out of room in our array?
 
+.. warning::
+
+    Sometimes, *good enough is good enough*.
+
+    In this ``ArrayQueue`` implementation scenario, idea #3 is quite clearly the superior option and is not overly
+    difficult to implement. However, as you continue in computer science and work on more complex problems, sometimes
+    ease of implementation and maintainability become very important.
+
+    Better algorithms always exist, and a subpar implementation may do the trick, especially when your problem space is
+    small enough that performance doesn't matter.
+
+    Computational complexity is very important, but sometimes in practice we may lose the forrest through the trees. If
+    you can change your algorithm from :math:`O(n^{2})` to :math:`O(n)`, then you should probably do it. But then again,
+    if the updated algorithm will take you a day and you only need to run the algorithm once on a small problem, perhaps
+    :math:`O(n^{2})` is good enough.
+
 
 Implementing a Queue --- Array Container
 ========================================
