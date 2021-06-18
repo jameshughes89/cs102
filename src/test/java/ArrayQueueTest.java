@@ -59,8 +59,8 @@ public class ArrayQueueTest {
     }
 
     @Test
-    @DisplayName("Enqueuing 6 elements into the queue expands capacity.")
-    void enqueuingBeyondCapacityCallsExpandCapacityToMakeRoom() {
+    @DisplayName("Enqueuing 6 elements expands capacity while maintaining queues FIFO ordering.")
+    void enqueuingBeyondCapacityCallsExpandCapacityToMakeRoomWhileMaintainingQueueOrdering() {
         Queue<Integer> queue = new ArrayQueue<>(5);
         queue.enqueue(99);
         queue.dequeue();
