@@ -293,7 +293,6 @@ Playing
     * ``ArrayStack`` -> ``LinkedStack``
 
 .. code-block:: java
-    :linenos:
 
     // Create a LinkedStack
     Stack<Integer> myStack = new LinkedStack<>();
