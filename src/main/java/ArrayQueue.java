@@ -41,23 +41,15 @@ public class ArrayQueue<T> implements Queue<T>{
      */
     @SuppressWarnings("unchecked")
     private void expandCapacity() {
-        T[] newStack = (T[]) new Object[queue.length * 2];
+        T[] newQueue = (T[]) new Object[queue.length * 2];
         for (int i = 0; i < queue.length; ++i) {
-            newStack[i] = queue[i];
+            newQueue[i] = queue[front];
+            front = (front + 1) % queue.length;
         }
-        queue = newStack;
+        front = 0;
+        rear = size;
+        queue = newQueue;
     }
-//    @SuppressWarnings("unchecked")
-//    private void expandCapacity() {
-//        T[] newQueue = (T[]) new Object[queue.length * 2];
-//        for (int i = 0; i < queue.length; ++i) {
-//            newQueue[i] = queue[front];
-//            front = (front + 1) % queue.length;
-//        }
-//        front = 0;
-//        rear = size;
-//        queue = newQueue;
-//    }
 
     @Override
     public T dequeue() {
