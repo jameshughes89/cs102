@@ -47,7 +47,9 @@ public class Square extends Rectangle {
      * toString. Remember, the Rectangle's
      * toString overrides it's superclass's
      * (the Object class) toString.
-     * @return
+     *
+     * @return  A string representing the
+     *          square
      */
     public String toString() {
         return String.format("Square(Side = %.2f)", getSide());
