@@ -47,27 +47,31 @@ public class ArrayQueueTest {
     }
 
     @Test
-    @DisplayName("Enqueuing 6 elements into the queue expands capacity.")
-    void enqueuingBeyondCapacityCallsExpandCapacityToMakeRoom() {
-        Queue<Integer> queue = new ArrayQueue<>(5);
-        for (int i = 0; i < 6; ++i) {
-            queue.enqueue(i);
-        }
-        for (int i = 0; i < 5; ++i) {
-            queue.dequeue();
-        }
-        // After 6 enqueues, expandCapacity is called
-        // After 5 dequeues, the 6th element will be first
-        assertEquals(5, queue.first());
-    }
-
-    @Test
     @DisplayName("Enqueueing and Dequeuing returns in FIFO order.")
     void enqueueingAndDequeuingReturnsElementsInFIFOOrder() {
         Queue<Integer> queue = new ArrayQueue<>();
         for (int i = 0; i < 6; ++i) {
             queue.enqueue(i);
         }
+        for (int i = 0; i < 6; ++i) {
+            assertEquals(i, queue.dequeue());
+        }
+    }
+
+    @Test
+    @DisplayName("Enqueuing 6 elements into the queue expands capacity.")
+    void enqueuingBeyondCapacityCallsExpandCapacityToMakeRoom() {
+        Queue<Integer> queue = new ArrayQueue<>(5);
+        queue.enqueue(99);
+        queue.dequeue();
+        // front = rear = 1
+        for (int i = 0; i < 6; ++i) {
+            queue.enqueue(i);
+        }
+        // After 6 enqueues, expandCapacity is called.
+        // Ensure first was not overwritten by 6th
+        // consecutive enqueue and whole queue is in
+        // proper FIFO order with 6th element at the rear
         for (int i = 0; i < 6; ++i) {
             assertEquals(i, queue.dequeue());
         }

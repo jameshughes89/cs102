@@ -1,6 +1,6 @@
 import java.util.NoSuchElementException;
 
-public class ArrayQueue<T> implements Queue<T>{
+public class ArrayQueue<T> implements Queue<T> {
 
     private static final int DEFAULT_CAPACITY = 100;
     private T[] queue;
