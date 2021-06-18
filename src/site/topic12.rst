@@ -214,7 +214,8 @@ Discussion
     :math:`O(n^{2})` is good enough.
 
     Even worse, if you're trying to save a few *FLOPS* here and there, great, but if that's distracting you from other
-    more important issues, perhaps you should move on. 
+    more important issues, perhaps you should move on.
+
 
 Implementing a Queue --- Array Container
 ========================================
