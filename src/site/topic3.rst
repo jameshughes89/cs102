@@ -806,7 +806,6 @@ Code
 * If everything was done correctly, the following code should work
 
 .. code-block:: java
-    :linenos:
 
     public class SomeClass {
         public static void main(String[] args) {
