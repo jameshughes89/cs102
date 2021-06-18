@@ -208,7 +208,6 @@ Playing Code
 ============
 
 .. code-block:: java
-    :linenos:
 
         // Create a LinkedQueue
         Queue<Integer> myQueue = new LinkedQueue<>();
