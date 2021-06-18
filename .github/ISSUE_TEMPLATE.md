@@ -12,6 +12,7 @@ Replace this text with a detailed description of why this is important.
 
 ### Where
 Replace this text with a detailed description of where the issue is or where it should be addressed.
+If the where is obvious because of _Files changed_, then you don't fill this in.
 
 ### How
 Replace this text with a detailed description of any suggestions on how to address.

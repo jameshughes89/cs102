@@ -11,7 +11,8 @@ Replace this text with a detailed description of what the change is.
 Replace this text with a detailed description of why this is important.
 
 ### Where
-Replace this text with a detailed description of where the change is and why (should it be an aside?).
+Replace this text with a detailed description of where the change is/should be and why (should it be an aside?). 
+If the where is obvious because of _Files changed_, then you don't fill this in. 
 
 ### How
 Replace this text with a detailed description of how it is addressed.
