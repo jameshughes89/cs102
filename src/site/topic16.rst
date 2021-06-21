@@ -109,6 +109,13 @@ In General
 * This is easily fixed by switching the order of the ``catch`` statements
 
 
+Finally
+^^^^^^^
+
+* There is another special keyword, ``final`` that comes up when dealing with exceptions
+* The code within the ``final`` block will always run, regardless of if an exception was thrown or which exception was caught
+* This comes in handy if you have any code that should be run either way
+    * Eg. Closing files
 
 For next time
 =============
