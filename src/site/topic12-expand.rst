@@ -12,7 +12,7 @@ Topic #12 Aside --- expandCapacity
 
 * Note that ``front`` is ``2`` and ``rear`` is ``2``
 * The order of the elements' indices in the queue from first to last is ``2``, ``3``, ``0``, ``1``
-    * Our ``ArrayQueue`` manages this ordering with our index update rule of ``rear = (rear + `) % queue.length`` 
+    * Our ``ArrayQueue`` manages this ordering with our index update rule of ``rear = (rear + `) % queue.length``
 * Even after the ``expandCapacity`` there is no room for any new element in index ``2``
 
 * Imagine we just ``enqueue`` and add the element in the first free index (index ``4``)
