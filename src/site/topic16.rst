@@ -67,6 +67,49 @@ Carry On
     }
 
 
+In General
+----------
+
+* If it is possible that the code we are trying may throw different types of exceptions, we can have a catch for each
+* The general idea is as follows
+
+.. code-block:: java
+    :linenos:
+
+    try {
+        mayThrowVariousExceptions();
+    } catch (SomeExceptionA e) {
+        handleSomeExceptionA();
+    } catch (SomeExceptionB e) {
+        handleSomeExceptionB();
+    } catch (SomeExceptionC e) {
+        handleSomeExceptionC();
+    } finally {
+        codeThatWillAlwaysRun();
+    }
+
+* If you have multiple ``catch`` statements, we must be careful to mind our exception hierarchy
+* Always order your ``catch`` statements from most specific to most general
+* Take for example ``IOException`` and ``FileNotFoundException``
+
+.. code-block:: java
+    :linenos:
+
+    // This is bad
+    try {
+        ...
+    } catch (IOException e) {
+        ...
+    } catch (FileNotFoundException e) {
+        ...
+    }
+
+* Since ``FileNotFoundException`` is a subclass of ``IOException``, if a ``FileNotFoundException`` is thrown the first ``catch`` statement will catch it
+* In this scenario, it would not be possible to run the code within the second ``catch`` statement
+* This is easily fixed by switching the order of the ``catch`` statements
+
+
+
 For next time
 =============
 
