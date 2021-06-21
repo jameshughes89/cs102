@@ -65,7 +65,7 @@ public class ArrayStack<T> implements Stack<T> {
     @Override
     public T peek() {
         if (isEmpty()) {
-            throw new NoSuchElementException("Popping from an empty stack.");
+            throw new NoSuchElementException("Peeking from an empty stack.");
         }
         return stack[top - 1];
     }
