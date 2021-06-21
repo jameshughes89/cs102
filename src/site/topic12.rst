@@ -241,6 +241,7 @@ Expand Capacity
 
 * If we ``enqueue`` again, we'll need to call ``expandCapacity``
 * **However** we can't just double the size of the array and copy the contents over like we did before
+    * :doc:`See the aside on expandCapacity. </topic12-expand>`
 
 .. Skip arrayqueue_expand2 since it is just a copy of 1
 .. image:: img/arrayqueue_expand3.png
