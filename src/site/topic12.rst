@@ -37,7 +37,9 @@ Testing
         }
     }
 
-* Here, what we want to test is that the we can enqueue and dequeue and have ``expandCapacity`` called without messing up the ordering of the queue
+* What we're really testing is the ``Queue`` *interface*
+* But, in order to do this, we have to make sure the implementation properly implements the interface
+* We need to check that we can use enqueue and dequeue and have ``expandCapacity`` called without messing up the ordering of the queue
 * The ``enqueue`` and ``dequeue`` on lines 5 & 6 are to have ``front == rear == 1``
     * Just not at ``0``
 
@@ -46,6 +48,11 @@ Testing
 
 * After ``expandCapacity`` is called, ``front`` is ``0`` and ``rear is ``6``, but I don't actually care what the indicies are
 * All I care about is that I can ``dequeue`` the ``6`` elements and get them in FIFO order
+
+.. warning::
+
+    Remember, we're testing the **interface**, not the implementation; however, we ultimately need to write tests that
+    exercise the specific implementation we have in order to ensure the interface is implemented correctly.
 
 
 For next time
