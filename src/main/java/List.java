@@ -4,24 +4,24 @@ import java.util.NoSuchElementException;
 public interface List<T> {
 
     /**
-     * Removes and returns the first element in the list. If no such element exists a
-     * NoSuchElementException is thrown.
+     * Removes and returns a reference to the first element in the list. If no such element
+     * exists a NoSuchElementException is thrown.
      *
      * @return First element in the list
      */
     T removeFirst();
 
     /**
-     * Removes and returns the last element in the list. If no such element exists a
-     * NoSuchElementException is thrown.
+     * Removes and returns a refernce to the last element in the list. If no such element
+     * exists a NoSuchElementException is thrown.
      *
      * @return Last element in the list
      */
     T removeLast();
 
     /**
-     * Removes and returns the element equal to the specified element. If no such
-     * element exists a NoSuchElementException is thrown.
+     * Removes and returns a reference to the element equal to the specified element.
+     * If no such element exists a NoSuchElementException is thrown.
      *
      * @param element Specified element to find return
      * @return Element equal to specified element
@@ -29,8 +29,8 @@ public interface List<T> {
     T remove(T element);
 
     /**
-     * Returns the first element in the list. After the method completes, the item
-     * will still be at the front of the list. If no such element exists, a
+     * Returns a reference to the first element in the list. After the method completes,
+     * the item will still be at the front of the list. If no such element exists, a
      * NoSuchElementException is thrown.
      *
      * @return First element in the list
@@ -38,8 +38,8 @@ public interface List<T> {
     T first();
 
     /**
-     * Returns the last element in the list. After the method completes, the item
-     * will still be at the end of the list. If no such element exists, a
+     * Returns a reference to the last element in the list. After the method completes,
+     * the item will still be at the end of the list. If no such element exists, a
      * NoSuchElementException is thrown.
      *
      * @return Last element in the list
