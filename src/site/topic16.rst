@@ -62,6 +62,8 @@ Unchecked
     Exception in thread "main" java.lang.ArithmeticException: / by zero
         at SomeClass.main(SomeClass.java:10)
 
+* Unchecked exceptions are propagated to the calling method if they are not handled within the method the exception was thrown from
+
 
 Checked
 -------
@@ -74,6 +76,8 @@ Checked
 
 * At compile-time, these exceptions are checked to see if they are managed
 * If you do not, Java or your IDE will tell you
+    * More specifically, Java's *type checker* will yell at you
+    * The *type checker* is the process of ensuring that the types of expressions are consistent
 
 .. code-block:: java
     :linenos:
@@ -101,8 +105,6 @@ Example
 * The calling method will have to either handle it then and there, or it too must let Java know that we will propagate the exception to its calling method with the ``throws`` keyword
 
 * We didn't need the ``throws`` keyword for unchecked exceptions, but need it for checked exceptions since Java requires us to explicitly and deliberately manage the checked exceptions
-* Unchecked exceptions will simply be propagated to the calling method if they are not handled within the method the exception was thrown from
-
 
 
 Throwing an Exception
