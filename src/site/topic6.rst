@@ -329,13 +329,11 @@ Code
     // Test peek and pop throwing exception
     try {
         myStack.peek();
-    }
-    catch (NoSuchElementException e) {
+    } catch (NoSuchElementException e) {
         e.printStackTrace();
     }
     try {
         myStack.pop();
-    }
-    catch (NoSuchElementException e) {
+    } catch (NoSuchElementException e) {
         e.printStackTrace();
     }
