@@ -1,3 +1,5 @@
-public class ArraySortedList<T> extends ArrayList<T> implements SortedList<T> {
+public class ArraySortedList<T> extends AbstractArrayList<T> implements SortedList<T> {
 
+
+    }
 }
