@@ -4,6 +4,14 @@ import java.util.NoSuchElementException;
 public interface List<T> {
 
     /**
+     * Adds the provided element to the list as the specified index.
+     *
+     * @param element Item to be added to the list
+     * @param index   Index of where to add new element
+     */
+    void add(T element, int index);
+
+    /**
      * Removes and returns a reference to the first element in the list. If no such element
      * exists a NoSuchElementException is thrown.
      *
@@ -73,8 +81,7 @@ public interface List<T> {
      * Returns an iterator object for the elements in the list in
      * the proper order for the list type.
      *
-     * @return  Iterator object for list instance
+     * @return Iterator object for list instance
      */
     Iterator<T> iterator();
-
 }
