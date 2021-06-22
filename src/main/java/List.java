@@ -61,6 +61,12 @@ public interface List<T> {
      */
     boolean isEmpty();
 
+    /**
+     * Returns an iterator object for the elements in the list in
+     * the proper order for the list type.
+     *
+     * @return  Iterator object for list instance
+     */
     Iterator<T> iterator();
 
 }
