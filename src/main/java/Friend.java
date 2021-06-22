@@ -36,7 +36,7 @@ public class Friend {
      * Update the email address. Will only work if the email address
      * contains the @ symbol for simple data correctness check
      *
-     * @param email     new email address
+     * @param email new email address
      */
     public void setEmail(String email) {
         if (email.contains("@")) {
@@ -64,15 +64,13 @@ public class Friend {
 //                && this.lastName.equals(other.lastName);
 //    }
 
-
     /**
      * Sample equals method for comparing two friend objects.
      * In this example, we will simply compare first and last
      * names.
      *
-     * @param o     an "object" being compared to
-     *
-     * @return      if the two friend objects are equal
+     * @param o an "object" being compared to
+     * @return if the two friend objects are equal
      */
     public boolean equals(Object o) {
         // If o is actually in the same memory address of this
@@ -92,6 +90,4 @@ public class Friend {
         return this.firstName.equals(other.firstName)
                 && this.lastName.equals(other.lastName);
     }
-
-
 }

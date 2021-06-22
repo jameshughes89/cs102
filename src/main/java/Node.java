@@ -4,7 +4,7 @@
  * null, and a reference to the next/subsequent/successor
  * singly linked node, which may also be null.
  *
- * @param <T>   Type of the data being stored in the node
+ * @param <T> Type of the data being stored in the node
  */
 public class Node<T> {
 

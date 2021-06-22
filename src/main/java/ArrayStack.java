@@ -13,7 +13,6 @@ public class ArrayStack<T> implements Stack<T> {
         this(DEFAULT_CAPACITY);
     }
 
-
     /**
      * Create an ArrayStack with the specified size.
      *
@@ -48,7 +47,6 @@ public class ArrayStack<T> implements Stack<T> {
             newStack[i] = stack[i];
         }
         stack = newStack;
-
     }
 
     @Override
@@ -65,7 +63,7 @@ public class ArrayStack<T> implements Stack<T> {
     @Override
     public T peek() {
         if (isEmpty()) {
-            throw new NoSuchElementException("Popping from an empty stack.");
+            throw new NoSuchElementException("Peeking from an empty stack.");
         }
         return stack[top - 1];
     }
@@ -90,5 +88,4 @@ public class ArrayStack<T> implements Stack<T> {
         builder.append("<-- Top");
         return builder.toString();
     }
-
 }

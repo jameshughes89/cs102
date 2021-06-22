@@ -35,7 +35,7 @@ public class ArrayQueue<T> implements Queue<T> {
     /**
      * Doubles the size of the queue array and copy the
      * contents over.
-     *
+     * <p>
      * Mind where we copy from the original queue and
      * the updates to front and rear
      */
