@@ -23,7 +23,7 @@ public class LinkedQueue<T> implements Queue<T> {
         if (isEmpty()) {
             front = toEnqueue;
         } else {
-           rear.setNext(toEnqueue);
+            rear.setNext(toEnqueue);
         }
         // Either way, the rear of the queue will be the newly
         // enqueued element.
@@ -82,12 +82,12 @@ public class LinkedQueue<T> implements Queue<T> {
      * contains a reference to data of type T, which may be
      * null, and a reference to the next/subsequent/successor
      * singly linked node, which may also be null.
-     *
+     * <p>
      * This class is a static nested class since the node
      * class is only needed for the implementation of the
      * LinkedQueue.
      *
-     * @param <T>   Type of the data being stored in the node
+     * @param <T> Type of the data being stored in the node
      */
     private static class Node<T> {
 
