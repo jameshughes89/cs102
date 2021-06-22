@@ -47,6 +47,26 @@ public interface List<T> {
     T last();
 
     /**
+     * Returns a reference to the element at the specified location. After the method
+     * completes, the item will still be at the end of the list. If the provided
+     * index is out of range, an IndexOutOfBoundsException is thrown.
+     *
+     * @param index Index to retrieve element from
+     * @return Element at specified index
+     */
+    T get(int index);
+
+    /**
+     * Returns the index of a specified element if it is contained
+     * within the list. If the element is not within the list, -1
+     * is returned to signify that the element was not found.
+     *
+     * @param target Element to be searched for
+     * @return Index of the specified element or -1 if not found
+     */
+    int indexOf(T target);
+
+    /**
      * Determines if a specified element is contained within the list.
      *
      * @param target Element to be searched for

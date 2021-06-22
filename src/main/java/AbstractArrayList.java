@@ -4,8 +4,8 @@ import java.util.NoSuchElementException;
 public abstract class AbstractArrayList<T> implements List<T> {
 
     private static final int DEFAULT_CAPACITY = 100;
-    private T[] list;
-    private int rear;
+    protected T[] list;
+    protected int rear;
 
     public AbstractArrayList() {
         this(DEFAULT_CAPACITY);
@@ -22,7 +22,7 @@ public abstract class AbstractArrayList<T> implements List<T> {
      * contents over.
      */
     @SuppressWarnings("unchecked")
-    private void expandCapacity() {
+    protected void expandCapacity() {
         T[] newList = (T[]) new Object[list.length * 2];
         for (int i = 0; i < list.length; ++i) {
             newList[i] = list[i];
@@ -38,7 +38,7 @@ public abstract class AbstractArrayList<T> implements List<T> {
      * @param start Index of where shift starts/stops and element
      *              overwritten.
      */
-    private void shiftLeft(int start) {
+    protected void shiftLeft(int start) {
         for (int i = start; i < list.length - 1; ++i) {
             list[i] = list[i + 1];
         }
@@ -54,28 +54,11 @@ public abstract class AbstractArrayList<T> implements List<T> {
      * @param start Index of where shifting starts/stops and where
      *              space is opened.
      */
-    private void shiftRight(int start) {
+    protected void shiftRight(int start) {
         for (int i = rear; i > start; --i) {
             list[i] = list[i - 1];
         }
         list[start] = null;
-    }
-
-    /**
-     * Returns the index of a specified element if it is contained
-     * within the list. If the element is not within the list, -1
-     * is returned to signifiy that the element was not found.
-     *
-     * @param target Element to be searched for
-     * @return Index of the specified element or -1 if not found
-     */
-    private int indexOf(T target) {
-        for (int i = 0; i < list.length; ++i) {
-            if (list[i].equals(target)) {
-                return i;
-            }
-        }
-        return -1;
     }
 
     @Override
@@ -129,6 +112,24 @@ public abstract class AbstractArrayList<T> implements List<T> {
             throw new NoSuchElementException("Last from an empty list.");
         }
         return list[rear - 1];
+    }
+
+    @Override
+    public T get(int index) {
+        if (index >= rear) {
+            throw new IndexOutOfBoundsException(String.format("List has no element at index %d.", index));
+        }
+        return list[index];
+    }
+
+    @Override
+    public int indexOf(T target) {
+        for (int i = 0; i < list.length; ++i) {
+            if (list[i].equals(target)) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     @Override
