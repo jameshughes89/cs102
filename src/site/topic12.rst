@@ -197,6 +197,31 @@ Discussion
 * With this special expression for updating the ``rear``, do we need it for updating the ``front``?
 * With this idea, will we ever run out of room in our array?
 
+.. warning::
+
+    Sometimes, *good enough is good enough*.
+
+    In this ``ArrayQueue`` implementation scenario, idea #3 is quite clearly the superior option and is not overly
+    difficult to implement. However, as you continue in computer science and work on more complex problems, sometimes
+    ease of implementation and maintainability become very important.
+
+    Better algorithms always exist, and a subpar implementation may do the trick, especially when your problem space is
+    small enough that performance doesn't matter.
+
+    Computational complexity is very important, but sometimes in practice we may lose the forrest through the trees. If
+    you can change your algorithm from :math:`O(n^{2})` to :math:`O(n)`, then you should probably do it. But then again,
+    if the updated algorithm will take you a day and you only need to run the algorithm once on a small problem, perhaps
+    :math:`O(n^{2})` is good enough.
+
+    Even worse, if you're trying to save a few *FLOPS* here and there, great, but if that's distracting you from other
+    more important issues, perhaps you should move on.
+
+    Donald Knuth, a very famous computer scientists, says:
+
+        *Programmers waste enormous amounts of time thinking about, or worrying about, the speed of noncritical parts of their programs, and these attempts at efficiency actually have a strong negative impact when debugging and maintenance are considered. We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil. Yet we should not pass up our opportunities in that critical 3%.*
+
+
+
 
 Expand Capacity
 ---------------
@@ -216,6 +241,7 @@ Expand Capacity
 
 * If we ``enqueue`` again, we'll need to call ``expandCapacity``
 * **However** we can't just double the size of the array and copy the contents over like we did before
+    * :doc:`See the aside on expandCapacity. </topic12-expand>`
 
 .. Skip arrayqueue_expand2 since it is just a copy of 1
 .. image:: img/arrayqueue_expand3.png
@@ -250,6 +276,7 @@ Discussion Again
 
 Implementing a Queue --- Array Container
 ========================================
+
 
 * All code is available for download from links at the bottom of the page
 * Here, only a subset of methods are shown
@@ -324,6 +351,47 @@ dequeue
     }
 
 * Since we're wrapping, we must remember that ``front`` may wrap around too
+
+
+Testing
+=======
+
+* The testing code is available for download at the bottom of the page
+* Here, a noteworthy test is presented
+
+.. code-block:: java
+    :linenos:
+
+    @Test
+    @DisplayName("Enqueuing 6 elements expands capacity while maintaining queues FIFO ordering.")
+    void enqueuingBeyondCapacityCallsExpandCapacityToMakeRoomWhileMaintainingQueueOrdering() {
+        Queue<Integer> queue = new ArrayQueue<>(5);
+        queue.enqueue(99);
+        queue.dequeue();
+        for (int i = 0; i < 6; ++i) {
+            queue.enqueue(i);
+        }
+        for (int i = 0; i < 6; ++i) {
+            assertEquals(i, queue.dequeue());
+        }
+    }
+
+* What we're really testing is the ``Queue`` *interface*
+* But, in order to do this, we have to make sure the implementation properly implements the interface
+* We need to check that we can use enqueue and dequeue and have ``expandCapacity`` called without messing up the ordering of the queue
+* The ``enqueue`` and ``dequeue`` on lines 5 & 6 are to have ``front == rear == 1``
+    * Just not at ``0``
+
+* Six ``enqueues`` will require that ``expandCapacity`` is called, but now ``front == rear == 1`` again
+* If the ``expandCapacity`` was broken, it would be possible that we overwrite the first element in the queue
+
+* After ``expandCapacity`` is called, ``front`` is ``0`` and ``rear is ``6``, but I don't actually care what the indicies are
+* All I care about is that I can ``dequeue`` the ``6`` elements and get them in FIFO order
+
+.. warning::
+
+    Remember, we're testing the **interface**, not the implementation; however, we ultimately need to write tests that
+    exercise the specific implementation we have in order to ensure the interface is implemented correctly.
 
 
 For next time

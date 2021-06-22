@@ -71,5 +71,4 @@ class LinkedStackTest {
         Stack<Integer> stack = new LinkedStack<>();
         assertThrows(NoSuchElementException.class, () -> stack.peek());
     }
-
 }
