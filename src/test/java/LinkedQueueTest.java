@@ -1,7 +1,6 @@
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.EmptyStackException;
 import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -72,5 +71,4 @@ class LinkedQueueTest {
         Queue<Integer> queue = new LinkedQueue<>();
         assertThrows(NoSuchElementException.class, () -> queue.first());
     }
-
 }

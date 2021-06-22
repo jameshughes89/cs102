@@ -1,11 +1,11 @@
-***********************
-Topic #14 --- Lists ADT
-***********************
+*************************
+Topic #14 --- Inheritance
+*************************
 
 
 
 For next time
 =============
 
-* Read Chapter 6 Section 1 -- 5
-    * 23 pages
+* Go back and read Chapter 3 Section 3
+    * 3 pages
