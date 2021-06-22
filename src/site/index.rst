@@ -57,7 +57,7 @@ Office Hours
     * Wednesday, 10am -- 11am
     * Thursday, 10am -- 11am
     * Friday, 10am -- 11am
-    
+
 * **(TAs)** TBD
     * **TBD** (tbd at stfx.ca):
         * Wednesday, 9:15am -- 10:15am
@@ -73,7 +73,7 @@ Learning Centre
 MSCS Tutorial Nights
 ====================
 
-The Math, Stats, and CS Society now has a time and location for our free tutorial sessions. 
+The Math, Stats, and CS Society now has a time and location for our free tutorial sessions.
 
 * TBD
 
@@ -92,7 +92,7 @@ Course Notes
 
 .. toctree::
     :maxdepth: 2
-   
+
     topic1
     topic2
     topic3
@@ -128,19 +128,19 @@ Labs
 
 .. toctree::
     :maxdepth: 1
-   
+
     lab1
 
-    
+
 Assignments
 ===========
 
 .. toctree::
     :maxdepth: 1
-   
+
     asn1
 
-   
+
 Course Outline
 ==============
 
@@ -151,7 +151,7 @@ Course Outline
 
 
 .. Indices and tables
-   ==================
+==================
 
      * :ref:`genindex`
      * :ref:`modindex`

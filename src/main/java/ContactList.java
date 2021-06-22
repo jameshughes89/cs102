@@ -87,7 +87,6 @@ public class ContactList {
         return get(index);
     }
 
-
 //    public void remove(String firstName, String lastName) {
 //        // Create a temp friend object for easy
 //        // use of the Friend class' equals()
@@ -116,7 +115,6 @@ public class ContactList {
         }
     }
 
-
 //    public void updateEmail(String firstName, String lastName, String newEmail) {
 //        // Create a temp friend object for easy
 //        // use of the Friend class' equals()
@@ -129,7 +127,6 @@ public class ContactList {
 //            }
 //        }
 //    }
-
 
     public void updateEmail(String firstName, String lastName, String newEmail) {
         int friendIndex = indexOf(firstName, lastName);
@@ -147,7 +144,6 @@ public class ContactList {
         return friendCount;
     }
 
-
 //    public String toString() {
 //        String s = "";
 //        for (int i = 0; i < friendCount; ++i) {
@@ -162,9 +158,9 @@ public class ContactList {
             builder.append(friends[i].toString());
             builder.append("\n");
         }
+
         return builder.toString();
     }
-
 }
 
 

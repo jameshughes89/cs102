@@ -67,12 +67,12 @@ public class LinkedStack<T> implements Stack<T> {
      * contains a reference to data of type T, which may be
      * null, and a reference to the next/subsequent/successor
      * singly linked node, which may also be null.
-     *
+     * <p>
      * This class is a static nested class since the node
      * class is only needed for the implementation of the
      * LinkedStack.
      *
-     * @param <T>   Type of the data being stored in the node
+     * @param <T> Type of the data being stored in the node
      */
     private static class Node<T> {
 
@@ -104,5 +104,4 @@ public class LinkedStack<T> implements Stack<T> {
             this.next = next;
         }
     }
-
 }
