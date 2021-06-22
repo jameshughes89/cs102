@@ -16,8 +16,18 @@ Topic #16 --- Exceptions
 * It also allows us to group and differentiate between exception types and how to deal with them specifically
 
 
-Runtime Errors
-==============
+Errors
+======
+
+* In Java, there are two classes of throwable objects
+    * A *throwable* object is one that can be thrown with a ``throw`` statement
+
+* Errors are one of the two throwable classes
+* Errors are typically for unrecoverable situations
+    * They're generally **very** abnormal situations
+* We will not try to handle and catch Errors
+* Errors and regarded as *unchecked* for the purpose of compile-time checks
+
 
 Throwing an Exception
 =====================
