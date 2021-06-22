@@ -1,5 +1,4 @@
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
 public interface List<T> {
 
@@ -12,7 +11,7 @@ public interface List<T> {
     T removeFirst();
 
     /**
-     * Removes and returns a refernce to the last element in the list. If no such element
+     * Removes and returns a reference to the last element in the list. If no such element
      * exists a NoSuchElementException is thrown.
      *
      * @return Last element in the list
