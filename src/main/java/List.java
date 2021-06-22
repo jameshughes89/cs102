@@ -4,14 +4,6 @@ import java.util.NoSuchElementException;
 public interface List<T> {
 
     /**
-     * Adds the provided element to the list as the specified index.
-     *
-     * @param element Item to be added to the list
-     * @param index   Index of where to add new element
-     */
-    void add(T element, int index);
-
-    /**
      * Removes and returns a reference to the first element in the list. If no such element
      * exists a NoSuchElementException is thrown.
      *
