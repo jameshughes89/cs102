@@ -42,6 +42,7 @@ Unchecked
 
 * Unchecked exceptions are ``RuntimeException``s
 * These are exceptions that can be thrown during the normal operation of the JVM
+* These unchecked exceptions are not type checked by Java
 * Many of the exceptions you have come across are examples of unchecked exceptions
 
 .. code-block:: java
@@ -78,6 +79,9 @@ Checked
 * If you do not, Java or your IDE will tell you
     * More specifically, Java's *type checker* will yell at you
     * The *type checker* is the process of ensuring that the types of expressions are consistent
+
+* You can think of the checked exceptions as functions that have multiple return values
+* The type checker ensures that you write code that compiles with the proper return types
 
 .. code-block:: java
     :linenos:
