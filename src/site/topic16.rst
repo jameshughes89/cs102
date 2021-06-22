@@ -79,7 +79,8 @@ Ignore
     :linenos:
 
     // I know this may throw an exception, but whatever
-    stack.peek();
+    Object o = stack.peek();
+    doSomething(o);
 
 * Since the exception is not caught here, the exception would be propagated to the calling method
 * This exception will keep being propagated to the calling methods until it is either
@@ -97,9 +98,10 @@ Stop Immediately
     :linenos:
 
     try {
-        stack.peek();
+        Object o = stack.peek();
+        doSomething(o);
     } catch (NoSuchElementException e) {
-        System.out.println("HALTING EXECUTION IMMEDIATELY!");
+        someCleanUpMethod();
         System.exit(1);
     }
 
@@ -114,10 +116,26 @@ Carry On
     :linenos:
 
     try {
-        stack.peek();
+        Object o = stack.peek();
+        doSomething(o);
     } catch (NoSuchElementException e) {
         System.out.println("Caught an Exception");
         e.printStackTrace();
+    }
+
+Rethrow
+-------
+
+* Perhaps we want to catch the exception and then rethrow it as something more appropriate for our context
+
+.. code-block:: java
+    :linenos:
+
+    try {
+        Object o = stack.peek();
+        doSomething(o);
+    } catch (NoSuchElementException e) {
+        throw new MySpecificDoSomethingException(e);
     }
 
 
@@ -166,8 +184,8 @@ In General
 Finally
 ^^^^^^^
 
-* There is another special keyword, ``final`` that comes up when dealing with exceptions
-* The code within the ``final`` block will always run, regardless of if an exception was thrown or which exception was caught
+* There is another special keyword, ``finally`` that comes up when dealing with exceptions
+* The code within the ``finally`` block will always run, regardless of if an exception was thrown or which exception was caught
 * This comes in handy if you have any code that should be run either way
     * Eg. Closing files
 
