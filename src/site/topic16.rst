@@ -26,7 +26,7 @@ Errors
 * Errors are typically for unrecoverable situations
     * They're generally **very** abnormal situations
 * We will not try to handle and catch Errors
-* Errors and regarded as *unchecked* exceptions for the purpose of compile-time checking of exceptions
+* Errors and regarded as *unchecked* for the purpose of compile-time checks
 
 
 Throwing an Exception
