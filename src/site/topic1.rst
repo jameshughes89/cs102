@@ -213,7 +213,7 @@ Can we Write Code Now?
 
 ``main``
     * A **very very very** special function.
-    * The ``main`` function is the function that is called when we tell our comptuer to run our programs
+    * The ``main`` function is the function that is called when we tell our computer to run our programs
     * Line 1 of the ``main`` function is the first line run by the program
 
 ``String[] args``
