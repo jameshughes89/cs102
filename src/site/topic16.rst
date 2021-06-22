@@ -24,7 +24,7 @@ Errors
 
 * Errors are one of the two throwable classes
 * Errors are typically for unrecoverable situations
-    * They're generally abnormal situations
+    * They're generally **very** abnormal situations
 * We will not try to handle and catch Errors
 * Errors and regarded as *unchecked* exceptions for the purpose of compile-time checking of exceptions
 
