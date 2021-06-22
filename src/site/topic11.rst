@@ -261,13 +261,11 @@ Playing Code
         // Test first and dequeue throwing exception
         try {
             myQueue.first();
-        }
-        catch (NoSuchElementException e) {
+        } catch (NoSuchElementException e) {
             e.printStackTrace();
         }
         try {
             myQueue.dequeue();
-        }
-        catch (NoSuchElementException e) {
+        } catch (NoSuchElementException e) {
             e.printStackTrace();
         }
