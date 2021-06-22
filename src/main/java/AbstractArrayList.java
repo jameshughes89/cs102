@@ -1,18 +1,18 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public abstract class ArrayList<T> implements List<T> {
+public abstract class AbstractArrayList<T> implements List<T> {
 
     private static final int DEFAULT_CAPACITY = 100;
     private T[] list;
     private int rear;
 
-    public ArrayList() {
+    public AbstractArrayList() {
         this(DEFAULT_CAPACITY);
     }
 
     @SuppressWarnings("unchecked")
-    public ArrayList(int initialCapacity) {
+    public AbstractArrayList(int initialCapacity) {
         list = (T[]) new Object[initialCapacity];
         rear = 0;
     }
