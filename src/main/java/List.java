@@ -62,6 +62,14 @@ public interface List<T> {
     boolean isEmpty();
 
     /**
+     * Returns the number of elements in the list. This method does not handle
+     * the size exceeding Integer.MAX_VALUE.
+     *
+     * @return The number of elements in the list.
+     */
+    int size();
+
+    /**
      * Returns an iterator object for the elements in the list in
      * the proper order for the list type.
      *
