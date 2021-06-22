@@ -42,7 +42,7 @@ Unchecked
 
 * Unchecked exceptions are ``RuntimeException``s
 * These are exceptions that can be thrown during the normal operation of the JVM
-* These unchecked exceptions are not type checked by Java
+* These unchecked exceptions do not contribute to the type of the function, thus, they are not type checked by Java
 * Many of the exceptions you have come across are examples of unchecked exceptions
 
 .. code-block:: java
