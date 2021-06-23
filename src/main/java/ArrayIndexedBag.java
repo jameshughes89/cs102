@@ -69,7 +69,7 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
 
     @Override
     public void add(int index, T element) {
-        if (index > rear) {
+        if (index > size()) {
             throw new IndexOutOfBoundsException(String.format("Bag has no index %d to add to.", index));
         }
         if (size() == bag.length) {
@@ -82,7 +82,7 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
 
     @Override
     public void set(int index, T element) {
-        if (index >= rear) {
+        if (index >= size()) {
             throw new IndexOutOfBoundsException(String.format("Bag has no element at index %d.", index));
         }
         bag[index] = element;
@@ -90,7 +90,7 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
 
     @Override
     public T get(int index) {
-        if (index >= rear) {
+        if (index >= size()) {
             throw new IndexOutOfBoundsException(String.format("Bag has no element at index %d.", index));
         }
         return bag[index];
@@ -98,7 +98,7 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
 
     @Override
     public T remove(int index) {
-        if (index >= rear) {
+        if (index >= size()) {
             throw new IndexOutOfBoundsException(String.format("Bag has no element at index %d.", index));
         }
         T returnElement = bag[index];
@@ -114,7 +114,7 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
                 return i;
             }
         }
-        return NOT_FOUND;
+        throw new NoSuchElementException("Element not contained in bag.");
     }
 
     @Override
@@ -122,16 +122,19 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
         if (isEmpty()) {
             throw new NoSuchElementException("Removing from an empty bag.");
         }
+        // If indexOf throws an exception, this method propagates it
         int removeIndex = indexOf(element);
-        if (removeIndex == NOT_FOUND) {
-            throw new NoSuchElementException("Element not contained in bag.");
-        }
         return remove(removeIndex);
     }
 
     @Override
     public boolean contains(T target) {
-        return indexOf(target) != NOT_FOUND;
+        try {
+            indexOf(target);
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
     }
 
     @Override
@@ -148,7 +151,7 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
 
     @Override
     public boolean isEmpty() {
-        return rear == 0;
+        return size() == 0;
     }
 
     @Override
@@ -158,7 +161,7 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
 
     @Override
     public Iterator<T> iterator() {
-        return new ArrayIterator<>(bag, rear);
+        return new ArrayIterator<>(bag, size());
     }
 
     public String toString() {
