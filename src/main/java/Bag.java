@@ -31,10 +31,10 @@ public interface Bag<T> {
      * Returns the number of occurrences of a specified element in the
      * bag.
      *
-     * @param element Element to be counted
+     * @param target Element to be counted
      * @return Number of times the element occured in the bag.
      */
-    int getCount(T element);
+    int getCount(T target);
 
     /**
      * Tests if the bag is empty and returns a Boolean.
