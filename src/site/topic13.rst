@@ -6,7 +6,7 @@ Topic #13 --- Lists ADT
 Bags
 =====
 
-.. image:: img/bag_general.png
+.. image:: img/bag_general1.png
     :width: 500 px
     :align: center
 
