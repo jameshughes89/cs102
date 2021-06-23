@@ -85,6 +85,50 @@ Indexed Bags
 
 * We also will have removes from arbitrary locations
 
+
+Functionality
+=============
+
+* We will keep our functionality of the bag simple
+    * Add stuff
+    * Remove stuff
+    * Check if something is in the bag
+    * Count the number of times something exists in the bag
+    * See if it's empty
+    * Get the size
+    * Get an iterator for the bag
+        * Iterators are handy tools for looping and consistency
+        * More on iterators later
+
+
+Bag Interface
+-------------
+
+
+.. code-block:: java
+    :linenos:
+
+    import java.util.Iterator;
+
+    public interface Bag<T> {
+
+        void add(T element);
+
+        T remove(T element);
+
+        boolean contains(T target);
+
+        int getCount(T target);
+
+        boolean isEmpty();
+
+        int size();
+
+        Iterator<T> iterator();
+    }
+
+
+
 For next time
 =============
 
