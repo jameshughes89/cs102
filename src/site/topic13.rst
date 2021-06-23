@@ -1,5 +1,5 @@
 ***********************
-Topic #13 --- Lists ADT
+Topic #13 --- Bag ADT
 ***********************
 
 
@@ -7,5 +7,5 @@ Topic #13 --- Lists ADT
 For next time
 =============
 
-* Read Chapter 6 Section 1 -- 5
+* Read Chapter 6 Section 1 -- 5 on Lists
     * 23 pages
