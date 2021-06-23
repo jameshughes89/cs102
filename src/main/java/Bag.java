@@ -28,6 +28,15 @@ public interface Bag<T> {
     boolean contains(T target);
 
     /**
+     * Returns the number of occurrences of a specified element in the
+     * bag.
+     *
+     * @param element Element to be counted
+     * @return Number of times the element occured in the bag.
+     */
+    int getCount(T element);
+
+    /**
      * Tests if the bag is empty and returns a Boolean.
      *
      * @return True if the bag is empty (no items), false otherwise
