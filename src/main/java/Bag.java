@@ -1,5 +1,4 @@
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
 public interface Bag<T> {
 
@@ -32,7 +31,7 @@ public interface Bag<T> {
      * bag.
      *
      * @param element Element to be counted
-     * @return Number of times the element occured in the bag.
+     * @return Number of times the element occurred in the bag.
      */
     int getCount(T element);
 
