@@ -98,7 +98,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
     @Override
     public T removeFirst() {
         if (isEmpty()) {
-            throw new NoSuchElementException("Removing first from an empty list.");
+            throw new NoSuchElementException("Removing first from an empty bag.");
         }
         T returnElement = bag[0];
         shiftLeft(0);
@@ -109,7 +109,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
     @Override
     public T removeLast() {
         if (isEmpty()) {
-            throw new NoSuchElementException("Removing last from an empty list.");
+            throw new NoSuchElementException("Removing last from an empty bag.");
         }
         T returnElement = bag[rear - 1];
         bag[rear - 1] = null;
@@ -120,11 +120,11 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
     @Override
     public T remove(T element) {
         if (isEmpty()) {
-            throw new NoSuchElementException("Removing from an empty list.");
+            throw new NoSuchElementException("Removing from an empty bag.");
         }
         int removeIndex = indexOf(element);
         if (removeIndex == NOT_FOUND) {
-            throw new NoSuchElementException("Element not contained in list.");
+            throw new NoSuchElementException("Element not contained in bag.");
         }
         T returnElement = bag[removeIndex];
         shiftLeft(removeIndex);
@@ -135,7 +135,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
     @Override
     public T first() {
         if (isEmpty()) {
-            throw new NoSuchElementException("First from an empty list.");
+            throw new NoSuchElementException("First from an empty bag.");
         }
         return bag[0];
     }
@@ -143,7 +143,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
     @Override
     public T last() {
         if (isEmpty()) {
-            throw new NoSuchElementException("Last from an empty list.");
+            throw new NoSuchElementException("Last from an empty bag.");
         }
         return bag[rear - 1];
     }
