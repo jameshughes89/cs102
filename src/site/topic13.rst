@@ -34,10 +34,6 @@ Bags
     * Take a minute and think about potential ideas
 
 
-Bags
-====
-
-
 Sorted Bags
 -----------
 
