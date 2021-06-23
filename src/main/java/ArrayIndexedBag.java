@@ -1,7 +1,7 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class ArrayIndexedBag<T extends Comparable<? extends T>> implements IndexedBag<T> {
+public class ArrayIndexedBag<T> implements IndexedBag<T> {
 
     private static final int DEFAULT_CAPACITY = 100;
     private static final int NOT_FOUND = -1;
