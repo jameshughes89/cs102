@@ -31,8 +31,8 @@ Sorted Bags
 * Should there be rules restricting removing from the bag?
 
 
-Sorted Bags
------------
+Indexed Bags
+------------
 
 * Indexed bags are bags where the elements are referenced by a numeric position
     * Numeric position is called the index
