@@ -30,6 +30,31 @@ Sorted Bags
 
 * Should there be rules restricting removing from the bag?
 
+
+Sorted Bags
+-----------
+
+* Indexed bags are bags where the elements are referenced by a numeric position
+    * Numeric position is called the index
+    * This is like arrays or the Python lists you're used to
+* Like the sorted bag, this specific kind of bag will have an ordering
+
+* Element position is important
+* User determines the ordering of the elements
+* Every time something is added or removed, the indices of the elements will need to be updated
+
+.. image:: img/bag_IndexedBag0.png
+   :width: 500 px
+   :align: center
+
+* We can add to any arbitrary index, assuming it is valid
+
+.. image:: img/bag_IndexedBag1.png
+   :width: 500 px
+   :align: center
+
+* We also will have removes from arbitrary locations
+
 For next time
 =============
 
