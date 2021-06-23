@@ -14,7 +14,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
 
     @SuppressWarnings("unchecked")
     public ArraySortedBag(int initialCapacity) {
-        bag = (T[]) new Object[initialCapacity];
+        bag = (T[]) new Comparable[initialCapacity];
         rear = 0;
     }
 
@@ -24,7 +24,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
      */
     @SuppressWarnings("unchecked")
     private void expandCapacity() {
-        T[] newBag = (T[]) new Object[bag.length * 2];
+        T[] newBag = (T[]) new Comparable[bag.length * 2];
         for (int i = 0; i < bag.length; ++i) {
             newBag[i] = bag[i];
         }
@@ -87,7 +87,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
         Iterator<T> it = this.iterator();
         int searchIndex = 0;
         // Search for the index the new element belongs in
-        while (it.hasNext() && element.compareTo(bag[searchIndex]) > 0) {
+        while (it.hasNext() && element.compareTo(it.next()) > 0) {
             searchIndex++;
         }
         shiftRight(searchIndex);
