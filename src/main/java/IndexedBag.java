@@ -1,20 +1,19 @@
-public interface IndexedList<T> extends List<T> {
+public interface IndexedBag<T> extends Bag<T> {
 
     /**
-     * Adds an element to the end of the IndexedList.
+     * Adds an element to the end of the IndexedBag.
      *
-     * @param element Item to be added to the end of the IndexedList
+     * @param element Item to be added to the end of the IndexedBag
      */
     void add(T element);
 
-
     /**
-     * Adds an element to the IndexedList at the specified index.
+     * Adds an element to the IndexedBag at the specified index.
      * Item that was in the index before adding will be in index
      * index + 1.
      *
-     * @param index   Index of the IndexedList to add the element
-     * @param element Item to be added to the IndexedList
+     * @param index   Index of the IndexedBag to add the element
+     * @param element Item to be added to the IndexedBag
      */
     void add(int index, T element);
 
@@ -28,7 +27,7 @@ public interface IndexedList<T> extends List<T> {
 
     /**
      * Return a reference to the element at the specified index of the
-     * IndexedList. The element is not removed from the list.
+     * IndexedBag The element is not removed from the bag.
      *
      * @param index Index of the element to be returned
      * @return Element at the specified index
@@ -37,7 +36,7 @@ public interface IndexedList<T> extends List<T> {
 
     /**
      * Remove and return a reference to the element at the specified
-     * index in the IndexedList.
+     * index in the IndexedBag.
      *
      * @param index Index of the element to be removed
      * @return Element at the specified index
@@ -45,11 +44,12 @@ public interface IndexedList<T> extends List<T> {
     T remove(int index);
 
     /**
-     * Returns the index of the specified element. If no such element exists,
-     * a NoSuchElementException is thrown.
+     * Returns the index of the specified element. If more than one
+     * exists, the index of the first element is returned only. If
+     * no such element exists, a NoSuchElementException is thrown.
      *
-     * @param element Item to be searched for in the IndexedList
-     * @return Index of the specified element
+     * @param element Item to be searched for in the IndexedBag
+     * @return Index of the first found specified element
      */
     int indexOf(T element);
 
