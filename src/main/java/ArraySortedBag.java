@@ -183,7 +183,6 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
     public String toString() {
         Iterator<T> it = this.iterator();
         StringBuilder builder = new StringBuilder();
-        builder.append("Front --> ");
         while (it.hasNext()) {
             builder.append(it.next());
             builder.append(", ");
