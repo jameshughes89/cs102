@@ -10,6 +10,9 @@ Bags
     :width: 500 px
     :align: center
 
+* By default, our bag shouldn't really be thought of as having an ordering
+    * It's implementation may be with some sort of linear collection, but the idea is that the information in the bag has no order
+
 * What things do we want to do with our new data structure?
     * Add things
     * Remove things
