@@ -24,7 +24,7 @@ public class ArrayIterator<T> implements Iterator<T> {
             throw new NoSuchElementException();
         }
         T returnElement = items[currentIndex];
-        currentIndex--;
+        currentIndex++;
         return returnElement;
     }
 }
