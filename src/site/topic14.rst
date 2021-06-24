@@ -45,7 +45,7 @@ Abstract Class
 
 * An abstract class may include some concrete implementation of methods that will be the same among multiple subclasses
 
-* `Take Java's AbstractQueue class <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/AbstractQueue.html>`_ and its subclass, `PriorityQueue <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/AbstractQueue.html>`_
+* `Take Java's AbstractQueue class <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/AbstractQueue.html>`_ and its subclass, `PriorityQueue <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/PriorityQueue.html>`_
 
 * The ``AbstractQueue`` has a few important concrete methods implemented within the abstract class (it also inherits a bunch from superclasses too)
     * ``add``
@@ -71,6 +71,10 @@ Abstract Class
 For next time
 =============
 
-* Check out the `JDK specification links <https://docs.oracle.com/en/java/javase/11/docs/api/index.html>`_ provided
+* Have a *quick* look at the JDK specification link (you won't understand everything, but that's OK)
+    * `AbstractCollection <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/AbstractCollection.html>`_
+    * `Queue <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Queue.html>`_
+    * `AbstractQueue <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/AbstractQueue.html>`_
+    * `PriorityQueue <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/PriorityQueue.html>`_
 * Go back and read Chapter 3 Section 3
     * 3 pages
