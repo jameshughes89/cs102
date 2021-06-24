@@ -56,6 +56,32 @@ Polymorphism
 Dynamic Binding
 ---------------
 
+.. code-block:: java
+    :linenos:
+
+    Stack<Integer> myStack;
+    if (randomNumber < 50) {
+        myStack = new ArrayStack<>();
+    } else {
+        myStack = new LinkedStack<>();
+    }
+
+    myStack.push(11);
+    myStack.push(22);
+    myStack.push(33);
+    System.out.println(myStack);
+
+
+* Given the above code, which version of ``toString`` would be called?
+    * ``ArrayStack``?
+    * ``LinkedStack``?
+
+* Connecting a call of a method to the actual implementation of the method is called *binding*
+* Sometimes we know what will get called at compile-time --- static binding
+* Sometimes we will not know until runtime --- dynamic binding
+
+* If you want to know what the type of the object is, you can ask it
+    ``myStack.getClass()``
 
 
 For next time
