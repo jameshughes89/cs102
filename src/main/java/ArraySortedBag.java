@@ -69,7 +69,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
      * @param target Element to be found
      * @return Index of the element if found, NOT_FOUND otherwise
      */
-    private int indexOf(T target) {
+    private int sentinelIndexOf(T target) {
         int searchIndex = 0;
         for (T bagElement : this) {
             if (bagElement.equals(target)) {
@@ -151,7 +151,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
         if (isEmpty()) {
             throw new NoSuchElementException("Removing from an empty bag.");
         }
-        int removeIndex = indexOf(element);
+        int removeIndex = sentinelIndexOf(element);
         if (removeIndex == NOT_FOUND) {
             throw new NoSuchElementException("Element not contained in bag.");
         }
@@ -179,7 +179,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
 
     @Override
     public boolean contains(T target) {
-        return indexOf(target) != NOT_FOUND;
+        return sentinelIndexOf(target) != NOT_FOUND;
     }
 
     @Override
