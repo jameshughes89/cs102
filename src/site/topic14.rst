@@ -64,6 +64,7 @@ Object
 * If we do not override these methods in our classes, we can still use them, but get the default behaviour
 
 
+
 Collections Example
 ===================
 
@@ -108,6 +109,74 @@ Abstract Class
 * If you open the ``PriorityQueue.java`` file
     * You will not find ``addAll``, ``element``, or ``removed`` within it since it is inherited
     * You will find the overridden methods (``add`` and ``clear``)
+
+
+Polymorphism
+============
+
+* Polymorphism is the idea that behavior can change depending on the type of the object
+* We've already made use of this idea without having gone into any details
+    ``Stack<Integer> myStack = new ArrayStack<>();``
+    ``Stack<Integer> myStack = new LinkedStack<>();``
+
+* Our reference variables here is for something of type ``Stack``
+* Yet, it can reference an object of type ``ArrayStack`` or ``LinkedStack``
+* This is because, ``ArrayStack`` *is a* ``Stack`` and ``LinkedStack`` *is a* ``Stack``
+
+* You **cannot** however do this
+    ``ArrayStack<Integer> myStack = new LinkedStack<>();``
+
+* This is because a ``LinkedStack`` is **not** an ``ArrayStack``
+
+.. warning::
+
+    If we did something like this:
+
+        .. code-block:: java
+            :linenos:
+
+            Stack<Integer> myStack = new LinkedStack<>();
+            Object o = myStack;
+
+    The data both ``myStack`` and ``o`` reference has the type ``LinkedStack``. It is the reference variable that's type
+    changed (and can change to any supertype); the type of the object itself does not change.
+
+.. warning::
+
+    We should be careful with the *is a* metaphor as it can be abused and cause trouble. *Is a* is fine if we're
+    referring to the types, not the things they represent.
+
+
+Binding
+-------
+
+.. code-block:: java
+    :linenos:
+
+    Stack<Integer> myStack;
+    if (randomNumber < 50) {
+        myStack = new ArrayStack<>();
+    } else {
+        myStack = new LinkedStack<>();
+    }
+
+    myStack.push(11);
+    myStack.push(22);
+    myStack.push(33);
+    System.out.println(myStack);
+
+
+* Given the above code, which version of ``toString`` would be called?
+    * ``ArrayStack``?
+    * ``LinkedStack``?
+
+* Connecting a call of a method to the actual implementation of the method is called *binding*
+* Sometimes we know what will get called at compile-time --- static binding
+* Sometimes we will not know until runtime --- dynamic binding
+
+* If you want to know what the type of the object is, you can ask it
+    ``myStack.getClass()``
+
 
 
 
