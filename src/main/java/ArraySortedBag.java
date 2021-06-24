@@ -40,10 +40,10 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
      *              overwritten.
      */
     private void shiftLeft(int start) {
-        for (int i = start; i < bag.length - 1; ++i) {
+        for (int i = start; i < rear - 1; ++i) {
             bag[i] = bag[i + 1];
         }
-        bag[bag.length - 1] = null;
+        bag[rear - 1] = null;
     }
 
     /**
@@ -70,7 +70,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
      * @return Index of the element if found, NOT_FOUND otherwise
      */
     private int indexOf(T target) {
-        for (int i = 0; i < bag.length; ++i) {
+        for (int i = 0; i < rear; ++i) {
             if (bag[i].equals(target)) {
                 return i;
             }

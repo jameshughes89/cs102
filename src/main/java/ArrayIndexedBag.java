@@ -40,10 +40,10 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
      *              overwritten.
      */
     private void shiftLeft(int start) {
-        for (int i = start; i < bag.length - 1; ++i) {
+        for (int i = start; i < rear - 1; ++i) {
             bag[i] = bag[i + 1];
         }
-        bag[bag.length - 1] = null;
+        bag[rear - 1] = null;
     }
 
     /**
