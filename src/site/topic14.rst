@@ -67,5 +67,6 @@ Object
 For next time
 =============
 
+* :doc:`Read the aside on inheriting from concrete classes </topic14-careful>`
 * Go back and read Chapter 3 Section 3
     * 3 pages
