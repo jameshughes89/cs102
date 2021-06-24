@@ -49,8 +49,13 @@ Polymorphism
             Stack<Integer> myStack = new LinkedStack<>();
             Object o = myStack;
 
-    The thing both ``myStack`` and ``o`` reference is still a ``LinkedStack`` object. It is the reference variable
-    that's type changed; the type of the object itself does not change.
+    The data both ``myStack`` and ``o`` reference has the type ``LinkedStack``. It is the reference variable that's type
+    changed (and can change to any supertype); the type of the object itself does not change.
+
+.. warning::
+
+    We should be careful with the *is a* metaphor as it can be abused and cause trouble. *Is a* is fine if we're
+    referring to the types, not the things they represent.
 
 
 Binding
