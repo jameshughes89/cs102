@@ -29,7 +29,8 @@ Object
 * Every class you make will inherit from the ``Object`` class
     * This is done automatically, so you do not ``extend`` it explicitly
 
-* Since we inherit everything from the superclasses we inherit from, this means that we get all methods from the ``Object`` class for free
+* Since we inherit everything from the superclasses we inherit from, this means that we get all methods from the ``Object`` class without having to write them ourselves
+    * Although, we almost always override them if were using them
 * We have seen and used a few of these already
     * ``equals``
     * ``toString``
@@ -43,8 +44,6 @@ Object
 * The inherited behaviour of ``toString`` is to return a string of the object's class name + @ + the has code of the object
 
 * If we do not override these methods in our classes, we can still use them, but get the default behaviour
-
-* `Checkout the Object class details to see other methods you get for free <https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html>`_
 
 
 For next time
