@@ -41,5 +41,4 @@ public interface SortedBag<T> extends Bag<T> {
      * @return Last element in the bag
      */
     T last();
-
 }

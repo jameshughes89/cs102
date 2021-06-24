@@ -52,5 +52,4 @@ public interface IndexedBag<T> extends Bag<T> {
      * @return Index of the first found specified element
      */
     int indexOf(T element);
-
 }
