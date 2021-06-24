@@ -2,6 +2,24 @@
 Topic #14 --- Inheritance
 *************************
 
+* Inheritance is a way to derive a new class from an existing one
+* This allows us to *inherit* functionality from the original class
+
+.. image:: img/inheritance_vehicle.png
+   :width: 500 px
+   :align: center
+
+* Notice how the top element is the most general of all things included
+* As you move down the tree, the things get more and more specific
+* But as you move down, the things are still a type of the element at the top
+    * In our bag examples, a ``SortedBag`` *is a* ``Bag``
+
+.. image:: img/inheritance_bag.png
+   :width: 500 px
+   :align: center
+
+* This hierarchical thinking exists in real life too,
+    * But we should be careful not to translate what makes sense in real life to our code
 
 
 
@@ -20,6 +38,30 @@ Terminology
     * A ``SortedBag`` is a subclass of a ``Bag``
     * A ``Bag`` is a superclass of a ``IndexedBag``
     * An ``Object`` is also a superclass of ``Bag``, ``SortedBag``, and ``IndexedBag``
+
+
+Object
+======
+
+* The class ``Object`` is the root of the hierarchy
+* Every class you make will inherit from the ``Object`` class
+    * This is done automatically, so you do not ``extend`` it explicitly
+
+* Since we inherit everything from the superclasses we inherit from, this means that we get all methods from the ``Object`` class without having to write them ourselves
+    * Although, we almost always override them if were using them
+* We have seen and used a few of these already
+    * ``equals``
+    * ``toString``
+
+* However, we ended up *overriding* these methods a bunch of times
+    * We inherited them, but we wrote our own implementations for our needs
+
+* The inherited behaviour of ``equals`` checks if the references are to the same exact object
+    * ``x.equals(y)`` checks if ``x`` and ``y`` are the same object (same as ``x == y``)
+
+* The inherited behaviour of ``toString`` is to return a string of the object's class name + @ + the has code of the object
+
+* If we do not override these methods in our classes, we can still use them, but get the default behaviour
 
 
 Polymorphism
@@ -87,6 +129,7 @@ Binding
 
 * If you want to know what the type of the object is, you can ask it
     ``myStack.getClass()``
+
 
 
 For next time
