@@ -22,6 +22,14 @@ Terminology
     * An ``Object`` is also a superclass of ``Bag``, ``SortedBag``, and ``IndexedBag``
 
 
+Collections Example
+===================
+
+.. image:: img/inheritance_collections.png
+   :width: 500 px
+   :align: center
+   :target: https://en.wikipedia.org/wiki/Java_collections_framework
+
 For next time
 =============
 
