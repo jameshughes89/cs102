@@ -48,5 +48,17 @@ Creating a Project
        :align: center
 
 
+Simple Problems
+===============
+
+1. `Now see if you can figure out how to read standard in input with a BufferedReader <https://people.stfx.ca/jhughes/cs162/topic2.html#input-output>`_
+
+2. `See if you can figure out how to read input with a Scanner <https://www.google.com/search?q=java+scanner+example&oq=java+scanner+ex&aqs=chrome.0.0l2j69i57j0l4j0i20i263j0l2.2278j0j4&sourceid=chrome&ie=UTF-8>`_
+
+3. Write a program that will
+    * Ask the user for two integers
+    * Read the input
+    * Sum the values and store it in another variable
+    * Print out the result
 
 **ENSURE WE HAVE RECORDED YOUR COMPLETION. FAILURE TO DO SO WILL RESULT IN A GRADE OF 0!**
