@@ -1,7 +1,6 @@
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
-public interface Bag<T> {
+public interface Bag<T> extends Iterable<T> {
 
     /**
      * Add an element to the bag.
