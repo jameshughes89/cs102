@@ -3,9 +3,9 @@ import java.util.NoSuchElementException;
 
 public class ArrayIterator<T> implements Iterator<T> {
 
-    private int size;
+    private final int size;
     private int currentIndex;
-    private T[] items;
+    private final T[] items;
 
     public ArrayIterator(T[] items, int size) {
         this.items = items;

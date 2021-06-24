@@ -62,6 +62,22 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
         bag[start] = null;
     }
 
+    /**
+     * Find the index of a specified target element. If the element
+     * does not exist, return NOT_FOUND
+     *
+     * @param target Element to be found
+     * @return Index of the element if found, NOT_FOUND otherwise
+     */
+    private int sentinelIndexOf(T target) {
+        for (int i = 0; i < rear; ++i) {
+            if (bag[i].equals(target)) {
+                return i;
+            }
+        }
+        return NOT_FOUND;
+    }
+
     @Override
     public void add(T element) {
         add(rear, element);
@@ -109,12 +125,11 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
 
     @Override
     public int indexOf(T target) {
-        for (int i = 0; i < bag.length; ++i) {
-            if (bag[i].equals(target)) {
-                return i;
-            }
+        int index = sentinelIndexOf(target);
+        if (index == NOT_FOUND) {
+            throw new NoSuchElementException("Element not contained in bag.");
         }
-        throw new NoSuchElementException("Element not contained in bag.");
+        return index;
     }
 
     @Override
@@ -129,12 +144,7 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
 
     @Override
     public boolean contains(T target) {
-        try {
-            indexOf(target);
-            return true;
-        } catch (NoSuchElementException e) {
-            return false;
-        }
+        return sentinelIndexOf(target) != NOT_FOUND;
     }
 
     @Override
