@@ -22,6 +22,31 @@ Terminology
     * An ``Object`` is also a superclass of ``Bag``, ``SortedBag``, and ``IndexedBag``
 
 
+Object
+======
+
+* The class ``Object`` is the root of the hierarchy
+* Every class you make will inherit from the ``Object`` class
+    * This is done automatically, so you do not ``extend`` it explicitly
+
+* Since we inherit everything from the superclasses we inherit from, this means that we get all methods from the ``Object`` class for free
+* We have seen and used a few of these already
+    * ``equals``
+    * ``toString``
+
+* However, we ended up *overriding* these methods a bunch of times
+    * We inherited them, but we wrote our own implementations for our needs
+
+* The inherited behaviour of ``equals`` checks if the references are to the same exact object
+    * ``x.equals(y)`` checks if ``x`` and ``y`` are the same object (same as ``x == y``)
+
+* The inherited behaviour of ``toString`` is to return a string of the object's class name + @ + the has code of the object
+
+* If we do not override these methods in our classes, we can still use them, but get the default behaviour
+
+* `Checkout the Object class details to see other methods you get for free <https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html>`_
+
+
 For next time
 =============
 
