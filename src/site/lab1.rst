@@ -61,4 +61,24 @@ Simple Problems
     * Sum the values and store it in another variable
     * Print out the result
 
+
+Kattis
+======
+
+0. If you have not already, create a *Kattis* account, otherwise, login
+    * https://open.kattis.com/
+    * Specify that StFX is your institution
+
+.. warning::
+
+    I realize many of you will have solved these already in Python. Good, but now do it in Java.
+
+1. https://open.kattis.com/problems/hello
+2. https://open.kattis.com/problems/carrots
+3. https://open.kattis.com/problems/r2
+4. https://open.kattis.com/problems/faktor
+5. https://open.kattis.com/problems/ladder
+
+6. `If you finish all these, sort all the problems by difficulty and work your way up <https://open.kattis.com/problems?order=problem_difficulty>`_
+
 **ENSURE WE HAVE RECORDED YOUR COMPLETION. FAILURE TO DO SO WILL RESULT IN A GRADE OF 0!**
