@@ -53,8 +53,8 @@ Polymorphism
     that's type changed; the type of the object itself does not change.
 
 
-Dynamic Binding
----------------
+Binding
+-------
 
 .. code-block:: java
     :linenos:
