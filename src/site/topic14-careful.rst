@@ -117,6 +117,7 @@ Liskov's Substitution Principle
 ===============================
 
 * `"Functions that use pointers or references to base classes must be able to use objects of derived classes without knowing it" <https://en.wikipedia.org/wiki/Liskov_substitution_principle>`_
+    * This is the "L" in the `SOLID design principals <https://en.wikipedia.org/wiki/SOLID>`_
 
 .. code-block:: java
     :linenos:
@@ -183,7 +184,7 @@ Liskov's Substitution Principle
 * Except, `Hyrum's Law <https://www.hyrumslaw.com/>`_ says that all observable behaviours, intentional or not, will be depended on by somebody
 * So, someone out there depends on the fact that ``pumpItUp`` is quadrupling the ``Square``, even though it honestly shouldn't be
 
-* Ok, so, we can fix this by adding another method and changing ``pumpItBack`` for the person depending on the problematic functionality
+* Ok, so, we can fix this by adding another method and changing ``pumpItUp`` back for the person depending on the problematic functionality
 
 .. code-block:: java
     :linenos:
@@ -209,3 +210,6 @@ Liskov's Substitution Principle
 * We ended up doing a lot of extra work for no reason at all
 * Our code got more complex
 * It's going to be a lot easier to just not use inheritance here
+
+* If you are set on reusing the code, then the better idea here is `composition over inheritance <https://en.wikipedia.org/wiki/Composition_over_inheritance>`_
+    * Have the ``Square`` use an internal instance of a ``Rectangle`` to get the desired functionality from ``Rectangle``
