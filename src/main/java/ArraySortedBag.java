@@ -105,7 +105,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
         int searchIndex = 0;
         for (T bagElement : this) {
             if (element.compareTo(bagElement) <= 0) {
-                break;
+                return searchIndex;
             }
             searchIndex++;
         }
