@@ -109,7 +109,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
             }
             searchIndex++;
         }
-        return searchIndex;
+        return rear;
     }
 //    private int findInsertIndex(T element) {
 //        int searchIndex = 0;
