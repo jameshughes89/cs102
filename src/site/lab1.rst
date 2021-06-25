@@ -28,7 +28,7 @@ Creating a Project
     * Right click *src* in the project explorer
     * *New -> Java Class*
     * Give your class a name, something like *Lab1*
-        * **Always start your class names with an uppercase letter**
+        * By convention, **always start your class names with an uppercase letter**
 
 4. Add a ``main`` method to your class and have it do ``Hello, world!``
 
