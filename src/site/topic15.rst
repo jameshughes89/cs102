@@ -16,6 +16,11 @@ ArrayIndexedBag
 
 * Let's start exploring the implementation
 
+.. warning::
+
+    Only areas of note are presented here and some methods are skipped. See the
+    :download:`ArrayIndexedBag <../main/java/ArrayIndexedBag.java>` implementation to view the full implementation.
+
 
 .. code-block:: Java
     :linenos:
@@ -114,9 +119,6 @@ Private Methods
 * Here we're using two methods from the iterator
     * ``hasNext()``, which returns a boolean telling us if there is anything left in the collection
     * ``next()``, which returns the next element in the collection
-
-* We will discuss iterators further in the next topic
-    * We will also change how we make use of them in our bag implementation too
 
 
 
