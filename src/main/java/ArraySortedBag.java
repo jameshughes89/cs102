@@ -131,16 +131,6 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
         bag[insertIndex] = element;
         rear++;
     }
-//    @Override
-//    public void add(T element) {
-//        if (size() == bag.length) {
-//            expandCapacity();
-//        }
-//
-//        shiftRight(searchIndex);
-//        bag[searchIndex] = element;
-//        rear++;
-//    }
 
     @Override
     public T removeFirst() {
