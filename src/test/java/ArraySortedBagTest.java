@@ -26,7 +26,7 @@ public class ArraySortedBagTest {
     }
 
     @Test
-    void containsAddedElementtoSortedBagReturnsTrue() {
+    void containsAddedElementToSortedBagReturnsTrue() {
         SortedBag<Integer> bag = new ArraySortedBag<>();
         bag.add(99);
         assertTrue(bag.contains(99));
