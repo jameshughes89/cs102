@@ -1,6 +1,13 @@
-************************
-Topic #15 --- ArrayLists
-************************
+**********************
+Topic #15 --- ArrayBag
+**********************
+
+* :doc:`We already know what we want to do with our bags </topic13>`
+* We also extended the ``Bag`` to make more specialized bags
+    * ``IndexedBag``
+    * ``SortedBag``
+
+* Let's implement them now
 
 
 
