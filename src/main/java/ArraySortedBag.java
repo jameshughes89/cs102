@@ -8,7 +8,6 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
     protected T[] bag;
     protected int rear;
     Iterator<T> it = this.iterator();
-    int searchIndex = 0;
 
     public ArraySortedBag() {
         this(DEFAULT_CAPACITY);
