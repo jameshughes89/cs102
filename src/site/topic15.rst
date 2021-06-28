@@ -51,7 +51,7 @@ Add Methods
 
 
 * There is nothing overly sophisticated taking place in these add methods
-    * ``add(T element)`` even hijacks ``add(int index, T element)`` for ease
+    * ``add(T element)`` even delegates to ``add(int index, T element)`` for ease and code/logic reuse
 
 * Unlike our methods for adding things to a ``Stack`` or ``Queue``, this method may throw an exception since we can specify an invalid index
 * Like the ``Stack`` and ``Queue``, we may need to call ``expandCapacity``
@@ -122,7 +122,7 @@ Index Of, Contains, Remove
             return returnElement;
         }
 
-* The ``remove(T element)`` method hijacks the ``remove(int index)`` for ease
+* The ``remove(T element)`` method delegates to the ``remove(int index)`` for ease and code/logic reuse 
 * You will also see that we do not use ``sentinelIndexOf`` since we do want the call to ``remove(T element)`` to propagate an exception if the element does not exist
 
 
