@@ -33,10 +33,31 @@ public class ArraySortedBagTest {
     }
 
     @Test
+    void containsMultipleExistingElementToSortedBagReturnsTrue() {
+        SortedBag<Integer> bag = new ArraySortedBag<>();
+        bag.add(99);
+        bag.add(99);
+        bag.add(99);
+        assertTrue(bag.contains(99));
+    }
+
+    @Test
     void containsNonAddedElementToSortedBagReturnsFalse() {
         SortedBag<Integer> bag = new ArraySortedBag<>();
         bag.add(99);
         assertFalse(bag.contains(101));
+    }
+
+    @Test
+    void getCountOfElementWithSingleCopyInSortedBagReturnsCorrectCount() {
+        SortedBag<Integer> bag = new ArraySortedBag<>();
+        bag.add(0);
+        bag.add(99);
+        bag.add(1);
+        bag.add(99);
+        bag.add(2);
+        bag.add(99);
+        assertEquals(1, bag.getCount(1));
     }
 
     @Test
@@ -164,6 +185,14 @@ public class ArraySortedBagTest {
     }
 
     @Test
+    void removeFirstFromSortedBagWithSingleElementIsEmpty() {
+        SortedBag<Integer> bag = new ArraySortedBag<>();
+        bag.add(99);
+        bag.removeFirst();
+        assertTrue(bag.isEmpty());
+    }
+
+    @Test
     void removeFirstFromEmptySortedBagThrowsException() {
         SortedBag<Integer> bag = new ArraySortedBag<>();
         assertThrows(NoSuchElementException.class, () -> bag.removeFirst());
@@ -193,6 +222,14 @@ public class ArraySortedBagTest {
         bag.add(101);
         bag.removeLast();
         assertEquals(1, bag.size());
+    }
+
+    @Test
+    void removeLastFromSortedBagWithSingleElementIsEmpty() {
+        SortedBag<Integer> bag = new ArraySortedBag<>();
+        bag.add(99);
+        bag.removeLast();
+        assertTrue(bag.isEmpty());
     }
 
     @Test
@@ -237,6 +274,14 @@ public class ArraySortedBagTest {
         bag.add(101);
         bag.remove(101);
         assertEquals(1, bag.size());
+    }
+
+    @Test
+    void removeFromSortedBagWithSingleElementIsEmpty() {
+        SortedBag<Integer> bag = new ArraySortedBag<>();
+        bag.add(99);
+        bag.remove(99);
+        assertTrue(bag.isEmpty());
     }
 
     @Test
