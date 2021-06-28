@@ -221,6 +221,16 @@ public class ArraySortedBagTest {
     }
 
     @Test
+    void removeRemovesSpecifiedElementOnceFromSortedBag() {
+        SortedBag<Integer> bag = new ArraySortedBag<>();
+        bag.add(99);
+        bag.add(99);
+        bag.add(99);
+        bag.remove(99);
+        assertEquals(2, bag.getCount(99));
+    }
+
+    @Test
     void removeFromSortedBagUpdatesSize() {
         SortedBag<Integer> bag = new ArraySortedBag<>();
         bag.add(99);
