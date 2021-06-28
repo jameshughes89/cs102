@@ -22,6 +22,8 @@ courses.
 Course Class
 ------------
 
+A ``Course`` is a simple object that keeps track of data for us.
+
 1. Create a class called ``Course`` that has three private fields: ``programCode``, ``courseCode``, and ``courseTitle``
     * For example, this course would have the following values for the fields
         * ``programCode`` --- ``"CSCI"``
@@ -45,6 +47,30 @@ Course Class
 Course List Class
 -----------------
 
+A ``CourseList`` will be a collection of ``Course`` objects that we can add and remove from.
+
+1. Make a ``CourseList`` class that has two private fields (``list`` and ``size``) and a constant for a default capacity
+    * ``list`` will be an array that holds references to ``Course`` objects
+    * ``size`` will be the number of ``Courses`` currently in ``list``
+        * Remember, the capacity of the array and ``size`` are not the same thing
+    * ``DEFAULT_CAPACITY`` is a constant that will be used for creating the ``list`` array if no capacity is provided
+
+2. Write two constructors
+    * One that takes no parameter and makes ``list`` based on ``DEFAULT_CAPACITY``
+    * The other takes a parameter ``initialCapacity`` for the capacity of ``list``
+    * Try to use *constructor chaining*
+
+3. Write an ``add`` method that takes the necessary parameters to create a new ``Course`` object and add it to the collection
+    * You will need to also make a private ``expandCapacity`` method for ``add`` to work properly
+
+4. Write a ``remove`` method that takes the necessary parameters to find and remove a ``Course`` from the collection
+    * You may want to make use of the ``Course`` object's ``equals`` method
+
+5. Write a ``size`` method to return the number of ``Course`` objects in the collection
+
+6. Write a reasonable ``toString`` for the class
+
+7. Test the ``CourseList`` class by calling the methods
 
 
 Kattis Problems
