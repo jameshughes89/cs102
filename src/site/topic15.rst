@@ -48,6 +48,10 @@ Adding Method
 For next time
 =============
 
+.. warning::
+
+    Note that there are better implementations of these data structures. We will see one later in the course.
+
 * Download and play with the :download:`ArrayIndexedBag <../main/java/ArrayIndexedBag.java>` and  :download:`ArraySortedBag <../main/java/ArraySortedBag.java>` code
 * Read Chapter 6 Sections 6 & 7
     * 17 pages
