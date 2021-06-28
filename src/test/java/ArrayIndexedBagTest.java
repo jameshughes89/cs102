@@ -121,7 +121,7 @@ public class ArrayIndexedBagTest {
 
     @Test
     void addingBeyondCapacityCallsExpandCapacityToMakeRoomWhileMaintainingOrdering() {
-        IndexedBag<Integer> bag = new ArrayIndexedBag<>();
+        IndexedBag<Integer> bag = new ArrayIndexedBag<>(5);
         for (int i = 0; i < 10; ++i) {
             bag.add(i);
         }
