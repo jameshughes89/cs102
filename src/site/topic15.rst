@@ -204,7 +204,7 @@ Index Of, Contains, Remove
             return returnElement;
         }
 
-* The ``remove(T element)`` method delegates to the ``remove(int index)`` for ease and code/logic reuse 
+* The ``remove(T element)`` method delegates to the ``remove(int index)`` for ease and code/logic reuse
 * You will also see that we do not use ``sentinelIndexOf`` since we do want the call to ``remove(T element)`` to propagate an exception if the element does not exist
 
 ArrayIndexedBag
@@ -402,5 +402,6 @@ For next time
     Note that there are better implementations of these data structures. We will see one later in the course.
 
 * Download and play with the :download:`ArrayIndexedBag <../main/java/ArrayIndexedBag.java>` and  :download:`ArraySortedBag <../main/java/ArraySortedBag.java>` code
+* Download and play with the :download:`ArrayIndexedBagTest <../test/java/ArrayIndexedBagTest.java>` and  :download:`ArraySortedBagTest <../test/java/ArraySortedBagTest.java>` code
 * Read Chapter 6 Sections 6 & 7
     * 17 pages
