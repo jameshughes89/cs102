@@ -56,7 +56,10 @@ ArraySortedBag
     * Return zero if ``y == x``
     * Return a positive integer if ``y > x``
 
-* By saying ``T extends Comparable``, this means that the type ``T`` we want in our ``ArraySortedBag`` has some defined ordering
+* When we have something that is extending ``Comparable<T>``, that means we can compare ``this`` to some type ``T``
+    * ``this`` can be compared to things of type ``T``, but not the other way around
+
+* By saying ``T extends Comparable<T>``, this means that the type ``T`` we want in our ``ArraySortedBag`` can be compared to things of type ``T`` to provide some defined ordering
     * Which is needed, if we want to sort things
 
 * Finally, with ``Comparable<? super T>``, we are saying that ``T`` or one of its superclasses must extend ``Comparable``
