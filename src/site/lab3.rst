@@ -14,26 +14,81 @@ Lab #3
 Playing with Stacks
 ===================
 
+We're going to implement an ``ArrayStack`` based on what we learned in class and use it to solve a simple problem.
+
 
 Implementing a Stack
 --------------------
 
-* Download the interface code
-* Refer to the topic for the implementation
-    * Sure, you could download, but that's not the point
+1. Create a project and make a class where you will put your main method
+    * Perhaps call it ``Lab3``
 
-* Test the code <Integer>
+2. Download the :download:`Stack interface.<../main/java/Stack.java>` and add it to your project
 
-* Now convert this to work for characters
+3. Create a new class for our ``ArrayStack`` implementation
 
+4. :doc:`Complete your ArrayStack based on the course notes </topic6>`
+
+.. warning::
+
+    I realize you can simply download the :download:`ArrayStack <../main/java/ArrayStack.java>` code and copy/paste, but
+    this defeats the purpose. I want you to slowly and deliberately implement each function and take the time to
+    understand the details.
+
+5. Test your ``ArrayStack`` with the following
+
+    .. code-block:: java
+        :linenos:
+
+            public static void main(String[] args) {
+                Stack<Integer> myStack = new ArrayStack<>();
+
+                System.out.println(myStack);
+
+                for (int i = 0; i < 10; ++i) {
+                    myStack.push(i);
+                }
+
+                System.out.println(myStack);
+
+                while (!myStack.isEmpty()) {
+                    System.out.println(myStack.pop());
+                }
+                System.out.println(myStack);
+            }
+
+
+6. Now create an instance of a stack for characters and rewrite the test code above to test its functionality
 
 
 Reversing a String
 ------------------
 
-* Do NOT just use reverse string --- use the stack and the LIFO thing
-    * Add this public static method to your class with your main method (not the Stack class)
-* Test with this code
+1. Write a method that takes a string and returns a new string that is the reverse of the original
+    * This function **must** use a stack for the reversing of the string
+        * **Hint:** Remember what LIFO order is
+    * I have provided you with a skeleton of the method and some simple testing code below
+
+
+    .. code-block:: java
+        :linenos:
+
+        public static void main(String[] args) {
+            String alphabet = "abcdefghijklmnopqrstuvwxyz";
+            String tebahpla = reverseString(alphabet);
+
+            System.out.println(alphabet);
+            System.out.println(tebahpla);
+        }
+
+        public static String reverseString(String originalString) {
+            Stack<Character> characterStack = new ArrayStack<>();
+            String newString = "";
+
+            // Add Code Here
+
+            return newString;
+        }
 
 
 Kattis Problems
