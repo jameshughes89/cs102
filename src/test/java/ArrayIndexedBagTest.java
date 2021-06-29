@@ -156,9 +156,21 @@ public class ArrayIndexedBagTest {
     }
 
     @Test
+    void addingToNegativeIndexOfIndexedBagPropagatesException() {
+        IndexedBag<Integer> bag = new ArrayIndexedBag<>();
+        assertThrows(IndexOutOfBoundsException.class, () -> bag.add(-1, 101));
+    }
+
+    @Test
     void gettingFromAnIndexNotInRangeOfIndexedBagThrowsException() {
         IndexedBag<Integer> bag = new ArrayIndexedBag<>();
         assertThrows(IndexOutOfBoundsException.class, () -> bag.get(99));
+    }
+
+    @Test
+    void gettingFromNegativeIndexOfIndexedBagPropagatesException() {
+        IndexedBag<Integer> bag = new ArrayIndexedBag<>();
+        assertThrows(IndexOutOfBoundsException.class, () -> bag.get(-1));
     }
 
     @Test
@@ -170,6 +182,17 @@ public class ArrayIndexedBagTest {
         bag.add(104);
         bag.add(2, 99);
         assertEquals(2, bag.indexOf(99));
+    }
+
+    @Test
+    void indexOfReturnsFirstIndexOfElementWithManyCopiesInIndexedBag() {
+        IndexedBag<Integer> bag = new ArrayIndexedBag<>();
+        bag.add(101);
+        bag.add(103);
+        bag.add(102);
+        bag.add(102);
+        bag.add(1, 102);
+        assertEquals(1, bag.indexOf(102));
     }
 
     @Test
@@ -192,6 +215,12 @@ public class ArrayIndexedBagTest {
     void settingAnIndexNotInRangeOfIndexedBagThrowsException() {
         IndexedBag<Integer> bag = new ArrayIndexedBag<>();
         assertThrows(IndexOutOfBoundsException.class, () -> bag.set(99, 101));
+    }
+
+    @Test
+    void settingANegativeIndexOfIndexedBagPropagatesException() {
+        IndexedBag<Integer> bag = new ArrayIndexedBag<>();
+        assertThrows(IndexOutOfBoundsException.class, () -> bag.set(-1, 101));
     }
 
     @Test
@@ -221,6 +250,18 @@ public class ArrayIndexedBagTest {
         bag.add(99);
         bag.remove(Integer.valueOf(99));
         assertEquals(2, bag.getCount(99));
+    }
+
+    @Test
+    void removeByValueRemovesFirstElementWithManyCopiesFromIndexedBag() {
+        IndexedBag<Integer> bag = new ArrayIndexedBag<>();
+        bag.add(99);
+        bag.add(101);
+        bag.add(103);
+        bag.add(101);
+        bag.add(101);
+        bag.remove(Integer.valueOf(101));
+        assertNotEquals(101, bag.get(1));
     }
 
     @Test
@@ -288,11 +329,17 @@ public class ArrayIndexedBagTest {
     }
 
     @Test
-    void removeByIndexOfNonExistingIndexInIndexedBagThrowsException() {
+    void removeByIndexNotInRangeOfIndexedBagThrowsException() {
         IndexedBag<Integer> bag = new ArrayIndexedBag<>();
         bag.add(99);
         bag.add(101);
         bag.add(103);
         assertThrows(IndexOutOfBoundsException.class, () -> bag.remove(22));
+    }
+
+    @Test
+    void removeByNegativeIndexOfIndexedBagPropagatesException() {
+        IndexedBag<Integer> bag = new ArrayIndexedBag<>();
+        assertThrows(IndexOutOfBoundsException.class, () -> bag.remove(-1));
     }
 }
