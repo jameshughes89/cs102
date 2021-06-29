@@ -115,8 +115,9 @@ Private Methods
 * We also make use of an ``Iterator`` here
 * Remember how looping through an array, we would almost always use a ``for`` loop with indices
 * Also how looping through a linked structure, we would use a ``while`` loop checking something like ``cur != null``
-* Iterators provide us with a way to iterate over *something* the same way, regardless with what the underlying contained is
+* Iterators provide us with a way to iterate over *something* the same way, regardless with what the underlying *thing* is
     * In our case, the *something* is a collection
+    * The underlying *thing* is out array
 * Here we're using two methods from the iterator
     * ``hasNext()``, which returns a boolean telling us if there is anything left in the collection
     * ``next()``, which returns the next element in the collection
