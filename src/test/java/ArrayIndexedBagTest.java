@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Test;
 
+import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -341,5 +342,95 @@ public class ArrayIndexedBagTest {
     void removeByNegativeIndexOfIndexedBagPropagatesException() {
         IndexedBag<Integer> bag = new ArrayIndexedBag<>();
         assertThrows(IndexOutOfBoundsException.class, () -> bag.remove(-1));
+    }
+
+    @Test
+    void iteratorReturnsIterator() {
+        IndexedBag<Integer> bag = new ArrayIndexedBag<>();
+        Iterator<Integer> it = bag.iterator();
+        assertNotNull(it);
+        assertTrue(it instanceof Iterator);
+    }
+
+    @Test
+    void iteratorHasNextOnNonEmptyIndexedBagReturnsTrue() {
+        IndexedBag<Integer> bag = new ArrayIndexedBag<>();
+        bag.add(99);
+        Iterator<Integer> it = bag.iterator();
+        assertTrue(it.hasNext());
+        assertTrue(it.hasNext());
+    }
+
+    @Test
+    void iteratorHasNextOnEmptyIndexedBagReturnsFalse() {
+        IndexedBag<Integer> bag = new ArrayIndexedBag<>();
+        Iterator<Integer> it = bag.iterator();
+        assertFalse(it.hasNext());
+    }
+
+    @Test
+    void iteratorHasNextAfterIteratingOverAllElementsOnIndexedBagReturnsFalse() {
+        IndexedBag<Integer> bag = new ArrayIndexedBag<>();
+        bag.add(99);
+        bag.add(99);
+        bag.add(99);
+        Iterator<Integer> it = bag.iterator();
+        it.next();
+        it.next();
+        it.next();
+        assertFalse(it.hasNext());
+    }
+
+    @Test
+    void iteratorHasNextAfterRemovingAllElementsFromIndexedBagReturnsFalse() {
+        IndexedBag<Integer> bag = new ArrayIndexedBag<>();
+        bag.add(99);
+        bag.add(99);
+        bag.add(99);
+        bag.remove(0);
+        bag.remove(0);
+        bag.remove(0);
+        Iterator<Integer> it = bag.iterator();
+        assertFalse(it.hasNext());
+    }
+
+    @Test
+    void iteratorNextOnNonEmptyIndexedBagReturnsElement() {
+        IndexedBag<Integer> bag = new ArrayIndexedBag<>();
+        bag.add(99);
+        Iterator<Integer> it = bag.iterator();
+        assertEquals(99, it.next());
+    }
+
+    @Test
+    void iteratorNextOnNonEmptyIndexedBagReturnsElementsInCorrectOrder() {
+        IndexedBag<Integer> bag = new ArrayIndexedBag<>();
+        for (int i = 0; i < 10; ++i) {
+            bag.add(i);
+        }
+        Iterator<Integer> it = bag.iterator();
+        for (int i = 0; i < 10; ++i) {
+            assertEquals(i, it.next());
+        }
+    }
+
+    @Test
+    void iteratorNextOnEmptyIndexedBagThrowsException() {
+        IndexedBag<Integer> bag = new ArrayIndexedBag<>();
+        Iterator<Integer> it = bag.iterator();
+        assertThrows(NoSuchElementException.class, () -> it.next());
+    }
+
+    @Test
+    void iteratorNextAfterRemovingAllElementsFromIndexedBagThrowsException() {
+        IndexedBag<Integer> bag = new ArrayIndexedBag<>();
+        bag.add(99);
+        bag.add(99);
+        bag.add(99);
+        bag.remove(0);
+        bag.remove(0);
+        bag.remove(0);
+        Iterator<Integer> it = bag.iterator();
+        assertThrows(NoSuchElementException.class, () -> it.next());
     }
 }
