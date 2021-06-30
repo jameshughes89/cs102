@@ -54,6 +54,7 @@ Writing Tests
     * What happens if you try to get something from beyond the range?
     * What happens if you try to get something from a negative index?
 
+
 6. Write tests for ``indexOf``
     * Try to figure out which tests you should have on your own/with a friend
 
