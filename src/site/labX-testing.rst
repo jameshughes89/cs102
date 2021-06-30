@@ -29,9 +29,18 @@ Writing Tests
 1. Create your testing class for ``CourseList`` called ``CourseListTest``
     * We will not test ``Course`` since it is so simple
 
-2. Start writing unit tests for your methods in the ``CourseList`` class
+2. Write unit tests to test the ``size()`` method
+    * empty list has size zero
+    * non empty list has proper size
+    * list that has been emptied via removes has size zero
 
+3. Write tests 
 
+**Tips**
+* Make your test method names as descriptive as possible while still being brief
+* Follow some convention for your method names, something like ``methodConditionExpected()``
+    * ``sizeOfEmptyCourseListReturnsZero()``
+    * ``addingBeyondCapacityCallsExpandCapacityToMakeRoomForAdd``
 
 
 Kattis Problems
