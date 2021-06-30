@@ -422,6 +422,19 @@ public class ArrayIndexedBagTest {
     }
 
     @Test
+    void iteratorNextAfterAfterIteratingOverAllElementsOnIndexedBagThrowsException() {
+        IndexedBag<Integer> bag = new ArrayIndexedBag<>();
+        bag.add(99);
+        bag.add(99);
+        bag.add(99);
+        Iterator<Integer> it = bag.iterator();
+        it.next();
+        it.next();
+        it.next();
+        assertThrows(NoSuchElementException.class, () -> it.next());
+    }
+
+    @Test
     void iteratorNextAfterRemovingAllElementsFromIndexedBagThrowsException() {
         IndexedBag<Integer> bag = new ArrayIndexedBag<>();
         bag.add(99);
