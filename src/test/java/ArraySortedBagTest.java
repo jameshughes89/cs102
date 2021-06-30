@@ -300,23 +300,6 @@ public class ArraySortedBagTest {
     }
 
     @Test
-    void iteratorReturnsIterator() {
-        SortedBag<Integer> bag = new ArraySortedBag<>();
-        Iterator<Integer> it = bag.iterator();
-        assertNotNull(it);
-        assertTrue(it instanceof Iterator);
-    }
-
-    @Test
-    void iteratorHasNextOnNonEmptySortedBagReturnsTrue() {
-        SortedBag<Integer> bag = new ArraySortedBag<>();
-        bag.add(99);
-        Iterator<Integer> it = bag.iterator();
-        assertTrue(it.hasNext());
-        assertTrue(it.hasNext());
-    }
-
-    @Test
     void iteratorHasNextOnEmptySortedBagReturnsFalse() {
         SortedBag<Integer> bag = new ArraySortedBag<>();
         Iterator<Integer> it = bag.iterator();
@@ -324,80 +307,35 @@ public class ArraySortedBagTest {
     }
 
     @Test
-    void iteratorHasNextAfterIteratingOverAllElementsOnSortedBagReturnsFalse() {
-        SortedBag<Integer> bag = new ArraySortedBag<>();
-        bag.add(99);
-        bag.add(99);
-        bag.add(99);
-        Iterator<Integer> it = bag.iterator();
-        it.next();
-        it.next();
-        it.next();
-        assertFalse(it.hasNext());
-    }
-
-    @Test
-    void iteratorHasNextAfterRemovingAllElementsFromSortedBagReturnsFalse() {
-        SortedBag<Integer> bag = new ArraySortedBag<>();
-        bag.add(99);
-        bag.add(99);
-        bag.add(99);
-        bag.removeFirst();
-        bag.removeFirst();
-        bag.removeFirst();
-        Iterator<Integer> it = bag.iterator();
-        assertFalse(it.hasNext());
-    }
-
-    @Test
-    void iteratorNextOnNonEmptySortedBagReturnsElement() {
+    void iteratorHasOneElementForSortedBagWithOneElement() {
         SortedBag<Integer> bag = new ArraySortedBag<>();
         bag.add(99);
         Iterator<Integer> it = bag.iterator();
         assertEquals(99, it.next());
+        assertFalse(it.hasNext());
     }
 
     @Test
     void iteratorNextOnNonEmptySortedBagReturnsElementsInCorrectOrder() {
         SortedBag<Integer> bag = new ArraySortedBag<>();
-        for (int i = 10; i >= 0; --i) {
-            bag.add(i);
-        }
+        bag.add(99);
+        bag.add(101);
+        bag.add(44);
+        bag.add(55);
+        bag.add(22);
+        int[] valueOrder = {22, 44, 55, 99, 101};
         Iterator<Integer> it = bag.iterator();
-        for (int i = 0; i < 10; ++i) {
-            assertEquals(i, it.next());
+        int currentIndex = 0;
+        while (it.hasNext()) {
+            assertEquals(it.next(), valueOrder[currentIndex]);
+            currentIndex++;
         }
+        assertThrows(NoSuchElementException.class, () -> it.next());
     }
 
     @Test
     void iteratorNextOnEmptySortedBagThrowsException() {
         SortedBag<Integer> bag = new ArraySortedBag<>();
-        Iterator<Integer> it = bag.iterator();
-        assertThrows(NoSuchElementException.class, () -> it.next());
-    }
-
-    @Test
-    void iteratorNextAfterAfterIteratingOverAllElementsOnSortedBagThrowsException() {
-        SortedBag<Integer> bag = new ArraySortedBag<>();
-        bag.add(99);
-        bag.add(99);
-        bag.add(99);
-        Iterator<Integer> it = bag.iterator();
-        it.next();
-        it.next();
-        it.next();
-        assertThrows(NoSuchElementException.class, () -> it.next());
-    }
-
-    @Test
-    void iteratorNextAfterRemovingAllElementsFromSortedBagThrowsException() {
-        SortedBag<Integer> bag = new ArraySortedBag<>();
-        bag.add(99);
-        bag.add(99);
-        bag.add(99);
-        bag.removeFirst();
-        bag.removeFirst();
-        bag.removeFirst();
         Iterator<Integer> it = bag.iterator();
         assertThrows(NoSuchElementException.class, () -> it.next());
     }
