@@ -308,7 +308,7 @@ public class ArraySortedBagTest {
     }
 
     @Test
-    void iteratorHasNextOnNonEmptyIndexedBagReturnsTrue() {
+    void iteratorHasNextOnNonEmptySortedBagReturnsTrue() {
         SortedBag<Integer> bag = new ArraySortedBag<>();
         bag.add(99);
         Iterator<Integer> it = bag.iterator();
@@ -317,14 +317,14 @@ public class ArraySortedBagTest {
     }
 
     @Test
-    void iteratorHasNextOnEmptyIndexedBagReturnsFalse() {
+    void iteratorHasNextOnEmptySortedBagReturnsFalse() {
         SortedBag<Integer> bag = new ArraySortedBag<>();
         Iterator<Integer> it = bag.iterator();
         assertFalse(it.hasNext());
     }
 
     @Test
-    void iteratorHasNextAfterIteratingOverAllElementsOnIndexedBagReturnsFalse() {
+    void iteratorHasNextAfterIteratingOverAllElementsOnSortedBagReturnsFalse() {
         SortedBag<Integer> bag = new ArraySortedBag<>();
         bag.add(99);
         bag.add(99);
@@ -337,7 +337,7 @@ public class ArraySortedBagTest {
     }
 
     @Test
-    void iteratorHasNextAfterRemovingAllElementsFromIndexedBagReturnsFalse() {
+    void iteratorHasNextAfterRemovingAllElementsFromSortedBagReturnsFalse() {
         SortedBag<Integer> bag = new ArraySortedBag<>();
         bag.add(99);
         bag.add(99);
@@ -350,7 +350,7 @@ public class ArraySortedBagTest {
     }
 
     @Test
-    void iteratorNextOnNonEmptyIndexedBagReturnsElement() {
+    void iteratorNextOnNonEmptySortedBagReturnsElement() {
         SortedBag<Integer> bag = new ArraySortedBag<>();
         bag.add(99);
         Iterator<Integer> it = bag.iterator();
@@ -358,7 +358,7 @@ public class ArraySortedBagTest {
     }
 
     @Test
-    void iteratorNextOnNonEmptyIndexedBagReturnsElementsInCorrectOrder() {
+    void iteratorNextOnNonEmptySortedBagReturnsElementsInCorrectOrder() {
         SortedBag<Integer> bag = new ArraySortedBag<>();
         for (int i = 10; i >= 0; --i) {
             bag.add(i);
@@ -370,14 +370,14 @@ public class ArraySortedBagTest {
     }
 
     @Test
-    void iteratorNextOnEmptyIndexedBagThrowsException() {
+    void iteratorNextOnEmptySortedBagThrowsException() {
         SortedBag<Integer> bag = new ArraySortedBag<>();
         Iterator<Integer> it = bag.iterator();
         assertThrows(NoSuchElementException.class, () -> it.next());
     }
 
     @Test
-    void iteratorNextAfterAfterIteratingOverAllElementsOnIndexedBagThrowsException() {
+    void iteratorNextAfterAfterIteratingOverAllElementsOnSortedBagThrowsException() {
         SortedBag<Integer> bag = new ArraySortedBag<>();
         bag.add(99);
         bag.add(99);
@@ -390,7 +390,7 @@ public class ArraySortedBagTest {
     }
 
     @Test
-    void iteratorNextAfterRemovingAllElementsFromIndexedBagThrowsException() {
+    void iteratorNextAfterRemovingAllElementsFromSortedBagThrowsException() {
         SortedBag<Integer> bag = new ArraySortedBag<>();
         bag.add(99);
         bag.add(99);
