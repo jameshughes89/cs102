@@ -11,84 +11,52 @@ Lab #3
     * Peer teaching and peer learning is super effective
 
 
-Playing with Stacks
-===================
+Unit Testing
+============
 
-We're going to implement an ``ArrayStack`` based on what we learned in class and use it to solve a simple problem.
-
-
-Implementing a Stack
---------------------
-
-1. Create a project and make a class where you will put your main method
-    * Perhaps call it ``Lab3``
-
-2. Download the :download:`Stack interface.<../main/java/Stack.java>` and add it to your project
-
-3. Create a new class for our ``ArrayStack`` implementation
-
-4. :doc:`Complete your ArrayStack based on the course notes </topic6>`
-
-.. warning::
-
-    I realize you can simply download the :download:`ArrayStack <../main/java/ArrayStack.java>` code and copy/paste, but
-    this defeats the purpose. I want you to slowly and deliberately implement each function and take the time to
-    understand the details.
-
-5. Test your ``ArrayStack`` with the following
-
-    .. code-block:: java
-        :linenos:
-
-            public static void main(String[] args) {
-                Stack<Integer> myStack = new ArrayStack<>();
-
-                System.out.println(myStack);
-
-                for (int i = 0; i < 10; ++i) {
-                    myStack.push(i);
-                }
-
-                System.out.println(myStack);
-
-                while (!myStack.isEmpty()) {
-                    System.out.println(myStack.pop());
-                }
-                System.out.println(myStack);
-            }
+We're going to write tests for our ``CourseList`` class from `:doc: Lab2 </lab2>`. :doc:`Topic 6's aside on testing will be of great help here </topic6-testing>`.
 
 
-6. Now create an instance of a stack for characters and rewrite the test code above to test its functionality
+Have a Working Implementation
+-----------------------------
+
+1. If you have not already, finish `:doc: Lab2 </lab2>`
 
 
-Reversing a String
-------------------
+Writing Tests
+-------------
 
-1. Write a method that takes a string and returns a new string that is the reverse of the original
-    * This function **must** use a stack for the reversing of the string
-        * **Hint:** Remember what LIFO order is
-    * I have provided you with a skeleton of the method and some simple testing code below
+**Tips**
+* Make your test method names as descriptive as possible while still being brief
+* Follow some convention for your method names, something like ``methodConditionExpected()``
+    * ``sizeOfEmptyCourseListReturnsZero()``
+    * ``addingBeyondCapacityCallsExpandCapacityToMakeRoomForAdd``
 
 
-    .. code-block:: java
-        :linenos:
+1. Create your testing class for ``CourseList`` called ``CourseListTest``
+    * We will not test ``Course`` since it is so simple
 
-        public static void main(String[] args) {
-            String alphabet = "abcdefghijklmnopqrstuvwxyz";
-            String tebahpla = reverseString(alphabet);
+2. Write unit tests to test the ``size()`` method
+    * empty list has size zero?
+    * non empty list has proper size?
+    * list that has been emptied via removes has size zero?
 
-            System.out.println(alphabet);
-            System.out.println(tebahpla);
-        }
+3. Write tests for ``add``
+    * Is the added element added?
+    * Can we add beyond a capacity limit?
 
-        public static String reverseString(String originalString) {
-            Stack<Character> characterStack = new ArrayStack<>();
-            String newString = "";
+4. Write tests for ``remove``
+    * Does the element get removed?
+    * What happens if we try to remove something that doesn't exist?
+    * What happens when we call remove once for something that exists more than once in the ``CourseList``?
 
-            // Add Code Here
+5. Write tests for ``get``
+    * Does it return the element from the correct index?
+    * What happens if you try to get something from beyond the range?
+    * What happens if you try to get something from a negative index?
 
-            return newString;
-        }
+6. Write tests for ``indexOf``
+    * Try to figure out which tests you should have on your own
 
 
 Kattis Problems
