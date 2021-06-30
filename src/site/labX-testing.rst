@@ -17,66 +17,21 @@ Unit Testing
 We're going to write tests for our ``CourseList`` class from `:doc: Lab2 </lab2>`. :doc:`Topic 6's aside on testing will be of great help here </topic6-testing>`.
 
 
-Implementing a Stack
---------------------
+Have a Working Implementation
+-----------------------------
 
-1. Create a project and make a class where you will put your main method
-    * Perhaps call it ``Lab3``
-
-2. Download the :download:`Stack interface.<../main/java/Stack.java>` and add it to your project
-
-3. Create a new class for our ``ArrayStack`` implementation
-
-4. :doc:`Complete your ArrayStack based on the course notes </topic6>`
-
-.. warning::
-
-    I realize you can simply download the :download:`ArrayStack <../main/java/ArrayStack.java>` code and copy/paste, but
-    this defeats the purpose. I want you to slowly and deliberately implement each function and take the time to
-    understand the details.
-
-5. Test your ``ArrayStack`` with the following
-
-    .. code-block:: java
-        :linenos:
-
-            public static void main(String[] args) {
-                Stack<Integer> myStack = new ArrayStack<>();
-
-                System.out.println(myStack);
-
-                for (int i = 0; i < 10; ++i) {
-                    myStack.push(i);
-                }
-
-                System.out.println(myStack);
-
-                while (!myStack.isEmpty()) {
-                    System.out.println(myStack.pop());
-                }
-                System.out.println(myStack);
-            }
-
-
-6. Now create an instance of a stack for characters and rewrite the test code above to test its functionality
+1. If you have not already, finish `:doc: Lab2 </lab2>`
 
 
 Writing Tests
 -------------
 
-1. Write tests for your ``ArrayStack`` implementation
-    * If you do not know how, :doc:`read the aside on testing </topic6-testing>`
+1. Create your testing class for ``CourseList`` called ``CourseListTest``
+    * We will not test ``Course`` since it is so simple
 
-.. warning::
+2. Start writing unit tests for your methods in the ``CourseList`` class
 
-    Again, don't simply copy and paste everything from the :download:`ArrayStackTest<../test/java/ArrayStackTest.java>`
-    I provided. Feel free to copy methods one at a time, but he point is to add the tests deliberately to understand
-    what they're doing and what they're testing.
 
-2. Run the tests and make sure they all pass
-    * If they do not, figure out why
-        * Are your tests wrong?
-        * Is your implementation of `ArrayStack` wrong?
 
 
 Kattis Problems
