@@ -34,7 +34,6 @@ Writing Tests
 
 
 1. Create your testing class for ``CourseList`` called ``CourseListTest``
-    * We will not test ``Course`` since it is so simple
 
 2. Write unit tests to test the ``size()`` method
     * empty list has size zero?
@@ -56,7 +55,10 @@ Writing Tests
     * What happens if you try to get something from a negative index?
 
 6. Write tests for ``indexOf``
-    * Try to figure out which tests you should have on your own
+    * Try to figure out which tests you should have on your own/with a friend
+
+7. Write tests for the ``Course`` class
+    * Try to figure out which tests you should have on your own/with a friend
 
 
 Kattis Problems
