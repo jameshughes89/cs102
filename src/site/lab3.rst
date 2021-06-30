@@ -78,6 +78,7 @@ Writing Tests
         * Are your tests wrong?
         * Is your implementation of `ArrayStack` wrong?
 
+
 Reversing a String
 ------------------
 
