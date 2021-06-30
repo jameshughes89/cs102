@@ -8,7 +8,6 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
     protected T[] bag;
     protected int rear;
     Iterator<T> it = this.iterator();
-    int searchIndex = 0;
 
     public ArraySortedBag() {
         this(DEFAULT_CAPACITY);
@@ -115,7 +114,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
 //    private int findInsertIndex(T element) {
 //        int searchIndex = 0;
 //        Iterator<T> it = this.iterator();
-//        while (it.hasNext() && element.compareTo(it.next()) > 0) {
+//        while (it.hasNext() && it.next().compareTo(element) > 0) {
 //            searchIndex++;
 //        }
 //        return searchIndex;
@@ -131,16 +130,6 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
         bag[insertIndex] = element;
         rear++;
     }
-//    @Override
-//    public void add(T element) {
-//        if (size() == bag.length) {
-//            expandCapacity();
-//        }
-//
-//        shiftRight(searchIndex);
-//        bag[searchIndex] = element;
-//        rear++;
-//    }
 
     @Override
     public T removeFirst() {

@@ -78,6 +78,7 @@ A ``CourseList`` will be a collection of ``Course`` objects that we can add and 
 9. Test the ``CourseList`` class by calling the methods
 
 
+
 Kattis Problems
 ===============
 
