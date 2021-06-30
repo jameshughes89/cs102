@@ -68,7 +68,7 @@ A ``CourseList`` will be a collection of ``Course`` objects that we can add and 
 
 5. Write a ``get`` method that returns the ``Course`` object from the specified index in the ``CourseList``
 
-6. Write a ``IndexOf`` method that returns the index of a specified ``Course`` object
+6. Write a ``indexOf`` method that returns the index of a specified ``Course`` object
     * Look at the ``Course`` object's ``equals`` method to get a sense of what parameters this method should have
 
 7. Write a ``size`` method to return the number of ``Course`` objects in the collection
