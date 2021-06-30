@@ -61,6 +61,24 @@ Implementing a Stack
 6. Now create an instance of a stack for characters and rewrite the test code above to test its functionality
 
 
+Writing Tests
+-------------
+
+1. Write tests for your ``ArrayStack`` implementation
+    * If you do not know how, :doc:`read the aside on testing </topic6-testing>`
+
+.. warning::
+
+    Again, don't simply copy and paste everything from the :download:`ArrayStackTest<../test/java/ArrayStackTest.java>`
+    I provided. Feel free to copy methods one at a time, but he point is to add the tests deliberately to understand
+    what they're doing and what they're testing.
+
+2. Run the tests and make sure they all pass
+    * If they do not, figure out why
+        * Are your tests wrong?
+        * Is your implementation of ``ArrayStack`` wrong?
+
+
 Reversing a String
 ------------------
 
