@@ -387,7 +387,12 @@ Adding Method
     * and the thing we want to insert is belongs after the current element in the collection
 
 
+Testing
+-------
 
+* Although not discussed in depth here, check out the testing methods for these implementations to get a sense of what functionality is being tested and how
+    * :download:`ArrayIndexedBagTest <../test/java/ArrayIndexedBagTest.java>`
+    * :download:`ArraySortedBagTest <../test/java/ArraySortedBagTest.java>` code
 
 
 Linked Implementation
@@ -409,6 +414,6 @@ For next time
     Note that there are better implementations of these data structures. We will see one later in the course.
 
 * Download and play with the :download:`ArrayIndexedBag <../main/java/ArrayIndexedBag.java>` and  :download:`ArraySortedBag <../main/java/ArraySortedBag.java>` code
-* Download and play with the :download:`ArrayIndexedBagTest <../test/java/ArrayIndexedBagTest.java>` and  :download:`ArraySortedBagTest <../test/java/ArraySortedBagTest.java>` code
+* Download and play with the :download:`ArrayIndexedBagTest <../test/java/ArrayIndexedBagTest.java>` and :download:`ArraySortedBagTest <../test/java/ArraySortedBagTest.java>` code
 * Read Chapter 6 Sections 6 & 7
     * 17 pages
