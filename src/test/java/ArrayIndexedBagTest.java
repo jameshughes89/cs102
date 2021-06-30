@@ -345,14 +345,6 @@ public class ArrayIndexedBagTest {
     }
 
     @Test
-    void iteratorReturnsIterator() {
-        IndexedBag<Integer> bag = new ArrayIndexedBag<>();
-        Iterator<Integer> it = bag.iterator();
-        assertNotNull(it);
-        assertTrue(it instanceof Iterator);
-    }
-
-    @Test
     void iteratorHasNextOnNonEmptyIndexedBagReturnsTrue() {
         IndexedBag<Integer> bag = new ArrayIndexedBag<>();
         bag.add(99);
