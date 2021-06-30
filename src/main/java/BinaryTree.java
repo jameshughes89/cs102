@@ -18,15 +18,6 @@ public interface BinaryTree<T> extends Iterable<T> {
     boolean contains(T element);
 
     /**
-     * Returns a reference to the element searched for within the tree. If
-     * the element is not found, this method throws an exception.
-     *
-     * @param element element to search the tree for
-     * @return Reference to the target element
-     */
-    T find(T element);
-
-    /**
      * Checks if the tree is empty.
      *
      * @return True if the tree is empty, false otherwise.
@@ -53,7 +44,7 @@ public interface BinaryTree<T> extends Iterable<T> {
      *
      * @return Pre-order iterator for tree
      */
-    Iterator<T> iteratorPreOrder();
+    Iterator<T> preOrderIterator();
 
     /**
      * Iterator over all elements in the tree in a 'In-order'
@@ -61,7 +52,7 @@ public interface BinaryTree<T> extends Iterable<T> {
      *
      * @return In-order iterator for tree
      */
-    Iterator<T> iteratorInOrder();
+    Iterator<T> inOrderIterator();
 
     /**
      * Iterator over all elements in the tree in a 'post-order'
@@ -69,7 +60,7 @@ public interface BinaryTree<T> extends Iterable<T> {
      *
      * @return Post-order iterator for tree
      */
-    Iterator<T> iteratorPostOrder();
+    Iterator<T> postOrderIterator();
 
     /**
      * Iterator over all elements in the tree in a 'pre-order'
@@ -77,7 +68,7 @@ public interface BinaryTree<T> extends Iterable<T> {
      *
      * @return Level-order iterator for tree
      */
-    Iterator<T> iteratorLevelOrder();
+    Iterator<T> levelOrderIterator();
 
     String toString();
 }
