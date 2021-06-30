@@ -66,11 +66,17 @@ A ``CourseList`` will be a collection of ``Course`` objects that we can add and 
 4. Write a ``remove`` method that takes the necessary parameters to find and remove a ``Course`` from the collection
     * You may want to make use of the ``Course`` object's ``equals`` method
 
-5. Write a ``size`` method to return the number of ``Course`` objects in the collection
+5. Write a ``get`` method that returns the ``Course`` object from the specified index in the ``CourseList``
 
-6. Write a reasonable ``toString`` for the class
+6. Write a ``indexOf`` method that returns the index of a specified ``Course`` object
+    * Look at the ``Course`` object's ``equals`` method to get a sense of what parameters this method should have
 
-7. Test the ``CourseList`` class by calling the methods
+7. Write a ``size`` method to return the number of ``Course`` objects in the collection
+
+8. Write a reasonable ``toString`` for the class
+
+9. Test the ``CourseList`` class by calling the methods
+
 
 
 Kattis Problems
