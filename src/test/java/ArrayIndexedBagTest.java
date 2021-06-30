@@ -345,15 +345,6 @@ public class ArrayIndexedBagTest {
     }
 
     @Test
-    void iteratorHasNextOnNonEmptyIndexedBagReturnsTrue() {
-        IndexedBag<Integer> bag = new ArrayIndexedBag<>();
-        bag.add(99);
-        Iterator<Integer> it = bag.iterator();
-        assertTrue(it.hasNext());
-        assertTrue(it.hasNext());
-    }
-
-    @Test
     void iteratorHasNextOnEmptyIndexedBagReturnsFalse() {
         IndexedBag<Integer> bag = new ArrayIndexedBag<>();
         Iterator<Integer> it = bag.iterator();
@@ -361,80 +352,34 @@ public class ArrayIndexedBagTest {
     }
 
     @Test
-    void iteratorHasNextAfterIteratingOverAllElementsOnIndexedBagReturnsFalse() {
-        IndexedBag<Integer> bag = new ArrayIndexedBag<>();
-        bag.add(99);
-        bag.add(99);
-        bag.add(99);
-        Iterator<Integer> it = bag.iterator();
-        it.next();
-        it.next();
-        it.next();
-        assertFalse(it.hasNext());
-    }
-
-    @Test
-    void iteratorHasNextAfterRemovingAllElementsFromIndexedBagReturnsFalse() {
-        IndexedBag<Integer> bag = new ArrayIndexedBag<>();
-        bag.add(99);
-        bag.add(99);
-        bag.add(99);
-        bag.remove(0);
-        bag.remove(0);
-        bag.remove(0);
-        Iterator<Integer> it = bag.iterator();
-        assertFalse(it.hasNext());
-    }
-
-    @Test
-    void iteratorNextOnNonEmptyIndexedBagReturnsElement() {
+    void iteratorHasOneElementForIndexedBagWithOneElement() {
         IndexedBag<Integer> bag = new ArrayIndexedBag<>();
         bag.add(99);
         Iterator<Integer> it = bag.iterator();
         assertEquals(99, it.next());
+        assertFalse(it.hasNext());
     }
 
     @Test
     void iteratorNextOnNonEmptyIndexedBagReturnsElementsInCorrectOrder() {
         IndexedBag<Integer> bag = new ArrayIndexedBag<>();
-        for (int i = 0; i < 10; ++i) {
-            bag.add(i);
-        }
+        bag.add(99);
+        bag.add(0, 101);
+        bag.add(44);
+        bag.add(1, 55);
+        bag.add(1, 22);
         Iterator<Integer> it = bag.iterator();
-        for (int i = 0; i < 10; ++i) {
-            assertEquals(i, it.next());
+        int currentIndex = 0;
+        while (it.hasNext()) {
+            assertEquals(it.next(), bag.get(currentIndex));
+            currentIndex++;
         }
+        assertThrows(NoSuchElementException.class, () -> it.next());
     }
 
     @Test
     void iteratorNextOnEmptyIndexedBagThrowsException() {
         IndexedBag<Integer> bag = new ArrayIndexedBag<>();
-        Iterator<Integer> it = bag.iterator();
-        assertThrows(NoSuchElementException.class, () -> it.next());
-    }
-
-    @Test
-    void iteratorNextAfterAfterIteratingOverAllElementsOnIndexedBagThrowsException() {
-        IndexedBag<Integer> bag = new ArrayIndexedBag<>();
-        bag.add(99);
-        bag.add(99);
-        bag.add(99);
-        Iterator<Integer> it = bag.iterator();
-        it.next();
-        it.next();
-        it.next();
-        assertThrows(NoSuchElementException.class, () -> it.next());
-    }
-
-    @Test
-    void iteratorNextAfterRemovingAllElementsFromIndexedBagThrowsException() {
-        IndexedBag<Integer> bag = new ArrayIndexedBag<>();
-        bag.add(99);
-        bag.add(99);
-        bag.add(99);
-        bag.remove(0);
-        bag.remove(0);
-        bag.remove(0);
         Iterator<Integer> it = bag.iterator();
         assertThrows(NoSuchElementException.class, () -> it.next());
     }
