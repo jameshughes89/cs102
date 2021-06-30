@@ -1,7 +1,34 @@
-****************************
-Topic #18 --- The Call Stack
-****************************
+*************************************
+Topic #18 --- Memory & The Call Stack
+*************************************
 
+
+Memory Allocation
+=================
+
+
+The Call Stack
+==============
+
+
+Call Frame
+----------
+
+
+Heap
+====
+
+
+Static Space
+------------
+
+
+Object Space
+------------
+
+
+Garbage Collection
+==================
 
 
 For next time
