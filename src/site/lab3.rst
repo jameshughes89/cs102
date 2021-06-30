@@ -76,7 +76,7 @@ Writing Tests
 2. Run the tests and make sure they all pass
     * If they do not, figure out why
         * Are your tests wrong?
-        * Is your implementation of `ArrayStack` wrong?
+        * Is your implementation of ``ArrayStack`` wrong?
 
 
 Reversing a String
