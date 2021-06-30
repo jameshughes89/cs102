@@ -26,21 +26,37 @@ Have a Working Implementation
 Writing Tests
 -------------
 
-1. Create your testing class for ``CourseList`` called ``CourseListTest``
-    * We will not test ``Course`` since it is so simple
-
-2. Write unit tests to test the ``size()`` method
-    * empty list has size zero
-    * non empty list has proper size
-    * list that has been emptied via removes has size zero
-
-3. Write tests 
-
 **Tips**
 * Make your test method names as descriptive as possible while still being brief
 * Follow some convention for your method names, something like ``methodConditionExpected()``
     * ``sizeOfEmptyCourseListReturnsZero()``
     * ``addingBeyondCapacityCallsExpandCapacityToMakeRoomForAdd``
+
+
+1. Create your testing class for ``CourseList`` called ``CourseListTest``
+    * We will not test ``Course`` since it is so simple
+
+2. Write unit tests to test the ``size()`` method
+    * empty list has size zero?
+    * non empty list has proper size?
+    * list that has been emptied via removes has size zero?
+
+3. Write tests for ``add``
+    * Is the added element added?
+    * Can we add beyond a capacity limit?
+
+4. Write tests for ``remove``
+    * Does the element get removed?
+    * What happens if we try to remove something that doesn't exist?
+    * What happens when we call remove once for something that exists more than once in the ``CourseList``?
+
+5. Write tests for ``get``
+    * Does it return the element from the correct index?
+    * What happens if you try to get something from beyond the range?
+    * What happens if you try to get something from a negative index?
+
+6. Write tests for ``indexOf``
+    * Try to figure out which tests you should have on your own
 
 
 Kattis Problems
