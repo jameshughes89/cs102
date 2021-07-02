@@ -3,6 +3,15 @@ public class LinkedBinarySearchTree<T> extends BinarySearchTree<T> {
     private int size;
     private Node<T> root;
 
+    public LinkedBinarySearchTree() {
+        this(null);
+    }
+
+    public LinkedBinarySearchTree(T element) {
+        root = new Node<>(element);
+        size = 0;
+    }
+
     /**
      * A Node class for a binary linked tree structure. Each node
      * contains a reference to data of type T, which may be
