@@ -34,6 +34,7 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> extends Bin
         } else {
             add(element, root);
         }
+        size++;
     }
 
     public boolean isEmpty() {
