@@ -13,19 +13,27 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> extends Bin
     }
 
     private void add(T element, Node<T> current) {
-        if (isEmpty()) {
-            root = new Node<>(element);
-        } else {
-            if (root.getData().compareTo(element) > 0) {
-                // Goes into left subtree
+        if (current.getData().compareTo(element) > 0) {
+            if (current.getLeft() == null) {
+                current.setLeft(new Node<>(element));
             } else {
-                // Goes into right subtree
+                add(element, current.getLeft());
+            }
+        } else {
+            if (current.getRight() == null) {
+                current.setRight(new Node<>(element));
+            } else {
+                add(element, current.getRight());
             }
         }
     }
 
     public void add(T element) {
-        add(element, root);
+        if (isEmpty()) {
+            root = new Node<>(element);
+        } else {
+            add(element, root);
+        }
     }
 
     public boolean isEmpty() {
@@ -89,3 +97,4 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> extends Bin
         }
     }
 }
+
