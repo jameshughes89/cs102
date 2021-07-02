@@ -2,7 +2,7 @@ public interface SortedBag<T> extends Bag<T> {
 
     /**
      * Adds an element to the SortedBag such that the bag remains
-     * sorted.
+     * sorted. Elements considered equal are added to the right.
      *
      * @param element Item to be added to the SortedBag
      */
