@@ -12,6 +12,21 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> extends Bin
         size = 0;
     }
 
+    public void add(T element) {
+        if (isEmpty()) {
+            root = new Node<>(element);
+        } else {
+            add(element, root);
+        }
+        size++;
+    }
+
+    /**
+     * TODO
+     *
+     * @param element
+     * @param current
+     */
     private void add(T element, Node<T> current) {
         if (current.getData().compareTo(element) > 0) {
             if (current.getLeft() == null) {
@@ -28,13 +43,29 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> extends Bin
         }
     }
 
-    public void add(T element) {
-        if (isEmpty()) {
-            root = new Node<>(element);
+    public boolean contains(T element) {
+        return binarySearch(element, root);
+    }
+
+    /**
+     * TODO
+     *
+     * @param element
+     * @param current
+     * @return
+     */
+    private boolean binarySearch(T element, Node<T> current) {
+        if (current == null) {
+            return false;
+        } else if (current.getData().equals(element)) {
+            return true;
         } else {
-            add(element, root);
+            if (current.getData().compareTo(element) > 0) {
+                return binarySearch(element, current.getLeft());
+            } else {
+                return binarySearch(element, current.getRight());
+            }
         }
-        size++;
     }
 
     public boolean isEmpty() {
