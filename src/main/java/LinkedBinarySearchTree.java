@@ -22,7 +22,7 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> extends Bin
     }
 
     /**
-     * TODO
+     * An internal add method for enabling recursive add.
      *
      * @param element
      * @param current
