@@ -62,13 +62,6 @@ public interface BinarySearchTree<T extends Comparable<? super T>> extends Itera
     T max();
 
     /**
-     * Returns a reference to the element contained in the root of the tree.
-     *
-     * @return Reference to the root's element
-     */
-    T getRootElement();
-
-    /**
      * Returns true if element is contained within the tree, false otherwise.
      *
      * @param element Element to search for
