@@ -45,17 +45,6 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
         }
         bag[rear - 1] = null;
     }
-//    private int indexOf(T target) {
-//        int searchIndex = 0;
-//        Iterator<T> it = this.iterator();
-//        while (it.hasNext()) {
-//            if (it.next().equals(target)) {
-//                return searchIndex;
-//            }
-//            searchIndex++;
-//        }
-//        return NOT_FOUND;
-//    }
 
     /**
      * Shifts elements in an array up (towards index rear) away
