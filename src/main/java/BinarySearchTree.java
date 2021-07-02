@@ -4,7 +4,7 @@ public interface BinarySearchTree<T extends Comparable<? super T>> extends Itera
 
     /**
      * Add an element to the tree such that the binary search tree property
-     * is maintained.
+     * is maintained. Elements considered equal are added to the right.
      *
      * @param element Element to be added to the tree in the proper location
      */
