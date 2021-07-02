@@ -1,4 +1,4 @@
-public class LinkedBinarySearchTree<T> extends BinarySearchTree<T> {
+public class LinkedBinarySearchTree<T extends Comparable<? super T>> extends BinarySearchTree<T> {
 
     private int size;
     private Node<T> root;
@@ -10,6 +10,10 @@ public class LinkedBinarySearchTree<T> extends BinarySearchTree<T> {
     public LinkedBinarySearchTree(T element) {
         root = new Node<>(element);
         size = 0;
+    }
+
+    public void add(T element) {
+        if (element.compareTo()
     }
 
     /**
