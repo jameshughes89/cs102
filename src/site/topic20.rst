@@ -1,11 +1,12 @@
-*******************
-Topic #20 --- Trees
-*******************
+***********************
+Topic #20 --- Searching
+***********************
 
 
 
 For next time
 =============
 
-* Read Chapter 10 Sections 1 -- 3
-    * 10 pages
+* Read Chapter 9 Section 1
+    * 7 pages
+
