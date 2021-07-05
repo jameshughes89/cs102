@@ -16,6 +16,7 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
         size = 0;
     }
 
+    @Override
     public void add(T element) {
         if (isEmpty()) {
             root = new Node<>(element);
@@ -47,6 +48,7 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
         }
     }
 
+    @Override
     public T remove(T element) {
         T returnElement = null;
         if (isEmpty()) {
@@ -138,6 +140,7 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
         return replacementNode;
     }
 
+    @Override
     public T removeMin() {
         T returnElement = null;
         if (isEmpty()) {
@@ -179,6 +182,7 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
      *
      * @return The maximum element in the binary search tree
      */
+    @Override
     public T removeMax() {
         T returnElement = null;
         if (isEmpty()) {
@@ -248,6 +252,7 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
         }
     }
 
+    @Override
     public boolean contains(T element) {
         return binarySearch(element, root);
     }
@@ -273,6 +278,7 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
         }
     }
 
+    @Override
     public int getCount(T element) {
         if (isEmpty()) {
             return 0;
@@ -301,10 +307,12 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
         }
     }
 
+    @Override
     public boolean isEmpty() {
         return size() == 0;
     }
 
+    @Override
     public int size() {
         return size;
     }
@@ -418,6 +426,7 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
      *
      * @return String of the elements in in order order
      */
+    @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
         for (T element : this) {
