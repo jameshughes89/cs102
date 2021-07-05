@@ -421,4 +421,134 @@ public class LinkedBinarySearchTreeTest {
         assertEquals(25, bst.removeMax());
         assertEquals(12, bst.removeMax());
     }
+
+    @Test
+    void removeOnEmptyLinkedBinarySearchTreeThrowsException() {
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
+        assertThrows(NoSuchElementException.class, () -> bst.remove(99));
+    }
+
+    @Test
+    void removeNonExistingElementOnLinkedBinarySearchTreeThrowsException() {
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
+        bst.add(99);
+        assertThrows(NoSuchElementException.class, () -> bst.remove(101));
+    }
+
+    @Test
+    void removeOnLinkedBinarySearchTreeWhenElementIsRootReturnsCorrectElement() {
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
+        bst.add(50);
+        bst.add(25);
+        bst.add(75);
+        bst.add(37);
+        bst.add(12);
+        bst.add(62);
+        bst.add(87);
+        assertEquals(50, bst.remove(50));
+    }
+
+    @Test
+    void removeOnLinkedBinarySearchTreeWhenElementIsInternalNodeReturnsCorrectElement() {
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
+        bst.add(50);
+        bst.add(25);
+        bst.add(75);
+        bst.add(37);
+        bst.add(12);
+        bst.add(62);
+        bst.add(87);
+        assertEquals(25, bst.remove(25));
+    }
+
+    @Test
+    void removeOnLinkedBinarySearchTreeWhenElementIsLeafNodeReturnsCorrectElement() {
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
+        bst.add(50);
+        bst.add(25);
+        bst.add(75);
+        bst.add(37);
+        bst.add(12);
+        bst.add(62);
+        bst.add(87);
+        assertEquals(25, bst.remove(25));
+    }
+
+    @Test
+    void removeOnLinkedBinarySearchTreeWhenMultipleEqualElementsExistReturnsCorrectElement() {
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
+        bst.add(50);
+        bst.add(25);
+        bst.add(75);
+        bst.add(37);
+        bst.add(12);
+        bst.add(62);
+        bst.add(87);
+        bst.add(37);
+        bst.add(37);
+        assertEquals(37, bst.remove(37));
+    }
+
+    @Test
+    void removeOnLinkedBinarySearchTreeWithSingleEqualElementRemovesElementFromBinarySearchTree() {
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
+        bst.add(50);
+        bst.add(25);
+        bst.add(75);
+        bst.add(37);
+        bst.add(12);
+        bst.add(62);
+        bst.add(87);
+        bst.remove(50);
+        assertFalse(bst.contains(50));
+    }
+
+    @Test
+    void removeOnLinkedBinarySearchTreeWithManyEqualElementsRemovesOnlyOneElementFromBinarySearchTree() {
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
+        bst.add(50);
+        bst.add(25);
+        bst.add(75);
+        bst.add(37);
+        bst.add(12);
+        bst.add(37);
+        bst.add(62);
+        bst.add(37);
+        bst.add(87);
+        bst.remove(37);
+        assertEquals(2, bst.getCount(37));
+    }
+
+    @Test
+    void removeOnLinkedBinarySearchTreeUpdatesSize() {
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
+        bst.add(50);
+        bst.add(25);
+        bst.add(75);
+        bst.add(37);
+        bst.add(12);
+        bst.add(62);
+        bst.add(87);
+        bst.remove(37);
+        assertEquals(6, bst.size());
+    }
+
+    @Test
+    void multipleRemoveCallsOnLinkedBinarySearchTreeReturnsElements() {
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
+        bst.add(50);
+        bst.add(25);
+        bst.add(75);
+        bst.add(37);
+        bst.add(12);
+        bst.add(62);
+        bst.add(87);
+        assertEquals(50, bst.remove(50));
+        assertEquals(25, bst.remove(25));
+        assertEquals(75, bst.remove(75));
+        assertEquals(37, bst.remove(37));
+        assertEquals(12, bst.remove(12));
+        assertEquals(62, bst.remove(62));
+        assertEquals(87, bst.remove(87));
+    }
 }
