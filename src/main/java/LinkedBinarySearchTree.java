@@ -406,7 +406,9 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     @Override
     public Iterator<T> levelOrderIterator() {
         IndexedBag<T> sequence = new ArrayIndexedBag<>();
-        levelOrder(root, sequence);
+        if (!isEmpty()) {
+            levelOrder(root, sequence);
+        }
         return sequence.iterator();
     }
 
