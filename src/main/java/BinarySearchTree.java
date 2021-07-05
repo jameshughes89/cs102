@@ -130,6 +130,4 @@ public interface BinarySearchTree<T extends Comparable<? super T>> extends Itera
      * @return Level-order iterator for tree
      */
     Iterator<T> levelOrderIterator();
-
-    String toString();
 }
