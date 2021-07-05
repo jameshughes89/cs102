@@ -51,15 +51,28 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
         if (isEmpty()) {
             throw new NoSuchElementException();
         } else if (root.getData().equals(element)) {
-
+            returnElement = root.getData();
+            root = findReplacementNode(root);
+        } else if (root.getData().compareTo(element) > 0) {
+            returnElement = remove(element, root, root.getLeft());
+        } else {
+            returnElement = remove(element, root, root.getRight());
         }
-
         size--;
         return returnElement;
     }
 
-    private T remove(T element, Node<T> current, Node<T> child) {
-
+    private T remove(T element, Node<T> parent, Node<T> child) {
+        if (child == null) {
+            throw new NoSuchElementException();
+        } else if (child.getData().equals(element)) {
+            parent.setLeft(findReplacementNode(child));
+            return child.getData();
+        } else if (child.getData().compareTo(element) > 0) {
+            return remove(element, child, child.getLeft());
+        } else {
+            return remove(element, child, child.getRight());
+        }
     }
 
     /**
