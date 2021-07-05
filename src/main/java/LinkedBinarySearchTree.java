@@ -47,7 +47,69 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     }
 
     public T remove(T element) {
+        T returnElement = null;
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        } else if (root.getData().equals(element)) {
 
+        }
+
+        size--;
+        return returnElement;
+    }
+
+    private T remove(T element, Node<T> current, Node<T> child) {
+
+    }
+
+    /**
+     * Helper method for finding which node should be used to replace a node being removed.
+     * There are a few conditions:
+     * <p>
+     * 1. Both left and right children are null. Here, simply remove the node.
+     * <p>
+     * 2. Left child is not null but right child is null. Replace the toRemove node with the left child.
+     * <p>
+     * 3. Left child is null but right child is not null. Replace the toRemove node with the right child
+     * <p>
+     * 4. Both left and right children are not null. Replace the toRemove node with the in order successor,
+     * which would be the right subtree's left most node.
+     *
+     * @param toRemove The node being replaced
+     * @return The node replacing the node being removed
+     */
+    private Node<T> findReplacementNode(Node<T> toRemove) {
+        Node<T> replacementNode = null;
+        if (toRemove.getLeft() == null && toRemove.getRight() == null) {
+            replacementNode = null;
+        } else if (toRemove.getLeft() != null && toRemove.getRight() == null) {
+            replacementNode = toRemove.getLeft();
+        } else if (toRemove.getLeft() == null && toRemove.getRight() != null) {
+            replacementNode = toRemove.getRight();
+        } else {
+            Node<T> parent = toRemove;
+            Node<T> child = toRemove.getRight();
+            // Find the in order successor (right child's left
+            // most node (minimum node))
+            while (child.getLeft() != null) {
+                parent = child;
+                child = child.getLeft();
+            }
+            // Set replacement node's left to
+            // the node being removed's (subtree root's) left
+            child.setLeft(toRemove.getLeft());
+            // If the immediate in order successor is NOT the
+            // node being replaced's right child, the parent
+            // node's new left becomes the child node's right
+            // and the child node's right is replaced with
+            // the node being replaced's right
+            if (toRemove.getRight() != child) {
+                parent.setLeft(child.getRight());
+                toRemove.setRight(toRemove.getRight());
+            }
+            replacementNode = child;
+        }
+        return replacementNode;
     }
 
     public T removeMin() {
