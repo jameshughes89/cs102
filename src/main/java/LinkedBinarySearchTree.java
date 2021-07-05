@@ -7,7 +7,8 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     private Node<T> root;
 
     public LinkedBinarySearchTree() {
-        this(null);
+        root = null;
+        size = 0;
     }
 
     public LinkedBinarySearchTree(T element) {
