@@ -45,6 +45,52 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
         }
     }
 
+    public T removeMin() {
+        T returnElement = null;
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        if (root.getLeft() == null) {
+            returnElement = root.getData();
+            root = root.getRight();
+        } else {
+            Node<T> parent = root;
+            Node<T> leftChild = root.getLeft();
+            // Iterate left until we find the left most node
+            while (leftChild.getLeft() != null) {
+                parent = leftChild;
+                leftChild = leftChild.getLeft();
+            }
+            returnElement = leftChild.getData();
+            parent.setLeft(leftChild.getRight());
+        }
+        size--;
+        return returnElement;
+    }
+
+    public T removeMax() {
+        T returnElement = null;
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        if (root.getRight() == null) {
+            returnElement = root.getData();
+            root = root.getLeft();
+        } else {
+            Node<T> parent = root;
+            Node<T> rightChild = root.getRight();
+            // Iterate right until we find the right most node
+            while (rightChild.getRight() != null) {
+                parent = rightChild;
+                rightChild = rightChild.getRight();
+            }
+            returnElement = rightChild.getData();
+            parent.setRight(rightChild.getLeft());
+        }
+        size--;
+        return returnElement;
+    }
+
     @Override
     public T min() {
         if (isEmpty()) {
