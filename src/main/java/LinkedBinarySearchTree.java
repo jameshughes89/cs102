@@ -62,6 +62,14 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
         return returnElement;
     }
 
+    /**
+     * Helper method for recursive remove.
+     *
+     * @param element Element being searched for for removal
+     * @param parent  The parent of the node being investigated
+     * @param child   The node being investigated
+     * @return The element being removed
+     */
     private T remove(T element, Node<T> parent, Node<T> child) {
         if (child == null) {
             throw new NoSuchElementException();
