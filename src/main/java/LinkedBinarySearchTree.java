@@ -49,25 +49,43 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
         T returnElement = null;
         if (isEmpty()) {
             throw new NoSuchElementException();
-        }
-        if (root.getLeft() == null) {
+        } else if (root.getLeft() == null) {
             returnElement = root.getData();
             root = root.getRight();
         } else {
-            Node<T> parent = root;
-            Node<T> leftChild = root.getLeft();
-            // Iterate left until we find the left most node
-            while (leftChild.getLeft() != null) {
-                parent = leftChild;
-                leftChild = leftChild.getLeft();
-            }
-            returnElement = leftChild.getData();
-            parent.setLeft(leftChild.getRight());
+            returnElement = removeMin(root, root.getLeft());
         }
         size--;
         return returnElement;
     }
 
+    /**
+     * Helper method for a recursive removeMin. Note, it is possible
+     * to not include the leftChild parameter since current.getLeft
+     * will always be equal to leftChild, however it is included for
+     * making the implementation more clear.
+     *
+     * @param current   Current node
+     * @param leftChild Current node's left child
+     * @return Minimum element in the binary search tree
+     */
+    private T removeMin(Node<T> current, Node<T> leftChild) {
+        if (leftChild.getLeft() == null) {
+            current.setLeft(leftChild.getRight());
+            return leftChild.getData();
+        } else {
+            return removeMin(current.getLeft(), leftChild.getLeft());
+        }
+    }
+
+    /**
+     * An iterative implementation of finding the maximum element in
+     * a binary serach tree. This method could be a recursive one
+     * like removeMin, however the iterative one is included to see
+     * multiple implementations.
+     *
+     * @return The maximum element in the binary search tree
+     */
     public T removeMax() {
         T returnElement = null;
         if (isEmpty()) {
