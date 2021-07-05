@@ -286,8 +286,8 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     private void preOrder(Node<T> current, IndexedBag<T> sequence) {
         if (current != null) {
             sequence.add(current.getData());
-            inOrder(current.getLeft(), sequence);
-            inOrder(current.getRight(), sequence);
+            preOrder(current.getLeft(), sequence);
+            preOrder(current.getRight(), sequence);
         }
     }
 
@@ -315,8 +315,8 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
      */
     private void postOrder(Node<T> current, IndexedBag<T> sequence) {
         if (current != null) {
-            inOrder(current.getLeft(), sequence);
-            inOrder(current.getRight(), sequence);
+            postOrder(current.getLeft(), sequence);
+            postOrder(current.getRight(), sequence);
             sequence.add(current.getData());
         }
     }
