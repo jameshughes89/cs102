@@ -272,6 +272,34 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
         }
     }
 
+    public int getCount(T element) {
+        if (isEmpty()) {
+            return 0;
+        }
+        return getCount(element, root);
+    }
+
+    /**
+     * Helper method for recursive count of elements in binary search tree.
+     * Remember, equal elements are added to the right subtree.
+     *
+     * @param element Element to be counted
+     * @param current Current node being investigated
+     * @return Number of times the element exists in the (sub)tree.
+     */
+    private int getCount(T element, Node<T> current) {
+        if (current == null) {
+            return 0;
+        }
+        if (current.getData().equals(element)) {
+            return 1 + getCount(element, current.getRight());
+        } else if (current.getData().compareTo(element) > 0) {
+            return getCount(element, current.getLeft());
+        } else {
+            return getCount(element, current.getRight());
+        }
+    }
+
     public boolean isEmpty() {
         return size() == 0;
     }
