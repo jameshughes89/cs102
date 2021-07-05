@@ -102,7 +102,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
 //    private int findInsertIndex(T element) {
 //        int searchIndex = 0;
 //        Iterator<T> it = this.iterator();
-//        while (it.hasNext() && it.next().compareTo(element) > 0) {
+//        while (it.hasNext() && it.next().compareTo(element) < 0) {
 //            searchIndex++;
 //        }
 //        return searchIndex;
