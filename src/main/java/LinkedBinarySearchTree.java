@@ -239,7 +239,7 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
         if (current.getRight() == null) {
             return current.getData();
         } else {
-            return min(current.getRight());
+            return max(current.getRight());
         }
     }
 
