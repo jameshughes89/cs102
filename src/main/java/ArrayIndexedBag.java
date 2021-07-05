@@ -137,15 +137,6 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
     }
 
     @Override
-    public int indexOf(T target) {
-        int index = sentinelIndexOf(target);
-        if (index == NOT_FOUND) {
-            throw new NoSuchElementException("Element not contained in bag.");
-        }
-        return index;
-    }
-
-    @Override
     public T remove(T element) {
         if (isEmpty()) {
             throw new NoSuchElementException("Removing from an empty bag.");
@@ -153,6 +144,15 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
         // If indexOf throws an exception, this method propagates it
         int removeIndex = indexOf(element);
         return remove(removeIndex);
+    }
+
+    @Override
+    public int indexOf(T target) {
+        int index = sentinelIndexOf(target);
+        if (index == NOT_FOUND) {
+            throw new NoSuchElementException("Element not contained in bag.");
+        }
+        return index;
     }
 
     @Override
