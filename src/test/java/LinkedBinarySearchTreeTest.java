@@ -1,11 +1,10 @@
 import org.junit.jupiter.api.Test;
 
+import java.util.NoSuchElementException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class LinkedBinarySearchTreeTest {
-
-    @Test
-    void getCountOn
 
     @Test
     void isEmptyOnNewLinkedBinarySearchTreeReturnsTrue() {
@@ -105,5 +104,119 @@ public class LinkedBinarySearchTreeTest {
         bst.add(99);
         bst.add(99);
         assertEquals(5, bst.getCount(99));
+    }
+
+    @Test
+    void minOnEmptyLinkedBinarySearchTreeThrowsException() {
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
+        assertThrows(NoSuchElementException.class, () -> bst.min());
+    }
+
+    @Test
+    void minOnLinkedBinarySearchTreeWhenMinIsRootReturnsCorrectMin() {
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
+        bst.add(99);
+        assertEquals(99, bst.min());
+    }
+
+    @Test
+    void minOnLinkedBinarySearchTreeWhenMinIsInternalNodeReturnsCorrectMin() {
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
+        bst.add(99);
+        bst.add(55);
+        bst.add(77);
+        assertEquals(55, bst.min());
+    }
+
+    @Test
+    void minOnLinkedBinarySearchTreeWhenMinIsLeafNodeReturnsCorrectMin() {
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
+        bst.add(99);
+        bst.add(55);
+        bst.add(77);
+        bst.add(22);
+        assertEquals(22, bst.min());
+    }
+
+    @Test
+    void minOnLinkedBinarySearchTreeWhenMultipleEqualMinValuesExistReturnsCorrectMin() {
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
+        bst.add(99);
+        bst.add(55);
+        bst.add(77);
+        bst.add(22);
+        bst.add(22);
+        bst.add(22);
+        bst.add(22);
+        bst.add(22);
+        assertEquals(22, bst.min());
+    }
+
+    @Test
+    void minOnLinkedBinarySearchTreeLeavesElementInBinarySearchTree() {
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
+        bst.add(99);
+        bst.add(55);
+        bst.add(77);
+        bst.add(22);
+        bst.min();
+        assertTrue(bst.contains(22));
+    }
+
+    @Test
+    void maxOnEmptyLinkedBinarySearchTreeThrowsException() {
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
+        assertThrows(NoSuchElementException.class, () -> bst.max());
+    }
+
+    @Test
+    void maxOnLinkedBinarySearchTreeWhenMaxIsRootReturnsCorrectMax() {
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
+        bst.add(99);
+        assertEquals(99, bst.max());
+    }
+
+    @Test
+    void maxOnLinkedBinarySearchTreeWhenMaxIsInternalNodeReturnsCorrectMax() {
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
+        bst.add(55);
+        bst.add(99);
+        bst.add(77);
+        assertEquals(99, bst.max());
+    }
+
+    @Test
+    void maxOnLinkedBinarySearchTreeWhenMaxIsLeafNodeReturnsCorrectMax() {
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
+        bst.add(22);
+        bst.add(55);
+        bst.add(77);
+        bst.add(99);
+        assertEquals(99, bst.max());
+    }
+
+    @Test
+    void maxOnLinkedBinarySearchTreeWhenMultipleEqualMaxValuesExistReturnsCorrectMax() {
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
+        bst.add(99);
+        bst.add(55);
+        bst.add(77);
+        bst.add(22);
+        bst.add(99);
+        bst.add(99);
+        bst.add(99);
+        bst.add(99);
+        assertEquals(99, bst.max());
+    }
+
+    @Test
+    void maxOnLinkedBinarySearchTreeLeavesElementInBinarySearchTree() {
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
+        bst.add(99);
+        bst.add(55);
+        bst.add(77);
+        bst.add(22);
+        bst.max();
+        assertTrue(bst.contains(22));
     }
 }
