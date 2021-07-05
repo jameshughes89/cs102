@@ -1,3 +1,4 @@
+import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements BinarySearchTree<T> {
@@ -43,6 +44,10 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
                 add(element, current.getRight());
             }
         }
+    }
+
+    public T remove(T element) {
+
     }
 
     public T removeMin() {
@@ -186,6 +191,122 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
 
     public int size() {
         return size;
+    }
+
+    /**
+     * Recursive pre order traversal of a binary tree. Elements are added
+     * to a bag in the required order.
+     *
+     * @param current  current node in the tree being referenced
+     * @param sequence Bag containing elements in pre order order
+     */
+    private void preOrder(Node<T> current, IndexedBag<T> sequence) {
+        if (current != null) {
+            sequence.add(current.getData());
+            inOrder(current.getLeft(), sequence);
+            inOrder(current.getRight(), sequence);
+        }
+    }
+
+    /**
+     * Recursive in order traversal of a binary tree. Elements are added
+     * to a bag in the required order.
+     *
+     * @param current  current node in the tree being referenced
+     * @param sequence Bag containing elements in in order order
+     */
+    private void inOrder(Node<T> current, IndexedBag<T> sequence) {
+        if (current != null) {
+            inOrder(current.getLeft(), sequence);
+            sequence.add(current.getData());
+            inOrder(current.getRight(), sequence);
+        }
+    }
+
+    /**
+     * Recursive post order traversal of a binary tree. Elements are added
+     * to a bag in the required order.
+     *
+     * @param current  current node in the tree being referenced
+     * @param sequence Bag containing elements in post order order
+     */
+    private void postOrder(Node<T> current, IndexedBag<T> sequence) {
+        if (current != null) {
+            inOrder(current.getLeft(), sequence);
+            inOrder(current.getRight(), sequence);
+            sequence.add(current.getData());
+        }
+    }
+
+    /**
+     * Level order traversal of a binary tree. Elements are added
+     * to a bag in the required order.
+     *
+     * @param start    Root node of a binary tree
+     * @param sequence Bag containing elements in level order order
+     */
+    private void levelOrder(Node<T> start, IndexedBag<T> sequence) {
+        Queue<Node<T>> levelOrderQueue = new ArrayQueue<>();
+        Node<T> current;
+        levelOrderQueue.enqueue(start);
+        while (!levelOrderQueue.isEmpty()) {
+            current = levelOrderQueue.dequeue();
+            sequence.add(current.getData());
+            if (current.getLeft() != null) {
+                levelOrderQueue.enqueue(current.getLeft());
+            }
+            if (current.getRight() != null) {
+                levelOrderQueue.enqueue(current.getRight());
+            }
+        }
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return inOrderIterator();
+    }
+
+    @Override
+    public Iterator<T> preOrderIterator() {
+        IndexedBag<T> sequence = new ArrayIndexedBag<>();
+        preOrder(root, sequence);
+        return sequence.iterator();
+    }
+
+    @Override
+    public Iterator<T> inOrderIterator() {
+        IndexedBag<T> sequence = new ArrayIndexedBag<>();
+        inOrder(root, sequence);
+        return sequence.iterator();
+    }
+
+    @Override
+    public Iterator<T> postOrderIterator() {
+        IndexedBag<T> sequence = new ArrayIndexedBag<>();
+        postOrder(root, sequence);
+        return sequence.iterator();
+    }
+
+    @Override
+    public Iterator<T> levelOrderIterator() {
+        IndexedBag<T> sequence = new ArrayIndexedBag<>();
+        levelOrder(root, sequence);
+        return sequence.iterator();
+    }
+
+    /**
+     * Returns a string containing the elements in the binary search tree in
+     * an in order order.
+     *
+     * @return String of the elements in in order order
+     */
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        for (T element : this) {
+            builder.append(element);
+            builder.append(", ");
+        }
+        return builder.toString();
     }
 
     /**
