@@ -440,7 +440,7 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
             return right;
         }
 
-        public void setRight(Node<T> left) {
+        public void setRight(Node<T> right) {
             this.right = right;
         }
     }
