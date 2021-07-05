@@ -74,7 +74,11 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
         if (child == null) {
             throw new NoSuchElementException();
         } else if (child.getData().equals(element)) {
-            parent.setLeft(findReplacementNode(child));
+            if (parent.getData().compareTo(element) > 0) {
+                parent.setLeft(findReplacementNode(child));
+            } else {
+                parent.setRight(findReplacementNode(child));
+            }
             return child.getData();
         } else if (child.getData().compareTo(element) > 0) {
             return remove(element, child, child.getLeft());
