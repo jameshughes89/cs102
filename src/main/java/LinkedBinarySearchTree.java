@@ -126,7 +126,7 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
             // the node being replaced's right
             if (toRemove.getRight() != child) {
                 parent.setLeft(child.getRight());
-                toRemove.setRight(toRemove.getRight());
+                child.setRight(toRemove.getRight());
             }
             replacementNode = child;
         }
