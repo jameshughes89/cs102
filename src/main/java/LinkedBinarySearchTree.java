@@ -1,4 +1,6 @@
-public class LinkedBinarySearchTree<T extends Comparable<? super T>> extends BinarySearchTree<T> {
+import java.util.NoSuchElementException;
+
+public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements BinarySearchTree<T> {
 
     private int size;
     private Node<T> root;
@@ -22,7 +24,7 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> extends Bin
     }
 
     /**
-     * An internal add method for enabling recursive add.
+     * Helper add method for enabling recursive add.
      *
      * @param element
      * @param current
@@ -43,16 +45,62 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> extends Bin
         }
     }
 
+    @Override
+    public T min() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        return min(root);
+    }
+
+    /**
+     * Helper method for enabling a recursive search for the minimum element
+     * in the binary search tree.
+     *
+     * @param current Current node being looked at
+     * @return The minimum element in the tree
+     */
+    private T min(Node<T> current) {
+        if (current.getLeft() == null) {
+            return current.getData();
+        } else {
+            return min(current.getLeft());
+        }
+    }
+
+    @Override
+    public T max() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        return max(root);
+    }
+
+    /**
+     * Helper method for enabling a recursive search for the maximum element
+     * in the binary search tree.
+     *
+     * @param current Current node being looked at
+     * @return The maximum element in the tree
+     */
+    private T max(Node<T> current) {
+        if (current.getRight() == null) {
+            return current.getData();
+        } else {
+            return min(current.getRight());
+        }
+    }
+
     public boolean contains(T element) {
         return binarySearch(element, root);
     }
 
     /**
-     * TODO
+     * Helper method enabling a recursive binary search for a given element.
      *
-     * @param element
-     * @param current
-     * @return
+     * @param element Element being searched for
+     * @param current Current binary search tree node being investigated
+     * @return True if the element is found, false otherwise
      */
     private boolean binarySearch(T element, Node<T> current) {
         if (current == null) {
