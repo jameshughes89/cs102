@@ -29,6 +29,7 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
      *
      * @param element Element to be added to the tree
      * @param current Current root of subtree
+     * @return Node being assigned as left/right child
      */
     private Node<T> add(T element, Node<T> current) {
         if (current == null) {
