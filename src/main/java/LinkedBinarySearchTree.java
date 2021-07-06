@@ -18,11 +18,7 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
 
     @Override
     public void add(T element) {
-        if (isEmpty()) {
-            root = new Node<>(element);
-        } else {
-            add(element, root);
-        }
+        root = add(element, root);
         size++;
     }
 
@@ -34,20 +30,15 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
      * @param element Element to be added to the tree
      * @param current Current root of subtree
      */
-    private void add(T element, Node<T> current) {
-        if (current.getData().compareTo(element) > 0) {
-            if (current.getLeft() == null) {
-                current.setLeft(new Node<>(element));
-            } else {
-                add(element, current.getLeft());
-            }
+    private Node<T> add(T element, Node<T> current) {
+        if (current == null) {
+            return new Node<>(element);
+        } else if (current.getData().compareTo(element) > 0) {
+            current.setLeft(add(element, current.getLeft()));
         } else {
-            if (current.getRight() == null) {
-                current.setRight(new Node<>(element));
-            } else {
-                add(element, current.getRight());
-            }
+            current.setRight(add(element, current.getRight()));
         }
+        return current;
     }
 
     @Override
