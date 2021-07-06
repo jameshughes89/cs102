@@ -247,7 +247,7 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
 
     @Override
     public boolean contains(T element) {
-        return binarySearch(element, root);
+        return binarySearch(element, root) != null;
     }
 
     /**
@@ -257,11 +257,11 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
      * @param current Current binary search tree node being investigated
      * @return True if the element is found, false otherwise
      */
-    private boolean binarySearch(T element, Node<T> current) {
+    private Node<T> binarySearch(T element, Node<T> current) {
         if (current == null) {
-            return false;
+            return null;
         } else if (current.getData().equals(element)) {
-            return true;
+            return current;
         } else {
             if (current.getData().compareTo(element) > 0) {
                 return binarySearch(element, current.getLeft());
