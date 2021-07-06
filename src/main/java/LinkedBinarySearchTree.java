@@ -27,10 +27,12 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     }
 
     /**
-     * Helper add method for enabling recursive add.
+     * Helper add method for enabling recursive add. This method
+     * ensures that elements are added in the proper order for
+     * a Binary Search Tree.
      *
-     * @param element
-     * @param current
+     * @param element Element to be added to the tree
+     * @param current Current root of subtree
      */
     private void add(T element, Node<T> current) {
         if (current.getData().compareTo(element) > 0) {
