@@ -15,7 +15,7 @@ Topic #16 --- Iterators
         someMethod(someArray[i]);
     }
 
-* However, not everything we may want to iterate over is an array, and trying to use the for loop with a linked structure won't work
+* However, not everything we may want to iterate over is an array, and trying to use the for loop with a linked structure won't work quite as nicely 
 
 * The good news is, Java provides us with a common, uniform way to iterate over something
 * It is also independent of the implementation of the thing we want to iterate over
