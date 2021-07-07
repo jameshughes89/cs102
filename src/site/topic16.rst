@@ -42,9 +42,67 @@ Iterator Interface
 Array Iterator
 --------------
 
+* I do not need to know what kind of underlying container there is for the data to use the iterator
+* However, if I am making my own collection, I will need to create an iterator for that collection and the underlying container
 
+* If the collection we are making is using an array, such as the ``ArrayStack``, we will make an iterator for an array
+    * :download:`ArrayIterator <../src/main/java/ArrayIterator.java>`
 
-* :download:`ArrayIterator <../src/main/java/ArrayIterator.java>`
+.. code-block:: Java
+    :linenos:
+
+    import java.util.Iterator;
+    import java.util.NoSuchElementException;
+
+    public class ArrayIterator<T> implements Iterator<T> {
+
+        private final int size;
+        private int currentIndex;
+        private final T[] items;
+
+* The fields only include
+    * Size (how many things are in the collection)
+    * The current index, which corresponds to which index the ``next`` element to be returned is in
+    * A reference to the array holding the data
+
+.. code-block:: Java
+    :linenos:
+
+        public ArrayIterator(T[] items, int size) {
+            this.items = items;
+            this.size = size;
+            this.currentIndex = 0;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return currentIndex < size;
+        }
+
+* The easiest way to know if there is anything left in the collection to iterate over is to see if the current index is less than the number of things in the collection
+
+.. code-block:: Java
+    :linenos:
+
+        @Override
+        public T next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            }
+            T returnElement = items[currentIndex];
+            currentIndex++;
+            return returnElement;
+        }
+    }
+
+* The way this is written, if we try to access the ``next`` thing when there are no more things, then we will throw an exception
+* Otherwise, update the ``currentIndex`` and return the element
+
+* Important things to note here:
+    * This iterator can only go in one direction
+    * Once the iterator object gets to the end of the collection, it does **not** reset
+    * If we want to iterate over the collection again, we create a new iterator
+
 
 Linked Iterator
 ---------------
@@ -69,5 +127,6 @@ For Each
 For next time
 =============
 
+* Download the :download:`ArrayIterator <../src/main/java/ArrayIterator.java>`.
 * Read Chapter 7
     * 12 pages
