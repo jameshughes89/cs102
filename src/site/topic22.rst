@@ -1,11 +1,11 @@
-*********************************
-Topic #22 --- Binary Search Trees
-*********************************
+**************************
+Topic #22 --- Binary Trees
+**************************
 
 
 
 For next time
 =============
 
-* Read Chapter 11 Sections 1 -- 3
-    * 17 pages
+* Read Chapter 10 Sections 4 -- 7
+    * 34 pages (mostly code though)
