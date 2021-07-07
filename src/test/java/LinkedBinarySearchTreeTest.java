@@ -28,7 +28,7 @@ public class LinkedBinarySearchTreeTest {
 
     @Test
     void sizeOfTreeWithOneElementReturnsOne() {
-        BinarySearchTree<Integer> bst = new LinkedTree<>();
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         assertEquals(1, bst.size());
     }
