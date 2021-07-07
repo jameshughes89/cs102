@@ -46,6 +46,55 @@ Array Iterator
 Linked Iterator
 ---------------
 
+* Similarly, if we want to make an iterator for a collection that has a linked structure for the underlying container, then we make a :download:`LinkedIterator <../src/main/java/LinkedIterator.java>`
+
+.. code-block:: Java
+    :linenos:
+
+    import java.util.Iterator;
+    import java.util.NoSuchElementException;
+
+    public class LinkedIterator<T> implements Iterator<T> {
+
+        Node<T> current;
+
+        public LinkedIterator(Node<T> head) {
+            current = head;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return current != null;
+        }
+
+* For the `LinkedIterator`, all we need is a reference to the current node
+* If the current is not null, then there is a next element to be returned
+
+.. code-block:: Java
+    :linenos:
+
+        @Override
+        public T next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            }
+            T returnElement = current.getData();
+            current = current.getNext();
+            return returnElement;
+        }
+    }
+
+* If there is no next, throw an exception
+* Otherwise, move the node reference to the next node and return the data
+
+* Just like the ``ArrayIterator``
+    * The iterator only goes in one direction
+    * Once we get an element with ``next()``, we can't go back unless we start with a new iterator
+
+.. warning::
+
+    If you made your ``Node`` class an internal class, then you will need to make your ``LinkedIterator`` internal too.
+
 
 Collection Iterators
 ====================
