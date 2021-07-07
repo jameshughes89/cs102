@@ -57,6 +57,18 @@ Iterator Interface
 * In the end, if we use an iterator, we do not care what the underlying container is for the data since, no matter what it is, we get each element with ``next`` and check if there are more elements with ``hasNext``
 
 
+* For example, here is an example of using an iterator to iterate over an arbitrary collection of things of type ``T``
+
+.. code-block:: Java
+    :linenos:
+
+    Iterator<T> it = new arbitraryCollection.iterator();
+
+    while (it.hasNext()) {
+        process(it.next());
+    }
+
+
 Array Iterator
 --------------
 
