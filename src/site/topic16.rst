@@ -12,7 +12,7 @@ Topic #16 --- Iterators
     :linenos:
 
     for(int i = 0; i < someArray.length; ++i) {
-        someMethod(someArray[i]);
+        process(someArray[i]);
     }
 
 
@@ -23,7 +23,7 @@ Topic #16 --- Iterators
     :linenos:
 
     while(currentNode.getNext() != null) {
-        someMethod(currentNode.getData());
+        process(currentNode.getData());
         currentNode = currentNode.getNext();
     }
 
