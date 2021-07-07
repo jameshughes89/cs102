@@ -43,6 +43,9 @@ Array Iterator
 --------------
 
 
+
+* :download:`ArrayIterator <../src/main/java/ArrayIterator.java>`
+
 Linked Iterator
 ---------------
 
