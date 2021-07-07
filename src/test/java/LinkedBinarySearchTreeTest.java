@@ -8,27 +8,27 @@ import static org.junit.jupiter.api.Assertions.*;
 public class LinkedBinarySearchTreeTest {
 
     @Test
-    void isEmptyOnNewLinkedBinarySearchTreeReturnsTrue() {
+    void isEmptyOnNewTreeReturnsTrue() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         assertTrue(bst.isEmpty());
     }
 
     @Test
-    void isEmptyOnNonEmptyLinkedBinarySearchTreeReturnsFalse() {
+    void isEmptyOnNonEmptyTreeReturnsFalse() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         assertFalse(bst.isEmpty());
     }
 
     @Test
-    void sizeOfEmptyLinkedBinarySearchTreeReturnsZero() {
+    void sizeOfEmptyTreeReturnsZero() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         assertEquals(0, bst.size());
     }
 
     @Test
-    void sizeOfBinarySearchTreeWithOneElementReturnsOne() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
+    void sizeOfTreeWithOneElementReturnsOne() {
+        BinarySearchTree<Integer> bst = new LinkedTree<>();
         bst.add(99);
         assertEquals(1, bst.size());
     }
@@ -44,27 +44,27 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void containsOnEmptyLinkedBinarySearchTreeReturnsFalse() {
+    void containsOnEmptyTreeReturnsFalse() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         assertFalse(bst.contains(99));
     }
 
     @Test
-    void containsOnLinkedBinarySearchTreeWhenSearchingForNonExistingElementReturnsFalse() {
+    void containsOnTreeWhenSearchingForNonExistingElementReturnsFalse() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         assertFalse(bst.contains(101));
     }
 
     @Test
-    void containsOnLinkedBinarySearchTreeWhenSearchingForSingleEqualElementReturnsTrue() {
+    void containsOnTreeWhenSearchingForSingleEqualElementReturnsTrue() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         assertTrue(bst.contains(99));
     }
 
     @Test
-    void containsOnLinkedBinarySearchTreeWhenSearchingForMultipleEqualElementsReturnsTrue() {
+    void containsOnTreeWhenSearchingForMultipleEqualElementsReturnsTrue() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         bst.add(99);
@@ -73,20 +73,20 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void getCountOnEmptyLinkedBinarySearchTreeReturnsZero() {
+    void getCountOnEmptyTreeReturnsZero() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         assertEquals(0, bst.getCount(99));
     }
 
     @Test
-    void getCountOnLinkedBinarySearchTreeWhenCountingNonExistingElementsReturnsZero() {
+    void getCountOnTreeWhenCountingNonExistingElementsReturnsZero() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         assertEquals(0, bst.getCount(101));
     }
 
     @Test
-    void getCountOnLinkedBinarySearchTreeWhenCountingSingleEqualElementsReturnsOne() {
+    void getCountOnTreeWhenCountingSingleEqualElementsReturnsOne() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         bst.add(55);
@@ -95,7 +95,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void getCountOnLinkedBinarySearchTreeWhenCountingMultipleEqualElementsReturnsOne() {
+    void getCountOnTreeWhenCountingMultipleEqualElementsReturnsOne() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         bst.add(55);
@@ -108,20 +108,20 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void minOnEmptyLinkedBinarySearchTreeThrowsException() {
+    void minOnEmptyTreeThrowsException() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         assertThrows(NoSuchElementException.class, () -> bst.min());
     }
 
     @Test
-    void minOnLinkedBinarySearchTreeWhenMinIsRootReturnsCorrectMin() {
+    void minOnTreeWhenMinIsRootReturnsCorrectMin() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         assertEquals(99, bst.min());
     }
 
     @Test
-    void minOnLinkedBinarySearchTreeWhenMinIsInternalNodeReturnsCorrectMin() {
+    void minOnTreeWhenMinIsInternalNodeReturnsCorrectMin() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         bst.add(55);
@@ -130,7 +130,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void minOnLinkedBinarySearchTreeWhenMinIsLeafNodeReturnsCorrectMin() {
+    void minOnTreeWhenMinIsLeafNodeReturnsCorrectMin() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         bst.add(55);
@@ -140,7 +140,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void minOnLinkedBinarySearchTreeWhenMultipleEqualMinValuesExistReturnsCorrectMin() {
+    void minOnTreeWhenMultipleEqualMinValuesExistReturnsCorrectMin() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         bst.add(55);
@@ -154,31 +154,31 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void minOnLinkedBinarySearchTreeLeavesElementInBinarySearchTree() {
+    void minOnTreeLeavesElementInBinarySearchTree() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         bst.add(55);
         bst.add(77);
         bst.add(22);
         bst.min();
-        assertTrue(bst.contains(22));
+        assertTrue(bst.contains(bst.min()));
     }
 
     @Test
-    void maxOnEmptyLinkedBinarySearchTreeThrowsException() {
+    void maxOnEmptyTreeThrowsException() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         assertThrows(NoSuchElementException.class, () -> bst.max());
     }
 
     @Test
-    void maxOnLinkedBinarySearchTreeWhenMaxIsRootReturnsCorrectMax() {
+    void maxOnTreeWhenMaxIsRootReturnsCorrectMax() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         assertEquals(99, bst.max());
     }
 
     @Test
-    void maxOnLinkedBinarySearchTreeWhenMaxIsInternalNodeReturnsCorrectMax() {
+    void maxOnTreeWhenMaxIsInternalNodeReturnsCorrectMax() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(55);
         bst.add(99);
@@ -187,7 +187,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void maxOnLinkedBinarySearchTreeWhenMaxIsLeafNodeReturnsCorrectMax() {
+    void maxOnTreeWhenMaxIsLeafNodeReturnsCorrectMax() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(22);
         bst.add(55);
@@ -197,7 +197,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void maxOnLinkedBinarySearchTreeWhenMultipleEqualMaxValuesExistReturnsCorrectMax() {
+    void maxOnTreeWhenMultipleEqualMaxValuesExistReturnsCorrectMax() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         bst.add(55);
@@ -211,24 +211,24 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void maxOnLinkedBinarySearchTreeLeavesElementInBinarySearchTree() {
+    void maxOnTreeLeavesElementInBinarySearchTree() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         bst.add(55);
         bst.add(77);
         bst.add(22);
         bst.max();
-        assertTrue(bst.contains(22));
+        assertTrue(bst.contains(bst.max()));
     }
 
     @Test
-    void removeMinOnEmptyLinkedBinarySearchTreeThrowsException() {
+    void removeMinOnEmptyTreeThrowsException() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         assertThrows(NoSuchElementException.class, () -> bst.removeMin());
     }
 
     @Test
-    void removeMinOnLinkedBinarySearchTreeWhenMinIsRootReturnsCorrectMin() {
+    void removeMinOnTreeWhenMinIsRootReturnsCorrectMin() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         bst.add(101);
@@ -236,7 +236,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void removeMinOnLinkedBinarySearchTreeWhenMinIsInternalNodeReturnsCorrectMin() {
+    void removeMinOnTreeWhenMinIsInternalNodeReturnsCorrectMin() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         bst.add(55);
@@ -245,7 +245,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void removeMinOnLinkedBinarySearchTreeWhenMinIsLeafNodeReturnsCorrectMin() {
+    void removeMinOnTreeWhenMinIsLeafNodeReturnsCorrectMin() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         bst.add(55);
@@ -255,7 +255,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void removeMinOnLinkedBinarySearchTreeWhenMultipleEqualMinValuesExistReturnsCorrectMin() {
+    void removeMinOnTreeWhenMultipleEqualMinValuesExistReturnsCorrectMin() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         bst.add(55);
@@ -269,7 +269,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void removeMinOnLinkedBinarySearchTreeWithSingleMinRemovesElementFromBinarySearchTree() {
+    void removeMinOnTreeWithSingleMinRemovesElementFromBinarySearchTree() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         bst.add(55);
@@ -280,7 +280,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void removeMinOnLinkedBinarySearchTreeWithManyMinRemovesOnlyOneElementFromBinarySearchTree() {
+    void removeMinOnTreeWithManyMinRemovesOnlyOneElementFromBinarySearchTree() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         bst.add(55);
@@ -293,7 +293,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void removeMinOnLinkedBinarySearchTreeUpdatesSize() {
+    void removeMinOnTreeUpdatesSize() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         bst.add(55);
@@ -304,7 +304,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void multipleRemoveMinCallsOnLinkedBinarySearchTreeReturnsElementsInCorrectOrder() {
+    void multipleRemoveMinCallsOnTreeReturnsElementsInCorrectOrder() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(50);
         bst.add(25);
@@ -323,13 +323,13 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void removeMaxOnEmptyLinkedBinarySearchTreeThrowsException() {
+    void removeMaxOnEmptyTreeThrowsException() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         assertThrows(NoSuchElementException.class, () -> bst.removeMax());
     }
 
     @Test
-    void removeMaxOnLinkedBinarySearchTreeWhenMaxIsRootReturnsCorrectMax() {
+    void removeMaxOnTreeWhenMaxIsRootReturnsCorrectMax() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(101);
         bst.add(99);
@@ -337,7 +337,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void removeMaxOnLinkedBinarySearchTreeWhenMaxIsInternalNodeReturnsCorrectMax() {
+    void removeMaxOnTreeWhenMaxIsInternalNodeReturnsCorrectMax() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(55);
         bst.add(99);
@@ -346,7 +346,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void removeMaxOnLinkedBinarySearchTreeWhenMaxIsLeafNodeReturnsCorrectMax() {
+    void removeMaxOnTreeWhenMaxIsLeafNodeReturnsCorrectMax() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(22);
         bst.add(55);
@@ -356,7 +356,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void removeMaxOnLinkedBinarySearchTreeWhenMultipleEqualMaxValuesExistReturnsCorrectMax() {
+    void removeMaxOnTreeWhenMultipleEqualMaxValuesExistReturnsCorrectMax() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(22);
         bst.add(55);
@@ -370,7 +370,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void removeMaxOnLinkedBinarySearchTreeWithSingleMaxRemovesElementFromBinarySearchTree() {
+    void removeMaxOnTreeWithSingleMaxRemovesElementFromBinarySearchTree() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(22);
         bst.add(55);
@@ -381,7 +381,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void removeMaxOnLinkedBinarySearchTreeWithManyMaxRemovesOnlyOneElementFromBinarySearchTree() {
+    void removeMaxOnTreeWithManyMaxRemovesOnlyOneElementFromBinarySearchTree() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         bst.add(22);
@@ -394,7 +394,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void removeMaxOnLinkedBinarySearchTreeUpdatesSize() {
+    void removeMaxOnTreeUpdatesSize() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         bst.add(55);
@@ -405,7 +405,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void multipleRemoveMaxCallsOnLinkedBinarySearchTreeReturnsElementsInCorrectOrder() {
+    void multipleRemoveMaxCallsOnTreeReturnsElementsInCorrectOrder() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(50);
         bst.add(25);
@@ -424,20 +424,20 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void removeOnEmptyLinkedBinarySearchTreeThrowsException() {
+    void removeOnEmptyTreeThrowsException() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         assertThrows(NoSuchElementException.class, () -> bst.remove(99));
     }
 
     @Test
-    void removeNonExistingElementOnLinkedBinarySearchTreeThrowsException() {
+    void removeNonExistingElementOnTreeThrowsException() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         assertThrows(NoSuchElementException.class, () -> bst.remove(101));
     }
 
     @Test
-    void removeOnLinkedBinarySearchTreeWhenElementIsRootReturnsCorrectElement() {
+    void removeOnTreeWhenElementIsRootReturnsCorrectElement() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(50);
         bst.add(25);
@@ -450,7 +450,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void removeOnLinkedBinarySearchTreeWhenElementIsInternalNodeReturnsCorrectElement() {
+    void removeOnTreeWhenElementIsInternalNodeReturnsCorrectElement() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(50);
         bst.add(25);
@@ -463,7 +463,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void removeOnLinkedBinarySearchTreeWhenElementIsLeafNodeReturnsCorrectElement() {
+    void removeOnTreeWhenElementIsLeafNodeReturnsCorrectElement() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(50);
         bst.add(25);
@@ -476,7 +476,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void removeOnLinkedBinarySearchTreeWhenMultipleEqualElementsExistReturnsCorrectElement() {
+    void removeOnTreeWhenMultipleEqualElementsExistReturnsCorrectElement() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(50);
         bst.add(25);
@@ -491,7 +491,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void removeOnLinkedBinarySearchTreeWithSingleEqualElementRemovesElementFromBinarySearchTree() {
+    void removeOnTreeWithSingleEqualElementRemovesElementFromBinarySearchTree() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(50);
         bst.add(25);
@@ -505,7 +505,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void removeOnLinkedBinarySearchTreeWithManyEqualElementsRemovesOnlyOneElementFromBinarySearchTree() {
+    void removeOnTreeWithManyEqualElementsRemovesOnlyOneElementFromBinarySearchTree() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(50);
         bst.add(25);
@@ -521,7 +521,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void removeOnLinkedBinarySearchTreeUpdatesSize() {
+    void removeOnTreeUpdatesSize() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(50);
         bst.add(25);
@@ -535,7 +535,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void multipleRemoveCallsOnLinkedBinarySearchTreeReturnsElements() {
+    void multipleRemoveCallsOnTreeReturnsElements() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(50);
         bst.add(25);
@@ -554,7 +554,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void addSingleElementToLinkedBinarySearchTreeResultsInItBeingTheOnlyElement() {
+    void addSingleElementToTreeResultsInItBeingTheOnlyElement() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         Iterator<Integer> it = bst.iterator();
@@ -562,7 +562,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void addManyElementsToLinkedBinarySearchTreeResultsInElementsBeingPlacedInCorrectPlace() {
+    void addManyElementsToTreeResultsInElementsBeingPlacedInCorrectPlace() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(50);
         bst.add(25);
@@ -582,7 +582,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void addAndRemoveManyElementsToLinkedBinarySearchTreeResultsInElementsBeingPlacedInCorrectPlace() {
+    void addAndRemoveManyElementsToTreeResultsInElementsBeingPlacedInCorrectPlace() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(50);
         bst.add(25);
@@ -616,14 +616,14 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void iteratorHasNextOnEmptyLinkedBinarySearchTreeReturnsFalse() {
+    void iteratorHasNextOnEmptyTreeReturnsFalse() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         Iterator<Integer> it = bst.iterator();
         assertFalse(it.hasNext());
     }
 
     @Test
-    void iteratorHasOneElementForLinkedBinarySearchTreeWithOneElement() {
+    void iteratorHasOneElementForTreeWithOneElement() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         Iterator<Integer> it = bst.iterator();
@@ -632,7 +632,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void iteratorNextOnNonEmptyLinkedBinarySearchTreeReturnsElementsInCorrectOrder() {
+    void iteratorNextOnNonEmptyTreeReturnsElementsInCorrectOrder() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(50);
         bst.add(25);
@@ -652,21 +652,21 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void iteratorNextOnEmptyLinkedBinarySearchTreeThrowsException() {
+    void iteratorNextOnEmptyTreeThrowsException() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         Iterator<Integer> it = bst.iterator();
         assertThrows(NoSuchElementException.class, () -> it.next());
     }
 
     @Test
-    void preOrderIteratorHasNextOnEmptyLinkedBinarySearchTreeReturnsFalse() {
+    void preOrderIteratorHasNextOnEmptyTreeReturnsFalse() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         Iterator<Integer> it = bst.preOrderIterator();
         assertFalse(it.hasNext());
     }
 
     @Test
-    void preOrderIteratorHasOneElementForLinkedBinarySearchTreeWithOneElement() {
+    void preOrderIteratorHasOneElementForTreeWithOneElement() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         Iterator<Integer> it = bst.preOrderIterator();
@@ -675,7 +675,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void preOrderIteratorNextOnNonEmptyLinkedBinarySearchTreeReturnsElementsInCorrectOrder() {
+    void preOrderIteratorNextOnNonEmptyTreeReturnsElementsInCorrectOrder() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(50);
         bst.add(25);
@@ -695,21 +695,21 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void preOrderIteratorNextOnEmptyLinkedBinarySearchTreeThrowsException() {
+    void preOrderIteratorNextOnEmptyTreeThrowsException() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         Iterator<Integer> it = bst.preOrderIterator();
         assertThrows(NoSuchElementException.class, () -> it.next());
     }
 
     @Test
-    void inOrderIteratorHasNextOnEmptyLinkedBinarySearchTreeReturnsFalse() {
+    void inOrderIteratorHasNextOnEmptyTreeReturnsFalse() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         Iterator<Integer> it = bst.inOrderIterator();
         assertFalse(it.hasNext());
     }
 
     @Test
-    void inOrderIteratorHasOneElementForLinkedBinarySearchTreeWithOneElement() {
+    void inOrderIteratorHasOneElementForTreeWithOneElement() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         Iterator<Integer> it = bst.inOrderIterator();
@@ -718,7 +718,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void inOrderIteratorNextOnNonEmptyLinkedBinarySearchTreeReturnsElementsInCorrectOrder() {
+    void inOrderIteratorNextOnNonEmptyTreeReturnsElementsInCorrectOrder() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(50);
         bst.add(25);
@@ -738,21 +738,21 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void inOrderIteratorNextOnEmptyLinkedBinarySearchTreeThrowsException() {
+    void inOrderIteratorNextOnEmptyTreeThrowsException() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         Iterator<Integer> it = bst.inOrderIterator();
         assertThrows(NoSuchElementException.class, () -> it.next());
     }
 
     @Test
-    void postOrderIteratorHasNextOnEmptyLinkedBinarySearchTreeReturnsFalse() {
+    void postOrderIteratorHasNextOnEmptyTreeReturnsFalse() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         Iterator<Integer> it = bst.postOrderIterator();
         assertFalse(it.hasNext());
     }
 
     @Test
-    void postOrderIteratorHasOneElementForLinkedBinarySearchTreeWithOneElement() {
+    void postOrderIteratorHasOneElementForTreeWithOneElement() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         Iterator<Integer> it = bst.postOrderIterator();
@@ -761,7 +761,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void postOrderIteratorNextOnNonEmptyLinkedBinarySearchTreeReturnsElementsInCorrectOrder() {
+    void postOrderIteratorNextOnNonEmptyTreeReturnsElementsInCorrectOrder() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(50);
         bst.add(25);
@@ -781,21 +781,21 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void postOrderIteratorNextOnEmptyLinkedBinarySearchTreeThrowsException() {
+    void postOrderIteratorNextOnEmptyTreeThrowsException() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         Iterator<Integer> it = bst.postOrderIterator();
         assertThrows(NoSuchElementException.class, () -> it.next());
     }
 
     @Test
-    void levelOrderIteratorHasNextOnEmptyLinkedBinarySearchTreeReturnsFalse() {
+    void levelOrderIteratorHasNextOnEmptyTreeReturnsFalse() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         Iterator<Integer> it = bst.levelOrderIterator();
         assertFalse(it.hasNext());
     }
 
     @Test
-    void levelOrderIteratorHasOneElementForLinkedBinarySearchTreeWithOneElement() {
+    void levelOrderIteratorHasOneElementForTreeWithOneElement() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         Iterator<Integer> it = bst.levelOrderIterator();
@@ -804,7 +804,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void levelOrderIteratorNextOnNonEmptyLinkedBinarySearchTreeReturnsElementsInCorrectOrder() {
+    void levelOrderIteratorNextOnNonEmptyTreeReturnsElementsInCorrectOrder() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(50);
         bst.add(25);
@@ -824,7 +824,7 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void levelOrderIteratorNextOnEmptyLinkedBinarySearchTreeThrowsException() {
+    void levelOrderIteratorNextOnEmptyTreeThrowsException() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         Iterator<Integer> it = bst.levelOrderIterator();
         assertThrows(NoSuchElementException.class, () -> it.next());
