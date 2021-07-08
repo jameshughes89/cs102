@@ -53,9 +53,7 @@ public class LinkedIteratorTest {
     void hasNext_sizeFiveLinkedStructureAfterFiveHasNext_doesNotChangeState() {
         Node<Integer> head = makeLinkedStructure(10, 11, 12, 13, 14);
         Iterator<Integer> it = new LinkedIterator<>(head);
-        for (int i = 0; i < 5; ++i) {
-            it.hasNext();
-        }
+        it.hasNext();
         assertTrue(it.hasNext());
         assertEquals(10, it.next());
     }
