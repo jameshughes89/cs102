@@ -266,9 +266,53 @@ toString
 Iterable
 ========
 
+* The ``Iterator`` interface is used for creating an iterator object to iterate over something
+* If we are making a class that we want to be able to iterate over, we will have that class ``implement Iterable<T>``
+    * For example, asking our collection for an iterator
+        * ``myBag.iterator()``
+
+* When looking at the `Iterable interface <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Iterable.html>`_, you will find one abstract method --- ``iterator()``
+* If we correctly implement the ``Iterable`` interface, we can guarantee that our class is in fact iterable
+
 
 For Each
 --------
+
+* For things that are iterable, we can make use of the *enhanced* for loop --- for each loop
+
+* In general, it looks like this
+
+.. code-block:: Java
+    :linenos:
+
+    for (type refVar: iterableThing) {
+        process(refVar);
+    }
+
+
+* An example for our ``SortedBag<Integer>`` may look like this
+
+.. code-block:: Java
+    :linenos:
+
+    for (Integer x: myBag) {
+        process(x);
+    }
+
+* Revisiting the ``toString()`` example from above, we can alter it further
+
+
+.. code-block:: Java
+    :linenos:
+
+        public String toString() {
+            StringBuilder builder = new StringBuilder();
+            for (T bagElement : this) {     // 'this' is the iterable thing
+                builder.append(bagElement);
+                builder.append(", ");
+            }
+            return builder.toString();
+        }
 
 
 For next time
