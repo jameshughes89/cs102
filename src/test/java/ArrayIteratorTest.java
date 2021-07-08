@@ -11,13 +11,25 @@ public class ArrayIteratorTest {
     //      Size is the number of "meaningful" elements in the array
     //      Capacity is the number of available indices in the array
 
-    // end of [1]
-    // end of [10]
-
     @Test
     void hasNext_capacityZeroArray_returnsFalse() {
         Integer[] a = {};
         Iterator<Integer> it = new ArrayIterator<>(a, 0);
+        assertFalse(it.hasNext());
+    }
+
+    @Test
+    void hasNext_fullCapacityOneArray_returnsTrue() {
+        Integer[] a = {10};
+        Iterator<Integer> it = new ArrayIterator<>(a, 1);
+        assertTrue(it.hasNext());
+    }
+
+    @Test
+    void hasNext_endOfFullCapacityOneArray_returnsFalse() {
+        Integer[] a = {10};
+        Iterator<Integer> it = new ArrayIterator<>(a, 1);
+        it.next();
         assertFalse(it.hasNext());
     }
 
@@ -88,6 +100,21 @@ public class ArrayIteratorTest {
     void next_capacityZeroArray_throwsException() {
         Integer[] a = {};
         Iterator<Integer> it = new ArrayIterator<>(a, 0);
+        assertThrows(NoSuchElementException.class, () -> it.next());
+    }
+
+    @Test
+    void next_fullCapacityOneArray_returnsElement() {
+        Integer[] a = {10};
+        Iterator<Integer> it = new ArrayIterator<>(a, 1);
+        assertEquals(10, it.next());
+    }
+
+    @Test
+    void nest_endOfFullCapacityOneArray_throwsException() {
+        Integer[] a = {10};
+        Iterator<Integer> it = new ArrayIterator<>(a, 1);
+        it.next();
         assertThrows(NoSuchElementException.class, () -> it.next());
     }
 
