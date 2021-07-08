@@ -194,6 +194,9 @@ Collection Iterators
 
 * Show an example using it like above, but instead of arbitraryIterableThing
 
+
+
+
 toString
 --------
 
