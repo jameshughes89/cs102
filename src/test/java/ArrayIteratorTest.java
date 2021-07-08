@@ -26,14 +26,6 @@ public class ArrayIteratorTest {
     }
 
     @Test
-    void hasNext_endOfFullCapacityOneArray_returnsFalse() {
-        Integer[] a = {10};
-        Iterator<Integer> it = new ArrayIterator<>(a, 1);
-        it.next();
-        assertFalse(it.hasNext());
-    }
-
-    @Test
     void hasNext_sizeZeroArray_returnsFalse() {
         Integer[] a = {null, null, null, null, null, null, null, null, null, null};
         Iterator<Integer> it = new ArrayIterator<>(a, 0);
@@ -97,17 +89,27 @@ public class ArrayIteratorTest {
     }
 
     @Test
+    void hasNext_endOfFullCapacityArray_returnsFalse() {
+        Integer[] a = {10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
+        Iterator<Integer> it = new ArrayIterator<>(a, 10);
+        it.next();
+        it.next();
+        it.next();
+        it.next();
+        it.next();
+        it.next();
+        it.next();
+        it.next();
+        it.next();
+        it.next();
+        assertFalse(it.hasNext());
+    }
+
+    @Test
     void next_capacityZeroArray_throwsException() {
         Integer[] a = {};
         Iterator<Integer> it = new ArrayIterator<>(a, 0);
         assertThrows(NoSuchElementException.class, () -> it.next());
-    }
-
-    @Test
-    void next_fullCapacityOneArray_returnsElement() {
-        Integer[] a = {10};
-        Iterator<Integer> it = new ArrayIterator<>(a, 1);
-        assertEquals(10, it.next());
     }
 
     @Test
@@ -147,6 +149,23 @@ public class ArrayIteratorTest {
     void next_endOfSizeFiveArray_throwsException() {
         Integer[] a = {10, 11, 12, 13, 14, null, null, null, null, null};
         Iterator<Integer> it = new ArrayIterator<>(a, 5);
+        it.next();
+        it.next();
+        it.next();
+        it.next();
+        it.next();
+        assertThrows(NoSuchElementException.class, () -> it.next());
+    }
+
+    @Test
+    void next_endOfFullCapacityArray_throwsException() {
+        Integer[] a = {10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
+        Iterator<Integer> it = new ArrayIterator<>(a, 10);
+        it.next();
+        it.next();
+        it.next();
+        it.next();
+        it.next();
         it.next();
         it.next();
         it.next();
