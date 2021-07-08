@@ -212,7 +212,6 @@ Collection Iterators
         }
 
 
-
 * Since both versions of the ``SortedBag`` return an ``Iterator``, and to use an ``Iterator`` I don't really care if it's an array or linked one, I can use it like this
 
 .. code-block:: Java
@@ -223,6 +222,7 @@ Collection Iterators
         while (it.hasNext()) {
             process(it.next());
         }
+
 
 * In the end, what the implementation of ``SortedBag`` I have does not impact my ability to get an iterator and use it
 
@@ -246,6 +246,8 @@ toString
         }
 
 * Just by looking at this, you can't tell me if this is an ``ArrayIterator`` or a ``LinkedIterator``
+    * This is a fantastic example of *abstraction*
+    * I can now iterate over something (what) without needing to worry about the implementation details (how)
 
 
 Iterable
