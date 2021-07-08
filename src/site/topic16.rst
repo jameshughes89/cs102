@@ -134,17 +134,17 @@ Array Iterator
     * If we want to iterate over the collection again, we create a new iterator
 
 
-.. warning::
+.. note::
 
     Although in this example our iterator goes in our defined direction, there is nothing stopping us from creating an
     iterator that goes in the reverse order.
 
 
-.. warning::
+.. note::
 
-    We need to be careful about modifying the collection when using an iterator. For example, with the array iterator,
-    the iterator has reference to the array that is being used and referenced in the thing that we want to iterate over.
-    If we were to modify something with our iterator, it would impact the thing we are iterating over.
+    Generally, we need to be careful about modifying the collection when using an iterator. For example, with the array
+    iterator, the iterator has reference to the array that is being used and referenced in the thing that we want to
+    iterate over. If we were to modify something with our iterator, it would impact the thing we are iterating over.
 
 
 Linked Iterator
