@@ -29,15 +29,16 @@ public class ArrayIteratorTest {
     }
 
     @Test
-    void hasNext_singleElementArrayAfterHasNextAndNoNextCall_returnsTrue() {
+    void hasNext_singleElementArrayAfterHasNext_doesNotChangeState() {
         Integer[] a = {10, null, null, null, null, null, null, null, null, null};
         Iterator<Integer> it = new ArrayIterator<>(a, 1);
         it.hasNext();
         assertTrue(it.hasNext());
+        assertEquals(10, it.next());
     }
 
     @Test
-    void hasNext_multiElementArrayAfterHasNextAndNoNextCall_returnsTrue() {
+    void hasNext_multiElementArrayAfterHasNext_doesNotChangeState() {
         Integer[] a = {10, 11, 12, 13, 14, null, null, null, null, null};
         Iterator<Integer> it = new ArrayIterator<>(a, 5);
         it.hasNext();
@@ -46,6 +47,7 @@ public class ArrayIteratorTest {
         it.hasNext();
         it.hasNext();
         assertTrue(it.hasNext());
+        assertEquals(10, it.next());
     }
 
     @Test
@@ -53,15 +55,6 @@ public class ArrayIteratorTest {
         Integer[] a = {10, null, null, null, null, null, null, null, null, null};
         Iterator<Integer> it = new ArrayIterator<>(a, 1);
         it.next();
-        assertFalse(it.hasNext());
-    }
-
-    @Test
-    void hasNext_endOfSingleElementArrayAfterHasNext_returnsFalse() {
-        Integer[] a = {10, null, null, null, null, null, null, null, null, null};
-        Iterator<Integer> it = new ArrayIterator<>(a, 1);
-        it.next();
-        it.hasNext();
         assertFalse(it.hasNext());
     }
 
@@ -74,19 +67,6 @@ public class ArrayIteratorTest {
         it.next();
         it.next();
         it.next();
-        assertFalse(it.hasNext());
-    }
-
-    @Test
-    void hasNext_endOfMultiElementArrayAfterHasNext_returnsFalse() {
-        Integer[] a = {10, 11, 12, 13, 14, null, null, null, null, null};
-        Iterator<Integer> it = new ArrayIterator<>(a, 5);
-        it.next();
-        it.next();
-        it.next();
-        it.next();
-        it.next();
-        it.hasNext();
         assertFalse(it.hasNext());
     }
 
