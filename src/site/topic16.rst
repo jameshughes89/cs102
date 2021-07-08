@@ -318,6 +318,7 @@ For Each
 For next time
 =============
 
-* Download the :download:`ArrayIterator <../src/main/java/ArrayIterator.java>`.
+* Download the :download:`ArrayIterator <../src/main/java/ArrayIterator.java>` and its :download:`tests <../src/test/java/ArrayIteratorTest.java>`.
+* Download the :download:`LinkedIterator <../src/main/java/LinkedIterator.java>` and its :download:`tests <../src/test/java/LinkedIteratorTest.java>`.
 * Read Chapter 7
     * 12 pages
