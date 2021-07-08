@@ -56,13 +56,9 @@ public class ArrayIteratorTest {
     }
 
     @Test
-    void hasNext_sizeFiveCapacityTenArray_doesNotChangeState() {
+    void hasNext_sizeFiveCapacityTenArrayAfterHasNext_doesNotChangeState() {
         Integer[] a = {10, 11, 12, 13, 14, null, null, null, null, null};
         Iterator<Integer> it = new ArrayIterator<>(a, 5);
-        it.hasNext();
-        it.hasNext();
-        it.hasNext();
-        it.hasNext();
         it.hasNext();
         assertTrue(it.hasNext());
         assertEquals(10, it.next());
