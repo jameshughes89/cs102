@@ -190,7 +190,7 @@ Linked Iterator
 Collection Iterators
 ====================
 
-* If we create a ``SortedBag` with an array, our ``ArraySortedBag``'s ``iterator`` method would need to return an ``ArrayIterator``
+* If we create a ``SortedBag`` with an array, our ``ArraySortedBag``'s ``iterator`` method would need to return an ``ArrayIterator``
 
 .. code-block:: Java
     :linenos:
