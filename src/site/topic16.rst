@@ -40,7 +40,7 @@ Iterators
 
 * There are two important interfaces:
     * ``Iterator`` --- used when creating an iterator object
-    * ``Iterable`` --- used when creating some collection that we want to be iterable
+    * ``Iterable`` --- used when creating something we may want to iterate over
 
 
 Iterator Interface
@@ -50,19 +50,19 @@ Iterator Interface
 * To define our own iterator, we will make a class that ``implements Iterator<T>``
     * Uses the `Iterator interface <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Iterator.html>`_
 
-* There are four abstract methods included in the interface, two of which we will focus on:
+* There are two abstract methods included in the interface which we will focus on:
     * ``T next()`` --- retrieve the next element
     * ``boolean hasNext()`` --- tells us if there exists another element
 
 * In the end, if we use an iterator, we do not care what the underlying container is for the data since, no matter what it is, we get each element with ``next`` and check if there are more elements with ``hasNext``
 
 
-* For example, here is an example of using an iterator to iterate over an arbitrary collection of things of type ``T``
+* For example, here is an example of using an iterator to iterate over an arbitrary iterable thing of type ``T``
 
 .. code-block:: Java
     :linenos:
 
-    Iterator<T> it = new arbitraryCollection.iterator();
+    Iterator<T> it = arbitraryIterableThing.iterator();
 
     while (it.hasNext()) {
         process(it.next());
