@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class LinkedIteratorTest {
 
+    @SafeVarargs
     private <T> Node<T> makeLinkedStructure(T t1, T... ts) {
         Node<T> head = new Node<>(t1);
         Node<T> current = head;
@@ -53,7 +54,7 @@ public class LinkedIteratorTest {
         Node<Integer> head = makeLinkedStructure(10, 11, 12, 13, 14);
         Iterator<Integer> it = new LinkedIterator<>(head);
         for (int i = 0; i < 5; ++i) {
-            it.next();
+            it.hasNext();
         }
         assertTrue(it.hasNext());
         assertEquals(10, it.next());
