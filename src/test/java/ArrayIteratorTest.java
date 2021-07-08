@@ -76,11 +76,9 @@ public class ArrayIteratorTest {
     void hasNext_endOfSizeFiveCapacityTenArray_returnsFalse() {
         Integer[] a = {10, 11, 12, 13, 14, null, null, null, null, null};
         Iterator<Integer> it = new ArrayIterator<>(a, 5);
-        it.next();
-        it.next();
-        it.next();
-        it.next();
-        it.next();
+        for (int i = 0; i < 5; ++i) {
+            it.next();
+        }
         assertFalse(it.hasNext());
     }
 
@@ -88,16 +86,9 @@ public class ArrayIteratorTest {
     void hasNext_endOfFullCapacityTenArray_returnsFalse() {
         Integer[] a = {10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
         Iterator<Integer> it = new ArrayIterator<>(a, 10);
-        it.next();
-        it.next();
-        it.next();
-        it.next();
-        it.next();
-        it.next();
-        it.next();
-        it.next();
-        it.next();
-        it.next();
+        for (int i = 0; i < 10; ++i) {
+            it.next();
+        }
         assertFalse(it.hasNext());
     }
 
@@ -145,11 +136,9 @@ public class ArrayIteratorTest {
     void next_endOfSizeFiveCapacityTenArray_throwsException() {
         Integer[] a = {10, 11, 12, 13, 14, null, null, null, null, null};
         Iterator<Integer> it = new ArrayIterator<>(a, 5);
-        it.next();
-        it.next();
-        it.next();
-        it.next();
-        it.next();
+        for (int i = 0; i < 5; ++i) {
+            it.next();
+        }
         assertThrows(NoSuchElementException.class, () -> it.next());
     }
 
@@ -157,16 +146,9 @@ public class ArrayIteratorTest {
     void next_endOfFullCapacityTenArray_throwsException() {
         Integer[] a = {10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
         Iterator<Integer> it = new ArrayIterator<>(a, 10);
-        it.next();
-        it.next();
-        it.next();
-        it.next();
-        it.next();
-        it.next();
-        it.next();
-        it.next();
-        it.next();
-        it.next();
+        for (int i = 0; i < 10; ++i) {
+            it.next();
+        }
         assertThrows(NoSuchElementException.class, () -> it.next());
     }
 }
