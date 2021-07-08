@@ -26,28 +26,28 @@ public class ArrayIteratorTest {
     }
 
     @Test
-    void hasNext_sizeZeroArray_returnsFalse() {
+    void hasNext_sizeZeroCapacityTenArray_returnsFalse() {
         Integer[] a = {null, null, null, null, null, null, null, null, null, null};
         Iterator<Integer> it = new ArrayIterator<>(a, 0);
         assertFalse(it.hasNext());
     }
 
     @Test
-    void hasNext_sizeOneArray_returnsTrue() {
+    void hasNext_sizeOneCapacityTenArray_returnsTrue() {
         Integer[] a = {10, null, null, null, null, null, null, null, null, null};
         Iterator<Integer> it = new ArrayIterator<>(a, 1);
         assertTrue(it.hasNext());
     }
 
     @Test
-    void hasNext_sizeFiveArray_returnsTrue() {
+    void hasNext_sizeFiveCapacityTenArray_returnsTrue() {
         Integer[] a = {10, 11, 12, 13, 14, null, null, null, null, null};
         Iterator<Integer> it = new ArrayIterator<>(a, 5);
         assertTrue(it.hasNext());
     }
 
     @Test
-    void hasNext_sizeOneArrayAfterHasNext_doesNotChangeState() {
+    void hasNext_sizeOneCapacityTenArrayAfterHasNext_doesNotChangeState() {
         Integer[] a = {10, null, null, null, null, null, null, null, null, null};
         Iterator<Integer> it = new ArrayIterator<>(a, 1);
         it.hasNext();
@@ -56,7 +56,7 @@ public class ArrayIteratorTest {
     }
 
     @Test
-    void hasNext_sizeFiveArray_doesNotChangeState() {
+    void hasNext_sizeFiveCapacityTenArray_doesNotChangeState() {
         Integer[] a = {10, 11, 12, 13, 14, null, null, null, null, null};
         Iterator<Integer> it = new ArrayIterator<>(a, 5);
         it.hasNext();
@@ -69,7 +69,7 @@ public class ArrayIteratorTest {
     }
 
     @Test
-    void hasNext_endOfSizeOneArray_returnsFalse() {
+    void hasNext_endOfSizeOneCapacityTenArray_returnsFalse() {
         Integer[] a = {10, null, null, null, null, null, null, null, null, null};
         Iterator<Integer> it = new ArrayIterator<>(a, 1);
         it.next();
@@ -77,7 +77,7 @@ public class ArrayIteratorTest {
     }
 
     @Test
-    void hasNext_endOfSizeFiveArray_returnsFalse() {
+    void hasNext_endOfSizeFiveCapacityTenArray_returnsFalse() {
         Integer[] a = {10, 11, 12, 13, 14, null, null, null, null, null};
         Iterator<Integer> it = new ArrayIterator<>(a, 5);
         it.next();
@@ -89,7 +89,7 @@ public class ArrayIteratorTest {
     }
 
     @Test
-    void hasNext_endOfFullCapacityArray_returnsFalse() {
+    void hasNext_endOfFullCapacityTenArray_returnsFalse() {
         Integer[] a = {10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
         Iterator<Integer> it = new ArrayIterator<>(a, 10);
         it.next();
@@ -121,21 +121,21 @@ public class ArrayIteratorTest {
     }
 
     @Test
-    void next_sizeZeroArray_throwsException() {
+    void next_sizeZeroCapacityTenArray_throwsException() {
         Integer[] a = {null, null, null, null, null, null, null, null, null, null};
         Iterator<Integer> it = new ArrayIterator<>(a, 0);
         assertThrows(NoSuchElementException.class, () -> it.next());
     }
 
     @Test
-    void next_sizeOneArray_returnsElement() {
+    void next_sizeOneCapacityTenArray_returnsElement() {
         Integer[] a = {10, null, null, null, null, null, null, null, null, null};
         Iterator<Integer> it = new ArrayIterator<>(a, 1);
         assertEquals(10, it.next());
     }
 
     @Test
-    void next_sizeFiveArray_returnsElementsInCorrectOrder() {
+    void next_sizeFiveCapacityTenArray_returnsElementsInCorrectOrder() {
         Integer[] a = {10, 11, 12, 13, 14, null, null, null, null, null};
         Iterator<Integer> it = new ArrayIterator<>(a, 5);
         assertEquals(10, it.next());
@@ -146,7 +146,7 @@ public class ArrayIteratorTest {
     }
 
     @Test
-    void next_endOfSizeFiveArray_throwsException() {
+    void next_endOfSizeFiveCapacityTenArray_throwsException() {
         Integer[] a = {10, 11, 12, 13, 14, null, null, null, null, null};
         Iterator<Integer> it = new ArrayIterator<>(a, 5);
         it.next();
@@ -158,7 +158,7 @@ public class ArrayIteratorTest {
     }
 
     @Test
-    void next_endOfFullCapacityArray_throwsException() {
+    void next_endOfFullCapacityTenArray_throwsException() {
         Integer[] a = {10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
         Iterator<Integer> it = new ArrayIterator<>(a, 10);
         it.next();
