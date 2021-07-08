@@ -8,21 +8,21 @@ import static org.junit.jupiter.api.Assertions.*;
 public class LinkedIteratorTest {
 
     @Test
-    void hasNext_emptyLinked_returnsFalse() {
+    void hasNext_sizeZero_returnsFalse() {
         Node<Integer> head = null;
         Iterator<Integer> it = new LinkedIterator<>(head);
         assertFalse(it.hasNext());
     }
 
     @Test
-    void hasNext_singleElementLinked_returnsTrue() {
+    void hasNext_sizeOne_returnsTrue() {
         Node<Integer> head = new Node<>(10);
         Iterator<Integer> it = new LinkedIterator<>(head);
         assertTrue(it.hasNext());
     }
 
     @Test
-    void hasNext_multiElementLinked_returnsTrue() {
+    void hasNext_sizeFive_returnsTrue() {
         Node<Integer> head = new Node<>(10);
         head.setNext(new Node<>(11));
         head.getNext().setNext(new Node<>(12));
@@ -33,15 +33,16 @@ public class LinkedIteratorTest {
     }
 
     @Test
-    void hasNext_singleElementLinkedAfterHasNextAndNoNextCall_returnsTrue() {
+    void hasNext_sizeOneAfterHasNext_doesNotChangeState() {
         Node<Integer> head = new Node<>(10);
         Iterator<Integer> it = new LinkedIterator<>(head);
         it.hasNext();
         assertTrue(it.hasNext());
+        assertEquals(10, it.next());
     }
 
     @Test
-    void hasNext_multiElementLinkedAfterHasNextAndNoNextCall_returnsTrue() {
+    void hasNext_sizeFiveAfterFiveHasNext_doesNotChangeState() {
         Node<Integer> head = new Node<>(10);
         head.setNext(new Node<>(11));
         head.getNext().setNext(new Node<>(12));
@@ -54,10 +55,11 @@ public class LinkedIteratorTest {
         it.hasNext();
         it.hasNext();
         assertTrue(it.hasNext());
+        assertEquals(10, it.next());
     }
 
     @Test
-    void hasNext_endOfSingleElementLinked_returnsFalse() {
+    void hasNext_endOfSizeOne_returnsFalse() {
         Node<Integer> head = new Node<>(10);
         Iterator<Integer> it = new LinkedIterator<>(head);
         it.next();
@@ -65,16 +67,7 @@ public class LinkedIteratorTest {
     }
 
     @Test
-    void hasNext_endOfSingleElementLinkedAfterHasNext_returnsFalse() {
-        Node<Integer> head = new Node<>(10);
-        Iterator<Integer> it = new LinkedIterator<>(head);
-        it.next();
-        it.hasNext();
-        assertFalse(it.hasNext());
-    }
-
-    @Test
-    void hasNext_endOfMultiElementLinked_returnsFalse() {
+    void hasNext_endOfSizeFive_returnsFalse() {
         Node<Integer> head = new Node<>(10);
         head.setNext(new Node<>(11));
         head.getNext().setNext(new Node<>(12));
@@ -90,38 +83,21 @@ public class LinkedIteratorTest {
     }
 
     @Test
-    void hasNext_endOfMultiElementLinkedAfterHasNext_returnsFalse() {
-        Node<Integer> head = new Node<>(10);
-        head.setNext(new Node<>(11));
-        head.getNext().setNext(new Node<>(12));
-        head.getNext().getNext().setNext(new Node<>(13));
-        head.getNext().getNext().getNext().setNext(new Node<>(14));
-        Iterator<Integer> it = new LinkedIterator<>(head);
-        it.next();
-        it.next();
-        it.next();
-        it.next();
-        it.next();
-        it.hasNext();
-        assertFalse(it.hasNext());
-    }
-
-    @Test
-    void next_emptyLinked_throwsException() {
+    void next_sizeZero_throwsException() {
         Node<Integer> head = null;
         Iterator<Integer> it = new LinkedIterator<>(head);
         assertThrows(NoSuchElementException.class, () -> it.next());
     }
 
     @Test
-    void next_singleElementLinked_returnsElement() {
+    void next_sizeOne_returnsElement() {
         Node<Integer> head = new Node<>(10);
         Iterator<Integer> it = new LinkedIterator<>(head);
         assertEquals(10, it.next());
     }
 
     @Test
-    void next_multiElementLinked_returnsElementsInCorrectOrder() {
+    void next_sizeFive_returnsElementsInCorrectOrder() {
         Node<Integer> head = new Node<>(10);
         head.setNext(new Node<>(11));
         head.getNext().setNext(new Node<>(12));
@@ -136,7 +112,7 @@ public class LinkedIteratorTest {
     }
 
     @Test
-    void next_endOfMultiElementLinked_throwsException() {
+    void next_endOfSizeFive_throwsException() {
         Node<Integer> head = new Node<>(10);
         head.setNext(new Node<>(11));
         head.getNext().setNext(new Node<>(12));
