@@ -50,6 +50,9 @@ Linked Iterator
 Collection Iterators
 ====================
 
+* Show example for LinkedBag & ArrayBag for their ``iterator()`` method
+
+* Show an example using it like above, but instead of arbitraryIterableThing
 
 toString
 --------
