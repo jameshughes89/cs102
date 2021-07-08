@@ -34,9 +34,39 @@ Topic #16 --- Iterators
 Iterators
 =========
 
+* Iterators are objects that allow us to *iterate* over a collection, one element at a time
+    * Get each element in an array
+    * Get all the elements from a bag
+
+* There are two important interfaces:
+    * ``Iterator`` --- used when creating an iterator object
+    * ``Iterable`` --- used when creating something we may want to iterate over
+
 
 Iterator Interface
 ------------------
+
+* Iterator objects are typically very simple
+* To define our own iterator, we will make a class that ``implements Iterator<T>``
+    * Uses the `Iterator interface <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Iterator.html>`_
+
+* There are two abstract methods included in the interface which we will focus on:
+    * ``T next()`` --- retrieve the next element
+    * ``boolean hasNext()`` --- tells us if there exists another element
+
+* In the end, if we use an iterator, we do not care what the underlying container is for the data since, no matter what it is, we get each element with ``next`` and check if there are more elements with ``hasNext``
+
+
+* For example, here is an example of using an iterator to iterate over an arbitrary iterable thing of type ``T``
+
+.. code-block:: Java
+    :linenos:
+
+    Iterator<T> it = arbitraryIterableThing.iterator();
+
+    while (it.hasNext()) {
+        process(it.next());
+    }
 
 
 Array Iterator
