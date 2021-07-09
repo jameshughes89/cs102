@@ -2,7 +2,8 @@
 Lab #3
 ******
 
-* Refer to the slides for this lab. You will find many of the answers to your questions there
+* Refer to the topic pages for this lab
+    * You will find many of the answers to your questions there
 * Feel free to use your laptop if you have it
 * I strongly encourage you to work with others in the lab
 * Ensure I have recorded your completion. Failure to do so will result in a grade of 0
