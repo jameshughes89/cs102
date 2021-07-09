@@ -43,8 +43,31 @@ Node Class
 Create the Linked Structure
 ---------------------------
 
-1. Write a static method in the same class as your main called ``makeLinkedStructure`` that will
-    * Create a linked structure 
+1. Write a static method in the same class as your ``main`` called ``makeLinkedStructure`` that will
+    a. Create a linked structure containing the numbers 0 -- 9
+        * One number referenced in each node
+    b. Return a reference to the head of the linked structure
+
+    .. code-block:: java
+        :linenos:
+
+        public static Node<T> makeLinkedStructure() {
+            // Stuff
+        }
+
+2. Verify it works by adding this to your ``main`` method
+
+    .. code-block:: java
+        :linenos:
+
+        Node<Integer> head = makeLinkedStructure();
+        Node<Integer> currentNode = head;
+
+        while (currentNode != null) {
+            System.out.println(currentNode.getData());
+            currentNode = currentNode.getNext();
+        }
+
 
 Manipulating the Linked Structure
 =================================
