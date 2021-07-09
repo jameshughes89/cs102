@@ -48,7 +48,7 @@ Create the Linked Structure
     .. code-block:: java
         :linenos:
 
-        public static Node<T> makeLinkedStructure() {
+        public static <T> Node<T> makeLinkedStructure() {
             // Stuff
         }
 
@@ -84,7 +84,7 @@ Adding to the Front of the Structure
     .. code-block:: java
         :linenos:
 
-        public static Node<T> addToFront(Node<T> head, Integer toAdd) {
+        public static <T> Node<T> addToFront(Node<T> head, T toAdd) {
             // Stuff
         }
 
@@ -113,7 +113,7 @@ Removing from the Front of the Structure
     .. code-block:: java
         :linenos:
 
-        public static Node<T> removeFromFront(Node<T> head) {
+        public static <T> Node<T> removeFromFront(Node<T> head) {
             // Stuff
         }
 
@@ -143,7 +143,7 @@ Adding to the Middle of the Structure
     .. code-block:: java
         :linenos:
 
-        public static Node<T> addToMiddle(Node<T> head, Integer toAdd, Integer addAfter) {
+        public static <T> Node<T> addToMiddle(Node<T> head, Integer toAdd, T addAfter) {
             // Stuff
         }
 
@@ -177,7 +177,7 @@ Removing from the Middle of the Structure
     .. code-block:: java
         :linenos:
 
-        public static Node<T> removeFromMiddle(Node<T> head, Integer toRemove) {
+        public static <T> Node<T> removeFromMiddle(Node<T> head, T toRemove) {
             // Stuff
         }
 
