@@ -17,6 +17,7 @@ Making a Linked Structure
 
 Start by building a linked structure. The idea is to simply have a series of ``Node`` objects.
 
+
 Node Class
 ----------
 
@@ -50,6 +51,7 @@ Create the Linked Structure
         public static Node<T> makeLinkedStructure() {
             // Stuff
         }
+
 
 2. Verify it works by adding this to your ``main`` method
 
@@ -86,6 +88,7 @@ Adding to the Front of the Structure
             // Stuff
         }
 
+
 2. Verify it works by adding this to your ``main`` method
 
     .. code-block:: java
@@ -113,6 +116,7 @@ Removing from the Front of the Structure
         public static Node<T> removeFromFront(Node<T> head) {
             // Stuff
         }
+
 
 2. Verify it works by adding this to your ``main`` method
 
@@ -143,6 +147,7 @@ Adding to the Middle of the Structure
             // Stuff
         }
 
+
 2. Verify it works by adding this to your ``main`` method
 
     .. code-block:: java
@@ -157,11 +162,43 @@ Adding to the Middle of the Structure
 
 .. warning::
 
-    What do you think should happen if we specify a value for ``addAfter`` that is not contained in the linked structure?
+    What do you think should happen if we specify a value for ``addAfter`` that is not contained in the linked
+    structure?
 
 
 Removing from the Middle of the Structure
-----------------------------------------
+-----------------------------------------
+
+1. Write a static method in the same class as your ``main`` called ``removeFromMiddle`` that will
+    a. Take a reference to the head of a linked structure and a value we want to remove from our linked structure
+    b. Remove the node containing a reference to the specified value from the structure
+    c. Return a reference to the head of the linked structure
+
+    .. code-block:: java
+        :linenos:
+
+        public static Node<T> removeFromMiddle(Node<T> head, Integer toRemove) {
+            // Stuff
+        }
+
+
+2. Verify it works by adding this to your ``main`` method
+
+    .. code-block:: java
+        :linenos:
+
+        head = removeFromMiddle(head, 99) ;
+        currentNode = head;
+        while (currentNode != null) {
+            System.out.println(currentNode.getData());
+            currentNode = currentNode.getNext();
+        }
+
+
+.. warning::
+
+    What do you think should happen if we specify a value for ``toRemove`` that is not contained within the linked
+    structure?
 
 
 Kattis Problems
