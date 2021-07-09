@@ -18,7 +18,7 @@ Topic #18 --- Memory & The Call Stack
 
 .. warning::
 
-    The content of this topic is kept at a high-level for ease. There may be many asterisks added to many of the
+    The content of this topic is kept at a high-level for introductory purposes. There may be many asterisks added to many of the
     statements contained within.
 
 
