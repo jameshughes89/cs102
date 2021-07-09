@@ -11,10 +11,6 @@ Lab #5
     * I want people to get used to working together in the labs
     * Peer teaching and peer learning is super effective
 
-.. warning::
-
-    asd
-
 
 Making a Linked Structure
 ==========================
@@ -79,7 +75,7 @@ Adding to the Front of the Structure
 ------------------------------------
 
 1. Write a static method in the same class as your ``main`` called ``addToFront`` that will
-    a. Take a reference to the head of a linked structure
+    a. Take a reference to the head of a linked structure and an integer to add
     b. Insert a new node containing reference to a new integer passed to the method as a parameter
     c. Return a reference to the new head of the linked structure
 
@@ -105,7 +101,6 @@ Adding to the Front of the Structure
 
 Removing from the Front of the Structure
 ----------------------------------------
-
 
 1. Write a static method in the same class as your ``main`` called ``removeFromFront`` that will
     a. Take a reference to the head of a linked structure
@@ -134,6 +129,35 @@ Removing from the Front of the Structure
 
 Adding to the Middle of the Structure
 ------------------------------------
+
+1. Write a static method in the same class as your ``main`` called ``addToMiddle`` that will
+    a. Take a reference to the head of a linked structure, an integer to add, and a number we want to insert our new number after
+        * For example, if we call ``addToMiddle(head, 99, 5)``, we will add a node containing a reference to ``99`` after the node containing a reference to the number ``5`` (if it exists)
+    b. Insert a new node containing reference to a new integer passed to the method as a parameter after the specified value
+    c. Return a reference to the head of the linked structure
+
+    .. code-block:: java
+        :linenos:
+
+        public static Node<T> addToMiddle(Node<T> head, Integer toAdd, Integer addAfter) {
+            // Stuff
+        }
+
+2. Verify it works by adding this to your ``main`` method
+
+    .. code-block:: java
+        :linenos:
+
+        head = addToMiddle(head, 99, 5);
+        currentNode = head;
+        while (currentNode != null) {
+            System.out.println(currentNode.getData());
+            currentNode = currentNode.getNext();
+        }
+
+.. warning::
+
+    What do you think should happen if we specify a value for ``addAfter`` that is not contained in the linked structure?
 
 
 Removing from the Middle of the Structure
