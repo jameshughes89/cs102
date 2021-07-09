@@ -43,6 +43,8 @@ Node Class
 Create the Linked Structure
 ---------------------------
 
+1. Write a static method in the same class as your main called ``makeLinkedStructure`` that will
+    * Create a linked structure 
 
 Manipulating the Linked Structure
 =================================
