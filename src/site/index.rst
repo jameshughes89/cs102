@@ -154,7 +154,6 @@ Course Outline
     outline
 
 
-.. Indices and tables
 ==================
 
      * :ref:`genindex`
