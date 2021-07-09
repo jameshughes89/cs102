@@ -78,7 +78,6 @@ Start adding and removing things to the linked structure.
 Adding to the Front of the Structure
 ------------------------------------
 
-
 1. Write a static method in the same class as your ``main`` called ``addToFront`` that will
     a. Take a reference to the head of a linked structure
     b. Insert a new node containing reference to a new integer passed to the method as a parameter
@@ -106,6 +105,31 @@ Adding to the Front of the Structure
 
 Removing from the Front of the Structure
 ----------------------------------------
+
+
+1. Write a static method in the same class as your ``main`` called ``removeFromFront`` that will
+    a. Take a reference to the head of a linked structure
+    b. Remove the first node from the structure
+    c. Return a reference to the new head of the linked structure
+
+    .. code-block:: java
+        :linenos:
+
+        public static Node<T> removeFromFront(Node<T> head) {
+            // Stuff
+        }
+
+2. Verify it works by adding this to your ``main`` method
+
+    .. code-block:: java
+        :linenos:
+
+        head = removeFromFront(head) ;
+        currentNode = head;
+        while (currentNode != null) {
+            System.out.println(currentNode.getData());
+            currentNode = currentNode.getNext();
+        }
 
 
 Adding to the Middle of the Structure
