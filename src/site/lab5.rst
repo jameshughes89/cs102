@@ -13,7 +13,7 @@ Lab #5
 
 
 Making a Linked Structure
-==========================
+=========================
 
 Start by building a linked structure. The idea is to simply have a series of ``Node`` objects.
 
@@ -132,7 +132,7 @@ Removing from the Front of the Structure
 
 
 Adding to the Middle of the Structure
-------------------------------------
+-------------------------------------
 
 1. Write a static method in the same class as your ``main`` called ``addToMiddle`` that will
     a. Take a reference to the head of a linked structure, an integer to add, and a number we want to insert our new number after
