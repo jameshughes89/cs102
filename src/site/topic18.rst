@@ -62,6 +62,20 @@ Garbage Collection
 Stack Overflow
 ==============
 
+* What do you think would happen if I run the following method from ``main``?
+
+.. code-block:: java
+    :linenos:
+
+    static void uhOh() {
+        System.out.println("Weeeeeeeeeeeeeeeeeeeeeeee!!!");
+        uhOh();
+    }
+
+.. image:: img/memory_overflow.png
+   :width: 500 px
+   :align: center
+
 
 For next time
 =============
