@@ -72,9 +72,36 @@ Create the Linked Structure
 Manipulating the Linked Structure
 =================================
 
+Start adding and removing things to the linked structure.
+
 
 Adding to the Front of the Structure
 ------------------------------------
+
+
+1. Write a static method in the same class as your ``main`` called ``addToFront`` that will
+    a. Take a reference to the head of a linked structure
+    b. Insert a new node containing reference to a new integer passed to the method as a parameter
+    c. Return a reference to the new head of the linked structure
+
+    .. code-block:: java
+        :linenos:
+
+        public static Node<T> addToFront(Node<T> head, Integer toAdd) {
+            // Stuff
+        }
+
+2. Verify it works by adding this to your ``main`` method
+
+    .. code-block:: java
+        :linenos:
+
+        head = addToFront(head, 99);
+        currentNode = head;
+        while (currentNode != null) {
+            System.out.println(currentNode.getData());
+            currentNode = currentNode.getNext();
+        }
 
 
 Removing from the Front of the Structure
