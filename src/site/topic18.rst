@@ -20,7 +20,8 @@ Memory Allocation
         * e.g. your code
     b. Instance information
         * e.g. Objects
-        * Technically, in Java, this can be broken down further, but we will ignore that
+        * Technically, in Java, this can be broken down further into an area for longer living objects and an area for younger ones
+            * We will ignore this here
 
 
 .. image:: img/memory_abstraction.png
