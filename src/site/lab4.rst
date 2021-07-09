@@ -22,7 +22,7 @@ Implementing a Stack
 --------------------
 
 1. Create a project and make a class where you will put your main method
-    * Perhaps call it ``Lab3``
+    * Perhaps call it ``Lab4``
 
 2. Download the :download:`Stack interface.<../main/java/Stack.java>` and add it to your project
 
