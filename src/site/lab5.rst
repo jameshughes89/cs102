@@ -143,7 +143,7 @@ Adding to the Middle of the Structure
     .. code-block:: java
         :linenos:
 
-        public static <T> Node<T> addToMiddle(Node<T> head, Integer toAdd, T addAfter) {
+        public static <T> Node<T> addToMiddle(Node<T> head, T toAdd, T addAfter) {
             // Stuff
         }
 
