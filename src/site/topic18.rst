@@ -28,6 +28,12 @@ Memory Allocation
    :align: center
 
 
+* For example, if I were to run ``SortedBag<T> myBag = new ArraySortedBag<>();`` in my main method
+    * The information on what an ``ArraySortedBag`` is is stored in the static area of the heap
+    * The ``ArraySortedBag`` that is created is put into the instance area of the heap
+    * The reference variable ``myBag`` is stored in the stack
+
+
 The Call Stack
 ==============
 
