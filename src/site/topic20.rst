@@ -3,6 +3,29 @@ Topic #20 --- Searching
 ***********************
 
 
+Linear Search
+=============
+
+
+Iterative
+---------
+
+
+Recursive
+---------
+
+
+Binary Search
+=============
+
+
+Iterative
+---------
+
+
+Recursive
+---------
+
 
 For next time
 =============
