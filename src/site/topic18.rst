@@ -122,13 +122,27 @@ Call Frame
 Heap
 ====
 
+* Very broadly speaking, the heap can be broken into static space and object space
 
 Static Space
 ------------
 
+* The static space contains one copy of all your code
+    * Classes
+    * Static methods
+    * Static variables
+    * Interfaces
+
 
 Object Space
 ------------
+
+* The object space stores the created objects
+    * The object type
+    * Values of the object's fields
+        * This includes primitive types and references variables to other objects in the heap
+
+* When an object is created, it is put into the object part of the heap
 
 
 Garbage Collection
