@@ -83,7 +83,7 @@ Garbage Collection
 * In some programming languages, when we don't need something from the heap that we've allocated anymore, we need to deallocate the memory it used
     * If we don't we have a *memory leak*
 
-* In Java, if an object is not reachable anymore, then it can't be used, thus it is available for garbage collection
+* In Java, and most modern languages, if an object is not reachable anymore, then it can't be used, thus it is available for garbage collection
     * Not reachable?
 
 * An object is *not reachable* when we can't get reference to it anymore
