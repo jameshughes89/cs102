@@ -85,24 +85,7 @@ Object Space
     * Values of the object's fields
         * This includes primitive types and references variables to other objects in the heap
 
-* In Java, this is broken down into
-    * Young generation
-    * Old/Tenured generation
-
-* The young generation area can be broken down further into
-    * Eden space
-    * Survivor space
-
-* When an object is created, it is put into *eden space*
-* If the object survives for long enough, it gets promoted to *survivor space*
-* If an object survives long enough in survivor space, it gets promoted to *old/tenured space*
-
-* The length of time an object has existed is measured in the number of times it has survived *garbage collection*
-
-.. note::
-
-    For the purposes of this course, we will not worry about these extra details; we will keep the focus on the stack,
-    object space in the heap, and the static space in the heap.
+* When an object is created, it is put into the object part of the heap
 
 
 Garbage Collection
