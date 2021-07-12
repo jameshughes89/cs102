@@ -57,9 +57,66 @@ Memory Allocation
 The Call Stack
 ==============
 
+* The call stack is the part of memory where the information about the current method being run is stored
+    * Along with the other methods that were running, but are waiting on the current running method to end so it can resume
+
+* The call stack is also a *stack* --- we push and pop information to/from the stack at one end
+
 
 Call Frame
 ----------
+
+* Each time we start running a method, a *call frame* containing relevant information for the method is created and pushed onto the stack
+
+* The call frame contains important information for the execution of the method
+    * Space for the parameters passed to the method
+    * Space for local variables
+        * If the data type is a primitive type, the data is simply stored here
+        * If the data is an object, then the data stored is a reference to where the object is in the heap
+    * Memory address of where the program returns to when the method finishes
+        * Where the calling method's call frame can be found in memory
+
+* When the running method finishes, it is popped from the stack and the memory it used is deallocated
+
+.. code-block:: java
+    :linenos:
+
+    public static void main(String[] args) {
+        function1();
+    }
+
+    static void function1() {
+        System.out.println("Starting function1");
+        System.out.println("Calling function2");
+        function2();
+        System.out.println("Calling function3");
+        function3();
+        System.out.println("Finished function1");
+    }
+
+    static void function2() {
+        System.out.println("Starting function2");
+        System.out.println("Calling function4");
+        function4();
+        System.out.println("Finished function2");
+    }
+
+    static void function3() {
+        System.out.println("Starting function3");
+        System.out.println("Finished function3");
+    }
+
+    static void function4() {
+        System.out.println("Starting function4");
+        System.out.println("Finished function4");
+    }
+
+* Running the above example would result in the call stack behaving like the below gif
+
+.. image:: img/callstack_gif.gif
+   :width: 500 px
+   :align: center
+
 
 
 Heap
