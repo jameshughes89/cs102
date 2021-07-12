@@ -65,13 +65,43 @@ Call Frame
 Heap
 ====
 
+* Very broadly speaking, the heap can be broken into static space and object space
 
 Static Space
 ------------
 
+* The static space contains one copy of all your code
+    * Classes
+    * Static methods
+    * Static variables
+    * Interfaces
+
 
 Object Space
 ------------
+
+* The object space stores the created objects
+    * The object type
+    * Values of the object's fields
+        * This includes primitive types and references variables to other objects in the heap
+
+* In Java, this is broken down into
+    * Young generation
+    * Old/Tenured generation
+
+* The young generation area can be broken down further into
+    * Eden space
+    * Survivor space
+
+* When an object is created, it is put into *eden space*
+* If the object survives for long enough, it gets promoted to *survivor space*
+* If an object survives long enough in survivor space, it gets promoted to *old/tenured space*
+
+
+.. note::
+
+    For the purposes of this course, we will not worry about these extra details; we will keep the focus on the stack,
+    object space in the heap, and the static space in the heap.
 
 
 Garbage Collection
