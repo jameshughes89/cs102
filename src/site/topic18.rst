@@ -76,6 +76,7 @@ Call Frame
     * Memory address of where the program returns to when the method finishes
         * Where the calling method's call frame can be found in memory
 
+* When the running method finishes, it is popped from the stack and the memory it used is deallocated
 
 .. code-block:: java
     :linenos:
@@ -115,6 +116,7 @@ Call Frame
 .. image:: img/callstack_gif.gif
    :width: 500 px
    :align: center
+
 
 
 Heap
