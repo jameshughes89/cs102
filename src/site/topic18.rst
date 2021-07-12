@@ -77,6 +77,17 @@ Object Space
 Garbage Collection
 ==================
 
+* When a method finishes running and the call frame from the call stack is not needed anymore, the memory is deallocated
+* When an object in the object space is not needed anymore, *garbage collection* comes into play
+
+* In some programming languages, when we don't need something from the heap that we've allocated anymore, we need to deallocate the memory it used
+    * If we don't we have a *memory leak*
+
+* In Java, if an object is not reachable anymore, then it can't be used, thus it is available for garbage collection
+    * Not reachable?
+
+
+
 
 Stack Overflow
 ==============
