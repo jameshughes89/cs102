@@ -57,9 +57,23 @@ Memory Allocation
 The Call Stack
 ==============
 
+* The call stack is the part of memory where the information about the current method being run is stored
+    * Along with the other methods that were running, but are waiting on the current running method to end so it can resume
+
+* The call stack is also a *stack* --- we push and pop information to/from the stack at one end
+
 
 Call Frame
 ----------
+
+* Each time we start running a method, a *call frame* containing relevant information for the method is created and pushed onto the stack
+
+* The call frame contains important information for the execution of the method
+    * Space for the parameters passed to the method
+    * Space for local variables
+        * If the data type is a primitive type, the data is simply stored here
+        * If the data is an object, then the data stored is a reference to where the object is in the heap
+    * Memory address of where the program returns to when the method finishes
 
 
 Heap
