@@ -114,7 +114,7 @@ Call Frame
 * Running the above example would result in the call stack behaving like the below gif
 
 .. image:: img/callstack_gif.gif
-   :width: 500 px
+   :width: 250 px
    :align: center
 
 
