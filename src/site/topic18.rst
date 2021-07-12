@@ -86,7 +86,29 @@ Garbage Collection
 * In Java, if an object is not reachable anymore, then it can't be used, thus it is available for garbage collection
     * Not reachable?
 
+* An object is *not reachable* when we can't get reference to it anymore
 
+.. image:: img/links_example1.png
+   :width: 500 px
+   :align: center
+
+* In the above example there is the reference variable ``head`` and each of the node's ``next`` fields
+    * There are also references to the data being referenced by the ``data`` field, but we will ignore those here
+
+* For example, if we have ``head`` as a reference variable in our ``main`` method, everything in this linked structure is accessible
+    * ``head``
+    * ``head.getNext()``
+    * ``head.getNext().getNext()``
+    * etc.
+
+* If one of the links in the structure gets lost, all nodes after the lost link become unreachable
+    * e.g. ``head.getNext().getNext().setNext(null)``
+* All the nodes after the removed link are now deemed available for garbage collection
+
+* If ``head`` gets reassigned and we have no other reference to the first node in the linked structure, all nodes become unreachable
+    * e.g. ``head = null``
+* Even though all nodes, except for the first one, have references to them via their predecessor's ``next`` field, none are actually reachable anymore
+* In the end, all nodes end up being available for garbage collection
 
 
 Stack Overflow
