@@ -97,6 +97,7 @@ Object Space
 * If the object survives for long enough, it gets promoted to *survivor space*
 * If an object survives long enough in survivor space, it gets promoted to *old/tenured space*
 
+* The length of time an object has existed is measured in the number of times it has survived *garbage collection*
 
 .. note::
 
