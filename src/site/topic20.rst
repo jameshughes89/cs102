@@ -12,7 +12,8 @@ Topic #20 --- Searching
 
 * However, we're going to look at two intuitive ideas that all of you have, more or less, used in one way or another many times in your life
     * Linear Search
-    * Binary Search
+    * Interpolation Search
+        * We will discuss a specific kind of interpolation search called a *binary search*
 
 
 For next time
