@@ -3,6 +3,33 @@ Topic #23 --- Binary Search Trees
 *********************************
 
 
+Binary Search Tree Definition
+=============================
+
+
+Searching a Binary Search Tree
+==============================
+
+
+Naive Search
+------------
+
+
+Binary Search
+-------------
+
+
+Binary Search Tree Operations
+=============================
+
+
+Linked Binary Search Tree
+=========================
+
+
+Degenerate vs. Balanced
+=======================
+
 
 For next time
 =============
