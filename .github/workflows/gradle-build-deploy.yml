@@ -41,18 +41,18 @@ jobs:
     - uses: actions/download-artifact@v2
       with:
         name: website
-    - name: Create site folder
+    - name: Create Site Directory
       run: mkdir site
-    - name: Unzip website
+    - name: Unzip Website Artifact
       run: unzip website.zip -d ./site
         
-    - name: Configure AWS credentials from Production account
+    - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ secrets.AWS_REGION }}
 
-    - name: Copy files to the website with the AWS CLI
+    - name: Copy Files to the Website
       run: |
         aws s3 sync ./site/* s3://modsurski.com/csci162        
