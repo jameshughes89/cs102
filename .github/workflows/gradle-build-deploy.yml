@@ -41,10 +41,10 @@ jobs:
     - uses: actions/download-artifact@v2
       with:
         name: website
+    - name: Create site folder
+      run: mkdir site
     - name: Unzip website
-      run: unzip website.zip
-    - name: Remove website.zip
-      run: rm website.zip    
+      run: unzip website.zip -d ./site
         
     - name: Configure AWS credentials from Production account
       uses: aws-actions/configure-aws-credentials@v1
@@ -55,4 +55,4 @@ jobs:
 
     - name: Copy files to the website with the AWS CLI
       run: |
-        aws s3 sync ./build/site/* s3://modsurski.com/csci162        
+        aws s3 sync ./site/* s3://modsurski.com/csci162        
