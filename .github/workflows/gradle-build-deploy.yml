@@ -1,4 +1,4 @@
-name: Gradle Build
+name: Gradle Build Deploy
 
 on:
   push:
@@ -29,3 +29,20 @@ jobs:
       with:
         name: website
         path: build/site
+        
+
+  deploy:
+    needs:
+      - release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure AWS credentials from Production account
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ca-central-1
+
+      - name: Copy files to the website with the AWS CLI
+        run: |
+          aws s3 sync ./build/site/* s3://modsurski.com/csci162        
