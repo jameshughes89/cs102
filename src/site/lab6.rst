@@ -1,5 +1,5 @@
 ******
-Lab #5
+Lab #6
 ******
 
 * Refer to the topic pages for this lab
@@ -12,193 +12,23 @@ Lab #5
     * Peer teaching and peer learning is super effective
 
 
-Making a Linked Structure
+Making a Bad Array Queue
 =========================
 
-Start by building a linked structure. The idea is to simply have a series of ``Node`` objects.
-
-
-Node Class
-----------
+Despite not being a great implementation, we're going to build a ``BadArrayQueue`` that always keeps the front of the
+queue at index ``0``. This is idea #1 from the :doc:`ArrayQueue topic</topic12>`.
 
 1. Create a project and make a class where you will put your main method
-    * Perhaps call it ``Lab5``
+    * Perhaps call it ``Lab6``
 
-2. Create a generic ``Node`` class
-    * Feel free to :download:`download this one <../main/java/Node.java>`
-        * If you do though, be sure to understand it and don't just copy/paste
+2. Download the :download:`Queue interface<../main/java/Stack.java>` and add it to your project
 
-3. Do a simple test to see if it works by making an instance in your main method and using the node's methods
+3. Create a ``BadArrayQueue`` class
 
-    .. code-block:: java
-        :linenos:
+4. Complete the ``BarArrayQueue`` class by fully implementing the ``Queue`` interface
+    * There will be a lot of overlap with the :download:`ArrayQueue<../main/java/ArrayQueue.java>` class
 
-        Node<Integer> myNode = new Node<>(5);
-        // Use the node class' methods here
-
-
-Create the Linked Structure
----------------------------
-
-1. Write a static method in the same class as your ``main`` called ``makeLinkedStructure`` that will
-    a. Create a linked structure containing the numbers 0 -- 9
-        * One number referenced in each node
-    b. Return a reference to the head of the linked structure
-
-    .. code-block:: java
-        :linenos:
-
-        public static <T> Node<T> makeLinkedStructure() {
-            // Stuff
-        }
-
-
-2. Verify it works by adding this to your ``main`` method
-
-    .. code-block:: java
-        :linenos:
-
-        Node<Integer> head = makeLinkedStructure();
-        Node<Integer> currentNode = head;
-
-        while (currentNode != null) {
-            System.out.println(currentNode.getData());
-            currentNode = currentNode.getNext();
-        }
-
-
-Manipulating the Linked Structure
-=================================
-
-Start adding and removing things to the linked structure.
-
-
-Adding to the Front of the Structure
-------------------------------------
-
-1. Write a static method in the same class as your ``main`` called ``addToFront`` that will
-    a. Take a reference to the head of a linked structure and an integer to add
-    b. Insert a new node containing reference to a new integer passed to the method as a parameter
-    c. Return a reference to the new head of the linked structure
-
-    .. code-block:: java
-        :linenos:
-
-        public static <T> Node<T> addToFront(Node<T> head, T toAdd) {
-            // Stuff
-        }
-
-
-2. Verify it works by adding this to your ``main`` method
-
-    .. code-block:: java
-        :linenos:
-
-        head = addToFront(head, 99);
-        currentNode = head;
-        while (currentNode != null) {
-            System.out.println(currentNode.getData());
-            currentNode = currentNode.getNext();
-        }
-
-
-Removing from the Front of the Structure
-----------------------------------------
-
-1. Write a static method in the same class as your ``main`` called ``removeFromFront`` that will
-    a. Take a reference to the head of a linked structure
-    b. Remove the first node from the structure
-    c. Return a reference to the new head of the linked structure
-
-    .. code-block:: java
-        :linenos:
-
-        public static <T> Node<T> removeFromFront(Node<T> head) {
-            // Stuff
-        }
-
-
-2. Verify it works by adding this to your ``main`` method
-
-    .. code-block:: java
-        :linenos:
-
-        head = removeFromFront(head) ;
-        currentNode = head;
-        while (currentNode != null) {
-            System.out.println(currentNode.getData());
-            currentNode = currentNode.getNext();
-        }
-
-
-Adding to the Middle of the Structure
--------------------------------------
-
-1. Write a static method in the same class as your ``main`` called ``addToMiddle`` that will
-    a. Take a reference to the head of a linked structure, an integer to add, and a number we want to insert our new number after
-        * For example, if we call ``addToMiddle(head, 99, 5)``, we will add a node containing a reference to ``99`` after the node containing a reference to the number ``5`` (if it exists)
-    b. Insert a new node containing reference to a new integer passed to the method as a parameter after the specified value
-    c. Return a reference to the head of the linked structure
-
-    .. code-block:: java
-        :linenos:
-
-        public static <T> Node<T> addToMiddle(Node<T> head, T toAdd, T addAfter) {
-            // Stuff
-        }
-
-
-2. Verify it works by adding this to your ``main`` method
-
-    .. code-block:: java
-        :linenos:
-
-        head = addToMiddle(head, 99, 5);
-        currentNode = head;
-        while (currentNode != null) {
-            System.out.println(currentNode.getData());
-            currentNode = currentNode.getNext();
-        }
-
-.. warning::
-
-    What do you think should happen if we specify a value for ``addAfter`` that is not contained in the linked
-    structure?
-
-
-Removing from the Middle of the Structure
------------------------------------------
-
-1. Write a static method in the same class as your ``main`` called ``removeFromMiddle`` that will
-    a. Take a reference to the head of a linked structure and a value we want to remove from our linked structure
-    b. Remove the node containing a reference to the specified value from the structure
-    c. Return a reference to the head of the linked structure
-
-    .. code-block:: java
-        :linenos:
-
-        public static <T> Node<T> removeFromMiddle(Node<T> head, T toRemove) {
-            // Stuff
-        }
-
-
-2. Verify it works by adding this to your ``main`` method
-
-    .. code-block:: java
-        :linenos:
-
-        head = removeFromMiddle(head, 99) ;
-        currentNode = head;
-        while (currentNode != null) {
-            System.out.println(currentNode.getData());
-            currentNode = currentNode.getNext();
-        }
-
-
-.. warning::
-
-    What do you think should happen if we specify a value for ``toRemove`` that is not contained within the linked
-    structure?
+5. Download and modify the :download:`ArrayQueue tests<../test/java/ArrayQueueTest.java>` to verify everything is working correctly
 
 
 Kattis Problems
