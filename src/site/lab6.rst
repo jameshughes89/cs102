@@ -12,10 +12,10 @@ Lab #6
     * Peer teaching and peer learning is super effective
 
 
-Making a Bad Array Queue
-=========================
+Making a Rudimentary Array Queue
+================================
 
-Despite not being a great implementation, we're going to build a ``BadArrayQueue`` that always keeps the front of the
+Despite not being a great implementation, we're going to build a ``RudimentaryArrayQueue`` that always keeps the front of the
 queue at index ``0``. This is idea #1 from the :doc:`ArrayQueue topic</topic12>`.
 
 1. Create a project and make a class where you will put your main method
@@ -23,9 +23,9 @@ queue at index ``0``. This is idea #1 from the :doc:`ArrayQueue topic</topic12>`
 
 2. Download the :download:`Queue interface<../main/java/Stack.java>` and add it to your project
 
-3. Create a ``BadArrayQueue`` class
+3. Create a ``RudimentaryArrayQueue`` class
 
-4. Complete the ``BarArrayQueue`` class by fully implementing the ``Queue`` interface
+4. Complete the ``RudimentaryArrayQueue`` class by fully implementing the ``Queue`` interface
     * There will be a lot of overlap with the :download:`ArrayQueue<../main/java/ArrayQueue.java>` class
 
 5. Download and modify the :download:`ArrayQueue tests<../test/java/ArrayQueueTest.java>` to verify everything is working correctly
