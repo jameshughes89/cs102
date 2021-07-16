@@ -28,7 +28,7 @@ queue at index ``0``. This is idea #1 from the :doc:`ArrayQueue topic</topic12>`
 4. Complete the ``RudimentaryArrayQueue`` class by fully implementing the ``Queue`` interface
     * There will be a lot of overlap with the :download:`ArrayQueue<../main/java/ArrayQueue.java>` class
 
-5. Download and modify the :download:`ArrayQueueTest<../test/java/ArrayQueueTest.java>` to create a `BadArrayQueueTest` to verify everything is working correctly
+5. Download and modify the :download:`ArrayQueueTest<../test/java/ArrayQueueTest.java>` to create a `RudimentaryArrayQueueTest` to verify everything is working correctly
 
 
 Kattis Problems
