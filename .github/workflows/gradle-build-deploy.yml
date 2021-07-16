@@ -1,0 +1,58 @@
+name: Gradle Build Deploy
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Set up Java
+      uses: actions/setup-java@v2
+      with:
+        java-version: 11
+        distribution: adopt
+    - name: Gradle Build
+      run: ./gradlew build test site
+    - name: Upload Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: website
+        path: build/site
+        
+  deploy:
+    needs:
+    - release
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.repository == 'jameshughes89/cs102'
+    concurrency: deploying
+    steps: 
+    - name: Download Build Artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: website
+    - name: Create Site Directory
+      run: mkdir site
+    - name: Unzip Website Artifact
+      run: unzip website.zip -d ./site
+        
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ secrets.AWS_REGION }}
+
+    - name: Copy Files to the Website
+      run: |
+        aws s3 sync ./site/* s3://modsurski.com/csci162 --delete
