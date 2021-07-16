@@ -21,14 +21,14 @@ queue at index ``0``. This is idea #1 from the :doc:`ArrayQueue topic</topic12>`
 1. Create a project and make a class where you will put your main method
     * Perhaps call it ``Lab6``
 
-2. Download the :download:`Queue interface<../main/java/Stack.java>` and add it to your project
+2. Download the :download:`Queue interface<../main/java/Queue.java>` and add it to your project
 
 3. Create a ``RudimentaryArrayQueue`` class
 
 4. Complete the ``RudimentaryArrayQueue`` class by fully implementing the ``Queue`` interface
     * There will be a lot of overlap with the :download:`ArrayQueue<../main/java/ArrayQueue.java>` class
 
-5. Download and modify the :download:`ArrayQueue tests<../test/java/ArrayQueueTest.java>` to verify everything is working correctly
+5. Download and modify the :download:`ArrayQueueTest<../test/java/ArrayQueueTest.java>` to create a `BadArrayQueueTest` to verify everything is working correctly
 
 
 Kattis Problems
