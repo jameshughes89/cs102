@@ -21,7 +21,7 @@ queue at index ``0``. This is idea #1 from the :doc:`ArrayQueue topic</topic12>`
 1. Create a project and make a class where you will put your main method
     * Perhaps call it ``Lab6``
 
-2. Download the :download:`Queue interface<../main/java/Stack.java>` and add it to your project
+2. Download the :download:`Queue interface<../main/java/Queue.java>` and add it to your project
 
 3. Create a ``BadArrayQueue`` class
 
