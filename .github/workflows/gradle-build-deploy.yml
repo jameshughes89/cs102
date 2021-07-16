@@ -37,15 +37,14 @@ jobs:
     if: github.event_name == 'push' && github.repository == 'jameshughes89/cs102'
     concurrency: deploying
     steps: 
+    - name: Create Site Directory
+      run: mkdir site
     - name: Download Build Artifact
       uses: actions/download-artifact@v2
       with:
         name: website
-    - name: Create Site Directory
-      run: mkdir site
-    - name: Unzip Website Artifact
-      run: unzip website.zip -d ./site
-        
+        path: site
+
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
