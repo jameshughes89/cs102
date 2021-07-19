@@ -91,7 +91,7 @@ Course Notes
 ============
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
     topic1
     topic2
