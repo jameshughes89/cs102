@@ -47,24 +47,29 @@ Sum
 
 2. Write a **recursive** method to sum the numbers between ``1`` and ``n`` inclusively
     * The method will take a single integer ``n`` as a parameter
+    * The method will return the sum
 
 3. Write a **recursive** method to sum the numbers between ``cur`` and ``n`` inclusively
     * The method will take two parameters ``cur`` and ``n``
-
+    * The method will return the sum
 
 Factorial
 =========
 
 * Write an **iterative** method to return the factorial of ``n``
     * This method will take ``n`` as a parameter
+    * The method will return the factorial
 
 * Write a **recursive** method to return the factorial of ``n``
     * This method will take ``n`` as a parameter
     * This recursive method must start at ``n`` and work *down* to 1
+    * The method will return the factorial
 
 * Write a **recursive** method to return the factorial of ``n``
     * This method will take ``n`` and ``cur`` as a parameter
     * This recursive method must start at ``cur`` (which will start at ``1``) and work *up* to ``n``
+    * The method will return the factorial
+
 
 Kattis Problems
 ===============
