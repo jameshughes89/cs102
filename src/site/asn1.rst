@@ -8,7 +8,7 @@ Assignment #1: TBD
 What to submit to Moodle
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Submit your work on Moodle. 
+Submit your work on Moodle.
 
 * Your ``.java`` files.
 
@@ -22,10 +22,11 @@ Submit your work on Moodle.
 Some hints
 ^^^^^^^^^^^
 
-* Work on one function at a time. 
-* Get each function *working perfectly* before you go on to the next one. 
-* *Test* each function as you write it. 
-    * This is a really nice thing about programming: you can call your functions and see what result gets returned. Does it seem correct?
+* Work on one method at a time.
+* Get each method *working perfectly* before you go on to the next one.
+* *Test* each method as you write it.
+    * This is a really nice thing about programming; you can call your methods and see what result gets returned. Does it seem correct?
+    * Mentally test before you even write --- what does this method do? What problem is it solving?
 * If you need help, **ask**! Drop by my office hours.
 
 Some marking details
@@ -34,7 +35,7 @@ Some marking details
     Just because your program produces the correct output, that does not necessarily mean that you will get perfect, or even that your program is correct.
 
 Below is a list of both *quantitative* and *qualitative* things we will look for:
- 
+
 * Correctness?
 * Did you follow instructions?
 * Comments?
@@ -52,7 +53,7 @@ FAQ:
 * It’s not working, therefore Java is broken!
     * Probably not; you’re very likely doing something wrong
 
-* Wtf do the functions do that you gave me?
+* Wtf do the methods do that you gave me?
     * Read the descriptions. Try figuring it out. This is actually part of the assignment learning objectives.
 
 * Do I have enough comments?
@@ -60,7 +61,7 @@ FAQ:
 * I know you told me to do it this way, but I did it another way, and I think my way is better.
     * Your way may be better, but I don’t care. Do it the way I told you.
 
-* If our code/functions are identical, you won't really call this cheating, would you? I mean, you said we could work together!
+* If our code/methods are identical, you won't really call this cheating, would you? I mean, you said we could work together!
     * I will absolutely try to nail you for cheating. I am letting you work together. Don't push it. All-in-all, it's going to be hard to *cheat* unless you are deliberately trying to.
 * I know I cheated, I know I know I was cheating, but I’m reeeeaaaaaaaaallllllly sorry [that I got caught]. Can we just ignore it this time?
     * Lol, no
