@@ -82,6 +82,18 @@ Linear Search on Arrays
     * Scrap paper is your friend
 
 
+Building a Linked Structure
+===========================
+
+1. Write a recursive method to build a linked structure containing the numbers ``0`` -- ``(n-1)``
+    * This method will take an integer ``n``
+    * This method will return a reference to the head of the linked structure
+    * The first node must contain ``0``, not ``5``
+    * You will need a ``Node`` class
+
+
+
+
 Kattis Problems
 ===============
 
