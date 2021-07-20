@@ -52,6 +52,20 @@ Sum
     * The method will take two parameters ``cur`` and ``n``
 
 
+Factorial
+=========
+
+* Write an **iterative** method to return the factorial of ``n``
+    * This method will take ``n`` as a parameter
+
+* Write a **recursive** method to return the factorial of ``n``
+    * This method will take ``n`` as a parameter
+    * This recursive method must start at ``n`` and work *down* to 1
+
+* Write a **recursive** method to return the factorial of ``n``
+    * This method will take ``n`` and ``cur`` as a parameter
+    * This recursive method must start at ``cur`` (which will start at ``1``) and work *up* to ``n``
+
 Kattis Problems
 ===============
 
