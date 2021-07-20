@@ -21,7 +21,7 @@ Recursion Visualization
 
 * Try running the following in the visualizer
 
-    .. code-block:: python
+    .. code-block:: java
         :linenos:
 
         public class Recursion {
@@ -56,6 +56,8 @@ Sum
 
 Factorial
 =========
+
+`Factorial?<https://letmegooglethat.com/?q=factorial>`_
 
 1. Write an **iterative** method to return the factorial of ``n``
     * This method will take ``n`` as a parameter
