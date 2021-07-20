@@ -14,10 +14,8 @@ out/*
 *.rar
 
 # Assignments
-asn*
-## A1
-src/main/java/Country.java
-src/main/java/CountryCatalogue.java
+src/main/java/asn1/solution/
+
 
 # IntelliJ stuff
 .idea
