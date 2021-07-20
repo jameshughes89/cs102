@@ -75,7 +75,7 @@ Factorial
 Linear Search on Arrays
 =======================
 
-1. Write a recursive method to do a linear search
+1. Write a **recursive** method to do a linear search
     * This method will take an array of integers ``toSearch``, an integer ``target`` as parameters, and the current index ``cur``
     * This method will return ``true``/``false``
     * It is strongly recommended to work with others
@@ -85,12 +85,11 @@ Linear Search on Arrays
 Building a Linked Structure
 ===========================
 
-1. Write a recursive method to build a linked structure containing the numbers ``0`` -- ``(n-1)``
+1. Write a **recursive** method to build a linked structure containing the numbers ``0`` -- ``(n-1)``
     * This method will take an integer ``n``
     * This method will return a reference to the head of the linked structure
     * The first node must contain ``0``, not ``5``
     * You will need a ``Node`` class
-
 
 
 
