@@ -53,22 +53,33 @@ Sum
     * The method will take two parameters ``cur`` and ``n``
     * The method will return the sum
 
+
 Factorial
 =========
 
-* Write an **iterative** method to return the factorial of ``n``
+1. Write an **iterative** method to return the factorial of ``n``
     * This method will take ``n`` as a parameter
     * The method will return the factorial
 
-* Write a **recursive** method to return the factorial of ``n``
+2. Write a **recursive** method to return the factorial of ``n``
     * This method will take ``n`` as a parameter
     * This recursive method must start at ``n`` and work *down* to 1
     * The method will return the factorial
 
-* Write a **recursive** method to return the factorial of ``n``
+3. Write a **recursive** method to return the factorial of ``n``
     * This method will take ``n`` and ``cur`` as a parameter
     * This recursive method must start at ``cur`` (which will start at ``1``) and work *up* to ``n``
     * The method will return the factorial
+
+
+Linear Search on Arrays
+=======================
+
+1. Write a recursive method to do a linear search
+    * This method will take an array of integers ``toSearch``, an integer ``target`` as parameters, and the current index ``cur``
+    * This method will return ``true``/``false``
+    * It is strongly recommended to work with others
+    * Scrap paper is your friend
 
 
 Kattis Problems
