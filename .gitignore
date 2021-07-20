@@ -15,6 +15,9 @@ out/*
 
 # Assignments
 asn*
+## A1
+src/main/java/Country.java
+src/main/java/CountryCatalogue.java
 
 # IntelliJ stuff
 .idea
