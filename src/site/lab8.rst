@@ -90,7 +90,18 @@ Building a Linked Structure
     * This method will return a reference to the head of the linked structure
     * The first node must contain ``0``, not ``5``
     * You will need a ``Node`` class
+    * It is strongly recommended to work with others
+    * Scrap paper is your friend
 
+
+Linear Search on Linked Structure
+=================================
+
+1. Write a **recursive** method that performs a linear search on a linked structure
+    * The method will take a reference to the current ``Node`` called ``cur`` and the ``target``
+    * This method will return ``true``/``false``
+    * It is strongly recommended to work with others
+    * Scrap paper is your friend
 
 
 Kattis Problems
