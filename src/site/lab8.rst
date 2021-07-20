@@ -15,6 +15,30 @@ Lab #8
 Recursion Visualization
 =======================
 
+* Check out the following websites that help you visualize recursion:
+    * https://visualgo.net/en/recursion?slide=1
+    * https://cscircles.cemc.uwaterloo.ca/java_visualize/
+
+* Try running the following in the visualizer
+
+    .. code-block:: python
+        :linenos:
+
+        public class Recursion {
+            public static int sum(int n) {
+                if (n == 1) {
+                    return 1;
+                }
+                return n + sum(n - 1);
+            }
+
+            public static void main(String[] args) {
+                sum(5);
+            }
+        }
+
+
+
 Kattis Problems
 ===============
 
