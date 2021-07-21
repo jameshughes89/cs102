@@ -16,7 +16,7 @@ Topic #19 --- Recursion
 * How many people are in this line?
     * How would you count them?
 
-* I'd say the answer is, just by looking at the first person, it's exactly ``1 + `` the number of people after the first person
+* I'd say the answer is, just by looking at the first person, it's exactly ``1 +`` the number of people after the first person
 
 
 Iterative Definition vs. Recursive Definition
