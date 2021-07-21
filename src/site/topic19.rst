@@ -73,7 +73,7 @@ Groups of People
     Although there is no **hard** rule saying that you need a base case, and there are examples of situations where you
     would not include one, not including a base case is a recipe for disaster. Remember ``uhOh()`` from topic 18?
 
-    For our purposes in this course, always include your base case. 
+    For our purposes in this course, always include your base case.
 
 
 Lists
@@ -120,6 +120,11 @@ Recursive Programming
 
 Factorial
 ---------
+
+* The factorial, ``n!``, of a non-negative integer is the product of all non-negative between n and 1 inclusively
+
+    :math:`n! = n \times (n - 1) \times (n - 2) \times \dots \times 3 \times 2 \times 1`
+
 
 
 Sum
