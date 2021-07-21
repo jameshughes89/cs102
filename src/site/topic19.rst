@@ -47,6 +47,11 @@ Groups of People
     * Therefore, I know that 3 people is a **group of people**
     * Thus, 4 people must be a **group of people**
 
+* In the above recursive example, you will notice a **base case** and a **recursive** case
+    * The base case is something with a clear definition
+    * The recursive case is one that defines itself in terms of itself
+
+
 
 Lists
 -----
