@@ -117,7 +117,6 @@ Factorial
 Recursive Programming
 =====================
 
-
 Factorial
 ---------
 
@@ -146,6 +145,49 @@ Factorial
     2. :math:`1` is the multiplicative identity, and it's used as the result when multiplying no factors.
 
         * This is just like how adding *nothing* together results in :math:`0` --- the additive identity.
+
+
+* If I ask you what :math:`4!` is, we can calculate it by applying the rules; there are no real tricks to it
+
+    :math:`4! = 4 * 3!`
+        :math:`3! = 3 * 2!`
+            :math:`2! = 2 * 1!`
+                :math:`1! = 1 * 0!`
+                    :math:`0! = 1`
+                :math:`1! = 1 * 0! = 1 * 1 = 1`
+            :math:`2! = 2 * 1! = 2 * 1 = 2`
+        :math:`3! = 3 * 2! = 3 * 2 = 6`
+    :math:`4! = 4 * 3! = 4 * 6 = 24`
+
+
+**Iterative Factorial**
+
+.. code-block:: java
+    :linenos:
+
+    static int iterativeFactorial(int n) {
+        int factorial = 1;
+        for (int i = 1; i <= n; ++i) {
+            factorial = factorial * i;
+        }
+        return factorial;
+    }
+
+
+**Recursive Factorial**
+
+.. code-block:: java
+    :linenos:
+
+    static int recursiveFactorial(int n) {
+        if (n == 0) {
+            return 1;
+        }
+        return n * recursiveFactorial(n - 1);
+    }
+
+* Both the iterative and recursive functions do the same thing
+    * But, doesn't the recursive function have a sort of beauty to it?
 
 
 Sum
