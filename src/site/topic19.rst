@@ -44,7 +44,7 @@ Recursion
 * However, with the list example, we also see the we repeatedly apply the same rule over and over again on smaller and smaller lists until we get to the end (the empty list)
     * This pattern arises a lot with recursion --- repeatedly apply the same rules on slightly different versions of the problem
 
-* As mentioned earlier, we're typically going to have a **base case** and a *8recursive case**
+* As mentioned earlier, we're typically going to have a **base case** and a **recursive case**
 * In fact, we can have multiple base cases and recursive cases
     * We will see examples of these when discussing trees
 
