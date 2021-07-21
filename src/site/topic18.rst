@@ -196,7 +196,7 @@ Stack Overflow
     }
 
 .. image:: img/memory_overflow.png
-   :width: 500 px
+   :width: 250 px
    :align: center
 
 
