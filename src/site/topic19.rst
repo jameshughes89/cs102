@@ -79,6 +79,28 @@ Groups of People
 Lists
 -----
 
+* Think of a list from Python, or a linear linked structure
+* We can define this recursively in a rather natural way
+
+* A list is:
+    * **Base Case** --- an empty list
+    * **Recursive Case** --- There is a head of the list, followed by a tail that's a list
+
+* Consider the following list
+
+    ``[a, b, c, d, e]``
+
+* This can be broken down into the head ``a`` and the tail ``[b, c, d, e]``
+
+    ``a + [b, c, d, e]``
+
+* Further, we can break the tail list down again and again and again until we hit an empty list
+
+    `` a + b + [c, d, e]``
+    `` a + b + c + [d, e]``
+    `` a + b + c + d + [e]``
+    `` a + b + c + d + e + []``
+
 
 Recursion
 =========
