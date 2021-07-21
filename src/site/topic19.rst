@@ -121,10 +121,31 @@ Recursive Programming
 Factorial
 ---------
 
-* The factorial, ``n!``, of a non-negative integer is the product of all non-negative between n and 1 inclusively
+* The factorial,  :math:`n!`, of a non-negative integer is the product of all non-negative between n and 1 inclusively
 
     :math:`n! = n \times (n - 1) \times (n - 2) \times \dots \times 3 \times 2 \times 1`
 
+
+* We can nicely define this recursively
+
+.. math::
+
+    n! =
+    \begin{cases}
+        1 & \text{if $n = 0$} \\
+        n \times (n-1)! & \text{if $n > 0$} \\
+    \end{cases}
+
+
+.. note::
+
+    You will notice that :math:`0! = 1` and may wonder why. This is because:
+
+    1. It is :math:`1` by definition, but this isn't really a satisfying answer.
+
+    2. :math:`1` is the multiplicative identity, and it's used as the result when multiplying no factors.
+
+        * This is just like how adding *nothing* together results in :math:`0` --- the additive identity.
 
 
 Sum
