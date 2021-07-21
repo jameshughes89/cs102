@@ -20,9 +20,6 @@ Groups of People
 ----------------
 
 
-Series of Numbers
------------------
-
 
 Lists
 -----
