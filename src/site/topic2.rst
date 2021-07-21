@@ -66,7 +66,7 @@ Variables and Types
         * That does mean that we have a new type: a character (``char``)
         * ``char theLetterB = 'B';``
     4. We use ``// for comments`` instead of ``# like in Python``
-    5. We end our statements in Java with a semicolon (``'``)
+    5. We end our statements in Java with a semicolon (``;``)
 
 .. warning::
 
