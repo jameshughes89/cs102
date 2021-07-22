@@ -290,10 +290,11 @@ Fibonacci
         return next;
     }
 
+
 * What is the computational complexity of ``iterativeFibonacci(n)``?
     * :math:`O(n)`
 
-* We can write a nice recursive definition for this:
+* We can write a nice recursive definition for the Fibonacci numbers:
 
 .. math::
 
@@ -317,6 +318,7 @@ Fibonacci
         return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
     }
 
+
 * What is the computational complexity of ``recursiveFibonacci(n)``?
 * This may feel a little less straight forward compared to ``recursiveFactorial(n)``, but the idea is the same
     * The function has constant time operations
@@ -325,6 +327,7 @@ Fibonacci
 .. image:: img/recursion_recursiveFibonacci.png
    :width: 500 px
    :align: center
+
 
 * When analyzing factorial, we saw that each function call made one or zero recursive calls
     * There was ``1```` recursive call for each of the ``n`` values between ``1`` -- ``n``
