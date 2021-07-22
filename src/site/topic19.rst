@@ -326,7 +326,33 @@ Fibonacci
    :width: 500 px
    :align: center
 
+* When analyzing factorial, we saw that each function call made one or zero recursive calls
+    * There was ``1```` recursive call for each of the ``n`` values between ``1`` -- ``n``
+    * There was no recursive call in the base case
 
+* When looking at ``recursiveFibonacci(n)``, how many recursive calls are there for each of the ``n`` values?
+    * Two (:math:`2`)
+
+* But each new call will call two more
+    * :math:`1`
+    * :math:`2`
+    * :math:`4`
+    * :math:`8`
+    * :math:`16`
+    * :math:`32`
+    * :math:`64`
+    * :math:`\dots`
+
+* You may recognize this pattern as :math:`2^{n}`
+    * Roughly speaking, we are doubling the number of function calls for each of the :math:`n`
+
+* In other words, this recursive implementation is :math:`O*(2^{n})`
+* If given the choice between something that grows linearly, :math:`O(n)`, and something that grows exponentially, :math:`O(n^{n})`, you're going to want to take the linear option
+* Despite the simple elegance of this recursive fibonacci implementation, this would perhaps be a good example of going back and improving the implementation for better performance
+
+* But, why is the recursive version so much worse than the iterative one?
+    * Look at the image for a hint
+    * How many times are we calculating ``fib(3)`` in each version?
 
 
 Towers of Hanoi
