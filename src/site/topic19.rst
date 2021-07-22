@@ -121,6 +121,7 @@ Factorial
 ---------
 
 * The factorial,  :math:`n!`, of a non-negative integer is the product of all non-negative between n and 1 inclusively
+    * It also includes zero, but this is addressed below
 
     :math:`n! = n \times (n - 1) \times (n - 2) \times \dots \times 3 \times 2 \times 1`
 
