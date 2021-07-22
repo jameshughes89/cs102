@@ -73,7 +73,7 @@ Groups of People
     Although there is no **hard** rule saying that you need a base case, and there are examples of situations where you
     would not include one, not including a base case is a recipe for disaster. Remember ``uhOh()`` from topic 18?
 
-    For our purposes in this course, always include your base case. 
+    For our purposes in this course, always include your base case.
 
 
 Lists
@@ -96,10 +96,10 @@ Lists
 
 * Further, we can break the tail list down again and again and again until we hit an empty list
 
-    `` a + b + [c, d, e]``
-    `` a + b + c + [d, e]``
-    `` a + b + c + d + [e]``
-    `` a + b + c + d + e + []``
+    ``a + b + [c, d, e]``
+    ``a + b + c + [d, e]``
+    ``a + b + c + d + [e]``
+    ``a + b + c + d + e + []``
 
 
 Recursion
