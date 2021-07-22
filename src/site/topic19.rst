@@ -355,7 +355,7 @@ Fibonacci
 
 * But, why is the recursive version so much worse than the iterative one?
     * Look at the image for a hint
-    * How many times are we calculating ``fib(3)`` in each version?
+    * How many times are we calculating the third Fibonacci number in each version?
 
 
 Towers of Hanoi
