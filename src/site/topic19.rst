@@ -237,6 +237,29 @@ Factorial
 Observations
 ============
 
+* Notice how in the call ``recursiveFactorial(4)``, we would have made a call to ``recursiveFactorial(3)``
+* If I ever call this function again, but want to check ``recursiveFactorial(5)``, we would have to call ``recursiveFactorial(4)`` again
+* In other words, to know ``recursiveFactorial(x)``, we will be answering ``recursiveFactorial(x - 1)``, ``recursiveFactorial(x - 2)``, ... ``recursiveFactorial(1)``, and ``recursiveFactorial(0)``
+
+* You may have also noticed the relationship between the Stack ADT we discussed and the call stack
+
+* Additionally, anything you do with iteration you can do with recursion, and anything you do with recursion you can do with iteration
+* However, just because you *can* doesn't mean you *should*
+    * Based on the design of the computational systems we use, recursion creates additional overhead that slows things down
+        * Creating frames
+        * Pushing/popping from the stack
+    * In many programming languages, the compilers will even optimize certain types of recursive functions by translating them to an iterative version
+    * This does not mean, however, that one should not use recursion as sometimes recursive implementations are elegant and easier to write
+        * Simplicity of your code may be tradeoff --- remember, sometimes *good enough is good enough*
+        * If you end up actually needing to improve performance later, then do that later
+
+
+.. warning::
+
+    The computers we use are one type of computational system, and although recursion often ends up being slower than
+    iteration on our computational systems, this is due to how they operate. Recursion is not intrinsically a slower
+    process within our universe when compared to iteration.
+
 
 Computational Complexity
 ========================
