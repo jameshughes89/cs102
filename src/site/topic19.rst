@@ -73,7 +73,7 @@ Groups of People
     Although there is no **hard** rule saying that you need a base case, and there are examples of situations where you
     would not include one, not including a base case is a recipe for disaster. Remember ``uhOh()`` from topic 18?
 
-    For our purposes in this course, always include your base case. 
+    For our purposes in this course, always include your base case.
 
 
 Lists
@@ -119,25 +119,27 @@ Recursion
 Going Up and Down
 -----------------
 
-* Sometimes we start at the base case and work our way *up*
+* The set of natural numbers :math:`\mathbb{N}` can be recursively defined as:
     * 0 is a natural number
     * A natural number + 1 is a natural number
-        * 0 is a natural number
-        * Therefore, 1 (0 + 1) is a natural number
-        * Therefore, 2 (1 + 1) is a natural number
-        * Therefore, 3 (2 + 1) is a natural number
-        * ...
 
-* This is a great way to mathematically define something infinite
-    * Though, your computers will not be all too happy with running this
+* With this recursive definition, we have a complete definition of :math:`\mathbb{N}`
 
-* Sometimes we work our way *down* towards a base case
+* We can start at the base case and repeatedly apply the recursive case to generate all natural numbers
+    * This is a great way to mathematically define something infinite
+        * Though, your computers will not be all too happy with running this
+
+* We could also take this definition and use it to answer questions by working down to the base case, and then back up with the answer
     * Is 4 a natural number?
     * Is 3 + 1 a natural number?
     * Is (2 + 1) + 1 a natural number?
     * Is ((1 + 1) + 1) + 1) a natural number?
     * Is ((((0 + 1) + 1) + 1) + 1) a natural number?
-    * Zero is a natural number, therefore they're all natural numbers
+    * 0 is a natural number
+    * Therefore 1 (0 + 1) is a natural number
+    * Therefore 2 (1 + 1) is a natural number
+    * Therefore 3 (2 + 1) is a natural number
+    * Therefore 4 (3 + 1) is a natural number
 
 
 Factorial
