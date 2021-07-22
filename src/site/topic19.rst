@@ -245,6 +245,89 @@ Computational Complexity
 Fibonacci
 ---------
 
+* Consider the Fibonacci numbers
+* If you are not familiar with this sequence, see if you can figure out how it's created
+
+    :math:`1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, ...`
+
+
+* Here's a hint
+
+    :math:`1, 1`
+
+    :math:`1, 1, 2`
+
+    :math:`1, 1, 2, 3`
+
+    :math:`1, 1, 2, 3, 5`
+
+    :math:`1, 1, 2, 3, 5, 8`
+
+    :math:`1, 1, 2, 3, 5, 8, 13`
+
+    :math:`\dots`
+
+
+* To generate this sequence, start with :math:`1, 1`, then to get the subsequent number, add the proceeding two together
+* Take a moment to think about how you would write an iterative method to generate these numbers
+    * An example is below --- make sure you understand this
+
+.. code-block:: java
+    :linenos:
+
+    static int iterativeFibonacci(int n) {
+        if (n == 1 || n == 2) {
+            return 1;
+        }
+        int prev = 1;
+        int cur = 1;
+        int next = 0;
+        for (int i = 3; i <= n; i++) {
+            next = prev + cur;
+            prev = cur;
+            cur = next;
+        }
+        return next;
+    }
+
+* What is the computational complexity of ``iterativeFibonacci(n)``?
+    * :math:`O(n)`
+
+* We can write a nice recursive definition for this:
+
+.. math::
+
+    F_{n} =
+    \begin{cases}
+        1 & \text{if $n = 1$ or $n = 2$} \\
+        F_{n-1} + F_{n-2} & \text{if $n > 0$} \\
+    \end{cases}
+
+
+* Then take a moment and think about how this can be turned into a recursive method
+    * Again, example below, but take the time to understand this
+
+.. code-block:: java
+    :linenos:
+
+    static int recursiveFibonacci(int n) {
+        if (n == 1 || n == 2) {
+            return 1;
+        }
+        return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
+    }
+
+* What is the computational complexity of ``recursiveFibonacci(n)``?
+* This may feel a little less straight forward compared to ``recursiveFactorial(n)``, but the idea is the same
+    * The function has constant time operations
+    * But we see that there are recursive calls, so, how many times does this function get called?
+
+.. image:: img/recursion_recursiveFibonacci.png
+   :width: 500 px
+   :align: center
+
+
+
 
 Towers of Hanoi
 ===============
