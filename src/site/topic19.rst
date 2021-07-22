@@ -122,10 +122,6 @@ Factorial
 ---------
 
 
-Sum
----
-
-
 Observations
 ============
 
