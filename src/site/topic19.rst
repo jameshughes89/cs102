@@ -249,7 +249,7 @@ Observations
         * Creating frames
         * Pushing/popping from the stack
     * In many programming languages, the compilers will even optimize certain types of recursive functions by translating them to an iterative version
-    * This does not mean, however, that one should not use recursion as sometimes recursive implementations are elegant and easier to write
+    * This does not mean, however, that one should not use recursion as sometimes recursive implementations are elegant and easier for you to write
         * Simplicity of your code may be tradeoff --- remember, sometimes *good enough is good enough*
         * If you end up actually needing to improve performance later, then do that later
 
