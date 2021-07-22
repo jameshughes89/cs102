@@ -141,11 +141,13 @@ Factorial
 
     You will notice that :math:`0! = 1` and may wonder why. This is because:
 
-    1. It is :math:`1` by definition, but this isn't really a satisfying answer.
+    1. It is :math:`1` by definition (because we said so), but this isn't really a satisfying answer.
 
     2. :math:`1` is the multiplicative identity, and it's used as the result when multiplying no factors.
 
         * This is just like how adding *nothing* together results in :math:`0` --- the additive identity.
+
+    3. It also aligns with the `gamma function <https://en.wikipedia.org/wiki/Gamma_function>`_
 
 
 * If I ask you what :math:`4!` is, we can calculate it by applying the rules; there are no real tricks to it
