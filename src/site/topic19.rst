@@ -272,6 +272,14 @@ Fibonacci
 Towers of Hanoi
 ===============
 
+* `There is a legend that goes with this puzzle <https://en.wikipedia.org/wiki/Tower_of_Hanoi#Origins>`_
+
+    .. image:: img/recursion_tower.git
+       :width: 500 px
+       :align: center
+
+* Image taken from wiki
+
 
 For next time
 =============
