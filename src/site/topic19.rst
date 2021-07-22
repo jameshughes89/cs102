@@ -149,9 +149,89 @@ Factorial
 Recursive Programming
 =====================
 
-
 Factorial
 ---------
+
+* The factorial,  :math:`n!`, of a non-negative integer is the product of all non-negative between n and 1 inclusively
+    * It also includes zero, but this is addressed below
+
+    :math:`n! = n \times (n - 1) \times (n - 2) \times \dots \times 3 \times 2 \times 1`
+
+
+* We can nicely define this recursively
+
+.. math::
+
+    n! =
+    \begin{cases}
+        1 & \text{if $n = 0$} \\
+        n \times (n-1)! & \text{if $n > 0$} \\
+    \end{cases}
+
+
+.. note::
+
+    You will notice that :math:`0! = 1` and may wonder why. This is because:
+
+    1. It is :math:`1` by definition (because we said so), but this isn't really a satisfying answer.
+
+    2. :math:`1` is the multiplicative identity, and it's used as the result when multiplying no factors.
+
+        * This is just like how adding *nothing* together results in :math:`0` --- the additive identity.
+
+    3. It also aligns with the `gamma function <https://en.wikipedia.org/wiki/Gamma_function>`_
+
+
+* If I ask you what :math:`4!` is, we can calculate it by applying the rules; there are no real tricks to it
+
+    :math:`4! = 4 * 3!`
+        :math:`3! = 3 * 2!`
+            :math:`2! = 2 * 1!`
+                :math:`1! = 1 * 0!`
+                    :math:`0! = 1`
+                :math:`1! = 1 * 0! = 1 * 1 = 1`
+            :math:`2! = 2 * 1! = 2 * 1 = 2`
+        :math:`3! = 3 * 2! = 3 * 2 = 6`
+    :math:`4! = 4 * 3! = 4 * 6 = 24`
+
+
+**Iterative Factorial**
+
+.. code-block:: java
+    :linenos:
+
+    static int iterativeFactorial(int n) {
+        int factorial = 1;
+        for (int i = 1; i <= n; ++i) {
+            factorial = factorial * i;
+        }
+        return factorial;
+    }
+
+
+**Recursive Factorial**
+
+.. code-block:: java
+    :linenos:
+
+    static int recursiveFactorial(int n) {
+        if (n == 0) {
+            return 1;
+        }
+        return n * recursiveFactorial(n - 1);
+    }
+
+* Both the iterative and recursive functions do the same thing
+    * But, doesn't the recursive function have a sort of beauty to it?
+
+
+* When considering the call stack, the stack will grow until it hits the base case
+* Then, each frame will return the product to the calling function
+    * Regardless of if the calling function is ``recursiveFactorial`` or ``main``
+
+    .. image:: img/recursion_recursiveFactorial.png
+       :width: 250 px
+       :align: center
 
 
 Observations
