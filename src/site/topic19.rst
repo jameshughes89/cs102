@@ -272,12 +272,31 @@ Fibonacci
 Towers of Hanoi
 ===============
 
+* Given
+    * Three pegs
+    * Several disks that can be added or removed from the pegs
+    * All disks vary in size
+    * All disks start on one peg with the largest at the bottom and the smallest at the top
+
+* The goal is to move all disks from one peg to another
+* With the following constraints
+    * Only one disk can move at a time
+    * A disk may never be placed on top of any smaller disk
+    * All disks must be on some peg at all times, with the exception of the one currently being moved
+
+.. image:: img/recursion_tower.png
+    :width: 500 px
+    :align: center
+    :alt: This image is taken from wikipedia: https://en.wikipedia.org/wiki/File:Tower_of_Hanoi.jpeg
+
+
+
 * `There is a legend that goes with this puzzle <https://en.wikipedia.org/wiki/Tower_of_Hanoi#Origins>`_
 
-    .. image:: img/recursion_tower.git
+    .. image:: img/recursion_tower.gif
         :width: 500 px
         :align: center
-        :alt: This image is taken from wikipedia
+        :alt: This image is taken from wikipedia: https://en.wikipedia.org/wiki/File:Iterative_algorithm_solving_a_6_disks_Tower_of_Hanoi.gif
 
 
 For next time
