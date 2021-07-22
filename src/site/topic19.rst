@@ -300,7 +300,7 @@ Fibonacci
     F_{n} =
     \begin{cases}
         1 & \text{if $n = 1$ or $n = 2$} \\
-        F_{n-1} + F_{n-2} & \text{if $n > 0$} \\
+        F_{n-1} + F_{n-2} & \text{if $n > 2$} \\
     \end{cases}
 
 
