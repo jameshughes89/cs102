@@ -193,6 +193,15 @@ Factorial
     * But, doesn't the recursive function have a sort of beauty to it?
 
 
+* When considering the call stack, the stack will grow until it hits the base case
+* Then, each frame will return the product to the calling function
+    * Regardless of if the calling function is ``recursiveFactorial`` or ``main``
+
+    .. image:: img/recursion_recursiveFactorial.png
+       :width: 250 px
+       :align: center
+
+
 Sum
 ---
 
