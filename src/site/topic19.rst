@@ -125,9 +125,9 @@ Factorial
 Observations
 ============
 
-* Notice how in the call ``recursiveSum(4)``, we would have made a call to ``recursiveSum(3)``
-* If I ever call this function again, but want to check ``recursiveSum(5)``, we would have to call ``recursiveSum(4)`` again
-* In other words, to know ``recursiveSum(x)``, we will be answering ``recursiveSum(x - 1)``, ``recursiveSum(x - 2)``, ... ``recursiveSum(1)``, and ``recursiveSum(0)``
+* Notice how in the call ``recursiveFactorial(4)``, we would have made a call to ``recursiveFactorial(3)``
+* If I ever call this function again, but want to check ``recursiveFactorial(5)``, we would have to call ``recursiveFactorial(4)`` again
+* In other words, to know ``recursiveFactorial(x)``, we will be answering ``recursiveFactorial(x - 1)``, ``recursiveFactorial(x - 2)``, ... ``recursiveFactorial(1)``, and ``recursiveFactorial(0)``
 
 * You may have also noticed the relationship between the Stack ADT we discussed and the call stack
 
