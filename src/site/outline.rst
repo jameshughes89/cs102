@@ -1,6 +1,6 @@
-====================================================================
+********************************************************************
 Outline for Computer Science 162 --- Programming and Data Structures
-====================================================================
+********************************************************************
 
 Winter 2022
 ===========
@@ -92,7 +92,7 @@ Below is a list of topics in no particular order that may or may not be covered 
 
 
 
-Student Evaluation (Tentative Dates) 
+Student Evaluation (Tentative Dates)
 ====================================
 
 +------------------------+------------+---------------------+
@@ -249,7 +249,7 @@ The materials in CSCI 161 at StFX are the property of the instructor, unless sta
 posting or selling this material to third parties for distribution without permission is subject to Canadian Copyright
 law and is strictly prohibited.
 
-The course copyright policy will be aggressively enforced. 
+The course copyright policy will be aggressively enforced.
 
 Class Recording Policy
 ======================
@@ -269,7 +269,7 @@ It is your responsibility to understand what academic misconduct is. Ignorance o
 for academic misconduct. I will pursue academic offenses fully. I will apply -100% (not 0) as a grade. I will also
 advocate for an automatic failure in the course, or expulsion from the university when allowed.
 
- 
+
 
 Use of Plagiarism-Checking Software
 ===================================
