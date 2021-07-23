@@ -23,6 +23,27 @@ Linear Search
 Iterative
 ---------
 
+* Below is a generic Java implementation of a linear search on an array of type ``T``
+* Other than being a generic method, this should be something you are familiar with
+
+.. code-block:: java
+    :linenos:
+
+    public static <T> int iterativeLinearSearch(T toFind, T[] data) {
+        for (int i = 0; i < data.length; ++i) {
+            if (data[i].equals(toFind)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+* This iterative implementation is also fairly similar to the high-level description of the algorithm
+    * Start at ``i = 0`` --- the beginning of the array
+    * If the element at index ``i`` is what we're looking for, we've found it and we're done
+    * Otherwise continue and increment ``i``
+    * If we ever look at all indices and do not find it, then we conclude that it's not there and we're done
+
 
 Recursive
 ---------
