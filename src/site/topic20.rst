@@ -27,6 +27,19 @@ Iterative
 Recursive
 ---------
 
+.. code-block:: java
+    :linenos:
+
+    public static <T> int recursiveLinearSearch(T toFind, T[] data, int currentIndex) {
+        // Not Found
+        if (currentIndex == data.length) {
+            return -1;
+        } else if (data[currentIndex].equals(toFind)) {
+            return currentIndex;
+        } else {
+            return recursiveLinearSearch(toFind, data, currentIndex + 1);
+        }
+    }
 
 Binary Search
 =============
