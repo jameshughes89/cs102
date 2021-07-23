@@ -23,7 +23,7 @@ Linear Search
 Iterative
 ---------
 
-* Below is a generic Java implementation of a linear search on an array of type ``T``
+* Below is a generic implementation of a linear search on an array of type ``T``
 * Other than being a generic method, this should be something you are familiar with
 
 .. code-block:: java
