@@ -278,18 +278,18 @@ Fibonacci
     :linenos:
 
     static int iterativeFibonacci(int n) {
-        if (n == 0 || n == 1) {
-            return n;
+        if (n == 0) {
+            return 0;
         }
-        int prev = 1;
-        int cur = 1;
+        int prev = 0;
+        int current = 1;
         int next = 0;
-        for (int i = 3; i <= n; i++) {
-            next = prev + cur;
-            prev = cur;
-            cur = next;
+        for (int i = 2; i <= n; ++i) {
+            next = prev + current;
+            prev = current;
+            current = next;
         }
-        return next;
+        return current;
     }
 
 
