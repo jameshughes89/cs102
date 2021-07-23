@@ -311,9 +311,9 @@ Towers of Hanoi
 * Also, what one considers the source, destination, and extra peg will change when moving the :math:`n - 1` disks
     * Looking at the 1st step, it says move the :math:`n - 1` disks from source peg to the extra peg
     * Ok, how do we do that?
-        1. Move the :math:`n - 2` disks from source peg to the extra peg
+        1. Move the :math:`(n - 1) - 1` disks from source peg to the extra peg
         2. Move the :math:`(n - 1)^{th}` disk from the source to the destination
-        3. Move the :math:`n - 2` disks from extra peg to the destination peg
+        3. Move the :math:`(n - 1) - 1` disks from extra peg to the destination peg
     * But, the extra and destination pegs are different for the :math:`(n - 1)` disks
         * The extra peg when moving :math:`n` disks has become the destination peg when moving :math:`(n - 1)`
         * Similarly, the destination peg when moving :math:`n` disks is this recursive step's extra peg
