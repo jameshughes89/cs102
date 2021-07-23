@@ -19,6 +19,22 @@ Topic #20 --- Searching
 Linear Search
 =============
 
+* We have used linear search many times already
+* Start at the beginning of an array and sequentially look at each element until we find a matching element
+    * If we find it, then we conclude that it is there
+    * If we get to the end and do not find it, then we conclude that it is not there
+
+* Notice that this description of the algorithm doesn't really go into any more details
+    * It is fairly high-level --- abstract
+
+* We've also discussed the computational complexity
+    * Worst case scenario, we look at every element in the array before we make a conclusion --- linear :math:`O(n)`
+    * Best case scenario, the thing we are looking for is the first element --- constant :math:`O(n)`
+    * On average, the element will be in the middle --- linear :math:`O(n)` --- remember, we ignore non-dominant terms, and :math:`1/2` is a constant, which is dominated by a linear term
+        * For every time it's the last element, it could be the first element in another search
+        * For every time it's the 2nd element, it could be in the second position in another search
+        * ...
+
 
 Iterative
 ---------
