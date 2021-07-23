@@ -97,8 +97,11 @@ Lists
 * Further, we can break the tail list down again and again and again until we hit an empty list
 
     ``a + b + [c, d, e]``
+
     ``a + b + c + [d, e]``
+
     ``a + b + c + d + [e]``
+
     ``a + b + c + d + e + []``
 
 
