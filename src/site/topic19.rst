@@ -248,27 +248,29 @@ Fibonacci
 * Consider the Fibonacci numbers
 * If you are not familiar with this sequence, see if you can figure out how it's created
 
-    :math:`1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, ...`
+    :math:`0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, ...`
 
 
 * Here's a hint
 
-    :math:`1, 1`
+    :math:`0, 1`
 
-    :math:`1, 1, 2`
+    :math:`0, 1, 1`
 
-    :math:`1, 1, 2, 3`
+    :math:`0, 1, 1, 2`
 
-    :math:`1, 1, 2, 3, 5`
+    :math:`0, 1, 1, 2, 3`
 
-    :math:`1, 1, 2, 3, 5, 8`
+    :math:`0, 1, 1, 2, 3, 5`
 
-    :math:`1, 1, 2, 3, 5, 8, 13`
+    :math:`0, 1, 1, 2, 3, 5, 8`
+
+    :math:`0, 1, 1, 2, 3, 5, 8, 13`
 
     :math:`\dots`
 
 
-* To generate this sequence, start with :math:`1, 1`, then to get the subsequent number, add the proceeding two together
+* To generate this sequence, start with :math:`0, 1`, then to get the subsequent number, add the proceeding two together
 * Take a moment to think about how you would write an iterative method to generate these numbers
     * An example is below --- make sure you understand this
 
@@ -276,8 +278,8 @@ Fibonacci
     :linenos:
 
     static int iterativeFibonacci(int n) {
-        if (n == 1 || n == 2) {
-            return 1;
+        if (n == 0 || n == 1) {
+            return n;
         }
         int prev = 1;
         int cur = 1;
@@ -300,8 +302,9 @@ Fibonacci
 
     F_{n} =
     \begin{cases}
-        1 & \text{if $n = 1$ or $n = 2$} \\
-        F_{n-1} + F_{n-2} & \text{if $n > 2$} \\
+        0 & \text{if $n = 0$} \\
+        1 & \text{if $n = 1$} \\
+        F_{n-1} + F_{n-2} & \text{if $n > 1$} \\
     \end{cases}
 
 
@@ -312,8 +315,8 @@ Fibonacci
     :linenos:
 
     static int recursiveFibonacci(int n) {
-        if (n == 1 || n == 2) {
-            return 1;
+        if (n == 0 || n == 1) {
+            return n;
         }
         return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
     }
