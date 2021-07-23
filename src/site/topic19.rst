@@ -332,7 +332,7 @@ Fibonacci
    :align: center
 
 
-* When analyzing factorial, we saw that each function call made one or zero recursive calls
+* When analyzing *factorial* (not Fibonacci), we saw that each function call made one or zero recursive calls
     * There was ``1`` recursive call for each of the ``n`` values between ``1`` -- ``n``
     * There was no recursive call in the base case
 
