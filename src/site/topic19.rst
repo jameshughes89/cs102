@@ -24,7 +24,8 @@ Iterative Definition vs. Recursive Definition
 
 * Iterative definitions of things are fairly natural for us
 * Recursion on the other hand may *feel* a little less natural, but it pops up a lot in our lives and in nature
-* Debugging can sometimes feel a little recursive
+
+* `Debugging can sometimes feel a little recursive <https://youtu.be/AbSehcT19u0>`_
     * Ever been debugging to deal with bug ``a``
     * Then notice that to solve it, you need to fix ``b``
     * Then, to fix ``b``, you need to resolve ``c``
