@@ -64,6 +64,31 @@ Iterative
 Recursive
 ---------
 
+* Now that we are more familiar with recursion, here is the exact same high-level abstract idea, but implemented with recursion
+
+.. code-block:: java
+    :linenos:
+
+    public static <T> int recursiveLinearSearch(T toFind, T[] data, int currentIndex) {
+        // Not Found
+        if (currentIndex == data.length) {
+            return -1;
+        } else if (data[currentIndex].equals(toFind)) {
+            return currentIndex;
+        } else {
+            return recursiveLinearSearch(toFind, data, currentIndex + 1);
+        }
+    }
+
+* If I wanted to call this method, I would start with ``currentIndex`` as ``0``
+    * ``recursiveLinearSearch(someTarget, someArray, 0)``
+
+* This may seem quite different from the iterative implementation, but take some time to look at the code and see what's happening
+    * Start ``currentIndex`` at ``0``
+    * Are we past the end of the array? If so, we conclude we didn't find it and we're done
+    * If the element at index ``currentIndex`` is what we're looking for, we've found it and we're done
+    * Otherwise, if we're not at the end and we didn't find it, check ``currentIndex + 1``
+
 
 Binary Search
 =============
