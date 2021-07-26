@@ -62,6 +62,13 @@ The Call Stack
 
 * The call stack is also a *stack* --- we push and pop information to/from the stack at one end
 
+* `You all use your mental stack throughout your life <https://youtu.be/AbSehcT19u0>`_
+    * Ever been debugging to deal with bug ``a``
+    * Then notice that to solve it, you need to fix ``b``
+    * Then, to fix ``b``, you need to resolve ``c``
+    * Once ``c`` is fixed, you can fix ``b``
+    * Since ``b`` is fixed, you can finally finish ``a``
+
 
 Call Frame
 ----------
