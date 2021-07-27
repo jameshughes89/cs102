@@ -31,6 +31,20 @@ Recursive
 Binary Search
 =============
 
+* Let's say you're looking for page 554 in a textbook
+* You'd probably open the book somewhere in the middle-ish
+* If the page you end up turning to is page 383, which half of the book should you continue your search on?
+    * Left pages, or right pages?
+* Since 554 is greater than 383, it must be in the set of right pages
+    * We eliminate the 383 pages from the set of left pages from our search since 554 must **not** be there
+* Next, you turn to a page somewhere between pages 383 and the end of the book and see page number 621
+    * Which set of pages do you then continue your search down?
+
+* This general idea is the basis of binary search
+
+* There is, however, a catch with binary search when compared to a linear search
+    * The collection we're searching, must be sorted, otherwise we would not be able to conclude which half our needle is
+
 
 Iterative
 ---------
