@@ -107,6 +107,33 @@ Binary Search
 * There is, however, a catch with binary search when compared to a linear search
     * The collection we're searching, must be sorted, otherwise we would not be able to conclude which half our needle is
 
+* The complexity analysis of binary search may feel intimidating, but the trick is to not overthink it and take your time
+
+.. image:: img/search_binary.png
+   :width: 500 px
+   :align: center
+
+* When considering *linear search*, if we were looking for the number ``11.5``
+* There are a total of ``15`` things in the collection, so we would need to exhaustively look at all ``15`` of them
+    * Here, ``15`` is :math:`n`
+
+* When considering *binary search*, how many things would we need to look at if we wanted to know if ``11.5`` is there or not?
+    * ``4``
+
+* We get away with looking at fewer things because we are ignoring half the remaining elements every time we continue our search
+    * ``11.5`` is greater than ``8``, therefore we can ignore all the elements on the left side
+
+* Any idea what the relationship between the maximum number of checks and the number of elements in our collection :math:`n`?
+    * :math:`n = 2^{h + 1} - 1`, where `h` is the "height" of the tree, or, the number of steps needed to go from the top to the bottom
+    * :math:`h = log_{2}(n + 1) - 1`
+
+* Thus, the computational complexity of binary search is :math:`O(log_{2}(n)` since, as :math:`n` grows, the maximum number of steps we would need to take only grows like :math:`log_{2}(n)`
+
+.. warning::
+
+    We've gotten ahead of ourselves; the above explanation uses details we have not discussed yet, but will cover in the
+    following topics. In other words, don't be too concerned if you are left scratching your head. 
+
 
 Iterative
 ---------
