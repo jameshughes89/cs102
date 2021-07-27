@@ -132,6 +132,8 @@ Iterative
 * This may look complicated, but again, take your time
 
 * Here is what's happening
+    * While we have not exhausted the search space (``lowIndex < highIndex``)
+        * If ``lowIndex`` is ever greater than or equal to ``highIndex``, there are no more indices the element *could* exist  
     * Look at the middle
     * If what you are looking at is what you're looking for
         * Done
