@@ -190,6 +190,30 @@ Iterative
 Recursive
 ---------
 
+* Below is a recursive implementation of a binary search
+* Notice that, other than being recursive, the underlying high-level algorithm is the same as the iterative implementation
+
+.. code-block:: java
+    :linenos:
+
+    public static <T extends Comparable<? super T>> int recursiveBinarySearch(T needle, T[] haystack, int lowIndex, int highIndex) {
+        if (lowIndex >= highIndex) {
+            return -1;
+        }
+        int midpoint = lowIndex + (highIndex - lowIndex) / 2;
+        if (haystack[midpoint].equals(needle)) {
+            return midpoint;
+        } else if (haystack[midpoint].compareTo(needle) > 0) {
+            highIndex = midpoint - 1;
+        } else {
+            lowIndex = midpoint + 1;
+        }
+        return recursiveBinarySearch(needle, haystack, lowIndex, highIndex);
+    }
+
+* If I wanted to call this method, I would start with ``lowIndex`` as ``0`` and ``highIndex`` as ``someHaystack.length``
+    * ``recursiveBinarySearch(someNeedle, someHaystack, 0, someHaystack.length)``
+
 
 For next time
 =============
