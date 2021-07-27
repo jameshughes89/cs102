@@ -111,6 +111,7 @@ Binary Search
     * Which set of pages do you then continue your search down?
 
 * This general idea is the basis of binary search
+    * Technically, this is `interpolation search <https://en.wikipedia.org/wiki/Interpolation_search>`_, but binary search is a special kind of interpolation search
 
 * There is, however, a catch with binary search when compared to a linear search
     * The haystack we're searching, must be sorted, otherwise we would not be able to conclude which half our needle is
