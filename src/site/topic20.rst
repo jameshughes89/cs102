@@ -35,6 +35,12 @@ Linear Search
         * For every time it's the 2nd element, it could be in the second last position in another search
         * ...
 
+    .. image:: img/search_linear.png
+       :width: 500 px
+       :align: center
+
+* In the above example, to know if something is or is not there, we would need to look at all :math:`n` elements
+
 
 Iterative
 ---------
