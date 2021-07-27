@@ -2,7 +2,8 @@
 Lab #4
 ******
 
-* Refer to the slides for this lab. You will find many of the answers to your questions there
+* Refer to the topic pages for this lab
+    * You will find many of the answers to your questions there
 * Feel free to use your laptop if you have it
 * I strongly encourage you to work with others in the lab
 * Ensure I have recorded your completion. Failure to do so will result in a grade of 0
@@ -21,7 +22,7 @@ Implementing a Stack
 --------------------
 
 1. Create a project and make a class where you will put your main method
-    * Perhaps call it ``Lab3``
+    * Perhaps call it ``Lab4``
 
 2. Download the :download:`Stack interface.<../main/java/Stack.java>` and add it to your project
 

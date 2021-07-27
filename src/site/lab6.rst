@@ -1,5 +1,5 @@
 ******
-Lab #3
+Lab #6
 ******
 
 * Refer to the topic pages for this lab
@@ -12,55 +12,23 @@ Lab #3
     * Peer teaching and peer learning is super effective
 
 
-Unit Testing
-============
+Making a Rudimentary Array Queue
+================================
 
-We're going to write tests for our ``CourseList`` class from `:doc: Lab2 </lab2>`. :doc:`Topic 6's aside on testing will be of great help here </topic6-testing>`.
+Despite not being a great implementation, we're going to build a ``RudimentaryArrayQueue`` that always keeps the front
+of the queue at index ``0``. This is idea #1 from the :doc:`ArrayQueue topic</topic12>`.
 
+1. Create a project and make a class where you will put your main method
+    * Perhaps call it ``Lab6``
 
-Have a Working Implementation
------------------------------
+2. Download the :download:`Queue interface<../main/java/Queue.java>` and add it to your project
 
-1. If you have not already, finish `:doc: Lab2 </lab2>`
+3. Create a ``RudimentaryArrayQueue`` class
 
+4. Complete the ``RudimentaryArrayQueue`` class by fully implementing the ``Queue`` interface
+    * There will be a lot of overlap with the :download:`ArrayQueue<../main/java/ArrayQueue.java>` class
 
-Writing Tests
--------------
-
-**Tips**
-* Make your test method names as descriptive as possible while still being brief
-* Follow some convention for your method names, something like ``methodConditionExpected()``
-    * ``sizeOfEmptyCourseListReturnsZero()``
-    * ``addingBeyondCapacityCallsExpandCapacityToMakeRoomForAdd()``
-
-
-1. Create your testing class for ``CourseList`` called ``CourseListTest``
-
-2. Write unit tests to test the ``size()`` method
-    * empty list has size zero?
-    * non empty list has proper size?
-    * list that has been emptied via removes has size zero?
-
-3. Write tests for ``add``
-    * Is the added element added?
-    * Can we add beyond a capacity limit?
-
-4. Write tests for ``remove``
-    * Does the element get removed?
-    * What happens if we try to remove something that doesn't exist?
-    * What happens when we call remove once for something that exists more than once in the ``CourseList``?
-
-5. Write tests for ``get``
-    * Does it return the element from the correct index?
-    * What happens if you try to get something from beyond the range?
-    * What happens if you try to get something from a negative index?
-
-
-6. Write tests for ``indexOf``
-    * Try to figure out which tests you should have on your own/with a friend
-
-7. Write tests for the ``Course`` class
-    * Try to figure out which tests you should have on your own/with a friend
+5. Download and modify the :download:`ArrayQueueTest<../test/java/ArrayQueueTest.java>` to create a `RudimentaryArrayQueueTest` to verify everything is working correctly
 
 
 Kattis Problems

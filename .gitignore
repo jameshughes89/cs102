@@ -14,7 +14,8 @@ out/*
 *.rar
 
 # Assignments
-asn*
+src/main/java/asn1/solution/
+
 
 # IntelliJ stuff
 .idea
@@ -25,6 +26,7 @@ build.sh
 
 # Test java and python files
 src/main/java/CompSci162.java
+src/main/java/SearchingMethods.java
 src/main/python/PythonExamples.py
 
 # venv

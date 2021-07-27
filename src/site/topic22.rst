@@ -3,6 +3,53 @@ Topic #22 --- Binary Trees
 **************************
 
 
+Binary Tree Definition
+======================
+
+
+Traversals
+==========
+
+
+Pre-order
+--------
+
+
+In-order
+-------
+
+
+Post-order
+---------
+
+
+Level-order
+-----------
+
+
+Iterative Pre/In/Post-Order
+---------------------------
+
+
+Traversal Analysis
+------------------
+
+
+Implementation
+==============
+
+
+Linked Implementation
+---------------------
+
+
+Binary Tree Node
+^^^^^^^^^^^^^^^^
+
+
+Linked Binary Tree
+^^^^^^^^^^^^^^^^^^
+
 
 For next time
 =============

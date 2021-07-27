@@ -3,6 +3,41 @@ Topic #24 --- Sorting
 *********************
 
 
+Sorting Problem
+===============
+
+
+Bogosort
+========
+
+
+Bubble Sort
+===========
+
+
+Insertion Sort
+==============
+
+
+Selection Sort
+==============
+
+
+Bucket Sort
+===========
+
+
+Mergesort
+=========
+
+
+Quicksort
+=========
+
+
+Heapsort
+========
+
 
 For next time
 =============

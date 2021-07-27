@@ -91,7 +91,7 @@ Course Notes
 ============
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
     topic1
     topic2
@@ -134,6 +134,10 @@ Labs
     lab3
     lab4
 
+    lab5
+    lab6
+    lab7
+    lab8
 
 Assignments
 ===========
@@ -153,7 +157,6 @@ Course Outline
     outline
 
 
-.. Indices and tables
 ==================
 
      * :ref:`genindex`

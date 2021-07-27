@@ -183,6 +183,13 @@ Deleting from the End
 Node Implementation
 ===================
 
+.. warning::
+
+    Note that ``head`` is **not** a node; ``head`` is a reference to a node. For example, ``head = someNode;`` and
+    ``head.setNext(someNode);`` have two very different meanings. The first means that our reference ``head`` will
+    refer to the node ``someNode``, while the second means that the node referenced by ``head``\'s ``next`` node
+    reference will refer to ``someNode``.
+
 
 .. image:: img/links_reference.png
    :width: 400 px
