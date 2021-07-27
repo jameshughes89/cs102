@@ -45,9 +45,9 @@ Iterative
 .. code-block:: java
     :linenos:
 
-    public static <T> int iterativeLinearSearch(T toFind, T[] data) {
-        for (int i = 0; i < data.length; ++i) {
-            if (data[i].equals(toFind)) {
+    public static <T> int iterativeLinearSearch(T needle, T[] haystack) {
+        for (int i = 0; i < haystack.length; ++i) {
+            if (haystack[i].equals(needle)) {
                 return i;
             }
         }
@@ -69,19 +69,19 @@ Recursive
 .. code-block:: java
     :linenos:
 
-    public static <T> int recursiveLinearSearch(T toFind, T[] data, int currentIndex) {
+    public static <T> int recursiveLinearSearch(T needle, T[] haystack, int currentIndex) {
         // Not Found
-        if (currentIndex == data.length) {
+        if (currentIndex == haystack.length) {
             return -1;
-        } else if (data[currentIndex].equals(toFind)) {
+        } else if (haystack[currentIndex].equals(needle)) {
             return currentIndex;
         } else {
-            return recursiveLinearSearch(toFind, data, currentIndex + 1);
+            return recursiveLinearSearch(needle, haystack, currentIndex + 1);
         }
     }
 
 * If I wanted to call this method, I would start with ``currentIndex`` as ``0``
-    * ``recursiveLinearSearch(someTarget, someArray, 0)``
+    * ``recursiveLinearSearch(someNeedle, someHaystack, 0)``
 
 * This may seem quite different from the iterative implementation, but take some time to look at the code and see what's happening
     * Start ``currentIndex`` at ``0``
