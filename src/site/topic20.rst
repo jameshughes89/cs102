@@ -29,11 +29,17 @@ Linear Search
 
 * We've also discussed the computational complexity
     * Worst case scenario, we look at every element in the array before we make a conclusion --- linear :math:`O(n)`
-    * Best case scenario, the thing we are looking for is the first element --- constant :math:`O(n)`
+    * Best case scenario, the thing we are looking for is the first element --- constant :math:`O(1)`
     * On average, the element will be in the middle --- linear :math:`O(n)` --- remember, we ignore non-dominant terms, and :math:`1/2` is a constant, which is dominated by a linear term
         * For every time it's the first element, it could be the last element in another search
         * For every time it's the 2nd element, it could be in the second last position in another search
         * ...
+
+    .. image:: img/search_linear.png
+       :width: 500 px
+       :align: center
+
+* In the above example, to know if something is or is not there, we would need to look at all :math:`n` elements
 
 
 Iterative
@@ -45,9 +51,9 @@ Iterative
 .. code-block:: java
     :linenos:
 
-    public static <T> int iterativeLinearSearch(T toFind, T[] data) {
-        for (int i = 0; i < data.length; ++i) {
-            if (data[i].equals(toFind)) {
+    public static <T> int iterativeLinearSearch(T needle, T[] haystack) {
+        for (int i = 0; i < haystack.length; ++i) {
+            if (haystack[i].equals(needle)) {
                 return i;
             }
         }
@@ -69,19 +75,19 @@ Recursive
 .. code-block:: java
     :linenos:
 
-    public static <T> int recursiveLinearSearch(T toFind, T[] data, int currentIndex) {
+    public static <T> int recursiveLinearSearch(T needle, T[] haystack, int currentIndex) {
         // Not Found
-        if (currentIndex == data.length) {
+        if (currentIndex == haystack.length) {
             return -1;
-        } else if (data[currentIndex].equals(toFind)) {
+        } else if (haystack[currentIndex].equals(needle)) {
             return currentIndex;
         } else {
-            return recursiveLinearSearch(toFind, data, currentIndex + 1);
+            return recursiveLinearSearch(needle, haystack, currentIndex + 1);
         }
     }
 
 * If I wanted to call this method, I would start with ``currentIndex`` as ``0``
-    * ``recursiveLinearSearch(someTarget, someArray, 0)``
+    * ``recursiveLinearSearch(someNeedle, someHaystack, 0)``
 
 * This may seem quite different from the iterative implementation, but take some time to look at the code and see what's happening
     * Start ``currentIndex`` at ``0``
@@ -137,6 +143,45 @@ Binary Search
 
 Iterative
 ---------
+
+* Below is a generic implementation of an iterative binary search on an array of type ``T``
+    * Take note that ``T`` or one of their superclasses must extend ``Comparable``
+    * This is because the elements must be ordered
+
+.. code-block:: java
+    :linenos:
+
+    public static <T extends Comparable<? super T>> int iterativeBinarySearch(T needle, T[] haystack) {
+        int lowIndex = 0;
+        int highIndex = haystack.length;
+        int midpoint = (highIndex - lowIndex) / 2;
+
+        while (lowIndex < highIndex) {
+            if (haystack[midpoint].equals(needle)) {
+                return midpoint;
+            } else if (haystack[midpoint].compareTo(needle) > 0) {
+                highIndex = midpoint - 1;
+                midpoint = lowIndex + (highIndex - lowIndex) / 2;
+            } else {
+                lowIndex = midpoint + 1;
+                midpoint = lowIndex + (highIndex - lowIndex) / 2;
+            }
+        }
+        return -1;
+    }
+
+* This may look complicated, but again, take your time
+
+* Here is what's happening
+    * While we have not exhausted the search space (``lowIndex < highIndex``)
+        * If ``lowIndex`` is ever greater than or equal to ``highIndex``, there are no more indices the element *could* exist  
+    * Look at the middle
+    * If what you are looking at is what you're looking for
+        * Done
+    * If what you are looking at is less than what you're looking for
+        * Continue the search on the remaining upper half by looking at the midpoint of the remaining elements
+    * If what you are looking at is greater than than what you're looking for
+        * Continue the search on the remaining lower half by looking at the midpoint of the remaining elements
 
 
 Recursive
