@@ -101,6 +101,8 @@ Iterative
 Recursive
 ---------
 
+* Below is a recursive implementation of a binary search
+* Notice that, other than being recursive, the underlying high-level algorithm is the same as the iterative implementation
 
 .. code-block:: java
     :linenos:
@@ -119,7 +121,9 @@ Recursive
         }
         return recursiveBinarySearch(needle, haystack, lowIndex, highIndex);
     }
-}
+
+* If I wanted to call this method, I would start with ``lowIndex`` as ``0`` and ``highIndex`` as ``someHaystack.length``
+    * ``recursiveBinarySearch(someNeedle, someHaystack, 0, someHaystack.length)``
 
 
 For next time
