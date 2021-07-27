@@ -102,6 +102,26 @@ Recursive
 ---------
 
 
+.. code-block:: java
+    :linenos:
+
+    public static <T extends Comparable<? super T>> int recursiveBinarySearch(T needle, T[] haystack, int lowIndex, int highIndex) {
+        if (lowIndex >= highIndex) {
+            return -1;
+        }
+        int midpoint = lowIndex + (highIndex - lowIndex) / 2;
+        if (haystack[midpoint].equals(needle)) {
+            return midpoint;
+        } else if (haystack[midpoint].compareTo(needle) > 0) {
+            highIndex = midpoint - 1;
+        } else {
+            lowIndex = midpoint + 1;
+        }
+        return recursiveBinarySearch(needle, haystack, lowIndex, highIndex);
+    }
+}
+
+
 For next time
 =============
 
