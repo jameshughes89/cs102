@@ -91,6 +91,16 @@ Recursive
 * If I wanted to call this method, I would start with ``currentIndex`` as ``0``
     * ``recursiveLinearSearch(someNeedle, someHaystack, 0)``
 
+* It is also common to have a *helper* method that makes the first recursive call with the proper values
+
+.. code-block:: java
+    :linenos:
+
+    public static <T> int recursiveLinearSearch(T needle, T[] haystack) {
+        return recursiveLinearSearch(someNeedle, someHaystack, 0);
+    }
+
+
 * This may seem quite different from the iterative implementation, but take some time to look at the code and see what's happening
     * Start ``currentIndex`` at ``0``
     * Are we past the end of the array? If so, we conclude we didn't find it and we're done
@@ -213,6 +223,15 @@ Recursive
 
 * If I wanted to call this method, I would start with ``lowIndex`` as ``0`` and ``highIndex`` as ``someHaystack.length``
     * ``recursiveBinarySearch(someNeedle, someHaystack, 0, someHaystack.length)``
+
+* Again, a helper method for the initial call would look something like this
+
+.. code-block:: java
+    :linenos:
+
+    public static <T extends Comparable<? super T>> int recursiveBinarySearch(T needle, T[] haystack) {
+        return recursiveBinarySearch(someNeedle, someHaystack, 0, someHaystack.length);
+    }
 
 
 For next time
