@@ -62,6 +62,50 @@ Nodes
    :align: center
 
 
+
+Relationships
+-------------
+
+* A **parent/predecessor** of a given node is the node directly above in the hierarchy
+    * Each node can have at most one parent, except for the root, which has no parent
+
+* A **child/successor** of a given node is the node directly below in the hierarchy
+    * Each node can have any number of children
+
+* A **sibling** of a given node is a node that has the same parent
+
+* An **ancestor** of a given node is the parent, or the parent's parent, or the parent's parent's parent, or ...
+
+* A **descendant** of a given node is the child, or the child's child, or the child's child's child, or ...
+
+
+.. image:: img/tree_base.png
+   :width: 500 px
+   :align: center
+
+* Questions
+    * Can a leaf node have any children?
+    * Does the root have a parent?
+    * How many parents does each node have?
+
+
+* A **subtree** of a given node is a child node and all descendants
+    * A subtree is itself a tree
+    * A node may have many subtrees
+
+.. image:: img/tree_subtrees.png
+   :width: 500 px
+   :align: center
+
+.. image:: img/tree_subtree_root.png
+   :width: 500 px
+   :align: center
+
+* Questions
+    * What is the root of the subtree labelled *E*?
+    * How many subtrees does this tree have?
+
+
 For next time
 =============
 
