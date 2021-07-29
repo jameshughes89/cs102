@@ -52,6 +52,10 @@ Nodes
     * But, with the definition of the tree we're using, this is still a tree
     * Think empty stack/queue/bag --- they still exist, but they're just empty
 
+.. warning::
+
+    You may come across alternative definitions of trees; however, we are using this definition as it is the most
+    common.
 
 .. image:: img/tree_nodes.png
    :width: 500 px
