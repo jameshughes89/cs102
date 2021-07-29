@@ -64,7 +64,18 @@ Measuring
    :width: 500 px
    :align: center
 
+* The **degree/arity of a given node** is the number of *children* the node has
 
+* The **degree/arity of a tree** is the maximum degree/arity of the tree's nodes
+
+
+.. image:: img/tree_levels.png
+   :width: 500 px
+   :align: center
+
+* Question
+    * What is the degree of this tree?
+    * What is the smallest degree of a node in this tree?
 
 For next time
 =============
