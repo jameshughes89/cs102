@@ -57,7 +57,6 @@ Perperties
     * What is the length of the path between the circled nodes?
     * What is the height of this tree?
     * What is the height of a tree with only a root?
-        * Hint: Look at the definition of path length
     * What is the height of an empty tree?
 
 
