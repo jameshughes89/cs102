@@ -57,5 +57,6 @@ Linked Binary Tree
 For next time
 =============
 
+* Have a look at the :download:`BinaryTree <../main/java/BinaryTree.java>` interface
 * Read Chapter 10 Sections 4 -- 7
     * 34 pages (mostly code though)
