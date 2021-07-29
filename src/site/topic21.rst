@@ -11,7 +11,7 @@ Tree Definition
 
 * A **tree** is a collection of elements such that:
     * It is empty
-    * Or, it has a distinguished element called the *root*, from which descends zero or more trees (subtrees)
+    * Or, it has a special element called the *root*, from which descends zero or more trees (subtrees)
 
 * Notice that this definition is recursive
 
