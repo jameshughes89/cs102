@@ -214,11 +214,10 @@ Recursive
         if (haystack[midpoint].equals(needle)) {
             return midpoint;
         } else if (haystack[midpoint].compareTo(needle) > 0) {
-            highIndex = midpoint - 1;
+            return recursiveBinarySearch(needle, haystack, lowIndex, midpoint - 1);
         } else {
-            lowIndex = midpoint + 1;
+            return recursiveBinarySearch(needle, haystack, midpoint + 1, highIndex);
         }
-        return recursiveBinarySearch(needle, haystack, lowIndex, highIndex);
     }
 
 * If I wanted to call this method, I would start with ``lowIndex`` as ``0`` and ``highIndex`` as ``someHaystack.length``
