@@ -65,9 +65,18 @@ Relationships
     * A subtree is itself a tree
     * A node may have many subtrees
 
-.. image:: img/tree_base.png
+.. image:: img/tree_subtrees.png
    :width: 500 px
    :align: center
+
+.. image:: img/tree_subtree_root.png
+   :width: 500 px
+   :align: center
+
+* Questions
+    * What is the root of the subtree labelled *E*?
+    * How many subtrees does this tree have?
+
 
 For next time
 =============
