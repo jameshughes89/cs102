@@ -55,6 +55,10 @@ Relationships
    :width: 500 px
    :align: center
 
+* Questions
+    * Can a leaf node have any children?
+    * Does the root have a parent?
+    * How many parents does each node have?
 
 
 For next time
