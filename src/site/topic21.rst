@@ -35,7 +35,7 @@ Tree Definition
 
 
 
-Perperties
+Properties
 ----------
 
 * A **path** is the sequence of nodes and edges leading from one node to another
