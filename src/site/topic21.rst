@@ -44,6 +44,18 @@ Measuring
 
 * The **height** of a tree is the length of the longest path from the root to a leaf node
 
+.. image:: img/tree_path.png
+   :width: 500 px
+   :align: center
+
+* Questions
+    * What is the length of the path between the circled nodes?
+    * What is the height of this tree?
+    * What is the height of a tree with only a root?
+        * Hint: Look at the definition of path length
+    * What is the height of an empty tree?
+
+
 
 
 For next time
