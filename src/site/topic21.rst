@@ -20,7 +20,18 @@ Topic #21 --- Trees
 Definitions & Terminology
 =========================
 
+Tree Definition
+---------------
 
+* A **tree** is a collection of elements such that:
+    * It is empty
+    * Or, it has a special element called the *root*, from which descends zero or more trees (subtrees)
+
+* Notice that this definition is recursive
+
+.. image:: img/tree_definition.png
+   :width: 500 px
+   :align: center
 
 
 For next time
