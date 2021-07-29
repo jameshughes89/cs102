@@ -33,6 +33,34 @@ Tree Definition
    :width: 500 px
    :align: center
 
+Nodes
+-----
+
+* A **node** is a single entity in the tree
+
+* An **edge** connects nodes
+
+* The **root node** is a special element that is the origin of the tree
+    * A tree can have one or zero root nodes
+
+* A **leaf node** is a node without an edge to a child node
+    * Child node is discussed in the next subsection
+
+* An **interior node** is *not* a leaf node
+
+* An **empty tree** with no nodes or edges
+    * But, with the definition of the tree we're using, this is still a tree
+    * Think empty stack/queue/bag --- they still exist, but they're just empty
+
+.. warning::
+
+    You may come across alternative definitions of trees; however, we are using this definition as it is the most
+    common.
+
+.. image:: img/tree_nodes.png
+   :width: 500 px
+   :align: center
+
 
 For next time
 =============
