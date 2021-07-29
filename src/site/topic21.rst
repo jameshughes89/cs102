@@ -44,6 +44,10 @@ Nodes
     * A tree can have one or zero root nodes
 
 
+.. image:: img/tree_nodes.png
+   :width: 500 px
+   :align: center
+
 
 For next time
 =============
