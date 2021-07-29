@@ -39,7 +39,9 @@ Relationships
 -------------
 
 
-
+.. image:: img/tree_base.png
+   :width: 500 px
+   :align: center
 
 For next time
 =============
