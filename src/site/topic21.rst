@@ -38,10 +38,24 @@ Tree Definition
 Relationships
 -------------
 
+* A **parent/predecessor** of a given node is the node directly above in the hierarchy
+    * Each node can have at most one parent, except for the root, which has no parent
+
+* A **child/successor** of a given node is the node directly below in the hierarchy
+    * Each node can have between zero and many children
+
+* A **sibling** of a given node is a node that has the same parent
+
+* An **ancestor** of a given node is the parent, or the parent's parent, or the parent's parent's parent, or ...
+
+* A **descendant** of a given node is the child, or the child's child, or the child's child's child, or ...
+
 
 .. image:: img/tree_base.png
    :width: 500 px
    :align: center
+
+
 
 For next time
 =============
