@@ -61,6 +61,14 @@ Relationships
     * How many parents does each node have?
 
 
+* A **subtree** of a given node is a child node and all descendants
+    * A subtree is itself a tree
+    * A node may have many subtrees
+
+.. image:: img/tree_base.png
+   :width: 500 px
+   :align: center
+
 For next time
 =============
 
