@@ -38,6 +38,11 @@ Tree Definition
 Measuring
 ---------
 
+* A **path** is the sequence of nodes and edges leading from one node to another
+
+* The **path length** is the number of *edges* in the path
+
+* The **height** of a tree is the length of the longest path from the root to a leaf node
 
 
 
