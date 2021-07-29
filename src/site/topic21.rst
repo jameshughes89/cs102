@@ -6,6 +6,8 @@ Topic #21 --- Trees
 Definitions & Terminology
 =========================
 
+Tree Definition
+---------------
 
 
 
