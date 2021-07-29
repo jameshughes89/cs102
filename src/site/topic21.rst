@@ -35,8 +35,8 @@ Tree Definition
 
 
 
-Measuring
----------
+Perperties
+----------
 
 * A **path** is the sequence of nodes and edges leading from one node to another
 
