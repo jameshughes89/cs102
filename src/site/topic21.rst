@@ -36,6 +36,14 @@ Tree Definition
 Nodes
 -----
 
+* A **node** is a single entity in the tree
+
+* An **edge** connects nodes
+
+* The **root** node is a special element that is the origin of the tree
+    * A tree can have one or zero root nodes
+
+
 
 For next time
 =============
