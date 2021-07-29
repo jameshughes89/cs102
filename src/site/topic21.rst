@@ -55,6 +55,14 @@ Measuring
         * Hint: Look at the definition of path length
     * What is the height of an empty tree?
 
+* The **level** of a given node is the number of *edges* between the root and the node
+    * Or, if you prefer, here is a recursive definition
+        * The level of the root is ``0``
+        * The level of a node that is not the root is the level of its parent ``+ 1``
+
+.. image:: img/tree_levels.png
+   :width: 500 px
+   :align: center
 
 
 
