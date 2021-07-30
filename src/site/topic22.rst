@@ -24,7 +24,7 @@ Traversals
    :width: 500 px
    :align: center
 
-* With a nonlinear data structure, the order to traverse the nodes in is not immediately obvious
+* With a nonlinear data structure like a binary tree, the order to traverse the nodes in is not immediately obvious
 * We have a few common options to choose from
 
 
