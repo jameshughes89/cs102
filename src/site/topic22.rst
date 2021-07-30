@@ -18,7 +18,14 @@ Traversals
 * Start at one end and go to the other
 * For example, start at the head node and visit each node's next
 
-* We could define other traversal orders if we wanted to, but that would be atypical 
+* We could define other traversal orders if we wanted to, but that would be atypical
+
+.. image:: img/binarytree_example.png
+   :width: 500 px
+   :align: center
+
+* With a nonlinear data structure, the order to traverse the nodes in is not immediately obvious
+* We have a few common options to choose from
 
 
 Pre-order
