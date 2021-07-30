@@ -2,6 +2,10 @@
 Topic #22 --- Binary Trees
 **************************
 
+* A general **tree** is one where each node can have any number of children
+
+* An **n-ary** tree is one where each node has no more than :math:`n` children
+
 
 Binary Tree Definition
 ======================
