@@ -19,6 +19,10 @@ In-order
 -------
 
 
+.. image:: img/binarytree_example.png
+   :width: 500 px
+   :align: center
+
 Post-order
 ---------
 
