@@ -14,6 +14,13 @@ Traversals
    :width: 500 px
    :align: center
 
+* With a simple linear structure, the order in which you traverse the nodes is rather natural
+* Start at one end and go to the other
+* For example, start at the head node and visit each node's next
+
+* We could define other traversal orders if we wanted to, but that would be atypical 
+
+
 Pre-order
 --------
 
