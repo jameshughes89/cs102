@@ -24,6 +24,10 @@ Binary Tree Definition
     * An empty tree
     * Or, a tree that has a root whose left and right subtrees are binary trees
 
+.. admonition::
+
+   Based on this information, what would a *unary* tree be?
+
 
 Traversals
 ==========
