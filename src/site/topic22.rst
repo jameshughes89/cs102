@@ -10,6 +10,9 @@ Binary Tree Definition
 Traversals
 ==========
 
+.. image:: img/links_example1.png
+   :width: 500 px
+   :align: center
 
 Pre-order
 --------
