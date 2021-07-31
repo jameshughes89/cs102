@@ -33,7 +33,7 @@ Pre-order
    :width: 500 px
    :align: center
 
-* With the definition of a pre-order traversal, what order would the nodes be visited?\
+* With the definition of a pre-order traversal, what order would the nodes be visited?
 
     ``A, B, D, H, E, C, F, I, G``
 
