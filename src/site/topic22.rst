@@ -148,6 +148,26 @@ Iterative Pre/In/Post-Order
 Traversal Analysis
 ------------------
 
+.. image:: img/binarytree_example.png
+   :width: 500 px
+   :align: center
+
+* Consider a binary tree with :math:`n` nodes
+* Without getting too deep into analysis territory, if we want to traverse all :math:`n` nodes, what is the computational complexity of
+    * pre-order traversal?
+    * in-order traversal?
+    * post-order traversal?
+    * level-order traversal?
+
+* Intuitively, they're all :math:`O(n)` since we will need to visit each node once and only once
+
+* If I change the question slightly, consider a binary tree with **height** :math:`h`
+    * What is the computational complexity of the traversals?
+
+* :math:`O(2^{h})`
+* Why?
+* Consider the relationship between the height of a binary tree and the number of nodes within the tree  
+
 Interface
 =========
 
