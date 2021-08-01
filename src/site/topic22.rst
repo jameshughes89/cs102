@@ -34,7 +34,7 @@ Iterative Pre/In/Post-Order
 * What do you think would happen if we switched it out for a stack?
 
 * With the recursive pre-/in-/post-order traversals, we used the call stack
-    * We didn't need a software stack, but we could have used one
+    * We didn't need an implementation of a stack data structure, but we could have used one
 
 * How would we change the level-order traversal to do a pre-/in-/post-order traversal?
 
