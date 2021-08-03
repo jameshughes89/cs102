@@ -27,7 +27,7 @@ Level-order
 -----------
 
 * A level-order traversal is a little different when compared to the others
-* The search doesn't work it's way down each breanch of the tree one by one
+* The search doesn't work it's way down each branch of the tree one by one
 * Instead, it traverses the *breadth* of the tree on the way down all branches
 
 * The idea is
