@@ -4,6 +4,8 @@ CS 102: Data Structures --- Java
 
 Your typical computer science 102 class focusing on abstraction.
 
+The course can be found [here](http://modsurski.com/csci162).
+
 # build
 
 ```sh
