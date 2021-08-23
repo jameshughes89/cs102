@@ -268,6 +268,62 @@ Linked Implementation
 Binary Tree Node
 ^^^^^^^^^^^^^^^^
 
+* Until now, our node class has only had a single successor
+* However, there is no rule saying that we can't add more for our needs
+
+.. image:: img/binarytree_binarynode.png
+   :width: 500 px
+   :align: center
+
+* Here, we will have our node contain:
+    * A reference to some element
+    * A reference to a left child
+    * A reference to a right child
+
+
+* We can make this new ``Node`` class a standalone class, but this may cause some confusion between the nodes with one successor and the nodes with two
+* A simple way around this is to make the ``Node`` class a static nested class inside the specific ``BinaryTree`` based implementation
+
+.. code-block:: java
+    :linenos:
+
+    private static class Node<T> {
+
+        private T data;
+        private Node<T> left;
+        private Node<T> right;
+
+        private Node(T data) {
+            this.data = data;
+            this.left = null;
+            this.right = null;
+        }
+
+        private T getData() {
+            return data;
+        }
+
+        private void setData(T data) {
+            this.data = data;
+        }
+
+        private Node<T> getLeft() {
+            return left;
+        }
+
+        private void setLeft(Node<T> left) {
+            this.left = left;
+        }
+
+        private Node<T> getRight() {
+            return right;
+        }
+
+        private void setRight(Node<T> right) {
+            this.right = right;
+        }
+    }
+
 
 Linked Binary Tree
 ^^^^^^^^^^^^^^^^^^
