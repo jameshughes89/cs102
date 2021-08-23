@@ -381,7 +381,7 @@ Fibonacci
     * The function has constant time operations
     * But we see that there are recursive calls, so, how many times does this function get called?
 
-.. image:: img/recursion_recursiveFibonacci.png
+.. image:: img/recursion_fibonacci.png
    :width: 500 px
    :align: center
 
