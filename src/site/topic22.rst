@@ -202,10 +202,50 @@ Traversal Analysis
 
 * :math:`O(2^{h})`
 * Why?
-* Consider the relationship between the height of a binary tree and the number of nodes within the tree  
+* Consider the relationship between the height of a binary tree and the number of nodes within the tree
+
 
 Interface
 =========
+
+* What would we want to do with our binary trees?
+    * Check if an element exists in the tree
+    * Check if the tree is empty
+    * Get the size of the tree (how many elements are in the tree)
+    * Traverse the tree
+    * Add an element
+        * But where?
+    * Remove an element
+        * Which one? From where?
+
+* With add and remove, what we want/what it means will depend on the type of binary tree
+    * Adding/removing something to a stack and queue was more straightforward
+        * Pushing and popping happened at the top of the stack
+        * Enqueuing and dequeueing happen at opposite ends
+
+* Similar to the bag, we know we want to add and remove stuff from our binary tree, but what exactly add and remove means may differ depending on the specific type of binary tree
+
+
+.. code-block:: java
+    :linenos:
+
+    import java.util.Iterator;
+
+    public interface BinaryTree<T> extends Iterable<T> {
+
+        void add(T element);
+        T remove(T element);
+        T getRootElement();
+        boolean contains(T element);
+        boolean isEmpty();
+        int size();
+        Iterator<T> iterator();
+        Iterator<T> preOrderIterator();
+        Iterator<T> inOrderIterator();
+        Iterator<T> postOrderIterator();
+        Iterator<T> levelOrderIterator();
+        String toString();
+    }
 
 
 Implementation
