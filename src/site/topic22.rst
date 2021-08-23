@@ -287,6 +287,59 @@ Linked Binary Tree
 * The idea here is, if the current node exists, the the size of the (sub)tree will be 1 + the size of the left subtree + the size of the right subtree
 * Here we also make use of a public helper method that always starts the recursive method at the root
 
+* What is the computational complexity of ``size()``?
+    * :math:`O(n)`, where :math:`n` is the number of nodes in the tree
+
+
+* If we have an arbitrary binary tree and we want to search it for a specific element
+
+.. code-block:: java
+    :linenos:
+
+    public boolean contains(T element) {
+        return contains(root, element);
+    }
+
+    private boolean contains(Node<T> current, T element) {
+        if (current == null) {
+            return false;
+        } else if (current.getData().equals(element)) {
+            return true;
+        } else {
+            boolean inSubtree = contains(current.getLeft(), element);
+            if(!inSubtree) {
+                inSubtree = contains(current.getRight(), element);
+            }
+            return inSubtree;
+        }
+    }
+
+* The idea with ``contains(T element)`` is, if the current element is what we're looking for, we found it
+    * Otherwise, check the left subtree
+    * If you didn't find it in the left subtree, then check the right subtree
+
+* What is the computational complexity of ``size()``?
+    * :math:`O(n)`, where :math:`n` is the number of nodes in the tree
+    * Although we may not need to search the right subtree, we consider the worst case scenario
+
+
+* Preorder traversal printing out the contents
+
+.. code-block:: java
+    :linenos:
+
+    public void preOrder() {
+        preOrder(root);
+    }
+
+    private void preOrder(Node<T> current) {
+        if (current != null) {
+            System.out.println(current.getData());
+            preOrder(current.getLeft());
+            preOrder(current.getRight());
+        }
+    }
+
 
 For next time
 =============
