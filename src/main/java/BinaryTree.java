@@ -3,6 +3,21 @@ import java.util.Iterator;
 public interface BinaryTree<T> extends Iterable<T> {
 
     /**
+     * Adds a specified element to the binary tree
+     *
+     * @param element Element to be added
+     */
+    void add(T element);
+
+    /**
+     * Removes a specified element from the binary tree
+     *
+     * @param element Element to be removed
+     * @return reference to the element being removed
+     */
+    T remove(T element);
+
+    /**
      * Returns a reference to the element contained in the root of the tree.
      *
      * @return Reference to the root's element
