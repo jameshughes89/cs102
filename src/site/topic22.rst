@@ -204,16 +204,30 @@ Traversal Analysis
 * Why?
 * Consider the relationship between the height of a binary tree and the number of nodes within the tree
 
+
 Interface
 =========
 
 * What would we want to do with our binary trees?
-    * Add an element (but where?)
-    * Remove an element (which one? From where?)
     * Check if an element exists in the tree
     * Check if the tree is empty
     * Get the size of the tree (how many elements are in the tree)
     * Traverse the tree
+    * Add an element
+        * But where?
+    * Remove an element
+        * Which one? From where?
+
+* The trouble with add and remove is, what we want will depend a lot on the type of binary tree
+* Adding/removing something to a stack and queue was more straightforward
+    * Pushing and popping happened at the top of the stack
+    * Enqueuing and dequeueing happen at opposite ends
+
+* When we got to the bag data structure, things got more complex
+    * Adds and removes would work differently depending on which bag we wanted
+
+* Presumably we will want a way to add and remove from the binary tree
+* However, since the *what* is not clear at this point, we will leave add and remove out of the general binary tree interface
 
 
 Implementation
