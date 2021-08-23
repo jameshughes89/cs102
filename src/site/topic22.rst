@@ -253,9 +253,16 @@ Interface
 Implementation
 ==============
 
-
 Linked Implementation
 ---------------------
+
+* Although we will not be implementing a binary tree, it will be inherited from for specific binary tree implementations
+    * For example, a ``BinarySearchTree``
+
+* One way to implement a binary tree is with a collection of linked nodes as our container
+* We will use a size variable to keep track of the number of elements within the tree
+* We will need a reference to keep track of the root node
+    * Like how a reference was used to keep track of the top of a stack
 
 
 Binary Tree Node
