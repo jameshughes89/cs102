@@ -265,6 +265,28 @@ Binary Tree Node
 Linked Binary Tree
 ^^^^^^^^^^^^^^^^^^
 
+* Although there will be no implementation of a general ``BinaryTree``, we can discuss what some specific tree based algorithms
+
+* If we have some arbitrary binary tree and do not know it's size (and it has no size field), how would we count the number of elements?
+
+.. code-block:: java
+    :linenos:
+
+    public int size() {
+        return size(root);
+    }
+
+    private int size(Node<T> current) {
+        if (current == null) {
+            return 0;
+        } else {
+            return 1 + size((current.getLeft())) + size(current.getRight());
+        }
+    }
+
+* The idea here is, if the current node exists, the the size of the (sub)tree will be 1 + the size of the left subtree + the size of the right subtree
+* Here we also make use of a public helper method that always starts the recursive method at the root
+
 
 For next time
 =============
