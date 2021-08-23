@@ -223,7 +223,7 @@ Interface
         * Pushing and popping happened at the top of the stack
         * Enqueuing and dequeueing happen at opposite ends
 
-* Similar to the bag, we know we want to add and remove stuff from our binary tree, but what exactly add and remove means may differ depending on the specific type of binary
+* Similar to the bag, we know we want to add and remove stuff from our binary tree, but what exactly add and remove means may differ depending on the specific type of binary tree
 
 
 .. code-block:: java
