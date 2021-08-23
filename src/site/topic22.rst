@@ -202,10 +202,18 @@ Traversal Analysis
 
 * :math:`O(2^{h})`
 * Why?
-* Consider the relationship between the height of a binary tree and the number of nodes within the tree  
+* Consider the relationship between the height of a binary tree and the number of nodes within the tree
 
 Interface
 =========
+
+* What would we want to do with our binary trees?
+    * Add an element (but where?)
+    * Remove an element (which one? From where?)
+    * Check if an element exists in the tree
+    * Check if the tree is empty
+    * Get the size of the tree (how many elements are in the tree)
+    * Traverse the tree
 
 
 Implementation
