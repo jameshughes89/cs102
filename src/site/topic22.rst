@@ -267,6 +267,8 @@ Linked Binary Tree
 
 * Although there will be no implementation of a general ``BinaryTree``, we can discuss what some specific tree based algorithms
 
+**Size**
+
 * If we have some arbitrary binary tree and do not know it's size (and it has no size field), how would we count the number of elements?
 
 .. code-block:: java
@@ -290,6 +292,7 @@ Linked Binary Tree
 * What is the computational complexity of ``size()``?
     * :math:`O(n)`, where :math:`n` is the number of nodes in the tree
 
+**Contains**
 
 * If we have an arbitrary binary tree and we want to search it for a specific element
 
@@ -323,6 +326,8 @@ Linked Binary Tree
     * Although we may not need to search the right subtree, we consider the worst case scenario
 
 
+**Traversals**
+
 * Preorder traversal printing out the contents
 
 .. code-block:: java
@@ -337,6 +342,26 @@ Linked Binary Tree
             System.out.println(current.getData());
             preOrder(current.getLeft());
             preOrder(current.getRight());
+        }
+    }
+
+
+* An inorder traversal, but instead of printing out the contents, add them to some other collection
+
+.. code-block:: java
+    :linenos:
+
+    public IndexedBag<T> inOrder() {
+        IndexedBag<T> sequence = new ArrayIndexedBag<>();
+        inOrder(root, sequence);
+        return sequence;
+    }
+
+    private void inOrder(Node<T> current, IndexedBag<T> sequence) {
+        if (current != null) {
+            inOrder(current.getLeft(), sequence);
+            sequence.add(current.getData());
+            inOrder(current.getRight(), sequence);
         }
     }
 
