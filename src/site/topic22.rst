@@ -230,6 +230,26 @@ Interface
 * However, since the *what* is not clear at this point, we will leave add and remove out of the general binary tree interface
 
 
+.. code-block:: java
+    :linenos:
+
+    import java.util.Iterator;
+
+    public interface BinaryTree<T> extends Iterable<T> {
+
+        T getRootElement();
+        boolean contains(T element);
+        boolean isEmpty();
+        int size();
+        Iterator<T> iterator();
+        Iterator<T> preOrderIterator();
+        Iterator<T> inOrderIterator();
+        Iterator<T> postOrderIterator();
+        Iterator<T> levelOrderIterator();
+        String toString();
+    }
+
+
 Implementation
 ==============
 
