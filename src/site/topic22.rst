@@ -218,14 +218,12 @@ Interface
     * Remove an element
         * Which one? From where?
 
-
 * With add and remove, what we want/what it means will depend on the type of binary tree
     * Adding/removing something to a stack and queue was more straightforward
         * Pushing and popping happened at the top of the stack
         * Enqueuing and dequeueing happen at opposite ends
 
 * Similar to the bag, we know we want to add and remove stuff from our binary tree, but what exactly add and remove means may differ depending on the specific type of binary tree
-
 
 
 .. code-block:: java
@@ -237,7 +235,6 @@ Interface
 
         void add(T element);
         T remove(T element);
-
         T getRootElement();
         boolean contains(T element);
         boolean isEmpty();
