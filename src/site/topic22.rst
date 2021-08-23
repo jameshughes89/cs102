@@ -218,16 +218,12 @@ Interface
     * Remove an element
         * Which one? From where?
 
-* The trouble with add and remove is, what we want will depend a lot on the type of binary tree
-* Adding/removing something to a stack and queue was more straightforward
-    * Pushing and popping happened at the top of the stack
-    * Enqueuing and dequeueing happen at opposite ends
+* With add and remove, what we want/what it means will depend on the type of binary tree
+    * Adding/removing something to a stack and queue was more straightforward
+        * Pushing and popping happened at the top of the stack
+        * Enqueuing and dequeueing happen at opposite ends
 
-* When we got to the bag data structure, things got more complex
-    * Adds and removes would work differently depending on which bag we wanted
-
-* Presumably we will want a way to add and remove from the binary tree
-* However, since the *what* is not clear at this point, we will leave add and remove out of the general binary tree interface
+* Similar to the bag, we know we want to add and remove stuff from our binary tree, but what exactly add and remove means may differ depending on the specific type of binary tree
 
 
 .. code-block:: java
@@ -237,6 +233,8 @@ Interface
 
     public interface BinaryTree<T> extends Iterable<T> {
 
+        void add(T element);
+        T remove(T element);
         T getRootElement();
         boolean contains(T element);
         boolean isEmpty();
