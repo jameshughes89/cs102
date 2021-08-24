@@ -2,6 +2,12 @@
 Topic #23 --- Binary Search Trees
 *********************************
 
+* Now that we have covered binary trees, we can look at more specific types of binary trees
+    * Namely, the binary *search* tree
+
+* Compared to a binary tree, binary *search* trees have specific properties and constraints that must be followed
+* We can take advantage of these properties and constraints for extra improvements in certain functionality
+
 
 Binary Search Tree Definition
 =============================
