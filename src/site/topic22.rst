@@ -218,16 +218,12 @@ Interface
     * Remove an element
         * Which one? From where?
 
-* The trouble with add and remove is, what we want will depend a lot on the type of binary tree
-* Adding/removing something to a stack and queue was more straightforward
-    * Pushing and popping happened at the top of the stack
-    * Enqueuing and dequeueing happen at opposite ends
+* With add and remove, what we want/what it means will depend on the type of binary tree
+    * Adding/removing something to a stack and queue was more straightforward
+        * Pushing and popping happened at the top of the stack
+        * Enqueuing and dequeueing happen at opposite ends
 
-* When we got to the bag data structure, things got more complex
-    * Adds and removes would work differently depending on which bag we wanted
-
-* Presumably we will want a way to add and remove from the binary tree
-* However, since the *what* is not clear at this point, we will leave add and remove out of the general binary tree interface
+* Similar to the bag, we know we want to add and remove stuff from our binary tree, but what exactly add and remove means may differ depending on the specific type of binary tree
 
 
 .. code-block:: java
@@ -237,6 +233,8 @@ Interface
 
     public interface BinaryTree<T> extends Iterable<T> {
 
+        void add(T element);
+        T remove(T element);
         T getRootElement();
         boolean contains(T element);
         boolean isEmpty();
@@ -253,13 +251,76 @@ Interface
 Implementation
 ==============
 
-
 Linked Implementation
 ---------------------
+
+* Although we will not be implementing a binary tree, it will be inherited from for specific binary tree implementations
+    * For example, a ``BinarySearchTree``
+
+* One way to implement a binary tree is with a collection of linked nodes as our container
+* We will use a size variable to keep track of the number of elements within the tree
+* We will need a reference to keep track of the root node
+    * Like how a reference was used to keep track of the top of a stack
 
 
 Binary Tree Node
 ^^^^^^^^^^^^^^^^
+
+* Until now, our node class has only had a single successor
+* However, there is no rule saying that we can't add more for our needs
+
+.. image:: img/binarytree_binarynode.png
+   :width: 500 px
+   :align: center
+
+* Here, we will have our node contain:
+    * A reference to some element
+    * A reference to a left child
+    * A reference to a right child
+
+
+* We can make this new ``Node`` class a standalone class, but this may cause some confusion between the nodes with one successor and the nodes with two
+* A simple way around this is to make the ``Node`` class a static nested class inside the specific ``BinaryTree`` based implementation
+
+.. code-block:: java
+    :linenos:
+
+    private static class Node<T> {
+
+        private T data;
+        private Node<T> left;
+        private Node<T> right;
+
+        private Node(T data) {
+            this.data = data;
+            this.left = null;
+            this.right = null;
+        }
+
+        private T getData() {
+            return data;
+        }
+
+        private void setData(T data) {
+            this.data = data;
+        }
+
+        private Node<T> getLeft() {
+            return left;
+        }
+
+        private void setLeft(Node<T> left) {
+            this.left = left;
+        }
+
+        private Node<T> getRight() {
+            return right;
+        }
+
+        private void setRight(Node<T> right) {
+            this.right = right;
+        }
+    }
 
 
 Linked Binary Tree
