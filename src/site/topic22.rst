@@ -360,25 +360,25 @@ Linked Binary Tree
 .. code-block:: java
     :linenos:
 
-    public boolean contains(T element) {
-        return contains(root, element);
+    public boolean contains(T needle) {
+        return contains(root, needle);
     }
 
-    private boolean contains(Node<T> current, T element) {
+    private boolean contains(Node<T> current, T needle) {
         if (current == null) {
             return false;
-        } else if (current.getData().equals(element)) {
+        } else if (current.getData().equals(needle)) {
             return true;
         } else {
-            boolean inSubtree = contains(current.getLeft(), element);
+            boolean inSubtree = contains(current.getLeft(), needle);
             if(!inSubtree) {
-                inSubtree = contains(current.getRight(), element);
+                inSubtree = contains(current.getRight(), needle);
             }
             return inSubtree;
         }
     }
 
-* The idea with ``contains(T element)`` is, if the current element is what we're looking for, we found it
+* The idea with ``contains(T needle)`` is, if the current element is what we're looking for, we found it
     * Otherwise, check the left subtree
     * If you didn't find it in the left subtree, then check the right subtree
 
