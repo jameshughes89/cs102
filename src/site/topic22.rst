@@ -328,9 +328,11 @@ Linked Binary Tree
 
 * Although there will be no implementation of a general ``BinaryTree``, we can discuss what some specific tree based algorithms
 
+
 **Size**
 
 * If we have some arbitrary binary tree and do not know it's size (and it has no size field), how would we count the number of elements?
+* If the current node exists, then the size of the (sub)tree will be 1 + the size of the left subtree + the size of the right subtree
 
 .. code-block:: java
     :linenos:
@@ -347,15 +349,20 @@ Linked Binary Tree
         }
     }
 
-* The idea here is, if the current node exists, the the size of the (sub)tree will be 1 + the size of the left subtree + the size of the right subtree
+
 * Here we also make use of a public helper method that always starts the recursive method at the root
 
 * What is the computational complexity of ``size()``?
     * :math:`O(n)`, where :math:`n` is the number of nodes in the tree
 
+
 **Contains**
 
 * If we have an arbitrary binary tree and we want to search it for a specific element
+
+* If the current element is what we're looking for, we found it
+    * Otherwise, check the left subtree
+    * If you didn't find it in the left subtree, then check the right subtree
 
 .. code-block:: java
     :linenos:
@@ -374,9 +381,6 @@ Linked Binary Tree
         }
     }
 
-* The idea with ``contains(T needle)`` is, if the current element is what we're looking for, we found it
-    * Otherwise, check the left subtree
-    * If you didn't find it in the left subtree, then check the right subtree
 
 * Mind the use of the short-circuit or in the above example
 
