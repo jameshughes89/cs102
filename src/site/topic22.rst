@@ -370,17 +370,15 @@ Linked Binary Tree
         } else if (current.getData().equals(needle)) {
             return true;
         } else {
-            boolean inSubtree = contains(current.getLeft(), needle);
-            if(!inSubtree) {
-                inSubtree = contains(current.getRight(), needle);
-            }
-            return inSubtree;
+            return contains(current.getLeft(), needle) || contains(current.getRight(), needle);
         }
     }
 
 * The idea with ``contains(T needle)`` is, if the current element is what we're looking for, we found it
     * Otherwise, check the left subtree
     * If you didn't find it in the left subtree, then check the right subtree
+
+* Mind the use of the short-circuit or in the above example
 
 * What is the computational complexity of ``size()``?
     * :math:`O(n)`, where :math:`n` is the number of nodes in the tree
