@@ -345,7 +345,7 @@ Linked Binary Tree
         if (current == null) {
             return 0;
         } else {
-            return 1 + size((current.getLeft())) + size(current.getRight());
+            return 1 + size(current.getLeft()) + size(current.getRight());
         }
     }
 
