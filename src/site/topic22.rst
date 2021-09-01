@@ -326,6 +326,108 @@ Binary Tree Node
 Linked Binary Tree
 ^^^^^^^^^^^^^^^^^^
 
+* Although there will be no implementation of a general ``BinaryTree``, we can discuss what some specific tree based algorithms
+
+
+**Size**
+
+* If we have some arbitrary binary tree and do not know it's size (and it has no size field), how would we count the number of elements?
+* If the current node exists, then the size of the (sub)tree will be 1 + the size of the left subtree + the size of the right subtree
+
+.. code-block:: java
+    :linenos:
+
+    public int size() {
+        return size(root);
+    }
+
+    private int size(Node<T> current) {
+        if (current == null) {
+            return 0;
+        } else {
+            return 1 + size(current.getLeft()) + size(current.getRight());
+        }
+    }
+
+
+* Here we also make use of a public helper method that always starts the recursive method at the root
+
+* What is the computational complexity of ``size()``?
+    * :math:`O(n)`, where :math:`n` is the number of nodes in the tree
+
+
+**Contains**
+
+* If we have an arbitrary binary tree and we want to search it for a specific element
+
+* If the current element is what we're looking for, we found it
+    * Otherwise, check the left subtree
+    * If you didn't find it in the left subtree, then check the right subtree
+
+.. code-block:: java
+    :linenos:
+
+    public boolean contains(T needle) {
+        return contains(root, needle);
+    }
+
+    private boolean contains(Node<T> current, T needle) {
+        if (current == null) {
+            return false;
+        } else if (current.getData().equals(needle)) {
+            return true;
+        } else {
+            return contains(current.getLeft(), needle) || contains(current.getRight(), needle);
+        }
+    }
+
+
+* Mind the use of the short-circuit or in the above example
+
+* What is the computational complexity of ``size()``?
+    * :math:`O(n)`, where :math:`n` is the number of nodes in the tree
+    * Although we may not need to search the right subtree, we consider the worst case scenario
+
+
+**Traversals**
+
+* Preorder traversal printing out the contents
+
+.. code-block:: java
+    :linenos:
+
+    public void preOrder() {
+        preOrder(root);
+    }
+
+    private void preOrder(Node<T> current) {
+        if (current != null) {
+            System.out.println(current.getData());
+            preOrder(current.getLeft());
+            preOrder(current.getRight());
+        }
+    }
+
+
+* An inorder traversal, but instead of printing out the contents, add them to some other collection
+
+.. code-block:: java
+    :linenos:
+
+    public IndexedBag<T> inOrder() {
+        IndexedBag<T> sequence = new ArrayIndexedBag<>();
+        inOrder(root, sequence);
+        return sequence;
+    }
+
+    private void inOrder(Node<T> current, IndexedBag<T> sequence) {
+        if (current != null) {
+            inOrder(current.getLeft(), sequence);
+            sequence.add(current.getData());
+            inOrder(current.getRight(), sequence);
+        }
+    }
+
 
 For next time
 =============
