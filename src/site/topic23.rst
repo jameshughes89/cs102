@@ -12,6 +12,15 @@ Topic #23 --- Binary Search Trees
 Binary Search Tree Definition
 =============================
 
+* A binary *search* tree is a binary tree where:
+    * All values in the left subtree are less than the value in the root node
+    * All values in the right subtree are greater than or equal to the value in the root node
+        * We can make the right subtree exclusively greater than, but this would disallow duplicates
+
+    .. image:: img/binarysearchtree_noyes.png
+       :width: 500 px
+       :align: center
+
 
 Searching a Binary Search Tree
 ==============================
