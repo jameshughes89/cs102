@@ -21,9 +21,18 @@ Binary Search Tree Definition
        :width: 500 px
        :align: center
 
-
 * In the above example, the tree on the left is **not** a binary search tree since a value in the left subtree of the subtree with root 15 is greater than it (16)
 * The left tree is an example of a binary search tree
+
+    .. image:: img/binarysearchtree_base.png
+       :width: 250 px
+       :align: center
+
+* In the above example, note that the leftmost node is the smallest value in the tree and the rightmost is the largest.
+
+
+
+
 
 Searching a Binary Search Tree
 ==============================
