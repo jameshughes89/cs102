@@ -24,9 +24,9 @@ Binary Search Tree Definition
     Alternatively, we could make the right subtree exclusively greater than, but this would disallow duplicates.
 
 
-    .. image:: img/binarysearchtree_noyes.png
-       :width: 500 px
-       :align: center
+.. image:: img/binarysearchtree_noyes.png
+   :width: 500 px
+   :align: center
 
 * In the above example, the tree on the left is **not** a binary search tree since a value in the left subtree of the subtree with root 15 is greater than it (16)
 * The left tree is an example of a binary search tree
