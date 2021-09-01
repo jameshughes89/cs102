@@ -31,7 +31,17 @@ Binary Search Tree Definition
 * In the above example, note that the leftmost node is the smallest value in the tree and the rightmost is the largest.
 
 
+A Binary Search Tree is a Binary Tree
+-------------------------------------
 
+* A binary search tree is a special case of a binary tree
+    * Therefore, it will have all the operations we would want our binary tree to have
+
+* But we will have a few additional operations
+    * Add, but based on the important ordering
+    * Remove, but must preserve ordering
+    * Remove max
+    * Remove min
 
 
 Searching a Binary Search Tree
