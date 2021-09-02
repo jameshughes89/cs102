@@ -54,6 +54,7 @@ A Binary Search Tree is a Binary Tree
 Searching a Binary Search Tree
 ==============================
 
+* The special ordering property allows us to search for items within the binary search tree more efficiently than a regular search through a tree
 
 Naive Search
 ------------
