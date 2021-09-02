@@ -59,6 +59,26 @@ Searching a Binary Search Tree
 Naive Search
 ------------
 
+* Since the binary search tree is a binary tree, we could use the search presented in the previous topic
+* Remember that this search strategy has a computational complexity of :math:`O(n)`, where :math:`n` is the number of nodes in the tree
+
+.. code-block:: java
+    :linenos:
+
+    public boolean contains(T needle) {
+        return contains(root, needle);
+    }
+
+    private boolean contains(Node<T> current, T needle) {
+        if (current == null) {
+            return false;
+        } else if (current.getData().equals(needle)) {
+            return true;
+        } else {
+            return contains(current.getLeft(), needle) || contains(current.getRight(), needle);
+        }
+    }
+
 
 Binary Search
 -------------
