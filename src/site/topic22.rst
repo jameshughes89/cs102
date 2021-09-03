@@ -28,7 +28,7 @@ Binary Tree Definition
     * An empty tree
     * Or, a tree that has a root whose left and right subtrees are binary trees
 
-.. admonition::
+.. note::
 
    Based on this information, what would a *unary* tree be?
 
@@ -55,7 +55,7 @@ Traversals
 
 
 Pre-order
---------
+---------
 
 * A pre-order traversal is a common order to traverse a binary tree
 * The general idea is
@@ -82,7 +82,7 @@ Pre-order
 
 
 In-order
--------
+--------
 
 * An in-order traversal is another common traversal
 * The general idea is
@@ -109,7 +109,7 @@ In-order
 
 
 Post-order
----------
+----------
 
 * Take a wild guess at what this one will be
 

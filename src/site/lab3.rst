@@ -28,6 +28,7 @@ Writing Tests
 -------------
 
 **Tips**
+
 * Make your test method names as descriptive as possible while still being brief
 * Follow some convention for your method names, something like ``methodConditionExpected()``
     * ``sizeOfEmptyCourseListReturnsZero()``

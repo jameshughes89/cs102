@@ -1,5 +1,6 @@
 # All built stuff
 out/*
+_build/
 
 # Log file
 *.log
@@ -17,9 +18,10 @@ out/*
 src/main/java/asn1/solution/
 
 
-# IntelliJ stuff
+# IDE stuff
 .idea
 *.iml
+.vscode
 
 # Build script
 build.sh

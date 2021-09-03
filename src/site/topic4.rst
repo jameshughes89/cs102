@@ -161,7 +161,7 @@ Data Structures
     * We used an array to keep track of the ``Friend`` objects
     * Do a linear search through the array to find a specific ``Friend``
 
-* A large focus in this class will be both the *what* and the *how and how to keep them separate
+* A large focus in this class will be both the *what* and the *how* and how to keep them separate
     * The interface and the implementation
 
 .. warning::

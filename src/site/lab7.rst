@@ -15,7 +15,7 @@ Lab #7
 Making a Linked Sorted Bag
 ==========================
 
-We discussed the :doc:`ArraySortedBag implementation<../main/java/Node.java>`, now you will build a linked version.
+We discussed the :download:`ArraySortedBag implementation<../main/java/ArraySortedBag.java>`, now you will build a linked version.
 
 1. Create a project and make a class where you will put your main method
     * Perhaps call it ``Lab7``

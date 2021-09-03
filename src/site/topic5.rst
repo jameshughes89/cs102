@@ -228,7 +228,7 @@ There has to be a Better Way!
 
 .. warning::
 
-    We do not actually need to include the ``<Type>`` on the instantiation side. From now on, for simplicity, I will use the *diamond operator*(``<>``) like so:
+    We do not actually need to include the ``<Type>`` on the instantiation side. From now on, for simplicity, I will use the *diamond operator* (``<>``) like so:
 
         .. code-block:: java
             :linenos:
