@@ -25,7 +25,7 @@ Topic #18 --- Memory & The Call Stack
 Memory Allocation
 =================
 
-* Memory is broken down into two broad sections
+Memory is broken down into two broad sections:
 
 1. The Stack
     * Stores information about the current method running

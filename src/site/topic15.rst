@@ -78,7 +78,8 @@ ArrayIndexedBag
         }
 
 
-* There are a couple things to note so far
+There are a couple things to note so far:
+
 1. We are importing something called ``Iterator``
     * Iterators are used for *iterating* over a collection
     * More on this later
