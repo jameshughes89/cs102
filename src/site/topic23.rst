@@ -112,7 +112,9 @@ Binary Search
         }
     }
 
-* Notice the similarity between
+* Notice the similarity between the naive search and the binary search
+* They are nearly the same, except you will notice that, the naive search may search both subtrees
+* However, binary search will only ever travel down one subtree due to the ``if (current.getData().compareTo(needle) > 0) `` statement
 
 
 
