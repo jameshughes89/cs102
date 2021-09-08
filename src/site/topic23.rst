@@ -91,7 +91,26 @@ Binary Search
 * Based on the special ordering binary search trees have, can you devise an improved search?
     * **Hint:** If I am looking for a number greater than 14, which subtree must the element be in if it exists in the tree?
 
+.. code-block:: java
+    :linenos:
 
+    public boolean contains(T needle) {
+        return binarySearch(root, needle) != null;
+    }
+
+    private boolean binarySearch(Node<T> current, T needle) {
+        if (current == null) {
+            return false;
+        } else if (current.getData().equals(needle)) {
+            return true;
+        } else {
+            if (current.getData().compareTo(needle) > 0) {
+                return binarySearch(current.getLeft(), needle);
+            } else {
+                return binarySearch(current.getRight(), needle);
+            }
+        }
+    }
 
 
 
