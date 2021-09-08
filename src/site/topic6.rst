@@ -200,12 +200,12 @@ Pop and Peek
 * What should we do when someone tries to ``pop`` or ``peek`` from an empty stack?
     * Ignore and do nothing?
     * Crash the program?
-    * ...
+    * Something else?
 
 * Hard to say
 * What should be done is not up to us as the people implementing the stack
 
-* As a rule, you should follow `the principal of least surprise<https://en.wikipedia.org/wiki/Principle_of_least_astonishment>`_
+* As a rule, you should follow `the principal of least surprise <https://en.wikipedia.org/wiki/Principle_of_least_astonishment>`_
 * Should we expect to get nothing back when requesting the top?
 * Perhaps it's more reasonable that the request was invalid in the first place
 
