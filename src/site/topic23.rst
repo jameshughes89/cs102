@@ -116,6 +116,27 @@ Binary Search
 * They are nearly the same, except you will notice that, the naive search may search both subtrees
 * However, binary search will only ever travel down one subtree due to the ``if (current.getData().compareTo(needle) > 0) `` statement
 
+.. image:: img/binarysearchtree_binarysearch1.png
+   :width: 250 px
+   :align: center
+
+* In the above example, if we search for the number 13, we can conclude that it must not exist in the tree since
+    * 13 is less than 14, so it must be in the left subtree of the node containing 14
+    * 13 is greater than 8, thus it must be in the right subtree
+    * 13 is greater than 12, therefore it must be in the right subtree
+    * 12 has no right subtree, therefore 13 must **not** be in the tree
+
+
+.. image:: img/binarysearchtree_binarysearch2.png
+   :width: 250 px
+   :align: center
+
+* In the above example here, if we are searching for the number 22, we can conclude that it must not be in the tree since
+    * 22 is greater than 14, so go right
+    * 22 is less than 26, go left
+    * 22 is greater than 19, so go right
+    * 22 is less than 23, so go left
+    * 23 has no left subtree, therefore 22 must **not** be in the tree
 
 
 Binary Search Tree Operations
