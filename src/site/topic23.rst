@@ -83,6 +83,17 @@ Naive Search
 Binary Search
 -------------
 
+.. image:: img/binarysearchtree_binarysearch0.png
+   :width: 250 px
+   :align: center
+
+* Consider the above binary search tree
+* Based on the special ordering binary search trees have, can you devise an improved search?
+    * **Hint:** If I am looking for a number greater than 14, which subtree must the element be in if it exists in the tree?
+
+
+
+
 
 Binary Search Tree Operations
 =============================
