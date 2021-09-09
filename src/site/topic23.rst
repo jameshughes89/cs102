@@ -164,6 +164,13 @@ Add
 * Insert the element where the child does not exist
 * New nodes will be added as a leaf
 
+* **ADD**
+    * If the root of the (sub)tree is empty
+        * Insert new node here with the data
+    * If (sub)tree is not empty
+        * If the data is less than the root of the (sub)tree, call **add** on left subtree
+        * If the data is greater than or equal to the root of the (sub)tree, call **add** on right subtree
+
 
 
 Min & Remove Min
