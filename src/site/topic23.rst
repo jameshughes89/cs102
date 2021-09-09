@@ -55,6 +55,8 @@ Searching a Binary Search Tree
 ==============================
 
 * The special ordering property allows us to search for items within the binary search tree more efficiently than a regular search through a tree
+* For this section, we will assume we are using a linked implementation of a binary search tree
+    * More on this below
 
 Naive Search
 ------------
