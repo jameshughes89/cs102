@@ -87,6 +87,36 @@ Binary Search
 Binary Search Tree Operations
 =============================
 
+* Like most collections we've seen so far, we will want to be able to get the number of elements in it, check if it's empty, and get iterators
+    * By this stage these should be simple
+
+* We'll want to add and remove elements too, but this is where the complexity comes in
+
+
+Add
+---
+
+
+Min & Remove Min
+----------------
+
+
+Max & Remove Max
+----------------
+
+
+General Remove
+--------------
+
+
+Contains
+--------
+
+
+Counting the number of a given element
+--------------------------------------
+
+
 
 Linked Binary Search Tree
 =========================
