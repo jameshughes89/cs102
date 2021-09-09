@@ -171,6 +171,13 @@ Add
         * If the data is less than the root of the (sub)tree, call **add** on left subtree
         * If the data is greater than or equal to the root of the (sub)tree, call **add** on right subtree
 
+* Given the above pseudocode, consider adding 13 to the binary search tree
+
+.. image:: img/binarysearchtree_add0.png
+   :width: 250 px
+   :align: center
+
+
 
 
 Min & Remove Min
