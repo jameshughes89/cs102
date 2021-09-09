@@ -177,6 +177,11 @@ Add
    :width: 250 px
    :align: center
 
+* Starting with an empty tree, follow the pseudocode to add the following 6 elements
+
+.. image:: img/binarysearchtree_add1.png
+   :width: 250 px
+   :align: center
 
 
 
