@@ -99,5 +99,7 @@ Degenerate vs. Balanced
 For next time
 =============
 
+* Have a look at the :download:`BinarySearchTree <../main/java/BinarySearchTree.java>` interface
+* Have a look at the :download:`LinkedBinarySearchTree <../main/java/LinkedBinarySearchTree.java>` implementation
 * Read Chapter 11 Sections 1 -- 3
     * 17 pages
