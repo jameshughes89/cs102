@@ -155,6 +155,16 @@ Binary Search Tree Operations
 Add
 ---
 
+* Adding is going to be similar to a binary search
+* We do a binary search until there is no child
+    * Assuming we allow duplicates
+    * And elements we want to add that are equal to a given node go to the right subtree
+    * If we ever find an element that is equal, we continue the search in the right subtree
+
+* Insert the element where the child does not exist
+* New nodes will be added as a leaf
+
+
 
 Min & Remove Min
 ----------------
