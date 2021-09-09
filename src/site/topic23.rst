@@ -83,6 +83,65 @@ Naive Search
 Binary Search
 -------------
 
+.. image:: img/binarysearchtree_binarysearch0.png
+   :width: 250 px
+   :align: center
+
+* Consider the above binary search tree
+* Based on the special ordering binary search trees have, can you devise an improved search?
+    * **Hint:** If I am looking for a number greater than 14, which subtree must the element be in if it exists in the tree?
+
+.. code-block:: java
+    :linenos:
+
+    public boolean contains(T needle) {
+        return binarySearch(root, needle) != null;
+    }
+
+    private boolean binaryContains(Node<T> current, T needle) {
+        if (current == null) {
+            return false;
+        } else if (current.getData().equals(needle)) {
+            return true;
+        } else {
+            if (current.getData().compareTo(needle) > 0) {
+                return binarySearch(current.getLeft(), needle);
+            } else {
+                return binarySearch(current.getRight(), needle);
+            }
+        }
+    }
+
+* Notice the similarity between the naive search and the binary search
+* They are nearly the same, except you will notice that, the naive search may search both subtrees
+* However, binary search will only ever travel down one subtree due to the ``if (current.getData().compareTo(needle) > 0) `` statement
+
+.. image:: img/binarysearchtree_binarysearch1.png
+   :width: 250 px
+   :align: center
+
+* In the above example, if we search for the number 12, we can conclude that it exist in the tree since
+    * 12 is less than 14, so it must be in the left subtree of the node containing 14
+    * 12 is greater than 8, thus it must be in the right subtree
+    * 12 is equal to 12, therefore we conclude that we found it
+
+* If, however, we search for the number 13, we can conclude that it must not exist in the tree since
+    * 13 is less than 14, so it must be in the left subtree of the node containing 14
+    * 13 is greater than 8, thus it must be in the right subtree
+    * 13 is greater than 12, therefore it must be in the right subtree
+    * 12 has no right subtree, therefore 13 must **not** be in the tree
+
+.. image:: img/binarysearchtree_binarysearch2.png
+   :width: 250 px
+   :align: center
+
+* In the above example here, if we are searching for the number 22, we can conclude that it must not be in the tree since
+    * 22 is greater than 14, so go right
+    * 22 is less than 26, go left
+    * 22 is greater than 19, so go right
+    * 22 is less than 23, so go left
+    * 23 has no left subtree, therefore 22 must **not** be in the tree
+
 
 Binary Search Tree Operations
 =============================
