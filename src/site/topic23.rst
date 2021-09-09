@@ -120,12 +120,16 @@ Binary Search
    :width: 250 px
    :align: center
 
-* In the above example, if we search for the number 13, we can conclude that it must not exist in the tree since
+* In the above example, if we search for the number 12, we can conclude that it exist in the tree since
+    * 12 is less than 14, so it must be in the left subtree of the node containing 14
+    * 12 is greater than 8, thus it must be in the right subtree
+    * 12 is equal to 12, therefore we conclude that we found it
+
+* If, however, we search for the number 13, we can conclude that it must not exist in the tree since
     * 13 is less than 14, so it must be in the left subtree of the node containing 14
     * 13 is greater than 8, thus it must be in the right subtree
     * 13 is greater than 12, therefore it must be in the right subtree
     * 12 has no right subtree, therefore 13 must **not** be in the tree
-
 
 .. image:: img/binarysearchtree_binarysearch2.png
    :width: 250 px
