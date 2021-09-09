@@ -113,7 +113,7 @@ Contains
 --------
 
 
-Counting the number of a given element
+Counting the Number of a Given Element
 --------------------------------------
 
 
