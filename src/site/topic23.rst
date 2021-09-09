@@ -164,7 +164,7 @@ Add
 * Insert the element where the child does not exist
 * New nodes will be added as a leaf
 
-* **ADD**
+* **In English, add would look something like this**
     * If the root of the (sub)tree is empty
         * Insert new node here with the data
     * If (sub)tree is not empty
