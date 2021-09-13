@@ -213,6 +213,21 @@ Min & Remove Min
    :width: 250 px
    :align: center
 
+* If we have case 1, where the minimum value is in the root node, this means that
+    * There is no left subtree
+    * There *may* be a right subtree
+    * Therefore, we simply make the root of the right subtree (which may be null) the new root
+
+* If we have case 2, where the minimum is a leaf node, this means that
+    * We have no children to deal with
+    * Therefore, just remove the node
+
+* If we have case 3, where the minimum is an interior node, this means that
+    * The node has no left subtree --- otherwise the node would not contain the minimum value since the minimum **must** be the leftmost node
+    * A right subtree exists
+    * Therefore, remove the node and make the node's right subtree's root replace it
+        * The node being removed's parent's left child will become the node being removed's right child
+
 
 Max & Remove Max
 ----------------
