@@ -189,6 +189,12 @@ Add
 Min & Remove Min
 ----------------
 
+* Given the nature of the binary search tree ordering, the node with the minimum element **must** be in the leftmost node in the tree
+* There are three cases we'll have to take care of when looking for the minimum node
+    1. The leftmost node is a leaf node
+    2. The leftmost node is an interior node
+    3. The leftmost node is the root
+
 
 Max & Remove Max
 ----------------
