@@ -195,6 +195,11 @@ Min & Remove Min
     2. The leftmost node is an interior node
     3. The leftmost node is the root
 
+* Finding the minimum is simple
+    * Assuming a root node exists, keep going to the left subtree until there is no more left subtree
+
+* Removing will be a little trickier since we may be removing something that has children that must remain in the tree
+
 
 Max & Remove Max
 ----------------
