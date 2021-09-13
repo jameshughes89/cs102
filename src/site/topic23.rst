@@ -193,12 +193,25 @@ Min & Remove Min
 * There are three cases we'll have to take care of when looking for the minimum node
     1. The leftmost node is the root (root has no left child)
     2. The leftmost is a leaf node (no children)
-    3. The leftmost node is an interior node 
+    3. The leftmost node is an interior node
 
 * Finding the minimum is simple
     * Assuming a root node exists, keep going to the left subtree until there is no more left subtree
 
 * Removing will be a little trickier since we may be removing something that has children that must remain in the tree
+* Consider the following examples and think of how one would need to manage potential children of a node being removed
+
+.. image:: img/binarysearchtree_remove0.png
+   :width: 250 px
+   :align: center
+
+.. image:: img/binarysearchtree_remove1.png
+   :width: 250 px
+   :align: center
+
+.. image:: img/binarysearchtree_remove2.png
+   :width: 250 px
+   :align: center
 
 
 Max & Remove Max
