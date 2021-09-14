@@ -225,9 +225,8 @@ Min & Remove Min
 * The ordering is preserved since
     * Nothing is to the left of the root
     * Everything to the right of the root is larger than the value in the root
-    * Everything to the right of the right subtree's root must be larger than the right subtree's root
-    * Everything to the left of the right subtree's root must be less than the right subtree's root
-    * Therefore, if all subtrees start with the proper ordering, if the right subtree becomes the new root, the binary search tree's order will be maintained
+    * The right subtree is a binary search tree (by definition)
+    * Therefore, if the right subtree becomes the new root, the binary search tree's order will be maintained
 
 
 **Case 2**
@@ -250,9 +249,8 @@ Min & Remove Min
 * The ordering is preserved in the same way as case 1
     * Nothing is to the left of the node
     * Everything to the right of the node to be removed is larger than the value in the node
-    * Everything to the right of the node's right subtree's root must be larger than the right subtree's root
-    * Everything to the left of the right subtree's root must be less than the right subtree's root
-    * Therefore, if all subtrees start with the proper ordering, if the right subtree replaces the node being removed, the binary search tree's order will be maintained
+    * The right subtree is a binary search tree (by definition)
+    * Therefore, if the right subtree replaces the node being removed, the binary search tree's order will be maintained
 
 
 **All the Cases are the Same?**
