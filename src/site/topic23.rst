@@ -203,15 +203,15 @@ Min & Remove Min
 
 * Consider the following examples and think of how one would need to manage potential children of a node being removed
 
-.. image:: img/binarysearchtree_remove0.png
+.. image:: img/binarysearchtree_removemin0.png
    :width: 500 px
    :align: center
 
-.. image:: img/binarysearchtree_remove1.png
+.. image:: img/binarysearchtree_removemin1.png
    :width: 500 px
    :align: center
 
-.. image:: img/binarysearchtree_remove2.png
+.. image:: img/binarysearchtree_removemin2.png
    :width: 500 px
    :align: center
 
