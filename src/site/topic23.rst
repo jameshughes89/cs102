@@ -266,6 +266,13 @@ Min & Remove Min
 Max & Remove Max
 ----------------
 
+* Finding and/or removing the maximum value will be very similar to finding and/or removing the minimum
+* Instead of always going to the left subtree, we go to the right to find the maximum
+* We still have the three cases, but like with minimum, they can all be addressed in the same way
+    * Replace the node with the left subtree
+
+* Here, we still keep the children (if they exist) and preserve the binary search tree ordering
+
 
 General Remove
 --------------
