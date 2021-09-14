@@ -205,15 +205,15 @@ Min & Remove Min
     * For this example, assume duplicate values will go to the right
 
 .. image:: img/binarysearchtree_remove0.png
-   :width: 250 px
+   :width: 500 px
    :align: center
 
 .. image:: img/binarysearchtree_remove1.png
-   :width: 250 px
+   :width: 500 px
    :align: center
 
 .. image:: img/binarysearchtree_remove2.png
-   :width: 250 px
+   :width: 500 px
    :align: center
 
 * If we have case 1, where the minimum value is in the root node, this means that
