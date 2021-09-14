@@ -195,12 +195,10 @@ Max & Remove Max
 
 * Finding and/or removing the maximum value will be very similar to finding and/or removing the minimum
 * Instead of always going to the left subtree, we go to the right to find the maximum
-* We still have the three cases, but
-    * Case 1, the root contains the maximum value, so the left subtree, if it exists, becomes the new root
-    * Case 2, the maximum value is in a leaf node, which can simply just be removed
-    * Case 3, the maximum value is an interior node, so we take the node to be removed's left subtree to replace the node being removed
+* We still have the three cases, but like with minimum, they can all be addressed in the same way
+    * Replace the node with the left subtree
 
-* Here, we still keep the children and preserve the binary search tree ordering
+* Here, we still keep the children (if they exist) and preserve the binary search tree ordering
 
 
 General Remove
