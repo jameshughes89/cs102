@@ -256,6 +256,16 @@ Min & Remove Min
     * Therefore, if all subtrees start with the proper ordering, if the right subtree replaces the node being removed, the binary search tree's order will be maintained
 
 
+**All the Cases are the Same?**
+
+* You may have noticed that the rules for each case are actually the same
+* Replace the node with the right subtree
+* This is perhaps more obvious for cases 1 and 3, however, if one considers that a leaf node's right subtree is ``null``, all three cases can follow the same strategy
+    * For all we know, if we have case 1, the right subtree may in fact be ``null``
+    * Either way, replacing the node with the right subtree works
+
+
+
 Max & Remove Max
 ----------------
 
