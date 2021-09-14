@@ -216,31 +216,39 @@ Min & Remove Min
    :width: 500 px
    :align: center
 
-* If we have case 1, where the minimum value is in the root node, this means that
+**Case 1**
+
+* The minimum value is in the root node, this means that
     * There is no left subtree
     * There *may* be a right subtree
     * Therefore, we simply make the root of the right subtree (which may be null) the new root
 
-* For case 1, the ordering is preserved since
+* The ordering is preserved since
     * Nothing is to the left of the root
     * Everything to the right of the root is larger than (or equal to) the value in the root
     * Everything to the right of the right subtree's root must be larger than (or equal to) the right subtree's root
     * Everything to the left of the right subtree's root must be less than the right subtree's root
     * Therefore, if all subtrees start with the proper ordering, if the right subtree becomes the new root, the binary search tree's order will be maintained
 
-* If we have case 2, where the minimum is a leaf node, this means that
+
+**Case 2**
+
+* The minimum is a leaf node, this means that
     * We have no children to deal with
     * Therefore, just remove the node
 
-* For case 2, by eliminating only a leaf node, the ordering will not be affected
+* By eliminating only a leaf node, the ordering will not be affected
 
-* If we have case 3, where the minimum is an interior node, this means that
+
+**Case 3**
+
+* The minimum is an interior node, this means that
     * The node has no left subtree --- otherwise the node would not contain the minimum value since the minimum **must** be the leftmost node
     * A right subtree exists
     * Therefore, remove the node and make the node's right subtree's root replace it
         * The node being removed's parent's left child will become the node being removed's right child
 
-* For case 3, the ordering is preserved in the same way as case 1
+* The ordering is preserved in the same way as case 1
     * Nothing is to the left of the node
     * Everything to the right of the node to be removed is larger than (or equal to) the value in the node
     * Everything to the right of the node's right subtree's root must be larger than (or equal to) the right subtree's root
