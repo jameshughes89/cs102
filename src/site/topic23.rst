@@ -189,6 +189,79 @@ Add
 Min & Remove Min
 ----------------
 
+* Given the nature of the binary search tree ordering, the node with the minimum element **must** be in the leftmost node in the tree
+* There are three cases we'll have to take care of when looking for the minimum node
+    1. The leftmost node is the root (root has no left child)
+    2. The leftmost is a leaf node (no children)
+    3. The leftmost node is an interior node
+
+* Finding the minimum is simple
+    * Assuming a root node exists, keep going to the left subtree until there is no more left subtree
+
+* Removing will be a little trickier since we may be removing something that has children that must remain in the tree
+* And further, not only must the children stay in the tree, but the proper binary search tree ordering **must** be preserved
+
+* Consider the following examples and think of how one would need to manage potential children of a node being removed
+
+.. image:: img/binarysearchtree_remove0.png
+   :width: 500 px
+   :align: center
+
+.. image:: img/binarysearchtree_remove1.png
+   :width: 500 px
+   :align: center
+
+.. image:: img/binarysearchtree_remove2.png
+   :width: 500 px
+   :align: center
+
+**Case 1**
+
+* The minimum value is in the root node, this means that
+    * There is no left subtree
+    * There *may* be a right subtree
+    * Therefore, we simply make the root of the right subtree (which may be null) the new root
+
+* The ordering is preserved since
+    * Nothing is to the left of the root
+    * Everything to the right of the root is larger than the value in the root
+    * The right subtree is a binary search tree (by definition)
+    * Therefore, if the right subtree becomes the new root, the binary search tree's order will be maintained
+
+
+**Case 2**
+
+* The minimum is a leaf node, this means that
+    * We have no children to deal with
+    * Therefore, just remove the node
+
+* By eliminating only a leaf node, the ordering will not be affected
+
+
+**Case 3**
+
+* The minimum is an interior node, this means that
+    * The node has no left subtree --- otherwise the node would not contain the minimum value since the minimum **must** be the leftmost node
+    * A right subtree exists
+    * Therefore, remove the node and make the node's right subtree's root replace it
+        * The node being removed's parent's left child will become the node being removed's right child
+
+* The ordering is preserved in the same way as case 1
+    * Nothing is to the left of the node
+    * Everything to the right of the node to be removed is larger than the value in the node
+    * The right subtree is a binary search tree (by definition)
+    * Therefore, if the right subtree replaces the node being removed, the binary search tree's order will be maintained
+
+
+**All the Cases are the Same?**
+
+* You may have noticed that the rules for each case are actually the same
+* Replace the node with the right subtree
+* This is perhaps more obvious for cases 1 and 3, however, if one considers that a leaf node's right subtree is ``null``, all three cases can follow the same strategy
+    * For all we know, if we have case 1, the right subtree may in fact be ``null``
+    * Either way, replacing the node with the right subtree works
+
+
 
 Max & Remove Max
 ----------------
