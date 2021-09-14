@@ -199,6 +199,8 @@ Min & Remove Min
     * Assuming a root node exists, keep going to the left subtree until there is no more left subtree
 
 * Removing will be a little trickier since we may be removing something that has children that must remain in the tree
+* And further, not only must the children stay in the tree, but the proper binary search tree ordering **must** be preserved
+
 * Consider the following examples and think of how one would need to manage potential children of a node being removed
 
 .. image:: img/binarysearchtree_remove0.png
