@@ -214,6 +214,9 @@ Linked Binary Search Tree
 Degenerate vs. Balanced
 =======================
 
+* A *balanced* tree has the property that for any node in the tree, the height of its left and right subtrees can differ by **at most** 1
+    * Remember, the height of an empty tree is
+
 
 For next time
 =============
