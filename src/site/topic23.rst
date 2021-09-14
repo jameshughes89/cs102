@@ -232,7 +232,7 @@ Min & Remove Min
     * We have no children to deal with
     * Therefore, just remove the node
 
-* For case 1, by eliminating only a leaf node, the ordering will not be affected
+* For case 2, by eliminating only a leaf node, the ordering will not be affected
 
 * If we have case 3, where the minimum is an interior node, this means that
     * The node has no left subtree --- otherwise the node would not contain the minimum value since the minimum **must** be the leftmost node
