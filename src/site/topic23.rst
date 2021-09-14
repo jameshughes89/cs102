@@ -202,7 +202,6 @@ Min & Remove Min
 * And further, not only must the children stay in the tree, but the proper binary search tree ordering **must** be preserved
 
 * Consider the following examples and think of how one would need to manage potential children of a node being removed
-    * For this example, assume duplicate values will go to the right
 
 .. image:: img/binarysearchtree_remove0.png
    :width: 500 px
@@ -225,8 +224,8 @@ Min & Remove Min
 
 * The ordering is preserved since
     * Nothing is to the left of the root
-    * Everything to the right of the root is larger than (or equal to) the value in the root
-    * Everything to the right of the right subtree's root must be larger than (or equal to) the right subtree's root
+    * Everything to the right of the root is larger than the value in the root
+    * Everything to the right of the right subtree's root must be larger than the right subtree's root
     * Everything to the left of the right subtree's root must be less than the right subtree's root
     * Therefore, if all subtrees start with the proper ordering, if the right subtree becomes the new root, the binary search tree's order will be maintained
 
@@ -250,8 +249,8 @@ Min & Remove Min
 
 * The ordering is preserved in the same way as case 1
     * Nothing is to the left of the node
-    * Everything to the right of the node to be removed is larger than (or equal to) the value in the node
-    * Everything to the right of the node's right subtree's root must be larger than (or equal to) the right subtree's root
+    * Everything to the right of the node to be removed is larger than the value in the node
+    * Everything to the right of the node's right subtree's root must be larger than the right subtree's root
     * Everything to the left of the right subtree's root must be less than the right subtree's root
     * Therefore, if all subtrees start with the proper ordering, if the right subtree replaces the node being removed, the binary search tree's order will be maintained
 
