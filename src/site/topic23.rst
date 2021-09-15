@@ -237,6 +237,15 @@ Degenerate vs. Balanced
 * This particular case is called a *degenerate* binary tree
     * It's effectively a linear data structure, not a tree
 
+* If we have a balanced binary search tree, every time we decide to go to the left or right subtree, we eliminate roughly half the elements from the search
+    * This is what gives us the :math:`O(log(n))` search
+
+* If we have a degenerate tree, where it's basically a linear data structure, we would have to search through all :math:`n` elements,
+    * Thus, the search through a degenerate tree would be :math:`O(n)`
+
+* Fortunately there exist strategies for keeping our trees balanced, but these are outside the scope of this course
+    * Two popular examples are *AVL Trees* and *Red-Black Trees*
+
 
 For next time
 =============
