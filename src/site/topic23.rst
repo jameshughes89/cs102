@@ -227,12 +227,15 @@ Degenerate vs. Balanced
 
 * The balanced property is important since it's part of the reason the binary search tree is efficient to search
 
-* Consider adding the numbers ``3, 5, 9, 12, 18, 20`` in that order
+* Consider adding the numbers ``3, 5, 9, 12, 18, 20`` in that order to an empty binary search tree
 
 .. image:: img/binarysearchtree_degenerate_gif.gif
    :width: 500 px
    :align: center
 
+* This is an example we see an extreme case of imbalance
+* This particular case is called a *degenerate* binary tree
+    * It's effectively a linear data structure, not a tree
 
 
 For next time
