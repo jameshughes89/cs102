@@ -294,6 +294,38 @@ Linked Binary Search Tree
 Degenerate vs. Balanced
 =======================
 
+* A *balanced* tree has the property that for any node in the tree, the height of its left and right subtrees can differ by **at most** 1
+    * Remember, the height of an empty tree is 0
+
+.. image:: img/binarysearchtree_balance.png
+   :width: 500 px
+   :align: center
+
+* In the above example, the left tree is balanced since all subtrees in the tree differ in height by no more than 1
+* The right tree is *not* balanced since the root's left subtree has height 0 and the right subtree has height 2
+    * Difference of 2
+
+* The balanced property is important since it's part of the reason the binary search tree is efficient to search
+
+* Consider adding the numbers ``3, 5, 9, 12, 18, 20`` in that order to an empty binary search tree
+
+.. image:: img/binarysearchtree_degenerate_gif.gif
+   :width: 500 px
+   :align: center
+
+* This is an example we see an extreme case of imbalance
+* This particular case is called a *degenerate* binary tree
+    * It's effectively a linear data structure, not a tree
+
+* If we have a balanced binary search tree, every time we decide to go to the left or right subtree, we eliminate roughly half the elements from the search
+    * This is what gives us the :math:`O(log(n))` search
+
+* If we have a degenerate tree, where it's basically a linear data structure, we would have to search through all :math:`n` elements,
+    * Thus, the search through a degenerate tree would be :math:`O(n)`
+
+* Fortunately there exist strategies for keeping our trees balanced, but these are outside the scope of this course
+    * Two popular examples are *AVL Trees* and *Red-Black Trees*
+
 
 For next time
 =============
