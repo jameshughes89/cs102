@@ -225,6 +225,14 @@ Degenerate vs. Balanced
 * The right tree is *not* balanced since the root's left subtree has height -1 and the right subtree has height 1
     * Difference of 2
 
+* The balanced property is important since it's part of the reason the binary search tree is efficient to search
+
+* Consider adding the numbers ``3, 5, 9, 12, 18, 20`` in that order
+
+.. image:: img/binarysearchtree_degenerate_gif.gif
+   :width: 500 px
+   :align: center
+
 
 
 For next time
