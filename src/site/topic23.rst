@@ -277,6 +277,8 @@ Max & Remove Max
 General Remove
 --------------
 
+* A general remove is a little more complex than the remove min or max
+
 
 Contains
 --------
