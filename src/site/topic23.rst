@@ -283,6 +283,10 @@ General Remove
    :width: 500 px
    :align: center
 
+* In the above example, there may not be an immediately obvious or clear way to address the problem
+
+
+
 
 Contains
 --------
