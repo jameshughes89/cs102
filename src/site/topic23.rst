@@ -279,6 +279,10 @@ General Remove
 
 * A general remove is a little more complex than the remove min or max
 
+.. image:: img/binarysearchtree_removeuh.png
+   :width: 500 px
+   :align: center
+
 
 Contains
 --------
