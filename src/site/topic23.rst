@@ -310,6 +310,23 @@ General Remove
         * It's greater than or equal to everything in the left subtree
         * And smaller than everything in the right subtree
 
+* Below is an example of removing multiple elements from a binary search tree
+
+.. image:: img/binarysearchtree_remove0.png
+   :width: 500 px
+   :align: center
+
+.. image:: img/binarysearchtree_remove1.png
+   :width: 500 px
+   :align: center
+
+.. image:: img/binarysearchtree_remove2.png
+   :width: 500 px
+   :align: center
+
+.. image:: img/binarysearchtree_remove3.png
+   :width: 500 px
+   :align: center
 
 Contains
 --------
