@@ -332,10 +332,21 @@ General Remove
 Contains
 --------
 
+* Like the other data structures, we will want to be able to check if a given element exists within it
+* Unlike before, where we were doing a linear search through a linear data structure
+* Or an exhaustive depth first search through a regular binary tree
+
+* Here, due to the nature of the binary search tree ordering, we can simply do a binary search
+
 
 Counting the Number of a Given Element
 --------------------------------------
 
+* Similar to contains, to count the number of times a given element exists within a binary search tree, we can do a binary search
+* However, instead of returning ``True`` or ``False`` as soon as the element is found, continue the search after finding an element and keep track of the count as we go
+
+* One trick here is, continue the search on the left or right subtree, depending on which side we choose to put duplicate values
+    * For example, if we choose to always put a value equal to a given node's data to the right, we continue the search on the right subtree
 
 
 Linked Binary Search Tree
