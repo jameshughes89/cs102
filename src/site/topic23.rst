@@ -280,7 +280,7 @@ General Remove
 * A general remove is a little more complex than the remove min or max
 
 .. image:: img/binarysearchtree_removeuh.png
-   :width: 500 px
+   :width: 250 px
    :align: center
 
 * In the above example, there may not be an immediately obvious or clear way to address the problem
@@ -313,7 +313,7 @@ General Remove
 * Below is an example of removing multiple elements from a binary search tree
 
 .. image:: img/binarysearchtree_remove0.png
-   :width: 500 px
+   :width: 250 px
    :align: center
 
 .. image:: img/binarysearchtree_remove1.png
@@ -327,6 +327,7 @@ General Remove
 .. image:: img/binarysearchtree_remove3.png
    :width: 500 px
    :align: center
+
 
 Contains
 --------
