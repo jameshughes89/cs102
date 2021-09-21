@@ -372,7 +372,7 @@ Degenerate vs. Balanced
 * Consider adding the numbers ``3, 5, 9, 12, 18, 20`` in that order to an empty binary search tree
 
 .. image:: img/binarysearchtree_degenerate_gif.gif
-   :width: 500 px
+   :width: 250 px
    :align: center
 
 * This is an example we see an extreme case of imbalance
