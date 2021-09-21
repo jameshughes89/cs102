@@ -8,7 +8,7 @@ Topic #14 Aside --- Careful
 
 
 .. image:: img/inheritance_bad.png
-   :width: 500 px
+   :width: 750 px
    :align: center
 
 * There is nothing wrong with extending concrete classes, but this is where things can become problematic
@@ -22,11 +22,11 @@ Rectangles and Squares
     * `And it's also amusingly known for being a problematic example <https://en.wikipedia.org/wiki/Circle%E2%80%93ellipse_problem>`_
 
 .. image:: img/inheritance_rectangle.png
-   :width: 500 px
+   :height: 250 px
    :align: center
 
 .. image:: img/inheritance_square.png
-   :width: 500 px
+   :height: 250 px
    :align: center
 
 * We all know that, in real life, a square is a special type a rectangle

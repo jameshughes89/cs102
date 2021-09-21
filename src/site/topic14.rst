@@ -69,7 +69,7 @@ Collections Example
 ===================
 
 .. image:: img/inheritance_collections.png
-   :width: 500 px
+   :width: 750 px
    :align: center
    :target: https://en.wikipedia.org/wiki/Java_collections_framework
 
