@@ -372,12 +372,16 @@ Degenerate vs. Balanced
 * Consider adding the numbers ``3, 5, 9, 12, 18, 20`` in that order to an empty binary search tree
 
 .. image:: img/binarysearchtree_degenerate_gif.gif
-   :width: 500 px
+   :width: 250 px
    :align: center
 
 * This is an example we see an extreme case of imbalance
 * This particular case is called a *degenerate* binary tree
     * It's effectively a linear data structure, not a tree
+
+.. image:: img/binarysearchtree_complexity.png
+   :width: 250 px
+   :align: center
 
 * If we have a balanced binary search tree, every time we decide to go to the left or right subtree, we eliminate roughly half the elements from the search
     * This is what gives us the :math:`O(log(n))` search
