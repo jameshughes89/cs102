@@ -379,6 +379,10 @@ Degenerate vs. Balanced
 * This particular case is called a *degenerate* binary tree
     * It's effectively a linear data structure, not a tree
 
+.. image:: img/binarysearchtree_complexity.png
+   :width: 250 px
+   :align: center
+
 * If we have a balanced binary search tree, every time we decide to go to the left or right subtree, we eliminate roughly half the elements from the search
     * This is what gives us the :math:`O(log(n))` search
 
