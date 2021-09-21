@@ -8,7 +8,7 @@ Topic #14 Aside --- Careful
 
 
 .. image:: img/inheritance_bad.png
-   :width: 500 px
+   :width: 750 px
    :align: center
 
 * There is nothing wrong with extending concrete classes, but this is where things can become problematic
