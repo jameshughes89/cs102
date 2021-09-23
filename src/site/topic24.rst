@@ -2,6 +2,9 @@
 Topic #24 --- Linked Binary Search Trees
 ****************************************
 
+* Since we know the idea behind the binary search tree, we can now implement one
+* Given the way the binary search tree ideas were presented, a linked implementation may feel like an obvious choice
+    * Though, there is nothing stopping us from implementing one with an array
 
 
 Constructors
