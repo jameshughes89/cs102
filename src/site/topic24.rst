@@ -4,6 +4,38 @@ Topic #24 --- Linked Binary Search Trees
 
 
 
+Constructors
+============
+
+
+Static Node Class
+=================
+
+
+Add to Binary Search Tree
+=========================
+
+
+Minimum & Maximum
+=================
+
+
+Remove Minimum & Maximum
+========================
+
+
+Contains
+========
+
+
+Get Count
+=========
+
+
+Traversals
+==========
+
+
 For next time
 =============
 
