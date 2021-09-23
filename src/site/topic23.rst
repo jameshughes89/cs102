@@ -349,10 +349,6 @@ Counting the Number of a Given Element
     * For example, if we choose to always put a value equal to a given node's data to the right, we continue the search on the right subtree
 
 
-Linked Binary Search Tree
-=========================
-
-
 Degenerate vs. Balanced
 =======================
 
