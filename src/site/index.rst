@@ -121,7 +121,7 @@ Course Notes
     topic22
     topic23
     topic24
-
+    topic25
 
 Labs
 ====
