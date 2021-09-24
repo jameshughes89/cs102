@@ -35,6 +35,10 @@ Constructors
 * We want the data structure to be generic
 * And, like the sorted bag, since we are concerned with the ordering, we will ensure that our objects are comparable
 
+* Here we have two constructors
+    * A default constructor, which just sets up an empty binary search tree
+    * A constructor that we could give an element to be the tree's root
+
 
 Static Node Class
 =================
