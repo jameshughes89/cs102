@@ -27,8 +27,8 @@ Constructors
         }
 
         public LinkedBinarySearchTree(T element) {
-            root = new Node<>(element);
-            size = 1;
+            this();
+            this.add(element);
         }
 
 * Like the other implementations, we will be sure to ``implement`` the interface
