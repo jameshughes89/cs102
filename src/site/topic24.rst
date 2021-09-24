@@ -23,7 +23,7 @@ Constructors
 
         public LinkedBinarySearchTree() {
             root = null;
-            size = 0;
+            size = 1;
         }
 
         public LinkedBinarySearchTree(T element) {
