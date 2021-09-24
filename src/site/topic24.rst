@@ -23,12 +23,12 @@ Constructors
 
         public LinkedBinarySearchTree() {
             root = null;
-            size = 1;
+            size = 0;
         }
 
         public LinkedBinarySearchTree(T element) {
             root = new Node<>(element);
-            size = 0;
+            size = 1;
         }
 
 * Like the other implementations, we will be sure to ``implement`` the interface
