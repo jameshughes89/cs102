@@ -12,8 +12,8 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     }
 
     public LinkedBinarySearchTree(T element) {
-        root = new Node<>(element);
-        size = 0;
+        this();
+        add(element);
     }
 
     @Override

@@ -14,6 +14,12 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
+    void isEmptyOnNewTreeNonDefaultConstructorReturnsFalse() {
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>(99);
+        assertFalse(bst.isEmpty());
+    }
+
+    @Test
     void isEmptyOnNonEmptyTreeReturnsFalse() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
@@ -24,6 +30,12 @@ public class LinkedBinarySearchTreeTest {
     void sizeOfEmptyTreeReturnsZero() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         assertEquals(0, bst.size());
+    }
+
+    @Test
+    void sizeOfNewTreeNonDefaultConstructorReturnsOne() {
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>(99);
+        assertEquals(1, bst.size());
     }
 
     @Test

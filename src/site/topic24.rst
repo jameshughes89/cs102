@@ -10,6 +10,36 @@ Topic #24 --- Linked Binary Search Trees
 Constructors
 ============
 
+.. code-block:: java
+    :linenos:
+
+    import java.util.Iterator;
+    import java.util.NoSuchElementException;
+
+    public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements BinarySearchTree<T> {
+
+        private int size;
+        private Node<T> root;
+
+        public LinkedBinarySearchTree() {
+            root = null;
+            size = 0;
+        }
+
+        public LinkedBinarySearchTree(T element) {
+            this();
+            add(element);
+        }
+
+* Like the other implementations, we will be sure to ``implement`` the interface
+* We want the data structure to be generic
+* And, like the sorted bag, since we are concerned with the ordering, we will ensure that our objects are comparable
+
+* Here we have two constructors
+    * A default constructor, which just sets up an empty binary search tree
+    * A constructor that we could give an element to be the tree's root
+        * This constructor is probably unnecessary, but let's keep it
+
 
 Static Node Class
 =================
