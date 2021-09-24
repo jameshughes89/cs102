@@ -38,6 +38,7 @@ Constructors
 * Here we have two constructors
     * A default constructor, which just sets up an empty binary search tree
     * A constructor that we could give an element to be the tree's root
+        * This constructor is probably unnecessary, but let's keep it
 
 
 Static Node Class
