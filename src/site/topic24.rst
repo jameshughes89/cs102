@@ -28,7 +28,7 @@ Constructors
 
         public LinkedBinarySearchTree(T element) {
             this();
-            this.add(element);
+            add(element);
         }
 
 * Like the other implementations, we will be sure to ``implement`` the interface
