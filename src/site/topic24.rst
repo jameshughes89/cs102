@@ -139,6 +139,13 @@ Contains
         }
     }
 
+* Above, you will see that the helper method is called ``contains``, and it calls the recursive ``binarySearch`` method
+* What's interesting here is the helper method needs to return a boolean, but the ``binarySearch`` returns a reference to a node
+* A way to address this is to simply check if ``binarySearch`` returned a reference to a node or not
+    * If ``contains`` gets a node back, then we return true
+    * Otherwise, if we get ``null` back, return false
+
+
 Get Count
 =========
 
