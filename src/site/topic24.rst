@@ -175,6 +175,10 @@ Remove Minimum & Maximum
 ========================
 
 
+General Remove
+==============
+
+
 Contains
 ========
 
