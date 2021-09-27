@@ -48,6 +48,28 @@ Static Node Class
 Add to Binary Search Tree
 =========================
 
+.. code-block:: java
+    :linenos:
+
+    public void add(T element) {
+        root = add(element, root);
+        size++;
+    }
+
+    private Node<T> add(T element, Node<T> current) {
+        if (current == null) {
+            return new Node<>(element);
+        } else if (current.getData().compareTo(element) > 0) {
+            current.setLeft(add(element, current.getLeft()));
+        } else {
+            current.setRight(add(element, current.getRight()));
+        }
+        return current;
+    }
+
+
+
+
 
 Minimum & Maximum
 =================
