@@ -44,7 +44,7 @@ Constructors
 Static Node Class
 =================
 
-* You likely noticed the use of ``Node<T> root`` 
+* You likely noticed the use of ``Node<T> root``
 * Like the linked stack and linked queue, we will make use of nodes
 * You may remember that we had two options for doing this
     1. Simply create a top level node class
@@ -113,6 +113,11 @@ Remove Minimum & Maximum
 
 Contains
 ========
+
+* All data structures we've implemented have a way to check if a given element is within it
+* The binary search tree is no different, but here we do not need to do a linear search
+* Here, we can make use of a binary search to help find the element within the data structure
+
 
 
 Get Count
