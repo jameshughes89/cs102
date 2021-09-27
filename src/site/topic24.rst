@@ -102,6 +102,33 @@ Static Node Class
 Add to Binary Search Tree
 =========================
 
+.. code-block:: java
+    :linenos:
+
+    public void add(T element) {
+        root = add(element, root);
+        size++;
+    }
+
+    private Node<T> add(T element, Node<T> current) {
+        if (current == null) {
+            return new Node<>(element);
+        } else if (current.getData().compareTo(element) > 0) {
+            current.setLeft(add(element, current.getLeft()));
+        } else {
+            current.setRight(add(element, current.getRight()));
+        }
+        return current;
+    }
+
+
+* We use a helper method to setup a call to the recursive method
+
+* This method is very similar to a binary search
+* Keep going left/right down the tree based on the ordering of the tree and value of the element being added
+* As soon as we find an empty spot, insert the node there
+* Inserted value will be in a leaf node
+
 
 Minimum & Maximum
 =================
