@@ -44,6 +44,60 @@ Constructors
 Static Node Class
 =================
 
+* You likely noticed the use of ``Node<T> root`` 
+* Like the linked stack and linked queue, we will make use of nodes
+* You may remember that we had two options for doing this
+    1. Simply create a top level node class
+    2. Create a :doc:`nested node class aside. </topic8-nested>`
+
+* To keep things clean, we will go with option #2
+
+.. code-block:: java
+    :linenos:
+
+    // This class exists within the LinkedBinarySearchTree class
+    private static class Node<T> {
+
+        private T data;
+        private Node<T> left;
+        private Node<T> right;
+
+        private Node(T data) {
+            this.data = data;
+            this.left = null;
+            this.right = null;
+        }
+
+        private T getData() {
+            return data;
+        }
+
+        private void setData(T data) {
+            this.data = data;
+        }
+
+        private Node<T> getLeft() {
+            return left;
+        }
+
+        private void setLeft(Node<T> left) {
+            this.left = left;
+        }
+
+        private Node<T> getRight() {
+            return right;
+        }
+
+        private void setRight(Node<T> right) {
+            this.right = right;
+        }
+    }
+
+
+* Things of note for this node class
+    * This is a binary tree node, thus it has a left and right reference for the left and right subtrees
+    * This nested static class is contained within the ``LinkedBinarySearchTree`` class
+
 
 Add to Binary Search Tree
 =========================
