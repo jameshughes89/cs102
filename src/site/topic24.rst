@@ -220,9 +220,6 @@ Get Count
 =========
 
 
-Traversals
-==========
-
 
 For next time
 =============
