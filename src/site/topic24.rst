@@ -44,7 +44,7 @@ Constructors
 Static Node Class
 =================
 
-* You likely noticed the use of ``Node<T> root`` 
+* You likely noticed the use of ``Node<T> root``
 * Like the linked stack and linked queue, we will make use of nodes
 * You may remember that we had two options for doing this
     1. Simply create a top level node class
@@ -106,6 +106,39 @@ Add to Binary Search Tree
 Minimum & Maximum
 =================
 
+.. code-block:: java
+    :linenos:
+
+    public T min() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        return min(root);
+    }
+
+    private T min(Node<T> current) {
+        if (current.getLeft() == null) {
+            return current.getData();
+        } else {
+            return min(current.getLeft());
+        }
+    }
+
+
+    public T max() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        return max(root);
+    }
+
+    private T max(Node<T> current) {
+        if (current.getRight() == null) {
+            return current.getData();
+        } else {
+            return max(current.getRight());
+        }
+    }
 
 Remove Minimum & Maximum
 ========================
