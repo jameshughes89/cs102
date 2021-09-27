@@ -140,6 +140,10 @@ Minimum & Maximum
         }
     }
 
+* Fortunately minimum and maximum are simple
+* Due to the ordered nature of the binary search tree, just go all the way to the left or right for the minimum or maximum value respectively
+
+
 Remove Minimum & Maximum
 ========================
 
