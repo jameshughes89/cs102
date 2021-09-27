@@ -118,7 +118,26 @@ Contains
 * The binary search tree is no different, but here we do not need to do a linear search
 * Here, we can make use of a binary search to help find the element within the data structure
 
+.. code-block:: java
+    :linenos:
 
+    public boolean contains(T element) {
+        return binarySearch(element, root) != null;
+    }
+
+    private Node<T> binarySearch(T element, Node<T> current) {
+        if (current == null) {
+            return null;
+        } else if (current.getData().equals(element)) {
+            return current;
+        } else {
+            if (current.getData().compareTo(element) > 0) {
+                return binarySearch(element, current.getLeft());
+            } else {
+                return binarySearch(element, current.getRight());
+            }
+        }
+    }
 
 Get Count
 =========
