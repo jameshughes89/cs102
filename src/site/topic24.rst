@@ -119,54 +119,6 @@ Get Count
 =========
 
 
-Traversals
-==========
-
-* The traversals will be the same as those discussed in Topic22
-* The code is included here for reference
-
-.. code-block:: java
-    :linenos:
-
-    private void preOrder(Node<T> current, IndexedBag<T> sequence) {
-        if (current != null) {
-            sequence.add(current.getData());
-            preOrder(current.getLeft(), sequence);
-            preOrder(current.getRight(), sequence);
-        }
-    }
-
-    private void inOrder(Node<T> current, IndexedBag<T> sequence) {
-        if (current != null) {
-            inOrder(current.getLeft(), sequence);
-            sequence.add(current.getData());
-            inOrder(current.getRight(), sequence);
-        }
-    }
-
-    private void postOrder(Node<T> current, IndexedBag<T> sequence) {
-        if (current != null) {
-            postOrder(current.getLeft(), sequence);
-            postOrder(current.getRight(), sequence);
-            sequence.add(current.getData());
-        }
-    }
-
-    private void levelOrder(Node<T> start, IndexedBag<T> sequence) {
-        Queue<Node<T>> levelOrderQueue = new ArrayQueue<>();
-        Node<T> current;
-        levelOrderQueue.enqueue(start);
-        while (!levelOrderQueue.isEmpty()) {
-            current = levelOrderQueue.dequeue();
-            sequence.add(current.getData());
-            if (current.getLeft() != null) {
-                levelOrderQueue.enqueue(current.getLeft());
-            }
-            if (current.getRight() != null) {
-                levelOrderQueue.enqueue(current.getRight());
-            }
-        }
-    }
 
 For next time
 =============
