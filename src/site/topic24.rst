@@ -44,6 +44,15 @@ Constructors
 Static Node Class
 =================
 
+* Like the linked stack and linked queue, we will make use of nodes
+* You may remember that we had two options for doing this
+    1. Simply create a top level node class
+    2. Create a :doc:`nested node class aside. </topic8-nested>`
+
+* To keep things clean, we will go with option #2
+
+
+
 
 Add to Binary Search Tree
 =========================
