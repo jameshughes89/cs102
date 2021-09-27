@@ -68,7 +68,12 @@ Add to Binary Search Tree
     }
 
 
+* We use a helper method to setup a call to the recursive method
 
+* This method is very similar to a binary search
+* Keep going left/right down the tree based on the ordering of the tree and value of the element being added
+* As soon as we find an empty spot, insert the node there
+* Inserted value will be in a leaf node
 
 
 Minimum & Maximum
