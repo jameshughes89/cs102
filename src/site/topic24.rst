@@ -133,6 +133,43 @@ Add to Binary Search Tree
 Minimum & Maximum
 =================
 
+.. code-block:: java
+    :linenos:
+
+    public T min() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        return min(root);
+    }
+
+    private T min(Node<T> current) {
+        if (current.getLeft() == null) {
+            return current.getData();
+        } else {
+            return min(current.getLeft());
+        }
+    }
+
+
+    public T max() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        return max(root);
+    }
+
+    private T max(Node<T> current) {
+        if (current.getRight() == null) {
+            return current.getData();
+        } else {
+            return max(current.getRight());
+        }
+    }
+
+* Fortunately minimum and maximum are simple
+* Due to the ordered nature of the binary search tree, just go all the way to the left or right for the minimum or maximum value respectively
+
 
 Remove Minimum & Maximum
 ========================
