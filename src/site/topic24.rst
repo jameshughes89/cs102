@@ -44,7 +44,7 @@ Constructors
 Static Node Class
 =================
 
-* You likely noticed the use of ``Node<T> root`` 
+* You likely noticed the use of ``Node<T> root``
 * Like the linked stack and linked queue, we will make use of nodes
 * You may remember that we had two options for doing this
     1. Simply create a top level node class
@@ -113,6 +113,39 @@ Remove Minimum & Maximum
 
 Contains
 ========
+
+* All data structures we've implemented have a way to check if a given element is within it
+* The binary search tree is no different, but here we do not need to do a linear search
+* Here, we can make use of a binary search to help find the element within the data structure
+
+.. code-block:: java
+    :linenos:
+
+    public boolean contains(T element) {
+        return binarySearch(element, root) != null;
+    }
+
+    private Node<T> binarySearch(T element, Node<T> current) {
+        if (current == null) {
+            return null;
+        } else if (current.getData().equals(element)) {
+            return current;
+        } else {
+            if (current.getData().compareTo(element) > 0) {
+                return binarySearch(element, current.getLeft());
+            } else {
+                return binarySearch(element, current.getRight());
+            }
+        }
+    }
+
+* Above, you will see that the method is called ``contains``, and it calls the recursive ``binarySearch`` method
+* What's interesting here is the helper method needs to return a boolean, but the ``binarySearch`` returns a reference to a node
+* A way to address this is to simply check if ``binarySearch`` returned a reference to a node or not
+    * If ``contains`` gets a node back, then we return true
+    * Otherwise, if we get ``null` back, return false
+
+* As this method is written, duplicate values are assumed to be in the right subtree
 
 
 Get Count
