@@ -311,6 +311,7 @@ Get Count
 
 .. code-block:: java
     :linenos:
+    :emphasize-lines: 12, 13
 
     public int getCount(T element) {
         if (isEmpty()) {
