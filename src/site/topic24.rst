@@ -226,7 +226,7 @@ Remove Minimum & Maximum
 
 **Remove Maximum**
 
-* We could implement the ``removeMax`` with the same idea, but to show an alternative, an iterative method will be used instead
+* We could implement the ``removeMax`` with the same idea, but to show an alternative idea, an iterative method will be used instead
 
 .. code-block:: java
     :linenos:
@@ -242,6 +242,7 @@ Remove Minimum & Maximum
         } else {
             Node<T> parent = root;
             Node<T> rightChild = root.getRight();
+
             // Iterate right until we find the right most node
             while (rightChild.getRight() != null) {
                 parent = rightChild;
@@ -254,6 +255,14 @@ Remove Minimum & Maximum
         return returnElement;
     }
 
+* ``removeMax`` is similar to the public ``removeMin`` method
+    * Check if the root exists
+    * Check if the root's right exists
+
+* It's the else case that's different
+* The idea is, loop down to the right until there is no more right children
+* Then, once we find the right most node, set it's ``parent``'s right child to the node being removed's left child
+    * Again, it doesn't matter if the left child is ``null`` or not
 
 
 General Remove
