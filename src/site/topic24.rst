@@ -174,6 +174,10 @@ Minimum & Maximum
 Remove Minimum & Maximum
 ========================
 
+* Finding the minimum and maximum values in the linked binary search tree is relatively simple
+* However, *removing* from the tree adds extra complexity as we need to preserve the binary search tree ordering of our tree
+
+
 
 General Remove
 ==============
