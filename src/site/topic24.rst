@@ -205,6 +205,16 @@ Remove Minimum & Maximum
         }
     }
 
+* Above are two functions that work together to remove the minimum value
+
+* First, take note of the public method
+    * It checks if the tree is empty
+    * It checks if the root is the left most node
+        * If it is, then make the right child the new root
+    * Otherwise, call a private recursive method
+
+
+
 
 
 
