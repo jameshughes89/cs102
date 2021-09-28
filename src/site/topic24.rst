@@ -177,6 +177,38 @@ Remove Minimum & Maximum
 * Finding the minimum and maximum values in the linked binary search tree is relatively simple
 * However, *removing* from the tree adds extra complexity as we need to preserve the binary search tree ordering of our tree
 
+**Remove Minimum**
+
+.. code-block:: java
+    :linenos:
+
+    public T removeMin() {
+        T returnElement = null;
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        } else if (root.getLeft() == null) {
+            returnElement = root.getData();
+            root = root.getRight();
+        } else {
+            returnElement = removeMin(root, root.getLeft());
+        }
+        size--;
+        return returnElement;
+    }
+
+    private T removeMin(Node<T> current, Node<T> leftChild) {
+        if (leftChild.getLeft() == null) {
+            current.setLeft(leftChild.getRight());
+            return leftChild.getData();
+        } else {
+            return removeMin(current.getLeft(), leftChild.getLeft());
+        }
+    }
+
+
+
+
+**Remove Maximum**
 
 
 General Remove
