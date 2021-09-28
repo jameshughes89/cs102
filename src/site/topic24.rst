@@ -209,17 +209,20 @@ Remove Minimum & Maximum
 
 * First, take note of the public method
     * It checks if the tree is empty
-    * It checks if the root is the left most node
-        * If it is, then make the right child the new root
-    * Otherwise, call a private recursive method looking down the left subtree
+    * It checks if the root happens to be the left most node
+        * If it is, then make the root's right child the new root of the whole tree
+    * Otherwise, call the private recursive method looking down the left subtree
 
-* If not successful in removing the minimum yet, the recursive private method is the one that goes looking for the minimum to remove
+* If the public method doesn't remove the minimum, the recursive private method is the one that goes looking for the minimum to remove
 * At this point we know that ``leftChild`` exists (is not ``null``) since this was checked in the calling method
-* If the left child's left subtree does **not** exist, then we know that ``leftChild`` contains the minimum value
-    * Simply replace ``current``'s left child (which ``leftChild`` also references) with ``leftChild``'s right child
-        * What's interesting here is, it does not matter if the left child's right child is ``null`` or not, it works either way
+    * Remember, if the root's left child does not exist, then the root must contain the minimum value in the tree
 
-* If ``leftChild``'s left child is not ``null``, then we call the recursive function again to keep looking down the left subtrees
+* We'll start with the recursive case --- if ``leftChild``'s left child does exist, then we call the recursive function again to keep looking down the left subtrees
+
+* If ``LeftChild``'s left subtree does **not** exist, then we know that ``leftChild`` contains the minimum value
+    * Simply replace ``current``'s left child (which ``leftChild`` also references) with ``leftChild``'s right child
+        * It does not matter if the left child's right child is ``null`` or not, it works either way
+
 
 
 
