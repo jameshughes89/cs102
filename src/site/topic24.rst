@@ -211,10 +211,15 @@ Remove Minimum & Maximum
     * It checks if the tree is empty
     * It checks if the root is the left most node
         * If it is, then make the right child the new root
-    * Otherwise, call a private recursive method
+    * Otherwise, call a private recursive method looking down the left subtree
 
+* If not successful in removing the minimum yet, the recursive private method is the one that goes looking for the minimum to remove
+* At this point we know that ``leftChild`` exists (is not ``null``) since this was checked in the calling method
+* If the left child's left subtree does **not** exist, then we know that ``leftChild`` contains the minimum value
+    * Simply replace ``current``'s left child (which ``leftChild`` also references) with ``leftChild``'s right child
+        * What's interesting here is, it does not matter if the left child's right child is ``null`` or not, it works either way
 
-
+* If ``leftChild``'s left child is not ``null``, then we call the recursive function again to keep looking down the left subtrees
 
 
 
