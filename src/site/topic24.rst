@@ -224,9 +224,36 @@ Remove Minimum & Maximum
         * It does not matter if the left child's right child is ``null`` or not, it works either way
 
 
-
-
 **Remove Maximum**
+
+* We could implement the ``removeMax`` with the same idea, but to show an alternative, an iterative method will be used instead
+
+.. code-block:: java
+    :linenos:
+
+    public T removeMax() {
+        T returnElement = null;
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        if (root.getRight() == null) {
+            returnElement = root.getData();
+            root = root.getLeft();
+        } else {
+            Node<T> parent = root;
+            Node<T> rightChild = root.getRight();
+            // Iterate right until we find the right most node
+            while (rightChild.getRight() != null) {
+                parent = rightChild;
+                rightChild = rightChild.getRight();
+            }
+            returnElement = rightChild.getData();
+            parent.setRight(rightChild.getLeft());
+        }
+        size--;
+        return returnElement;
+    }
+
 
 
 General Remove
