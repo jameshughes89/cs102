@@ -309,6 +309,36 @@ Contains
 Get Count
 =========
 
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 12, 13
+
+    public int getCount(T element) {
+        if (isEmpty()) {
+            return 0;
+        }
+        return getCount(element, root);
+    }
+
+    private int getCount(T element, Node<T> current) {
+        if (current == null) {
+            return 0;
+        }
+        if (current.getData().equals(element)) {
+            return 1 + getCount(element, current.getRight());
+        } else if (current.getData().compareTo(element) > 0) {
+            return getCount(element, current.getLeft());
+        } else {
+            return getCount(element, current.getRight());
+        }
+    }
+
+* Counting the number of times a given element exists within the tree will be similar to a binary search
+* The key difference will be, do a binary search, but if you find what you're looking for, continue looking in the subtree where duplicates are placed
+* The below example assumes duplicate values go to the right
+* Notice the line ``return 1 + getCount(element, current.getRight())`` for when we find what we're looking for
+    * This continues the search to the right
+    * But whatever the result of the search down the right subtree returns, we add one to it before we return
 
 
 For next time
