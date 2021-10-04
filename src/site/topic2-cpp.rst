@@ -159,6 +159,7 @@ Constants
     const double SALES_TAX = 1.15;
 
 * You could also use a preprocessor definition, but using ``const`` is nicer
+* Also, don't use a preprocessor definition 
 
 
 Input & Output
