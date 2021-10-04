@@ -157,7 +157,7 @@ Constants
     // Cpp --- Constants
     const double SALES_TAX = 1.15;
 
-* You could also use a preprocessor definition, but this is nicer
+* You could also use a preprocessor definition, but using ``const`` is nicer
 
 
 Input & Output
