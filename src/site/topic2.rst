@@ -816,3 +816,5 @@ For next time
 
 * Read Chapter 1 of your text
     * 15 pages
+
+* :doc:`If you would like to see how a C++ differs, check out this aside. </topic2-cpp>`
