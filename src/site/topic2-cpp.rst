@@ -539,7 +539,7 @@ More While Loops
 .. code-block:: cpp
     :linenos:
 
-    // C++ --- while loop
+    // C++ --- while loop again
     bool stop = false;
     int c = 0;
 
