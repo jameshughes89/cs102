@@ -720,7 +720,7 @@ For Loop
     :linenos:
     :emphasize-lines: 3
 
-    // Java --- for each loop
+    // Java --- for loop
     // Run loop 10 times (0 -- 9)
     for (int i = 0; i < 10; ++i) {
             System.out.println(i);
