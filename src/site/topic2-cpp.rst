@@ -56,7 +56,7 @@ Topic #2 Aside --- C++ vs. Java vs. Python
 
 * The ``std::cout`` is how we will print things out
     * The ``std`` part is the namespace where ``cout`` is
-        * Like the ``math`` in ``math.sin`` in Python
+        * *Kinda'* like the ``math`` in ``math.sin`` in Python (but not quite)
     * ``std`` is short for *standard*
 
 * ``std::endl`` is how we end the line we're printing
