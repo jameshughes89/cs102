@@ -126,3 +126,35 @@ Variables and Types
     * Although, there kinda' is a way to do this in C++, but we will ignore that
 
 * Again, like Java, with C++ we can declare a variable on a single like and then assign it a value later
+
+
+Constants
+---------
+
+**Python**
+
+.. code-block:: python
+    :linenos:
+
+    # Python --- Constants
+    SALES_TAX = 1.15    # This is a constant. Leave this alone!
+
+
+**Java**
+
+.. code-block:: java
+    :linenos:
+
+    // Java --- Constants
+    final double SALES_TAX = 1.15;      // Java will get mad if we mess with this
+
+
+**C++**
+
+.. code-block:: cpp
+    :linenos:
+
+    // Cpp --- Constants
+    const double SALES_TAX = 1.15;
+
+* You could also use a preprocessor definition, but this is nicer  
