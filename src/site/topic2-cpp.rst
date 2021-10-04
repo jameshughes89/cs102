@@ -239,3 +239,63 @@ Input & Output
     std::cout << "gimmie something: ";
     std::getline(std::cin, a);
     std::cout << a << std::endl;
+
+
+Functions
+=========
+
+**Python**
+
+.. code-block:: Python
+    :linenos:
+    :emphasize-lines: 2
+
+    # Python --- Declaring a function
+    def someFunction(a, b):
+        c = a + b
+        return c
+
+    # Call the function
+    result = someFunction(1, 2)
+    print(result)
+
+
+**Java**
+
+.. code-block:: Java
+    :linenos:
+    :emphasize-lines: 5, 10
+
+    // Java
+    public class SomeClass {
+        public static void main(String[] args) {
+            // Call the function
+            int result = someFunction(1, 2);
+            System.out.println(result);
+        }
+
+        // Declare the Function
+        static int someFunction(int a, int b) {
+            int c = a + b;
+            return c;
+        }
+    }
+
+
+**C++**
+
+.. code-block:: cpp
+    :linenos:
+    :emphasize-lines: 1, 7
+
+    int someFunction(int a, int b){
+        int c = a + b;
+        return c;
+    }
+
+    int main(){
+        std::cout << someFunction(1, 2) << std::endl;
+    }
+
+* You will see that the Java and C++ examples are very similar
+* The one catch here is that the function is defined before main
