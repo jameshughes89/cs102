@@ -286,7 +286,7 @@ Functions
 
 .. code-block:: cpp
     :linenos:
-    :emphasize-lines: 1, 7
+    :emphasize-lines: 2, 8
 
     // Declare the function
     int someFunction(int a, int b){
