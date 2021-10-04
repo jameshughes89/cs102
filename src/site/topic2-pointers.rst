@@ -44,6 +44,7 @@ Pointer Variable
 ================
 
 * Instead of simply printing out the memory address, we can store it in a variable for later use
+* We call these variables *pointers* because we can think of them as pointing to a memory address
 * The trick here is to be mindful of the type of data we are storing
     * If we want to store an integer pointer, we will have an integer pointer type
 
@@ -122,7 +123,7 @@ Dereferencing
     int myVar = 25;
 	std::cout << *&myVar <<	std::endl;
 
-* In proactive the above example is quite silly, but if break the instructions down
+* In practice the above example is quite silly, but if break the instructions down
     * ``myVar`` is an integer variable holding ``25``
     * ``&myVar`` is the memory address of the ``myVar`` integer variable
     * ``*&myVar`` is what's at the memory address... of the memory address... of where the variable ``myVar`` is in RAM
@@ -135,13 +136,14 @@ Dereferencing
 	std::cout << *&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&myVar <<	std::endl;
 
 * Similarly, this would work too, but that much more idiotic
+    * Tell me what is at the address of the address of the thing at the address of the address of ...
 
 
 .. warning::
 
-    It's a common joke that pointers are difficult to wrap your brain around. Although it's not trivial to learn them,
-    I think the joke has been blown way out of proportion. Like anything programming related, you'll pick it up with
-    practice. The trick I suggest is (a) slow down, (b) think about your types, and (c) think about what you want.
+    It's a common joke among students that pointers are difficult to wrap your brain around. Although it's not trivial
+    to learn them, the joke has been blown way out of proportion. Like anything programming related, you'll pick it up
+    with practice. The trick I suggest is (a) slow down, (b) think about your types, and (c) think about what you want.
 
 
 .. code-block:: cpp
