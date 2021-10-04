@@ -1,5 +1,5 @@
 ******************************************
-Topic #1 Aside --- C++ vs. Java vs. Python
+Topic #2 Aside --- C++ vs. Java vs. Python
 ******************************************
 
 * For these, I will only go over the C++ details at a high level
