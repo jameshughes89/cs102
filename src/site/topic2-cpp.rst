@@ -157,4 +157,85 @@ Constants
     // Cpp --- Constants
     const double SALES_TAX = 1.15;
 
-* You could also use a preprocessor definition, but this is nicer  
+* You could also use a preprocessor definition, but this is nicer
+
+
+Input & Output
+==============
+
+
+**Python**
+
+.. code-block:: Python
+    :linenos:
+
+    theInput = input("gimmie something: ")
+    print(theInput)
+
+
+**Java**
+
+.. code-block:: Java
+    :linenos:
+
+    import java.io.BufferedReader;
+    import java.io.InputStreamReader;
+    import java.io.IOException;
+
+    public class SomeClass {
+        public static void main(String[] args){
+
+            // Create a Stream Reader with the standard input
+            InputStreamReader stream = new InputStreamReader(System.in);
+
+            // Give the Stream Reader to a Buffered Reader
+            BufferedReader reader = new BufferedReader(stream);
+
+            // We use the Buffered Reader to read the actual stream
+            // We use a try & catch because readLine may throw an
+            // exception that we must deal with
+            try {
+                String theLine = reader.readLine();
+                System.out.println(theLine);
+            } catch (IOException e){
+                System.out.println("Something bad happened when reading.");
+            }
+        }
+    }
+
+
+**C++**
+
+
+* Below is an example of inputting a primitive type
+
+.. code-block:: cpp
+    :linenos:
+
+    int a;
+    std::cout << "gimmie something: ";
+    std::cin >> a;
+    std::cout << a << std::endl;
+
+
+* If we want to read two things on a single line, you could do this
+
+.. code-block:: cpp
+    :linenos:
+
+    int a, b;
+    std::cout << "gimmie 2 somethings: ";
+    std::cin >> a >> b;
+    std::cout << a << " and " << b << std::endl;
+
+
+* Reading in a string is a little different, but still relatively simple
+
+.. code-block:: cpp
+    :linenos:
+    :emphasize-lines: 3
+
+    std::string a;
+    std::cout << "gimmie something: ";
+    std::getline(std::cin, a);
+    std::cout << a << std::endl;
