@@ -303,3 +303,74 @@ Functions
     * We can put it after main if really we want, but then we would need to add a function prototype before the main
     * ``int someFunction(int, int);	// Function Prototype``
 
+
+Temperature Converter
+---------------------
+
+**Python**
+
+.. code-block:: Python
+    :linenos:
+    :emphasize-lines: 3
+
+    # Python --- Convert farenheit to celcius
+    def fahrenheit_to_celcius (fahrenheit):
+        celsius = (fahrenheit - 32) * 5/9
+        return celsius
+
+
+**Java**
+
+.. code-block:: Java
+    :linenos:
+    :emphasize-lines: 3
+
+    // Java --- Convert farenheit to celcius
+    static double fahrenheitToCelcius(double fahrenheit) {
+        double celsius = (fahrenheit - 32) * 5.0/9.0;
+        return celsius;
+    }
+
+
+**C++**
+
+.. code-block:: cpp
+    :linenos:
+    :emphasize-lines: 2, 8
+
+    // C++ --- Convert farenheit to celcius
+    double FtoC(double fahrenheit){
+        double celsius = (fahrenheit - 32) * 5.0/9.0;
+        return celsius;
+    }
+
+
+Comments
+========
+
+.. code-block:: cpp
+    :linenos:
+
+    // This is a single line comment in C++
+
+    /*
+    This is a
+    multi line
+    comment in
+    C++
+     */
+
+    /**
+     * Convert the provided temperature from fahrenheit
+     * to celsius.
+     *
+     * This also demonstrates how to write a javadoc
+     * comment.
+     *
+     * @param fahrenheit    temperature in fahrenheit
+     * @return              temperature in celsius
+     */
+    static double FtoC(double fahrenheit) {
+        double celsius = (fahrenheit - 32) * 5.0/9.0;
+        return celsius;
+    }
