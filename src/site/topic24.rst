@@ -268,6 +268,85 @@ Remove Minimum & Maximum
 General Remove
 ==============
 
+* This is probably the most complex functionality we will discuss
+* To help, the discussion will be broken up
+
+.. code-block:: java
+    :linenos:
+
+    public T remove(T element) {
+        T returnElement = null;
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        } else if (root.getData().equals(element)) {
+            returnElement = root.getData();
+            root = findReplacementNode(root);
+        } else if (root.getData().compareTo(element) > 0) {
+            returnElement = remove(element, root, root.getLeft());
+        } else {
+            returnElement = remove(element, root, root.getRight());
+        }
+        size--;
+        return returnElement;
+    }
+
+.. code-block:: java
+    :linenos:
+
+    private T remove(T element, Node<T> parent, Node<T> child) {
+        if (child == null) {
+            throw new NoSuchElementException();
+        } else if (child.getData().equals(element)) {
+            if (parent.getData().compareTo(element) > 0) {
+                parent.setLeft(findReplacementNode(child));
+            } else {
+                parent.setRight(findReplacementNode(child));
+            }
+            return child.getData();
+        } else if (child.getData().compareTo(element) > 0) {
+            return remove(element, child, child.getLeft());
+        } else {
+            return remove(element, child, child.getRight());
+        }
+    }
+
+.. code-block:: java
+    :linenos:
+
+    private Node<T> findReplacementNode(Node<T> toRemove) {
+        Node<T> replacementNode = null;
+        if (toRemove.getLeft() == null && toRemove.getRight() == null) {
+            replacementNode = null;
+        } else if (toRemove.getLeft() != null && toRemove.getRight() == null) {
+            replacementNode = toRemove.getLeft();
+        } else if (toRemove.getLeft() == null && toRemove.getRight() != null) {
+            replacementNode = toRemove.getRight();
+        } else {
+            Node<T> parent = toRemove;
+            Node<T> child = toRemove.getRight();
+            // Find the in order successor (right child's left
+            // most node (minimum node))
+            while (child.getLeft() != null) {
+                parent = child;
+                child = child.getLeft();
+            }
+            // Set replacement node's left to
+            // the node being removed's (subtree root's) left
+            child.setLeft(toRemove.getLeft());
+            // If the immediate in order successor is NOT the
+            // node being replaced's right child, the parent
+            // node's new left becomes the child node's right
+            // and the child node's right is replaced with
+            // the node being replaced's right
+            if (toRemove.getRight() != child) {
+                parent.setLeft(child.getRight());
+                child.setRight(toRemove.getRight());
+            }
+            replacementNode = child;
+        }
+        return replacementNode;
+    }
+
 
 Contains
 ========
