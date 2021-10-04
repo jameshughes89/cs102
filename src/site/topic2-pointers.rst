@@ -71,3 +71,11 @@ Pointer Variable
     * The address is stored in the integer pointer ``foo``
     * The integer from ``myVar`` is copied to the integer ``bar``
 
+
+
+
+.. warning::
+
+    It's a common joke that pointers are difficult to wrap your brain around. Although it's not trivial to learn them,
+    I think the joke has been blown way out of proportion. Like anything programming related, you'll pick it up with
+    practice. The trick I suggest is (a) slow down, (b) think about your types, and (c) think about what you want.
