@@ -156,3 +156,66 @@ Dereferencing
 * Sure, it's an integer, which is a number, and pointers are numbers too, but that doesn't make this OK since it's not a pointer; it's not something that can be dereferenced
 
 
+Fun Examples
+============
+
+.. code-block:: cpp
+    :linenos:
+
+    int firstValue = 5;
+    int secondvalue = 15;
+    int* p1;
+    int* p2;
+
+    p1 = &firstValue;
+    p2 = &secondvalue;
+    *p1 = 10;
+    *p2 = *p1;
+    p1 = p2;
+    *p1 = 20;
+
+    std::cout << firstValue << std::endl;
+    std::cout <<  secondvalue << std::endl;
+
+
+* What's printed out by the above code?
+* There is no trick to this other than following through the code one line at a time
+
+**First 7 Lines**
+* ``firstvalue`` is ``5`` and ``p1`` is a pointer to ``firstvalue``
+* ``secondvalue`` is ``15`` and ``p2`` is a pointer to ``secondvalue``
+
+**Line 8**
+* Dereference ``p1``, so, don't give me the memory address, but the contents of the memory address
+* Replace the contents with the integer ``10``
+
+**Line 9**
+* Put the contents of ``p1``'s dereferenced value (``fistvalue``) into the contents of ``p2``'s dereference (``secondvalue``)
+
+**Line 10**
+* Copy the contents of ``p2``, the memory address of ``secondvalue``, and put it into ``p1``
+* Both ``p1`` and ``p2`` point to the memory address of ``secondvalue``
+
+**Line 11**
+* Put the integer ``20`` into the contents of ``p1``'s dereferenced value (``secondvalue``)
+
+
+
+.. code-block:: cpp
+    :linenos:
+
+    #include <iostream>
+
+    void sum_no_pointer(int x, int y, int z){
+        z = x + y;
+    }
+
+    int main(){
+        int a = 1, b = 2, c = 0;
+        sum_no_pointer(a, b, c);
+        std::cout << a << std::endl;
+        std::cout << b << std::endl;
+        std::cout << c << std::endl;
+        return 0;
+    }
+
