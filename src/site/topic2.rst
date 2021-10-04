@@ -805,7 +805,7 @@ For next time
 
 .. warning::
 
-    If at any point you are thinking "Oh crap, how on earth am I going to remember all these differences?", `you're doing programming wrong <https://www.google.com/search?q=how+to+use+for+loops+in+java&sxsrf=ALeKk028SMFq5DFuUR6yzWEgbfqjzEsyAg%3A1622124851412&source=hp&ei=M6mvYIWRFcGs5NoPzOisgAI&iflsig=AINFCbYAAAAAYK-3Q0Dw-HpGIyWqCLxBDACWOuQ3nG_x&oq=how+to+use+for+loops+in+java&gs_lcp=Cgdnd3Mtd2l6EAMyBwgAEIcCEBQyAggAMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjoECCMQJzoFCAAQkQI6CAgAELEDEIMBOgsILhCxAxDHARCjAjoFCAAQsQM6AgguOgQIABBDOgQIABAKOggIIRAWEB0QHjoECAAQDToICAAQCBANEB46CAgAEBYQChAeUOwFWOImYKMnaAFwAHgBgAGEAogBwBuSAQcxMC4yMC4xmAEAoAEBqgEHZ3dzLXdpeg&sclient=gws-wiz&ved=0ahUKEwjF9q78herwAhVBFlkFHUw0CyAQ4dUDCAo&uact=5>`_.
+    If at any point you are thinking "Oh crap, how on earth am I going to remember all these differences?", `you're doing programming wrong <https://www.google.com/search?q=how+to+use+for+loops+in+java>`_.
 
 
 * Practice
