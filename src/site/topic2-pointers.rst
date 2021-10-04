@@ -219,3 +219,27 @@ Fun Examples
         return 0;
     }
 
+* If you run the above code, you would see ``1``, ``2``, and ``0`` printed out
+    * ``c`` is ``0`` since ``sum_no_pointer``'s parameters get a copy of the values
+    * The function has it's own variables, with their own memory addresses, to store the values
+
+.. code-block:: cpp
+    :linenos:
+
+    #include <iostream>
+    void sum_pointer(int* x, int* y, int* z){
+        *z = *x + *y;
+    }
+
+    int main(){
+        int a = 1, b = 2, c = 0;
+        sum_pointer(&a, &b, &c);
+        std::cout << a << std::endl;
+        std::cout << b << std::endl;
+        std::cout << c << std::endl;
+        return 0;
+    }
+
+* Running this, on the other hand, will get us ``1``, ``2``, and ``3``
+    * ``sum_pointer`` store memory addresses (integer pointers) of where the ``main``'s ``a``, ``b``, and ``c`` are stored
+    * If we dereference these pointers, we can modify what is at the specified memory address
