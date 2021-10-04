@@ -433,7 +433,6 @@ Conditionals
     }
 
 
-
 Boolean Operators
 -----------------
 
@@ -446,3 +445,195 @@ Boolean Operators
     * and --- ``v && w``
     * or --- ``x || y``
     * not --- ``!z``
+
+
+Loops
+=====
+
+While Loops
+-----------
+
+**Python**
+
+.. code-block:: Python
+    :linenos:
+
+    # Python --- while loop
+    c = 0
+
+    # While some condition is true
+    while c < 10:
+        print("c is now: " + str(c))
+        c+=1
+
+**Java**
+
+.. code-block:: Java
+    :linenos:
+    :emphasize-lines: 5
+
+    // Java --- while loop
+    int c = 0;
+
+    // While some condition is true
+    while (c < 10) {
+        System.out.println("c is now: " + c);
+        c++;
+    }
+
+
+**C++**
+
+.. code-block:: cpp
+    :linenos:
+    :emphasize-lines: 5
+
+    // C++ --- while loop
+    int c = 0;
+
+    // While some condition is true
+    while (c < 10) {
+        std::cout << "c is now: " << c << std::endl;
+        c++;
+    }
+
+
+More While Loops
+----------------
+
+**Python**
+
+.. code-block:: Python
+    :linenos:
+
+    # Python --- while loop again
+    stop = False
+    c = 0
+
+    while not stop:
+        print("c is now: " + str(c))
+        c+=1
+        if c == 5:
+            stop = True
+
+**Java**
+
+.. code-block:: Java
+    :linenos:
+
+    // Java --- while loop again
+    boolean stop = false;
+    int c = 0;
+
+    while (!stop) {
+        System.out.println("c is now: " + c);
+        c++;
+        if (c == 5) {
+            stop = true;
+        }
+    }
+
+
+**C++**
+
+.. code-block:: cpp
+    :linenos:
+
+    // C++ --- while loop
+    bool stop = false;
+    int c = 0;
+
+    while (!stop) {
+        std::cout << "c is now: " << c << std::endl;
+        c++;
+        if (c == 5) {
+            stop = true;
+        }
+    }
+
+
+For Each Loop
+-------------
+
+**Python**
+
+.. code-block:: Python
+    :linenos:
+
+    # Python --- for loop
+    aList = ['a', 'b', 'c', 'd']
+
+    # For each thing 'c' in aList
+    for c in aList:
+        print(c)
+
+**Java**
+
+.. code-block:: Java
+    :linenos:
+
+    // Java --- for each loop
+    char[] anArray = {'a', 'b', 'c', 'd'};
+
+    // For each character 'c' in anArray
+    for (char e : anArray) {
+        System.out.println(e);
+    }
+
+
+**C++**
+
+.. code-block:: cpp
+    :linenos:
+    :emphasize-lines: 2
+
+    // C++ --- for each loop
+    char anArray[] = {'a', 'b', 'c', 'd'};
+
+    // For each character 'c' in anArray
+    for (char e : anArray) {
+        std::cout << e << std::endl;
+    }
+
+* The only real difference here is how we are defining the array
+    * We will discuss more on arrays in another aside
+
+
+For Loop
+--------
+
+**Python**
+
+.. code-block:: Python
+    :linenos:
+
+    # Python --- for loop
+    # Run loop 10 times (0 -- 9)
+    for i in range(10):
+        print(i)
+
+
+**Java**
+
+.. code-block:: Java
+    :linenos:
+    :emphasize-lines: 3
+
+    // Java --- for loop
+    // Run loop 10 times (0 -- 9)
+    for (int i = 0; i < 10; ++i) {
+            System.out.println(i);
+    }
+
+
+**C++**
+
+.. code-block:: cpp
+    :linenos:
+    :emphasize-lines: 2
+
+    // C++ --- for loop
+    // Run loop 10 times (0 -- 9)
+    for (int i = 0; i < 10; ++i) {
+       std::cout << i << std::endl;
+    }
