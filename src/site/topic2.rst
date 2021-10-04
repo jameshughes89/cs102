@@ -117,7 +117,7 @@ Declaring & Assigning Variables
 .. code-block:: java
     :linenos:
 
-    // Java --- Declaring * Assigning
+    // Java --- Declaring & Assigning
     int anotherInt;                     // Declaration
     anotherInt = 11;                    // Assignment
     System.out.println(anotherInt);
