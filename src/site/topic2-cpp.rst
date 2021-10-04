@@ -374,3 +374,75 @@ Comments
         double celsius = (fahrenheit - 32) * 5.0/9.0;
         return celsius;
     }
+
+
+Booleans
+========
+
+* Python --- ``someBool = True``
+* Java --- ``boolean someBool = true;``
+* C++ --- ``bool someBool = true;``
+
+.. warning::
+
+    Although C++ has booleans, you will see the value ``1`` mean ``true``, and ``0`` mean ``false (or, really, anything
+    *not* ``1`` is ``false``).
+
+
+Conditionals
+------------
+
+**Python**
+
+.. code-block:: Python
+    :linenos:
+
+    # Python --- if/else
+    # Assume someBool exists and is a boolean
+    if someBool:
+        print("it was true")
+    else:
+        print("it was false")
+
+
+**Java**
+
+.. code-block:: Java
+    :linenos:
+
+    // Java --- if/else
+    // Assume someBool exists and is a boolean
+    if (someBool) {
+        System.out.println("it was true");
+    } else {
+        System.out.println("it was false");
+    }
+
+
+**C++**
+
+.. code-block:: cpp
+    :linenos:
+
+    // C++ --- if/else
+    // Assume someBool exists and is a boolean
+    if (someBool) {
+        std::cout << "it was true" << std::endl;
+    } else {
+	    std::cout << "it was false" << std::endl;
+    }
+
+
+
+Boolean Operators
+-----------------
+
+* Same as Java
+    * less than --- ``a < b``
+    * sameness --- ``c == d``
+    * *not* sameness --- ``e != f``
+
+* We've also got our logical operators
+    * and --- ``v && w``
+    * or --- ``x || y``
+    * not --- ``!z``
