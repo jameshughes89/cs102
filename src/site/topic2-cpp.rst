@@ -61,6 +61,7 @@ Topic #2 Aside --- C++ vs. Java vs. Python
 
 * ``std::endl`` is how we end the line we're printing
     * We could simply use a new line character, but the benefit of using ``endl`` is that we flush the buffer
+    * ``endl`` will also use your operating system's newline character, which is neat
 
 * Like Java:
     * You will also see the use of semicolons (``;``) at the end of the lines of code (we need these)
