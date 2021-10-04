@@ -40,6 +40,7 @@ Topic #1 Aside --- C++ vs. Java vs. Python
         return 0;
     }
 
+
 * ``#include`` is basically ``import`` like we used in Python
 * ``<iostream>`` in the standard input/output library for C++
     * It let's us use ``std::cout``, which is how we can print things
@@ -65,3 +66,63 @@ Topic #1 Aside --- C++ vs. Java vs. Python
     * You will also see the use of semicolons (``;``) at the end of the lines of code (we need these)
     * We use squiggly brackets for starting end ending the function ``{ ... }``
 
+
+Variables and Types
+===================
+
+
+**Python**
+
+.. code-block:: python
+    :linenos:
+    :emphasize-lines: 2,3,4
+
+    # Python --- Declaring and assigning variables
+    anInt = 5
+    aFloat = 5.5
+    aString = "5"       # Could have used '5'
+
+
+**Java**
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 4,5,6
+
+    // Java --- Declaring and assigning variables
+    public class SomeClass {
+        public static void main(String[] args){
+            int anInt = 5;
+            double aFloat = 5.5;    // doubles now for float
+            String aString = "5";   // Mind the double quotes
+
+        }
+    }
+
+
+**C++**
+
+.. code-block:: cpp
+    :linenos:
+    :emphasize-lines: 1,7
+
+    #include <string>
+
+    // Cpp --- Declaring and assigning variables
+    int main() {
+        int anInt = 5;
+        double aFloat = 5.5;         // doubles now for float
+        std::string aString = "5";   // Mind the double quotes
+        return 0;
+    }
+
+* You will see that C++ and Java are very similar here
+* The only catch is that, unlike Java and Python, we don't get strings for free out of the box
+* We can use strings by including ``<string>``
+    * Or ``<iostream>`` since we get strings that that too
+* Also note the use of ``std`` before the string type
+
+* Just like Java, with C++ you cannot swap the types we store in our variables like we could in Python
+    * Although, there kinda' is a way to do this in C++, but we will ignore that
+
+* Again, like Java, with C++ we can declare a variable on a single like and then assign it a value later
