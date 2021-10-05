@@ -41,7 +41,7 @@ Topic #2 Aside --- C++ vs. Java vs. Python
     }
 
 
-* ``#include`` is basically ``import`` like we used in Python
+* ``#include`` is kinda' like ``import`` like we used in Python
 * ``<iostream>`` in the standard input/output library for C++
     * It let's us use ``std::cout``, which is how we can print things
 
