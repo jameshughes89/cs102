@@ -108,12 +108,20 @@ Dereferencing
    :align: center
    :target: https://www.cplusplus.com/doc/tutorial/pointers/
 
+
 .. warning::
 
     Note the two different uses of ``*``. (a) ``int* foo`` and (b) ``*foo``. In (a), we are specifying the type to be
     integer pointer --- it's having an impact on the type, so the asterisk (``*``) is by the type in the variable
     declaration. With (b) however, we already have an existing pointer variable that we want to dereference, thus the
     asterisk (``*``) is by the already existing variable.
+
+
+.. note::
+
+    You can still actually use ``int *myIntPointer`` as opposed to ``int* myIntPointer``, but I recommend the latter
+    since it helps emphasize that it's the *type* that is the pointer. That said, this is my preference. 
+
 
 * The address of and dereference operators are complementary
 
