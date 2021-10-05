@@ -416,6 +416,18 @@ Booleans
     Although C++ has booleans, you will see the value ``1`` mean ``true``, and ``0`` mean ``false`` (or, really, anything
     *not* ``0`` is ``true``).
 
+.. Note::
+
+    With C++, many platforms don't actually have a boolean type. Instead, they sneak something like this into their
+    code.
+
+    .. code-block:: cpp
+        :linenos:
+
+        #define bool char
+        #define false 0
+        #define true 1
+
 
 Conditionals
 ------------
