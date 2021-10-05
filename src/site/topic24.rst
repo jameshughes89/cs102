@@ -290,6 +290,7 @@ General Remove
         return returnElement;
     }
 
+
 .. code-block:: java
     :linenos:
 
@@ -324,15 +325,18 @@ General Remove
         } else {
             Node<T> parent = toRemove;
             Node<T> child = toRemove.getRight();
+
             // Find the in order successor (right child's left
             // most node (minimum node))
             while (child.getLeft() != null) {
                 parent = child;
                 child = child.getLeft();
             }
+
             // Set replacement node's left to
             // the node being removed's (subtree root's) left
             child.setLeft(toRemove.getLeft());
+
             // If the immediate in order successor is NOT the
             // node being replaced's right child, the parent
             // node's new left becomes the child node's right
