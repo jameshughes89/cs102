@@ -414,7 +414,7 @@ Booleans
 .. warning::
 
     Although C++ has booleans, you will see the value ``1`` mean ``true``, and ``0`` mean ``false`` (or, really, anything
-    *not* ``1`` is ``false``).
+    *not* ``0`` is ``true``).
 
 
 Conditionals
