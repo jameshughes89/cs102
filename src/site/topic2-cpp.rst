@@ -662,7 +662,7 @@ For Loop
     // Java --- for loop
     // Run loop 10 times (0 -- 9)
     for (int i = 0; i < 10; ++i) {
-            System.out.println(i);
+        System.out.println(i);
     }
 
 
