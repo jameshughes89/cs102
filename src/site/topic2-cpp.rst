@@ -616,8 +616,8 @@ For Each Loop
     char[] anArray = {'a', 'b', 'c', 'd'};
 
     // For each character 'c' in anArray
-    for (char e : anArray) {
-        System.out.println(e);
+    for (char c : anArray) {
+        System.out.println(c);
     }
 
 
@@ -631,8 +631,8 @@ For Each Loop
     char anArray[] = {'a', 'b', 'c', 'd'};
 
     // For each character 'c' in anArray
-    for (char e : anArray) {
-        std::cout << e << std::endl;
+    for (char c : anArray) {
+        std::cout << c << std::endl;
     }
 
 * The only real difference here is how we are defining the array
