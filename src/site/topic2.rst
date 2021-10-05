@@ -687,8 +687,8 @@ For Each Loop
     char[] anArray = {'a', 'b', 'c', 'd'};
 
     // For each character 'c' in anArray
-    for (char e : anArray) {
-        System.out.println(e);
+    for (char c : anArray) {
+        System.out.println(c);
     }
 
 * It's remarkably similar, except
