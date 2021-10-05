@@ -398,6 +398,11 @@ Comments
         return celsius;
     }
 
+.. Note::
+
+    There is no actual standard for function comments like this for C++. For consistency, I recommend just using the
+    javadocs style.
+
 
 Booleans
 ========
