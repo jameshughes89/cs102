@@ -310,6 +310,7 @@ Functions
 * We can put it after main if really we want, but then we would need to add a *function declaration* before the main
     * This is sometimes called a *function prototype*
 
+
 .. code-block:: cpp
     :linenos:
     :emphasize-lines: 1
@@ -451,7 +452,7 @@ Conditionals
     if (someBool) {
         std::cout << "it was true" << std::endl;
     } else {
-	    std::cout << "it was false" << std::endl;
+        std::cout << "it was false" << std::endl;
     }
 
 
