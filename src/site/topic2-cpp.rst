@@ -306,8 +306,24 @@ Functions
 
 * You will see that the Java and C++ examples are very similar
 * The one catch here is that the function is defined before main
-    * We can put it after main if really we want, but then we would need to add a function prototype before the main
-    * ``int someFunction(int, int);	// Function Prototype``
+
+* We can put it after main if really we want, but then we would need to add a *function declaration* before the main
+    * This is sometimes called a *function prototype*
+
+.. code-block:: cpp
+    :linenos:
+    :emphasize-lines: 1
+
+    int someFunction(int, int);	// Function Declaration/prototype
+
+    int main(){
+        std::cout << someFunction(1, 2) << std::endl;
+    }
+
+    int someFunction(int a, int b){
+        int c = a + b;
+        return c;
+    }
 
 
 Temperature Converter
