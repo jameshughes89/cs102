@@ -209,7 +209,7 @@ Input & Output
 **C++**
 
 
-* Below is an example of inputting a primitive type
+* Below is an example of inputting a value
 
 .. code-block:: cpp
     :linenos:
@@ -231,7 +231,11 @@ Input & Output
     std::cout << a << " and " << b << std::endl;
 
 
-* Reading in a string is a little different, but still relatively simple
+* The above will work for strings too, but it reads only up to the first whitespace
+* You could have a series of string variables to somewhat address this, but then you would be limited in what the string could be
+    * For example, inputting ``hello world this is fun`` would result in ``a = "hello"`` and ``b = "world"``, but the rest of the string being lost
+
+* Reading in a string with a bunch of spaces is a little different, but still relatively simple
 
 .. code-block:: cpp
     :linenos:
