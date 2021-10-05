@@ -91,9 +91,9 @@ Dereferencing
     :emphasize-lines: 2,4
 
     int myVar = 25;
-	int* foo = &myVar;
-	int bar = myVar;
-	int baz = *foo;
+    int* foo = &myVar;
+    int bar = myVar;
+    int baz = *foo;
 
 * The use of ``*foo`` on line 4 means *dereference*
 * It means, take the memory address stored in the integer pointer variable ``foo``, but tell me what is in that address
