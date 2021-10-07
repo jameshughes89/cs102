@@ -379,14 +379,15 @@ General Remove
 
 * The replacement node's left subtree will be the removed node's old left subtree
     * The replacement node contains the smallest thing in the whole right subtree
-    * But since it is in the right subtree, it is bigger than everything in the left subtree
+    * But since it is in the right subtree, it is bigger than everything in the removed node's left subtree
 
-* If it happens that the node being replaced's right child is the replacement node, we're done
+* If it happens that the node being removed's right child is the replacement node, we're done
+
 * If it is *not* the right child, then
     * The replacement node's parent may need to take care of the replacement node's right subtree
-    * The node being removed may have a subtree, when all is said and done, that still needs to go somewhere
+    * The node being removed may have a right subtree, when all is said and done, that still needs to go somewhere
 
-* The idea is, since the parent node must be larger than everything in its left subtree, the replacement node's right subtree is also less than the parent
+* The idea is, since the parent to the replacement node must be larger than everything in its left subtree, the replacement node's right subtree is also less than the parent
     * Therefore, make the parent node's new left subtree the replacement node's right subtree
 
 * Since we know that the replacement node is the smallest thing in the right subtree, we know we can make the replacement node's right subtree the removed node's right subtree
