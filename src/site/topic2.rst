@@ -816,3 +816,5 @@ For next time
 
 * Read Chapter 1 of your text
     * 15 pages
+
+* :doc:`Although outside the scope of the course, if you would like to see how a C++ differs, check out the relevant C++ lesson. </cpp-syntax>`
