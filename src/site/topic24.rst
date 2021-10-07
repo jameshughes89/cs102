@@ -290,6 +290,10 @@ General Remove
         return returnElement;
     }
 
+* The public ``remove`` method is similar to the public ``removeMin`` and ``removeMax``
+* It checks the root node to see if it is the value to be removed
+* Otherwise, it checks which subtree to continue the search down and calls the recursive private ``remove``
+
 
 .. code-block:: java
     :linenos:
@@ -310,6 +314,15 @@ General Remove
             return remove(element, child, child.getRight());
         }
     }
+
+* The private ``remove`` is basically doing a binary search through the tree looking for the value to be removed
+* Unlike the binary search however, this method must
+    * Remove the element
+    * Potentially address a gap in the tree if the node being removed is an internal node
+    * Ensure the binary search tree ordering is preserved
+
+* To do this, we make use of another private method called ``findReplacementNode``
+
 
 .. code-block:: java
     :linenos:
