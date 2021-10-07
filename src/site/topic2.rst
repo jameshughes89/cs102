@@ -827,4 +827,4 @@ For next time
 * Read Chapter 1 of your text
     * 15 pages
 
-* :doc:`If you'd like, here is an aside on C++ pointers. </topic2-pointers>`
+* :doc:`If you would like, check out C++ lesson on pointers. </cpp-pointers>`
