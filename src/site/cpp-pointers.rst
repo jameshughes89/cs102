@@ -1,6 +1,16 @@
-***************************
-Topic #2 Aside --- Pointers
-***************************
+**********************************
+C++ Lessons #2 --- Java vs. Python
+**********************************
+
+.. warning::
+
+    * For these, I will only go over the C++ details at a high level
+    * Getting into the nitty gritty of C++ is not the purpose of this aside
+    * Some of the concepts require knowledge of more advanced ideas that have not been covered yet
+        * If this happens, do not panic
+        * it probably makes more sense to revisit this later in the course
+    * For simplicity, some of the examples will use less than ideal implementations
+
 
 * Variables we make in our program go into RAM
 
@@ -120,7 +130,7 @@ Dereferencing
 .. note::
 
     You can still actually use ``int *myIntPointer`` as opposed to ``int* myIntPointer``, but I recommend the latter
-    since it helps emphasize that it's the *type* that is the pointer. That said, this is my preference. 
+    since it helps emphasize that it's the *type* that is the pointer. That said, this is my preference.
 
 
 * The address of and dereference operators are complementary

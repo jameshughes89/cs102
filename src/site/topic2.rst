@@ -1,6 +1,6 @@
-**********************************
-C++ Lessons #2 --- Java vs. Python
-**********************************
+****************************
+Topic #2 --- Java vs. Python
+****************************
 
 .. warning::
 
@@ -827,4 +827,4 @@ For next time
 * Read Chapter 1 of your text
     * 15 pages
 
-* :doc:`If you would like, check out C++ lesson on pointers. </cpp-pointers>`
+* :doc:`Although not part of the course, if you would like, check out C++ lesson on pointers. </cpp-pointers>`
