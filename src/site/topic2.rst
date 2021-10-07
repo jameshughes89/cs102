@@ -127,7 +127,7 @@ Declaring & Assigning Variables
 .. code-block:: java
     :linenos:
 
-    // Java --- Declaring * Assigning
+    // Java --- Declaring & Assigning
     int anotherInt;                     // Declaration
     anotherInt = 11;                    // Assignment
     System.out.println(anotherInt);
@@ -697,8 +697,8 @@ For Each Loop
     char[] anArray = {'a', 'b', 'c', 'd'};
 
     // For each character 'c' in anArray
-    for (char e : anArray) {
-        System.out.println(e);
+    for (char c : anArray) {
+        System.out.println(c);
     }
 
 * It's remarkably similar, except
@@ -730,10 +730,10 @@ For Loop
     :linenos:
     :emphasize-lines: 3
 
-    // Java --- for each loop
+    // Java --- for loop
     // Run loop 10 times (0 -- 9)
     for (int i = 0; i < 10; ++i) {
-            System.out.println(i);
+        System.out.println(i);
     }
 
 * Here, we're running the first statement within the parentheses by the for loop once
@@ -815,7 +815,7 @@ For next time
 
 .. warning::
 
-    If at any point you are thinking "Oh crap, how on earth am I going to remember all these differences?", `you're doing programming wrong <https://www.google.com/search?q=how+to+use+for+loops+in+java&sxsrf=ALeKk028SMFq5DFuUR6yzWEgbfqjzEsyAg%3A1622124851412&source=hp&ei=M6mvYIWRFcGs5NoPzOisgAI&iflsig=AINFCbYAAAAAYK-3Q0Dw-HpGIyWqCLxBDACWOuQ3nG_x&oq=how+to+use+for+loops+in+java&gs_lcp=Cgdnd3Mtd2l6EAMyBwgAEIcCEBQyAggAMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjoECCMQJzoFCAAQkQI6CAgAELEDEIMBOgsILhCxAxDHARCjAjoFCAAQsQM6AgguOgQIABBDOgQIABAKOggIIRAWEB0QHjoECAAQDToICAAQCBANEB46CAgAEBYQChAeUOwFWOImYKMnaAFwAHgBgAGEAogBwBuSAQcxMC4yMC4xmAEAoAEBqgEHZ3dzLXdpeg&sclient=gws-wiz&ved=0ahUKEwjF9q78herwAhVBFlkFHUw0CyAQ4dUDCAo&uact=5>`_.
+    If at any point you are thinking "Oh crap, how on earth am I going to remember all these differences?", `you're doing programming wrong <https://www.google.com/search?q=how+to+use+for+loops+in+java>`_.
 
 
 * Practice
@@ -827,4 +827,8 @@ For next time
 * Read Chapter 1 of your text
     * 15 pages
 
+
+* :doc:`Although outside the scope of the course, if you would like to see how a C++ differs, check out the relevant C++ lesson. </cpp-syntax>`
 * :doc:`Although not part of the course, if you would like, check out C++ lesson on pointers. </cpp-pointers>`
+
+

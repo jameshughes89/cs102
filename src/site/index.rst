@@ -157,6 +157,15 @@ Course Outline
     outline
 
 
+C++ Lessons
+===========
+
+.. toctree::
+    :maxdepth: 1
+
+    cpp-syntax
+
+
 ==================
 
      * :ref:`genindex`
