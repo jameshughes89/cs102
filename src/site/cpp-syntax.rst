@@ -7,6 +7,7 @@ C++ Lessons --- C++ vs. Java vs. Python
     * For these, I will only go over the C++ details at a high level
     * Getting into the nitty gritty of C++ is not the purpose of this aside
     * Some of the concepts require knowledge of more advanced ideas that have not been covered yet
+        * If this happens, do not panic
     * For simplicity, some of the examples will use less than ideal implementations
 
 
