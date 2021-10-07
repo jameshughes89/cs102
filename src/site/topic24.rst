@@ -364,6 +364,33 @@ General Remove
         return replacementNode;
     }
 
+* ``findReplacementNode`` looks rather intimidating at first, but it you take your time looking at it, you will see that it's simple
+* The first part, the first ``if``s and ``else if``s check if the node being removed is a leaf node, or if it has one child
+    * If it's a leaf node, there is no replacement
+    * If there is only one child, then that child becomes the replacement
+
+* The other case is when there are two children
+* Here, the idea is to find the in order successor node
+    * The right child's left most node
+
+* You may see that this code is very similar to the private ``removeMax`` method
+    * Iterate down the tree until we find the left most node in the subtree
+    * This node will become the replacement node
+
+* The replacement node's left subtree will be the removed node's old left subtree
+    * The replacement node contains the smallest thing in the whole right subtree
+    * But since it is in the right subtree, it is bigger than everything in the left subtree
+
+* If it happens that the node being replaced's right child is the replacement node, we're done
+* If it is *not* the right child, then
+    * The replacement node's parent may need to take care of the replacement node's right subtree
+    * The node being removed may have a subtree, when all is said and done, that still needs to go somewhere
+
+* The idea is, since the parent node must be larger than everything in its left subtree, the replacement node's right subtree is also less than the parent
+    * Therefore, make the parent node's new left subtree the replacement node's right subtree
+
+* Since we know that the replacement node is the smallest thing in the right subtree, we know we can make the replacement node's right subtree the removed node's right subtree
+
 
 Contains
 ========
