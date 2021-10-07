@@ -312,10 +312,6 @@ General Remove
 
 * Below is an example of removing multiple elements from a binary search tree
 
-.. image:: img/binarysearchtree_remove0.png
-   :width: 250 px
-   :align: center
-
 .. image:: img/binarysearchtree_remove1.png
    :width: 500 px
    :align: center
