@@ -1,6 +1,6 @@
-**********************************
-C++ Lessons #2 --- Java vs. Python
-**********************************
+***************************
+C++ Lessons #2 --- Pointers
+***************************
 
 .. warning::
 
@@ -263,3 +263,5 @@ Fun Examples
 * Running this, on the other hand, will get us ``1``, ``2``, and ``3``
     * ``sum_pointer`` store memory addresses (integer pointers) of where the ``main``'s ``a``, ``b``, and ``c`` are stored
     * If we dereference these pointers, we can modify what is at the specified memory address
+
+
