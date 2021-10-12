@@ -164,6 +164,7 @@ C++ Lessons
     :maxdepth: 1
 
     cpp-syntax
+    cpp-pointers
 
 
 ==================

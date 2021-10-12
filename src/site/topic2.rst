@@ -2,6 +2,16 @@
 Topic #2 --- Java vs. Python
 ****************************
 
+.. warning::
+
+    * For these, I will only go over the C++ details at a high level
+    * Getting into the nitty gritty of C++ is not the purpose of this aside
+    * Some of the concepts require knowledge of more advanced ideas that have not been covered yet
+        * If this happens, do not panic
+        * it probably makes more sense to revisit this later in the course
+    * For simplicity, some of the examples will use less than ideal implementations
+
+
 **Python**
 
 .. code-block:: python
@@ -817,4 +827,8 @@ For next time
 * Read Chapter 1 of your text
     * 15 pages
 
+
 * :doc:`Although outside the scope of the course, if you would like to see how a C++ differs, check out the relevant C++ lesson. </cpp-syntax>`
+* :doc:`Although not part of the course, if you would like, check out C++ lesson on pointers. </cpp-pointers>`
+
+
