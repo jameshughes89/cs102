@@ -265,3 +265,7 @@ Fun Examples
     * If we dereference these pointers, we can modify what is at the specified memory address
 
 
+Further Reading
+===============
+
+* `If you would like additional discussion and examples, check out cpp reference <https://en.cppreference.com/w/cpp/language/pointer>`_
