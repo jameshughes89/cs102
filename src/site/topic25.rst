@@ -16,6 +16,7 @@ Topic #25 --- Sorting
 * Some will more or less be the same in terms of the amount of computation required
 * And some will be much better than others
 
+* `Here is a simple visualization of some popular sorting algorithms <https://www.toptal.com/developers/sorting-algorithms>`_
 
 Sorting Problem
 ===============
