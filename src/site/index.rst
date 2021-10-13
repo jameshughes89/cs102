@@ -4,7 +4,7 @@ CSCI 162 --- Winter 2022
 
 .. warning::
 
-    This website is very much a work in progress.
+    This website is a work in progress.
 
 
 This course emphasizes the use of abstraction in programming. Elementary data structures are introduced (stacks, queues,
