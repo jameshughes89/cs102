@@ -52,7 +52,7 @@ Order
 
 * With numbers, we don't feel the need to ask
 * But with other things, we need to have a well defined ordering for the *things*
-
+    * The things themselves have the order-*ness* property, not a sorting algorithm
 
 
 
