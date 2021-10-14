@@ -18,6 +18,7 @@ Topic #25 --- Sorting
 
 * `Here is a simple visualization of some popular sorting algorithms <https://www.toptal.com/developers/sorting-algorithms>`_
 
+
 Sorting Problem
 ===============
 
