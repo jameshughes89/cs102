@@ -25,6 +25,26 @@ Sorting Problem
 Bogosort
 ========
 
+* Here's a fun idea
+
+1. Assume we have a function called ``isSorted(collection)`` that returns true if the collection is sorted, false otherwise
+    * :math:`O(n)`
+2. Assume we have another function called ``shuffle(collection)`` that randomly shuffles the collection
+    * :math:`O(n)`
+    * Think of shuffling a deck of cards
+
+* The algorithm is then:
+    ``while not isSorted(collection)``
+    ``    shuffle(collection)``
+
+* Best case scenario, we get lucky with our collection already being sorted as we only need to use ``isSorted`` once
+* Worst case is... *forever?*
+* Really, we could get **really** unlucky and shuffle the elements such that they are the same, not in order order every time
+
+* As you can probably tell, this is not a particularly great sorting algorithm in terms of computation required
+* If your :math:`n` is very small, sure you will *probably* end up with a sorted collection after a while
+* But to put things into perspective, there are a total :math:`8.0658175x10^{67}` permutations of a deck of 52 cards
+
 
 Bubble Sort
 ===========
