@@ -56,9 +56,11 @@ Order
 
 * We've already discussed this a few times already in the context of an ordered bag and binary search tree
     * `Comparable defines a natural ordering <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Comparable.html>`_
+
+* We may also want to have more complex orderings of things
+    * For example, comparing things based on multiple values
+    * I like to sort my music by artist and year
     * `Comparator defines an unnatural ordering <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html>`_
-        * For example, comparing things based on multiple values
-            * I like to sort my music by artist and year
 
 
 Sticking With Numbers
