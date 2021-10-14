@@ -62,18 +62,16 @@ Order
     * I like to sort my music by artist and year
     * `Comparator defines an unnatural ordering <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html>`_
 
+.. note::
 
-Sticking With Numbers
----------------------
+    * For ease, we will use numbers in the examples, but the ideas are generalizable to other *things* if they have a defined order
 
-* For ease, we will use numbers in the examples, but the ideas are generalizable to other *things* if they have a defined order
+    * We will define a collection of numbers ordered if and only if the elements are non-decreasing order
+    * If we want to be more specific and include include duplicate values, we could say that the elements are *monotonically increasing*
+        * A fancy way of saying the numbers are increasing or the same as we go, but **never** decreasing
+            * For example: :math:`1, 2, 3, 5, 5, 6, 8, 8, 8, 9`
 
-* We will define a collection of numbers ordered if and only if the elements are in increasing order
-* If we want to be more specific and include include duplicate values, we could say that the elements are *monotonically increasing*
-    * A fancy way of saying the numbers are increasing or the same as we go, but **never** decreasing
-        * For example: :math:`1, 2, 3, 5, 5, 6, 8, 8, 8, 9`
-
-* There is nothing stopping us from defining the order we want to be decreasing, but here we will simply use increasing
+    * There is nothing stopping us from defining the order we want to be decreasing, but here we will simply use increasing
 
 
 Bogosort
