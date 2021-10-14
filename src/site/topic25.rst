@@ -37,6 +37,8 @@ Order
 * What *in order* means however will depend on what is being sorted
 * For example
     * Numbers come with an intrinsic ordering
+        * Java uses the `Natural Order <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Comparable.html>`
+        * *"This ordering is referred to as the class's natural ordering, and the class's compareTo method is referred to as its natural comparison method."*
     * Strings could be ordered alphabetically
         * Perhaps by length?
     * Sort people based on height
@@ -53,8 +55,8 @@ Order
     * The things themselves have the order-*ness* property, not a sorting algorithm
 
 
-Examples Here
--------------
+Sticking With Numbers
+---------------------
 
 * For ease, we will use numbers in the examples, but the ideas are generalizable to other *things* if they have a defined order
 
