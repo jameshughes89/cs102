@@ -39,8 +39,6 @@ Order
     * Numbers come with an intrinsic ordering
     * Strings could be ordered alphabetically
         * Perhaps by length?
-        * Maybe based on the character's ascii values?
-        * Treat the strings as base 26 integers?
     * Sort people based on height
         * Or age?
         * Or month and day of birthday?
