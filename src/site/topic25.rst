@@ -22,6 +22,17 @@ Topic #25 --- Sorting
 Sorting Problem
 ===============
 
+* Given a collection of *things*
+    * Numbers
+    * Strings
+    * People
+    * Car Parts
+
+* The goal is to arrange the collection of *things* such that they are *in order*
+
+
+
+
 
 Bogosort
 ========
