@@ -31,6 +31,29 @@ Sorting Problem
 * The goal is to arrange the collection of *things* such that they are *in order*
 
 
+Order
+-----
+
+* What *in order* means however will depend on what is being sorted
+* For example
+    * Numbers come with an intrinsic ordering
+    * Strings could be ordered alphabetically
+        * Perhaps by length?
+        * Maybe based on the character's ascii values?
+        * Treat the strings as base 26 integers?
+    * Sort people based on height
+        * Or age?
+        * Or month and day of birthday?
+    * Car Parts by mass?
+        * Or production code?
+        * Date they were made?
+        * Volume?
+        * The amount of dust particles on the surface?
+
+* With numbers, we don't feel the need to ask
+* But with other things, we need to have a well defined ordering for the *things*
+
+
 
 
 
