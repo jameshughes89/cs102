@@ -37,7 +37,7 @@ Order
 * What *in order* means however will depend on what is being sorted
 * For example
     * Numbers come with an intrinsic ordering
-        * Java uses the `Natural Order <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Comparable.html>`
+        * Java uses the `Natural Order <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Comparable.html>`_
         * *"This ordering is referred to as the class's natural ordering, and the class's compareTo method is referred to as its natural comparison method."*
     * Strings could be ordered alphabetically
         * Perhaps by length?
@@ -53,6 +53,12 @@ Order
 * With numbers, we don't feel the need to ask
 * But with other things, we need to have a well defined ordering for the *things*
     * The things themselves have the order-*ness* property, not a sorting algorithm
+
+* We've already discussed this a few times already in the context of an ordered bag and binary search tree
+    * `Comparable defines a natural ordering <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Comparable.html>`_
+    * `Comparator defines an unnatural ordering <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html>`_
+        * For example, comparing things based on multiple values
+            * I like to sort my music by artist and year
 
 
 Sticking With Numbers
