@@ -90,8 +90,7 @@ Bogosort
     * Think of shuffling a deck of cards
 
 * The algorithm is then:
-    ``while not isSorted(collection)``
-    ``    shuffle(collection)``
+    ``while not isSorted(collection): shuffle(collection)``
 
 * Best case scenario, we get lucky with our collection already being sorted as we only need to use ``isSorted`` once
 * Worst case is... *forever?*
