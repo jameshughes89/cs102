@@ -64,14 +64,18 @@ Order
 
 .. note::
 
-    * For ease, we will use numbers in the examples, but the ideas are generalizable to other *things* if they have a defined order
+    For ease, we will use numbers in the examples, but the ideas are generalizable to other *things* if they have a
+    defined order.
 
-    * We will define a collection of numbers ordered if and only if the elements are non-decreasing order
-    * If we want to be more specific and include include duplicate values, we could say that the elements are *monotonically increasing*
-        * A fancy way of saying the numbers are increasing or the same as we go, but **never** decreasing
-            * For example: :math:`1, 2, 3, 5, 5, 6, 8, 8, 8, 9`
+    We will define a collection of numbers ordered if and only if the elements are non-decreasing order. If we want to
+    be more specific and include include duplicate values, we could say that the elements are
+    *monotonically increasing*. This is just fancy way of saying the numbers are increasing or the same/equal as we go,
+    but **never** decreasing. For example:
 
-    * There is nothing stopping us from defining the order we want to be decreasing, but here we will simply use increasing
+        :math:`1, 2, 3, 5, 5, 6, 8, 8, 8, 9`
+
+    There is nothing stopping us from defining the order we want to be decreasing, but here we will simply use
+    increasing.
 
 
 Bogosort
@@ -86,8 +90,7 @@ Bogosort
     * Think of shuffling a deck of cards
 
 * The algorithm is then:
-    ``while not isSorted(collection)``
-    ``    shuffle(collection)``
+    ``while not isSorted(collection): shuffle(collection)``
 
 * Best case scenario, we get lucky with our collection already being sorted as we only need to use ``isSorted`` once
 * Worst case is... *forever?*
@@ -98,7 +101,7 @@ Bogosort
 * But to put things into perspective, there are a total :math:`8.0658175x10^{67}` permutations of a deck of 52 cards``!``
     * To put this in perspective, there are roughly :math:`2.4x10^{67}` atoms in the Milky Way
     * If we assigned each possible ordering to every atom in the Milky Way, we'd run out of atoms
-        * we'd have roughly :math:`5.7x10^{67}` permutations left over
+        * we'd have roughly :math:`5.7\times10^{67}` permutations left over
     * `There's also a fun story to go with this <https://www.reddit.com/r/AskReddit/comments/6il1jx/comment/dj71u1v/?utm_source=share&utm_medium=web2x&context=3>`_
 
 
