@@ -43,7 +43,7 @@ Bogosort
 
 * As you can probably tell, this is not a particularly great sorting algorithm in terms of computation required
 * If your :math:`n` is very small, sure you will *probably* end up with a sorted collection after a while
-* But to put things into perspective, there are a total :math:`8.0658175x10^{67}` permutations of a deck of 52 cards
+* But to put things into perspective, there are a total :math:`8.0658175x10^{67}` permutations of a deck of 52 cards`!`
 
 
 Bubble Sort
