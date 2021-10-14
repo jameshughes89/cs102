@@ -95,7 +95,7 @@ Bogosort
 
 * As you can probably tell, this is not a particularly great sorting algorithm in terms of computation required
 * If your :math:`n` is very small, sure you will *probably* end up with a sorted collection after a while
-* But to put things into perspective, there are a total :math:`8.0658175x10^{67}` permutations of a deck of 52 cards`!`
+* But to put things into perspective, there are a total :math:`8.0658175x10^{67}` permutations of a deck of 52 cards``!``
     * To put this in perspective, there are roughly :math:`2.4x10^{67}` atoms in the Milky Way
     * If we assigned each possible ordering to every atom in the Milky Way, we'd run out of atoms
         * we'd have roughly :math:`5.7x10^{67}` permutations left over
