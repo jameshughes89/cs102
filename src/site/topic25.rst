@@ -46,7 +46,7 @@ Bogosort
 * But to put things into perspective, there are a total :math:`8.0658175x10^{67}` permutations of a deck of 52 cards`!`
     * To put this in perspective, there are roughly :math:`2.4x10^{67}` atoms in the Milky Way
     * If we assigned each possible ordering to every atom in the Milky Way, we'd run out of atoms
-        * e'd have roughly :math:`5.7x10^{67}` permutations left over
+        * we'd have roughly :math:`5.7x10^{67}` permutations left over
     * `There's also a fun story to go with this <https://www.reddit.com/r/AskReddit/comments/6il1jx/comment/dj71u1v/?utm_source=share&utm_medium=web2x&context=3>`_
 
 
