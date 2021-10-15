@@ -117,8 +117,11 @@ Selection Sort
 ==============
 
 
-Bucket Sort
-===========
+Radix Sort
+==========
+
+Distributed Non-Comparative Sorting
+-----------------------------------
 
 
 Mergesort
