@@ -117,8 +117,11 @@ Selection Sort
 ==============
 
 
-Pigeonhole Sort
-===============
+Radix Sort
+==========
+
+Distributed Non-Comparative Sorting
+-----------------------------------
 
 
 Mergesort
