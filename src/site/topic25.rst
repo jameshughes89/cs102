@@ -117,8 +117,8 @@ Selection Sort
 ==============
 
 
-Bucket Sort
-===========
+Pigeonhole Sort
+===============
 
 
 Mergesort
