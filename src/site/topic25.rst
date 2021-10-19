@@ -196,6 +196,14 @@ Bubble Sort
     * Actually, :math:`n-1` since putting the :math:`(n-1)^{th}` thing in its proper spot would result in also having the last element, the :math:`n^{th}`, also be in its proper spot
     * See the above example, where :math:`n = 4` and we needed only 3 passes
 
+* Consider the case where the list is already in order
+
+    :math:`1, 2, 3, 4`
+
+* If may feel rather silly doing a total of :math:`n-1` passes since after a single pass we can conclude that it's already sorted
+* In this case, an easy way to stop the sort is to check if we ever finish a pass and make no swaps
+    * If we never swapped anything, then nothing was out of order, therefore the list must be sorted
+
 
 
 Insertion Sort
