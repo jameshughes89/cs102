@@ -108,6 +108,13 @@ Bogosort
 Bubble Sort
 ===========
 
+.. image:: img/ssort_bubblesort.png
+   :width: 500 px
+   :align: center
+   :target: https://en.wikipedia.org/wiki/Bubble_sort
+
+
+
 
 Insertion Sort
 ==============
