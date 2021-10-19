@@ -152,6 +152,39 @@ Bubble Sort
     :math:`1, 2, 3, 4`
 
 
+* Selecting an arbitrary pair of values to switch works, but we would like to have a more systematic strategy
+* Instead of randomly selecting, start at the beginning and look at each adjacent par and move up the list
+
+**Pass 1**
+
+    :math:`4, 3, 2, 1`
+
+    :math:`3, 4, 2, 1`
+
+    :math:`3, 2, 4, 1`
+
+    :math:`3, 2, 1, 4`
+
+
+* However, simply doing one pass does not guarantee that the list will be in order
+* In fact, all it does guarantee is that the largest value in the list will have *bubbled up* to its correct spot
+
+* The trick is to repeat this process until the list is sorted
+
+**Pass 2**
+
+    :math:`3, 2, 1, 4`
+
+    :math:`2, 3, 1, 4`
+
+    :math:`2, 1, 3, 4`
+
+**Pass 3**
+
+    :math:`1, 2, 3, 4`
+
+
+
 
 Insertion Sort
 ==============
