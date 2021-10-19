@@ -208,7 +208,7 @@ Best Case Scenario
     :math:`1, 2, 3, 4`
 
 * If may feel rather silly doing a total of :math:`n-1` passes since after a single pass we can conclude that it's already sorted
-* In this case, an easy way to stop the sort is to check if we ever finish a pass and make no swaps
+* In this case, an easy way to stop the sort early is to check if we ever finish a pass and make no swaps
     * If we never swapped anything, then nothing was out of order, therefore the list must be sorted
 
 
