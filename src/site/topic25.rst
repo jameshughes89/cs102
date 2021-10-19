@@ -184,6 +184,9 @@ Bubble Sort
     :math:`1, 2, 3, 4`
 
 
+Worst Case Scenario
+-------------------
+
 * The above example showed the *worst case scenario* for this specific bubble sort idea --- the list is in reverse order
 * The question is, how many passes must we do to guarantee that the list is sorted?
 
@@ -196,6 +199,10 @@ Bubble Sort
     * Actually, :math:`n-1` since putting the :math:`(n-1)^{th}` thing in its proper spot would result in also having the last element, the :math:`n^{th}`, also be in its proper spot
     * See the above example, where :math:`n = 4` and we needed only 3 passes
 
+
+Best Case Scenario
+------------------
+
 * Consider the case where the list is already in order
 
     :math:`1, 2, 3, 4`
@@ -204,6 +211,9 @@ Bubble Sort
 * In this case, an easy way to stop the sort is to check if we ever finish a pass and make no swaps
     * If we never swapped anything, then nothing was out of order, therefore the list must be sorted
 
+
+Algorithm
+---------
 
 
 
