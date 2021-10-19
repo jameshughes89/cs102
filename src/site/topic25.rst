@@ -113,6 +113,43 @@ Bubble Sort
    :align: center
    :target: https://en.wikipedia.org/wiki/Bubble_sort
 
+* The general idea of bubble sort is to look at the list, and if we see any adjacent numbers out of order, swap them
+* What's neat about this is, as long as we swap out of order adjacent values, it actually doesn't matter the order in which we apply the swaps
+
+    :math:`4, 3, 2, 1`
+
+* With the above example, we *could* go this route
+
+    :math:`4, 3, 2, 1`
+
+    :math:`3, 4, 2, 1`
+
+    :math:`3, 2, 4, 1`
+
+    :math:`2, 3, 4, 1`
+
+    :math:`2, 3, 1, 4`
+
+    :math:`2, 1, 3, 4`
+
+    :math:`1, 2, 3, 4`
+
+
+* Or, we could go this way
+
+    :math:`4, 3, 2, 1`
+
+    :math:`4, 3, 1, 2`
+
+    :math:`3, 4, 1, 2`
+
+    :math:`3, 1, 4, 2`
+
+    :math:`3, 1, 2, 4`
+
+    :math:`1, 3, 2, 4`
+
+    :math:`1, 2, 3, 4`
 
 
 
