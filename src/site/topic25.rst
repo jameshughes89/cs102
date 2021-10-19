@@ -153,7 +153,7 @@ Bubble Sort
 
 
 * Selecting an arbitrary pair of values to switch works, but we would like to have a more systematic strategy
-* Instead of randomly selecting, start at the beginning and look at each adjacent par and move up the list
+* Instead of randomly selecting pairs, start at the beginning and look at each adjacent pair and move up the list
 
 **Pass 1**
 
