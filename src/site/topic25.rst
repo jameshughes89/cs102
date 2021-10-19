@@ -184,6 +184,18 @@ Bubble Sort
     :math:`1, 2, 3, 4`
 
 
+* The above example showed the *worst case scenario* for this specific bubble sort idea --- the list is in reverse order
+* The question is, how many passes must we do to guarantee that the list is sorted?
+
+* If the list is length :math:`n`
+* And after a single pass the largest value is in its proper location
+* After a second pass, the second largest value is in its proper location
+* After a third, the third largest will be where it needs to
+* ...
+* After :math:`n` passes, we know the list is sorted
+    * Actually, :math:`n-1` since putting the :math:`(n-1)^{th}` thing in its proper spot would result in also having the last element, the :math:`n^{th}`, also be in its proper spot
+    * See the above example, where :math:`n = 4` and we needed only 3 passes
+
 
 
 Insertion Sort
