@@ -197,7 +197,7 @@ Worst Case Scenario
 * ...
 * After :math:`n` passes, we know the list is sorted
     * Actually, :math:`n-1` since putting the :math:`(n-1)^{th}` thing in its proper spot would result in also having the last element, the :math:`n^{th}`, also be in its proper spot
-    * See the above example, where :math:`n = 4` and we needed only 3 passes
+    * See the above example, where :math:`n = 4` and we only needed 3 passes
 
 
 Best Case Scenario
