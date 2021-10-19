@@ -222,7 +222,14 @@ Algorithm
             * Note that the list is not yet known to be sorted
 
 
+Computational Complexity
+------------------------
 
+* For the best case scenario, we still need to do a complete pass over all :math:`n` elements since we can only conclude if it is sorted or not by looking at the whole list
+    * Best case :math:`O(n)`
+
+* For the worst case, each pass is :math:`O(n)`, but we need a total of :math:`n-1` passes
+    * Worse Case :math:`O(n^{2})`
 
 
 Insertion Sort
