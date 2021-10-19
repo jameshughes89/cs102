@@ -215,6 +215,14 @@ Best Case Scenario
 Algorithm
 ---------
 
+* While the list is not sorted
+    * Compare each adjacent pair of values
+        * If they are out of order
+            * Swap them
+            * Note that the list is not yet known to be sorted
+
+
+
 
 
 Insertion Sort
