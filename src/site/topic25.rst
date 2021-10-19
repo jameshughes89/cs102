@@ -232,6 +232,7 @@ Computational Complexity
     * Worse Case :math:`O(n^{2})`
 
 
+
 Insertion Sort
 ==============
 
