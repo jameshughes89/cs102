@@ -108,6 +108,130 @@ Bogosort
 Bubble Sort
 ===========
 
+.. image:: img/sort_bubblesort.png
+   :width: 500 px
+   :align: center
+   :target: https://en.wikipedia.org/wiki/Bubble_sort
+
+* The general idea of bubble sort is to look at the list, and if we see any adjacent numbers out of order, swap them
+* What's neat about this is, as long as we swap *out of order* adjacent values, it actually doesn't matter the order we apply the swaps
+
+    :math:`4, 3, 2, 1`
+
+* With the above example, we *could* go this route
+
+    :math:`4, 3, 2, 1`
+
+    :math:`3, 4, 2, 1`
+
+    :math:`3, 2, 4, 1`
+
+    :math:`2, 3, 4, 1`
+
+    :math:`2, 3, 1, 4`
+
+    :math:`2, 1, 3, 4`
+
+    :math:`1, 2, 3, 4`
+
+
+* Or, we could go this way
+
+    :math:`4, 3, 2, 1`
+
+    :math:`4, 3, 1, 2`
+
+    :math:`3, 4, 1, 2`
+
+    :math:`3, 1, 4, 2`
+
+    :math:`3, 1, 2, 4`
+
+    :math:`1, 3, 2, 4`
+
+    :math:`1, 2, 3, 4`
+
+
+* Selecting an arbitrary pair of values to switch works, but we would like to have a more systematic strategy
+* Instead of randomly selecting pairs, start at the beginning and look at each adjacent pair and move up the list
+
+**Pass 1**
+
+    :math:`4, 3, 2, 1`
+
+    :math:`3, 4, 2, 1`
+
+    :math:`3, 2, 4, 1`
+
+    :math:`3, 2, 1, 4`
+
+
+* However, simply doing one pass does not guarantee that the list will be in order
+* In fact, all it does guarantee is that the largest value in the list will have *bubbled up* to its correct spot
+
+* The trick is to repeat this process until the list is sorted
+
+**Pass 2**
+
+    :math:`3, 2, 1, 4`
+
+    :math:`2, 3, 1, 4`
+
+    :math:`2, 1, 3, 4`
+
+**Pass 3**
+
+    :math:`1, 2, 3, 4`
+
+
+Worst Case Scenario
+-------------------
+
+* The above example showed the *worst case scenario* for this specific bubble sort idea --- the list is in reverse order
+* The question is, how many passes must we do to guarantee that the list is sorted?
+
+* If the list is length :math:`n`
+* And after a single pass the largest value is in its proper location
+* After a second pass, the second largest value is in its proper location
+* After a third, the third largest will be where it needs to
+* ...
+* After :math:`n` passes, we know the list is sorted
+    * Actually, :math:`n-1` since putting the :math:`(n-1)^{th}` thing in its proper spot would result in also having the last element, the :math:`n^{th}`, also be in its proper spot
+    * See the above example, where :math:`n = 4` and we only needed 3 passes
+
+
+Best Case Scenario
+------------------
+
+* Consider the case where the list is already in order
+
+    :math:`1, 2, 3, 4`
+
+* If may feel rather silly doing a total of :math:`n-1` passes since after a single pass we can conclude that it's already sorted
+* In this case, an easy way to stop the sort early is to check if we ever finish a pass and make no swaps
+    * If we never swapped anything, then nothing was out of order, therefore the list must be sorted
+
+
+Algorithm
+---------
+
+* While the list is not sorted
+    * For each adjacent pair of values
+        * If they are out of order
+            * Swap them
+            * Note that the list is not yet known to be sorted
+
+
+Computational Complexity
+------------------------
+
+* For the best case scenario, we still need to do a complete pass over all :math:`n` elements since we can only conclude if it is sorted by looking at the whole list
+    * Best case :math:`O(n)`
+
+* For the worst case, each pass is :math:`O(n)`, but we need a total of :math:`n-1` passes
+    * Worse Case :math:`O(n^{2})`
+
+
 
 Insertion Sort
 ==============
@@ -138,6 +262,9 @@ Heapsort
 
 For next time
 =============
+
+* Most sorting images are taken directly from their wikipedia articles
+    * Click the image to visit their respective pages
 
 * Read Chapter 9 Section 2
     * 26 pages
