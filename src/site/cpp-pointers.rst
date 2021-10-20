@@ -269,3 +269,9 @@ Further Reading
 ===============
 
 * `If you would like additional discussion and examples, check out cpp reference <https://en.cppreference.com/w/cpp/language/pointer>`_
+
+* Most sorting images are taken directly from their wikipedia articles
+
+
+* Images are taken directly from `cplusplus.com <https://www.cplusplus.com/doc/tutorial/pointers/>`_
+    * Click the images to visit the page
