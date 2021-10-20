@@ -269,3 +269,4 @@ Further Reading
 ===============
 
 * `If you would like additional discussion and examples, check out cpp reference <https://en.cppreference.com/w/cpp/language/pointer>`_
+    * Images are taken directly from their website
