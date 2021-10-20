@@ -263,5 +263,8 @@ Heapsort
 For next time
 =============
 
+* Most sorting images are taken directly from their wikipedia articles
+    * Click the image to visit their respective pages
+
 * Read Chapter 9 Section 2
     * 26 pages
