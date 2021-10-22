@@ -108,7 +108,7 @@ Bogosort
 Bubble Sort
 ===========
 
-.. image:: img/sort_bubblesort.gif
+.. image:: img/sort_bubblesort.png
    :width: 500 px
    :align: center
    :target: https://en.wikipedia.org/wiki/Bubble_sort
