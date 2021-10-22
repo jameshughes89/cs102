@@ -296,6 +296,12 @@ Best Case Scenario
     * Look at the last element, the largest (8), and compare it to the sorted list and see that it is larger than the first thing it considers (7), therefore we do not need to look past it
 
 
+Algorithm
+---------
+
+* For each element in the unsorted list
+    * Scan the sorted list to find where the new element goes
+        * Insert the new element into the sorted list
 
 
 
