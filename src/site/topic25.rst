@@ -254,6 +254,24 @@ Insertion Sort
 * Typically, for ease, each element in the unsorted list is picked for insertion in the order that they appear
 
 
+Worst Case Scenario
+-------------------
+
+* To think of the worst case scenario, consider that we have a list of size :math:`n`
+* If we select one of those things, we need to then find where in the sorted list it belongs
+* If this is the first element we are adding to the sorted list, then there is nothing in that sorted list, therefore finding where the element should be inserted is trivial
+* If it's the second element, we need to look at one element in the sorted list to determine where the second element goes
+* If it's the third element, we need to look at two elements in the sorted list
+* ...
+* If we are considering the :math:`n^{th}` element from the unsorted list, we need to look at :math:`n-1` elements in the sorted list
+
+* Therefore, if we have :math:`n` things to sort, and for each we need to look at, on average, :math:`n/2` things in the sorted list to determine where to insert, then we have :math:`O(n^{2})`
+
+* What exactly the worst case scenario is will depend on the specific implementation
+* For example, in the above gif, the worst case scenario would be if the numbers were in reverse order
+* Alternatively, if instead of scanning the sorted portion of the list from the end, but started at index 0, then the worst case would be if the elements were already sorted
+
+
 
 
 
