@@ -272,13 +272,28 @@ Worst Case Scenario
 -------------------
 
 * What exactly the worst case scenario is will depend on the specific implementation
+* The situation for the worst case scenario would be if, for each of the :math:`n` elements, it had to be compared to every single element in the sorted part
 * For example, in the above gif, the worst case scenario would be if the numbers were in reverse order
+    * We put the largest element (8) in the sorted list
+    * We then take the next largest (7), and we have to put it on the other side of the largest (8)
+    * We take the third largest (6), and it has to go on the other side of all elements already sorted (7, 8)
+    * ...
+    * Take the last element, which happens to be the smallest (1), and go over the whole sorted list to find whereit belongs (2, 3, 4, 5, 6, 7, 8)
+
 * Alternatively, if instead of scanning the sorted portion of the list from the end, but started at index 0, then the worst case would be if the elements were already sorted
 
 
 Best Case Scenario
 ------------------
 
+* The best case scenario will also depend on the specific implementation
+* The situation for the best case would be if, for each of the :math:`n` elements, we only need to compare it to one thing
+* In the gif example, the best case would be if the list happened to already sorted
+    * Put the smallest element (1) in sorted
+    * Select the next smallest (2), and since it's larger than the smallest (1), we do not need to look past it
+    * Select the next one (3), and since it's larger than the second smallest (2), we do not need to look past it
+    * ...
+    * Look at the last element, the largest (8), and compare it to the sorted list and see that it is larger than the first thing it considers (7), therefore we do not need to look past it
 
 
 
