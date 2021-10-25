@@ -272,6 +272,8 @@ Worst Case Scenario
 -------------------
 
 * What exactly the worst case scenario is will depend on the specific implementation
+    * Depending if we are looking through the sorted list/part from index :math:`0 \rightarrow n-1` or :math:`n-1 \rightarrow 0`
+
 * The situation for the worst case scenario would be if, for each of the :math:`n` elements, it had to be compared to every single element in the sorted part
 * For example, in the above gif, the worst case scenario would be if the numbers were in reverse order
     * We put the largest element (8) in the sorted list
@@ -287,6 +289,8 @@ Best Case Scenario
 ------------------
 
 * The best case scenario will also depend on the specific implementation
+    * Again, depending on the direction we scann the sorted list/part
+
 * The situation for the best case would be if, for each of the :math:`n` elements, we only need to compare it to one thing
 * In the gif example, the best case would be if the list happened to already sorted
     * Put the smallest element (1) in sorted
