@@ -278,7 +278,7 @@ Worst Case Scenario
     * We then take the next largest (7), and we have to put it on the other side of the largest (8)
     * We take the third largest (6), and it has to go on the other side of all elements already sorted (7, 8)
     * ...
-    * Take the last element, which happens to be the smallest (1), and go over the whole sorted list to find whereit belongs (2, 3, 4, 5, 6, 7, 8)
+    * Take the last element, which happens to be the smallest (1), and go over the whole sorted list to find where it belongs (2, 3, 4, 5, 6, 7, 8)
 
 * Alternatively, if instead of scanning the sorted portion of the list from the end, but started at index 0, then the worst case would be if the elements were already sorted
 
