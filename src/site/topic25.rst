@@ -307,6 +307,11 @@ Algorithm
 Selection Sort
 ==============
 
+.. image:: img/sort_selectionsort.gif
+   :width: 500 px
+   :align: center
+   :target: https://en.wikipedia.org/wiki/Selection_sort
+
 
 Radix Sort
 ==========
