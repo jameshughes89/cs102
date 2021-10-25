@@ -236,6 +236,73 @@ Computational Complexity
 Insertion Sort
 ==============
 
+.. image:: img/sort_insertionsort.gif
+   :width: 500 px
+   :align: center
+   :target: https://en.wikipedia.org/wiki/Insertion_sort
+
+* The idea of insertion sort is to select elements from the unsorted list and *insert* them into a sorted list in the correct spot such that the sorted list remains sorted
+    * In the above gif, there is a single list with a sorted and unsorted part
+* Similar to bubble sort, the order that we select the elements from the unsorted list doesn't matter in terms of getting a sorted collection in the end
+
+    Unsorted: :math:`4, 3, 2, 1`  Sorted: :math:``
+    Unsorted: :math:`3, 2, 1`     Sorted: :math:`4`
+    Unsorted: :math:`3, 2`        Sorted: :math:`1, 4`
+    Unsorted: :math:`3`           Sorted: :math:`1, 2, 4`
+    Unsorted: :math:``            Sorted: :math:`1, 2, 3, 4`
+
+* Typically, for ease, each element in the unsorted list is picked for insertion in the order that they appear
+
+
+Computational Complexity
+------------------------
+
+* To think of the computational complexity, consider that we have a list of size :math:`n`
+* If we select one of those things, we need to then find where in the sorted list it belongs
+* If this is the first element we are adding to the sorted list, then there is nothing in that sorted list, therefore finding where the element should be inserted is trivial
+* If it's the second element, we need to look at one element in the sorted list to determine where the second element goes
+* If it's the third element, we need to look at two elements in the sorted list
+* ...
+* If we are considering the :math:`n^{th}` element from the unsorted list, we need to look at :math:`n-1` elements in the sorted list
+
+* Therefore, if we have :math:`n` things to sort, and for each we need to look at, on average, :math:`n/2` things in the sorted list to determine where to insert, then we have :math:`O(n^{2})`
+
+
+Worst Case Scenario
+-------------------
+
+* The situation for the worst case scenario would be if, for each of the :math:`n` elements to be sorted, it had to be compared to every single element in the sorted part
+* For example, in the above gif, the worst case scenario would be if the numbers were in reverse order
+    * We put the largest element (8) in the sorted list
+    * We then take the next largest (7), and we have to put it on the other side of the largest (8)
+    * We take the third largest (6), and it has to go on the other side of all elements already sorted (7, 8)
+    * ...
+    * Take the last element, which happens to be the smallest (1), and go over the whole sorted list to find where it belongs (2, 3, 4, 5, 6, 7, 8)
+
+* Based on this gif, where it starts scanning the sorted list from the end, the configuration of the elements would be if the elements were in reverse order
+* However, if the list was scanned from the beginning, the configuration would be if the elements were already in order
+
+
+Best Case Scenario
+------------------
+
+* The situation for the best case would be if, for each of the :math:`n` elements, we only need to compare it to one thing
+* In the gif example, the best case would be if the list happened to already sorted
+    * Put the smallest element (1) in sorted
+    * Select the next smallest (2), and since it's larger than the smallest (1), we do not need to look past it
+    * Select the next one (3), and since it's larger than the second smallest (2), we do not need to look past it
+    * ...
+    * Look at the last element, the largest (8), and compare it to the sorted list and see that it is larger than the first thing it considers (7), therefore we do not need to look past it
+
+
+Algorithm
+---------
+
+* For each element in the unsorted list
+    * Scan the sorted list to find where the new element goes
+        * Insert the new element into the sorted list
+
+
 
 Selection Sort
 ==============
