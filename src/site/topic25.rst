@@ -271,10 +271,7 @@ Computational Complexity
 Worst Case Scenario
 -------------------
 
-* What exactly the worst case scenario is will depend on the specific implementation
-    * Depending if we are looking through the sorted list/part from index :math:`0 \rightarrow n-1` or :math:`n-1 \rightarrow 0`
-
-* The situation for the worst case scenario would be if, for each of the :math:`n` elements, it had to be compared to every single element in the sorted part
+* The situation for the worst case scenario would be if, for each of the :math:`n` elements to be sorted, it had to be compared to every single element in the sorted part
 * For example, in the above gif, the worst case scenario would be if the numbers were in reverse order
     * We put the largest element (8) in the sorted list
     * We then take the next largest (7), and we have to put it on the other side of the largest (8)
@@ -282,14 +279,12 @@ Worst Case Scenario
     * ...
     * Take the last element, which happens to be the smallest (1), and go over the whole sorted list to find where it belongs (2, 3, 4, 5, 6, 7, 8)
 
-* Alternatively, if instead of scanning the sorted portion of the list from the end, but started at index 0, then the worst case would be if the elements were already sorted
+* Based on this gif, where it starts scanning the sorted list from the end, the configuration of the elements would be if the elements were in reverse order
+* However, if the list was scanned from the beginning, the configuration would be if the elements were already in order
 
 
 Best Case Scenario
 ------------------
-
-* The best case scenario will also depend on the specific implementation
-    * Again, depending on the direction we scann the sorted list/part
 
 * The situation for the best case would be if, for each of the :math:`n` elements, we only need to compare it to one thing
 * In the gif example, the best case would be if the list happened to already sorted
