@@ -241,7 +241,7 @@ Insertion Sort
    :align: center
    :target: https://en.wikipedia.org/wiki/Insertion_sort
 
-* The idea of insertion sort is to select elements from the unsorted list and _insert_ them into a sorted list in the correct spot such that the sorted list remains sorted
+* The idea of insertion sort is to select elements from the unsorted list and *insert* them into a sorted list in the correct spot such that the sorted list remains sorted
     * In the above gif, there is a single list with a sorted and unsorted part
 * Similar to bubble sort, the order that we select the elements from the unsorted list doesn't matter in terms of getting a sorted collection in the end
 
