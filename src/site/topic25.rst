@@ -361,6 +361,14 @@ Computational Complexity
 * Since we have :math:`n` things that need to be sorted, and we need to do a linear for each, it's :math:`O(n^{2})`
 
 
+Best and Worse Case Scenario
+----------------------------
+
+* An interesting thing about selection sort is that there is no difference between the best or worse case scenarios
+* No matter the configuration of the unsorted collection, an :math:`O(n)` linear search must be done for each of the :math:`n` elements to be sorted
+
+* So, where insertion and bubble had a best case of :math:`O(n)` and worse case of :math:`O(n^{2})`, selection sort is always going to be :math:`O(n^{2})`
+
 
 
 Radix Sort
