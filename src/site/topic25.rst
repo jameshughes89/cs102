@@ -318,20 +318,22 @@ Selection Sort
     * Scan the collection for the current smallest element and add it to the end of the sorted list
     * ...
 
+.. list-table:: Insertion Sort Example
+   :widths: 50 50
+   :header-rows: 1
 
-+---------------------+---------------------+
-| Unsorted            | Sorted              |
-+=====================+=====================+
-| :math:`4, 3, 2, 1`  |                     |
-+---------------------+---------------------+
-| :math:`4, 3, 2`     | :math:`1`           |
-+---------------------+---------------------+
-| :math:`4, 3`        | :math:`1, 2`        |
-+---------------------+---------------------+
-| :math:`4`           | :math:`1, 2, 3`     |
-+---------------------+----------------+----+
-|                     | :math:`1, 2, 3, 4`  |
-+---------------------+---------------------+
+    * - Unsorted
+      - Sorted
+    * - :math:`4, 3, 2, 1`
+      -
+    * - :math:`4, 3, 2`
+      - :math:`1`
+    * - :math:`4, 3`
+      - :math:`1, 2`
+    * - :math:`4`
+      - :math:`1, 2, 3`
+    * -
+      - :math:`1, 2, 3, 4`
 
 
 Algorithm
