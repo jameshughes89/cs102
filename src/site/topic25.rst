@@ -319,8 +319,8 @@ Selection Sort
     * ...
 
 .. list-table:: Insertion Sort Example
-   :widths: 50 50
-   :header-rows: 1
+    :widths: 50 50
+    :header-rows: 1
 
     * - Unsorted
       - Sorted
