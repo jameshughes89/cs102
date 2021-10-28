@@ -349,6 +349,16 @@ Algorithm
 Computational Complexity
 ------------------------
 
+* Assuming we have a collection of :math:`n` things that need to be sorted
+* For each element, we must do a linear search through the unsorted collection for the current smallest element
+    * :math:`O(n)`
+
+* First time we scan :math:`n` elements
+* Next time we scan :math:`n-` elements
+* Then :math:`n-2` elements
+* ...
+
+* Since we have :math:`n` things that need to be sorted, and we need to do a linear for each, it's :math:`O(n^{2})`
 
 
 
