@@ -302,13 +302,6 @@ Algorithm
     * Scan the sorted list to find where the new element goes
         * Insert the new element into the sorted list
 
-* The general idea is
-    * Scan the collection for the smallest element and put it in its spot
-    * Scan the collection for the second smallest element and put it in its spot
-    * ...
-
-
-
 
 
 Selection Sort
@@ -318,6 +311,14 @@ Selection Sort
    :width: 500 px
    :align: center
    :target: https://en.wikipedia.org/wiki/Selection_sort
+
+* The general idea is
+    * Scan the collection for the smallest element and put it in its spot
+    * Scan the collection for the second smallest element and put it in its spot
+    * ...
+
+* In fact, that's basically the algorithm
+
 
 
 Radix Sort
