@@ -245,15 +245,19 @@ Insertion Sort
     * In the above gif, there is a single list with a sorted and unsorted part
 * Similar to bubble sort, the order that we select the elements from the unsorted list doesn't matter in terms of getting a sorted collection in the end
 
-    Unsorted: :math:`4, 3, 2, 1`  Sorted: :math:`...`
-
-    Unsorted: :math:`3, 2, 1`     Sorted: :math:`4`
-
-    Unsorted: :math:`3, 2`        Sorted: :math:`1, 4`
-
-    Unsorted: :math:`3`           Sorted: :math:`1, 2, 4`
-
-    Unsorted: :math:``            Sorted: :math:`1, 2, 3, 4`
++---------------------+---------------------+
+| Unsorted            | Sorted              |
++=====================+=====================+
+| :math:`4, 3, 2, 1`  |                     |
++---------------------+---------------------+
+| :math:`3, 2, 1`     | :math:`4`           |
++---------------------+---------------------+
+| :math:`3, 2`        | :math:`1, 4`        |
++---------------------+---------------------+
+| :math:`3`           | :math:`1, 2, 4`     |
++--------------------------------------+----+
+|                     | :math:`1, 2, 3, 4`  |
++---------------------+---------------------+
 
 * Typically, for ease, each element in the unsorted list is picked for insertion in the order that they appear
 
