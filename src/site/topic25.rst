@@ -313,11 +313,20 @@ Selection Sort
    :target: https://en.wikipedia.org/wiki/Selection_sort
 
 * The general idea is
-    * Scan the collection for the smallest element and put it in its spot
-    * Scan the collection for the second smallest element and put it in its spot
+    * Scan the collection for the current smallest element and put it in a sorted list
+    * Scan the collection for the current smallest element and add it to the end of the sorted list
+    * Scan the collection for the current smallest element and add it to the end of the sorted list
     * ...
 
-* In fact, that's basically the algorithm
+
+Algorithm
+---------
+
+* In fact, the basic idea is more or less the algorithm
+
+* For each element in the unsorted list
+    * Scan the unsorted list for the smallest element
+        * Add element to the end of the sorted list
 
 
 
