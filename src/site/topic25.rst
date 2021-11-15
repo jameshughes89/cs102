@@ -321,7 +321,7 @@ Selection Sort
 ==============
 
 .. image:: img/sort_selectionsort.gif
-   :width: 500 px
+   :height: 333 px
    :align: center
    :target: https://en.wikipedia.org/wiki/Selection_sort
 
