@@ -429,30 +429,28 @@ Computational Complexity
 
 * Assuming:
     * We have a collection of :math:`n` things that need to be sorted
-    * The things to be sorted are base :math:`r` integers
-        * E.g. base 10 integers
     * The longest number to be sorted has :math:`w` symbols
-        * E.g. the numbers of digits in the base 10 numbers
+        * E.g. the number of digits in the base 10 numbers
 
-
-* Elements needs to be placed in its correct bin of the :math:`r` bins
-* Thus, a linear search through the :math:`r` bins could be used to determine which bin the element belongs in
-    * :math:`O(r)`
-
-* The :math:`O(r)` linear search needs to be done for each of the :math:`n` elements
-    * :math:`O(r * n)`
+* Each of the :math:`n` elements need to be placed in their correct bin
+    * Assuming the use of a dictionary, this will take :math:`n` :math:`O(1)` operations
+    * Therefore, :math:`O(n)`
 
 * This process needs to be repeated for each symbol
-    * :math:`O(r * n * w)`
-
-
-* This can be improved if something like a dictionary is used for the :math:`r` bins, thereby eliminating the need for the linear search of :math:`O(r)`
-* However, realistically, :math:`r` is going to be a fixed and reasonably small number, so it is common to think of it as a constant
-    * If you take this strategy, the complexity is :math:`O(n * w)`
+    * :math:`O(n * w)`
     * This is typically how the computational complexity is expressed for radix sort
 
-* Further, it is possible that in your case the length of the numbers :math:`w` is also fixed and reasonably small, so sometimes people will treat this like a constant too
+* It is possible that in your case the length of the numbers :math:`w` is fixed and reasonably small, so sometimes people will treat this like a constant
     * If one thinks of it this way, the complexity *could* be interpreted as :math:`O(n)`
+
+
+.. note::
+
+    The radix value does have an impact on the algorithm too (e.g. base 10 numbers vs. base 16); however, (a) it mostly
+    impacts the space complexity, (b) it will only impact the computational complexity if a naive strategy of a linear
+    search is used to place elements in the correct bins, and (c) the radix value is very likely to be small and fixed,
+    thereby making it effectively a constant.
+
 
 
 
