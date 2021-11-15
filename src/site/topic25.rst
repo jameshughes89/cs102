@@ -390,6 +390,13 @@ Radix Sort
 * So far we have seen sorting algorithms that work based on comparing elements to other elements to determine where they should go
 * However, it is actually possible to sort elements without ever comparing them to any other element
 
+* The general idea is to group numbers based on individual digits
+    * *Radix* means base, like base 10 numbers
+
+* You may go from least significant to most significant digit
+    * Here, we start with the least significant
+
+* This strategy is probably best explained with an example
 
 
 Mergesort
