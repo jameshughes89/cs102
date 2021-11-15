@@ -397,6 +397,31 @@ Radix Sort
     * Here, we start with the least significant
 
 * This strategy is probably best explained with an example
+* Given an unsorted list, create a bin for each digit and place each element into the bin with the matching least significant digit
+
+.. list-table:: Radix Sort Example Part 1
+    :widths: 50 50
+
+    * - :math:`44, 33, 11, 22, 154, 10, 1, 43, 99, 47`
+      - :math:`\{10\} \{11, 1\} \{22\} \{33, 43\} \{44, 154\} \{\} \{\} \{47\} \{\} \{99\}`
+
+
+* The next steps are to concatenate the bins and continue this process, but for each digit, moving left to right
+    * Add leading zeros if needed
+
+.. list-table:: Radix Sort Example Part 2
+    :widths: 50 50
+
+    * - :math:`10, 11, 01, 22, 33, 43, 44, 154, 47, 99`
+      - :math:`\{01\} \{10, 11\} \{22\} \{33\} \{43, 44, 47\} \{154\} \{\} \{\} \{\} \{99\}`
+    * - :math:`001, 010, 011, 022, 033, 043, 044, 047, 154, 099`
+      - :math:`\{001, 010, 011, 022, 033, 043, 044, 047, 099\} \{154\} \{\} \{\} \{\} \{\} \{\} \{\} \{\} \{\}`
+
+
+* If we concatenate the final bins, we end up with a sorted list
+
+    :math:`1, 10, 11, 22, 33, 43, 44, 47, 99, 154`
+
 
 
 Mergesort
