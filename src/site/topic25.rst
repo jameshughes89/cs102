@@ -245,11 +245,24 @@ Insertion Sort
     * In the above gif, there is a single list with a sorted and unsorted part
 * Similar to bubble sort, the order that we select the elements from the unsorted list doesn't matter in terms of getting a sorted collection in the end
 
-    Unsorted: :math:`4, 3, 2, 1`  Sorted: :math:``
-    Unsorted: :math:`3, 2, 1`     Sorted: :math:`4`
-    Unsorted: :math:`3, 2`        Sorted: :math:`1, 4`
-    Unsorted: :math:`3`           Sorted: :math:`1, 2, 4`
-    Unsorted: :math:``            Sorted: :math:`1, 2, 3, 4`
+
+.. list-table:: Insertion Sort Example
+    :widths: 50 50
+    :header-rows: 1
+
+    * - Unsorted
+      - Sorted
+    * - :math:`4, 3, 2, 1`
+      -
+    * - :math:`3, 2, 1`
+      - :math:`4`
+    * - :math:`3, 2`
+      - :math:`1, 4`
+    * - :math:`3`
+      - :math:`1, 2, 4`
+    * -
+      - :math:`1, 2, 3, 4`
+
 
 * Typically, for ease, each element in the unsorted list is picked for insertion in the order that they appear
 
@@ -306,6 +319,69 @@ Algorithm
 
 Selection Sort
 ==============
+
+.. image:: img/sort_selectionsort.gif
+   :width: 500 px
+   :align: center
+   :target: https://en.wikipedia.org/wiki/Selection_sort
+
+* The general idea is
+    * Scan the collection for the current smallest element and put it in a sorted list
+    * Scan the collection for the current smallest element and add it to the end of the sorted list
+    * Scan the collection for the current smallest element and add it to the end of the sorted list
+    * ...
+
+.. list-table:: Insertion Sort Example
+    :widths: 50 50
+    :header-rows: 1
+
+    * - Unsorted
+      - Sorted
+    * - :math:`4, 3, 2, 1`
+      -
+    * - :math:`4, 3, 2`
+      - :math:`1`
+    * - :math:`4, 3`
+      - :math:`1, 2`
+    * - :math:`4`
+      - :math:`1, 2, 3`
+    * -
+      - :math:`1, 2, 3, 4`
+
+
+Algorithm
+---------
+
+* In fact, the basic idea is more or less the algorithm
+
+* For each element in the unsorted list
+    * Scan the unsorted list for the smallest element
+        * Add element to the end of the sorted list
+
+
+Computational Complexity
+------------------------
+
+* Assuming we have a collection of :math:`n` things that need to be sorted
+* For each element, we must do a linear search through the unsorted collection for the current smallest element
+    * :math:`O(n)`
+
+* First time we scan :math:`n` elements
+* Next time we scan :math:`n-` elements
+* Then :math:`n-2` elements
+* ...
+
+* Since we have :math:`n` things that need to be sorted, and we need to do a linear for each, it's :math:`O(n^{2})`
+
+
+Best and Worse Case Scenario
+----------------------------
+
+* An interesting thing about selection sort is that there is no difference between the best or worse case scenarios
+* No matter the configuration of the unsorted collection, an :math:`O(n)` linear search must be done for each of the :math:`n` elements to be sorted
+
+* So, where insertion and bubble had a best case of :math:`O(n)` and worse case of :math:`O(n^{2})`, selection sort is always going to be :math:`O(n^{2})`
+
 
 
 Radix Sort
