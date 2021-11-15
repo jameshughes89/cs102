@@ -423,6 +423,30 @@ Radix Sort
     :math:`1, 10, 11, 22, 33, 43, 44, 47, 99, 154`
 
 
+Computational Complexity
+------------------------
+
+* Assuming:
+    * We have a collection of :math:`n` things that need to be sorted
+    * The things to be sorted are base :math:`r` integers
+        * E.g. base 10 numbers
+    * The longest number to be sorted has :math:`w` symbols
+        * E.g. the numbers of digits in the base 10 numbers
+
+
+* Elements needs to be placed in its correct bin of the :math:`r` bins
+* Thus, a linear search through the :math:`r` bins could be used
+    * :math:`O(r)`
+
+* The :math:`O(r)` linear search needs to be done for each of the :math:`n` elements
+    * :math:`O(r * n)`
+
+* This process needs to be repeated for each symbol
+    * :math:`O(r * n * w)`
+
+
+
+
 
 Mergesort
 =========
