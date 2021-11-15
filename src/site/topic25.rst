@@ -393,7 +393,7 @@ Radix Sort
 * The general idea is to group numbers based on individual digits
     * *Radix* means base, like base 10 numbers
 
-* You may go from least significant to most significant digit
+* You may go from least significant to most significant digit, or *vice versa*
     * Here, we start with the least significant
 
 * This strategy is probably best explained with an example
