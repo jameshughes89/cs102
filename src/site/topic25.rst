@@ -429,7 +429,7 @@ Computational Complexity
 * Assuming:
     * We have a collection of :math:`n` things that need to be sorted
     * The things to be sorted are base :math:`r` integers
-        * E.g. base 10 numbers
+        * E.g. base 10 integers
     * The longest number to be sorted has :math:`w` symbols
         * E.g. the numbers of digits in the base 10 numbers
 
@@ -445,6 +445,13 @@ Computational Complexity
     * :math:`O(r * n * w)`
 
 
+* This can be improved if something like a dictionary is used for the :math:`r` bins, thereby eliminating the need for the linear search of :math:`O(r)`
+* However, realistically, :math:`r` is going to be a fixed and reasonably small number, so it is common to think of it as a constant
+    * If you take this strategy, the complexity is :math:`O(n * w)`
+    * This is typically how the computational complexity is expressed for radix sort
+
+* Further, it is possible that in your case the length of the numbers :math:`w` is also fixed and reasonably small, so sometimes people will treat this like a constant too
+    * If one thinks of it this way, the complexity *could* be interpreted as :math:`O(n)`
 
 
 
