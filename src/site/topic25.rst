@@ -435,7 +435,7 @@ Computational Complexity
 
 
 * Elements needs to be placed in its correct bin of the :math:`r` bins
-* Thus, a linear search through the :math:`r` bins could be used
+* Thus, a linear search through the :math:`r` bins could be used to determine which bin the element belongs in
     * :math:`O(r)`
 
 * The :math:`O(r)` linear search needs to be done for each of the :math:`n` elements
