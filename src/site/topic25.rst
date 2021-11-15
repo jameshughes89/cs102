@@ -109,7 +109,7 @@ Bubble Sort
 ===========
 
 .. image:: img/sort_bubblesort.gif
-   :width: 500 px
+   :width: 333 px
    :align: center
    :target: https://en.wikipedia.org/wiki/Bubble_sort
 
@@ -237,7 +237,7 @@ Insertion Sort
 ==============
 
 .. image:: img/sort_insertionsort.gif
-   :width: 500 px
+   :width: 333 px
    :align: center
    :target: https://en.wikipedia.org/wiki/Insertion_sort
 
@@ -321,7 +321,7 @@ Selection Sort
 ==============
 
 .. image:: img/sort_selectionsort.gif
-   :width: 500 px
+   :height: 333 px
    :align: center
    :target: https://en.wikipedia.org/wiki/Selection_sort
 
