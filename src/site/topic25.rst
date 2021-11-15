@@ -387,8 +387,9 @@ Best and Worse Case Scenario
 Radix Sort
 ==========
 
-Distributed Non-Comparative Sorting
------------------------------------
+* So far we have seen sorting algorithms that work based on comparing elements to other elements to determine where they should go
+* However, it is actually possible to sort elements without ever comparing them to any other element
+
 
 
 Mergesort
