@@ -122,6 +122,9 @@ Course Notes
     topic23
     topic24
     topic25
+    
+    topic26
+
 
 Labs
 ====
@@ -138,6 +141,7 @@ Labs
     lab6
     lab7
     lab8
+    
 
 Assignments
 ===========
