@@ -98,30 +98,28 @@ Course Notes
     topic3
     topic4
     topic5
-
     topic6
     topic7
     topic8
     topic9
     topic10
-
     topic11
     topic12
     topic13
     topic14
     topic15
-
     topic16
     topic17
     topic18
     topic19
     topic20
-
     topic21
     topic22
     topic23
     topic24
     topic25
+    topic26
+
 
 Labs
 ====
@@ -133,11 +131,11 @@ Labs
     lab2
     lab3
     lab4
-
     lab5
     lab6
     lab7
     lab8
+    
 
 Assignments
 ===========
