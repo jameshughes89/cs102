@@ -72,9 +72,7 @@ Learning Centre
 MSCS Tutorial Nights
 ====================
 
-The Math, Stats, and CS Society now has a time and location for our free tutorial sessions.
-
-* TBD
+`The Math, Stats, and CS Society now has a time and location for our free tutorial sessions. <https://www.mystfx.ca/computer-science/csci-tutorials>`_
 
 
 Getting Started
