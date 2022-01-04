@@ -44,8 +44,8 @@ Instructor
 
 * James Hughes
 * Office: Annex 20B
-* Office Hours: Tuesday -- Friday, 10:00am -- 11:00am, Virtual Only --- See Moodle
-* Email: jhughes atstfx.ca
+* Office Hours: Tuesday -- Friday, 10:00am -- 11:00am, **Virtual Only --- See Moodle**
+* Email: jhughes at stfx.ca
 
 
 
@@ -61,8 +61,8 @@ Class Times
 Lab
 ===
 
-* Sec 1: Thursday 14:15 - 16:15, MULH 4024
-* Sec 2: Monday   13:15 - 15:15, MULH 4024
+* Sec 1: Thursday 14:15 -- 16:15, MULH 4024
+* Sec 2: Monday   13:15 -- 15:15, MULH 4024
 
 
 
