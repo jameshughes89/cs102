@@ -35,16 +35,16 @@ GitHub Repo
 Class Times
 ===========
 
-* Tue 11:15 - 12:05 (K4), TBD
-* Wed 13:15 - 14:05 (K5), TBD
-* Fri 12:15 - 13:05 (K6), TBD
+* Tue 11:15 - 12:05 (K4), MULH 2030
+* Wed 13:15 - 14:05 (K5), MULH 2030
+* Fri 12:15 - 13:05 (K6), MULH 2030
 
 
 Labs
 ====
 
-* Sec 1: Thr 14:15 -- 16:05 (L8-A9), TBD
-* Sec 2: Mon 13:15 -- 15:05 (C4-A7), TBD
+* Sec 1: Thr 14:15 -- 16:05 (L8-A9), MULH 4024
+* Sec 2: Mon 13:15 -- 15:05 (C4-A7), MULH 4024
 
 
 Office Hours
