@@ -44,7 +44,7 @@ Labs
 ====
 
 * Sec 1: Thr 14:15 -- 16:05 (L8-A9), TBD
-* Sec 2: Fri 14:15 -- 16:05 (C9-K9), TBD
+* Sec 2: Mon 13:15 -- 15:05 (C4-A7), TBD
 
 
 Office Hours
@@ -60,8 +60,7 @@ Office Hours
 
 * **(TAs)** TBD
     * **TBD** (tbd at stfx.ca):
-        * Wednesday, 9:15am -- 10:15am
-        * Thursday, 10:15am -- 11:15am
+        * TBD
 
 
 Learning Centre
