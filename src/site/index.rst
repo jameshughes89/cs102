@@ -60,7 +60,7 @@ Office Hours
 
 * **(TAs)** TBD
     * **TBD** (tbd at stfx.ca):
-        * TBD
+    	* TBD
 
 
 Learning Centre
