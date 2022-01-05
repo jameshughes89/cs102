@@ -42,7 +42,7 @@ public class BinaryNode<T> {
         return right;
     }
 
-    private void setRight(LinkedBinarySearchTree.BinaryNode<T> right) {
+    private void setRight(BinaryNode<T> right) {
         this.right = right;
     }
 }
