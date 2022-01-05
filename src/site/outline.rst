@@ -2,8 +2,21 @@
 Outline for Computer Science 162 --- Programming and Data Structures
 ********************************************************************
 
+
+
 Winter 2022
 ===========
+
+.. warning::
+    This outline is written assuming in person lectures begin 2 weeks after the start of the semester. As of the time
+    of writing, the first two weeks are scheduled to be online only. If circumstances change, this outline will be 
+    updated accordingly. The major changes that would occur are (a) online lectures, (b) online labs, (c) the removal 
+    of the midterm and having its portion of the final grade spread over the assignments, and (d) the format of the
+    final exam.
+    
+    None of the above warning should suggest that it is expected that things will change. 
+
+
 
 Course Description
 ==================
@@ -12,14 +25,18 @@ Continuing from the material in CSCI 161, this course covers memory management a
 objects, and introduces the linear data structures lists, stacks, and queues. Structured programming is encouraged via
 modular development. Credit will be granted for only one of CSCI 162 and INFO 256. Three credits and a two-hour lab.
 
+
+
 Prerequisites
 =============
 
 CSCI 125 or 161 or ENGR 147.
+
 Unless you have the prerequisites for this course or written special permission from your Dean to enroll in it, you
 will be removed from this course and it will be deleted from your record. This decision may not be appealed. You will
 receive no adjustment to your fees in the event that you are dropped from a course for failing to have the necessary
 prerequisites.
+
 
 
 Instructor
@@ -27,24 +44,25 @@ Instructor
 
 * James Hughes
 * Office: Annex 20B
-* Office Hours: Tuesday -- Friday, 10:00am -- 11:00am, Annex 20B
-* Email: jhughes atstfx.ca
+* Office Hours: Tuesday -- Friday, 10:00am -- 11:00am, **Virtual Only --- See Moodle**
+* Email: jhughes at stfx.ca
+
 
 
 Class Times
 ===========
 
-* Tuesday   11:15 - 12:15, TBD
-* Wednesday 13:15 - 14:15, TBD
-* Friday    12:15 - 13:15, TBD
+* Tuesday   11:15 -- 12:15, MULH 2030
+* Wednesday 13:15 -- 14:15, MULH 2030
+* Friday    12:15 -- 13:15, MULH 2030
 
 
 
 Lab
 ===
 
-* Sec 1: Thursday 14:15 - 16:15, TBD
-* Sec 2: Friday   14:15 - 16:15, TBD
+* Sec 1: Thursday 14:15 -- 16:15, MULH 4024
+* Sec 2: Monday   13:15 -- 15:15, MULH 4024
 
 
 
@@ -53,6 +71,7 @@ Website
 
 * Mostly :doc:`this website </index>`
 * MOODLE
+
 
 
 Textbook and Lecture Notes
@@ -71,12 +90,12 @@ J. Lewis and J. Chase,
 Upper Saddle River, NJ: Pearson, 2013.
 
 
+
 Topics
 ======
 
 Below is a list of topics in no particular order that may or may not be covered in the course:
 
-* Java
 * Classes
 * Stacks
 * Queues
@@ -98,19 +117,17 @@ Student Evaluation (Tentative Dates)
 +------------------------+------------+---------------------+
 |                        | Worth      | Due                 |
 +========================+============+=====================+
-| Assignment 1           | 10%        | TBD                 |
+| Assignment 1           | 10%        | Early February-ish  |
 +------------------------+------------+---------------------+
-| Assignment 2           | 10%        | TBD                 |
+| Assignment 2           | 10%        | Late February-ish   |                 |
 +------------------------+------------+---------------------+
-| Assignment 3           | 10%        | TBD                 |
+| Assignment 3           | 10%        | Mid March-ish       |
 +------------------------+------------+---------------------+
-| Assignment 4           | 10%        | TBD                 |
+| Assignment 4           | 10%        | Early April-ish     |
 +------------------------+------------+---------------------+
 | Labs                   | 10%        | Throughout          |
 +------------------------+------------+---------------------+
-| Lecture Activities     | 10%        | Throughout          |
-+------------------------+------------+---------------------+
-| Midterm Exam           | 10%        | TBD                 |
+| Midterm Exam           | 20%        | Early Match-ish     |
 +------------------------+------------+---------------------+
 | Final Exam             | 30%        | TBA                 |
 +------------------------+------------+---------------------+
@@ -130,12 +147,13 @@ descriptions.
 We reserve the right to use similarity detection software to detect possible cheating cases.
 
 
+
 Assignment Due Dates
 ====================
 
 The date and exact time assignments are due will be given in the assignment specifications.
 
-No submissions will be taken after the due date; there are no late submissions. All submissions after the exact due
+No submissions will be taken after the due date; there are no late submissions. All submissions after the due
 date will result in a mark of zero and will not be evaluated.
 
 No extensions will be given for assignments.
@@ -160,6 +178,7 @@ assignment, to guard against the possibility of errors in recording marks. It is
 until you are satisfied that your final mark for the course has been computed properly.
 
 
+
 Tests
 =====
 
@@ -171,44 +190,22 @@ Tests
 * Anything that a reasonable person would deem as cheating is not permitted
 
 
+
 Labs
 ====
 
 The purpose of the labs is to give students guided, hands-on experience with programming. It is expected that students
 will come prepared to the labs by reading the lab instructions. Lab instructions will be available on the course website
-in advance.
+in advance. Students coming to lab unprepared will be asked to leave. 
 
 * Labs begin the **first** week of class.
 * Lab exercises must be completed for marks. Each completed lab is worth 1% of your final grade (to a maximum of 10%).
     * If less than 10 are given, the lab weights will be adjusted to make up 10% of the final grade.
-* Lab exercises are due by the end of lab. No submissions are possible after your allotted lab time.
 * You must attend the lab session for which you are registered.
 * It is your responsibility to ensure your attendance and exercise completion is recorded.
 * Students must bring their student identification to all labs.
 * There are no make-up labs, and students who are absent for a lab do not have the option of attending another lab.
     * students who encounter serious health or other personal difficulties are encouraged to contact the professor.
-
-
-Lecture Activities
-===================
-
-Lecture activities will take place at some point during certain lectures. Each completed activity is worth 1% of your
-final grade (to a maximum of 10%). If less than 10 lecture activities are given to the class, the activity weightings
-will be adjusted to make up 10% of the final grade. There will be no make-up activities.
-
-These activities require students to answer questions based on lecture material. Answers must be written by hand on
-clean blank paper that the students bring to class; paper will not be provided to the students. The paper will be
-submitted to the lecturer **within the allotted time**. The paper must be letter/A4 size, clean, the writing must be
-legible, the submission must be made by the student who completed the task, and the submission must have the
-completing/submitting student's name, student number, date, and activity number. If any of these requirements are
-violated, a mark of 0 will be applied.
-
-These activities are open book, students are strongly encouraged to collaborate and share ideas, and students can check
-the internet; however, all submitted work must ultimately be done individually.
-
-If a student attempts to submit another student's work, this will be considered
-academic misconduct and will be investigated fully. A grade of 0 will be applied to the full lecture activity component
-to all lecture activities in the final grade.
 
 
 
@@ -232,14 +229,16 @@ account and include CSCI 162 in the subject line of the email. Lengthy and in-de
 office hours.
 
 
+
 Attendance
 ==========
 
 Students missing three classes without reasonable cause will be reported to the Associate Dean. See section 3.7 of the
 academic calendar for more details.
 
-You will be reported to Dr. Cathy MacDonald, Associate Dean, Academic Affairs' Office if you are repeatedly delinquent
+You will be reported to the Associate Dean of Academic Affairs' Office if you are repeatedly delinquent
 in assignments or attendance at classes or laboratories.
+
 
 
 Copyright Policy
@@ -251,12 +250,14 @@ law and is strictly prohibited.
 
 The course copyright policy will be aggressively enforced.
 
+
 Class Recording Policy
 ======================
 
 Students may not create audio and/or video recordings of classes. Students creating unauthorized recording of lectures
 violate an instructor's intellectual property rights and the Canadian Copyright Act. Students violating this policy will
 be subject to disciplinary actions.
+
 
 
 Statement of Academic Offenses
@@ -324,6 +325,8 @@ To book an appointment please use the following:
 * Phone --- 902 867 5349
 * Email --- tramble@stfx.ca
 
+
+
 Academic Accommodation for Medical Illness
 ==========================================
 
@@ -331,11 +334,13 @@ Those unable to attend class, submit an assignment, or write a test, should refe
 academic calendar.
 
 
+
 Scent Policy
 ============
 
 For the benefit of the many students that have a scent sensitivity, my classroom is a no-scent zone; please respect this
 policy.
+
 
 
 Equity
@@ -350,9 +355,3 @@ in general. If we cannot answer your questions or help you address your concerns
 Chair/Coordinator of the Department/Program or the Human Rights and Equity Advisor. Please note that a Human Rights and
 Equity Advisor will soon be appointed. In the meantime, students, faculty, or staff may also contact the Director of
 Human Resources at hr@stfx.ca or the Office of the AVP&P.
-
-
-.. Addendum
-.. ========
-
-.. *OTHER NOTES*
