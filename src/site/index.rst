@@ -35,16 +35,16 @@ GitHub Repo
 Class Times
 ===========
 
-* Tue 11:15 - 12:05 (K4), TBD
-* Wed 13:15 - 14:05 (K5), TBD
-* Fri 12:15 - 13:05 (K6), TBD
+* Tue 11:15 - 12:05 (K4), MULH 2030
+* Wed 13:15 - 14:05 (K5), MULH 2030
+* Fri 12:15 - 13:05 (K6), MULH 2030
 
 
 Labs
 ====
 
-* Sec 1: Thr 14:15 -- 16:05 (L8-A9), TBD
-* Sec 2: Fri 14:15 -- 16:05 (C9-K9), TBD
+* Sec 1: Thr 14:15 -- 16:05 (L8-A9), MULH 4024
+* Sec 2: Mon 13:15 -- 15:05 (C4-A7), MULH 4024
 
 
 Office Hours
@@ -52,7 +52,7 @@ Office Hours
 
 `Office Hours Etiquette --- Don't Do This. <https://www.youtube.com/watch?v=lOTyUfOHgas>`_
 
-* **James Hughes** Annex 20B
+* **James Hughes** Virtual Only --- See Moodle
     * Tuesday, 10am -- 11am
     * Wednesday, 10am -- 11am
     * Thursday, 10am -- 11am
@@ -60,8 +60,7 @@ Office Hours
 
 * **(TAs)** TBD
     * **TBD** (tbd at stfx.ca):
-        * Wednesday, 9:15am -- 10:15am
-        * Thursday, 10:15am -- 11:15am
+    	* TBD
 
 
 Learning Centre
@@ -73,9 +72,7 @@ Learning Centre
 MSCS Tutorial Nights
 ====================
 
-The Math, Stats, and CS Society now has a time and location for our free tutorial sessions.
-
-* TBD
+`The Math, Stats, and CS Society now has a time and location for our free tutorial sessions. <https://www.mystfx.ca/computer-science/csci-tutorials>`_
 
 
 Getting Started
