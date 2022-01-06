@@ -132,7 +132,7 @@ Labs
     lab6
     lab7
     lab8
-    
+
 
 Assignments
 ===========
