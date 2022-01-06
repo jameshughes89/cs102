@@ -16,33 +16,33 @@ public class BinaryNode<T> {
     private BinaryNode<T> left;
     private BinaryNode<T> right;
 
-    private BinaryNode(T data) {
+    public BinaryNode(T data) {
         this.data = data;
         this.left = null;
         this.right = null;
     }
 
-    private T getData() {
+    public T getData() {
         return data;
     }
 
-    private void setData(T data) {
+    public void setData(T data) {
         this.data = data;
     }
 
-    private BinaryNode<T> getLeft() {
+    public BinaryNode<T> getLeft() {
         return left;
     }
 
-    private void setLeft(BinaryNode<T> left) {
+    public void setLeft(BinaryNode<T> left) {
         this.left = left;
     }
 
-    private BinaryNode<T> getRight() {
+    public BinaryNode<T> getRight() {
         return right;
     }
 
-    private void setRight(BinaryNode<T> right) {
+    public void setRight(BinaryNode<T> right) {
         this.right = right;
     }
 }
