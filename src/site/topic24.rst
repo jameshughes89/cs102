@@ -365,7 +365,7 @@ General Remove
     }
 
 * ``findReplacementNode`` looks rather intimidating at first, but it you take your time looking at it, you will see that it's simple
-* The first part, the first ``if``s and ``else if``s check if the node being removed is a leaf node, or if it has one child
+* The first part, the first ``if`` s and ``else if`` s check if the node being removed is a leaf node, or if it has one child
     * If it's a leaf node, there is no replacement
     * If there is only one child, then that child becomes the replacement
 
