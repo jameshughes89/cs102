@@ -366,7 +366,6 @@ Temperature Converter
 
 .. code-block:: cpp
     :linenos:
-    :emphasize-lines: 2, 8
 
     // C++ --- Convert farenheit to celcius
     double FtoC(double fahrenheit){
