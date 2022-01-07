@@ -35,12 +35,12 @@ Memory is broken down into two broad sections:
 
 2. The Heap
     * Which can be broken down further into storage for
-    a. Static information
-        * e.g. your code
-    b. Instance information
-        * e.g. Objects
-        * Technically, in Java, this can be broken down further into an area for longer living objects and an area for younger ones
-            * We will ignore this here
+		* Static information
+		    * e.g. your code
+		* Instance information
+		    * e.g. Objects
+		    * Technically, in Java, this can be broken down further into an area for longer living objects and an area for younger ones
+		        * We will ignore this here
 
 
 .. image:: img/memory_abstraction.png
