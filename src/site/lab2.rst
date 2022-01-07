@@ -91,7 +91,7 @@ Recommended Kattis Problems (don't worry, you don’t need to do all of them or 
 4. https://open.kattis.com/problems/oddities
 5. https://open.kattis.com/problems/fizzbuzz
 6. https://open.kattis.com/problems/twostones
-7.  https://open.kattis.com/problems/spavanac
+7. https://open.kattis.com/problems/spavanac
 8. https://open.kattis.com/problems/cetvrta
 9. https://open.kattis.com/problems/bus
 10. https://open.kattis.com/problems/timeloop
