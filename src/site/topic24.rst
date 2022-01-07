@@ -365,7 +365,7 @@ General Remove
     }
 
 * ``findReplacementNode`` looks rather intimidating at first, but it you take your time looking at it, you will see that it's simple
-* The first part, the first ``if``s and ``else if``s check if the node being removed is a leaf node, or if it has one child
+* The first part, the first ``if`` s and ``else if``s check if the node being removed is a leaf node, or if it has one child
     * If it's a leaf node, there is no replacement
     * If there is only one child, then that child becomes the replacement
 
@@ -425,7 +425,7 @@ Contains
 * What's interesting here is the helper method needs to return a boolean, but the ``binarySearch`` returns a reference to a node
 * A way to address this is to simply check if ``binarySearch`` returned a reference to a node or not
     * If ``contains`` gets a node back, then we return true
-    * Otherwise, if we get ``null` back, return false
+    * Otherwise, if we get ``null`` back, return false
 
 * As this method is written, duplicate values are assumed to be in the right subtree
 
