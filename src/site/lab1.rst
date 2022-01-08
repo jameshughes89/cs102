@@ -33,7 +33,6 @@ Creating a Project
 4. Add a ``main`` method to your class and have it do ``Hello, world!``
 
     .. code-block:: java
-        :linenos:
 
         public static void main(String[] args) {
             System.out.println("Hello, world!");

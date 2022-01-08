@@ -31,7 +31,6 @@ Node Class
 3. Do a simple test to see if it works by making an instance in your main method and using the node's methods
 
     .. code-block:: java
-        :linenos:
 
         Node<Integer> myNode = new Node<>(5);
         // Use the node class' methods here
@@ -46,7 +45,6 @@ Create the Linked Structure
     b. Return a reference to the head of the linked structure
 
     .. code-block:: java
-        :linenos:
 
         public static <T> Node<T> makeLinkedStructure() {
             // Stuff
@@ -56,7 +54,6 @@ Create the Linked Structure
 2. Verify it works by adding this to your ``main`` method
 
     .. code-block:: java
-        :linenos:
 
         Node<Integer> head = makeLinkedStructure();
         Node<Integer> currentNode = head;
@@ -82,7 +79,6 @@ Adding to the Front of the Structure
     c. Return a reference to the new head of the linked structure
 
     .. code-block:: java
-        :linenos:
 
         public static <T> Node<T> addToFront(Node<T> head, T toAdd) {
             // Stuff
@@ -92,7 +88,6 @@ Adding to the Front of the Structure
 2. Verify it works by adding this to your ``main`` method
 
     .. code-block:: java
-        :linenos:
 
         head = addToFront(head, 99);
         currentNode = head;
@@ -111,7 +106,6 @@ Removing from the Front of the Structure
     c. Return a reference to the new head of the linked structure
 
     .. code-block:: java
-        :linenos:
 
         public static <T> Node<T> removeFromFront(Node<T> head) {
             // Stuff
@@ -121,7 +115,6 @@ Removing from the Front of the Structure
 2. Verify it works by adding this to your ``main`` method
 
     .. code-block:: java
-        :linenos:
 
         head = removeFromFront(head) ;
         currentNode = head;
@@ -141,7 +134,6 @@ Adding to the Middle of the Structure
     c. Return a reference to the head of the linked structure
 
     .. code-block:: java
-        :linenos:
 
         public static <T> Node<T> addToMiddle(Node<T> head, T toAdd, T addAfter) {
             // Stuff
@@ -151,7 +143,6 @@ Adding to the Middle of the Structure
 2. Verify it works by adding this to your ``main`` method
 
     .. code-block:: java
-        :linenos:
 
         head = addToMiddle(head, 99, 5);
         currentNode = head;
@@ -175,7 +166,6 @@ Removing from the Middle of the Structure
     c. Return a reference to the head of the linked structure
 
     .. code-block:: java
-        :linenos:
 
         public static <T> Node<T> removeFromMiddle(Node<T> head, T toRemove) {
             // Stuff
@@ -185,7 +175,6 @@ Removing from the Middle of the Structure
 2. Verify it works by adding this to your ``main`` method
 
     .. code-block:: java
-        :linenos:
 
         head = removeFromMiddle(head, 99) ;
         currentNode = head;
