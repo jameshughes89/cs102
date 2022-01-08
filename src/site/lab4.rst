@@ -39,7 +39,6 @@ Implementing a Stack
 5. Test your ``ArrayStack`` with the following
 
     .. code-block:: java
-        :linenos:
 
             public static void main(String[] args) {
                 Stack<Integer> myStack = new ArrayStack<>();
@@ -72,7 +71,6 @@ Reversing a String
 
 
     .. code-block:: java
-        :linenos:
 
         public static void main(String[] args) {
             String alphabet = "abcdefghijklmnopqrstuvwxyz";

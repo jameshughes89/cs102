@@ -22,7 +22,6 @@ Recursion Visualization
 * Try running the following in the visualizer
 
     .. code-block:: java
-        :linenos:
 
         public class Recursion {
             public static int sum(int n) {
