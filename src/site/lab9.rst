@@ -79,7 +79,11 @@ Depth
 Balanced
 ========
 
+.. warning::
 
+    Many will find this method much more challenging than the previous few.
+
+     
 
 .. code-block:: python
 
