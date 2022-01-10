@@ -12,8 +12,31 @@ Lab #9
     * Peer teaching and peer learning is super effective
 
 
+Draw The Tree
+=============
 
-=======================
+
+Binary Node
+===========
+
+
+In-Order Traversal
+==================
+
+Binary Node
+===========
+
+
+Number of Nodes
+===============
+
+
+Depth
+=====
+
+
+Balanced
+========
 
 
 
