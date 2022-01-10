@@ -20,23 +20,72 @@ Binary Node
 ===========
 
 
+
+.. code-block:: python
+
+    public static void main(String[] args){
+        BinaryNode<Integer> root = new BinaryNode<>(1);
+
+        root.setLeft(new BinaryNode<>(2));
+        root.setRight(new BinaryNode<>(3));
+
+        root.getLeft().setLeft(new BinaryNode<>(4));
+        root.getLeft().setRight(new BinaryNode<>(5));
+
+        root.getRight().setLeft(new BinaryNode<>(6));
+        root.getRight().setRight(new BinaryNode<>(7));
+
+        root.getLeft().getRight().setLeft(new BinaryNode<>(8));
+        root.getLeft().getRight().setRight(new BinaryNode<>(9));
+    }
+
+
 In-Order Traversal
 ==================
 
-Binary Node
-===========
 
+
+.. code-block:: python
+
+    public static <T> void inOrderTraversal(BinaryNode<T> current){
+        // Fill me in
+    }
 
 Number of Nodes
 ===============
+
+
+
+.. code-block:: python
+
+    public static <T> int numberOfNodes(BinaryNode<T> current){
+        // Fill me in
+    }
 
 
 Depth
 =====
 
 
+
+.. code-block:: python
+
+    public static <T> int treeDepth(BinaryNode<T> current){
+        // Fill me in
+    }
+
+
+
 Balanced
 ========
+
+
+
+.. code-block:: python
+
+    public static <T> boolean isBalanced(BinaryNode<T> current){
+        // Fill me in
+    }
 
 
 
