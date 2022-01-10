@@ -50,7 +50,7 @@ Creating a Project
 Simple Problems
 ===============
 
-1. `Now see if you can figure out how to read standard in input with a BufferedReader as discussed in :doc:`Topic 1</topic1>`
+1. Now see if you can figure out how to read standard in input with a BufferedReader as discussed in :doc:`Topic 1</topic1>`
 
 2. `See if you can figure out how to read input with a Scanner <https://www.google.com/search?q=java+scanner+example&oq=java+scanner+ex&aqs=chrome.0.0l2j69i57j0l4j0i20i263j0l2.2278j0j4&sourceid=chrome&ie=UTF-8>`_
 
