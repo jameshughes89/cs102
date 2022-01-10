@@ -24,19 +24,19 @@ Binary Node
 .. code-block:: java
 
     public static void main(String[] args){
-        BinaryNode<Integer> root = new BinaryNode<>(1);
+        BinaryNode<Integer> root = new BinaryNode<>(6);
 
         root.setLeft(new BinaryNode<>(2));
-        root.setRight(new BinaryNode<>(3));
+        root.setRight(new BinaryNode<>(8));
 
-        root.getLeft().setLeft(new BinaryNode<>(4));
-        root.getLeft().setRight(new BinaryNode<>(5));
+        root.getLeft().setLeft(new BinaryNode<>(1));
+        root.getLeft().setRight(new BinaryNode<>(4));
 
-        root.getRight().setLeft(new BinaryNode<>(6));
-        root.getRight().setRight(new BinaryNode<>(7));
+        root.getRight().setLeft(new BinaryNode<>(7));
+        root.getRight().setRight(new BinaryNode<>(9));
 
-        root.getLeft().getRight().setLeft(new BinaryNode<>(8));
-        root.getLeft().getRight().setRight(new BinaryNode<>(9));
+        root.getLeft().getRight().setLeft(new BinaryNode<>(3));
+        root.getLeft().getRight().setRight(new BinaryNode<>(5));
     }
 
 
