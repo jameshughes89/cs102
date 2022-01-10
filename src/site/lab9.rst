@@ -21,7 +21,7 @@ Binary Node
 
 
 
-.. code-block:: python
+.. code-block:: java
 
     public static void main(String[] args){
         BinaryNode<Integer> root = new BinaryNode<>(1);
@@ -45,7 +45,7 @@ In-Order Traversal
 
 
 
-.. code-block:: python
+.. code-block:: java
 
     public static <T> void inOrderTraversal(BinaryNode<T> current){
         // Fill me in
@@ -56,7 +56,7 @@ Number of Nodes
 
 
 
-.. code-block:: python
+.. code-block:: java
 
     public static <T> int numberOfNodes(BinaryNode<T> current){
         // Fill me in
@@ -68,7 +68,7 @@ Depth
 
 
 
-.. code-block:: python
+.. code-block:: java
 
     public static <T> int treeDepth(BinaryNode<T> current){
         // Fill me in
@@ -83,9 +83,9 @@ Balanced
 
     Many will find this method much more challenging than the previous few.
 
-     
 
-.. code-block:: python
+
+.. code-block:: java
 
     public static <T> boolean isBalanced(BinaryNode<T> current){
         // Fill me in
