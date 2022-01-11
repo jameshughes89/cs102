@@ -91,14 +91,17 @@ Depth
     }
 
 
-
 Balanced
 ========
 
 .. warning::
 
-    Many will find this method much more challenging than the previous few.
+    Many will find this method much more challenging than the previous few. Feel free to jump to the Kattis problems
+    if you find yourself stuck.
 
+
+1. Write a recursive ``isBalanced`` method to determine if a given tree is balanced
+    * Be sure to know the definition of a balanced tree
 
 
 .. code-block:: java
@@ -106,7 +109,6 @@ Balanced
     public static <T> boolean isBalanced(BinaryNode<T> current){
         // Fill me in
     }
-
 
 
 Kattis Problems
