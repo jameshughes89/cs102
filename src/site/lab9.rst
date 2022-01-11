@@ -11,6 +11,10 @@ Lab #9
     * I want people to get used to working together in the labs
     * Peer teaching and peer learning is super effective
 
+.. Note::
+
+    We are simply playing with binary nodes in this lab and not a tree object, nor are we creating a tree object.
+
 
 Draw The Tree
 =============
