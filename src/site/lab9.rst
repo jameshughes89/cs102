@@ -15,6 +15,10 @@ Lab #9
 Draw The Tree
 =============
 
+1. Get a piece of paper
+2. Draw the tree that the following code generates
+3. Keep the paper to scratch other ideas down throughout the lab
+
 
 Binary Node
 ===========
