@@ -33,7 +33,7 @@ Binary Tree Definition
    Based on this information, what would a *unary* tree be?
 
 
-.. _label-topic22-traversals:
+.. _label-topic22-binary_trees-traversals:
 
 Traversals
 ==========

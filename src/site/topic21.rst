@@ -106,7 +106,7 @@ Relationships
     * How many subtrees does this tree have?
 
 
-.. _label-topic21-properties:
+.. _label-topic21-trees-properties:
 
 Properties
 ----------

@@ -58,7 +58,7 @@ In-Order Traversal
 ==================
 
 1. Create a recursive ``inOrderTraversal``
-    * :ref:`Review the traversals if you do not remember what an inorder traversal is <label-topic22-traversals>`
+    * :ref:`Review the traversals if you do not remember what an inorder traversal is <label-topic22-binary_trees-traversals>`
 
 .. code-block:: java
 
@@ -83,7 +83,7 @@ Depth
 =====
 
 1. Write a recursive ``treeDepth`` method to calculate the depth of the tree
-    * :ref:`Be sure to remember the definition of the height of a tree <label-topic21-properties>`
+    * :ref:`Be sure to remember the definition of the height of a tree <label-topic21-trees-properties>`
     * Check out ``Math.max``
 
 .. code-block:: java
@@ -103,7 +103,7 @@ Balanced
 
 
 1. Write a recursive ``isBalanced`` method to determine if a given tree is balanced
-    * :ref:`Be sure to know the definition of a balanced tree <label-topic23-balanced>`
+    * :ref:`Be sure to know the definition of a balanced tree <label-topic23-binary_search_trees-balanced>`
 
 
 .. code-block:: java
