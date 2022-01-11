@@ -14,7 +14,7 @@ Lab #9
 .. Note::
 
     We are simply playing with binary nodes in this lab and not a tree class, nor are we creating a tree class. We
-    are, however, still making a tree with these nodes. 
+    are, however, still making a tree with these nodes.
 
 
 Draw The Tree
@@ -48,7 +48,7 @@ Binary Node
 
 1. Create a project
 2. Create a ``BinaryNode`` class
-    * This can be taken from the ``LinkedBinarySearchTree`` class since the static inner class is for binary nodes
+    * This can be taken from the :download:`LinkedBinarySearchTree <../main/java/LinkedBinarySearchTree.java>` class since the static inner class is for binary nodes
     * Just note that you will have to change the class name from ``Node`` to ``BinaryNode``
 
 3. Make sure it's all working by running the above provided ``main`` method for generating the tree
