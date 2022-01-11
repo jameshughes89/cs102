@@ -13,7 +13,8 @@ Lab #9
 
 .. Note::
 
-    We are simply playing with binary nodes in this lab and not a tree object, nor are we creating a tree object.
+    We are simply playing with binary nodes in this lab and not a tree class, nor are we creating a tree class. We
+    are, however, still making a tree with these nodes. 
 
 
 Draw The Tree
