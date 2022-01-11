@@ -11,15 +11,18 @@ Lab #9
     * I want people to get used to working together in the labs
     * Peer teaching and peer learning is super effective
 
+.. Note::
+
+    We are simply playing with binary nodes in this lab and not a tree class, nor are we creating a tree class. We
+    are, however, still making a tree with these nodes.
+
 
 Draw The Tree
 =============
 
-
-Binary Node
-===========
-
-
+1. Get a piece of paper
+2. Draw the tree that the following code generates
+3. Keep the paper to scratch other ideas down throughout the lab
 
 .. code-block:: java
 
@@ -40,10 +43,22 @@ Binary Node
     }
 
 
+Binary Node
+===========
+
+1. Create a project
+2. Create a ``BinaryNode`` class
+    * This can be taken from the :download:`LinkedBinarySearchTree <../main/java/LinkedBinarySearchTree.java>` class since the static inner class is for binary nodes
+    * Just note that you will have to change the class name from ``Node`` to ``BinaryNode``
+
+3. Make sure it's all working by running the above provided ``main`` method for generating the tree
+
+
 In-Order Traversal
 ==================
 
-
+1. Create a recursive ``inOrderTraversal``
+    * :ref:`Review the traversals if you do not remember what an inorder traversal is <label-topic22-binary_trees-traversals>`
 
 .. code-block:: java
 
@@ -51,10 +66,11 @@ In-Order Traversal
         // Fill me in
     }
 
+
 Number of Nodes
 ===============
 
-
+1. Write a recursive ``numberOfNodes`` method to count the number of nodes within the tree
 
 .. code-block:: java
 
@@ -66,7 +82,9 @@ Number of Nodes
 Depth
 =====
 
-
+1. Write a recursive ``treeDepth`` method to calculate the depth of the tree
+    * :ref:`Be sure to remember the definition of the height of a tree <label-topic21-trees-properties>`
+    * Check out ``Math.max``
 
 .. code-block:: java
 
@@ -75,14 +93,17 @@ Depth
     }
 
 
-
 Balanced
 ========
 
 .. warning::
 
-    Many will find this method much more challenging than the previous few.
+    Many will find this method much more challenging than the previous few. Feel free to jump to the Kattis problems
+    if you find yourself stuck.
 
+
+1. Write a recursive ``isBalanced`` method to determine if a given tree is balanced
+    * :ref:`Be sure to know the definition of a balanced tree <label-topic23-binary_search_trees-balanced>`
 
 
 .. code-block:: java
@@ -90,7 +111,6 @@ Balanced
     public static <T> boolean isBalanced(BinaryNode<T> current){
         // Fill me in
     }
-
 
 
 Kattis Problems
