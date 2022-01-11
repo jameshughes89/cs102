@@ -19,12 +19,6 @@ Draw The Tree
 2. Draw the tree that the following code generates
 3. Keep the paper to scratch other ideas down throughout the lab
 
-
-Binary Node
-===========
-
-
-
 .. code-block:: java
 
     public static void main(String[] args){
@@ -42,6 +36,14 @@ Binary Node
         root.getLeft().getRight().setLeft(new BinaryNode<>(3));
         root.getLeft().getRight().setRight(new BinaryNode<>(5));
     }
+
+
+Binary Node
+===========
+
+
+
+
 
 
 In-Order Traversal
