@@ -68,7 +68,7 @@ In-Order Traversal
 Number of Nodes
 ===============
 
-
+1. Write a recursive ``numberOfNodes`` method to count the number of nodes within the tree
 
 .. code-block:: java
 
@@ -80,7 +80,9 @@ Number of Nodes
 Depth
 =====
 
-
+1. Write a recursive ``treeDepth`` method to calculate the depth of the tree
+    * Be sure to remember the definition of the height of a tree
+    * Check out ``Math.max``
 
 .. code-block:: java
 
