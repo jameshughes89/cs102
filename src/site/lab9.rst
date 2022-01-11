@@ -52,13 +52,14 @@ Binary Node
 In-Order Traversal
 ==================
 
-
+1. Create a recursive ``inOrderTraversal``
 
 .. code-block:: java
 
     public static <T> void inOrderTraversal(BinaryNode<T> current){
         // Fill me in
     }
+
 
 Number of Nodes
 ===============
