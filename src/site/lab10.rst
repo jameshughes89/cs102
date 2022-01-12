@@ -11,12 +11,25 @@ Lab #10
     * I want people to get used to working together in the labs
     * Peer teaching and peer learning is super effective
 
+.. note::
+
+    This lab is making use of integer arrays for sorting, but if you would like, feel free to use ``IndexedBags``. If
+    choose to do this, here's a tip for your method declarations:
+
+    ``public static <T extends Comparable<T>> void bubbleSort(IndexedBag<T> toSort)``
+
+    Also remember to use ``.compareTo``.
+
+
+Base Code
+=========
+
+
+
+
 
 Bubble Sort
 ===========
-
-
-.. code-block:: java
 
 .. code-block:: java
 
@@ -28,7 +41,6 @@ Bubble Sort
 Insertion Sort
 ==============
 
-
 .. code-block:: java
 
     public static void insertionSort(int[] toSort){
@@ -39,12 +51,17 @@ Insertion Sort
 Selection Sort
 ==============
 
-
 .. code-block:: java
 
     public static void selectionSort(int[] toSort){
         // Fill me in
     }
+
+
+
+Comparing Sorts
+===============
+
 
 
 Kattis Problems
