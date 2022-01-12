@@ -21,12 +21,12 @@ Lab #10
     Also remember to use ``.compareTo``.
 
 
-Base Code
-=========
+Starting Point
+==============
 
 This lab focuses on the sorts discussed in :doc:`topic 25 </topic25>`.
 
-Below is some base code to start from. You will need to ``import java.util.Random;``.
+Below is some code to start from. You will need to ``import java.util.Random;``.
 
 .. code-block:: java
 
