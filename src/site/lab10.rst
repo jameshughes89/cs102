@@ -42,7 +42,7 @@ Below is some code to start from. You will need to ``import java.util.Random;``.
         double endTime = System.nanoTime();
 
         printArray(toSort);
-        System.out.println((endTime - startTime)/1000000);  // Runtime in ms
+        System.out.println("runtime: " + (endTime - startTime)/1000000 + " ms");
     }
 
     public static int[] createUnsortedArray(int n, int maxValue){
