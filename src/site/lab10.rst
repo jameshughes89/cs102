@@ -62,6 +62,14 @@ Selection Sort
 Comparing Sorts
 ===============
 
+1. Run each of the sorts a few times and take note of the runtimes
+    * Do the times align with what you'd expect based on the computational complexities of each of the algorithms
+
+2. Try throwing a counter variable into the inner loops of each of the sorts to see how many times the loops ran
+    * Calculate what the counts should be for each sort, in the worst and best cases, based on the size of the arrays you used
+    * :doc:`Refer to the computational complexity analysis provided on these sorting algorithms </topic25>`
+
+3. Can you rationalize the differences in runtimes?
 
 
 Kattis Problems
