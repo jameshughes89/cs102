@@ -26,7 +26,7 @@ Base Code
 
 This lab focuses on the sorts discussed in :doc:`topic 25 </topic25>`.
 
-Below is some base code to start from.
+Below is some base code to start from. You will need to ``import java.util.Random;``.
 
 .. code-block:: java
 
@@ -65,6 +65,11 @@ Below is some base code to start from.
 Bubble Sort
 ===========
 
+1. Implement the bubble sort algorithm
+2. Make sure it works and test it a few times and see what the runtimes are
+    * Change the size of the array and the max value and see how it impacts runtimes
+    * For the purposes of this lab, do not worry about writing unit tests
+
 .. code-block:: java
 
     public static void bubbleSort(int[] toSort){
@@ -74,6 +79,11 @@ Bubble Sort
 
 Insertion Sort
 ==============
+
+1. Implement the insertion sort algorithm
+2. Make sure it works and test it a few times and see what the runtimes are
+    * Change the size of the array and the max value and see how it impacts runtimes
+    * For the purposes of this lab, do not worry about writing unit tests
 
 .. code-block:: java
 
@@ -85,12 +95,16 @@ Insertion Sort
 Selection Sort
 ==============
 
+1. Implement the selection sort algorithm
+2. Make sure it works and test it a few times and see what the runtimes are
+    * Change the size of the array and the max value and see how it impacts runtimes
+    * For the purposes of this lab, do not worry about writing unit tests
+
 .. code-block:: java
 
     public static void selectionSort(int[] toSort){
         // Fill me in
     }
-
 
 
 Comparing Sorts
