@@ -46,10 +46,9 @@ Below is some code to start from. You will need to ``import java.util.Random;``.
     }
 
     public static int[] createUnsortedArray(int n, int maxValue){
-        Random randNumGen = new Random();
         int[]  toSort= new int[n];
         for(int i = 0; i < n; ++i){
-            toSort[i] = randNumGen.nextInt(maxValue);
+            toSort[i] = (int)(Math.random() * maxValue);
         }
         return toSort;
     }
