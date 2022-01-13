@@ -8,6 +8,16 @@ Topic #26 --- More Sorting
 Mergesort
 =========
 
+* There are two important, but simple ideas at the root of mergesort
+    1. An empty list, or a list of size 1 is *sorted*
+    2. *Merging* two sorted lists, with the following algorithm, results in a single sorted list of all elements
+
+
+Merging Lists
+-------------
+
+
+
 
 Quicksort
 =========
