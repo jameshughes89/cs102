@@ -5,6 +5,128 @@ Topic #26 --- More Sorting
 * Other pretty cool sorting algorithms
 
 
+Mergesort
+=========
+
+.. image:: img/sort_mergesort.gif
+   :width: 333 px
+   :align: center
+   :target: https://en.wikipedia.org/wiki/Merge_sort
+
+
+* There are two important, but simple ideas at the root of mergesort
+    1. *Merging* two sorted lists, with the below idea, results in a single sorted list of all elements
+    2. An empty list, or a list of size 1, is *sorted*
+
+
+
+Merging Lists
+-------------
+
+1. Start with two sorted lists
+2. Create an new empty list
+3. Compare the first elements of the two lists
+4. Remove the smaller of the two from its list and append it to the end of the new list
+5. Go to 3
+
+
+.. list-table:: Merge Example
+    :widths: 50 50
+    :header-rows: 1
+
+    * - Two Sorted Lists
+      - Merged List
+    * - | :math:`2, 5, 8, 9`
+        | :math:`1, 3, 4, 6, 7`
+      -
+    * - | :math:`2, 5, 8, 9`
+        | :math:`3, 4, 6, 7`
+      - :math:`1`
+    * - | :math:`5, 8, 9`
+        | :math:`3, 4, 6, 7`
+      - :math:`1, 2`
+    * - | :math:`5, 8, 9`
+        | :math:`4, 6, 7`
+      - :math:`1, 2, 3`
+    * - | :math:`5, 8, 9`
+        | :math:`6, 7`
+      - :math:`1, 2, 3, 4`
+    * - | :math:`8, 9`
+        | :math:`6, 7`
+      - :math:`1, 2, 3, 4, 5`
+    * - | :math:`8, 9`
+        | :math:`7`
+      - :math:`1, 2, 3, 4, 5, 6`
+    * - | :math:`8, 9`
+        |
+      - :math:`1, 2, 3, 4, 5, 6, 7`
+    * - |
+        |
+      - :math:`1, 2, 3, 4, 5, 6, 7, 8, 9`
+
+* In the last two rows, since the second list was empty, we know the remainder of the first list could simply be appended to the merged list
+
+
+Splitting Lists
+---------------
+
+* The merge algorithm requires sorted lists to start from
+* However, when given an unsorted collection to sort, there are no sorted lists to start merging
+* Fortunately this is trivial to address
+    * Keep splitting the unsorted collection in half
+
+* Eventually this will result in a set of lists that are either empty or size 1
+
+    :math:`[a, b, c, d, e, f, g]`
+
+    :math:`[a, b, c, d], [e, f, g]`
+
+    :math:`[a, b], [c, d], [e, f], [g]`
+
+    :math:`[a, b], [c, d], [e, f], [g]`
+
+    :math:`[a], [b], [c], [d], [e], [f], [g], []`
+
+
+Putting it Back Together Again
+------------------------------
+
+* To get to the single sorted list, simply merge all the smaller sorted lists together until 1 list remains
+
+
+    :math:`[t], [u], [v], [w], [x], [y], [z], []`
+
+    :math:`[t, u], [v, w], [x, y], [z]`
+
+    :math:`[t, u, v, w], [x, y, z]`
+
+    :math:`[t, u, v, w, x, y, z]`
+
+
+Recursively Thinking
+--------------------
+
+* The beauty of this algorithm is it's simplicity when thinking about it recursively
+
+* **Mergesort**
+    * If the list is size 0 or 1
+        * Return the sorted list of size 0 or 1
+    * Otherwise
+        * Split the list into a first and second half
+        * Sort the first half with **Mergesort**
+        * Sort the second half with **Mergesort**
+        * Merge the first and second half back together
+        * Return the sorted merged list
+
+
+Quicksort
+=========
+
+
+Heapsort
+========
+
+
 Radix Sort
 ==========
 
@@ -71,20 +193,6 @@ Computational Complexity
     impacts the space complexity, (b) it will only impact the computational complexity if a naive strategy of a linear
     search is used to place elements in the correct bins, and (c) the radix value is very likely to be small and fixed,
     thereby making it effectively a constant.
-
-
-
-
-Mergesort
-=========
-
-
-Quicksort
-=========
-
-
-Heapsort
-========
 
 
 For next time
