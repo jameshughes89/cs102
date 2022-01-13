@@ -165,6 +165,7 @@ Statements
     int z = x + y;  // 1 unit of work
 
 **Growth Function:** :math:`t(n) = 3`
+
 **Order:** :math:`O(1)`
 
 Loops
@@ -181,6 +182,7 @@ Loops
     }
 
 **Growth Function:** :math:`t(n) = 1 + 1n`
+
 **Order:** :math:`O(n)`
 
 * We can think of the loop and a number line
@@ -213,6 +215,7 @@ Nested Loops
 * It may be more clear to work from the inside out
 
 **Growth Function:** :math:`t(n) = (1n + 1)n + 2 = n^{2} + 1n + 2`
+
 **Order:** :math:`O(n^{2})`
 
 .. image:: img/complexity_quadratic.png
@@ -243,6 +246,7 @@ Tests
 * **HINT:** I like to connect this to the :math:`n \times n` square to help
 
 **Growth Function:** :math:`t(n) = ??`
+
 **Order:** :math:`O(??)`
 
 
@@ -258,6 +262,7 @@ Tests
 * **HINT:** I like to connect this to the number line of length :math:`n` to help
 
 **Growth Function:** :math:`t(n) = ??`
+
 **Order:** :math:`O(??)`
 
 
@@ -274,6 +279,7 @@ Tests
 * **HINT:** How quickly will we run out of number in the number line?
 
 **Growth Function:** :math:`t(n) = ??`
+
 **Order:** :math:`O(??)`
 
 
