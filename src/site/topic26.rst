@@ -86,6 +86,7 @@ Splitting Lists
 
     :math:`[a], [b], [c], [d], [e], [f], [g], []`
 
+
 Quicksort
 =========
 
