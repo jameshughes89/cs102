@@ -116,7 +116,7 @@ Recursively Thinking
         * Sort the first half with **Mergesort**
         * Sort the second half with **Mergesort**
         * Merge the first and second half back together
-        * Return the merged list
+        * Return the sorted merged list
 
 
 Quicksort
