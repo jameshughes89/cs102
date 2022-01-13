@@ -74,7 +74,8 @@ Splitting Lists
 * However, when given an unsorted collection to sort, there are no sorted lists to start merging
 * Fortunately this is trivial to address
     * Keep splitting the unsorted collection in half
-    * Eventually this will result in a set of lists that are either empty or size 1
+
+* Eventually this will result in a set of lists that are either empty or size 1
 
     :math:`[a, b, c, d, e, f, g]`
 
@@ -85,6 +86,21 @@ Splitting Lists
     :math:`[a, b], [c, d], [e, f], [g]`
 
     :math:`[a], [b], [c], [d], [e], [f], [g], []`
+
+
+Putting it Back Together Again
+------------------------------
+
+* To get to the single sorted list, simply merge all the smaller sorted lists together until 1 list remains
+
+
+    :math:`[t], [u], [v], [w], [x], [y], [z], []`
+
+    :math:`[t, u], [v, w], [x, y], [z]`
+
+    :math:`[t, u, v, w], [x, y, z]`
+
+    :math:`[t, u, v, w, x, y, z]`
 
 
 Quicksort
