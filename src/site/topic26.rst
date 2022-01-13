@@ -103,6 +103,22 @@ Putting it Back Together Again
     :math:`[t, u, v, w, x, y, z]`
 
 
+Recursively Thinking
+--------------------
+
+* The beauty of this algorithm is it's simplicity when thinking about it recursively
+
+* **Mergesort**
+    * If the list is size 0 or 1
+        * Return the sorted list of size 0 or 1
+    * Otherwise
+        * Split the list into a first and second half
+        * Sort the first half with **Mergesort**
+        * Sort the second half with **Mergesort**
+        * Merge the first and second half back together
+        * Return the merged list
+
+
 Quicksort
 =========
 
