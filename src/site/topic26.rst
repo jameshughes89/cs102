@@ -15,8 +15,9 @@ Mergesort
 
 
 * There are two important, but simple ideas at the root of mergesort
-    1. An empty list, or a list of size 1 is *sorted*
-    2. *Merging* two sorted lists, with the following algorithm, results in a single sorted list of all elements
+    1. *Merging* two sorted lists, with the below idea, results in a single sorted list of all elements
+    2. An empty list, or a list of size 1, is *sorted*
+
 
 
 Merging Lists
