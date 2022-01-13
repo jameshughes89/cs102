@@ -5,6 +5,18 @@ Topic #26 --- More Sorting
 * Other pretty cool sorting algorithms
 
 
+Mergesort
+=========
+
+
+Quicksort
+=========
+
+
+Heapsort
+========
+
+
 Radix Sort
 ==========
 
@@ -71,20 +83,6 @@ Computational Complexity
     impacts the space complexity, (b) it will only impact the computational complexity if a naive strategy of a linear
     search is used to place elements in the correct bins, and (c) the radix value is very likely to be small and fixed,
     thereby making it effectively a constant.
-
-
-
-
-Mergesort
-=========
-
-
-Quicksort
-=========
-
-
-Heapsort
-========
 
 
 For next time
