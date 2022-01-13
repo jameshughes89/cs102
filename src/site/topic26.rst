@@ -67,8 +67,8 @@ Merging Lists
 * In the last two rows, since the second list was empty, we know the remainder of the first list could simply be appended to the merged list
 
 
-Starting Sorted Lists
----------------------
+Splitting Lists
+---------------
 
 * The merge algorithm requires sorted lists to start from
 * However, when given an unsorted collection to sort, there are no sorted lists to start merging
