@@ -67,6 +67,25 @@ Merging Lists
 * In the last two rows, since the second list was empty, we know the remainder of the first list could simply be appended to the merged list
 
 
+Starting Sorted Lists
+---------------------
+
+* The merge algorithm requires sorted lists to start from
+* However, when given an unsorted collection to sort, there are no sorted lists to start merging
+* Fortunately this is trivial to address
+    * Keep splitting the unsorted collection in half
+    * Eventually this will result in a set of lists that are either empty or size 1
+
+    :math:`[a, b, c, d, e, f, g]`
+
+    :math:`[a, b, c, d], [e, f, g]`
+
+    :math:`[a, b], [c, d], [e, f], [g]`
+
+    :math:`[a, b], [c, d], [e, f], [g]`
+
+    :math:`[a], [b], [c], [d], [e], [f], [g], []`
+
 Quicksort
 =========
 
