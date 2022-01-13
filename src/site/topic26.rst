@@ -8,7 +8,7 @@ Topic #26 --- More Sorting
 Mergesort
 =========
 
-.. image:: img/sort_insertionsort.gif
+.. image:: img/sort_mergesort.gif
    :width: 333 px
    :align: center
    :target: https://en.wikipedia.org/wiki/Merge_sort
@@ -29,7 +29,41 @@ Merging Lists
 5. Go to 3
 
 
+.. list-table:: Merge Example
+    :widths: 50 50
+    :header-rows: 1
 
+    * - Two Sorted Lists
+      - Merged List
+    * - | :math:`2, 5, 8, 9`
+        | :math:`1, 3, 4, 6, 7`
+      -
+    * - | :math:`2, 5, 8, 9`
+        | :math:`3, 4, 6, 7`
+      - :math:`1`
+    * - | :math:`5, 8, 9`
+        | :math:`3, 4, 6, 7`
+      - :math:`1, 2`
+    * - | :math:`5, 8, 9`
+        | :math:`4, 6, 7`
+      - :math:`1, 2, 3`
+    * - | :math:`5, 8, 9`
+        | :math:`6, 7`
+      - :math:`1, 2, 3, 4`
+    * - | :math:`8, 9`
+        | :math:`6, 7`
+      - :math:`1, 2, 3, 4, 5`
+    * - | :math:`8, 9`
+        | :math:`7`
+      - :math:`1, 2, 3, 4, 5, 6`
+    * - | :math:`8, 9`
+        |
+      - :math:`1, 2, 3, 4, 5, 6, 7`
+    * - |
+        |
+      - :math:`1, 2, 3, 4, 5, 6, 7, 8, 9`
+
+* In the last two rows, since the second list was empty, we know the remainder of the first list could simply be appended to the merged list
 
 
 Quicksort
