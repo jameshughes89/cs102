@@ -22,8 +22,11 @@ Mergesort
 Merging Lists
 -------------
 
-
-
+1. Start with two sorted lists
+2. Create an new empty list
+3. Compare the first elements of the two lists
+4. Remove the smaller of the two from its list and append it to the end of the new list
+5. Go to 3
 
 
 
