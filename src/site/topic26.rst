@@ -140,6 +140,39 @@ Merging
 * Therefore, because we ignore coefficients, the complexity of merging is :math:`O(n)`
 
 
+Number of Merges
+^^^^^^^^^^^^^^^^
+
+.. image:: img/sort_split.png
+   :width: 500 px
+   :align: center
+
+
+* A single merging of two lists is linear
+* Note that below, we use the value :math:`n` to represent the total number of elements to be sorted
+* Now the goal is to determine the number of times merging needs to happen
+
+* If we have a total of :math:`n` elements to be sorted, where :math:`n = 2^{k}`, these will get split into :math:`n` lists of size 1
+    * To keep things simple, we're considering that :math:`n` is a power of 2
+
+* Consider the bottom row of the tree in the above figure
+* Each of these :math:`n` lists of size 1 need to be merged with another list of size 1
+* Once this happens, we are left with :math:`n/2` lists of size 2
+* This requires a total of :math:`n/2` merges for that bottom row, and each merge merged 2 elements, which is :math:`O(n)` for that bottom row
+
+* Following this, we are left with :math:`n/2` lists of size 2
+* If each of the :math:`n/2` lists of size 2 are merged, this would result in :math:`n/4` lists of size 4 after :math:`n/4` merges
+    * :math:`O(n)`
+
+* Following this pattern, if each row of merges takes :math:`O(n)` time, it becomes a matter of determining how many rows there are
+* If we have :math:`n` (or, :math:`2^{k}`) lists of size 1, how many "rows" of merges are required to obtain 1 list of size :math:`n` (or, :math:`2^{k}`)
+    * Each row halves the number of lists (doubles the size of each list), we will have :math:`k` rows
+    * :math:`k = log_{2}(2^{k}) = log_{2}(n)`
+    * Therefore we have :math:`log_{2}(n)` rows
+    * And each row takes :math:`O(n)` time
+    * Thus, mergesort is :math:`O(n log_{2}(n))`
+
+
 
 Quicksort
 =========
