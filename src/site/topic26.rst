@@ -119,6 +119,39 @@ Recursively Thinking
         * Return the sorted merged list
 
 
+Complexity Analysis
+-------------------
+
+* A simple way to think about the analysis is to consider
+    * How much work is involved for a single merging of two lists
+    * How many times merging needs to happen
+
+* It can get more nuanced, but this level of detail is sufficient
+
+
+Merging
+^^^^^^^
+
+* We will have two lists of roughly the same size to merge into one
+* The algorithm compares elements and eventually adds them all to a new, sorted merged list
+    * Interestingly, the elements in the merged list never need to be compared to one another again
+* The complexity of merging is :math:`O(n)`
+
+
+Number of Merges
+^^^^^^^^^^^^^^^^
+
+.. image:: img/sort_split.png
+   :width: 500 px
+   :align: center
+
+
+* If you remember from binary search, we can visualize the splitting of data as a tree
+* On each level of the tree, there are a total of :math:`n` elements to be merged into larger lists
+* You will also remember, when repeatedly halving, the relationship between :math:`n` and the number of levels in the tree is :math:`O(log_{2}(n))`
+* Therefore, we need to do :math:`O(n)` work a total of :math:`O(log_{2}(n))` times --- :math:`O(n log_{2}(n))`
+
+
 Quicksort
 =========
 
