@@ -15,7 +15,8 @@ Lab #11
 Starting Point
 ==============
 
-This lab focuses on the sorts discussed in :doc:`topic 26 </topic26>`.
+This lab focuses on the sorts discussed in :doc:`topic 26 </topic26>`. Note that, unlike the previous lab, here we use
+an unsorted bag instead of an array.
 
 .. code-block:: java
 
@@ -45,6 +46,11 @@ This lab focuses on the sorts discussed in :doc:`topic 26 </topic26>`.
 Quicksort
 =========
 
+1. Implement the quicksort algorithm
+2. Make sure it works and test it a few times and see what the runtimes are
+    * Change the size of the bag and the max value and see how it impacts runtimes
+    * For the purposes of this lab, do not worry about writing unit tests
+
 .. code-block:: java
 
     public static <T extends Comparable<T>> void quicksort(IndexedBag<T> toSort){
@@ -55,6 +61,11 @@ Quicksort
 Mergesort
 =========
 
+1. Implement the mergesort algorithm
+2. Make sure it works and test it a few times and see what the runtimes are
+    * Change the size of the bag and the max value and see how it impacts runtimes
+    * For the purposes of this lab, do not worry about writing unit tests
+
 .. code-block:: java
 
     public static <T extends Comparable<T>> void mergesort(IndexedBag<T> toSort){
@@ -64,6 +75,12 @@ Mergesort
 
 Comparing Sorts
 ===============
+
+1. Run each of the sorts a few times and take note of the runtimes
+    * Play around with the size of the lists and the max value
+    * Do the times align with what you'd expect based on the computational complexities of each of the algorithms
+
+2. Compare these runtimes to the sorts completed in the previous lab.
 
 
 Kattis Problems
