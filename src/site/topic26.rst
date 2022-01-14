@@ -132,12 +132,10 @@ Complexity Analysis
 Merging
 ^^^^^^^
 
-* We will have two lists to merge into one
-* One list will be size :math:`n`, the other will be size :math:`m`
-* These lists will either be the same length or nearly the same length, but either way, we can say :math:`n >= m`
-* Since we're concerned about worst case scenario, we will consider the case where :math:`n = m`, therefore we have :math:`2n` elements total
-* There will be some number of comparisons taking place, but ultimately, each of these :math:`2n` elements will need to be moved to the merged list
-* Therefore, because we ignore coefficients, the complexity of merging is :math:`O(n)`
+* We will have two lists of roughly the same size to merge into one
+* The algorithm compares elements and eventually adds them all to a new, sorted merged list
+    * Interestingly, the elements in the merged list never need to be compared to one another again
+* The complexity of merging is :math:`O(n)`
 
 
 Number of Merges
