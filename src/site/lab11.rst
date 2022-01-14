@@ -15,7 +15,8 @@ Lab #11
 Starting Point
 ==============
 
-This lab focuses on the sorts discussed in :doc:`topic 26 </topic26>`.
+This lab focuses on the sorts discussed in :doc:`topic 26 </topic26>`. Note that, unlike the previous lab, here we use
+an unsorted bag instead of an array.
 
 .. code-block:: java
 
