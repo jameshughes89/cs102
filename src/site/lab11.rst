@@ -45,6 +45,11 @@ This lab focuses on the sorts discussed in :doc:`topic 26 </topic26>`.
 Quicksort
 =========
 
+1. Implement the quicksort algorithm
+2. Make sure it works and test it a few times and see what the runtimes are
+    * Change the size of the array and the max value and see how it impacts runtimes
+    * For the purposes of this lab, do not worry about writing unit tests
+
 .. code-block:: java
 
     public static <T extends Comparable<T>> void quicksort(IndexedBag<T> toSort){
@@ -54,6 +59,11 @@ Quicksort
 
 Mergesort
 =========
+
+1. Implement the mergesort algorithm
+2. Make sure it works and test it a few times and see what the runtimes are
+    * Change the size of the array and the max value and see how it impacts runtimes
+    * For the purposes of this lab, do not worry about writing unit tests
 
 .. code-block:: java
 
