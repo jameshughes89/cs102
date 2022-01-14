@@ -9,12 +9,12 @@ Winter 2022
 
 .. warning::
     This outline is written assuming in person lectures begin 2 weeks after the start of the semester. As of the time
-    of writing, the first two weeks are scheduled to be online only. If circumstances change, this outline will be 
-    updated accordingly. The major changes that would occur are (a) online lectures, (b) online labs, (c) the removal 
+    of writing, the first two weeks are scheduled to be online only. If circumstances change, this outline will be
+    updated accordingly. The major changes that would occur are (a) online lectures, (b) online labs, (c) the removal
     of the midterm and having its portion of the final grade spread over the assignments, and (d) the format of the
     final exam.
-    
-    None of the above warning should suggest that it is expected that things will change. 
+
+    None of the above warning should suggest that it is expected that things will change.
 
 
 
@@ -153,11 +153,10 @@ Assignment Due Dates
 
 The date and exact time assignments are due will be given in the assignment specifications.
 
-No submissions will be taken after the due date; there are no late submissions. All submissions after the due
-date will result in a mark of zero and will not be evaluated.
+Assignments are due on the posted due date, but will be accepted with no penalty for up to a maximum of 7 days after the
+posted date. Any submission past the 7 day period will not be accepted.
 
-No extensions will be given for assignments.
-
+No extensions will be given for assignments for after the 7 day late period.
 
 
 Assignment Marking
@@ -196,7 +195,7 @@ Labs
 
 The purpose of the labs is to give students guided, hands-on experience with programming. It is expected that students
 will come prepared to the labs by reading the lab instructions. Lab instructions will be available on the course website
-in advance. Students coming to lab unprepared will be asked to leave. 
+in advance. Students coming to lab unprepared will be asked to leave.
 
 * Labs begin the **first** week of class.
 * Lab exercises must be completed for marks. Each completed lab is worth 1% of your final grade (to a maximum of 10%).
