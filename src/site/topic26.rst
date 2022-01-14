@@ -119,6 +119,18 @@ Recursively Thinking
         * Return the sorted merged list
 
 
+Complexity Analysis
+-------------------
+
+* A simple way to think about the analysis is to consider
+    * How much work is involved for a single merging of two lists
+    * How many times merging needs to happen
+
+* It can get more nuanced, but this level of detail is sufficient
+
+
+
+
 Quicksort
 =========
 
