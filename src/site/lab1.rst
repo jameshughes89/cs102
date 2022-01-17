@@ -72,6 +72,16 @@ Kattis
 
     I realize many of you will have solved these already in Python. Good, but now do it in Java.
 
+    Don't know how to do things in Java? Check out :doc:`topic 1 </topic1>` and :doc:`topic 2 </topic2>`.
+
+    Still stumped?
+        * `Variables in Java? <https://www.google.ca/search?q=variables+in+java>`_
+        * `Functions in Java? <https://www.google.ca/search?q=functions+in+java>`_
+        * `If statements in Java? <https://www.google.ca/search?q=if+statements+in+java>`_
+        * `Loops in Java? <https://www.google.ca/search?q=loops+in+java>`_
+        * ...
+
+
 1. https://open.kattis.com/problems/hello
 2. https://open.kattis.com/problems/carrots
 3. https://open.kattis.com/problems/r2
