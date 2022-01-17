@@ -68,7 +68,7 @@ Kattis
     * https://open.kattis.com/
     * Specify that StFX is your institution
 
-.. warning::
+.. note::
 
     I realize many of you will have solved these already in Python. Good, but now do it in Java.
 
