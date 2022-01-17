@@ -6,9 +6,27 @@ Assignment #1: Playing with Objects is Still Fun
 * **DUE**: TBD at 11:55pm; submitted on MOODLE.
 
 
+Task
+====
 
 
-Some hints
+Provided Files
+==============
+
+
+Part 1 --- Country
+==================
+
+
+Part 2 --- Country Catalogue
+============================
+
+
+Part 3 --- Testing
+==================
+
+
+Some Hints
 ==========
 
 * Work on one method at a time.
@@ -19,7 +37,7 @@ Some hints
 * If you need help, **ask**! Drop by my office hours.
 
 
-What to submit to Moodle
+What to Submit to Moodle
 ========================
 
 Submit your work on Moodle.
@@ -32,7 +50,7 @@ Submit your work on Moodle.
 **IF YOU SUBMIT INCORRECTLY, YOU WILL GET A 0**
 
 
-Some marking details
+Some Marking Details
 ====================
 
 .. warning::
