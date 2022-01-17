@@ -163,8 +163,25 @@ Quicksort
 
 * There are two important ideas at the root of quicksort
     1. Given a list of sorted values :math:`< x`, and another list of sorted values :math:`> x`, one can append the second list to the first to create a larger sorted list
+        * e.g.
+            :math:`[0,1,2,3,4]` & :math:`[5,6,7,8,9]`
+
+            :math:`[0,1,2,3,4,5,6,7,8,9]`
+
     2. An empty list, or a list of size 1, is *sorted*
 
+
+Pivoting
+========
+
+* In order to append sorted lists together, we need sorted lists
+* However, when given an unsorted collection to sort, there are no sorted lists to start appending
+* Fortunately there is a simple way to do this
+    * Repeat the following idea until left with lists of size 1 or 0
+
+1. Select a *pivot* element in the list
+2. Place all elements less than the pivot into a list
+3. Place all elements larger than the pivot into a list
 
 
 Heapsort
