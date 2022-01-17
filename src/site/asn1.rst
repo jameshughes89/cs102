@@ -1,12 +1,15 @@
-Assignment #1: TBD
-==================
+************************************************
+Assignment #1: Playing with Objects is Still Fun
+************************************************
 
 * **Worth**: 10%
 * **DUE**: TBD at 11:55pm; submitted on MOODLE.
 
 
+
+
 What to submit to Moodle
-^^^^^^^^^^^^^^^^^^^^^^^^^
+========================
 
 Submit your work on Moodle.
 
@@ -20,7 +23,7 @@ Submit your work on Moodle.
 
 
 Some hints
-^^^^^^^^^^^
+==========
 
 * Work on one method at a time.
 * Get each method *working perfectly* before you go on to the next one.
@@ -30,7 +33,7 @@ Some hints
 * If you need help, **ask**! Drop by my office hours.
 
 Some marking details
-^^^^^^^^^^^^^^^^^^^^^
+====================
 .. warning::
     Just because your program produces the correct output, that does not necessarily mean that you will get perfect, or even that your program is correct.
 
@@ -45,7 +48,7 @@ Below is a list of both *quantitative* and *qualitative* things we will look for
 
 
 FAQ:
-^^^^^^^^^^^^^^^
+====
 * Does my text file have enough details?
     * Probably. The shorter the better.
 * I don't know how to do *X*.
