@@ -38,3 +38,15 @@ Officially:
 * We are using IntelliJ
 * Everything must run on the lab computers
     * Or whatever are "lab computers" these days
+
+
+I've Still Got Issues
+=====================
+
+* If you are unsure about:
+    * Which processor architecture you have
+    * What is a compressed folder vs. an installer
+    * What about if I am using operating system X
+    * etc.
+
+* `I am confident you can find the answers on my favourite website <https://www.google.ca/>`_ 
