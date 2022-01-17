@@ -161,6 +161,11 @@ Quicksort
    :target: https://en.wikipedia.org/wiki/Quicksort
 
 
+* There are two important ideas at the root of quicksort
+    1. Given a list of sorted values :math:`< x`, and another list of sorted values :math:`> x`, one can append the second list to the first to create a larger sorted list
+    2. An empty list, or a list of size 1, is *sorted*
+
+
 
 Heapsort
 ========
