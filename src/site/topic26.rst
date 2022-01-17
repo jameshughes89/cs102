@@ -155,6 +155,12 @@ Number of Merges
 Quicksort
 =========
 
+.. image:: img/sort_mergesort.gif
+   :width: 333 px
+   :align: center
+   :target: https://en.wikipedia.org/wiki/Quicksort
+
+
 
 Heapsort
 ========
