@@ -37,19 +37,6 @@ Some Hints
 * If you need help, **ask**! Drop by my office hours.
 
 
-What to Submit to Moodle
-========================
-
-Submit your work on Moodle.
-
-* Your ``.java`` files. Please do not compress them.
-
-* Make sure your **NAME** and **STUDENT NUMBER** appear in a comment at the top of the program.
-
-**VERIFY THAT YOUR SUBMISSION TO MOODLE WORKED!**
-**IF YOU SUBMIT INCORRECTLY, YOU WILL GET A 0**
-
-
 Some Marking Details
 ====================
 
@@ -64,6 +51,19 @@ Below is a list of both *quantitative* and *qualitative* things we will look for
 * Variable Names?
 * Style?
 * Did you do just weird things that make no sense?
+
+
+What to Submit to Moodle
+========================
+
+Submit your work on Moodle.
+
+* Your ``.java`` files. Please do not compress them.
+
+* Make sure your **NAME** and **STUDENT NUMBER** appear in a comment at the top of the program.
+
+**VERIFY THAT YOUR SUBMISSION TO MOODLE WORKED!**
+**IF YOU SUBMIT INCORRECTLY, YOU WILL GET A 0**
 
 
 FAQ:
