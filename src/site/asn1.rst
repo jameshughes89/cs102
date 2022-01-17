@@ -8,20 +8,6 @@ Assignment #1: Playing with Objects is Still Fun
 
 
 
-What to submit to Moodle
-========================
-
-Submit your work on Moodle.
-
-* Your ``.java`` files.
-
-* Make sure your **NAME** and **STUDENT NUMBER** appear in a comment at the top of the program.
-
-
-**VERIFY THAT YOUR SUBMISSION TO MOODLE WORKED!**
-**IF YOU SUBMIT INCORRECTLY, YOU WILL GET A 0**
-
-
 Some hints
 ==========
 
@@ -32,8 +18,23 @@ Some hints
     * Mentally test before you even write --- what does this method do? What problem is it solving?
 * If you need help, **ask**! Drop by my office hours.
 
+
+What to submit to Moodle
+========================
+
+Submit your work on Moodle.
+
+* Your ``.java`` files. Please do not compress them.
+
+* Make sure your **NAME** and **STUDENT NUMBER** appear in a comment at the top of the program.
+
+**VERIFY THAT YOUR SUBMISSION TO MOODLE WORKED!**
+**IF YOU SUBMIT INCORRECTLY, YOU WILL GET A 0**
+
+
 Some marking details
 ====================
+
 .. warning::
     Just because your program produces the correct output, that does not necessarily mean that you will get perfect, or even that your program is correct.
 
