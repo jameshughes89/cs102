@@ -183,6 +183,21 @@ Pivoting
 2. Place all elements less than the pivot into a list
 3. Place all elements larger than the pivot into a list
 
+* Example: 
+
+    :math:`[4,3,8,6,0,1,9,2,7,5]`
+
+    :math:`[4,3,0,1,2], [5], [8,6,9,7]`
+
+    :math:`[0,1], [2], [4,3], [5], [6], [7], [8,9]`
+
+    :math:`[0], [1], [], [2], [], [3], [4], [5], [6], [7], [8], [9], []`
+
+
+* Note that, in the above example:
+    1. For simplicity, the last element of each list was selected as the pivot
+    2. When there were no elements less than/greater than the pivot, an empty list was shown
+
 
 Heapsort
 ========
