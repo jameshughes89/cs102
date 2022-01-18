@@ -24,6 +24,14 @@ You will:
 Provided Files
 ==============
 
+You are provided with:
+    * A nearly empty *Country.java* file where you will write your ``Country`` class
+    * A nearly empty *CountryCatalogue.java* file where you will write your ''CountryCatalogue`` class
+    * An *asn1.java* file with a ``main`` method and some testing code
+    * Data files
+        * A *data.txt* file containing some country details
+        * A *continent.txt* file containing country and continent information
+
 
 Part 1 --- Country
 ==================
