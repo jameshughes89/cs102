@@ -44,6 +44,28 @@ Read the assignment description in its entirety before starting.
 Part 1 --- Country
 ==================
 
+You will be creating a class called ``Country`` that will hold some basic data. The data being stored will be the
+country ``name`` (string), ``population`` (int), ``area`` (double), and ``continent`` (string). This class will be used by the
+``CountryCatalogue`` class discussed in Part 2.
+
+1. Write a constructor for the ``Country`` class that takes four (4) parameters that will be stored as class fields.
+    * String ``name``
+    * int ``population``
+    * double ``area``
+    * String ``continent``
+
+2. Write getter methods for each class field.
+
+3. Write a setter method for the country's ``population``. This will be the only setter we need as the other fields do not typically change all too often for countries.
+
+4. Write an ``equals`` method to compare two (2) country objects. Simply check if all fields are the same --- for our purposes, if they are, then we'll say they are equal.
+
+5. Write a ``toString`` method that returns a string containing the country ``name``, ``continent``, ``population``, and ``area``, all seperated by commas and a space. See the below example
+
+    ``"Canada, North America, 34207000, 9976140.00"``
+
+6. Write some simple testing code to ensure the object is working as you expect. Try creating instances. Getting their fields, setting the population, etc. --- just test each method. This testing code is not to be submitted.
+
 
 Part 2 --- Country Catalogue
 ============================
