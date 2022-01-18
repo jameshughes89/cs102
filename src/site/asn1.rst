@@ -15,22 +15,24 @@ use the classes, and write some various methods outlined below.
 Effectively, the idea is to recreate your assignment 4 from CSCI 161, but in Java. Be aware that the assignment is not
 identical and the requirements outlined here will be what is required.
 
-You will:
-    * Write a ``Country`` class with a few simple methods
-    * Write a ``CountryCatalogue`` class with methods making use of instances of a ``Country``
-    * Testing your implementation
+You will
+
+* Write a ``Country`` class with a few simple methods
+* Write a ``CountryCatalogue`` class with methods making use of instances of a ``Country``
+* Testing your implementation
 
 
 Provided Files
 ==============
 
-You are provided with:
-    * A nearly empty *Country.java* file where you will write your ``Country`` class
-    * A nearly empty *CountryCatalogue.java* file where you will write your ''CountryCatalogue`` class
-    * An *asn1.java* file with a ``main`` method and some testing code
-    * Data files
-        * A *data.txt* file containing some country details
-        * A *continent.txt* file containing country and continent information
+You are provided with
+
+* A nearly empty *Country.java* file where you will write your ``Country`` class
+* A nearly empty *CountryCatalogue.java* file where you will write your ''CountryCatalogue`` class
+* An *asn1.java* file with a ``main`` method and some testing code
+* Data files
+    * A *data.txt* file containing some country details
+    * A *continent.txt* file containing country and continent information
 
 
 Part 1 --- Country
