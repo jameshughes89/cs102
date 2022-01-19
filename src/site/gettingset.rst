@@ -11,7 +11,7 @@ this course and can be obtained `here <https://www.oracle.com/java/technologies/
 
 Alternatively, you may use `OpenJDK <https://openjdk.java.net/>`_ which is actually the reference implementation.
 
-Wither way, make sure you are using JDK version 11 or higher.
+Either way, make sure you are using JDK version 11 or higher.
 
 Other JDKs
 ^^^^^^^^^^
