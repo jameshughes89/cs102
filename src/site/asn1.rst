@@ -28,7 +28,7 @@ Provided Files
 You are provided with
 
 * A nearly empty *Country.java* file where you will write your ``Country`` class
-* A nearly empty *CountryCatalogue.java* file where you will write your ''CountryCatalogue`` class
+* A nearly empty *CountryCatalogue.java* file where you will write your ``CountryCatalogue`` class
 * An *Asn1.java* file with a ``main`` method and some testing code
 * Data files
     * A *data.txt* file containing some country details
