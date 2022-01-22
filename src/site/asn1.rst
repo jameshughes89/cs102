@@ -89,6 +89,7 @@ starting size for the ``catalogue`` array.
 #. Write an ``add`` method that will take all the information needed to create a new ``Country`` object (name, population, area, continent) as parameters and add it to the ``catalogue``
     * It is possible that our ``catalogue`` array runs out of space, so we may need to ``expandCapacity``
     * Be sure to properly keep track of the number of countries in the catalogue
+    * Do not forget about the ``countryContinent`` map
 
 #. Write a private method called ``expandCapacity`` that will double the size of the ``Country`` array used for holding the countries in the catalogue
 
