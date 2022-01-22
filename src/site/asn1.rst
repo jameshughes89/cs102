@@ -76,6 +76,15 @@ The ``CountryCatalogue`` class will be a collection of ``Country`` objects. Ther
         * A map is the same idea as a dictionary from Python
         * `How does one use a hash map? <https://www.google.com/search?q=java+hashmap&oq=java+hashmap>`_
 
+#. Create a constructor that will setup the catalogue of countries based on some text files --- students may find this to be the must difficult part of the assignment
+    * Takes two strings as parameters for the file names of the text files to be opened
+    * Based on the continent file, the constructor will populate the ``countryContinent`` map
+    * Based on the file containing the country details, along with the ``countryContinent`` data, populate the ``catalogue`` array with appropriate ``Country`` objects
+    * **Note:** The constructor will have ``throws IOException`` so you do not need to worry about the ``try`` and ``catch`` blocks for the file I/O
+
+
+
+
 
 Part 3 --- Testing
 ==================
