@@ -82,10 +82,13 @@ starting size for the ``catalogue`` array.
     * Takes two strings as parameters for the file names of the text files to be opened
     * Based on the continent file, the constructor will populate the ``countryContinent`` map
     * Based on the file containing the country details, along with the ``countryContinent`` data, populate the ``catalogue`` array with appropriate ``Country`` objects
+        * Be sure to keep track of the size of the catalogue
+        * Maybe one of the below methods will help make this part easier?
     * **Note:** The constructor will have ``throws IOException`` so you do not need to worry about the ``try`` and ``catch`` blocks for the file I/O
 
 #. Write an ``add`` method that will take all the information needed to create a new ``Country`` object (name, population, area, continent) as parameters and add it to the ``catalogue``
-    *
+    * It is possible that our ``catalogue`` array runs out of space, so we may need to ``expandCapacity``
+    * Be sure to properly keep track of the number of countries in the catalogue
 
 #. Write a private method called ``expandCapacity`` that will
 
