@@ -68,13 +68,15 @@ country ``name`` (string), ``population`` (int), ``area`` (double), and ``contin
 Part 2 --- Country Catalogue
 ============================
 
-The ``CountryCatalogue`` class will be a collection of ``Country`` objects. There will be a static constant int called
-``DEFAULT_CAPACITY`` that should be set to 10. There will also be three fields
+The ``CountryCatalogue`` class will be a collection of ``Country`` objects. There will be three fields
     * ``size``, an int to keep track of the number of countries in the catalogue
     * ``catalogue``, an array of ``Country`` objects
     * ``countryContinent``, a *hash map* to keep track of the country/continent relationships
         * A map is the same idea as a dictionary from Python
         * `How does one use a hash map? <https://www.google.com/search?q=java+hashmap&oq=java+hashmap>`_
+
+There will also be a static constant int called ``DEFAULT_CAPACITY`` that should be set to 10 and will be used as a
+starting size for the ``catalogue`` array.
 
 #. Create a constructor that will setup the catalogue of countries based on some text files --- students may find this to be the must difficult part of the assignment
     * Takes two strings as parameters for the file names of the text files to be opened
@@ -82,7 +84,10 @@ The ``CountryCatalogue`` class will be a collection of ``Country`` objects. Ther
     * Based on the file containing the country details, along with the ``countryContinent`` data, populate the ``catalogue`` array with appropriate ``Country`` objects
     * **Note:** The constructor will have ``throws IOException`` so you do not need to worry about the ``try`` and ``catch`` blocks for the file I/O
 
+#. Write an ``add`` method that will take all the information needed to create a new ``Country`` object (name, population, area, continent) as parameters and add it to the ``catalogue``
+    *
 
+#. Write a private method called ``expandCapacity`` that will
 
 
 
