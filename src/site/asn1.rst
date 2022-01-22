@@ -99,6 +99,10 @@ starting size for the ``catalogue`` array.
     * Be careful about how you are comparing strings
     * If the country is not in the ``catalogue``, everything should be left alone
 
+#. Write a ``find`` method to perform a linear search for a ``Country`` based on the country name passed to the method as a parameter
+    * This method will return the ``Country`` object
+    * If the specified country does not exist, return ``null``
+
 
 Part 3 --- Testing
 ==================
