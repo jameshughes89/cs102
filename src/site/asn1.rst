@@ -58,13 +58,11 @@ country ``name`` (string), ``population`` (int), ``area`` (double), and ``contin
 
 3. Write a setter method for the country's ``population``. This will be the only setter we need as the other fields do not typically change all too often for countries.
 
-4. Write an ``equals`` method to compare two (2) country objects. Simply check if all fields are the same --- for our purposes, if they are, then we'll say they are equal.
-
-5. Write a ``toString`` method that returns a string containing the country ``name``, ``continent``, ``population``, and ``area``, all seperated by commas and a space. See the below example
+4. Write a ``toString`` method that returns a string containing the country ``name``, ``continent``, ``population``, and ``area``, all seperated by commas and a space. See the below example
 
     ``"Canada, North America, 34207000, 9976140.00"``
 
-6. Write some simple testing code to ensure the object is working as you expect. Try creating instances. Getting their fields, setting the population, etc. --- just test each method. This testing code is not to be submitted.
+5. Write some simple testing code to ensure the object is working as you expect. Try creating instances. Getting their fields, setting the population, etc. --- just test each method. This testing code is not to be submitted.
 
 
 Part 2 --- Country Catalogue
