@@ -90,7 +90,7 @@ starting size for the ``catalogue`` array.
     * It is possible that our ``catalogue`` array runs out of space, so we may need to ``expandCapacity``
     * Be sure to properly keep track of the number of countries in the catalogue
 
-#. Write a private method called ``expandCapacity`` that will
+#. Write a private method called ``expandCapacity`` that will double the size of the ``Country`` array used for holding the countries in the catalogue
 
 
 
