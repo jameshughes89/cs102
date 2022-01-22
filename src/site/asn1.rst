@@ -28,8 +28,8 @@ Provided Files
 You are provided with
 
 * A nearly empty *Country.java* file where you will write your ``Country`` class
-* A nearly empty *CountryCatalogue.java* file where you will write your ''CountryCatalogue`` class
-* An *asn1.java* file with a ``main`` method and some testing code
+* A nearly empty *CountryCatalogue.java* file where you will write your ``CountryCatalogue`` class
+* An *Asn1.java* file with a ``main`` method and some testing code
 * Data files
     * A *data.txt* file containing some country details
     * A *continent.txt* file containing country and continent information
@@ -48,21 +48,21 @@ You will be creating a class called ``Country`` that will hold some basic data. 
 country ``name`` (string), ``population`` (int), ``area`` (double), and ``continent`` (string). This class will be used by the
 ``CountryCatalogue`` class discussed in Part 2.
 
-1. Write a constructor for the ``Country`` class that takes four (4) parameters that will be stored as class fields.
+#. Write a constructor for the ``Country`` class that takes four (4) parameters that will be stored as class fields.
     * String ``name``
     * int ``population``
     * double ``area``
     * String ``continent``
 
-2. Write getter methods for each class field.
+#. Write getter methods for each class field.
 
-3. Write a setter method for the country's ``population``. This will be the only setter we need as the other fields do not typically change all too often for countries.
+#. Write a setter method for the country's ``population``. This will be the only setter we need as the other fields do not typically change all too often for countries.
 
-4. Write a ``toString`` method that returns a string containing the country ``name``, ``continent``, ``population``, and ``area``, all seperated by commas and a space. See the below example
+#. Write a ``toString`` method that returns a string containing the country ``name``, ``continent``, ``population``, and ``area``, all seperated by commas and a space. See the below example
 
     ``"Canada, North America, 34207000, 9976140.00"``
 
-5. Write some simple testing code to ensure the object is working as you expect. Try creating instances. Getting their fields, setting the population, etc. --- just test each method. This testing code is not to be submitted.
+#. Write some simple testing code to ensure the object is working as you expect. Try creating instances. Getting their fields, setting the population, etc. --- just test each method. This testing code is not to be submitted.
 
 
 Part 2 --- Country Catalogue
