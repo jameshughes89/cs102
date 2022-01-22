@@ -70,9 +70,9 @@ Part 2 --- Country Catalogue
 
 The ``CountryCatalogue`` class will be a collection of ``Country`` objects. There will be a static constant int called
 ``DEFAULT_CAPACITY`` that should be set to 10. There will also be three fields
-    # ``size``, an int to keep track of the number of countries in the catalogue
-    # ``catalogue``, an array of ``Country`` objects
-    # ``countryContinent``, a *hash map* to keep track of the country/continent relationships
+    * ``size``, an int to keep track of the number of countries in the catalogue
+    * ``catalogue``, an array of ``Country`` objects
+    * ``countryContinent``, a *hash map* to keep track of the country/continent relationships
         * A map is the same idea as a dictionary from Python
         * `How does one use a hash map? <https://www.google.com/search?q=java+hashmap&oq=java+hashmap>`_
 
