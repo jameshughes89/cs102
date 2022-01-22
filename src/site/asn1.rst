@@ -69,22 +69,23 @@ Part 2 --- Country Catalogue
 ============================
 
 The ``CountryCatalogue`` class will be a collection of ``Country`` objects. There will be three fields
+
     * ``size``, an int to keep track of the number of countries in the catalogue
     * ``catalogue``, an array of ``Country`` objects
     * ``countryContinent``, a *hash map* to keep track of the country/continent relationships
         * A map is the same idea as a dictionary from Python
         * `How does one use a hash map? <https://www.google.com/search?q=java+hashmap&oq=java+hashmap>`_
 
-There will also be a static constant int called ``DEFAULT_CAPACITY`` that should be set to 10 and will be used as a
-starting size for the ``catalogue`` array.
+There will also be a static constant int for this class called ``DEFAULT_CAPACITY`` that should be set to 10. This will
+be used as a starting size for the ``catalogue`` array.
 
-#. Create a constructor that will setup the catalogue of countries based on some text files --- students may find this to be the must difficult part of the assignment
+#. Create a constructor that will setup the catalogue of countries based on some text files --- you may find this to be the must difficult part of the assignment
     * Takes two strings as parameters for the file names of the text files to be opened
     * Based on the continent file, the constructor will populate the ``countryContinent`` map
     * Based on the file containing the country details, along with the ``countryContinent`` data, populate the ``catalogue`` array with appropriate ``Country`` objects
         * Be sure to keep track of the size of the ``catalogue``
         * Maybe one of the below methods will help make this part easier?
-    * **Note:** The constructor will have ``throws IOException`` so you do not need to worry about the ``try`` and ``catch`` blocks for the file I/O
+    * **Note:** To keep things simpler, the constructor will have ``throws IOException`` so you do not need to worry about the ``try`` and ``catch`` blocks for the file I/O
 
 #. Write an ``add`` method that will take all the information needed to create a new ``Country`` object (name, population, area, continent) as parameters and add it to the ``catalogue``
     * It is possible that our ``catalogue`` array runs out of space, so we may need to ``expandCapacity``
@@ -92,6 +93,7 @@ starting size for the ``catalogue`` array.
     * Do not forget about the ``countryContinent`` map
 
 #. Write a private method called ``expandCapacity`` that will double the size of the ``Country`` array used for holding reference to the countries
+    * Always double the size of the array
 
 #. Create a ``remove`` method that removes a ``Country`` object from the ``catalogue`` based on the parameterized country name
     * Remember to keep track of the size
