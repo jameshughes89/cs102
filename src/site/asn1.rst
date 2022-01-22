@@ -93,6 +93,11 @@ starting size for the ``catalogue`` array.
 
 #. Write a private method called ``expandCapacity`` that will double the size of the ``Country`` array used for holding the countries in the catalogue
 
+#. Create a ``remove`` method that removes a country object from the ``catalogue`` based on the parameterized country name
+    * Remember to keep track of the size
+    * Do not worry about eliminating anything from the ``countryContinent`` map
+    * Be careful about how you are comparing strings
+    * If the country is not in the catalogue, everything should be left alone
 
 
 Part 3 --- Testing
