@@ -68,6 +68,42 @@ country ``name`` (string), ``population`` (int), ``area`` (double), and ``contin
 Part 2 --- Country Catalogue
 ============================
 
+The ``CountryCatalogue`` class will be a collection of ``Country`` objects.
+
+There will be three fields
+
+    * ``size``, an int to keep track of the number of countries in the catalogue
+    * ``catalogue``, an array of ``Country`` objects
+    * ``countryContinent``, a *hash map* to keep track of the country/continent relationships
+        * A map is the same idea as a dictionary from Python
+        * `How does one use a hash map? <https://www.google.com/search?q=java+hashmap&oq=java+hashmap>`_
+
+There will also be a static constant
+
+    * An integer for this class called ``DEFAULT_CAPACITY`` that should be set to 10
+        * This will be used as a starting size for the ``catalogue`` array
+
+#. Create a constructor that will setup and create an empty catalogue of countries
+    * This constructor should set the ``size``, ``catalogue``, and ``countryContinent`` fields appropriately
+
+#. Write an ``add`` method that will take all the information needed to create a new ``Country`` object (name, population, area, continent) as parameters and add it to the ``catalogue``
+    * It is possible that our ``catalogue`` array runs out of space, so we may need to ``expandCapacity``
+    * Be sure to properly keep track of the number of countries in the catalogue
+    * Do not forget about the ``countryContinent`` map
+
+#. Write a private method called ``expandCapacity`` that will double the size of the ``Country`` array used for holding reference to the countries
+    * Always double the size of the array
+
+#. Create a ``remove`` method that removes a ``Country`` object from the ``catalogue`` based on the parameterized country name
+    * Remember to keep track of the size
+    * Do not worry about eliminating anything from the ``countryContinent`` map
+    * Be careful about how you are comparing strings
+    * If the country is not in the ``catalogue``, everything should be left alone
+
+#. Write a ``find`` method to perform a linear search for a ``Country`` based on the country name passed to the method as a parameter
+    * This method will return the ``Country`` object
+    * If the specified country does not exist, return ``null``
+
 
 Part 3 --- Testing
 ==================
