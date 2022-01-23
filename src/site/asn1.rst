@@ -48,25 +48,98 @@ You will be creating a class called ``Country`` that will hold some basic data. 
 country ``name`` (string), ``population`` (int), ``area`` (double), and ``continent`` (string). This class will be used by the
 ``CountryCatalogue`` class discussed in Part 2.
 
-#. Write a constructor for the ``Country`` class that takes four (4) parameters that will be stored as class fields.
+#. Write a constructor for the ``Country`` class that takes four (4) parameters that will be stored as class fields
     * String ``name``
     * int ``population``
     * double ``area``
     * String ``continent``
 
-#. Write getter methods for each class field.
+#. Write getter methods for each class field
 
-#. Write a setter method for the country's ``population``. This will be the only setter we need as the other fields do not typically change all too often for countries.
+#. Write a setter method for the country's ``population``
+    * This will be the only setter we need as the other fields do not typically change all too often for countries
 
-#. Write a ``toString`` method that returns a string containing the country ``name``, ``continent``, ``population``, and ``area``, all seperated by commas and a space. See the below example
+#. Write a ``toString`` method that returns a string containing the country ``name``, ``continent``, ``population``, and ``area``, all seperated by commas and a space
 
     ``"Canada, North America, 34207000, 9976140.00"``
 
-#. Write some simple testing code to ensure the object is working as you expect. Try creating instances. Getting their fields, setting the population, etc. --- just test each method. This testing code is not to be submitted.
+#. Write an ``equals`` method
+    * We will want to get an ``Object`` as a parameter, **not** simply a ``Country`` --- :doc:`follow topic 3's aside on equals </topic3-equals>`
+    * Simply check if all fields are the same --- for our purposes, if they are, then we'll say they are equal
+
+#. You will notice an existing method called ``hashCode`` within the ``Country`` class that returns an integer
+    * This was briefly discussed last semester when learning about dictionaries
+    * This method turns an object into an integer (*ideally* unique) for the purposes of hashing
+    * Do not worry about understanding this completely at this stage
+        * It's here because it is needed for the hash map in the ``CountryCatalogue`` class discussed below
+        * `If you are interested, checkout the relevant wiki article <https://en.wikipedia.org/wiki/Hash_function>`_
+
+#. Write some simple testing code to ensure the object is working as you expect
+    * Try creating instances
+    * Getting their fields, setting the population, etc.
+    * This testing code is **not** to be submitted
 
 
 Part 2 --- Country Catalogue
 ============================
+
+The ``CountryCatalogue`` class will be a collection of ``Country`` objects.
+
+There will be three fields
+
+    * ``size``, an int to keep track of the number of countries in the catalogue
+    * ``catalogue``, an array of ``Country`` objects
+    * ``countryContinent``, a *hash map* to keep track of the country/continent relationships
+        * A map is the same idea as a dictionary from Python
+        * `How does one use a hash map? <https://www.google.com/search?q=java+hashmap&oq=java+hashmap>`_
+
+There will also be a static constant
+
+    * An integer for this class called ``DEFAULT_CAPACITY`` that should be set to 10
+        * This will be used as a starting size for the ``catalogue`` array
+
+#. Create a constructor that will setup and create an empty catalogue of countries
+    * This constructor should set the ``size``, ``catalogue``, and ``countryContinent`` fields appropriately
+
+#. Write an ``add`` method that will take all the information needed to create a new ``Country`` object (name, population, area, continent) as parameters and add it to the ``catalogue``
+    * It is possible that our ``catalogue`` array runs out of space, so we may need to ``expandCapacity``
+    * Be sure to properly keep track of the number of countries in the catalogue
+    * Do not forget about the ``countryContinent`` map
+
+#. Write a private method called ``expandCapacity`` that will double the size of the ``Country`` array used for holding reference to the countries
+    * Always double the size of the array
+
+#. Create a ``remove`` method that removes a ``Country`` object from the ``catalogue`` based on the parameterized country name
+    * Remember to keep track of the size
+    * Do not worry about eliminating anything from the ``countryContinent`` map
+    * Be careful about how you are comparing strings
+    * If the country is not in the ``catalogue``, everything should be left alone
+
+#. Write a ``find`` method to perform a linear search for a ``Country`` based on the country name passed to the method as a parameter
+    * This method will return the ``Country`` object
+    * If the specified country does not exist, return ``null``
+
+
+#. Create a method called ``setPopulation`` that takes a name of a country and a new population value for that country as parameters
+
+#. Have a method called ``numberCountriesOnContinent`` that takes a continent name as a parameter and returns the number of ``Country`` objects on that continent
+
+#. Write a method called ``filterCountriesByContinent`` that takes a continent name as a parameter and returns a new ``CountryCatalogue`` instance containing only the countries on the specified continent
+
+#. A method called ``findCountryLargestPopulation`` that returns the ``Country`` with the largest population in the ``catalogue``
+
+#. Have a method called ``findMostPopulousContinent`` that returns the name of the continent with the largest total population based on the countries in the ``catalogue``
+
+#. Write the ``toString`` method to return a ``String`` with each ``Country`` object's details on a separate line
+    * The ``Country`` class' ``toString`` will be useful for getting the object's details
+    * Below is an example
+
+            ``China, Asia, 1339190000, 9596960.0``
+
+            ``United States of America, North America, 309975000, 9629091.0``
+
+            ``Brazil, South America, 193364000, 8511965.0``
+
 
 
 Part 3 --- Load Files
@@ -79,6 +152,14 @@ Part 3 --- Load Files
         * Be sure to keep track of the size of the ``catalogue``
         * Maybe one of the below methods will help make this part easier?
     * **Note:** To keep things simpler, the constructor will have ``throws IOException`` so you do not need to worry about the ``try`` and ``catch`` blocks for the file I/O
+
+
+Part 4 --- Testing
+==================
+
+#. Run the main method and check if the output is what you would expect
+    * I am not going to provide you with the correct output
+    * You should be able to determine this on your own
 
 
 Some Hints
