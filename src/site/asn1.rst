@@ -93,7 +93,7 @@ Part 2 --- Country Catalogue
 
 #. Write a ``saveCatalogue`` method to save the string representing the ``CountryCatalogue`` to a specified file
     * The file name will be passed as a parameter
-    * ``toString`` will be of use here
+    * ``this`` class' ``toString`` will be of use here
 
 
 
