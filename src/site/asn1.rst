@@ -145,6 +145,9 @@ There will also be a static constant
 Part 3 --- Load Files
 =====================
 
+This part is about populating the country catalogue based on information contained within text files. You will be
+required to perform some file I/O. 
+
 #. Create a constructor that will setup the catalogue of countries based on some text files --- you may find this to be the must difficult part of the assignment
     * Takes two strings as parameters for the file names of the text files to be opened
     * Based on the continent file, the constructor will populate the ``countryContinent`` map
