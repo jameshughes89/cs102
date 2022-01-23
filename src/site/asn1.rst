@@ -75,7 +75,9 @@ Part 2 --- Country Catalogue
 
 #. Write a method called ``filterCountriesByContinent`` that takes a continent name as a parameter and returns a ``Country`` array containing only the countries on the specified continent
 
+#. A method called ``findCountryLargestPopulation`` that returns the ``Country`` with the largest population in the ``catalogue``
 
+#. Have a method called ``findMostPopulousContinent`` that returns the name of the continent with the total  
 
 Part 3 --- Testing
 ==================
