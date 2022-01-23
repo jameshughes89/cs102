@@ -63,10 +63,6 @@ country ``name`` (string), ``population`` (int), ``area`` (double), and ``contin
 
     ``"Canada, North America, 34207000, 9976140.00"``
 
-#. Write an ``equals`` method
-    * We will want to get an ``Object`` as a parameter, **not** simply a ``Country`` --- :doc:`follow topic 3's aside on equals </topic3-equals>`
-    * Simply check if all fields are the same --- for our purposes, if they are, then we'll say they are equal
-
 #. You will notice an existing method called ``hashCode`` within the ``Country`` class that returns an integer
     * This was briefly discussed last semester when learning about dictionaries
     * This method turns an object into an integer (*ideally* unique) for the purposes of hashing
