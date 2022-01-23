@@ -79,13 +79,8 @@ The ``CountryCatalogue`` class will be a collection of ``Country`` objects. Ther
 There will also be a static constant int for this class called ``DEFAULT_CAPACITY`` that should be set to 10. This will
 be used as a starting size for the ``catalogue`` array.
 
-#. Create a constructor that will setup the catalogue of countries based on some text files --- you may find this to be the must difficult part of the assignment
-    * Takes two strings as parameters for the file names of the text files to be opened
-    * Based on the continent file, the constructor will populate the ``countryContinent`` map
-    * Based on the file containing the country details, along with the ``countryContinent`` data, populate the ``catalogue`` array with appropriate ``Country`` objects
-        * Be sure to keep track of the size of the ``catalogue``
-        * Maybe one of the below methods will help make this part easier?
-    * **Note:** To keep things simpler, the constructor will have ``throws IOException`` so you do not need to worry about the ``try`` and ``catch`` blocks for the file I/O
+#. Create a constructor that will setup and create an empty catalogue of countries
+    * This constructor should set the ``size``, ``catalogue``, and ``countryContinent`` fields appropriately
 
 #. Write an ``add`` method that will take all the information needed to create a new ``Country`` object (name, population, area, continent) as parameters and add it to the ``catalogue``
     * It is possible that our ``catalogue`` array runs out of space, so we may need to ``expandCapacity``
