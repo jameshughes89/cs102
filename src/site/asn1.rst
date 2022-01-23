@@ -69,8 +69,8 @@ Part 2 --- Country Catalogue
 ============================
 
 
-Part 3 --- Testing
-==================
+Part 3 --- Load Files
+=====================
 
 #. Create a constructor that will setup the catalogue of countries based on some text files --- you may find this to be the must difficult part of the assignment
     * Takes two strings as parameters for the file names of the text files to be opened
