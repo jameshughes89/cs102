@@ -34,6 +34,10 @@ You are provided with
     * A *data.txt* file containing some country details
     * A *continent.txt* file containing country and continent information
 
+* :download:`All of this can be downloaded from here </data/Assignment.zip>`
+    * This is a compressed IntelliJ project
+    * Just unzip, put it where you want on your computer, and you should be able to open this project through IntelliJ
+
 
 Part 0 --- Read the Assignment
 ==============================
