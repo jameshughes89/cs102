@@ -114,6 +114,9 @@ There will also be a static constant
 #. A method called ``findCountryLargestPopulation`` that returns the ``Country`` with the largest population in the ``catalogue``
 
 #. Have a method called ``findMostPopulousContinent`` that returns the name of the continent with the largest total population based on the countries in the ``catalogue``
+    * I strongly recommend making use of a *hash map* to keep track of continent populations
+    * A map is the same idea as a dictionary from Python
+    * `How does one use a hash map? <https://www.google.com/search?q=java+hashmap&oq=java+hashmap>`_
 
 #. Write the ``toString`` method to return a ``String`` with each ``Country`` object's details on a separate line
     * The ``Country`` class' ``toString`` will be useful for getting the object's details
