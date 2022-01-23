@@ -77,7 +77,7 @@ Part 2 --- Country Catalogue
 
 #. A method called ``findCountryLargestPopulation`` that returns the ``Country`` with the largest population in the ``catalogue``
 
-#. Have a method called ``findMostPopulousContinent`` that returns the name of the continent with the total  
+#. Have a method called ``findMostPopulousContinent`` that returns the name of the continent with the largest total population based on the countries in the ``catalogue``
 
 Part 3 --- Testing
 ==================
