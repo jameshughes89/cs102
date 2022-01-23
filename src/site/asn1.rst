@@ -68,7 +68,9 @@ country ``name`` (string), ``population`` (int), ``area`` (double), and ``contin
 Part 2 --- Country Catalogue
 ============================
 
-The ``CountryCatalogue`` class will be a collection of ``Country`` objects. There will be three fields
+The ``CountryCatalogue`` class will be a collection of ``Country`` objects.
+
+There will be three fields
 
     * ``size``, an int to keep track of the number of countries in the catalogue
     * ``catalogue``, an array of ``Country`` objects
@@ -76,8 +78,10 @@ The ``CountryCatalogue`` class will be a collection of ``Country`` objects. Ther
         * A map is the same idea as a dictionary from Python
         * `How does one use a hash map? <https://www.google.com/search?q=java+hashmap&oq=java+hashmap>`_
 
-There will also be a static constant int for this class called ``DEFAULT_CAPACITY`` that should be set to 10. This will
-be used as a starting size for the ``catalogue`` array.
+There will also be a static constant
+
+    * An integer for this class called ``DEFAULT_CAPACITY`` that should be set to 10
+        * This will be used as a starting size for the ``catalogue`` array
 
 #. Create a constructor that will setup and create an empty catalogue of countries
     * This constructor should set the ``size``, ``catalogue``, and ``countryContinent`` fields appropriately
