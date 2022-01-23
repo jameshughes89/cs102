@@ -91,13 +91,6 @@ Part 2 --- Country Catalogue
             ``Brazil, South America, 193364000, 8511965.0``
 
 
-#. Write a ``saveCatalogue`` method to save the string representing the ``CountryCatalogue`` to a specified file
-    * The file name will be passed as a parameter
-    * This method will make use of ``throws IOException`` to help keep things simpler
-        * You will not need to worry about ``try`` and ``catch`` blocks in this method
-    * ``this`` class' ``toString`` will be of use here
-
-
 
 Part 3 --- Testing
 ==================
