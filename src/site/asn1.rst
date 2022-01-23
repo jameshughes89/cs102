@@ -146,15 +146,17 @@ Part 3 --- Load Files
 =====================
 
 This part is about populating the country catalogue based on information contained within text files. You will be
-required to perform some file I/O. 
+required to perform some file I/O.
 
-#. Create a constructor that will setup the catalogue of countries based on some text files --- you may find this to be the must difficult part of the assignment
-    * Takes two strings as parameters for the file names of the text files to be opened
-    * Based on the continent file, the constructor will populate the ``countryContinent`` map
-    * Based on the file containing the country details, along with the ``countryContinent`` data, populate the ``catalogue`` array with appropriate ``Country`` objects
-        * Be sure to keep track of the size of the ``catalogue``
-        * Maybe one of the below methods will help make this part easier?
-    * **Note:** To keep things simpler, the constructor will have ``throws IOException`` so you do not need to worry about the ``try`` and ``catch`` blocks for the file I/O
+#. Create a static method within the ``Asn1`` class called ``loadCountries``
+    * This method will take two strings as parameters for the file names of the text files to be read
+    * There will be a third parameter for a ``CountryCatalogue`` instance that will contain ``Country`` objects created based on the text files
+    * Based on the contents of the continent file, keep track of the country/continent relationships
+        * I strongly recommend making use of a *hash map* to keep track of the country/continent relationships
+        * A map is the same idea as a dictionary from Python
+        * `How does one use a hash map? <https://www.google.com/search?q=java+hashmap&oq=java+hashmap>`_
+    * Based on the file containing the country details, along with the country/continent relationships, populate the ``CountryCatalogue`` with appropriate ``Country`` objects
+    * **Note:** To keep things simpler, the method will have ``throws IOException`` so you do not need to worry about the ``try`` and ``catch`` blocks for the file I/O
 
 
 Part 4 --- Testing
