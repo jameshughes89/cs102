@@ -76,8 +76,8 @@ country ``name`` (string), ``population`` (int), ``area`` (double), and ``contin
 
 #. Write some simple testing code to ensure the object is working as you expect
     * Try creating instances
-    * Getting their fields, setting the population, etc. --- just test each method
-    * This testing code is not to be submitted
+    * Getting their fields, setting the population, etc.
+    * This testing code is **not** to be submitted
 
 
 Part 2 --- Country Catalogue
