@@ -152,10 +152,10 @@ required to perform some file I/O.
     * This method will take two strings as parameters for the file names of the text files to be read
     * There will be a third parameter for a ``CountryCatalogue`` instance that will contain ``Country`` objects created based on the text files
     * Based on the contents of the continent file, keep track of the country/continent relationships
-        * I strongly recommend making use of a *hash map* to keep track of the country/continent relationships
+        * I strongly recommend making use of a *hash map* to keep track of the country name/continent name relationships
         * A map is the same idea as a dictionary from Python
         * `How does one use a hash map? <https://www.google.com/search?q=java+hashmap&oq=java+hashmap>`_
-    * Based on the file containing the country details, along with the country/continent relationships, populate the ``CountryCatalogue`` with appropriate ``Country`` objects
+    * Based on the file containing the country details, along with the country name/continent name relationships, populate the ``CountryCatalogue`` with appropriate ``Country`` objects
     * **Note:** To keep things simpler, the method will have ``throws IOException`` so you do not need to worry about the ``try`` and ``catch`` blocks for the file I/O
 
 
