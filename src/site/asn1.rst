@@ -62,6 +62,9 @@ country ``name`` (string), ``population`` (int), ``area`` (double), and ``contin
 
     ``"Canada, North America, 34207000, 9976140.00"``
 
+#. Write an ``equals`` method to compare two (2) country objects. Simply check if all fields are the same --- for our purposes, if they are, then we'll say they are equal.
+
+
 #. Write some simple testing code to ensure the object is working as you expect. Try creating instances. Getting their fields, setting the population, etc. --- just test each method. This testing code is not to be submitted.
 
 
