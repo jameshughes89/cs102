@@ -48,21 +48,36 @@ You will be creating a class called ``Country`` that will hold some basic data. 
 country ``name`` (string), ``population`` (int), ``area`` (double), and ``continent`` (string). This class will be used by the
 ``CountryCatalogue`` class discussed in Part 2.
 
-#. Write a constructor for the ``Country`` class that takes four (4) parameters that will be stored as class fields.
+#. Write a constructor for the ``Country`` class that takes four (4) parameters that will be stored as class fields
     * String ``name``
     * int ``population``
     * double ``area``
     * String ``continent``
 
-#. Write getter methods for each class field.
+#. Write getter methods for each class field
 
-#. Write a setter method for the country's ``population``. This will be the only setter we need as the other fields do not typically change all too often for countries.
+#. Write a setter method for the country's ``population``
+    * This will be the only setter we need as the other fields do not typically change all too often for countries
 
-#. Write a ``toString`` method that returns a string containing the country ``name``, ``continent``, ``population``, and ``area``, all seperated by commas and a space. See the below example
+#. Write a ``toString`` method that returns a string containing the country ``name``, ``continent``, ``population``, and ``area``, all seperated by commas and a space
 
     ``"Canada, North America, 34207000, 9976140.00"``
 
-#. Write some simple testing code to ensure the object is working as you expect. Try creating instances. Getting their fields, setting the population, etc. --- just test each method. This testing code is not to be submitted.
+#. Write an ``equals`` method
+    * We will want to get an ``Object`` as a parameter, **not** simply a ``Country`` --- :doc:`follow topic 3's aside on equals </topic3-equals>`
+    * Simply check if all fields are the same --- for our purposes, if they are, then we'll say they are equal
+
+#. You will notice an existing method called ``hashCode`` within the ``Country`` class that returns an integer
+    * This was briefly discussed last semester when learning about dictionaries
+    * This method turns an object into an integer (*ideally* unique) for the purposes of hashing
+    * Do not worry about understanding this completely at this stage
+        * It's here because it is needed for the hash map in the ``CountryCatalogue`` class discussed below
+        * `If you are interested, checkout the relevant wiki article <https://en.wikipedia.org/wiki/Hash_function>`_
+
+#. Write some simple testing code to ensure the object is working as you expect
+    * Try creating instances
+    * Getting their fields, setting the population, etc.
+    * This testing code is **not** to be submitted
 
 
 Part 2 --- Country Catalogue
