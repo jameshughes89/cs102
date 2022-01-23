@@ -73,8 +73,7 @@ Part 2 --- Country Catalogue
 
 #. Have a method called ``numberCountriesOnContinent`` that takes a continent name as a parameter and returns the number of ``Country`` objects on that continent
 
-#. Write a method called ``filterCountriesByContinent`` that takes a continent name as a parameter and returns a ``Country`` array containing only the countries on the specified continent
-    * You may find ``numberCountriesOnContinent`` useful here
+#. Write a method called ``filterCountriesByContinent`` that takes a continent name as a parameter and returns a new ``CountryCatalogue`` instance containing only the countries on the specified continent
 
 #. A method called ``findCountryLargestPopulation`` that returns the ``Country`` with the largest population in the ``catalogue``
 
