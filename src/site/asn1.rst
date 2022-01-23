@@ -72,6 +72,14 @@ Part 2 --- Country Catalogue
 Part 3 --- Testing
 ==================
 
+#. Create a constructor that will setup the catalogue of countries based on some text files --- you may find this to be the must difficult part of the assignment
+    * Takes two strings as parameters for the file names of the text files to be opened
+    * Based on the continent file, the constructor will populate the ``countryContinent`` map
+    * Based on the file containing the country details, along with the ``countryContinent`` data, populate the ``catalogue`` array with appropriate ``Country`` objects
+        * Be sure to keep track of the size of the ``catalogue``
+        * Maybe one of the below methods will help make this part easier?
+    * **Note:** To keep things simpler, the constructor will have ``throws IOException`` so you do not need to worry about the ``try`` and ``catch`` blocks for the file I/O
+
 
 Some Hints
 ==========
