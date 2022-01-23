@@ -63,12 +63,6 @@ country ``name`` (string), ``population`` (int), ``area`` (double), and ``contin
 
     ``"Canada, North America, 34207000, 9976140.00"``
 
-#. You will notice an existing method called ``hashCode`` within the ``Country`` class that returns an integer
-    * This was briefly discussed last semester when learning about dictionaries
-    * This method turns an object into an integer (*ideally* unique) for the purposes of hashing
-    * Do not worry about understanding this completely at this stage
-        * It's here because it is needed for the hash map in the ``CountryCatalogue`` class discussed below
-        * `If you are interested, checkout the relevant wiki article <https://en.wikipedia.org/wiki/Hash_function>`_
 
 #. Write some simple testing code to ensure the object is working as you expect
     * Try creating instances
