@@ -120,6 +120,28 @@ There will also be a static constant
     * If the specified country does not exist, return ``null``
 
 
+#. Create a method called ``setPopulation`` that takes a name of a country and a new population value for that country as parameters
+
+#. Have a method called ``numberCountriesOnContinent`` that takes a continent name as a parameter and returns the number of ``Country`` objects on that continent
+
+#. Write a method called ``filterCountriesByContinent`` that takes a continent name as a parameter and returns a new ``CountryCatalogue`` instance containing only the countries on the specified continent
+
+#. A method called ``findCountryLargestPopulation`` that returns the ``Country`` with the largest population in the ``catalogue``
+
+#. Have a method called ``findMostPopulousContinent`` that returns the name of the continent with the largest total population based on the countries in the ``catalogue``
+
+#. Write the ``toString`` method to return a ``String`` with each ``Country`` object's details on a separate line
+    * The ``Country`` class' ``toString`` will be useful for getting the object's details
+    * Below is an example
+
+            ``China, Asia, 1339190000, 9596960.0``
+
+            ``United States of America, North America, 309975000, 9629091.0``
+
+            ``Brazil, South America, 193364000, 8511965.0``
+
+
+
 Part 3 --- Testing
 ==================
 
