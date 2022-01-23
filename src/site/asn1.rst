@@ -73,6 +73,14 @@ Part 3 --- Testing
 ==================
 
 
+Part 4 --- Testing
+==================
+
+#. Run the main method and check if the output is what you would expect
+    * I am not going to provide you with the correct output
+    * You should be able to determine this on your own
+
+
 Some Hints
 ==========
 
