@@ -69,6 +69,14 @@ Part 2 --- Country Catalogue
 ============================
 
 
+#. Create a method called ``setPopulation`` that takes a name of a country and a new population value for that country as parameters
+
+#. Have a method called ``numberCountriesOnContinent`` that takes a continent name as a parameter and returns the number of ``Country`` objects on that continent
+
+#. Write a method called ``filterCountriesByContinent`` that takes a continent name as a parameter and returns a ``Country`` array containing only the countries on the specified continent
+
+
+
 Part 3 --- Testing
 ==================
 
