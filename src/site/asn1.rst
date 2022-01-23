@@ -79,6 +79,12 @@ Part 2 --- Country Catalogue
 
 #. Have a method called ``findMostPopulousContinent`` that returns the name of the continent with the largest total population based on the countries in the ``catalogue``
 
+#. Write the ``toString`` method to return a ``String`` with each ``Country`` object's details on a separate line
+
+#. Write a ``saveCatalogue`` method to save the string representing the ``CountryCatalogue`` to a specified file
+
+
+
 Part 3 --- Testing
 ==================
 
