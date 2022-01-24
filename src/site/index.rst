@@ -2,11 +2,6 @@
 CSCI 162 --- Winter 2022
 ************************
 
-.. warning::
-
-    This website is a work in progress.
-
-
 This course emphasizes the use of abstraction in programming. Elementary data structures are introduced (stacks, queues,
 lists, trees) along with related algorithms. The data structures and other simple iterative and recursive algorithms are
 used (e.g. searching and sorting) are used to introduce algorithm analysis.
