@@ -30,3 +30,9 @@ task site(type: PythonTask) {
     module = 'sphinx'
     command = '-b html src/site build/site'
 }
+
+task compressAssignment(type: Zip) {
+    archiveFileName = "Assignment1.zip"
+    destinationDirectory = file("src/site/data/")
+    from "src/site/data/Assignment1"
+}
