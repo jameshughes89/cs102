@@ -21,6 +21,7 @@ src/main/java/asn1/solution/
 # IDE stuff
 .idea
 *.iml
+!Assignment*.iml
 .vscode
 
 # Build script
