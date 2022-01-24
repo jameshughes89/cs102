@@ -198,6 +198,7 @@ Pivoting
     1. For simplicity, the last element of each list was selected as the pivot
     2. When there were no elements less than/greater than the pivot, an empty list was shown
 
+* You may also notice that one could start concatenating the lists together to result in a sorted collection
 
 Recursively Thinking
 --------------------
