@@ -15,6 +15,16 @@ Lab #10
 
     We have not gone over this topic in lecture, but this should not be a problem
 
+Heaps
+=====
+
+Have you ever wanted to store a binary tree in an array?
+
+.. image:: img/heap_example
+   :width: 333 px
+   :align: center
+   :target: https://en.wikipedia.org/wiki/Heap_(data_structure)
+
 
 
 Kattis Problems
