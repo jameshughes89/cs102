@@ -16,6 +16,32 @@ Lab #10
     We have not gone over this topic in lecture, but this should not be a problem
 
 
+Heaps
+=====
+
+Have you ever wanted to store a binary tree in an array?
+
+.. image:: img/heap_example.png
+   :width: 333 px
+   :align: center
+   :target: https://en.wikipedia.org/wiki/Heap_(data_structure)
+
+* The root of the tree is always at index :math:`0`
+* Given an element at index :math:`i`
+    * Its left child can be found at :math:`2i + 1`
+    * Its right child can be found at :math:`2i + 2`
+    * Assuming it's not the root, it's parent can be found at :math:`\lfloor (i-1)/2 \rfloor`
+        * :math:`\lfloor x \rfloor` just means to round down if needed
+
+* For example, consider the element 17 located at index :math:`3` in the array
+    * Left child would be at :math:`3*2 + 1 = 7`
+    * Right child would be at :math:`3*2 + 2 = 8`
+    * Parent would be at :math:`\lfloor (3-1)/2 \rfloor = 1`
+
+
+Min Heap
+========
+
 
 Kattis Problems
 ===============
