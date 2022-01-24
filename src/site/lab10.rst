@@ -39,7 +39,7 @@ Have you ever wanted to store a binary tree in an array?
     * Parent would be at :math:`\lfloor (3-1)/2 \rfloor = 1`
 
 
-Max Heap
+Min Heap
 ========
 
 
