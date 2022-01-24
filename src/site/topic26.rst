@@ -217,6 +217,18 @@ Recursively Thinking
         * Return the sorted concatenated list
 
 
+Complexity Analysis
+-------------------
+
+
+Good Pivots
+^^^^^^^^^^^
+
+
+Bad Pivots
+^^^^^^^^^^
+
+
 Heapsort
 ========
 
