@@ -172,7 +172,7 @@ Quicksort
 
 
 Pivoting
-========
+--------
 
 * In order to append sorted lists together, we need sorted lists
 * However, when given an unsorted collection to sort, there are no sorted lists to start appending
