@@ -200,6 +200,7 @@ Pivoting
 
 * You may also notice that one could start concatenating the lists together to result in a sorted collection
 
+
 Recursively Thinking
 --------------------
 
@@ -212,8 +213,8 @@ Recursively Thinking
         * Put all elements greater than the pivot into a second list
         * Sort the first list with **Quicksort**
         * Sort the second list with **Quicksort**
-        * Merge the first and second half back together
-        * Return the sorted merged list
+        * Concatenate the sorted first list, the pivot, and the sorted second list together
+        * Return the sorted concatenated list
 
 
 Heapsort
