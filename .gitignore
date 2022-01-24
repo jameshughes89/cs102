@@ -21,7 +21,7 @@ src/main/java/asn1/solution/
 # IDE stuff
 .idea
 !src/site/data/Assignment*/.idea
-*.xml
+workspace.xml
 *.iml
 !Assignment*.iml
 .vscode
