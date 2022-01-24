@@ -3,7 +3,7 @@ Assignment #1: Playing with Objects is Still Fun
 ************************************************
 
 * **Worth**: 10%
-* **DUE**: TBD at 11:55pm; submitted on MOODLE.
+* **DUE**: February 7th 11:55pm; submitted on MOODLE.
 
 
 Task
@@ -33,6 +33,15 @@ You are provided with
 * Data files
     * A *data.txt* file containing some country details
     * A *continent.txt* file containing country and continent information
+
+* :download:`All of this can be downloaded from here<./data/Assignment1.zip>`
+    * This is a compressed IntelliJ project
+    * Just unzip, put it where you want on your computer, and you should be able to open this project through IntelliJ
+
+.. warning::
+
+    When you open the project, IntelliJ may notify you about a missing JDK. If this is the case, simply select the
+    download link in the notification.
 
 
 Part 0 --- Read the Assignment
