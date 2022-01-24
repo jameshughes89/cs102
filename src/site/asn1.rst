@@ -38,6 +38,11 @@ You are provided with
     * This is a compressed IntelliJ project
     * Just unzip, put it where you want on your computer, and you should be able to open this project through IntelliJ
 
+.. warning::
+
+    When you open the project, IntelliJ may notify you about a missing JDK. If this is the case, simply select the
+    download link in the notification.
+
 
 Part 0 --- Read the Assignment
 ==============================
