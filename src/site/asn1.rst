@@ -41,7 +41,8 @@ You are provided with
 .. warning::
 
     When you open the project, IntelliJ may notify you about a missing JDK. If this is the case, simply select the
-    download link in the notification.
+    download link in the notification. If your IntelliJ is saying it does not recognize ``System`` and other stuff,
+    selecting the download link will solve this. 
 
 
 Part 0 --- Read the Assignment
