@@ -51,6 +51,12 @@ Min Heap
 * A *max* heap is similar to a min heap, but instead the root is the largest
     * The image above provides an exampale of a max heap
 
+.. warning::
+
+    Although min/max heaps are binary trees, they are **not** binary *search* trees; do not get the idea of min/max
+    heaps confused with binary search trees. Where binary search trees have the ordering based on left/right
+    orientation, the min/max heaps have their ordering based on up/down direction.
+
 
 Kattis Problems
 ===============
