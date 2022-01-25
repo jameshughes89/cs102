@@ -235,6 +235,8 @@ Good Pivots
     * In other words, the pivot ends up being the median, or roughly the median value in the list
     * This means that roughly half the values are less than the pivot, and the other half are greater than the pivot
 
+* Like mergesort, the list sizes roughly half each time, thus the height of the tree is :math:`log_{2}(n)`
+* Concatenating these lists is :math:`O(n)`
 
 
 Bad Pivots
