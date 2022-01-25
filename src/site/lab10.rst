@@ -42,6 +42,14 @@ Have you ever wanted to store a binary tree in an array?
 Min Heap
 ========
 
+* A *min* heap is a special heap with the property that the parent must be smaller than their children
+    * Or, children of an element must be greater than their parent
+
+* In other words, the root must be the smallest element in the tree
+    * This definition can be recursively applied to all subtrees within a tree
+
+
+
 
 Kattis Problems
 ===============
