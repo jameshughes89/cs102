@@ -220,9 +220,28 @@ Recursively Thinking
 Complexity Analysis
 -------------------
 
+* The analysis of this algorithm gets interesting since it ends up depending a lot on the pivot
+
 
 Good Pivots
 ^^^^^^^^^^^
+
+.. image:: img/sort_split.png
+   :width: 500 px
+   :align: center
+
+
+* *If* we end up with pivots such that the first and second lists have roughly the same size, then the analysis ends up similar to mergesort
+    * In other words, the pivot ends up being the median, or roughly the median value in the list
+    * This means that roughly half the values are less than the pivot, and the other half are greater than the pivot
+
+* Like mergesort, the list sizes roughly half each time, thus the height of the tree is :math:`log_{2}(n)`
+    * :math:`1028 \rightarrow 512 \rightarrow 256 \rightarrow 128 \rightarrow 64 \rightarrow 32 \rightarrow 16 \rightarrow 8 \rightarrow 4 \rightarrow 2 \rightarrow 1`
+    * Notice in the above example, it took only 10 steps to get to 1
+    * If it was linear, it would have taken 1027 steps
+        * :math:`1028 \rightarrow 1027 \rightarrow 1026 \rightarrow 1025 \rightarrow ...`
+
+* Concatenating these lists is linear --- :math:`O(n)`
 
 
 Bad Pivots
