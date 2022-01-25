@@ -220,6 +220,8 @@ Recursively Thinking
 Complexity Analysis
 -------------------
 
+* The analysis of this algorithm gets interesting since it ends up depending a lot on the pivot
+
 
 Good Pivots
 ^^^^^^^^^^^
