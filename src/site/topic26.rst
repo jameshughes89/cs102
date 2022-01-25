@@ -241,7 +241,7 @@ Good Pivots
     * If it was linear, it would have taken 1027 steps
         * 1028 -> 1027 -> 1026 -> ...
 
-* Concatenating these lists is :math:`O(n)`
+* Concatenating these lists is linear --- :math:`O(n)`
 
 
 Bad Pivots
