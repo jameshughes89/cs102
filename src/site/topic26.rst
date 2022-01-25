@@ -231,6 +231,10 @@ Good Pivots
    :align: center
 
 
+* *If* we end up with pivots such that the first and second lists have roughly the same size, then the analysis ends up similar to mergesort
+    * In other words, the pivot ends up being the median, or roughly the median value in the list
+    * This means that roughly half the values are less than the pivot, and the other half are greater than the pivot
+
 
 
 Bad Pivots
