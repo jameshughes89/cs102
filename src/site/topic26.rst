@@ -226,6 +226,12 @@ Complexity Analysis
 Good Pivots
 ^^^^^^^^^^^
 
+.. image:: img/sort_split.png
+   :width: 500 px
+   :align: center
+
+
+
 
 Bad Pivots
 ^^^^^^^^^^
