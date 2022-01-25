@@ -255,6 +255,8 @@ Average Pivots
 
 * Fortunately however, always selecting bad pivots is very unlikely
 * In practice, quicksort is, on average, :math:`O(n log_{2}(n))`
+    * Demonstrating this can get quite complex and we will leave that for a future course
+    * If you are interested, `check out the relevant wikipedia article <https://en.wikipedia.org/wiki/Quicksort#Average-case_analysis>`_
 
 
 Heapsort
