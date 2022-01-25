@@ -237,7 +237,8 @@ Bad Pivots
 * Unfortunately, it is also possible that the pivot is nowhere near the median value
 
 * The above image demonstrates what would happen if a particularly bad pivot was selected --- always the smallest element in the collection
-* Notice that this structure looks nothing like a tree
+    * Notice that this structure looks more like a list than a tree
+
 * If it happens that there are :math:`0` elements less than the pivot, and :math:`n-1` elements larger, then each level of the tree only loses one element --- the pivot
 * This means that the height of the tree is now :math:`n`
 
