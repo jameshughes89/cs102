@@ -228,6 +228,33 @@ Good Pivots
 Bad Pivots
 ^^^^^^^^^^
 
+.. image:: img/sort_split_bad.png
+   :width: 500 px
+   :align: center
+
+
+* The good pivot example assumed a good pivot or roughly the median value was selected every time
+* Unfortunately, it is also possible that the pivot is nowhere near the median value
+
+* The above image demonstrates what would happen if a particularly bad pivot was selected --- always the smallest element in the collection
+* Notice that this structure looks nothing like a tree
+* If it happens that there are :math:`0` elements less than the pivot, and :math:`n-1` elements larger, then each level of the tree only loses one element --- the pivot
+* This means that the height of the tree is now :math:`n`
+
+* Given that
+    * Concatenating the list is linear --- :math:`O(n)`
+    * Concatenation occurs for each level in the tree
+    * There are a total of :math:`n` levels
+
+* The analysis of quicksort with *bad* pivots is :math:`O(n^{2})`
+
+
+Average Pivots
+^^^^^^^^^^^^^^
+
+* Fortunately however, always selecting bad pivots is very unlikely
+* In practice, quicksort is, on average, :math:`O(n log_{2}(n))`
+
 
 Heapsort
 ========
