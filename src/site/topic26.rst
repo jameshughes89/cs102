@@ -236,10 +236,10 @@ Good Pivots
     * This means that roughly half the values are less than the pivot, and the other half are greater than the pivot
 
 * Like mergesort, the list sizes roughly half each time, thus the height of the tree is :math:`log_{2}(n)`
-    * 1028 -> 512 -> 256 -> 128 -> 64 -> 32 -> 16 -> 8 -> 4 -> 2 -> 1
+    * :math:`1028 \rightarrow 512 \rightarrow 256 \rightarrow 128 \rightarrow 64 \rightarrow 32 \rightarrow 16 \rightarrow 8 \rightarrow 4 \rightarrow 2 \rightarrow 1`
     * Notice in the above example, it took only 10 steps to get to 1
     * If it was linear, it would have taken 1027 steps
-        * 1028 -> 1027 -> 1026 -> ...
+        * :math:`1028 \rightarrow 1027 \rightarrow 1026 \rightarrow 1025 \rightarrow ...`
 
 * Concatenating these lists is linear --- :math:`O(n)`
 
