@@ -48,7 +48,8 @@ Min Heap
 * In other words, the root must be the smallest element in the tree
     * This definition can be recursively applied to all subtrees within a tree
 
-
+* A *max* heap is similar to a min heap, but instead the root is the largest
+    * The image above provides an exampale of a max heap
 
 
 Kattis Problems
