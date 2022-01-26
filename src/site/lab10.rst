@@ -49,7 +49,7 @@ Min Heap
     * This definition can be recursively applied to all subtrees within a tree
 
 * A *max* heap is similar to a min heap, but instead the root is the largest
-    * The image above provides an exampale of a max heap
+    * The image above provides an example of a max heap
 
 .. warning::
 
