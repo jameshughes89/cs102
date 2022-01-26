@@ -353,7 +353,7 @@ Creating an Instance of a Friend
        :align: center
 
 
-* Below is an example of two``Friend`` objects being created and being used
+* Below is an example of two ``Friend`` objects being created and being used
     * We get ``aFriend``'s first name
     * Use the ``toString`` method
     * Use the ``equals`` method
