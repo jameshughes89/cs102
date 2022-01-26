@@ -79,7 +79,7 @@ Bubble Down
 -----------
 
 * Given the min heap's property of the smallest element being at the root, I may be using this data structure for keeping track of ordered data
-    * I can easily access the minimum value from the collection
+    * I can easily access the minimum value from the collection since it is always at :math:`i = 0`
 
 * Unfortunately, if the minimum value is to be *removed*, there will be no value at the root of the tree
     * A solution to this problem is to *bubble down*
