@@ -84,7 +84,13 @@ Bubble Down
 * Unfortunately, if the minimum value is to be *removed*, there will be no value at the root of the tree
     * A solution to this problem is to *bubble down*
 
+* Remove the element at the last index in the heap and place it in the root position :math:`i = 0`
+* Compare the moved value with its left and right children at indices :math:`2i + 1` and :math:`2i + 2`
+    * Swap the value with the smaller of the two child's value
 
+* Repeat this process until either
+    * The value is not greater than either children
+    * There are no more children to compare to; the value is at a leaf
 
 
 Kattis Problems
