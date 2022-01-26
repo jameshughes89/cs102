@@ -95,6 +95,33 @@ Bubble Down
 * It is important to always swap with the smaller of the two children when bubbling down since it ensures the min heap property
 
 
+Implement a Min Heap
+====================
+
+Now that you have the idea behind the min heap, let's build one.
+
+#. Create a generic min heap class
+    * You will probably want a ``size`` field and an array to hold the data
+
+#. Implement the following methods
+    * ``add``
+    * ``size``
+    * ``remove``
+    * ``peek``
+
+#. Consider adding the following private methods
+    * ``bubbleUp``
+    * ``bubbleDown``
+    * ``expandCapacity``
+    * ``parent``
+    * ``leftChild``
+    * ``rightChild``
+    * ``swap``
+
+#. Test your heap to see if you have it working properly
+    * You do not need to write unit tests for the purpose of this lab
+
+
 Kattis Problems
 ===============
 
