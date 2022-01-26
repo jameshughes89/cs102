@@ -71,7 +71,7 @@ Bubble Up
     * Swap the values
 
 * Repeat this process for the inserted value until either
-    * The parent's value is less than the inserted value
+    * The inserted value is not less than the parent's value
     * The inserted value is at the root
 
 
