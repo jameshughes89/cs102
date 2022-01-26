@@ -61,6 +61,19 @@ Min Heap
 Bubble Up
 ---------
 
+* Whenever something is added to the heap, it is placed at the next available index in the array
+    * This ensures that our heap is always a *complete binary tree*
+
+* However, if the goal is to make a min heap, simply adding something to the end may cause a problem since it may have a value less than its parent
+* Fortunately, there is a simple way to address this issue --- *Bubbling up*
+
+* If the value at the index :math:`i` is less than the value at the index of :math:`\lfloor (i-1)/2 \rfloor` --- its parent
+    * Swap the values
+
+* Repeat this process for the inserted value until either
+    * The inserted value is not less than the parent's value
+    * The inserted value is at the root
+
 
 Bubble Down
 -----------
