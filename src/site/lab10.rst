@@ -89,7 +89,7 @@ Bubble Down
     * Swap the value with the smaller of the two child's value
 
 * Repeat this process until either
-    * The value is not greater than either children
+    * The value is not greater than either child
     * There are no more children to compare to; the value is at a leaf
 
 * It is important to always swap with the smaller of the two children when bubbling down since it ensures the min heap property
