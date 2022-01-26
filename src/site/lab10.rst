@@ -58,6 +58,14 @@ Min Heap
     orientation, the min/max heaps have their ordering based on up/down direction.
 
 
+Bubble Up
+---------
+
+
+Bubble Down
+-----------
+
+
 Kattis Problems
 ===============
 
