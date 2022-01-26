@@ -92,6 +92,11 @@ Bubble Down
     * The value is not greater than either children
     * There are no more children to compare to; the value is at a leaf
 
+* It is important to always swap with the smaller of the two children when bubbling down since it ensures the min heap property
+    * If the value at the root of the (sub)tree :math:`x` is less than both the left and right child's values :math:`y` and :math:`z`
+    * And :math:`y < z`
+    * Then :math:`y` must become the root of the (sub)tree, otherwise :math:`z` would be a parent to :math:`y`, but :math:`z > y`
+
 
 Kattis Problems
 ===============
