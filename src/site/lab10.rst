@@ -82,6 +82,7 @@ Bubble Down
     * I can easily access the minimum value from the collection
 
 * Unfortunately, if the minimum value is to be *removed*, there will be no value at the root of the tree
+    * A solution to this problem is to *bubble down*
 
 
 
