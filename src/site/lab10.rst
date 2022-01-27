@@ -113,9 +113,9 @@ Now that you have the idea behind the min heap, let's build one.
     * ``bubbleUp``
     * ``bubbleDown``
     * ``expandCapacity``
-    * ``parent``
-    * ``leftChild``
-    * ``rightChild``
+    * ``parentOf``
+    * ``leftChildOf``
+    * ``rightChildOf``
     * ``swap``
 
 #. Test your heap to see if you have it working properly
