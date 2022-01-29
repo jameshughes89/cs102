@@ -549,7 +549,7 @@ Adding Friends
        :align: center
 
 * The ``expandCapacity`` method gets called automatically by the ``add`` method if our array has run out of space
-* If the array had enough room, ``expand capacity`` is never called
+* If the array had enough room, ``expandCapacity`` is never called
 * Either way, when we add the ``newFriend`` to our array, we are now guaranteed to have room
 
 * You will also see that the ``expandCapacity`` method is ``private``
