@@ -442,7 +442,6 @@ Setting Fields and Writing the Constructor
 
         static final int DEFAULT_CAPACITY = 10;
 
-        private int capacity;
         private int friendCount;
         private Friend[] friends;
 
