@@ -289,6 +289,8 @@ Complexity Analysis
     * Add all the elements to the min heap
     * Remove all the elements from the min heap
 
+* Therefore, if we have :math:`n` elements to be sorted, we need to add all :math:`n` elements and then remove all :math:`n` elements
+* Thus, it becomes a matter of determining the complexity of the adding and removing
 
 
 Radix Sort
