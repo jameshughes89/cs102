@@ -108,6 +108,7 @@ There will also be a static constant
     * Remember to keep track of the size
     * Be careful about how you are comparing strings
     * If the country is not in the ``catalogue``, everything should be left alone
+    * If more than one ``Country`` object with the same name exists in the ``catalogue``, only remove the first one 
 
 #. Write a ``find`` method to perform a linear search for a ``Country`` based on the country name passed to the method as a parameter
     * This method will return the ``Country`` object
