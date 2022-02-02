@@ -293,6 +293,27 @@ Complexity Analysis
 * Thus, it becomes a matter of determining the complexity of the adding and removing
 
 
+Bubble Up
+^^^^^^^^^
+
+* Every time something is added to the min heap, it may have to bubble up
+* The question is, how far might the element need to travel up the tree?
+* Fortunately this is simple to answer
+    * If the smallest element is added to an existing min heap
+    * It will bubble all the way to the top and be the root
+
+* Given that our heap is always a *complete binary tree*
+* And the relationship between the number of elements in a complete binary tree and the height of the tree is :math:`O(log_{2}(n))`
+* The complexity of bubbling up is, worst case, math:`O(log_{2}(n))`
+
+* Therefore, if a total of :math:`n` elements may need to bubble up to build the min heap, this has a complexity of :math:`O(n log_{2}(n))`
+
+
+
+Bubble Down
+^^^^^^^^^^^
+
+
 Radix Sort
 ==========
 
