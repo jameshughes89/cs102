@@ -309,7 +309,6 @@ Bubble Up
 * Therefore, if a total of :math:`n` elements may need to bubble up to build the min heap, this has a complexity of :math:`O(n log_{2}(n))`
 
 
-
 Bubble Down
 ^^^^^^^^^^^
 
