@@ -316,7 +316,7 @@ Bubble Up
 
 * Given that our heap is always a *complete binary tree*
 * And the relationship between the number of elements :math:`n` in a complete binary tree and the height of the tree is :math:`O(log_{2}(n))`
-* The complexity of bubbling up is, worst case, math:`O(log_{2}(n))`
+* The complexity of bubbling up is, worst case, :math:`O(log_{2}(n))`
 
 * Therefore, if a total of :math:`n` elements may need to bubble up to build the min heap, this has a complexity of :math:`O(n log_{2}(n))`
 
