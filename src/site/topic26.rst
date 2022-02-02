@@ -281,6 +281,21 @@ Average Pivots
 Heapsort
 ========
 
+* Heapsort's magic comes from the underlying data structure --- a heap
+    * Or perhaps more accurately, a min heap
+
+* To learn about the heap data structure, see :doc:`lab 10 </lab10>`
+
+* To sort a collection of elements with a min heap, simply
+    1. Add all elements to the min heap
+    2. Remove the minimum element from the heap
+    3. Append the removed element in the sorted collection
+    4. Repeat steps 2 & 3 until the min heap is empty
+
+
+Complexity Analysis
+-------------------
+
 
 Radix Sort
 ==========
