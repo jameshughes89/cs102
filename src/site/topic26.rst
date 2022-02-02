@@ -324,6 +324,16 @@ Bubble Up
 Bubble Down
 ^^^^^^^^^^^
 
+* Once the min heap is created, all that's needed is to repeatedly remove the root
+* But when removing, in order to maintain the min heap property, bubbling down will be required
+
+* The complexity analysis of bubbling down is more-or-less the same as bubbling up
+* How far may the element need to travel down the min heap?
+    * All the way to a leaf
+
+* Given that the min heap is a complete binary tree
+* Bubbling down to a leaf is :math:`O(log_{2}(n))`
+
 
 Radix Sort
 ==========
