@@ -281,6 +281,15 @@ Average Pivots
 Heapsort
 ========
 
+Complexity Analysis
+-------------------
+
+* The whole sorting process is effectively done by the ordered property of the min heap data structure
+* All we need to do is
+    * Add all the elements to the min heap
+    * Remove all the elements from the min heap
+
+
 
 Radix Sort
 ==========
