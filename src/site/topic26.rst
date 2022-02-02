@@ -338,6 +338,13 @@ Bubble Down
     * :math:`O(n log_{2}(n))`
 
 
+Overall Complexity
+^^^^^^^^^^^^^^^^^^
+
+* Both building the min heap and removing from it are :math:`O(n log_{2}(n))`
+* Since we do not care about the fact we are doing it two times (coefficient), the computational complexity of heapsort is :math:`O(n log_{2}(n))`
+
+
 Radix Sort
 ==========
 
