@@ -296,6 +296,54 @@ Heapsort
 Complexity Analysis
 -------------------
 
+* The whole sorting process is effectively done by the ordered property of the min heap data structure
+* If we have :math:`n` elements to be sorted, all we need to do is
+    * Add all the elements to build the min heap
+    * Remove all the elements from the min heap
+
+* We need to add all :math:`n` elements, and then remove all :math:`n` elements
+* Thus, it becomes a matter of determining the complexity of the adding and removing
+
+
+Bubble Up
+^^^^^^^^^
+
+* Every time something is added to the min heap, it may have to bubble up
+* The question is, how far might the element need to travel up the tree?
+* Fortunately this is simple to answer
+    * If the smallest element is added to an existing min heap
+    * It will bubble all the way to the top and be the root
+
+* Given that our heap is always a *complete binary tree*
+* And the relationship between the number of elements :math:`n` in a complete binary tree and the height of the tree is :math:`O(log_{2}(n))`
+* The complexity of bubbling up is, worst case, :math:`O(log_{2}(n))`
+
+* Therefore, if a total of :math:`n` elements may need to bubble up to build the min heap, this has a complexity of :math:`O(n log_{2}(n))`
+
+
+Bubble Down
+^^^^^^^^^^^
+
+* Once the min heap is created, all that's needed is to repeatedly remove the root
+* But when removing, in order to maintain the min heap property, bubbling down will be required
+
+* The complexity analysis of bubbling down is more-or-less the same as bubbling up
+* How far may the element need to travel down the min heap?
+    * All the way to a leaf
+
+* Given that the min heap is a complete binary tree
+* Bubbling down to a leaf is :math:`O(log_{2}(n))`
+
+* Therefore, if we remove :math:`n` elements, we will need to bubble down :math:`n` times
+    * :math:`O(n log_{2}(n))`
+
+
+Overall Complexity
+^^^^^^^^^^^^^^^^^^
+
+* Both building the min heap and removing from it are :math:`O(n log_{2}(n))`
+* Since we do not care about the fact we are doing it two times (coefficient), the computational complexity of heapsort is :math:`O(n log_{2}(n))`
+
 
 Radix Sort
 ==========
