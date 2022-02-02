@@ -286,7 +286,7 @@ Complexity Analysis
 
 * The whole sorting process is effectively done by the ordered property of the min heap data structure
 * All we need to do is
-    * Add all the elements to the min heap
+    * Add all the elements to build the min heap
     * Remove all the elements from the min heap
 
 * Therefore, if we have :math:`n` elements to be sorted, we need to add all :math:`n` elements and then remove all :math:`n` elements
