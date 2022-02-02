@@ -334,6 +334,9 @@ Bubble Down
 * Given that the min heap is a complete binary tree
 * Bubbling down to a leaf is :math:`O(log_{2}(n))`
 
+* Therefore, if we remove :math:`n` elements, we will need to bubble down :math:`n` times
+    * :math:`O(n log_{2}(n))`
+
 
 Radix Sort
 ==========
