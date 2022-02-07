@@ -15,7 +15,7 @@ _build/
 *.rar
 
 # Assignments
-src/main/java/asn1/solution/
+src/main/java/assignments
 
 
 # IDE stuff
