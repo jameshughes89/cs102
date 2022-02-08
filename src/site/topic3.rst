@@ -607,6 +607,11 @@ Remove Friends
        :width: 600 px
        :align: center
 
+.. warning::
+
+    There is actually a bug in the above `remove` example. This is addressed below, but see if you can spot the bug
+    yourself. **Hint:** It has to do with having multiple equal ``Friend`` objects in the ``friends`` array.
+
 
 Update Friend's Email
 ^^^^^^^^^^^^^^^^^^^^^
@@ -677,6 +682,10 @@ Index Of Friend
     The above change actually altered the functionality of the ``remove`` and ``updateEmail`` methods.
     Try to figure out what has changed. Is this change good or bad? **Hint:** What happens if there are
     multiple ``Friend`` objects with the same ``firstName`` and ``lastName``?
+
+    The bug mentioned under ``remove`` has to do with duplicates getting missed in the removal process. This can happen when the
+    element at index ``i`` is being replaced with a reference to something that just so happens to be a duplicate. This
+    would then cause this item to be skipped because ``i`` is immediately incremented after the replacement.
 
 
 Get
