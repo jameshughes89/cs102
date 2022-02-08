@@ -69,6 +69,8 @@ country ``name`` (string), ``population`` (int), ``area`` (double), and ``contin
     * This will be the only setter we need as the other fields do not typically change all too often for countries
 
 #. Write a ``toString`` method that returns a string containing the country ``name``, ``continent``, ``population``, and ``area``, all seperated by commas and a space
+    * Note that you may see some of the area vales represented in scientific notation --- this is OK
+        * Something like 1.234E8
 
     ``"Canada, North America, 34207000, 9976140.00"``
 
@@ -129,7 +131,9 @@ There will also be a static constant
     * `How does one use a hash map? <https://www.google.com/search?q=java+hashmap&oq=java+hashmap>`_
 
 #. Write the ``toString`` method to return a ``String`` with each ``Country`` object's details on a separate line
-    * The ``Country`` class' ``toString`` will be useful for getting the object's details
+    * The ``Country`` class' ``toString`` will be useful for getting the object's details    
+    * Note that you may see some of the area vales represented in scientific notation --- this is OK
+        * Something like 1.234E8
     * Below is an example
 
             ``China, Asia, 1339190000, 9596960.0``
