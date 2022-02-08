@@ -683,6 +683,10 @@ Index Of Friend
     Try to figure out what has changed. Is this change good or bad? **Hint:** What happens if there are
     multiple ``Friend`` objects with the same ``firstName`` and ``lastName``?
 
+    The bug mentioned under ``remove`` has to do with duplicates getting missed in the removal process. This can happen when the
+    element at index ``i`` is being replaced with a reference to something that just so happens to be a duplicate. This
+    would then cause this item to be skipped because ``i`` is immediately incremented after the replacement.
+
 
 Get
 ^^^
