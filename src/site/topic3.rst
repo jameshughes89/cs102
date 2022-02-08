@@ -607,6 +607,11 @@ Remove Friends
        :width: 600 px
        :align: center
 
+.. warning::
+
+    There is actually a bug in the above `remove` example. This is addressed below, but see if you can spot the bug
+    yourself. **Hint:** It has to do with having multiple equal ``Friend`` objects in the ``friends`` array.
+
 
 Update Friend's Email
 ^^^^^^^^^^^^^^^^^^^^^
