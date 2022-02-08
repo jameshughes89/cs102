@@ -2,7 +2,7 @@ import java.io.IOException;
 
 public class Asn1 {
 
-    static final String RELATIVE_RESOURCES = "./src/main/resources/";
+    static final String RELATIVE_RESOURCES = "./src/main/resources/asn1/";
 
     public static void main(String[] args) throws IOException {
 
