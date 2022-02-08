@@ -69,6 +69,8 @@ country ``name`` (string), ``population`` (int), ``area`` (double), and ``contin
     * This will be the only setter we need as the other fields do not typically change all too often for countries
 
 #. Write a ``toString`` method that returns a string containing the country ``name``, ``continent``, ``population``, and ``area``, all seperated by commas and a space
+    * Note that you may see some of the area vales represented in scientific notation --- this is OK
+        * Something like 1.234E8
 
     ``"Canada, North America, 34207000, 9976140.00"``
 
