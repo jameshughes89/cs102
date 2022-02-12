@@ -3,7 +3,7 @@ Topic #3 Aside --- Builder
 **************************
 
 * Due to how Strings work, it ends up being wasteful to append to strings
-    * They're *immutable**
+    * They're *immutable*
         * Can't be changed once created
     * Every time we append, we actually create a new string object
 

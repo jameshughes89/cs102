@@ -11,7 +11,7 @@ Topic #4 --- Collections
 Collections and ADTs
 ====================
 
-* A collection is a group o *things* that we want to treat as a special conceptual unit
+* A collection is a group of *things* that we want to treat as a special conceptual unit
     * A contact list
     * A stamp collection
 
