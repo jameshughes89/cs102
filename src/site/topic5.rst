@@ -97,7 +97,7 @@ Maze Solving
        :align: center
 
 
-* It is easy to find a path through a maze with a simple *depth first search* algorithm
+* Finding a path through a maze can be done with a simple *depth first search* algorithm
 * The high-level idea is simple
     * Pick path you have not visited yet,
     * Keep going until you find the end or hit a dead end
