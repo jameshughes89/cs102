@@ -41,7 +41,7 @@ Collection Operations
 * However, the way these are done may differ between collections
 
 * Other things we will want to do with our collections are:
-    * ``isEmpty`` --- see if the collection is empty
+    * ``isEmpty`` --- See if the collection is empty
     * ``size`` --- Check how many things are in the collection
     * ``toString`` --- Get a string version of the collection
 
@@ -58,7 +58,7 @@ Stack Context
 * **Peek**
     * Look at the thing on the *top* of the stack, but do **not** remove it
 
-* And we will also want our ``isEmpty``, ``size`` and ``toString``
+* And we will also want our ``isEmpty``, ``size``, and ``toString``
 
 
 .. warning::
@@ -97,9 +97,9 @@ Maze Solving
        :align: center
 
 
-* It is easy to find a path through a maze with a simple *depth first search* algorithm
+* Finding a path through a maze can be done with a simple *depth first search* algorithm
 * The high-level idea is simple
-    * Pick path you have not visited yet,
+    * Pick path you have not visited yet
     * Keep going until you find the end or hit a dead end
     * If you hit the end, you're done
     * If you hit a dead end, just backtrack until you can find another path you haven't visited yet
@@ -141,8 +141,8 @@ Example
 
 * Try to see where the ``push``, ``pop``, and ``peek`` operations are happening
 
-* Again, notice that we were able to use the idea of a stack to solve a problem easily despite not knowing the implementation
-    
+* Again, notice that we were able to use the idea of a stack to solve a problem despite not knowing the implementation
+
 
 Interface
 =========
@@ -155,7 +155,7 @@ Interface
 * Then, when someone implements the stack ADT, the interface will make sure that the implementation *implements* the operators
 
 * The interface will simply be a list of *abstract methods* and relevant constants
-    * Abstract methods are the method signature/header and no actual body
+    * Abstract methods are the method signature/header with no actual body
     * Our methods will be ``public``
         * ``public int someMethod(int a, int b);``
         * Although, we don't actually have to say ``public`` here since it has to be
