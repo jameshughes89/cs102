@@ -99,7 +99,7 @@ Maze Solving
 
 * Finding a path through a maze can be done with a simple *depth first search* algorithm
 * The high-level idea is simple
-    * Pick path you have not visited yet,
+    * Pick path you have not visited yet
     * Keep going until you find the end or hit a dead end
     * If you hit the end, you're done
     * If you hit a dead end, just backtrack until you can find another path you haven't visited yet
