@@ -155,7 +155,7 @@ Interface
 * Then, when someone implements the stack ADT, the interface will make sure that the implementation *implements* the operators
 
 * The interface will simply be a list of *abstract methods* and relevant constants
-    * Abstract methods are the method signature/header and no actual body
+    * Abstract methods are the method signature/header with no actual body
     * Our methods will be ``public``
         * ``public int someMethod(int a, int b);``
         * Although, we don't actually have to say ``public`` here since it has to be
