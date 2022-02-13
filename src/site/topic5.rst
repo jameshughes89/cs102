@@ -58,7 +58,7 @@ Stack Context
 * **Peek**
     * Look at the thing on the *top* of the stack, but do **not** remove it
 
-* And we will also want our ``isEmpty``, ``size`` and ``toString``
+* And we will also want our ``isEmpty``, ``size``, and ``toString``
 
 
 .. warning::
