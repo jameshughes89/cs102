@@ -260,7 +260,7 @@ toString
         return builder.toString();
     }
 
-* See if you can figure out what the toString will return based on this code
+* See if you can figure out what the ``toString`` will return based on this code
 
 
 For next time
