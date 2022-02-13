@@ -41,7 +41,7 @@ Collection Operations
 * However, the way these are done may differ between collections
 
 * Other things we will want to do with our collections are:
-    * ``isEmpty`` --- see if the collection is empty
+    * ``isEmpty`` --- See if the collection is empty
     * ``size`` --- Check how many things are in the collection
     * ``toString`` --- Get a string version of the collection
 
@@ -142,7 +142,7 @@ Example
 * Try to see where the ``push``, ``pop``, and ``peek`` operations are happening
 
 * Again, notice that we were able to use the idea of a stack to solve a problem easily despite not knowing the implementation
-    
+
 
 Interface
 =========
