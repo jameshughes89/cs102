@@ -1,4 +1,6 @@
+import java.util.Arrays;
 import java.util.NoSuchElementException;
+import java.util.Objects;
 
 public class ArrayStack<T> implements Stack<T> {
 
@@ -87,5 +89,24 @@ public class ArrayStack<T> implements Stack<T> {
         }
         builder.append("<-- Top");
         return builder.toString();
+    }
+
+    @Override
+    public final boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ArrayStack<?> that = (ArrayStack<?>) o;
+        return top == that.top
+                && Arrays.equals(this.stack, 0, this.top, that.stack, 0, that.top);
+    }
+
+    @Override
+    public final int hashCode() {
+        int result = Objects.hash(top);
+        result = 31 * result;
+        for (int i = 0; i < Math.min(this.top, this.stack.length); i++){
+            result += stack[i].hashCode();
+        }
+        return result;
     }
 }
