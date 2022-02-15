@@ -183,7 +183,7 @@ class ArrayStackTestThorough {
         @Test
         @DisplayName("Pushing beyond capacity automatically calls expandCapacity.")
         void push_large_successfullyExpandsCapacity(){
-            // Default capacity is 10
+            // Default capacity is 100
             for (int i = 0; i < 1000; i++) {
                 classUnderTest.push(i);
             }
