@@ -82,9 +82,9 @@ Implementation
 
 .. warning::
 
-    When you start implementing an interface, you may see your IDE to tell you there is an error. This is because, since
-    you are saying that you are implementing the interface, Java is expecting you to implement all abstract methods from
-    the interface.
+    When you start implementing an interface, you may see your IDE to tell you there is an error. This is to be expected
+    since you are saying that you are implementing the interface, Java is expecting you to implement all abstract
+    methods from the interface. This error will go away once all abstract methods are implemented.
 
         .. image:: img/warning_implement.png
            :width: 500 px
@@ -124,7 +124,8 @@ Constructors
 * When doing this, Java will warn us that there is now an unchecked type conversion
     * Java can't guarantee that the cast will work right
 
-* We can actually suppress the warning by adding the following before the constructor
+* You can ignore this here
+* However, if we'd like, we can suppress the warning by adding the following before the constructor
     * ``@SuppressWarnings("unchecked")``
 
 
@@ -133,7 +134,7 @@ Constructors
         .. image:: img/arraystack_empty.png
            :width: 500 px
            :align: center
-           
+
 
 
 Push
@@ -259,7 +260,7 @@ toString
         return builder.toString();
     }
 
-* See if you can figure out what the toString will return based on this code
+* See if you can figure out what the ``toString`` will return based on this code
 
 
 For next time
