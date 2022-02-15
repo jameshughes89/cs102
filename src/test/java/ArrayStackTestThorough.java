@@ -6,7 +6,7 @@ import java.util.NoSuchElementException;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-class ArrayStackTest2 {
+class ArrayStackTestThorough {
 
     private Stack<Integer> classUnderTest;
     private Stack<Integer> preState;
