@@ -25,7 +25,7 @@ test {
     useJUnitPlatform()
 }
 
-task compressAssignment(type: Zip) {
+task compressAssignment1(type: Zip) {
     archiveFileName = "Assignment1.zip"
     destinationDirectory = file("src/site/data/")
     from "src/site/data/Assignment1"
