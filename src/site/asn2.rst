@@ -58,16 +58,24 @@ Part 1 --- Read the Javadoc Reference
 =====================================
 
 
-Part 2 ---
-===========
-
-Part 3 ---
-==========
+Part 2 --- Run Unit Tests
+=========================
 
 
-Part 4 --- Testing
+Part 3 --- Complete ``DFSMazeSolver``
+=====================================
+
+
+Part 5 --- Putting it Together
+==============================
+
+
+Part 5 --- Testing
 ==================
 
+
+Code Peculiarities of Note
+==========================
 
 
 Some Hints
