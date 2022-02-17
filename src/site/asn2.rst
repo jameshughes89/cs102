@@ -17,11 +17,25 @@ Provided Files
 
 You are provided with:
 
+* A ``Stack`` interface
+* An ``ArrayStack`` implementation with ``ArrayStackTest`` unit tests
+* A ``Cell`` class with ``CellTest`` unit tests
+* A ``Maze`` class with ``MazeTest`` unit tests
+* A ``MazeRenderer`` class with ``MazeRenderer`` tests
+* Two exceptions: ``LocationNotInMazeException`` and ``MazeEndpointsException``
+* A ``MazeSolver`` interface
+* A nearly empty ``DFSMazeSolver`` with a complete ``DFSMazeSolverTest``
+* An ``Asn2`` class with an empty ``main``
+* A bunch of maze files
+
+* :download:`All of this can be downloaded from here<./data/Assignment2.zip>`
+    * This is a compressed IntelliJ project
+    * Just unzip, put it where you want on your computer, and you should be able to open this project through IntelliJ
 
 .. warning::
 
     When you open the project, IntelliJ may notify you about a missing JDK. If this is the case, simply select the
-    download link in the notification.
+    download link in the notification. :doc:Additionally, you will need to add JUnit to the classpath. </topic6-testing>`.
 
 
 Part 0 --- Read the Assignment
