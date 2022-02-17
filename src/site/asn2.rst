@@ -54,8 +54,29 @@ Part 0 --- Read the Assignment
 Read the assignment description in its entirety before starting.
 
 
-Part 1 --- Read the Javadoc Reference
-=====================================
+Part 1 --- Read Through the Provided Code
+=========================================
+
+Read through all the provided code. The code is commented and there are method headers describing everything. These are
+objects and methods you will be using to solve the problem.
+
+Reading through and understanding existing code is a **huge** part of the assignment. Although there are no marks
+directly associated with it, it is a requirement in order to do anything useful. Further, if you continue studying CS,
+you will be reading documentation and other people's code **a lot**.
+
+Be sure to also read through all the test classes. Take the time to make sense of what is going on --- these will save
+you. You may want to do some brief reading on
+`@Nested <https://junit.org/junit5/docs/current/user-guide/#writing-tests-nested>`_ and
+`@ParameterizedTest <https://junit.org/junit5/docs/current/user-guide/#writing-tests-parameterized-tests>`_. The
+documentation may seem intimidating at first, but take your time and have a read. You may be surprised at how helpful
+reading the docs actually is.
+
+Lastly, it's not just having a superficial understanding of the provided code. Sure, one of the big points of
+abstraction is not needing to fully understand everything *under the hood*; however, you're still new at this, and
+taking the time to understand what is happening in the code and how it does it is important.
+
+At the end of this assignment page, there is a list of some code peculiarities you may not be familiar with. Be sure to
+read through this before really jumping into coding.
 
 
 Part 2 --- Run Unit Tests
