@@ -25,15 +25,22 @@ test {
     useJUnitPlatform()
 }
 
-task compressAssignment(type: Zip) {
+task compressAssignment1(type: Zip) {
     archiveFileName = "Assignment1.zip"
     destinationDirectory = file("src/site/data/")
     from "src/site/data/Assignment1"
 }
 
+task compressAssignment2(type: Zip) {
+    archiveFileName = "Assignment2.zip"
+    destinationDirectory = file("src/site/data/")
+    from "src/site/data/Assignment2"
+}
+
 task site(type: PythonTask) {
     dependsOn(tasks.pipInstall)
-    dependsOn(compressAssignment)
+    dependsOn(compressAssignment1)
+    dependsOn(compressAssignment2)
     module = 'sphinx'
     command = '-b html src/site build/site'
 }
