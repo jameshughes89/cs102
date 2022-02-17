@@ -9,7 +9,17 @@ Assignment #2: Maze Solver: A Path is a Path
 Task
 ====
 
+Your goal is to solve a maze with a *depth first search* implemented with a stack.
 
+You will:
+
+* Write a ``DFSMazeSolver`` class that implements the ``MazeSolver`` interface
+    * Within this class, you will write the ``solve`` method.
+* You will use the ``DFSMazeSolver``, along with some of the other provided classes, in the ``main`` to:
+    * Create the maze
+    * Solve the maze
+    * Print out the solution
+* You will also be testing your implementation with the provided test classes
 
 
 Provided Files
