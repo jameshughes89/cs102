@@ -32,9 +32,9 @@ task compressAssignment1(type: Zip) {
 }
 
 task compressAssignment2(type: Zip) {
-    archiveFileName = "Assignment3.zip"
+    archiveFileName = "Assignment2.zip"
     destinationDirectory = file("src/site/data/")
-    from "src/site/data/Assignment3"
+    from "src/site/data/Assignment2"
 }
 
 task site(type: PythonTask) {
