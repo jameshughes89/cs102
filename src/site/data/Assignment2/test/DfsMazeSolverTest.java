@@ -100,7 +100,7 @@ public class DfsMazeSolverTest {
 
     @BeforeEach
     void createMazeAndSolver() {
-        classUnderTest = new DFSMazeSolver();
+        classUnderTest = new DfsMazeSolverTest();
     }
 
     @Test
