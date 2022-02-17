@@ -71,6 +71,10 @@ Lastly, it's not just having a superficial understanding of the provided code. S
 abstraction is not needing to fully understand everything *under the hood*; however, you're still new at this, and
 taking the time to understand what is happening in the code and how it does it is important.
 
+At the end of this assignment page, there is a list of some code peculiarities you may not be familiar with. Be sure to
+read through this before really jumping into coding.
+
+
 Part 2 ---
 ===========
 
