@@ -35,7 +35,7 @@ You are provided with:
 .. warning::
 
     When you open the project, IntelliJ may notify you about a missing JDK. If this is the case, simply select the
-    download link in the notification. :doc:Additionally, you will need to add JUnit to the classpath. </topic6-testing>`.
+    download link in the notification.
 
 
 Part 0 --- Read the Assignment
