@@ -18,10 +18,10 @@ Provided Files
 You are provided with:
 
 * A ``Stack`` interface
-* An ``ArrayStack`` implementation with ``ArrayStackTest`` unit tests
+* An ``ArrayStack`` class with ``ArrayStackTest`` unit tests
 * A ``Cell`` class with ``CellTest`` unit tests
 * A ``Maze`` class with ``MazeTest`` unit tests
-* A ``MazeRenderer`` class with ``MazeRenderer`` tests
+* A ``MazeRenderer`` class with ``MazeRenderer`` unit tests
 * Two exceptions: ``LocationNotInMazeException`` and ``MazeEndpointsException``
 * A ``MazeSolver`` interface
 * A nearly empty ``DFSMazeSolver`` with a complete ``DFSMazeSolverTest``
