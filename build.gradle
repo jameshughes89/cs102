@@ -39,7 +39,8 @@ task compressAssignment2(type: Zip) {
 
 task site(type: PythonTask) {
     dependsOn(tasks.pipInstall)
-    dependsOn(compressAssignment)
+    dependsOn(compressAssignment1)
+    dependsOn(compressAssignment2)
     module = 'sphinx'
     command = '-b html src/site build/site'
 }
