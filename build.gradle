@@ -31,6 +31,12 @@ task compressAssignment1(type: Zip) {
     from "src/site/data/Assignment1"
 }
 
+task compressAssignment2(type: Zip) {
+    archiveFileName = "Assignment3.zip"
+    destinationDirectory = file("src/site/data/")
+    from "src/site/data/Assignment3"
+}
+
 task site(type: PythonTask) {
     dependsOn(tasks.pipInstall)
     dependsOn(compressAssignment)
