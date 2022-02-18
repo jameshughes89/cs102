@@ -94,7 +94,7 @@ Part 2 --- Run Unit Tests
 * As discussed in Part 1, be sure to take your time to look through these test methods
 
 
-Part 3 --- Complete ``DFSMazeSolver``
+Part 3 --- Complete ``DfsMazeSolver``
 =====================================
 
 It is in the ``DfsMazeSolver``\'s ``solve`` method where the magic happens. We're going to be doing a
