@@ -160,6 +160,15 @@ Private Constructor
     * ``Maze myMaze = Maze.fromFile(someFile);``
 
 
+Fancier Tests
+-------------
+
+* Within some test classes, like ``CellTest`` and ``MazeTest``, you will notice ``ParameterizedTest``
+* This makes it such that we can have a single test run multiple times checking slight variations
+* It's probably easier to get a sense of what this means by having a look at one of these methods
+    * e.g ``void isVisitable_visitable_returnsTrue(char symbol)``
+
+
 Some Hints
 ==========
 
