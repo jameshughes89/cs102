@@ -145,7 +145,9 @@ Missing Constructors
 
 * This is because Java automatically adds a default constructor with no parameters if it does not exist in the class
 
-* This is reasonable here since these classes have no fields and do not need any setup code
+* Not writing in constructors is reasonable in our case since
+    * These classes have no fields
+    * Do not need any special setup code
 
 
 Private Constructor
