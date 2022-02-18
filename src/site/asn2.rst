@@ -36,7 +36,7 @@ You are provided with:
 * A ``MazeSolver`` interface
 * A nearly empty ``DfsMazeSolver`` with a complete ``DfsMazeSolverTest``
 * An ``Asn2`` class with an empty ``main``
-* A bunch of maze files
+* Three maze files
 
 * :download:`All of this can be downloaded from here<./data/Assignment2.zip>`
     * This is a compressed IntelliJ project
@@ -73,7 +73,7 @@ reading the docs actually is.
 
 Lastly, it's not just having a superficial understanding of the provided code. Sure, one of the big points of
 abstraction is not needing to fully understand everything *under the hood*; however, you're still new at this, and
-taking the time to understand what is happening in the code and how it does it is important.
+taking the time to understand what is happening in the code, and how it does it, is important.
 
 At the end of this assignment page, there is a list of some code peculiarities you may not be familiar with. Be sure to
 read through this before really jumping into coding.
@@ -91,10 +91,10 @@ Part 2 --- Run Unit Tests
         * Did your test folder get changed?
         * Try re-downloading the project if they do not pass
 
-* Like discussed in Part 1, be sure to take your time to look through these test methods
+* As discussed in Part 1, be sure to take your time to look through these test methods
 
 
-Part 3 --- Complete ``DFSMazeSolver``
+Part 3 --- Complete ``DfsMazeSolver``
 =====================================
 
 It is in the ``DfsMazeSolver``\'s ``solve`` method where the magic happens. We're going to be doing a
@@ -102,30 +102,28 @@ It is in the ``DfsMazeSolver``\'s ``solve`` method where the magic happens. We'r
 
 Knowing the stack's LIFO property, it's great for keeping track of where we are and how we got there. If we ever want to
 backtrack, we simply pop things off the stack until we rewind to where we want --- think undo, or the back button on a
-browser. In other words, we will be making use of an ``Stack`` of ``Cell objects (``Stack<Cell>``) for our DFS --- we go
-as deep as we can down a path until we find the end, or we find a dead end need to backtrack.
+browser. In other words, we will be making use of an ``Stack`` of ``Cell`` objects (``Stack<Cell>``) for our DFS --- we
+go as deep as we can down a path until we find the end, or we find a dead end need to backtrack.
 
-The general idea is this:
+The general idea is this
+
     * Look at the top cell of the stack
-    * If it's the end
-        * We're done
-    * If it's not
-        * Find an unvisited valid neighbour
-            * Push it on the stack
-        * If there are no valid neighbours
-            * We're at a dead end --- we must backtrack
+    * If it's the end, We're done
+    * If it's not, find an unvisited valid neighbour and push it on the stack
+    * If there are no valid neighbours, we're at a dead end --- we must backtrack
     * Repeat
 
-Naturally, you will want to start with the maze's starting cell.
+Naturally, you will want to start with the maze's starting ``Cell``.
 
-When the method finishes, it must return a ``Set`` of ``Cell```` objects (``Set<Cell>``) containing the ``Cell``
+When the method finishes, it must return a ``Set`` of ``Cell`` objects (``Set<Cell>``) containing the ``Cell``
 objects in the solution.
 
 
 Suggestions
 -----------
 
-Two minor suggestions that you by no means need to take:
+Two minor suggestions that you by no means need to take
+
     * Make use of a ``HashSet`` for keeping track of visited ``Cell`` objects
     * Consider writing private helper methods in the ``DfsMazeSolver`` class
         * We only test public methods; private methods are not tested
@@ -138,13 +136,14 @@ Once you are comfortable that your ``DfsMazeSolver`` is working correctly, write
 short (less than 10 lines); if your main is long, you're probably doing something wrong and working too hard.
 
 In order to actually solve a maze, you need
-* A ``Maze``
-* A ``MazeSolver`` to solve the maze
-* A ``MazeRenderer`` for rendering the maze with the solution so it can be printed out
+
+    * A ``Maze``
+    * A ``MazeSolver`` to solve the maze
+    * A ``MazeRenderer`` for rendering the maze with the solution so it can be printed out
 
 You will want to run your program on mazes from files. I have provided you with a ``RELATIVE_RESOURCES`` constant in the
 ``Asn2`` class. This is the relative path to the directory where the maze files are stored. Simply take this relative
-path and concatenate to it the maze file you would like to open.
+path and concatenate it with the file name of the maze you want to open.
 
 
 Part 5 --- Testing
@@ -155,9 +154,10 @@ not, you really should. For good measure, re-run all the tests provided to you. 
 confident that you have everything working correctly.
 
 There is no test provided for the ``Asn2`` class, but that's nothing to worry about. You can get a sense that it is
-working correctly by:
-* Running your program on the maze files provided
-* Create your own maze programs and try running on them too
+working correctly by
+
+    * Running your program on the maze files provided
+    * Create your own maze programs and try running on them too
 
 
 Code Peculiarities of Note
@@ -199,13 +199,15 @@ Missing Constructors
 
 * This is because Java automatically adds a default constructor with no parameters if it does not exist in the class
 
-* This is reasonable here since these classes have no fields and do not need any setup code
+* Not writing in constructors is reasonable in our case since
+    * These classes have no fields
+    * Do not need any special setup code
 
 
 Private Constructor
 -------------------
 
-* You will notice constructor for ``Maze`` is set to ``private``
+* You may notice the constructor for ``Maze`` is set to ``private``
 * This may seem odd since any method set to ``private`` is not accessible outside the class
 * And if you cannot access it outside the class, how can you create an instance of a ``Maze``?
 
