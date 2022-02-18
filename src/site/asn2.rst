@@ -82,6 +82,10 @@ read through this before really jumping into coding.
 Part 2 --- Run Unit Tests
 =========================
 
+* Run all the tests for the provided completed classes
+* All these tests should pass
+* Like discussed in Part 1, be sure to take your time to look through these test methods
+
 
 Part 3 --- Complete ``DFSMazeSolver``
 =====================================
