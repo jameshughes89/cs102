@@ -120,7 +120,7 @@ Final Class and Fields
 
 * The ``Maze`` and ``Cell`` objects' fields are set to ``final``
     * This means we do not allow any fields to change
-        * You will notice no setters
+        * You will notice no setters in these classes
     * We can have Java explicitly make sure they stay unchanged
     * Before, we only really saw static constants set to final
 
