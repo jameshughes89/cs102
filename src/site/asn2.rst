@@ -98,6 +98,78 @@ Part 5 --- Testing
 Code Peculiarities of Note
 ==========================
 
+Exceptions
+----------
+
+* There are two exceptions included that are not provided by Java by default
+    * ``LocationNotInMazeException``
+    * ``MazeEndpointsException``
+
+* These are used/thrown by the ``Maze`` class under certain circumstances
+    * When a given cell coordinate is not in the maze
+    * When there are issues with the start and/or end cells
+
+
+Final Class and Fields
+----------------------
+
+* You will notice that the ``Maze`` and ``Cell`` classes are set to ``final``
+    * e.g. ``public final class Cell``
+    * All it means is that this class cannot be inherited from
+    * We have yet to discuss inheritance, so do worry too much about this
+
+* The ``Maze`` and ``Cell`` objects' fields are set to ``final``
+    * This means we do not allow any fields to change
+        * You will notice no setters in these classes
+    * We can have Java explicitly make sure they stay unchanged
+    * Before, we only really saw static constants set to final
+
+
+Missing Constructors
+--------------------
+
+* In the ``MazeRenderer`` and ``DfsMazeSolver``, you will notice there are no constructors
+* This may seem strange, but if you do not write a constructor, Java is still happy to create an instance of the object
+    * e.g. ``MazeRenderer renderer = new MazeRenderer();``
+
+* This is because Java automatically adds a default constructor with no parameters if it does not exist in the class
+
+* This is reasonable here since these classes have no fields and do not need any setup code
+
+
+Private Constructor
+-------------------
+
+* You will notice constructor for ``Maze`` is set to ``private``
+* This may seem odd since any method set to ``private`` is not accessible outside the class
+* And if you cannot access it outside the class, how can you create an instance of a ``Maze``?
+
+* The trick is, *you* don't, the *class* does
+
+* Ideally, we want our constructors to be simple and single purposed
+    * Like setting fields
+* But if we start having constructors read files, parse large strings, etc., we're starting to break this principle
+
+* The alternative is to create static *factory* methods
+    * e.g. ``public static Maze fromFile(String mazeFile)``
+
+* The factory method does the heavy lifting, and then creates and returns a new ``Maze`` instance
+
+* Long story short, you will **not** be making a ``Maze`` like this
+    * ``Maze myMaze = newMaze(x, y, z);``
+
+* Instead, you will make your maze my getting the class to do it like this
+    * ``Maze myMaze = Maze.fromFile(someFile);``
+
+
+Fancier Tests
+-------------
+
+* Within some test classes, like ``CellTest`` and ``MazeTest``, you will notice ``ParameterizedTest``
+* This makes it such that we can have a single test run multiple times checking slight variations
+* It's probably easier to get a sense of what this means by having a look at one of these methods
+    * e.g ``void isVisitable_visitable_returnsTrue(char symbol)``
+
 
 Some Hints
 ==========
