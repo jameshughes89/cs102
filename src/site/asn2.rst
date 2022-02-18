@@ -122,7 +122,8 @@ objects in the solution.
 Suggestions
 -----------
 
-Two minor suggestions that you by no means need to take:
+Two minor suggestions that you by no means need to take
+
     * Make use of a ``HashSet`` for keeping track of visited ``Cell`` objects
     * Consider writing private helper methods in the ``DfsMazeSolver`` class
         * We only test public methods; private methods are not tested
