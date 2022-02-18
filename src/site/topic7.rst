@@ -43,6 +43,7 @@ Nodes
 * The series of nodes linked together is what makes up the singly linked structure
     * They link to their successor
 
+
 .. image:: img/node_example.png
    :width: 400 px
    :align: center
@@ -51,7 +52,7 @@ Nodes
     * **data** --- the stuff we want to hold
         * To compare to the array, this would be the stuff we're putting into the cells of the array
     * **next** --- a reference to the successor/next node
-        * Arrays don't have this because the successor is just in the next index in the array
+        * Arrays don't have this because the successor is just in the next cell in the array
             * Asterisk
 
 
