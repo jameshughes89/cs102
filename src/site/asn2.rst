@@ -98,6 +98,18 @@ Part 5 --- Testing
 Code Peculiarities of Note
 ==========================
 
+Exceptions
+----------
+
+* There are two exceptions included that are not provided by Java by default
+    * ``LocationNotInMazeException``
+    * ``MazeEndpointsException``
+
+* These are used/thrown by the ``Maze`` class under certain circumstances
+    * When a given cell coordinate is not in the maze
+    * When there are issues with the start and/or end cells
+
+
 Within Cell
 -----------
 
