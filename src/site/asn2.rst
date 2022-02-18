@@ -105,6 +105,10 @@ Part 5 --- Putting it Together
 Part 5 --- Testing
 ==================
 
+You may have already verified the correctness of your ``DfsMazeSolver`` with the ``DfsMazeSolverTest`` class, but if
+not, you really should. For good measure, re-run all the tests provided to you. If they all pass, you should be pretty
+confident that you have everything working correctly. 
+
 
 Code Peculiarities of Note
 ==========================
