@@ -86,7 +86,8 @@ Part 2 --- Run Unit Tests
     * Everything except the ``DfsMazeSolverTest``
 
 * In order to run these, you will need to address the error caused by the ``DfsMazeSolver`` not implementing the ``MazeSolver`` interface
-    * You can comment this out for now, or add a dummy ``solve`` method returning ``null`` to make it stop complaining for now
+    * You can comment this out for now, or add an empty ``solve`` method returning ``null`` to make it stop complaining for now
+    * In fact, if press Alt+Enter on the error in ``DfsMazeSolver``, intelliJ will add the empty method for you
 
 * All these tests should pass
     * If not, something has gone wrong
