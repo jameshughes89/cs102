@@ -84,6 +84,11 @@ Part 2 --- Run Unit Tests
 
 * Run all the tests for the provided completed classes
 * All these tests should pass
+    * If not, something has gone wrong
+        * Did you change the code?
+        * Did your test folder get changed?
+        * Try re-downloading the project if they do not pass
+
 * Like discussed in Part 1, be sure to take your time to look through these test methods
 
 
