@@ -16,7 +16,6 @@ Topic #7 --- Links
     * JVM asterisk --- In Java, arrays are objects, and objects go into the *heap*, which isn't necessarily contiguous.
 
 
-
 Linked Structure
 ================
 
