@@ -128,7 +128,7 @@ Suggestions
 Two minor suggestions that you by no means need to take:
     * Make use of a ``HashSet`` for keeping track of visited ``Cell`` objects
     * Consider writing private helper methods in the ``DfsMazeSolver`` class
-        * These do not get tested, only the ``solve`` method does
+        * We only test public methods; private methods are not tested
 
 
 Part 4 --- Putting it Together
