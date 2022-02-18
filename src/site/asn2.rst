@@ -98,7 +98,7 @@ Part 3 --- Complete ``DFSMazeSolver``
 =====================================
 
 
-Part 5 --- Putting it Together
+Part 4 --- Putting it Together
 ==============================
 
 
