@@ -101,7 +101,7 @@ It is in the ``DfsMazeSolver``\'s ``solve`` method where the magic happens. We'r
 *Depth First Search* (DFS).
 
 Knowing the stack's LIFO property, it's great for keeping track of where we are and how we got there. If we ever want to
-backtrack, we just pop things off the stack until we rewind to where we want --- think undo, or the back button on a
+backtrack, we simply pop things off the stack until we rewind to where we want --- think undo, or the back button on a
 browser. In other words, we will be making use of an ``Stack`` of ``Cell objects (``Stack<Cell>``) for our DFS --- we go
 as deep as we can down a path until we find the end, or we find a dead end need to backtrack.
 
