@@ -143,7 +143,7 @@ In order to actually solve a maze, you need
 
 You will want to run your program on mazes from files. I have provided you with a ``RELATIVE_RESOURCES`` constant in the
 ``Asn2`` class. This is the relative path to the directory where the maze files are stored. Simply take this relative
-path and concatenate to it the maze file you would like to open.
+path and concatenate it with the file name of the maze you want to open.
 
 
 Part 5 --- Testing
