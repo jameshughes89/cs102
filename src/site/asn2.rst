@@ -132,6 +132,8 @@ Missing Constructors
 * This may seem strange, but if you do not write a constructor, Java is still happy to create an instance of the object
     * e.g. ``MazeRenderer renderer = new MazeRenderer();``
 
+* This is because Java automatically adds a default constructor with no parameters if it does not exist in the class
+
 * This is reasonable here since these classes have no fields and do not need any setup code
 
 
