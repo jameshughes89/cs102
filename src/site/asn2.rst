@@ -97,9 +97,13 @@ Part 2 --- Run Unit Tests
 Part 3 --- Complete ``DFSMazeSolver``
 =====================================
 
-It is in the ``DfsMazeSolver``\'s ``solve`` method where the magic happens. Knowing the stack's LIFO property, it's
-great for keeping track where we are and how we got there. If we ever want to backtrack, we just pop things off the
-stack until we rewind to where we want. Think undo, or the back button on a browser.
+It is in the ``DfsMazeSolver``\'s ``solve`` method where the magic happens. We're going to be doing a
+*Depth First Search* (DFS).
+
+Knowing the stack's LIFO property, it's great for keeping track of where we are and how we got there. If we ever want to
+backtrack, we just pop things off the stack until we rewind to where we want --- think undo, or the back button on a
+browser. In other words, we will be making use of an ``Stack`` of ``Cell objects (``Stack<Cell>``) for our DFS --- we go
+as deep as we can down a path until we find the end, or we find a dead end need to backtrack.
 
 The general idea is this:
     * Look at the top cell of the stack
