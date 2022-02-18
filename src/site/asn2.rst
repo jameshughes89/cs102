@@ -123,8 +123,8 @@ confident that you have everything working correctly.
 
 There is no test provided for the ``Asn2`` class, but that's nothing to worry about. You can get a sense that it is
 working correctly by:
-* Running your program on the maze files provided
-* Create your own maze programs and try running on them too
+    * Running your program on the maze files provided
+    * Create your own maze programs and try running on them too
 
 
 Code Peculiarities of Note
