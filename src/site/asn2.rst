@@ -83,6 +83,8 @@ Part 2 --- Run Unit Tests
 =========================
 
 * Run all the tests for the provided completed classes
+    * Everything except the ``DfsMazeSolverTest``
+
 * All these tests should pass
     * If not, something has gone wrong
         * Did you change the code?
