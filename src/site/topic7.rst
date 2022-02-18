@@ -25,7 +25,6 @@ Linked Structure
        :width: 500 px
        :align: center
 
-
 * With this linking idea, we do not need to store the data in consecutive memory locations
     * Successors can be anywhere
 
@@ -42,7 +41,6 @@ Nodes
 
 * The series of nodes linked together is what makes up the singly linked structure
     * They link to their successor
-
 
 .. image:: img/node_example.png
    :width: 400 px
@@ -62,7 +60,6 @@ Inserting into a Linked Structure
 .. image:: img/links_example1.png
    :width: 500 px
    :align: center
-
 
 * Given the example linked structure
 * How would you access the *first* item's data?
@@ -87,9 +84,7 @@ Adding to the Front
    :width: 500 px
    :align: center
 
-
 * Make the node we want to insert's ``next`` reference the current head
-
 
 .. image:: img/links_addfront1.png
    :width: 500 px
@@ -192,14 +187,12 @@ Node Implementation
     refer to the node ``someNode``, while the second means that the node referenced by ``head``\'s ``next`` node
     reference will refer to ``someNode``.
 
-
 .. image:: img/links_reference.png
    :width: 400 px
    :align: center
 
 * Remember, reference variables contain a reference to an object
 * The linked structure uses these references to link it together
-
 
 * The node implementation for the singly linked structure is kept simple
     * A field to keep track of the data
@@ -281,6 +274,7 @@ Variations
 * You may be wondering: *Can we add references going more than one direction?*
     * Absolutely
 
+
 Doubly Linked
 -------------
 
@@ -289,6 +283,7 @@ Doubly Linked
    :align: center
 
 * How would our ``Node`` implementation need to change to achieve this?
+
 
 For next time
 =============
