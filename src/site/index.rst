@@ -140,6 +140,7 @@ Assignments
     :maxdepth: 1
 
     asn1
+    asn2
 
 
 Course Outline
