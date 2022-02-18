@@ -98,12 +98,33 @@ Part 3 --- Complete ``DFSMazeSolver``
 =====================================
 
 
-Part 5 --- Putting it Together
+Part 4 --- Putting it Together
 ==============================
+
+Once you are comfortable that your ``DfsMazeSolver`` is working correctly, write your main method. Expect it to be
+short (less than 10 lines); if your main is long, you're probably doing something wrong and working too hard.
+
+In order to actually solve a maze, you need
+* A ``Maze``
+* A ``MazeSolver`` to solve the maze
+* A ``MazeRenderer`` for rendering the maze with the solution so it can be printed out
+
+You will want to run your program on mazes from files. I have provided you with a ``RELATIVE_RESOURCES`` constant in the
+``Asn2`` class. This is the relative path to the directory where the maze files are stored. Simply take this relative
+path and concatenate to it the maze file you would like to open.
 
 
 Part 5 --- Testing
 ==================
+
+You may have already verified the correctness of your ``DfsMazeSolver`` with the ``DfsMazeSolverTest`` class, but if
+not, you really should. For good measure, re-run all the tests provided to you. If they all pass, you should be pretty
+confident that you have everything working correctly.
+
+There is no test provided for the ``Asn2`` class, but that's nothing to worry about. You can get a sense that it is
+working correctly by:
+* Running your program on the maze files provided
+* Create your own maze programs and try running on them too
 
 
 Code Peculiarities of Note
