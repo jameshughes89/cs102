@@ -69,7 +69,7 @@ Inserting into a Linked Structure
 * How would you access the *second* item's data?
 * How would you access the *third* item's data?
 * How would you access the predecessor?
-* **HINT:** What are the fields we would have in our node object?
+* **HINT:** What are the fields we have in our nodes?
 
 * How would we add something to the *front* of this linked structure?
 * How would we add something to the *middle* of this linked structure?
