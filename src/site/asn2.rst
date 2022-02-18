@@ -112,7 +112,10 @@ The general idea is this:
             * We're at a dead end --- we must backtrack
     * Repeat
 
-* Naturally, you will want to start with the maze's starting cell.
+Naturally, you will want to start with the maze's starting cell.
+
+When the method finishes, it must return a ``Set`` of ``Cell```` objects (``Set<Cell>``) containing the ``Cell``
+objects in the solution.
 
 
 * sets
