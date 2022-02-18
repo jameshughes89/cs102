@@ -110,18 +110,19 @@ Exceptions
     * When there are issues with the start and/or end cells
 
 
-Within Cell
------------
+Final Class and Fields
+----------------------
 
-* You will notice that the class is set to ``final``
-    * ``public final class Cell``
+* You will notice that the ``Maze`` and ``Cell`` classes are set to ``final``
+    * e.g. ``public final class Cell``
     * All it means is that this class cannot be inherited from
     * We have yet to discuss inheritance, so do worry too much about this
 
-* All class fields are set to ``final``
+* The ``Maze`` and ``Cell`` fields are set to ``final``
     * This means we do not allow any fields to change
         * You will notice no setters
     * We can have Java explicitly make sure they stay unchanged
+    * Before, we only really saw static constants set to final
 
 
 Missing Constructors
