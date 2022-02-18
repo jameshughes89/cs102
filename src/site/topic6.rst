@@ -82,8 +82,8 @@ Implementation
 
 .. warning::
 
-    When you start implementing an interface, you may see your IDE to tell you there is an error. This is to be expected
-    since you are saying that you are implementing the interface, Java is expecting you to implement all abstract
+    When you start implementing an interface, you may see your IDE telling you there is an error. This is to be expected
+    since you are saying that you are implementing the interface, so Java is expecting you to implement all abstract
     methods from the interface. This error will go away once all abstract methods are implemented.
 
         .. image:: img/warning_implement.png
