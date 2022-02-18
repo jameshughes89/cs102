@@ -85,6 +85,9 @@ Part 2 --- Run Unit Tests
 * Run all the tests for the provided completed classes
     * Everything except the ``DfsMazeSolverTest``
 
+* In order to run these, you will need to address the error caused by the ``DfsMazeSolver`` not implementing the ``MazeSolver`` interface
+    * You can comment this out for now, or add a dummy ``solve`` method returning ``null`` to make it stop complaining for now
+
 * All these tests should pass
     * If not, something has gone wrong
         * Did you change the code?
