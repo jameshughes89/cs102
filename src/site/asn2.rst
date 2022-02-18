@@ -135,6 +135,31 @@ Missing Constructors
 * This is reasonable here since these classes have no fields and do not need any setup code
 
 
+Private Constructor
+-------------------
+
+* You will notice constructor for ``Maze`` is set to ``private``
+* This may seem odd since any method set to ``private`` is not accessible outside the class
+* And if you cannot access it outside the class, how can you create an instance of a ``Maze``?
+
+* The trick is, *you* don't, the *class* does
+
+* Ideally, we want our constructors to be simple and single purposed
+    * Like setting fields
+* But if we start having constructors read files, parse large strings, etc., we're starting to break this principle
+
+* The alternative is to create static *factory* methods
+    * e.g. ``public static Maze fromFile(String mazeFile)``
+
+* The factory method does the heavy lifting, and then creates and returns a new ``Maze`` instance
+
+* Long story short, you will **not** be making a ``Maze`` like this
+    * ``Maze myMaze = newMaze(x, y, z);``
+
+* Instead, you will make your maze my getting the class to do it like this
+    * ``Maze myMaze = Maze.fromFile(someFile);``
+
+
 Some Hints
 ==========
 
