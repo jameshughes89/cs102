@@ -8,10 +8,11 @@ Topic #7 --- Links
 
 
 * Arrays have a fixed size
-    * But we can change capacity
+    * But we can do the ``expandCapacity`` trick
 
 * When using an array, we may have to shift things around when adding and removing
 * Traditionally speaking, arrays are in contiguous memory addresses
+    * The successor value is in the next array cell
     * JVM asterisk --- In Java, arrays are objects, and objects go into the *heap*, which isn't necessarily contiguous.
 
 
@@ -23,7 +24,6 @@ Linked Structure
     .. image:: img/links_example0.png
        :width: 500 px
        :align: center
-
 
 * With this linking idea, we do not need to store the data in consecutive memory locations
     * Successors can be anywhere
@@ -50,7 +50,7 @@ Nodes
     * **data** --- the stuff we want to hold
         * To compare to the array, this would be the stuff we're putting into the cells of the array
     * **next** --- a reference to the successor/next node
-        * Arrays don't have this because the successor is just in the next index in the array
+        * Arrays don't have this because the successor is just in the next cell in the array
             * Asterisk
 
 
@@ -61,13 +61,12 @@ Inserting into a Linked Structure
    :width: 500 px
    :align: center
 
-
 * Given the example linked structure
 * How would you access the *first* item's data?
 * How would you access the *second* item's data?
 * How would you access the *third* item's data?
 * How would you access the predecessor?
-* **HINT:** What are the fields we would have in our node object?
+* **HINT:** What are the fields we have in our nodes?
 
 * How would we add something to the *front* of this linked structure?
 * How would we add something to the *middle* of this linked structure?
@@ -85,9 +84,7 @@ Adding to the Front
    :width: 500 px
    :align: center
 
-
 * Make the node we want to insert's ``next`` reference the current head
-
 
 .. image:: img/links_addfront1.png
    :width: 500 px
@@ -190,14 +187,12 @@ Node Implementation
     refer to the node ``someNode``, while the second means that the node referenced by ``head``\'s ``next`` node
     reference will refer to ``someNode``.
 
-
 .. image:: img/links_reference.png
    :width: 400 px
    :align: center
 
 * Remember, reference variables contain a reference to an object
 * The linked structure uses these references to link it together
-
 
 * The node implementation for the singly linked structure is kept simple
     * A field to keep track of the data
@@ -279,6 +274,7 @@ Variations
 * You may be wondering: *Can we add references going more than one direction?*
     * Absolutely
 
+
 Doubly Linked
 -------------
 
@@ -287,6 +283,7 @@ Doubly Linked
    :align: center
 
 * How would our ``Node`` implementation need to change to achieve this?
+
 
 For next time
 =============
