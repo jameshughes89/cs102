@@ -36,7 +36,7 @@ You are provided with:
 * A ``MazeSolver`` interface
 * A nearly empty ``DfsMazeSolver`` with a complete ``DfsMazeSolverTest``
 * An ``Asn2`` class with an empty ``main``
-* A bunch of maze files
+* Three maze files
 
 * :download:`All of this can be downloaded from here<./data/Assignment2.zip>`
     * This is a compressed IntelliJ project
