@@ -207,7 +207,7 @@ Missing Constructors
 Private Constructor
 -------------------
 
-* You will notice constructor for ``Maze`` is set to ``private``
+* You may notice the constructor for ``Maze`` is set to ``private``
 * This may seem odd since any method set to ``private`` is not accessible outside the class
 * And if you cannot access it outside the class, how can you create an instance of a ``Maze``?
 
