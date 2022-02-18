@@ -122,9 +122,14 @@ When the method finishes, it must return a ``Set`` of ``Cell```` objects (``Set<
 objects in the solution.
 
 
-* sets
-* stack
-* maybe want private helper functions
+Suggestions
+-----------
+
+Two minor suggestions that you by no means need to take:
+    * Make use of a ``HashSet`` for keeping track of visited ``Cell`` objects
+    * Consider writing private helper methods in the ``DfsMazeSolver`` class
+        * These do not get tested, only the ``solve`` method does
+
 
 Part 4 --- Putting it Together
 ==============================
