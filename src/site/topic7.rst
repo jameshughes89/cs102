@@ -12,7 +12,9 @@ Topic #7 --- Links
 
 * When using an array, we may have to shift things around when adding and removing
 * Traditionally speaking, arrays are in contiguous memory addresses
+    * The successor value is in the next array cell
     * JVM asterisk --- In Java, arrays are objects, and objects go into the *heap*, which isn't necessarily contiguous.
+
 
 
 Linked Structure
