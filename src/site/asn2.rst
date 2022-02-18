@@ -13,9 +13,9 @@ Your goal is to solve a maze with a *depth first search* implemented with a stac
 
 You will:
 
-* Write a ``DFSMazeSolver`` class that implements the ``MazeSolver`` interface
+* Write a ``DfsMazeSolver`` class that implements the ``MazeSolver`` interface
     * Within this class, you will write the ``solve`` method.
-* You will use the ``DFSMazeSolver``, along with some of the other provided classes, in the ``main`` to:
+* You will use the ``DfsMazeSolver``, along with some of the other provided classes, in the ``main`` to:
     * Create the maze
     * Solve the maze
     * Print out the solution
@@ -34,7 +34,7 @@ You are provided with:
 * A ``MazeRenderer`` class with ``MazeRenderer`` unit tests
 * Two exceptions: ``LocationNotInMazeException`` and ``MazeEndpointsException``
 * A ``MazeSolver`` interface
-* A nearly empty ``DFSMazeSolver`` with a complete ``DFSMazeSolverTest``
+* A nearly empty ``DfsMazeSolver`` with a complete ``DfsMazeSolverTest``
 * An ``Asn2`` class with an empty ``main``
 * A bunch of maze files
 

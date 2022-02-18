@@ -6,7 +6,7 @@ import java.util.Set;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class DFSMazeSolverTest {
+public class DfsMazeSolverTest {
 
     private static final String MAZE_NO_SOLUTION =
             "#####\n" +
@@ -100,7 +100,7 @@ public class DFSMazeSolverTest {
 
     @BeforeEach
     void createMazeAndSolver() {
-        classUnderTest = new DFSMazeSolver();
+        classUnderTest = new DfsMazeSolverTest();
     }
 
     @Test
