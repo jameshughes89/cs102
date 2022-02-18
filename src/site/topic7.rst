@@ -8,7 +8,7 @@ Topic #7 --- Links
 
 
 * Arrays have a fixed size
-    * But we can change capacity
+    * But we can do the ``expandCapacity`` trick
 
 * When using an array, we may have to shift things around when adding and removing
 * Traditionally speaking, arrays are in contiguous memory addresses
