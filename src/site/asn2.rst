@@ -124,6 +124,14 @@ Within Cell
     * We can have Java explicitly make sure they stay unchanged
 
 
+Missing Constructors
+--------------------
+
+* In the ``MazeRenderer`` and ``DfsMazeSolver``, you will notice there are no constructors
+* This may seem strange, but if you do not write a constructor, Java is still happy to create an instance of the object
+    * e.g. ``MazeRenderer renderer = new MazeRenderer();``
+
+* This is reasonable here since these classes have no fields and do not need any setup code
 
 
 Some Hints
