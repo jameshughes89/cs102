@@ -105,15 +105,12 @@ backtrack, we simply pop things off the stack until we rewind to where we want -
 browser. In other words, we will be making use of an ``Stack`` of ``Cell`` objects (``Stack<Cell>``) for our DFS --- we
 go as deep as we can down a path until we find the end, or we find a dead end need to backtrack.
 
-The general idea is this:
+The general idea is this
+
     * Look at the top cell of the stack
-    * If it's the end
-        * We're done
-    * If it's not
-        * Find an unvisited valid neighbour
-            * Push it on the stack
-        * If there are no valid neighbours
-            * We're at a dead end --- we must backtrack
+    * If it's the end, We're done
+    * If it's not, find an unvisited valid neighbour and push it on the stack
+    * If there are no valid neighbours, we're at a dead end --- we must backtrack
     * Repeat
 
 Naturally, you will want to start with the maze's starting cell.
