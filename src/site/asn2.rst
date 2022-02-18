@@ -101,6 +101,10 @@ Part 3 --- Complete ``DFSMazeSolver``
 Part 4 --- Putting it Together
 ==============================
 
+Once you are comfortable that your ``DfsMazeSolver`` is working correctly, write your main method. Expect it to be
+short (less than 10 lines); if your main is long, you're probably doing something wrong and working too hard.
+
+
 
 Part 5 --- Testing
 ==================
