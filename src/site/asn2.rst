@@ -97,6 +97,11 @@ Part 2 --- Run Unit Tests
 Part 3 --- Complete ``DFSMazeSolver``
 =====================================
 
+It is in the ``DfsMazeSolver`` where the magic happens. Knowing the stack's LIFO property, it's great for keeping track
+where we are and how we got there. If we ever want to backtrack, we just pop things off the stack until we rewind to
+where we want. Think undo, or the back button on a browser.
+
+
 
 Part 4 --- Putting it Together
 ==============================
