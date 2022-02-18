@@ -104,6 +104,11 @@ Part 4 --- Putting it Together
 Once you are comfortable that your ``DfsMazeSolver`` is working correctly, write your main method. Expect it to be
 short (less than 10 lines); if your main is long, you're probably doing something wrong and working too hard.
 
+In order to actually solve a maze, you need
+* A ``Maze``
+* A ``MazeSolver`` to solve the maze
+* A ``MazeRenderer`` for rendering the maze with the solution so it can be printed out
+
 You will want to run your program on mazes from files. I have provided you with a ``RELATIVE_RESOURCES`` constant in the
 ``Asn2`` class. This is the relative path to the directory where the maze files are stored. Simply take this relative
 path and concatenate to it the maze file you would like to open.
