@@ -118,7 +118,7 @@ Final Class and Fields
     * All it means is that this class cannot be inherited from
     * We have yet to discuss inheritance, so do worry too much about this
 
-* The ``Maze`` and ``Cell`` fields are set to ``final``
+* The ``Maze`` and ``Cell`` objects' fields are set to ``final``
     * This means we do not allow any fields to change
         * You will notice no setters
     * We can have Java explicitly make sure they stay unchanged
