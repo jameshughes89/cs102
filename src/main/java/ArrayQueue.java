@@ -93,4 +93,18 @@ public class ArrayQueue<T> implements Queue<T> {
         }
         return builder.toString();
     }
+
+    @Override
+    public final boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ArrayQueue<?> that = (ArrayQueue<?>) o;
+        if (this.size != that.size) return false;
+        for (int i = 0; i < this.size; i++) {
+            if (!this.queue[(this.front + i) % this.queue.length].equals(that.queue[(that.front + i) % that.queue.length])) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
