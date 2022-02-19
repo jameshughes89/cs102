@@ -72,7 +72,7 @@ public class LinkedStack<T> implements Stack<T> {
             Node<?> thisCurrent = this.top;
             Node<?> thatCurrent = that.top;
             while (thisCurrent != null) {
-                if (!thisCurrent.equals(thatCurrent)) return false;
+                if (!thisCurrent.data.equals(thatCurrent.data)) return false;
                 thisCurrent = thisCurrent.getNext();
                 thatCurrent = thatCurrent.getNext();
             }
@@ -86,7 +86,7 @@ public class LinkedStack<T> implements Stack<T> {
         int hash = Objects.hashCode(size);
         Node<?> current = top;
         while (current != null) {
-            hash += Objects.hashCode(current);
+            hash += Objects.hashCode(current.getData());
             current = current.getNext();
         }
         return hash;
