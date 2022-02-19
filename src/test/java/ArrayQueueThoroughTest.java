@@ -71,7 +71,7 @@ public class ArrayQueueThoroughTest {
             }
 
             @Test
-            void first_singleton_emptyStack() {
+            void first_singleton_unchanged() {
                 classUnderTest.first();
                 assertEquals(preState, classUnderTest);
             }
