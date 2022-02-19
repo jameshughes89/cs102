@@ -45,5 +45,53 @@ public class ArrayQueueThoroughTest {
             String expected = "Front --> ";
             assertEquals(expected, classUnderTest.toString());
         }
+
+        @Nested
+        class WhenSingleton {
+
+            @BeforeEach
+            void addSingleInteger() {
+                classUnderTest.enqueue(11);
+                preState.enqueue(11);
+            }
+
+            @Test
+            void isEmpty_singleton_returnsFalse() {
+                assertFalse(classUnderTest.isEmpty());
+            }
+
+            @Test
+            void size_singleton_returnsOne() {
+                assertEquals(1, classUnderTest.size());
+            }
+
+            @Test
+            void first_singleton_returnsFront() {
+                assertEquals(11, classUnderTest.first());
+            }
+
+            @Test
+            void first_singleton_emptyStack() {
+                classUnderTest.first();
+                assertEquals(preState, classUnderTest);
+            }
+
+            @Test
+            void dequeue_singleton_returnsFront() {
+                assertEquals(11, classUnderTest.dequeue());
+            }
+
+            @Test
+            void dequeue_singleton_emptyStack() {
+                classUnderTest.dequeue();
+                assertEquals(new ArrayQueue<>(), classUnderTest);
+            }
+
+            @Test
+            void toString_singleton_correctString() {
+                String expected = "Front --> 11, ";
+                assertEquals(expected, classUnderTest.toString());
+            }
+        }
     }
 }
