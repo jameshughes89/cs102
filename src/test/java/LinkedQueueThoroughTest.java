@@ -152,16 +152,4 @@ public class LinkedQueueThoroughTest {
             }
         }
     }
-
-    @Nested
-    class WhenLarge {
-
-        @Test
-        void enqueue_large_successfullyExpandsCapacity() {
-            for (int i = 0; i < 1000; i++) {
-                classUnderTest.enqueue(i);
-            }
-            assertEquals(1000, classUnderTest.size());
-        }
-    }
 }
