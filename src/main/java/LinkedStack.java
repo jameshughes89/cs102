@@ -63,6 +63,35 @@ public class LinkedStack<T> implements Stack<T> {
         return builder.toString();
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        LinkedStack<?> that = (LinkedStack<?>) o;
+        if (this.size == that.size) {
+            Node<?> thisCurrent = this.top;
+            Node<?> thatCurrent = that.top;
+            while (thisCurrent != null) {
+                if (!thisCurrent.equals(thatCurrent)) return false;
+                thisCurrent = thisCurrent.getNext();
+                thatCurrent = thatCurrent.getNext();
+            }
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = Objects.hashCode(size);
+        Node<?> current = top;
+        while (current != null) {
+            hash += Objects.hashCode(current);
+            current = current.getNext();
+        }
+        return hash;
+    }
+
     /**
      * A Node class for a singly linked structure. Each node
      * contains a reference to data of type T, which may be
