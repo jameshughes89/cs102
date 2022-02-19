@@ -1,5 +1,3 @@
-import java.util.Objects;
-
 /**
  * A Node class for a singly linked structure. Each node
  * contains a reference to data of type T, which may be
@@ -36,18 +34,5 @@ public class Node<T> {
 
     public void setNext(Node<T> next) {
         this.next = next;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Node<?> node = (Node<?>) o;
-        return Objects.equals(data, node.data);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(data, next);
     }
 }
