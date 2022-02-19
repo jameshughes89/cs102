@@ -1,7 +1,5 @@
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
+import com.google.common.testing.EqualsTester;
+import org.junit.jupiter.api.*;
 
 import java.util.NoSuchElementException;
 
@@ -11,6 +9,37 @@ public class LinkedQueueThoroughTest {
 
     private Queue<Integer> classUnderTest;
     private Queue<Integer> preState;
+
+    @Test
+    @SuppressWarnings("UnstableApiUsage")
+    @DisplayName("Verify Equals.")
+    public void equals_verify_contract() {
+        LinkedQueue<Integer> gSingletonDefault = new LinkedQueue<>();
+        LinkedQueue<Integer> gManyOneDefaultA = new LinkedQueue<>();
+        LinkedQueue<Integer> gManyOneDefaultB = new LinkedQueue<>();
+        LinkedQueue<Integer> gManyTwoDefault = new LinkedQueue<>();
+        LinkedQueue<Integer> gReverseDefault = new LinkedQueue<>();
+        LinkedQueue<Character> gTypeDefault = new LinkedQueue<>();
+        LinkedQueue<Character> gTypeCapacity = new LinkedQueue<>();
+
+        for (int i = 0; i < 6; i++) {
+            gManyOneDefaultA.enqueue(i);
+            gManyOneDefaultB.enqueue(i);
+            gManyTwoDefault.enqueue(i * 11);
+            gReverseDefault.enqueue(5 - i);
+            gTypeDefault.enqueue((char) i);
+            gTypeCapacity.enqueue((char) i);
+        }
+        gSingletonDefault.enqueue(100);
+
+        new EqualsTester()
+                .addEqualityGroup(LinkedQueue.class)
+                .addEqualityGroup(gManyOneDefaultA,
+                        gManyOneDefaultB)
+                .addEqualityGroup(gTypeDefault,
+                        gTypeCapacity)
+                .testEquals();
+    }
 
     @BeforeEach
     void newQueue() {
