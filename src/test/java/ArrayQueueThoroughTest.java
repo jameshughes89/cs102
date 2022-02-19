@@ -89,7 +89,7 @@ public class ArrayQueueThoroughTest {
             }
 
             @Test
-            void toString_singleton_correctString() {
+            void toString_singleton_returnsCorrectString() {
                 String expected = "Front --> 11, ";
                 assertEquals(expected, classUnderTest.toString());
             }
