@@ -1,4 +1,5 @@
 import java.util.NoSuchElementException;
+import java.util.Objects;
 
 public class LinkedStack<T> implements Stack<T> {
 
@@ -102,6 +103,19 @@ public class LinkedStack<T> implements Stack<T> {
 
         public void setNext(Node<T> next) {
             this.next = next;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Node<?> node = (Node<?>) o;
+            return Objects.equals(data, node.data);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(data, next);
         }
     }
 }
