@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import java.util.NoSuchElementException;
 
@@ -91,6 +92,63 @@ public class ArrayQueueThoroughTest {
             void toString_singleton_correctString() {
                 String expected = "Front --> 11, ";
                 assertEquals(expected, classUnderTest.toString());
+            }
+
+            @Nested
+            @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+            class WhenMany {
+
+                @BeforeEach
+                void addMoreIntegers() {
+                    classUnderTest.enqueue(22);
+                    classUnderTest.enqueue(33);
+                    preState.enqueue(22);
+                    preState.enqueue(33);
+                }
+
+                @Test
+                void isEmpty_many_returnsFalse() {
+                    assertFalse(classUnderTest.isEmpty());
+                }
+
+                @Test
+                void size_many_returnsThree() {
+                    assertEquals(3, classUnderTest.size());
+                }
+
+                @Test
+                void enqueue_many_firstUnchanged() {
+                    classUnderTest.enqueue(44);
+                    assertEquals(preState.first(), classUnderTest.first());
+                }
+
+                @Test
+                void first_many_returnsFront() {
+                    assertEquals(11, classUnderTest.first());
+                }
+
+                @Test
+                void first_many_unchanged() {
+                    classUnderTest.first();
+                    assertEquals(preState, classUnderTest);
+                }
+
+                @Test
+                void dequeue_many_returnsFront() {
+                    assertEquals(11, classUnderTest.dequeue());
+                }
+
+                @Test
+                void dequeue_many_removesFront() {
+                    classUnderTest.dequeue();
+                    assertNotEquals(11, classUnderTest.first());
+                }
+
+                @Test
+                void toString_many_returnsCorrectString() {
+                    String expected = "Front --> 11, 22, 33, ";
+                    assertEquals(expected, classUnderTest.toString());
+                }
             }
         }
     }
