@@ -1,4 +1,5 @@
 import java.util.NoSuchElementException;
+import java.util.Objects;
 
 public class ArrayQueue<T> implements Queue<T> {
 
@@ -106,5 +107,14 @@ public class ArrayQueue<T> implements Queue<T> {
             }
         }
         return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hashCode(size);
+        for (int i = 0; i < size; i++) {
+            result += Objects.hashCode(queue[(front + 1) % queue.length]);
+        }
+        return result;
     }
 }
