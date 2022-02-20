@@ -81,6 +81,13 @@ public class ArrayQueue<T> implements Queue<T> {
         return size;
     }
 
+    /**
+     * Calculates the next valid index for the rear. This method is used to have
+     * the rear index increment with an automatic wrapping back to index zero if
+     * there is no more room left at the end of the array.
+     *
+     * @return Wrapping next rear index
+     */
     private int nextRear() {
         return (rear + 1) % queue.length;
     }
