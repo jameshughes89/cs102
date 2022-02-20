@@ -92,6 +92,17 @@ public class ArrayQueue<T> implements Queue<T> {
         return (rear + 1) % queue.length;
     }
 
+    /**
+     * Calculates the next valid index for the front. This method is used to have
+     * the front index increment with an automatic wrapping back to index zero if
+     * there is no more room left at the end of the array.
+     *
+     * @return Wrapping next front index
+     */
+    private int nextFront() {
+        return (front + 1) % queue.length;
+    }
+
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append("Front --> ");
