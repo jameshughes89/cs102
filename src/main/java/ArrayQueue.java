@@ -43,7 +43,7 @@ public class ArrayQueue<T> implements Queue<T> {
         T[] newQueue = (T[]) new Object[queue.length * 2];
         for (int i = 0; i < queue.length; ++i) {
             newQueue[i] = queue[front];
-            front = (front + 1) % queue.length;
+            front = nextFront();
         }
         front = 0;
         rear = size;
@@ -56,9 +56,7 @@ public class ArrayQueue<T> implements Queue<T> {
             throw new NoSuchElementException("Dequeueing from an empty queue.");
         }
         T returnElement = queue[front];
-        // front will wrap back to 0 if it is more than
-        // the capacity of the array
-        front = (front + 1) % queue.length;
+        front = nextFront();
         size--;
         return returnElement;
     }
@@ -82,25 +80,15 @@ public class ArrayQueue<T> implements Queue<T> {
     }
 
     /**
-     * Calculates the next valid index for the rear. This method is used to have
-     * the rear index increment with an automatic wrapping back to index zero if
-     * there is no more room left at the end of the array.
+     * Calculates the next valid index. This method is used to have the index
+     * increment with an automatic wrapping back to index zero if there is no
+     * more room left at the end of the array.
      *
-     * @return Wrapping next rear index
+     * @param currentIndex Index to find next index of
+     * @return Wrapping next index
      */
-    private int nextRear() {
-        return (rear + 1) % queue.length;
-    }
-
-    /**
-     * Calculates the next valid index for the front. This method is used to have
-     * the front index increment with an automatic wrapping back to index zero if
-     * there is no more room left at the end of the array.
-     *
-     * @return Wrapping next front index
-     */
-    private int nextFront() {
-        return (front + 1) % queue.length;
+    private int nextIndex(int currentIndex) {
+        return (currentIndex + 1) % queue.length;
     }
 
     public String toString() {
