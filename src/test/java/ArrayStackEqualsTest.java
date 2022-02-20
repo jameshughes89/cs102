@@ -4,9 +4,6 @@ import org.junit.jupiter.api.Test;
 
 class ArrayStackEqualsTest {
 
-    private Stack<Integer> classUnderTest;
-    private Stack<Integer> preState;
-
     @Test
     @SuppressWarnings("UnstableApiUsage")
     @DisplayName("Verify Equals.")
