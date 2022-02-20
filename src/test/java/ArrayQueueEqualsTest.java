@@ -53,7 +53,8 @@ class ArrayQueueEqualsTest {
                         gSingletonCapacity)
                 .addEqualityGroup(gManyOneDefaultA,
                         gManyOneDefaultB,
-                        gManyOneCapacity)
+                        gManyOneCapacity,
+                        gManyOneDequeued)
                 .addEqualityGroup(gManyTwoDefault,
                         gManyTwoCapacity)
                 .addEqualityGroup(gReverseDefault,
