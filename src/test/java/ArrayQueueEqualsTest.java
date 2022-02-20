@@ -44,7 +44,7 @@ class ArrayQueueEqualsTest {
         gSingletonCapacity.enqueue(100);
 
         new EqualsTester()
-                .addEqualityGroup(ArrayStack.class)
+                .addEqualityGroup(ArrayQueue.class)
                 .addEqualityGroup(gEmptyDefault,
                         gEmptyCapacity)
                 .addEqualityGroup(gSingletonDefault,
