@@ -20,7 +20,7 @@ class ArrayStackEqualsTest {
         ArrayStack<Integer> gReverseDefault = new ArrayStack<>();
         ArrayStack<Integer> gReverseCapacity = new ArrayStack<>(10);
         ArrayStack<Character> gTypeDefault = new ArrayStack<>();
-        ArrayStack<Character> gTypeCapacity = new ArrayStack<>();
+        ArrayStack<Character> gTypeCapacity = new ArrayStack<>(10);
 
         for (int i = 0; i < 6; i++) {
             gManyOneDefaultA.push(i);
