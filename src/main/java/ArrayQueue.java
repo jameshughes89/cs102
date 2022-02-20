@@ -27,9 +27,7 @@ public class ArrayQueue<T> implements Queue<T> {
             expandCapacity();
         }
         queue[rear] = element;
-        // rear will wrap back to 0 if it is more than
-        // the capacity of the array
-        rear = (rear + 1) % queue.length;
+        rear = nextRear();
         size++;
     }
 
