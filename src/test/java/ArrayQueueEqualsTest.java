@@ -15,7 +15,8 @@ class ArrayQueueEqualsTest {
         ArrayQueue<Integer> gManyOneDefaultA = new ArrayQueue<>();
         ArrayQueue<Integer> gManyOneDefaultB = new ArrayQueue<>();
         ArrayQueue<Integer> gManyOneCapacity = new ArrayQueue<>(5);
-        ArrayQueue<Integer> gManyOneDequeued = new ArrayQueue<>();
+        ArrayQueue<Integer> gManyOneFront = new ArrayQueue<>();
+        ArrayQueue<Integer> gManyOneRear = new ArrayQueue<>(6);
         ArrayQueue<Integer> gManyTwoDefault = new ArrayQueue<>();
         ArrayQueue<Integer> gManyTwoCapacity = new ArrayQueue<>(10);
         ArrayQueue<Integer> gReverseDefault = new ArrayQueue<>();
@@ -24,14 +25,17 @@ class ArrayQueueEqualsTest {
         ArrayQueue<Character> gTypeCapacity = new ArrayQueue<>(10);
 
         // Move front down
-        gManyOneDequeued.enqueue(0);
-        gManyOneDequeued.dequeue();
+        gManyOneFront.enqueue(0);
+        gManyOneFront.dequeue();
+        gManyOneRear.enqueue(0);
+        gManyOneRear.dequeue();
 
         for (int i = 0; i < 6; i++) {
             gManyOneDefaultA.enqueue(i);
             gManyOneDefaultB.enqueue(i);
             gManyOneCapacity.enqueue(i);
-            gManyOneDequeued.enqueue(i);
+            gManyOneFront.enqueue(i);
+            gManyOneRear.enqueue(i);
             gManyTwoDefault.enqueue(i * 11);
             gManyTwoCapacity.enqueue(i * 11);
             gReverseDefault.enqueue(5 - i);
@@ -52,7 +56,8 @@ class ArrayQueueEqualsTest {
                 .addEqualityGroup(gManyOneDefaultA,
                         gManyOneDefaultB,
                         gManyOneCapacity,
-                        gManyOneDequeued)
+                        gManyOneFront,
+                        gManyOneRear)
                 .addEqualityGroup(gManyTwoDefault,
                         gManyTwoCapacity)
                 .addEqualityGroup(gReverseDefault,
