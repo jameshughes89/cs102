@@ -27,7 +27,7 @@ public class ArrayQueue<T> implements Queue<T> {
             expandCapacity();
         }
         queue[rear] = element;
-        rear = nextRear();
+        rear = nextIndex(rear);
         size++;
     }
 
@@ -43,7 +43,7 @@ public class ArrayQueue<T> implements Queue<T> {
         T[] newQueue = (T[]) new Object[queue.length * 2];
         for (int i = 0; i < queue.length; ++i) {
             newQueue[i] = queue[front];
-            front = nextFront();
+            front = nextIndex(front);
         }
         front = 0;
         rear = size;
@@ -56,7 +56,7 @@ public class ArrayQueue<T> implements Queue<T> {
             throw new NoSuchElementException("Dequeueing from an empty queue.");
         }
         T returnElement = queue[front];
-        front = nextFront();
+        front = nextIndex(front);
         size--;
         return returnElement;
     }
@@ -98,7 +98,7 @@ public class ArrayQueue<T> implements Queue<T> {
         for (int i = 0; i < size; ++i) {
             builder.append(queue[currentIndex]);
             builder.append(", ");
-            currentIndex = (currentIndex + 1) % queue.length;
+            currentIndex = nextIndex(currentIndex);
         }
         return builder.toString();
     }
@@ -109,10 +109,14 @@ public class ArrayQueue<T> implements Queue<T> {
         if (o == null || getClass() != o.getClass()) return false;
         ArrayQueue<?> that = (ArrayQueue<?>) o;
         if (this.size != that.size) return false;
+        int thisCurrentIndex = this.front;
+        int thatCurrentIndex = that.front;
         for (int i = 0; i < this.size; i++) {
-            if (!this.queue[(this.front + i) % this.queue.length].equals(that.queue[(that.front + i) % that.queue.length])) {
+            if (!this.queue[thisCurrentIndex].equals(that.queue[thatCurrentIndex])) {
                 return false;
             }
+            thisCurrentIndex = this.nextIndex(thisCurrentIndex);
+            thatCurrentIndex = that.nextIndex(thatCurrentIndex);
         }
         return true;
     }
