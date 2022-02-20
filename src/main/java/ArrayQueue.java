@@ -83,6 +83,10 @@ public class ArrayQueue<T> implements Queue<T> {
         return size;
     }
 
+    private int nextRear() {
+        return (rear + 1) % queue.length;
+    }
+
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append("Front --> ");
