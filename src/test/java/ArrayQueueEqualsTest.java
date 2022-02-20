@@ -23,23 +23,21 @@ class ArrayQueueEqualsTest {
         ArrayQueue<Character> gTypeDefault = new ArrayQueue<>();
         ArrayQueue<Character> gTypeCapacity = new ArrayQueue<>(10);
 
+        // Move front down
+        gManyOneDequeued.enqueue(0);
+        gManyOneDequeued.dequeue();
+
         for (int i = 0; i < 6; i++) {
             gManyOneDefaultA.enqueue(i);
             gManyOneDefaultB.enqueue(i);
             gManyOneCapacity.enqueue(i);
-            gManyOneDequeued.enqueue(i);    // Enqueue dequeue
-            gManyOneDequeued.dequeue();     // to move front
+            gManyOneDequeued.enqueue(i);
             gManyTwoDefault.enqueue(i * 11);
             gManyTwoCapacity.enqueue(i * 11);
             gReverseDefault.enqueue(5 - i);
             gReverseCapacity.enqueue(5 - i);
             gTypeDefault.enqueue((char) i);
             gTypeCapacity.enqueue((char) i);
-        }
-        // Enqueue again to ensure
-        // fronts are different
-        for (int i = 0; i < 6; i++) {
-            gManyOneDequeued.enqueue(i);
         }
 
         gSingletonDefault.enqueue(100);
