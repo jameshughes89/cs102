@@ -112,9 +112,8 @@ public class ArrayQueue<T> implements Queue<T> {
         int thisCurrentIndex = this.front;
         int thatCurrentIndex = that.front;
         for (int i = 0; i < this.size; i++) {
-            if (!this.queue[thisCurrentIndex].equals(that.queue[thatCurrentIndex])) {
-                return false;
-            }
+            if (!this.queue[thisCurrentIndex]
+                    .equals(that.queue[thatCurrentIndex])) return false;
             thisCurrentIndex = this.nextIndex(thisCurrentIndex);
             thatCurrentIndex = that.nextIndex(thatCurrentIndex);
         }
@@ -124,8 +123,10 @@ public class ArrayQueue<T> implements Queue<T> {
     @Override
     public int hashCode() {
         int result = Objects.hashCode(size);
+        int currentIndex = front;
         for (int i = 0; i < size; i++) {
-            result += Objects.hashCode(queue[(front + 1) % queue.length]);
+            result += Objects.hashCode(queue[currentIndex]);
+            currentIndex = nextIndex(currentIndex);
         }
         return result;
     }
