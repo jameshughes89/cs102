@@ -1,4 +1,5 @@
 import java.util.NoSuchElementException;
+import java.util.Objects;
 
 public class LinkedStack<T> implements Stack<T> {
 
@@ -60,6 +61,35 @@ public class LinkedStack<T> implements Stack<T> {
         builder.delete(0, 2);
         builder.append("<-- Top");
         return builder.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        LinkedStack<?> that = (LinkedStack<?>) o;
+        if (this.size == that.size) {
+            Node<?> thisCurrent = this.top;
+            Node<?> thatCurrent = that.top;
+            while (thisCurrent != null) {
+                if (!thisCurrent.data.equals(thatCurrent.data)) return false;
+                thisCurrent = thisCurrent.getNext();
+                thatCurrent = thatCurrent.getNext();
+            }
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = Objects.hashCode(size);
+        Node<?> current = top;
+        while (current != null) {
+            hash += Objects.hashCode(current.getData());
+            current = current.getNext();
+        }
+        return hash;
     }
 
     /**
