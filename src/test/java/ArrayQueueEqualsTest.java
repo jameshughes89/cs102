@@ -35,7 +35,7 @@ class ArrayQueueEqualsTest {
             gManyOneDefaultB.enqueue(i);
             gManyOneCapacity.enqueue(i);
             gManyOneFront.enqueue(i);
-            gManyOneRear.enqueue(i);
+            gManyOneRear.enqueue(i);        // Rear will wrap to index 0
             gManyTwoDefault.enqueue(i * 11);
             gManyTwoCapacity.enqueue(i * 11);
             gReverseDefault.enqueue(5 - i);
