@@ -15,6 +15,7 @@ class ArrayQueueEqualsTest {
         ArrayQueue<Integer> gManyOneDefaultA = new ArrayQueue<>();
         ArrayQueue<Integer> gManyOneDefaultB = new ArrayQueue<>();
         ArrayQueue<Integer> gManyOneCapacity = new ArrayQueue<>(5);
+        ArrayQueue<Integer> gManyOneDequeued = new ArrayQueue<>();
         ArrayQueue<Integer> gManyTwoDefault = new ArrayQueue<>();
         ArrayQueue<Integer> gManyTwoCapacity = new ArrayQueue<>(10);
         ArrayQueue<Integer> gReverseDefault = new ArrayQueue<>();
@@ -26,6 +27,8 @@ class ArrayQueueEqualsTest {
             gManyOneDefaultA.enqueue(i);
             gManyOneDefaultB.enqueue(i);
             gManyOneCapacity.enqueue(i);
+            gManyOneDequeued.enqueue(i);    // Enqueue dequeue
+            gManyOneDequeued.dequeue();     // to move front
             gManyTwoDefault.enqueue(i * 11);
             gManyTwoCapacity.enqueue(i * 11);
             gReverseDefault.enqueue(5 - i);
@@ -33,6 +36,12 @@ class ArrayQueueEqualsTest {
             gTypeDefault.enqueue((char) i);
             gTypeCapacity.enqueue((char) i);
         }
+        // Enqueue again to ensure
+        // fronts are different
+        for (int i = 0; i < 6; i++) {
+            gManyOneDequeued.enqueue(i);
+        }
+
         gSingletonDefault.enqueue(100);
         gSingletonCapacity.enqueue(100);
 
