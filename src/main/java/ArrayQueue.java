@@ -1,4 +1,5 @@
 import java.util.NoSuchElementException;
+import java.util.Objects;
 
 public class ArrayQueue<T> implements Queue<T> {
 
@@ -26,9 +27,7 @@ public class ArrayQueue<T> implements Queue<T> {
             expandCapacity();
         }
         queue[rear] = element;
-        // rear will wrap back to 0 if it is more than
-        // the capacity of the array
-        rear = (rear + 1) % queue.length;
+        rear = nextIndex(rear);
         size++;
     }
 
@@ -44,7 +43,7 @@ public class ArrayQueue<T> implements Queue<T> {
         T[] newQueue = (T[]) new Object[queue.length * 2];
         for (int i = 0; i < queue.length; ++i) {
             newQueue[i] = queue[front];
-            front = (front + 1) % queue.length;
+            front = nextIndex(front);
         }
         front = 0;
         rear = size;
@@ -57,9 +56,7 @@ public class ArrayQueue<T> implements Queue<T> {
             throw new NoSuchElementException("Dequeueing from an empty queue.");
         }
         T returnElement = queue[front];
-        // front will wrap back to 0 if it is more than
-        // the capacity of the array
-        front = (front + 1) % queue.length;
+        front = nextIndex(front);
         size--;
         return returnElement;
     }
@@ -82,6 +79,18 @@ public class ArrayQueue<T> implements Queue<T> {
         return size;
     }
 
+    /**
+     * Calculates the next valid index. This method is used to have the index
+     * increment with an automatic wrapping back to index zero if there is no
+     * more room left at the end of the array.
+     *
+     * @param currentIndex Index to find next index of
+     * @return Wrapping next index
+     */
+    private int nextIndex(int currentIndex) {
+        return (currentIndex + 1) % queue.length;
+    }
+
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append("Front --> ");
@@ -89,8 +98,36 @@ public class ArrayQueue<T> implements Queue<T> {
         for (int i = 0; i < size; ++i) {
             builder.append(queue[currentIndex]);
             builder.append(", ");
-            currentIndex = (currentIndex + 1) % queue.length;
+            currentIndex = nextIndex(currentIndex);
         }
         return builder.toString();
+    }
+
+    @Override
+    public final boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ArrayQueue<?> that = (ArrayQueue<?>) o;
+        if (this.size != that.size) return false;
+        int thisCurrentIndex = this.front;
+        int thatCurrentIndex = that.front;
+        for (int i = 0; i < this.size; i++) {
+            if (!this.queue[thisCurrentIndex]
+                    .equals(that.queue[thatCurrentIndex])) return false;
+            thisCurrentIndex = this.nextIndex(thisCurrentIndex);
+            thatCurrentIndex = that.nextIndex(thatCurrentIndex);
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hashCode(size);
+        int currentIndex = front;
+        for (int i = 0; i < size; i++) {
+            result += Objects.hashCode(queue[currentIndex]);
+            currentIndex = nextIndex(currentIndex);
+        }
+        return result;
     }
 }
