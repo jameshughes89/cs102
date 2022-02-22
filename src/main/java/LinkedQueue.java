@@ -1,4 +1,5 @@
 import java.util.NoSuchElementException;
+import java.util.Objects;
 
 public class LinkedQueue<T> implements Queue<T> {
 
@@ -75,6 +76,35 @@ public class LinkedQueue<T> implements Queue<T> {
             currentNode = currentNode.getNext();
         }
         return builder.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        LinkedQueue<?> that = (LinkedQueue<?>) o;
+        if (this.size == that.size) {
+            Node<?> thisCurrent = this.front;
+            Node<?> thatCurrent = that.front;
+            while (thisCurrent != null) {
+                if (!thisCurrent.data.equals(thatCurrent.data)) return false;
+                thisCurrent = thisCurrent.getNext();
+                thatCurrent = thatCurrent.getNext();
+            }
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = Objects.hashCode(size);
+        Node<?> current = front;
+        while (current != null) {
+            hash += Objects.hashCode(current.getData());
+            current = current.getNext();
+        }
+        return hash;
     }
 
     /**
