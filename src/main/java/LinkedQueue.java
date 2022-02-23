@@ -98,13 +98,13 @@ public class LinkedQueue<T> implements Queue<T> {
 
     @Override
     public int hashCode() {
-        int hash = Objects.hashCode(size);
+        int result = Objects.hashCode(size);
         Node<?> current = front;
         while (current != null) {
-            hash += Objects.hashCode(current.getData());
+            result = result * 97 + Objects.hashCode(current.getData());
             current = current.getNext();
         }
-        return hash;
+        return result;
     }
 
     /**
