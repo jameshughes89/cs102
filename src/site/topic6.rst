@@ -269,7 +269,7 @@ For next time
 * Download and test the :download:`Stack <../main/java/Stack.java>` and  :download:`ArrayStack <../main/java/ArrayStack.java>` code
 * :doc:`Check out the aside on testing </topic6-testing>`
 * Download and run the :download:`ArrayStackTest <../test/java/ArrayStackTest.java>` tests
-    * Or the more thorough tests found in :download:`LinkedArrayThoroughTest <../test/java/ArrayStackThoroughTest.java>`
+    * Or the more thorough tests found in :download:`ArrayStackThoroughTest <../test/java/ArrayStackThoroughTest.java>`
 * Finish reading Chapter 3
     * 16 pages
 
