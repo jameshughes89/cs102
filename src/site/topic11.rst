@@ -200,7 +200,7 @@ For next time
 
 * Download and play with the :download:`LinkedQueue <../main/java/LinkedQueue.java>` code
 * Download and run the :download:`LinkedQueueTest <../test/java/LinkedQueueTest.java>` tests
-    * Or the more thorough tests found in :download:`LinkedQueueThoroughTest <../test/java/LinkedQueueTest.java>`
+    * Or the more thorough tests found in :download:`LinkedQueueThoroughTest <../test/java/LinkedQueueThoroughTest.java>`
 * Read Chapter 5 Section 6
     * 6 pages
 
