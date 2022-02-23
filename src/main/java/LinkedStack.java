@@ -83,13 +83,13 @@ public class LinkedStack<T> implements Stack<T> {
 
     @Override
     public int hashCode() {
-        int hash = Objects.hashCode(size);
+        int result = Objects.hashCode(size);
         Node<?> current = top;
         while (current != null) {
-            hash += Objects.hashCode(current.getData());
+            result = result * 97 + Objects.hashCode(current.getData());
             current = current.getNext();
         }
-        return hash;
+        return result;
     }
 
     /**

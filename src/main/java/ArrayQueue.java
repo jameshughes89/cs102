@@ -125,7 +125,7 @@ public class ArrayQueue<T> implements Queue<T> {
         int result = Objects.hashCode(size);
         int currentIndex = front;
         for (int i = 0; i < size; i++) {
-            result += Objects.hashCode(queue[currentIndex]);
+            result = result * 97 + Objects.hashCode(queue[currentIndex]);
             currentIndex = nextIndex(currentIndex);
         }
         return result;
