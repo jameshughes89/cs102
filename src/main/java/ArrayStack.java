@@ -104,7 +104,7 @@ public class ArrayStack<T> implements Stack<T> {
     public final int hashCode() {
         int result = Objects.hash(top);
         for (int i = 0; i < Math.min(this.top, this.stack.length); i++) {
-            result = result * 97 + stack[i].hashCode();
+            result = result * 97 + Objects.hashCode(stack[i]);
         }
         return result;
     }
