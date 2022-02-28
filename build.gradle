@@ -39,10 +39,17 @@ task compressAssignment2(type: Zip) {
     from "src/site/data/Assignment2"
 }
 
+task compressAssignment3(type: Zip) {
+    archiveFileName = "Assignment3.zip"
+    destinationDirectory = file("src/site/data/")
+    from "src/site/data/Assignment3"
+}
+
 task site(type: PythonTask) {
     dependsOn(tasks.pipInstall)
     dependsOn(compressAssignment1)
     dependsOn(compressAssignment2)
+    dependsOn(compressAssignment3)
     module = 'sphinx'
     command = '-b html src/site build/site'
 }
