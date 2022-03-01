@@ -137,7 +137,7 @@ In order to complete the ``LinkedPriorityQueue``, you will need write a construc
     * ``int size()``
     * ``boolean isEmpty()``
 
-* You will also need to write a ``String toString()`` method for the class
+* You should also write a ``String toString()`` method for the class
 
 
 Implementing the Unit Tests
