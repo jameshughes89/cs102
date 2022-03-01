@@ -99,6 +99,16 @@ Part 2 --- Run Unit Tests
 Part 3 --- Complete ``LinkedPriorityQueue``
 ===========================================
 
+A priority queue is going to help with the implementation of the A* algorithm.
+`Feel free to read up on priority queues <https://en.wikipedia.org/wiki/Priority_queue>`_, but in short, a priority
+queue is a queue with a twist --- whenever you dequeue something, you get the element with the most important priority.
+In other words, you enqueue and dequeue things, but the order they come out is based on the priority value, not the
+standard FIFO of a regular queue.
+
+An example of this is triage at an emergency room: you may have arrived at the emergency room with a bad cut earlier
+than the person with a giant crack in their skull, but they will get seen before you given the severity of their injury.
+
+
 
 Part 4 --- Complete ``AStarMazeSolver``
 =======================================
