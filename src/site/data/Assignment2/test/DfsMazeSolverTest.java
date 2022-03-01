@@ -95,12 +95,11 @@ public class DfsMazeSolverTest {
             new Cell('E', 4, 3)
     );
 
-
     private MazeSolver classUnderTest;
 
     @BeforeEach
     void createMazeAndSolver() {
-        classUnderTest = new DfsMazeSolverTest();
+        classUnderTest = new DfsMazeSolver();
     }
 
     @Test
