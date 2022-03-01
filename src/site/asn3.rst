@@ -123,9 +123,25 @@ Notes About Your Implementation
 * :math:`f(x)` will be the *priority* of the cell :math:`x`
 
 
+Implementing the Class
+----------------------
+
+* Write the ``solve`` method to find an optimal path of the maze using A*
+
+The general idea is this
+
+    * Dequeue from the priority queue
+    * If it's the end, we're done
+    * If it's not, calculate all the neighbours' :math:`f(x)` (priority) and add each to the priority queue
+    * Repeat
+
+
+
 .. warning::
     Do not get distracted by your assignment 2 solution in ``DfsMazeSolver``. Although there are similarities, the
     actual algorithms have several noteworthy differences.
+
+
 
 
 Part 5 --- Putting it Together
