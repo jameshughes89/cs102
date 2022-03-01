@@ -82,6 +82,19 @@ taking the time to understand what is happening in the code, and how it does it,
 Part 2 --- Run Unit Tests
 =========================
 
+* Run all the tests for the maze package to make sure everything is working
+
+* All these tests should pass
+    * If not, something has gone wrong
+        * Did you change the code?
+        * Did your test folder get changed?
+        * Try re-downloading the project if they do not pass
+
+* You will notice the test classes ``AStarMazeSolverTest`` and ``LinkedPriorityQueueTest`` are provided, but incomplete
+    * They have empty tests left for you to complete in their respective parts discussed below
+
+* As discussed in Part 1, be sure to take your time to look through these test methods
+
 
 Part 3 --- Complete ``LinkedPriorityQueue``
 ===========================================
