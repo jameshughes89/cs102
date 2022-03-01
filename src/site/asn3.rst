@@ -9,6 +9,21 @@ Assignment #3: Maze Solver: Using Artificial Intelligence
 Task
 ====
 
+Your goal is to solve a maze, again, but this time with artificial intelligence (AI). You will implement the A* (A-star)
+algorithm, which in our case, is guaranteed to find an optimal solution.
+
+You will:
+
+* Write a ``LinkedPriorityQueue`` class that implements a ``PriorityQueue``
+    * This data structure greatly helps with the implementation of A*
+* Write a ``AStarMazeSolver`` class that implements the ``MazeSolver`` interface
+    * Within this class, you will write the ``solve`` method.
+* You will use the ``AStarMazeSolver``, along with some of the other provided classes, in the ``main`` to:
+    * Create the maze
+    * Solve the maze
+    * Print out the solution
+* You will also be testing your implementation with test classes
+
 
 Provided Files
 ==============
