@@ -104,6 +104,13 @@ Part 4 --- Complete ``AStarMazeSolver``
 =======================================
 
 
+
+
+.. warning::
+    Do not get distracted by your assignment 2 solution in ``DfsMazeSolver``. Although there are similarities, the
+    actual algorithms have several noteworthy differences.
+
+
 Part 5 --- Putting it Together
 ==============================
 
