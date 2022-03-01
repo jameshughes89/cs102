@@ -103,7 +103,14 @@ Part 3 --- Complete ``LinkedPriorityQueue``
 Part 4 --- Complete ``AStarMazeSolver``
 =======================================
 
+`Read up on the A* algorithm <https://en.wikipedia.org/wiki/A*_search_algorithm>`_. The linked article is great, and I
+am sure there are many YouTube videos on the subject.
 
+One of the key parts of A* is :math:`f(x) = g(x) + h(x)`.
+    * :math:`x` is some maze cell
+    * :math:`g(x)` is the cost of getting to :math:`x` from the start
+    * :math:`h(x)` is the heuristic's estimated cost of getting to the end from :math:`x`
+    * :math:`f(x)` is the total estimated cost of a path from start to finish going through :math:`x`
 
 
 .. warning::
