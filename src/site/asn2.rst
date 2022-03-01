@@ -113,7 +113,7 @@ go as deep as we can down a path until we find the end, or we find a dead end ne
 The general idea is this
 
     * Look at the top cell of the stack
-    * If it's the end, We're done
+    * If it's the end, we're done
     * If it's not, find an unvisited valid neighbour and push it on the stack
     * If there are no valid neighbours, we're at a dead end --- we must backtrack
     * Repeat
