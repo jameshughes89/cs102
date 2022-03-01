@@ -51,8 +51,9 @@ Provided Files
 
 .. warning::
 
-    When you open the project, IntelliJ may notify you about a missing JDK. If this is the case, simply select the
-    download link in the notification.
+    Java may say that it cannot find JUnit. If this happens, you need to add JUnit to the project. Simply follow the
+    first few steps of :doc:`Topic 6's aside on testing </topic6-testing>`.
+
 
 
 Part 0 --- Read the Assignment
