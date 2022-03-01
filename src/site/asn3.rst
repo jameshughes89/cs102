@@ -136,7 +136,11 @@ The general idea is this
     * Repeat
 
 
-
+* You'll need a way to keep track of the number of steps it took to get to a given cell
+    * Perhaps a ``Map``?
+* You'll need a way to keep track of each cell's predecessor in the path
+    * Which cell did I step from to get to the current cell?
+    * Perhaps a ``Map``?
 
 .. warning::
     Do not get distracted by your assignment 2 solution in ``DfsMazeSolver``. Although there are similarities, the
