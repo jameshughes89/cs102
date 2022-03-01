@@ -99,6 +99,58 @@ Part 2 --- Run Unit Tests
 Part 3 --- Complete ``LinkedPriorityQueue``
 ===========================================
 
+A priority queue is going to help with the implementation of the A* algorithm.
+`Feel free to read up on priority queues <https://en.wikipedia.org/wiki/Priority_queue>`_, but in short, a priority
+queue is a queue with a twist --- whenever you dequeue something, you get the element with the most important priority.
+In other words, you enqueue and dequeue things, but the order they come out is based on the priority value, not the
+standard FIFO of a regular queue.
+
+An example of this is triage at an emergency room: you may have arrived at the emergency room with a bad cut earlier
+than the person with a giant crack in their skull, but they will get seen before you given the severity of their injury.
+
+
+Notes About Your Implementation
+-------------------------------
+
+* You may find the regular ``LinkedPriorityQueue`` a good reference for starting
+* Have priority values that are lower be considered "more important" (lower values get dequeued first)
+* Given the definition, all that matters is that when something gets dequeued, it has the most important priority
+    * Do you write your enqueue such that you search for the correct insertion spot (:math:`O(n)`) and then always dequeue from the front (:math:`O(1)`)?
+    * Or have your enqueue always append to the end (:math:`O(1)`) and do a linear search for the most important priority on the dequeue (:math:`O(n)`)?
+    * I suggest you go with the former --- have the enqueue find the correct spot to add the element, and have the dequeue simply remove from the front
+* I provided an already complete ``equals`` and ``hashCode`` method for the ``LinkedPriorityQueue``
+    * Leave these alone
+    * Equals can be very difficult to write for collections, and this will help with testing
+* I provided a complete ``PriorityNode`` class contained within the ``LinkedPriorityQueue`` class
+    * Leave this alone
+
+
+Implementing the Class
+----------------------
+
+In order to complete the ``LinkedPriorityQueue``, you will need write a constructor and implement all the required methods:
+    * ``void enqueue(T element, int priority)``
+    * ``void enqueue(T element)``
+    * ``T dequeue()``
+    * ``T front()``
+    * ``int size()``
+    * ``boolean isEmpty()``
+
+* You should also write a ``String toString()`` method for the class
+
+
+Implementing the Unit Tests
+---------------------------
+
+The ``LinkedPriorityQueueTest`` class contains empty test methods, but each has a name that tells you what the test
+should do. You are to complete all these methods. As a starting point, look at the ``ArrayStackTest`` class provided in
+assignment 2.
+
+You do not need to test the provided ``equals`` method as I have already done that. Knowing you have a working
+``equals`` makes it safe to use ``assertEquals`` in the unit tests.
+
+Having complete tests should help you debugging issues you may have in your ``LinkedPriorityQueue`` class.
+
 
 Part 4 --- Complete ``AStarMazeSolver``
 =======================================
