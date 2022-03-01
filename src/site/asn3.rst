@@ -155,6 +155,59 @@ Having complete tests should help you debugging issues you may have in your ``Li
 Part 4 --- Complete ``AStarMazeSolver``
 =======================================
 
+`Read up on the A* algorithm <https://en.wikipedia.org/wiki/A*_search_algorithm>`_. The linked article is great, and I
+am sure there are many YouTube videos on the subject.
+
+One of the key parts of A* is :math:`f(x) = g(x) + h(x)`.
+    * :math:`x` is some maze cell
+    * :math:`g(x)` is the cost of getting to :math:`x` from the start
+    * :math:`h(x)` is the heuristic's estimated cost of getting to the end from :math:`x`
+    * :math:`f(x)` is the total estimated cost of a path from start to finish going through :math:`x`
+
+
+Notes About Your Implementation
+-------------------------------
+
+* :math:`g(x)` will be the number of steps it takes to get to :math:`x` from the start
+* :math:`h(x)` will be the estimated distance to the end from :math:`x` based on the `Manhattan Distance <https://en.wikipedia.org/wiki/Taxicab_geometry>`_
+    * :math:`\lvert x_{1} - x_{2} \rvert + \lvert y_{1} - y_{2} \rvert
+
+* :math:`f(x)` will be the *priority* of the cell :math:`x`
+
+
+Implementing the Class
+----------------------
+
+Write the ``solve`` method to find an optimal path of the maze using A*
+
+The general idea is this
+
+    * Dequeue from the priority queue
+    * If it's the end, we're done
+    * If it's not, calculate all the neighbours' :math:`f(x)` (priority) and add each to the priority queue
+    * Repeat
+
+
+* You'll need a way to keep track of the number of steps it took to get to a given cell
+    * Perhaps a ``Map``?
+* You'll need a way to keep track of each cell's predecessor in the path
+    * Which cell did I step from to get to the current cell?
+    * Perhaps a ``Map``?
+
+.. warning::
+    Do not get distracted by your assignment 2 solution in ``DfsMazeSolver``. Although there are similarities, the
+    actual algorithms have several noteworthy differences.
+
+
+Implementing the Unit Tests
+---------------------------
+
+The ``AStarMazeSolverTest`` class contains a few constants and empty test methods. The constants are provided to help
+with your tests. Each method has a name that tells you what the test should do. You are to complete all these methods.
+As a starting point, look at the ``DfsMazeSolverTest`` class provided in assignment 2.
+
+Having complete tests should help you debugging issues you may have in your ``AStarMazeSolver`` class.
+
 
 Part 5 --- Putting it Together
 ==============================
