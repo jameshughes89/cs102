@@ -111,12 +111,6 @@ working correctly by
     * Create your own maze programs and try running on them too
 
 
-
-Code Peculiarities of Note
-==========================
-
-
-
 Some Hints
 ==========
 
