@@ -1,6 +1,6 @@
-*********************************************************
-Assignment #3: Maze Solver: Using Artificial Intelligence
-*********************************************************
+********************************************************
+Assignment #3: Maze Solver: A Better Path is Also a Path
+********************************************************
 
 * **Worth**: 10%
 * **DUE**: March 28th 11:55pm; submitted on MOODLE.
