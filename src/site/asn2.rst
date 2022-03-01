@@ -31,7 +31,7 @@ You are provided with:
 * An ``ArrayStack`` class with ``ArrayStackTest`` unit tests
 * A ``Cell`` class with ``CellTest`` unit tests
 * A ``Maze`` class with ``MazeTest`` unit tests
-* A ``MazeRenderer`` class with ``MazeRenderer`` unit tests
+* A ``MazeRenderer`` class with ``MazeRendererTest`` unit tests
 * Two exceptions: ``LocationNotInMazeException`` and ``MazeEndpointsException``
 * A ``MazeSolver`` interface
 * A nearly empty ``DfsMazeSolver`` with a complete ``DfsMazeSolverTest``
