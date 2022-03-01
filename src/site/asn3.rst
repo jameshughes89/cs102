@@ -119,8 +119,10 @@ Notes About Your Implementation
     * Or have your enqueue always append to the end (:math:`O(1)`) and do a linear search for the most important priority on the dequeue (:math:`O(n)`)?
     * I suggest you go with the former --- have the enqueue find the correct spot to add the element, and have the dequeue simply remove from the front
 * I provided an already complete ``equals`` and ``hashCode`` method for the ``LinkedPriorityQueue``
+    * Leave these alone
     * Equals can be very difficult to write for collections, and this will help with testing
 * I provided a complete ``PriorityNode`` class contained within the ``LinkedPriorityQueue`` class
+    * Leave this alone 
 
 
 Implementing the Class
