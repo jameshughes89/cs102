@@ -131,7 +131,6 @@ Implementing the Class
 In order to complete the ``LinkedPriorityQueue``, you will need write a constructor and implement all the required methods:
     * ``void enqueue(T element, int priority)``
     * ``void enqueue(T element)``
-        * Just make this one call the other ``enqueue`` with ``Integer.MAX_VALUE``
     * ``T dequeue()``
     * ``T front()``
     * ``int size()``
