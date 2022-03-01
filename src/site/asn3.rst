@@ -23,6 +23,11 @@ Provided Files
     When you open the project, IntelliJ may notify you about a missing JDK. If this is the case, simply select the
     download link in the notification.
 
+.. warning::
+
+    When you open the project, IntelliJ may notify you about a missing JDK. If this is the case, simply select the
+    download link in the notification.
+
 
 Part 0 --- Read the Assignment
 ==============================
