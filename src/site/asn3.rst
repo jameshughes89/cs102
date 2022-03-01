@@ -109,6 +109,21 @@ An example of this is triage at an emergency room: you may have arrived at the e
 than the person with a giant crack in their skull, but they will get seen before you given the severity of their injury.
 
 
+Notes About Your Implementation
+-------------------------------
+
+* You may find the regular ``LinkedPriorityQueue`` a good reference for starting
+* Have priority values that are lower be considered "more important" (lower values get dequeued first)
+* Given the definition, all that matters is that when something gets dequeued, it has the most important priority
+    * Do you write your enqueue such that you search for the correct insertion spot (:math:`O(n)`) and then always dequeue from the front (:math:`O(1)`)?
+    * Or have your enqueue always append to the end (:math:`O(1)`) and do a linear search for the most important priority on the dequeue (:math:`O(n)`)?
+    * I suggest you go with the former --- have the enqueue find the correct spot to add the element, and have the dequeue simply remove from the front
+* I provided an already complete ``equals`` and ``hashCode`` method for the ``LinkedPriorityQueue``
+    * Equals can be very difficult to write for collections, and this will help with testing
+* I provided a complete ``PriorityNode`` class contained within the ``LinkedPriorityQueue`` class
+
+
+
 
 Part 4 --- Complete ``AStarMazeSolver``
 =======================================
