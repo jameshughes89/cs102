@@ -123,6 +123,21 @@ Notes About Your Implementation
 * I provided a complete ``PriorityNode`` class contained within the ``LinkedPriorityQueue`` class
 
 
+Implementing the Class
+----------------------
+
+In order to complete the ``LinkedPriorityQueue``, you will need write a constructor and implement all the required methods:
+    * ``void enqueue(T element, int priority)``
+    * ``void enqueue(T element)``
+        * Just make this one call the other ``enqueue`` with ``Integer.MAX_VALUE``
+    * ``T dequeue()``
+    * ``T front()``
+    * ``int size()``
+    * ``boolean isEmpty()``
+
+* You will also need to write a ``String toString()`` method for the class
+
+
 
 
 Part 4 --- Complete ``AStarMazeSolver``
