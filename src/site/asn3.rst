@@ -28,6 +28,17 @@ You will:
 Provided Files
 ==============
 
+* A **package** called maze containing all the relevant maze code from the previous assignment (this helps with organization)
+    * A ``Cell`` class with ``CellTest`` unit tests
+    * A ``Maze`` class with ``MazeTest`` unit tests
+    * A ``MazeRenderer`` class with ``MazeRendererTest`` unit tests
+    * Two exceptions: ``LocationNotInMazeException`` and ``MazeEndpointsException``
+    * A ``MazeSolver`` interface
+* A ``Queue`` and ``PriorityQueue`` interface
+* A mostly empty ``LinkedPriorityQueue`` class with a ``LinkedPriorityQueueTest`` class containing empty tests
+* A nearly empty ``AStarMazeSolver`` with an ``AStarMazeSolverTest`` class containing empty tests
+* An ``Asn3`` class with an empty ``main``
+* Three maze files
 
 * :download:`All of this can be downloaded from here<./data/Assignment3.zip>`
     * This is a compressed IntelliJ project
