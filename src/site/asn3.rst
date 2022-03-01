@@ -122,7 +122,7 @@ Notes About Your Implementation
     * Leave these alone
     * Equals can be very difficult to write for collections, and this will help with testing
 * I provided a complete ``PriorityNode`` class contained within the ``LinkedPriorityQueue`` class
-    * Leave this alone 
+    * Leave this alone
 
 
 Implementing the Class
@@ -140,6 +140,15 @@ In order to complete the ``LinkedPriorityQueue``, you will need write a construc
 * You will also need to write a ``String toString()`` method for the class
 
 
+Implementing the Unit Tests
+---------------------------
+
+The ``LinkedPriorityQueueTest`` class contains empty test methods, but each has a name that tells you what the test
+should do. You are to complete all these methods. As a starting point, look at the ``ArrayStackTest`` class provided in
+assignment 2.
+
+You do not need to test the provided ``equals`` method as I have already done that. Knowing you have a working
+``equals`` makes it safe to use ``assertEquals`` in the unit tests.
 
 
 Part 4 --- Complete ``AStarMazeSolver``
