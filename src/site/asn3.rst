@@ -126,7 +126,7 @@ Notes About Your Implementation
 Implementing the Class
 ----------------------
 
-* Write the ``solve`` method to find an optimal path of the maze using A*
+Write the ``solve`` method to find an optimal path of the maze using A*
 
 The general idea is this
 
@@ -134,6 +134,7 @@ The general idea is this
     * If it's the end, we're done
     * If it's not, calculate all the neighbours' :math:`f(x)` (priority) and add each to the priority queue
     * Repeat
+
 
 
 
