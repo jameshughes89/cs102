@@ -147,6 +147,14 @@ The general idea is this
     actual algorithms have several noteworthy differences.
 
 
+Implementing the Unit Tests
+---------------------------
+
+The ``AStarMazeSolverTest`` class contains a few constants and empty test methods. The constants are provided to help
+with your tests. Each method has a name that tells you what the test should do. You are to complete all these methods.
+As a starting point, look at the ``DfsMazeSolverTest`` class provided in assignment 2.
+
+Having complete tests should help you debugging issues you may have in your ``AStarMazeSolver`` class.
 
 
 Part 5 --- Putting it Together
