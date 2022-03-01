@@ -113,6 +113,16 @@ One of the key parts of A* is :math:`f(x) = g(x) + h(x)`.
     * :math:`f(x)` is the total estimated cost of a path from start to finish going through :math:`x`
 
 
+Notes About Your Implementation
+-------------------------------
+
+* :math:`g(x)` will be the number of steps it takes to get to :math:`x` from the start
+* :math:`h(x)` will be the estimated distance to the end from :math:`x` based on the `Manhattan Distance <https://en.wikipedia.org/wiki/Taxicab_geometry>`_
+    * :math:`\lvert x_{1} - x_{2} \rvert + \lvert y_{1} - y_{2} \rvert
+
+* :math:`f(x)` will be the *priority* of the cell :math:`x`
+
+
 .. warning::
     Do not get distracted by your assignment 2 solution in ``DfsMazeSolver``. Although there are similarities, the
     actual algorithms have several noteworthy differences.
