@@ -149,7 +149,7 @@ assignment 2.
 You do not need to test the provided ``equals`` method as I have already done that. Knowing you have a working
 ``equals`` makes it safe to use ``assertEquals`` in the unit tests.
 
-Having complete tests should help you debugging issues you may have in your ``LinkedPriorityQueue`` class.
+Having complete tests should help you debug issues you may have in your ``LinkedPriorityQueue`` class.
 
 
 Part 4 --- Complete ``AStarMazeSolver``
