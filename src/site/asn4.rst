@@ -90,8 +90,19 @@ Both types of nodes have a weight; leaf nodes have a weight equal to the number 
 within some string, and the internal nodes' weight is the sum of their left and right subtrees' weights.
 
 
-Implementing the Class
-----------------------
+Implementing the Classes
+------------------------
+
+You are provided with a complete ``HuffmanNode`` interface that will be implemented by the ``HuffmanLeaf`` and
+``HuffmanInternal`` classes. You will notice that the interface is very short --- ``getWeight()``.
+
+Both the ``HuffmanLeaf`` and ``HuffmanInternal`` will have a ``weight`` field, but the ``HuffmanLeaf`` will also need to
+keep track of which character it has, and the ``HuffmanInternal`` needs references to its left and right subtrees.
+
+Only worry about writing getters for these classes as we will never be updating any of the fields after the objects are
+initialized. 
+
+To help with testing, also write a ``toString`` method.
 
 
 Implementing the Unit Tests
