@@ -63,6 +63,12 @@ Read the assignment description in its entirety before starting.
 Part 1 --- Read Up on Huffman Codes
 ===================================
 
+Read up on Huffman Codes. `The Wikipedia page gives details <https://en.wikipedia.org/wiki/Huffman_coding>`_ but I did
+not find it to be all that helpful myself. I suggest you do some digging around online or find some YouTube videos that
+explain all the details.
+
+
+
 
 Part 2 --- Complete Huffman Nodes
 =================================
