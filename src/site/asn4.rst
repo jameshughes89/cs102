@@ -67,7 +67,13 @@ Read up on Huffman Codes. `The Wikipedia page gives details <https://en.wikipedi
 not find it to be all that helpful myself. I suggest you do some digging around online or find some YouTube videos that
 explain all the details.
 
+Things of note related to Huffman Codes to look out for
 
+    * How data is stored within nodes in a binary tree structure
+    * How a priority queue can be used
+    * How the nodes are ordered
+    * How to encode
+    * How to decode
 
 
 Part 2 --- Complete Huffman Nodes
