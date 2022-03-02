@@ -80,6 +80,15 @@ Things of note related to Huffman Codes to look out for
 Part 2 --- Complete Huffman Nodes
 =================================
 
+The Huffman nodes are an important piece of the Huffman Codes. Based on your reading of Huffman Codes, you will have
+learned that there are two types of nodes
+
+    * Nodes that store a character and it's weight (leaf nodes)
+    * Nodes that have a left and right subtree and a weight (internal nodes)
+
+Both types of nodes have a weight; leaf nodes have a weight equal to the number of times a given character is contained
+within some string, and the internal nodes' weight is the sum of their left and right subtrees' weights.
+
 
 Notes About Your Implementation
 -------------------------------
