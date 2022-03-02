@@ -304,7 +304,7 @@ FAQ:
     * OK, go to `google.ca <https://www.google.ca>`_ and type in *X*.
 
 * You have asked us to do something you never taught us.
-    * Good thing google exists and you're capable of learning learn on your own.
+    * Good thing google exists and you're capable of learning on your own.
     * Jokes aside, reading docs and figuring out how to do stuff is a huge part of your job.
 
 * Can I email you or the TA for help?
