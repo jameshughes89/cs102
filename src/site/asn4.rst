@@ -28,7 +28,6 @@ You will:
 * You will also be testing your implementation with test classes
 
 
-
 Provided Files
 ==============
 
