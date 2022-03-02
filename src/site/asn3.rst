@@ -16,9 +16,9 @@ You will:
 
 * Write a ``LinkedPriorityQueue`` class that implements a ``PriorityQueue``
     * This data structure greatly helps with the implementation of A*
-* Write a ``AStarMazeSolver`` class that implements the ``MazeSolver`` interface
-    * Within this class, you will write the ``solve`` method.
-* You will use the ``AStarMazeSolver``, along with some of the other provided classes, in the ``main`` to:
+* Write an ``AStarMazeSolver`` class that implements the ``MazeSolver`` interface
+    * Within this class, you will write the ``solve`` method
+* You will use the ``AStarMazeSolver``, along with some of the other provided classes, in the ``main`` to
     * Create the maze
     * Solve the maze
     * Print out the solution
