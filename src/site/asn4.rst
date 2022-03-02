@@ -9,6 +9,23 @@ Assignment #4: 1100010110111010001110110100111110001001
 Task
 ====
 
+Your goal is to compress data such that they take up less space, but can be uncompressed without losing any information.
+You implement Huffman Coding as the compression mechanism. The data will be compressed with an encoding process, and
+uncompressed with a decoding process.
+
+You will:
+
+* Write ``HuffmanLeaf`` and ``HuffmanInternal`` classes that implements ``HuffmanNode``
+    * These will help with the creation of the Huffman Codes
+* Write a ``HuffmanNodeComparator`` class that implements the ``Comparator`` interface
+    * This is what defines the order of the ``HuffmanNode`` objects
+* Write a ``HuffmanCode`` class that will encode and decode strings
+* You will use the ``HuffmanCode`` in the ``main`` to
+    * Encode strings
+    * Decode strings
+    * Measure the compression percentage
+* You will also be testing your implementation with test classes
+
 
 Provided Files
 ==============
