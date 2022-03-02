@@ -63,6 +63,19 @@ Read the assignment description in its entirety before starting.
 Part 1 --- Read Up on Huffman Codes
 ===================================
 
+Read up on Huffman Codes. Be sure to dig deeper than just how it is used to compress data. You will want to see how it
+works. `The Wikipedia page gives details <https://en.wikipedia.org/wiki/Huffman_coding>`_ but I did not find it to be
+all that helpful myself. I suggest you do some digging around online or find some YouTube videos that
+explain the details.
+
+Things of note related to Huffman Codes to look out for
+
+    * How data is stored within nodes in a binary tree structure
+    * How a priority queue can be used
+    * How the nodes are ordered
+    * How to encode
+    * How to decode
+
 
 Part 2 --- Complete Huffman Nodes
 =================================
