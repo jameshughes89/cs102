@@ -181,7 +181,7 @@ Notes About Your Implementation
 Implementing the Class
 ----------------------
 
-Write the ``solve`` method to find an optimal path of the maze using A*
+Write the ``solve`` method to find an optimal path in the maze using A*.
 
 The general idea is this
 
@@ -210,7 +210,7 @@ The ``AStarMazeSolverTest`` class contains a few constants and empty test method
 with your tests. Each method has a name that tells you what the test should do. You are to complete all these methods.
 As a starting point, look at the ``DfsMazeSolverTest`` class provided in assignment 2.
 
-Having complete tests should help you debugging issues you may have in your ``AStarMazeSolver`` class.
+Having complete tests should help you debug issues you may have in your ``AStarMazeSolver`` class.
 
 
 Part 5 --- Putting it Together
