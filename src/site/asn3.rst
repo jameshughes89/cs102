@@ -173,7 +173,7 @@ Notes About Your Implementation
 
 * :math:`g(x)` will be the number of steps it takes to get to :math:`x` from the start
 * :math:`h(x)` will be the estimated distance to the end from :math:`x` based on the `Manhattan Distance <https://en.wikipedia.org/wiki/Taxicab_geometry>`_
-    * :math:`\lvert x_{1} - x_{2} \rvert + \lvert y_{1} - y_{2} \rvert
+    * :math:`\lvert x_{1} - x_{2} \rvert + \lvert y_{1} - y_{2} \rvert`
 
 * :math:`f(x)` will be the *priority* of the cell :math:`x`
 
