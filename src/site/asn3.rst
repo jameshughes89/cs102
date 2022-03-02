@@ -149,7 +149,7 @@ assignment 2.
 You do not need to test the provided ``equals`` method as I have already done that. Knowing you have a working
 ``equals`` makes it safe to use ``assertEquals`` in the unit tests.
 
-Having complete tests should help you debug issues you may have in your ``LinkedPriorityQueue`` class.
+Having complete tests should help you debug your ``LinkedPriorityQueue`` class.
 
 
 Part 4 --- Complete ``AStarMazeSolver``
@@ -210,7 +210,7 @@ The ``AStarMazeSolverTest`` class contains a few constants and empty test method
 with your tests. Each method has a name that tells you what the test should do. You are to complete all these methods.
 As a starting point, look at the ``DfsMazeSolverTest`` class provided in assignment 2.
 
-Having complete tests should help you debug issues you may have in your ``AStarMazeSolver`` class.
+Having complete tests should help you debug your ``AStarMazeSolver`` class.
 
 
 Part 5 --- Putting it Together
