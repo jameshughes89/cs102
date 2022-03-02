@@ -16,9 +16,9 @@ You will:
 
 * Write a ``LinkedPriorityQueue`` class that implements a ``PriorityQueue``
     * This data structure greatly helps with the implementation of A*
-* Write a ``AStarMazeSolver`` class that implements the ``MazeSolver`` interface
-    * Within this class, you will write the ``solve`` method.
-* You will use the ``AStarMazeSolver``, along with some of the other provided classes, in the ``main`` to:
+* Write an ``AStarMazeSolver`` class that implements the ``MazeSolver`` interface
+    * Within this class, you will write the ``solve`` method
+* You will use the ``AStarMazeSolver``, along with some of the other provided classes, in the ``main`` to
     * Create the maze
     * Solve the maze
     * Print out the solution
@@ -28,14 +28,14 @@ You will:
 Provided Files
 ==============
 
-* A **package** called maze containing all the relevant maze code from the previous assignment (this helps with organization)
+* A **package** called maze containing all the relevant maze code from the previous assignment (using a package helps with organization)
     * A ``Cell`` class with ``CellTest`` unit tests
     * A ``Maze`` class with ``MazeTest`` unit tests
     * A ``MazeRenderer`` class with ``MazeRendererTest`` unit tests
     * Two exceptions: ``LocationNotInMazeException`` and ``MazeEndpointsException``
     * A ``MazeSolver`` interface
 * A ``Queue`` and ``PriorityQueue`` interface
-* A mostly empty ``LinkedPriorityQueue`` class with a ``LinkedPriorityQueueTest`` class containing empty tests
+* A nearly empty ``LinkedPriorityQueue`` class with a ``LinkedPriorityQueueTest`` class containing empty tests
 * A nearly empty ``AStarMazeSolver`` with an ``AStarMazeSolverTest`` class containing empty tests
 * An ``Asn3`` class with an empty ``main``
 * Three maze files
@@ -149,7 +149,7 @@ assignment 2.
 You do not need to test the provided ``equals`` method as I have already done that. Knowing you have a working
 ``equals`` makes it safe to use ``assertEquals`` in the unit tests.
 
-Having complete tests should help you debugging issues you may have in your ``LinkedPriorityQueue`` class.
+Having complete tests should help you debug your ``LinkedPriorityQueue`` class.
 
 
 Part 4 --- Complete ``AStarMazeSolver``
@@ -158,7 +158,10 @@ Part 4 --- Complete ``AStarMazeSolver``
 `Read up on the A* algorithm <https://en.wikipedia.org/wiki/A*_search_algorithm>`_. The linked article is great, and I
 am sure there are many YouTube videos on the subject.
 
-One of the key parts of A* is :math:`f(x) = g(x) + h(x)`.
+One of the key parts of A* is the estimated cost function
+
+    :math:`f(x) = g(x) + h(x)`
+
     * :math:`x` is some maze cell
     * :math:`g(x)` is the cost of getting to :math:`x` from the start
     * :math:`h(x)` is the heuristic's estimated cost of getting to the end from :math:`x`
@@ -170,7 +173,7 @@ Notes About Your Implementation
 
 * :math:`g(x)` will be the number of steps it takes to get to :math:`x` from the start
 * :math:`h(x)` will be the estimated distance to the end from :math:`x` based on the `Manhattan Distance <https://en.wikipedia.org/wiki/Taxicab_geometry>`_
-    * :math:`\lvert x_{1} - x_{2} \rvert + \lvert y_{1} - y_{2} \rvert
+    * :math:`\lvert x_{1} - x_{2} \rvert + \lvert y_{1} - y_{2} \rvert`
 
 * :math:`f(x)` will be the *priority* of the cell :math:`x`
 
@@ -178,7 +181,7 @@ Notes About Your Implementation
 Implementing the Class
 ----------------------
 
-Write the ``solve`` method to find an optimal path of the maze using A*
+Write the ``solve`` method to find an optimal path in the maze using A*.
 
 The general idea is this
 
@@ -207,7 +210,7 @@ The ``AStarMazeSolverTest`` class contains a few constants and empty test method
 with your tests. Each method has a name that tells you what the test should do. You are to complete all these methods.
 As a starting point, look at the ``DfsMazeSolverTest`` class provided in assignment 2.
 
-Having complete tests should help you debugging issues you may have in your ``AStarMazeSolver`` class.
+Having complete tests should help you debug your ``AStarMazeSolver`` class.
 
 
 Part 5 --- Putting it Together
@@ -215,7 +218,7 @@ Part 5 --- Putting it Together
 
 Once you are comfortable that your ``LinkedPriorityQueue`` and ``AStarMazeSolver`` are working correctly, write your
 main method. Expect it to be short (less than 10 lines); if your main is long, you're probably doing something wrong and
-working too hard. If you very likely find that your main method is remarkably similar to the one from assignment 2.
+working too hard. You will likely find that your main method is remarkably similar to the one from assignment 2.
 
 In order to actually solve a maze, you need
 
