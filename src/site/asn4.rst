@@ -90,10 +90,6 @@ Both types of nodes have a weight; leaf nodes have a weight equal to the number 
 within some string, and the internal nodes' weight is the sum of their left and right subtrees' weights.
 
 
-Notes About Your Implementation
--------------------------------
-
-
 Implementing the Class
 ----------------------
 
