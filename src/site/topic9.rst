@@ -43,7 +43,7 @@ Growth Function
 * Here is an arbitrary growth function
     * At this stage, don't worry about how we got it as we will come back to that
 
-    :math:`t(n) = 15n^{2} + 25n`
+    :math:`t(n) = 15n^{2} + 45n`
 
 
 .. image:: img/complexity_table.png
