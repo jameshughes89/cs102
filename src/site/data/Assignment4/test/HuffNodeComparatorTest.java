@@ -26,5 +26,39 @@ public class HuffNodeComparatorTest {
 
     private HuffmanNodeComparator classUnderTest;
 
+    @BeforeEach
+    void createComparator() {
+        classUnderTest = new HuffmanNodeComparator();
+    }
 
+    @Test
+    void compare_unsortedList_sortsList() {
+        List<HuffmanNode> sorted = List.of(
+                SMALLER_WEIGHT_LEAF,
+                SMALLER_WEIGHT_INTERNAL,
+                SMALLER_ASCII_LEAF,
+                TEST_LEAF,
+                LARGER_ASCII_LEAF,
+                TEST_INTERNAL,
+                LARGER_WEIGHT_LEAF,
+                LARGER_WEIGHT_INTERNAL
+        );
+        List<HuffmanNode> unsorted = new ArrayList<>(sorted);
+        Collections.shuffle(unsorted);
+        unsorted.sort(classUnderTest);
+        assertEquals(sorted, unsorted);
+    }
+
+    @Test
+    void compare_vsEqualAsciiLeaf_returnsZero() {
+        // This should never happen in practice
+        int compared = classUnderTest.compare(TEST_LEAF, EQUAL_ASCII_LEAF);
+        assertEquals(0, compared);
+    }
+
+    @Test
+    void compare_vsEqualWeightInternal_returnsZero() {
+        int compared = classUnderTest.compare(TEST_INTERNAL, EQUAL_WEIGHT_INTERNAL);
+        assertEquals(0, compared);
+    }
 }
