@@ -13,6 +13,14 @@ Task
 Provided Files
 ==============
 
+* A complete ``HuffmanNode`` interface
+* A nearly empty ``HuffmanLeaf`` class with a skeleton ``HuffmanLeafTest`` class
+* A nearly empty ``HuffmanInternal`` class with a skeleton ``HuffmanInternalTest`` class
+* A skeleton ``HuffmanNodeComparator`` class with a complete ``HuffmanNodeComparatorTest`` class
+* A skeleton ``HuffmanCode`` class with a skeleton ``HuffmanCodeTest`` class
+* An ``Asn4`` class with an empty ``main``
+* A text file that may be used to seed the Huffman Code
+
 
 * :download:`All of this can be downloaded from here<./data/Assignment4.zip>`
     * This is a compressed IntelliJ project
