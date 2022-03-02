@@ -14,6 +14,20 @@ You implement Huffman Coding as the compression mechanism. The data will be comp
 uncompressed with a decoding process. Additionally, Huffman Coding can be used as an encryption mechanism with
 pre-shared keys.
 
+You will:
+
+* Write ``HuffmanLeaf`` and ``HuffmanInternal`` classes that implements ``HuffmanNode``
+    * These will help with the creation of the Huffman Codes
+* Write a ``HuffmanNodeComparator`` class that implements the ``Comparator`` interface
+    * This is what defines the order of the ``HuffmanNode`` objects
+* Write a ``HuffmanCode`` class that will encode and decode strings
+* You will use the ``HuffmanCode`` in the ``main`` to
+    * Encode strings
+    * Decode strings
+    * Measure the compression percentage
+* You will also be testing your implementation with test classes
+
+
 
 Provided Files
 ==============
