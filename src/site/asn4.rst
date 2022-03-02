@@ -100,13 +100,17 @@ Both the ``HuffmanLeaf`` and ``HuffmanInternal`` will have a ``weight`` field, b
 keep track of which character it has, and the ``HuffmanInternal`` needs references to its left and right subtrees.
 
 Only worry about writing getters for these classes as we will never be updating any of the fields after the objects are
-initialized. 
+initialized.
 
 To help with testing, also write a ``toString`` method.
 
 
 Implementing the Unit Tests
 ---------------------------
+
+There are skeleton test classes with incomplete test methods for each of the node types. The method names should give
+you a good enough idea about what each method should be testing. Complete the unit tests and ensure the node classes you
+wrote are working correctly.
 
 
 Part 3 --- Complete ``HuffmanNodeComparator``
