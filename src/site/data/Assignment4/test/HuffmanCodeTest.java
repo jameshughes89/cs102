@@ -54,5 +54,66 @@ public class HuffmanCodeTest {
 
     private HuffmanCode classUnderTest;
 
+    @Test
+    void fromString_emptyString_throwsIllegalArgumentException() {
 
+    }
+
+    @Nested
+    class SimpleString {
+
+        static Stream<String> sourceKeysSimple() {
+            return SIMPLE_PREFIX.keySet().stream();
+        }
+
+        @BeforeEach
+        void create_HuffmanCode() {
+
+        }
+
+        @ParameterizedTest
+        @MethodSource("sourceKeysSimple")
+        void encode_specificLetter_returnsLetterCode(String letter) {
+
+        }
+
+        @Test
+        void encode_exampleString_returnsEncodedString() {
+
+        }
+
+        @Test
+        void decode_encodedString_returnsOriginalString() {
+
+        }
+    }
+
+    @Nested
+    class WikiString {
+
+        static Stream<String> sourceKeysWiki() {
+            return WIKI_PREFIX.keySet().stream();
+        }
+
+        @BeforeEach
+        void create_HuffmanCode() {
+            classUnderTest = HuffmanCode.fromString(WIKI_SEED);
+        }
+
+        @ParameterizedTest
+        @MethodSource("sourceKeysWiki")
+        void encode_specificLetter_returnsLetterCode(String letter) {
+
+        }
+
+        @Test
+        void encode_exampleString_returnsEncodedString() {
+
+        }
+
+        @Test
+        void fromFile_encoding_sameAsFromStringEncoding() {
+
+        }
+    }
 }
