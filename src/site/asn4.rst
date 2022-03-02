@@ -11,8 +11,7 @@ Task
 
 Your goal is to compress data such that they take up less space, but can be uncompressed without losing any information.
 You implement Huffman Coding as the compression mechanism. The data will be compressed with an encoding process, and
-uncompressed with a decoding process. Additionally, Huffman Coding can be used as an encryption mechanism with
-pre-shared keys.
+uncompressed with a decoding process.
 
 You will:
 
