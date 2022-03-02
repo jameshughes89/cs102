@@ -218,7 +218,7 @@ Part 5 --- Putting it Together
 
 Once you are comfortable that your ``LinkedPriorityQueue`` and ``AStarMazeSolver`` are working correctly, write your
 main method. Expect it to be short (less than 10 lines); if your main is long, you're probably doing something wrong and
-working too hard. If you very likely find that your main method is remarkably similar to the one from assignment 2.
+working too hard. You will likely find that your main method is remarkably similar to the one from assignment 2.
 
 In order to actually solve a maze, you need
 
