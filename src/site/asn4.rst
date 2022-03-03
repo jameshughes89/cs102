@@ -170,6 +170,11 @@ from java.util. <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/ja
 Implementing the Class
 ----------------------
 
+Your class should have at least one field --- a reverence to the root of the Huffman Tree. As discussed above, it is
+recommended that you also include another field --- a map storing each character's bit string encoding.
+
+
+
 
 
 
