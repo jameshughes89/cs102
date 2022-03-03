@@ -156,6 +156,8 @@ Notes About Your Implementation
 * You will want to use a ``PrioriryQueue``, but instead of implementing one on your own, `this time you will use the one
 from java.util. <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/PriorityQueue.html>`_
     * `Make use of the constructor that takes a comparator <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/PriorityQueue.html#%3Cinit%3E(java.util.Comparator)>`_
+    * Take care to notice the methods as this implementation does not call their add/remove ``enqueue``/``dequeue``
+
 
 * You will be making use of factory methods for instantiating the objects
     * Refer to the ``Maze`` class from assignments 2 and 3
