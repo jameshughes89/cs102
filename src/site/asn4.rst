@@ -102,18 +102,12 @@ A ``Comparator`` is a very similar idea to ``comparable``, but it allows for mor
 orderings.
 
 
-
-
-Notes About Your Implementation
--------------------------------
-
-
 Implementing the Class
 ----------------------
 
 
-Implementing the Unit Tests
----------------------------
+Run the Unit Tests
+------------------
 
 
 Part 4 --- Complete ``HuffmanCode``
