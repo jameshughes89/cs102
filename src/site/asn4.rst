@@ -110,7 +110,8 @@ Write the ``int compare(HuffmanNode huff1, HuffmanNode huff2)`` method in the pr
 You must have ``compare`` return a negative integer if ``huff1 < huff2``, zero if ``huff1 == huff2``, and a positive
 number if ``huff1 > huff2``.
 
-Make sure you have a good sense of the order the ``HuffmanNode`` objects have
+Make sure you have a good sense of the order the ``HuffmanNode`` objects must have based on the Huffman Code compression
+strategy
 
     * Nodes with smaller weights come first
     * If a leaf and an internal node have the same weight, the leaf comes first
