@@ -150,6 +150,12 @@ Part 4 --- Complete ``HuffmanCode``
 Notes About Your Implementation
 -------------------------------
 
+* You will be making use of factory methods for instantiating the objects
+    * Refer to the ``Maze`` class from assignments 2 and 3
+    * I have provided you with an already complete ``fromFile`` factory method
+    * Make your constructor private
+
+
 
 Implementing the Class
 ----------------------
