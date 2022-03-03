@@ -171,9 +171,14 @@ Implementing the Class
 ----------------------
 
 
+
+
 Implementing the Unit Tests
 ---------------------------
 
+There is a skeleton test class with incomplete test methods for the ``HuffmanCode`` class. The method names should give
+you a good enough idea about what each method should be testing. Complete the unit tests and ensure the class you wrote
+is working correctly.
 
 Part 5 --- Putting it Together
 ==============================
