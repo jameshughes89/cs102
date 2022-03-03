@@ -96,6 +96,13 @@ Implementing the Unit Tests
 Part 3 --- Complete ``HuffmanNodeComparator``
 =============================================
 
+Although we have seen ``comparable`` when implementing the ``ArraySortedBag`` and ``LinkedBinarySearchTree``, here we
+make use of a `Comparator <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Comparable.html>`_ .
+A ``Comparator`` is a very similar idea to ``comparable``, but it allows for more flexibility when needing to define more complex
+orderings.
+
+
+
 
 Notes About Your Implementation
 -------------------------------
