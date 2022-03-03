@@ -183,7 +183,6 @@ To calculate the compression percentage, we will make a few assumptions
         * In reality, we are storing the 0s and 1s in a string, meaning each is actually a character that takes up 8 bits, but we will ignore this here
 
 
-
 Part 6 --- Testing
 ==================
 
