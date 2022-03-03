@@ -155,6 +155,9 @@ Notes About Your Implementation
     * I have provided you with an already complete ``fromFile`` factory method
     * Make your constructor private
 
+* Under the hood, this class is creating and storing a binary tree of ``HuffmanNode`` objects
+* I recommend having a field within the class that stores each character's encoding in a ``Map<Character, String>``
+* Do not be afraid to make use of private helper methods
 
 
 Implementing the Class
