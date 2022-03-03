@@ -182,6 +182,7 @@ the class and return a reference to a ``HuffmanCode`` object. Expect this method
     * Populate the character map
     * Return a new ``HuffmanCode``
 
+I suggest making a private method with recursive traversal through the tree for populating the map
 
 
 
