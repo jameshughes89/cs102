@@ -162,6 +162,20 @@ Implementing the Unit Tests
 Part 5 --- Putting it Together
 ==============================
 
+Once everything is done, write the ``main`` method to compress some strings. Like the previous assignments, this method
+will likely be short.
+
+This method must
+
+    * Create a ``HuffmanCode`` instance from a string or a file
+    * Encode some string
+    * Decode the string
+    * Print out the original, encoded, and decoded strings
+    * Print out the percentage the message got compressed
+
+
+
+
 
 Part 6 --- Testing
 ==================
