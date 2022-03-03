@@ -97,7 +97,8 @@ You are provided with a complete ``HuffmanNode`` interface that will be implemen
 ``HuffmanInternal`` classes. You will notice that the interface is very short --- ``getWeight()``.
 
 Both the ``HuffmanLeaf`` and ``HuffmanInternal`` will have a ``weight`` field, but the ``HuffmanLeaf`` will also need to
-keep track of which character it has, and the ``HuffmanInternal`` needs references to its left and right subtrees.
+keep track of which character it has. Have your constructor for the leaf nodes always convert the character to lower
+case. Additionally, the ``HuffmanInternal`` needs references to its left and right subtrees.
 
 Only worry about writing getters for these classes as we will never be updating any of the fields after the objects are
 initialized.
