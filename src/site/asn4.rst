@@ -80,17 +80,38 @@ Things of note related to Huffman Codes to look out for
 Part 2 --- Complete Huffman Nodes
 =================================
 
+The Huffman nodes are an important piece of the Huffman Codes. Based on your reading of Huffman Codes, you will have
+learned that there are two types of nodes
 
-Notes About Your Implementation
--------------------------------
+    * Nodes that store a character and it's weight (leaf nodes)
+    * Nodes that have a left and right subtree and a weight (internal nodes)
+
+Both types of nodes have a weight; leaf nodes have a weight equal to the number of times a given character is contained
+within some string, and the internal nodes' weight is the sum of their left and right subtrees' weights.
 
 
-Implementing the Class
-----------------------
+Implementing the Classes
+------------------------
+
+You are provided with a complete ``HuffmanNode`` interface that will be implemented by the ``HuffmanLeaf`` and
+``HuffmanInternal`` classes. You will notice that the interface is very short --- ``getWeight()``.
+
+Both the ``HuffmanLeaf`` and ``HuffmanInternal`` will have a ``weight`` field, but the ``HuffmanLeaf`` will also need to
+keep track of which character it has. Have your constructor for the leaf nodes always convert the character to lower
+case. Additionally, the ``HuffmanInternal`` needs references to its left and right subtrees.
+
+Only worry about writing getters for these classes as we will never be updating any of the fields after the objects are
+initialized.
+
+To help with testing, also write a ``toString`` method.
 
 
 Implementing the Unit Tests
 ---------------------------
+
+There are skeleton test classes with incomplete test methods for each of the node types. The method names should give
+you a good enough idea about what each method should be testing. Complete the unit tests and ensure the node classes you
+wrote are working correctly.
 
 
 Part 3 --- Complete ``HuffmanNodeComparator``
