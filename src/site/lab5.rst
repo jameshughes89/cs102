@@ -46,7 +46,7 @@ Create the Linked Structure
 
     .. code-block:: java
 
-        public static <T> Node<T> makeLinkedStructure() {
+        public static Node<Integer> makeLinkedStructure() {
             // Stuff
         }
 
