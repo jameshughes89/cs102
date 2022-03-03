@@ -125,6 +125,10 @@ something of type (or subtype) of ``HuffmanLeaf``.
 Run the Unit Tests
 ------------------
 
+Since testing ``Comparator`` objects can be quite tedious, I have provided a complete set of unit tests for the class.
+If everything is working properly in your ``HuffmanNodeComparator``, the tests should pass.
+
+
 
 Part 4 --- Complete ``HuffmanCode``
 ===================================
