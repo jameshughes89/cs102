@@ -173,7 +173,14 @@ Implementing the Class
 Your class should have at least one field --- a reverence to the root of the Huffman Tree. As discussed above, it is
 recommended that you also include another field --- a map storing each character's bit string encoding.
 
+Complete the ``public static HuffmanCode fromString(String seed)`` method. This factory method will do all the setup for
+the class and return a reference to a ``HuffmanCode`` object. Expect this method to
 
+    * Count the number of times each character exists in the seed string
+    * Initialize the priority queue
+    * Build the tree
+    * Populate the character map
+    * Return a new ``HuffmanCode``
 
 
 
