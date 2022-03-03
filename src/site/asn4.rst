@@ -173,7 +173,14 @@ This method must
     * Print out the original, encoded, and decoded strings
     * Print out the percentage the message got compressed
 
+To calculate the compression percentage, we will make a few assumptions
 
+    * Assume that a given character takes up 1 byte (8 bits)
+        * If the string has 10 characters, then we will assume it takes up 80 bits
+        * In reality, characters may take up more space than 8 bits, but we will ignore this here
+    * Assume that the 0s and 1s in the encoded message are each 1 bit
+        * If the encoded string has 20 characters, then we assume it takes up 20 bits
+        * In reality, we are storing the 0s and 1s in a string, meaning each is actually a character that takes up 8 bits, but we will ignore this here
 
 
 
