@@ -161,8 +161,9 @@ from java.util. <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/ja
 
 * You will be making use of factory methods for instantiating the objects
     * Refer to the ``Maze`` class from assignments 2 and 3
-    * I have provided you with an already complete ``fromFile`` factory method
     * Make your constructor private
+    * I have provided you with an already "complete" ``fromFile`` factory method
+        * Although, it delegates all the work to the ``fromString`` you are to write, so you may be disappointed
 
 * Under the hood, this class is creating and storing a binary tree of ``HuffmanNode`` objects
 * I recommend having a field within the class that stores each character's encoding in a ``Map<Character, String>``
