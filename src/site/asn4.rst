@@ -145,6 +145,10 @@ sorted order as laid out in ``sorted``, then the ``HuffmanNodeComparator`` shoul
 Part 4 --- Complete ``HuffmanCode``
 ===================================
 
+The ``HuffmanCode`` class will make use of the ``HuffmanNode`` and ``HuffmanNodeComparator`` class to implement the
+compression. Ultimately, this class will be responsible for building the Huffman Tree based on some seed string and
+encoding and decoding strings.
+
 
 Notes About Your Implementation
 -------------------------------
