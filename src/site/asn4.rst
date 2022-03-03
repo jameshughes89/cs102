@@ -126,19 +126,19 @@ Run the Unit Tests
 ------------------
 
 Since testing ``Comparator`` objects can be quite tedious, I have provided a complete set of unit tests for the class.
-If everything is working properly in your ``HuffmanNodeComparator``, the tests should pass.
+If everything is working properly in your ``HuffmanNodeComparator`` class, the tests should pass.
 
-Make sure to take your time investigating the unit tests for this class. One thing of note is that the primary way the
-``Comparator`` is tested is by sorting a list based on the order defined by the ``Comparator``. In the method
-``compare_unsortedList_sortsList``
+Make sure to take your time investigating these unit tests. One thing of note is that the primary way the
+``HuffmanNodeComparator`` is tested is by sorting a list based on the order defined by the ``HuffmanNodeComparator``. In
+the method ``compare_unsortedList_sortsList``
 
     * A list of ``HuffmanNode`` objects in their proper order, referenced by ``sorted``, is created
     * A copy of that list is made and referenced by ``unsorted``
-    * The ``unsorted`` list is shuffled
+    * The ``unsorted`` list is shuffled (to make it actually unsorted)
     * The ``unsorted`` list is then sorted based on the ordering of the ``HuffmanNodeComparator`` (``classUnderTest``)
 
-The idea here is, if the ``Comparator`` sorts the whole list such that the elements return to their correct sorted
-order, then the ``Comparator`` should be correct.
+The idea here is, if the ``HuffmanNodeComparator`` sorts the whole list such that the elements return to their correct
+sorted order as laid out in ``sorted``, then the ``HuffmanNodeComparator`` should be correct.
 
 
 Part 4 --- Complete ``HuffmanCode``
