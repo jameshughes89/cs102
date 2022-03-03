@@ -134,6 +134,19 @@ Part 6 --- Testing
 ==================
 
 
+You may have already verified the correctness of your ``LinkedPriorityQueue`` and ``AStarMazeSolver`` classes by
+completing and running their test classes. If not, do it!
+
+If you have, for good measure, re-run all the tests provided to you and the ones you wrote. If they all pass, you should
+be pretty confident that you have everything working correctly.
+
+There is no test provided for the ``Asn3`` class, but that's nothing to worry about. You can get a sense that it is
+working correctly by
+
+    * Running your program on the maze files provided
+    * Create your own maze programs and try running on them too
+
+
 Some Hints
 ==========
 
