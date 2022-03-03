@@ -184,6 +184,11 @@ the class and return a reference to a ``HuffmanCode`` object. Expect this method
 
 I suggest making a private method with recursive traversal through the tree for populating the map
 
+Complete the ``public String encode(String string)`` method which takes a string and returns a bit string encoding. The
+encoding is based on the encoding of each character.
+
+Complete the ``public String decode(String bits)`` method for decoding the bit string. This is the inverse operation of
+``encode``. With the use of a private helper method, decode the string recursively.
 
 
 Implementing the Unit Tests
