@@ -117,7 +117,7 @@ Make sure you have a good sense of the order the ``HuffmanNode`` objects have
     * If two leaf nodes have the same weight, the one with the smaller ASCII value comes first
     * If two internal nodes have the same weight, the order does not matter
 
-In case you missed it, you can check if a given reference variable is referencing an object of a specirfic type with the
+In case you missed it, you can check if a given reference variable is referencing an object of a specific type with the
 ``instanceof`` operator. For example, ``huff1 instanceof HuffmanLeaf`` results in ``true`` if ``huff1`` is referencing
 something of type (or subtype) of ``HuffmanLeaf``.
 
