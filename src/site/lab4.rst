@@ -67,7 +67,7 @@ Reversing a String
 1. Write a method that takes a string and returns a new string that is the reverse of the original
     * This function **must** use a stack for the reversing of the string
         * **Hint:** Remember what LIFO order is
-    * I have provided you with a skeleton of the method and some simple testing code below
+    * I have provided you with a skeletal method and some simple testing code below
 
 
     .. code-block:: java
