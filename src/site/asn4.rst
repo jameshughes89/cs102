@@ -31,10 +31,10 @@ Provided Files
 ==============
 
 * A complete ``HuffmanNode`` interface
-* A nearly empty ``HuffmanLeaf`` class with a skeleton ``HuffmanLeafTest`` class
-* A nearly empty ``HuffmanInternal`` class with a skeleton ``HuffmanInternalTest`` class
-* A skeleton ``HuffmanNodeComparator`` class with a complete ``HuffmanNodeComparatorTest`` class
-* A skeleton ``HuffmanCode`` class with a skeleton ``HuffmanCodeTest`` class
+* A nearly empty ``HuffmanLeaf`` class with a skeletal ``HuffmanLeafTest`` class
+* A nearly empty ``HuffmanInternal`` class with a skeletal ``HuffmanInternalTest`` class
+* A skeletal ``HuffmanNodeComparator`` class with a complete ``HuffmanNodeComparatorTest`` class
+* A skeletal ``HuffmanCode`` class with a skeletal ``HuffmanCodeTest`` class
 * An ``Asn4`` class with an empty ``main``
 * A text file that may be used to seed the Huffman Code
 
@@ -109,7 +109,7 @@ To help with testing, also write a ``toString`` method.
 Implementing the Unit Tests
 ---------------------------
 
-There are skeleton test classes with incomplete test methods for each of the node types. The method names should give
+There are skeletal test classes with incomplete test methods for each of the node types. The method names should give
 you a good enough idea about what each method should be testing. Complete the unit tests and ensure the node classes you
 wrote are working correctly.
 
@@ -217,7 +217,7 @@ Complete the ``public String decode(String bits)`` method for decoding the bit s
 Implementing the Unit Tests
 ---------------------------
 
-There is a skeleton test class with incomplete test methods for the ``HuffmanCode`` class. The method names should give
+There is a skeletal test class with incomplete test methods for the ``HuffmanCode`` class. The method names should give
 you a good enough idea about what each method should be testing. Complete the unit tests and ensure the class you wrote
 is working correctly.
 
