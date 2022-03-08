@@ -806,8 +806,8 @@ For next time
     * 15 pages
 
 
-Code
-====
+Playing Code
+============
 
 * Download and play with
     * :download:`Friend <../main/java/Friend.java>`
