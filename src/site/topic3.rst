@@ -812,10 +812,10 @@ Code
 * Download and play with
     * :download:`Friend <../main/java/Friend.java>`
     * :download:`ContactList <../main/java/ContactList.java>` code
-    * :download:`ObjectsPlaying <../main/java/ObjectsPlaying.java>`
+    * :download:`PlayingObjects <../main/java/PlayingObjects.java>`
 
-* If everything was done correctly, the following code from ``ObjectsPlaying`` should work
+* If everything was done correctly, the following code from ``PlayingObjects`` should work
 
-.. literalinclude:: ../main/java/ObjectsPlaying.java
+.. literalinclude:: ../main/java/PlayingObjects.java
    :language: java
    :linenos:
