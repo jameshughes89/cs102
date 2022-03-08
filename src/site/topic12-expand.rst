@@ -2,6 +2,23 @@
 Topic #12 Aside --- expandCapacity
 **********************************
 
+ArrayStack
+==========
+
+.. image:: img/arraystack0.png
+   :width: 500 px
+   :align: center
+
+* With the ``ArrayStack``, this was not an issue since the adding and removing only happened from one end of the array
+    * The array will always be contiguous from the bottom of the stack (index ``0``) to the top
+* The added complexity of ``expandCapacity`` for the ``ArrayQueue`` is caused by the circle array idea
+    * The circle array idea allows for the information to not be contiguous in the underlying linear array
+
+* Note that for ideas #1 and #2 for the ``ArrayQueue``, this added complexity is not an issue since the data will always be contiguous
+
+
+ArrayQueue
+==========
 
 * Consider the scenario where we attempt to use the ``expandCapacity`` we used for the ``ArrayStack``
     * Where we simply double the size of the array and copy the contents over
@@ -29,16 +46,3 @@ Topic #12 Aside --- expandCapacity
 * This ordering seems rather chaotic and would require more complex bookkeeping
 
 
-ArrayStack
-==========
-
-.. image:: img/arraystack0.png
-   :width: 500 px
-   :align: center
-
-* With the ``ArrayStack``, this was not an issue since the adding and removing only happened from one end of the array
-    * The array will always be contiguous from the bottom of the stack (index ``0``) to the top
-* The added complexity of ``expandCapacity`` for the ``ArrayQueue`` is caused by the circle array idea
-    * The circle array idea allows for the information to not be contiguous in the underlying linear array
-
-* Note that for ideas #1 and #2 for the ``ArrayQueue``, this added complexity is not an issue since the data will always be contiguous
