@@ -809,9 +809,12 @@ For next time
 Code
 ====
 
-* Download and play with the :download:`Friend <../main/java/Friend.java>`,  :download:`ContactList <../main/java/ContactList.java>` code, and :download:`ObjectsPlaying <../main/java/ObjectsPlaying.java>`
+* Download and play with
+    * :download:`Friend <../main/java/Friend.java>`
+    * :download:`ContactList <../main/java/ContactList.java>` code
+    * :download:`ObjectsPlaying <../main/java/ObjectsPlaying.java>`
 
-* If everything was done correctly, the following code should work
+* If everything was done correctly, the following code from ``ObjectsPlaying`` should work
 
 .. literalinclude:: ../main/java/ObjectsPlaying.java
    :language: java
