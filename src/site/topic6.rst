@@ -266,7 +266,11 @@ toString
 For next time
 =============
 
-* Download and test the :download:`Stack <../main/java/Stack.java>` and  :download:`ArrayStack <../main/java/ArrayStack.java>` code
+* Download and play with
+    * :download:`Stack <../main/java/Stack.java>`
+    * :download:`ArrayStack <../main/java/ArrayStack.java>`
+    * :download:`ArrayStack <../main/java/PlayingArrayStack.java>`
+
 * :doc:`Check out the aside on testing </topic6-testing>`
 * Download and run the :download:`ArrayStackTest <../test/java/ArrayStackTest.java>` tests
     * Or the more thorough tests found in :download:`ArrayStackThoroughTest <../test/java/ArrayStackThoroughTest.java>`
@@ -276,67 +280,8 @@ For next time
 Code
 ====
 
-* If everything was done correctly, the following code should work
+* If everything was done correctly, the following code from ``PlayingArrayStack`` should work
 
-.. code-block:: java
-
-    // Create an ArrayStack
-    Stack<Integer> myStack = new ArrayStack<>(5);
-
-    // Check stack is empty
-    System.out.println(myStack.size());
-    System.out.println(myStack.isEmpty());
-    System.out.println(myStack);
-
-    // Test push
-    myStack.push(0);
-    myStack.push(1);
-    myStack.push(2);
-    myStack.push(3);
-    myStack.push(4);
-    System.out.println(myStack.size());
-    System.out.println(myStack.isEmpty());
-    System.out.println(myStack);
-
-    // Test expand capacity
-    myStack.push(10);
-    myStack.push(11);
-    myStack.push(12);
-    myStack.push(13);
-    myStack.push(14);
-    System.out.println(myStack.size());
-    System.out.println(myStack.isEmpty());
-    System.out.println(myStack);
-
-    // Test peek
-    System.out.println(myStack.peek());
-    System.out.println(myStack.size());
-    System.out.println(myStack.isEmpty());
-    System.out.println(myStack);
-
-    // Test Pop
-    System.out.println(myStack.pop());
-    System.out.println(myStack.pop());
-    System.out.println(myStack.pop());
-    System.out.println(myStack.pop());
-    System.out.println(myStack.pop());
-    System.out.println(myStack.pop());
-    System.out.println(myStack.pop());
-    System.out.println(myStack.pop());
-    System.out.println(myStack.pop());
-    System.out.println(myStack.pop());
-    System.out.println(myStack.size());
-    System.out.println(myStack.isEmpty());
-    System.out.println(myStack);
-
-    // Test peek and pop throwing exception
-    try {
-        myStack.peek();
-    } catch (NoSuchElementException e) {
-        e.printStackTrace();
-    }
-    try {
-        myStack.pop();
-    } catch (NoSuchElementException e) {
-        e.printStackTrace();
-    }
+.. literalinclude:: ../main/java/PlayingArrayStack.java
+   :language: java
+   :linenos:
