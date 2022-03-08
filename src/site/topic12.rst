@@ -385,7 +385,7 @@ Testing
 * Six ``enqueues`` will require that ``expandCapacity`` is called, but now ``front == rear == 1`` again
 * If the ``expandCapacity`` was broken, it would be possible that we overwrite the first element in the queue
 
-* After ``expandCapacity`` is called, ``front`` is ``0`` and ``rear is ``6``, but I don't actually care what the indicies are
+* After ``expandCapacity`` is called, ``front`` is ``0`` and ``rear`` is ``6``, but I don't actually care what the indicies are
 * All I care about is that I can ``dequeue`` the ``6`` elements and get them in FIFO order
 
 .. warning::
