@@ -25,19 +25,6 @@ import java.util.Arrays;
  * S   #
  * # # #
  * ###E#
- * <p>
- * While the maze is being searched, additional symbols arise:
- * - current location:     'O'
- * - in current path:      'o'
- * - visited, not in path: '.'
- * <p>
- * e.g.
- * #####
- * #...#
- * #.###
- * ooO #
- * # # #
- * ###E#
  */
 public final class Maze {
 
