@@ -13,8 +13,9 @@ ArrayStack
     * The array will always be contiguous from the bottom of the stack (index ``0``) to the top
 
 * If ``expandCapacity`` was ever needed, all the data would be copied to the new array such that each element would be in the same index
-    * The element at index 1 in the old array would be in index 1 of the new array
-    * The element at index 2 in the old array would be in index 2 of the new array
+    * The element at index ``0`` in the old array would be in index ``0`` of the new array
+    * The element at index ``1`` in the old array would be in index ``1`` of the new array
+    * The element at index ``2`` in the old array would be in index ``2`` of the new array
     * ...
 
 * For ideas #1 and #2 of the ``ArrayQueue``, an ``expandCapacity`` like the one used for the ``arrayStack`` would work just fine
