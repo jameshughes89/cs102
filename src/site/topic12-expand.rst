@@ -9,16 +9,22 @@ ArrayStack
    :width: 500 px
    :align: center
 
-* With the ``ArrayStack``, this was not an issue since the adding and removing only happened from one end of the array
+* With the ``ArrayStack``, the adding and removing only happened from one end of the array
     * The array will always be contiguous from the bottom of the stack (index ``0``) to the top
-* The added complexity of ``expandCapacity`` for the ``ArrayQueue`` is caused by the circle array idea
-    * The circle array idea allows for the information to not be contiguous in the underlying linear array
 
-* Note that for ideas #1 and #2 for the ``ArrayQueue``, this added complexity is not an issue since the data will always be contiguous
+* If ``expandCapacity`` was ever needed, all the data would be copied to the new array such that each element would be in the same index
+    * The element at index 1 in the old array would be in index 1 of the new array
+    * The element at index 2 in the old array would be in index 2 of the new array
+    * ...
+
+* For ideas #1 and #2 of the ``ArrayQueue``, an ``expandCapacity`` like the one used for the ``arrayStack`` would work just fine
 
 
 ArrayQueue
 ==========
+
+* The added complexity of ``expandCapacity`` for idea #3 of the ``ArrayQueue`` is caused by the circle array idea
+    * The circle array idea allows for the information to not be contiguous in the underlying linear array
 
 * Consider the scenario where we attempt to use the ``expandCapacity`` we used for the ``ArrayStack``
     * Where we simply double the size of the array and copy the contents over
