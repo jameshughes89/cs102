@@ -809,7 +809,7 @@ For next time
 Code
 ====
 
-* Download and play with the :download:`Friend <../main/java/Friend.java>` and  :download:`ContactList <../main/java/ContactList.java>` code.
+* Download and play with the :download:`Friend <../main/java/Friend.java>`,  :download:`ContactList <../main/java/ContactList.java>` code, and :download:`ObjectsPlaying <../main/java/ObjectsPlaying.java>`
 
 * If everything was done correctly, the following code should work
 
@@ -847,6 +847,5 @@ Code
 
             System.out.println("Print after clear");
             System.out.println(myFriends);
-
         }
     }

@@ -1,4 +1,4 @@
-public class objectsPlaying {
+public class ObjectsPlaying {
     public static void main(String[] args) {
         ContactList myFriends = new ContactList(5);
         myFriends.add("Bob", "Smith", "bsmith@gmail.com");
