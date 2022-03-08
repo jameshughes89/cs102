@@ -277,8 +277,8 @@ For next time
 * Finish reading Chapter 3
     * 16 pages
 
-Code
-====
+Playing Code
+============
 
 * If everything was done correctly, the following code from ``PlayingArrayStack`` should work
 
