@@ -806,47 +806,16 @@ For next time
     * 15 pages
 
 
-Code
-====
+Playing Code
+============
 
-* Download and play with the :download:`Friend <../main/java/Friend.java>` and  :download:`ContactList <../main/java/ContactList.java>` code.
+* Download and play with
+    * :download:`Friend <../main/java/Friend.java>`
+    * :download:`ContactList <../main/java/ContactList.java>` code
+    * :download:`PlayingObjects <../main/java/PlayingObjects.java>`
 
-* If everything was done correctly, the following code should work
+* If everything was done correctly, the following code from ``PlayingObjects`` should work
 
-.. code-block:: java
-
-    public class SomeClass {
-        public static void main(String[] args) {
-
-            ContactList myFriends = new ContactList(5);
-
-            myFriends.add("Bob", "Smith", "bsmith@gmail.com");
-            myFriends.add("Jane", "Doe", "jdoe@gmail.com");
-            myFriends.add("Clarence", "Cartwrite", "treelover1523@hotmail.com");
-            myFriends.add("Sandy", "Seaside", "boatsboatsboats@yachtclub500.com");
-            myFriends.add("Adam", "Fluffson", "fluffyman28@hotmail.com");
-            myFriends.add("Adrian", "Andrews", "aandrews@hotmail.com");
-
-            System.out.println("Print after adds and expand");
-            System.out.println(myFriends);
-
-
-            myFriends.updateEmail("Clarence", "Cartwrite", "supertreelover1523@hotmail.com");
-
-            System.out.println("Print after update");
-            System.out.println(myFriends);
-
-
-            myFriends.remove("Bob", "Smith");
-
-            System.out.println("Print after remove");
-            System.out.println(myFriends);
-
-
-            myFriends.clear();
-
-            System.out.println("Print after clear");
-            System.out.println(myFriends);
-
-        }
-    }
+.. literalinclude:: ../main/java/PlayingObjects.java
+   :language: java
+   :linenos:
