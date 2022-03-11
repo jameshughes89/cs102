@@ -71,7 +71,7 @@ Idea #2
    :width: 500 px
    :align: center
 
-* ``dequeue`` always happens at index ``front````
+* ``dequeue`` always happens at index ``front``
 * Increment ``front``
 
 
