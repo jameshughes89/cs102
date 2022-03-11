@@ -83,7 +83,7 @@ public class LinkedQueueThoroughTest {
             }
 
             @Test
-            void dequeue_singleton_emptyStack() {
+            void dequeue_singleton_emptyQueue() {
                 classUnderTest.dequeue();
                 assertEquals(new LinkedQueue<>(), classUnderTest);
             }
