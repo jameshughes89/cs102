@@ -27,8 +27,10 @@ of the queue at index ``0``. This is idea #1 from the :doc:`ArrayQueue topic</to
 
 4. Complete the ``RudimentaryArrayQueue`` class by fully implementing the ``Queue`` interface
     * There will be a lot of overlap with the :download:`ArrayQueue<../main/java/ArrayQueue.java>` class
+    * You will need a way to shuffle the elements down the array after a ``dequeue`` --- perhaps a private method
 
 5. Download and modify the :download:`ArrayQueueTest<../test/java/ArrayQueueTest.java>` to create a `RudimentaryArrayQueueTest` to verify everything is working correctly
+    * Remember, even though we have a linear time ``dequeue`` and we saw an improved implementation, the ``RudimentaryArrayQueue`` is still, by definition, a queue
 
 
 Kattis Problems
