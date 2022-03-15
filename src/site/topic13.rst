@@ -171,7 +171,7 @@ Sorted Bag Functionality
 * This means that, although we did not write the functions from the ``Bag`` interface in the ``SortedBag`` ourselves, they are still part of what makes up a ``SortedBag``
     * If you try to implement a ``SortedBag`` without implementing all the functionality from the ``Bag`` interface, it won't work
 
-* The idea is inheritance will be discussed further later
+* The idea of inheritance will be discussed further later
 
 
 Indexed Bag
