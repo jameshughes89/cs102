@@ -12,6 +12,16 @@ C++ Lessons #3 --- Arrays
     * For simplicity, some of the examples will use less than ideal implementations
 
 
+Static Arrays
+=============
+
+
+
+Dynamic Arrays
+==============
+
+
+
 Further Reading
 ===============
 
