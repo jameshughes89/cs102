@@ -34,6 +34,9 @@ Static Arrays
    :align: center
    :target: http://www.cplusplus.com/doc/tutorial/arrays/
 
+* *Static* arrays mean that the **size** is known at compile time and is not going to change
+* In the above example, we are setting aside a chunk of memory that is ready to store 5 integers
+* Unlike Java however, there are no default values set in the array
 
 
 Dynamic Arrays
