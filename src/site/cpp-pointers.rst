@@ -75,7 +75,7 @@ Pointer Variable
 
 
 .. image:: img/cpp_pointer0.png
-   :width: 200 px
+   :width: 300 px
    :align: center
    :target: https://www.cplusplus.com/doc/tutorial/pointers/
 
@@ -90,7 +90,7 @@ Dereferencing
 * If you have a pointer variable, but you do not care about the memory address; you want to know what is stored *at* the memory address, we *dereference*
 
 .. image:: img/cpp_pointer0.png
-   :width: 200 px
+   :width: 300 px
    :align: center
    :target: https://www.cplusplus.com/doc/tutorial/pointers/
 
@@ -114,7 +114,7 @@ Dereferencing
 
 
 .. image:: img/cpp_pointer1.png
-   :width: 200 px
+   :width: 300 px
    :align: center
    :target: https://www.cplusplus.com/doc/tutorial/pointers/
 
