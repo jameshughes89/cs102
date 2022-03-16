@@ -53,7 +53,7 @@ Static Arrays
    :target: http://www.cplusplus.com/doc/tutorial/arrays/
 
 
-* Or we can assign/change the values, or even retrieve the values with indexing
+* Or we can assign/change and/or retrieve the values with indexing
 * In the below example
     * The value at index ``3`` in ``foo`` will be set to ``99``
     * The value from index ``3`` in ``foo`` (``99``) will be copied to ``x``
@@ -63,6 +63,7 @@ Static Arrays
 
     foo[3] = 99;
     int x = foo[3];
+
 
 
 Dynamic Arrays
