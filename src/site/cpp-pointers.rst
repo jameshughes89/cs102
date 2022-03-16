@@ -168,7 +168,7 @@ Dereferencing
     :linenos:
 
     int myVar = 25;
-	std::cout << *myVar <<	std::endl;
+    std::cout << *myVar << std::endl;
 
 * The above example is nonsense code in terms of what it means
 * It's asking an integer what is at the memory address stored in ``myVar``
