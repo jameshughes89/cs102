@@ -15,9 +15,8 @@ C++ Lessons #3 --- Arrays
 .. note::
 
     Here we will go over the basics of arrays in C/C++; however, in practice you will likely be making use of C++'s
-    standard library for your arrays.
+    standard library's ``std::vector``.
 
-        * `std::array <https://en.cppreference.com/w/cpp/container/array>`_
         * `std::vector <https://en.cppreference.com/w/cpp/container/vector/>`_
 
 
@@ -38,10 +37,10 @@ Further Reading
     * Images are taken directly from the cplusplus page
     * Click the images to visit the page
 
-* Read up on ``std::array``
-    * `cppreference.com <https://en.cppreference.com/w/cpp/container/array>`_
-    * `cplusplus.com <https://www.cplusplus.com/reference/array/array/>`_
-
 * Read up on ``std::vector``
     * `cppreference.com <https://en.cppreference.com/w/cpp/container/vector>`_
     * `cplusplus.com <https://www.cplusplus.com/reference/vector/vector/>`_
+
+* There also exists a ``std::array`` too, which you may find interesting
+    * `cppreference.com <https://en.cppreference.com/w/cpp/container/array>`_
+    * `cplusplus.com <https://www.cplusplus.com/reference/array/array/>`_
