@@ -23,6 +23,10 @@ C++ Lessons #3 --- Arrays
 Static Arrays
 =============
 
+* *Static* arrays mean that the **size** is known at compile time and is not going to change
+* In the below example, we are setting aside a chunk of memory that is ready to store 5 integers
+* Unlike Java however, there are no default values set in the array
+
 .. code-block:: cpp
     :linenos:
 
@@ -34,9 +38,31 @@ Static Arrays
    :align: center
    :target: http://www.cplusplus.com/doc/tutorial/arrays/
 
-* *Static* arrays mean that the **size** is known at compile time and is not going to change
-* In the above example, we are setting aside a chunk of memory that is ready to store 5 integers
-* Unlike Java however, there are no default values set in the array
+* We can also assign values to the array on creation
+
+
+.. code-block:: cpp
+    :linenos:
+
+    int foo[] = {16, 2, 77, 40, 12071};
+
+
+.. image:: img/cpp_static_array_set.png
+   :width: 400 px
+   :align: center
+   :target: http://www.cplusplus.com/doc/tutorial/arrays/
+
+
+* Or we can assign/change the values, or even retrieve the values with indexing
+* In the below example
+    * The value at index ``3`` in ``foo`` will be set to ``99``
+    * The value from index ``3`` in ``foo`` (``99``) will be copied to ``x``
+
+.. code-block:: cpp
+    :linenos:
+
+    foo[3] = 99;
+    int x = foo[3];
 
 
 Dynamic Arrays
