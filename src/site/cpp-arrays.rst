@@ -15,9 +15,14 @@ C++ Lessons #3 --- Arrays
 Further Reading
 ===============
 
-* `If you would like additional discussion and examples, check out cpp reference <https://en.cppreference.com/w/cpp/language/pointer>`_
-
-* Most sorting images are taken directly from their wikipedia articles
-
-* Images are taken directly from `cplusplus.com <https://www.cplusplus.com/doc/tutorial/pointers/>`_
+* Read the `cplusplus.com <http://www.cplusplus.com/doc/tutorial/arrays/>`_ tutorial on arrays
+    * Images are taken directly from the cplusplus page
     * Click the images to visit the page
+
+* Read up on ``std::array``
+    * `cppreference.com <https://en.cppreference.com/w/cpp/container/array>`_
+    * `cplusplus.com <https://www.cplusplus.com/reference/array/array/>`_
+
+* Read up on ``std::vector``
+    * `cppreference.com <https://en.cppreference.com/w/cpp/container/vector>`_
+    * `cplusplus.com <https://www.cplusplus.com/reference/vector/vector/>`_
