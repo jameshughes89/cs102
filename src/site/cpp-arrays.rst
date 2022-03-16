@@ -23,6 +23,17 @@ C++ Lessons #3 --- Arrays
 Static Arrays
 =============
 
+.. code-block:: cpp
+    :linenos:
+
+    int foo[5];
+
+
+.. image:: img/cpp_static_array.png
+   :width: 400 px
+   :align: center
+   :target: http://www.cplusplus.com/doc/tutorial/arrays/
+
 
 
 Dynamic Arrays
