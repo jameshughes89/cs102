@@ -75,7 +75,7 @@ Pointer Variable
 
 
 .. image:: img/cpp_pointer0.png
-   :width: 200 px
+   :width: 300 px
    :align: center
    :target: https://www.cplusplus.com/doc/tutorial/pointers/
 
@@ -90,7 +90,7 @@ Dereferencing
 * If you have a pointer variable, but you do not care about the memory address; you want to know what is stored *at* the memory address, we *dereference*
 
 .. image:: img/cpp_pointer0.png
-   :width: 200 px
+   :width: 300 px
    :align: center
    :target: https://www.cplusplus.com/doc/tutorial/pointers/
 
@@ -114,7 +114,7 @@ Dereferencing
 
 
 .. image:: img/cpp_pointer1.png
-   :width: 200 px
+   :width: 300 px
    :align: center
    :target: https://www.cplusplus.com/doc/tutorial/pointers/
 
@@ -168,7 +168,7 @@ Dereferencing
     :linenos:
 
     int myVar = 25;
-	std::cout << *myVar <<	std::endl;
+    std::cout << *myVar << std::endl;
 
 * The above example is nonsense code in terms of what it means
 * It's asking an integer what is at the memory address stored in ``myVar``
@@ -269,9 +269,6 @@ Further Reading
 ===============
 
 * `If you would like additional discussion and examples, check out cpp reference <https://en.cppreference.com/w/cpp/language/pointer>`_
-
-* Most sorting images are taken directly from their wikipedia articles
-
 
 * Images are taken directly from `cplusplus.com <https://www.cplusplus.com/doc/tutorial/pointers/>`_
     * Click the images to visit the page
