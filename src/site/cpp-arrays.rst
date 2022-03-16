@@ -12,6 +12,15 @@ C++ Lessons #3 --- Arrays
     * For simplicity, some of the examples will use less than ideal implementations
 
 
+.. note::
+
+    Here we will go over the basics of arrays in C/C++; however, in practice you will likely be making use of C++'s
+    standard library for your arrays.
+
+        * `std::array <https://en.cppreference.com/w/cpp/container/array>`_
+        * `std::vector <https://en.cppreference.com/w/cpp/container/vector/>`_
+
+
 Static Arrays
 =============
 
