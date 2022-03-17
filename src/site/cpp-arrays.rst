@@ -158,6 +158,24 @@ Arrays vs. Pointers
 Dynamic Arrays
 ==============
 
+* The static arrays require a known size at compile time
+* This is because cpp wants to allocate the RAM on the stack it needs before it starts running
+    * Cpp will manage the memory on the stack for us
+
+* This means determining the size of the array at runtime is problematic
+* The below example will not work
+    * On some platforms this will actually work, but assume it will not
+
+.. code-block:: cpp
+    :linenos:
+
+    int size;
+    std::cin >> size;
+    int foo[size];
+
+
+
+
 
 
 Further Reading
