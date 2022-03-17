@@ -148,6 +148,13 @@ Arrays vs. Pointers
     std::cout << *(bar + 1) << std::endl;
 
 
+.. warning::
+
+    Unlike Java and Python, there is nothing stopping you from indexing outside the array. For example, if
+    ``int foo[5]`` exists, one can access ``foo[25]`` and cpp will gladly return whatever value is stored at that memory
+    address.
+
+
 Dynamic Arrays
 ==============
 
