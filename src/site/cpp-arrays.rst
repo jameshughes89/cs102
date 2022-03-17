@@ -237,6 +237,30 @@ Deallocating RAM
     dereferencing where necessary.
 
 
+The Heap?
+=========
+
+.. note::
+
+    Going into detail on the stack vs. heap and the inner workings of cpp memory management is well outside the scope of
+    these asides. Only a superficial level of ideas are persented here.
+
+
+* We can allocate other things on the heap too if we want
+* The below example creates a string on the heap
+* When it is not needed anymore, it must be deleted
+    * Note that in this case it was only ``delete``, where with the array it was ``delete[]``
+
+* As a simple rule, whenever you have a ``new`` something, you will want to ``delete`` it when it's not needed anymore
+
+.. code-block:: cpp
+    :linenos:
+
+    std::string* myString = new std::string("Hello");
+    // Some code
+    delete myString;
+
+
 Further Reading
 ===============
 
