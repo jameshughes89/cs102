@@ -53,6 +53,10 @@ Static Arrays
    :target: http://www.cplusplus.com/doc/tutorial/arrays/
 
 
+
+Changing/Accessing Data
+-----------------------
+
 * Or we can assign/change and/or retrieve the values with indexing
 * These static arrays have known sizes at compile time, but we can still change the contents
 * In the below example
