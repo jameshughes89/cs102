@@ -70,6 +70,23 @@ Changing/Accessing Data
     int x = foo[3];
 
 
+As Function Parameters
+----------------------
+
+* As you would expect, arrays can be passed to functions as parameters
+
+.. code-block:: cpp
+    :linenos:
+
+    void printArray(int toPrint[], int length){
+        for(int i = 0; i < length; i++){
+            std::cout << toPrint[i] << std::endl;
+        }
+    }
+
+
+
+
 
 Dynamic Arrays
 ==============
