@@ -116,7 +116,9 @@ Polymorphism
 
 * Polymorphism is the idea that behavior can change depending on the type of the object
 * We've already made use of this idea without having gone into any details
+
     ``Stack<Integer> myStack = new ArrayStack<>();``
+
     ``Stack<Integer> myStack = new LinkedStack<>();``
 
 * Our reference variables here is for something of type ``Stack``
