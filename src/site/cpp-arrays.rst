@@ -85,6 +85,11 @@ As Function Parameters
     }
 
 
+.. warning::
+
+    These arrays are just chunks of RAM and do **not** know their own size; we must keep track of the array length on
+    our own. In the above example, notice how the ``length`` was also included as a parameter. This would be required in
+    this situation as there would be no other way to retrieve the array's length.
 
 
 
