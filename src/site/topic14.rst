@@ -18,7 +18,7 @@ Topic #14 --- Inheritance
    :width: 500 px
    :align: center
 
-* This hierarchical thinking exists in real life too,
+* This hierarchical thinking exists in real life too
     * But we should be careful not to translate what makes sense in real life to our code
 
 
