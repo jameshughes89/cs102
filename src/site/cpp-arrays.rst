@@ -228,10 +228,13 @@ Deallocating RAM
 * When we do not need the array anymore, we need to delete it
 * Take note of the ``delete[]`` at the end of the above example
 * This will tell cpp that the memory on the heap that was allocated for our array is not not needed anymore
-* This does **not** delete the integer pointer ``foo``; this depetes what ``foo`` was pointing to
+* This does **not** delete the integer pointer ``foo``; this depletes what ``foo`` was pointing to
     * The integer pointer ``foo`` is allocated on the stack here
 
+.. note::
 
+    This will be similar-ish to what you are used to with Python and Java. The big difference here is deallocating and
+    dereferencing where necessary.
 
 
 Further Reading
