@@ -158,6 +158,110 @@ Arrays vs. Pointers
 Dynamic Arrays
 ==============
 
+* The static arrays require a known size at compile time
+* This is because cpp wants to allocate the RAM on the stack it needs before it starts running
+    * Cpp will manage the memory on the stack for us
+
+* This means determining the size of the array at runtime is problematic
+* The below example will not work
+    * On some platforms this will actually work, but assume it will not
+
+.. code-block:: cpp
+    :linenos:
+
+    int size;
+    std::cin >> size;
+    int foo[size];
+
+
+* However, it is not unreasonable to want to have an array that's size is determined at runtime
+* Fortunately, there is still a way to do this, but we need to allocate the memory on the *heap*
+    * Cpp does not manage this memory for us
+    * We must take care to allocate and deallocate the memory we use in the heap
+    * If we do not deallocate the memory, we end up with something called a memory leak
+        * Your program is taking up more and more memory, but it's just waisting space
+
+* In the below example, we can allocate memory in the heap with the ``new`` keyword
+* Notice that the variable ``foo`` is a pointer to an integer
+
+.. code-block:: cpp
+    :linenos:
+
+    int size;
+    std::cin >> size;
+    int* foo = new int[size];
+
+* Even though the variable ``foo`` is an integer pointer, we can still index it like an array as we saw above
+    * ``foo[1]``
+
+* Now we can create arrays that have their size determined at runtime and use them like any other array
+
+.. code-block:: cpp
+    :linenos:
+
+    // Create array
+    int size;
+    std::cin >> size;
+    int* foo = new int[size];
+
+    // Put contents into array
+    for(int i = 0; i < size; i++){
+        foo[i] = i;
+    }
+
+    // print out array contents
+    for(int i = 0; i < size; i++){
+        std::cout << foo[i] << std::endl;
+    }
+
+    // Delete the array
+    // mind the []
+    delete[] foo;
+
+
+Deallocating Memory
+-------------------
+
+* There is a catch to these dynamic arrays
+* Any memory we allocate on the heap needs to be managed by us
+* Cpp will allocate/deallocate memory that is on the stack
+* But cpp will trust that we will allocate/deallocate memory on the heap
+
+* We allocated memory to make ``foo`` on the heap
+* When we do not need the array anymore, we need to delete it
+* Take note of the ``delete[]`` at the end of the above example
+* This will tell cpp that the memory on the heap that was allocated for our array is not not needed anymore
+* This does **not** delete the integer pointer ``foo``; this depletes what ``foo`` was pointing to
+    * The integer pointer ``foo`` is allocated on the stack here
+
+.. note::
+
+    This will be similar-ish to what you are used to with Python and Java. The big difference here is deallocating and
+    dereferencing where necessary.
+
+
+The Heap?
+=========
+
+.. note::
+
+    Going into detail on the stack vs. heap and the inner workings of cpp memory management is well outside the scope of
+    these asides. Only a superficial level of ideas are persented here.
+
+
+* We can allocate other things on the heap too if we want
+* The below example creates a string on the heap
+* When it is not needed anymore, it must be deleted
+    * Note that in this case it was only ``delete``, where with the array it was ``delete[]``
+
+* As a simple rule, whenever you have a ``new`` something, you will want to ``delete`` it when it's not needed anymore
+
+.. code-block:: cpp
+    :linenos:
+
+    std::string* myString = new std::string("Hello");
+    // Some code
+    delete myString;
 
 
 Further Reading
