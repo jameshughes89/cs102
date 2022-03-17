@@ -178,6 +178,8 @@ Dynamic Arrays
 * Fortunately, there is still a way to do this, but we need to allocate the memory on the *heap*
     * Cpp does not manage this memory for us
     * We must take care to allocate and deallocate the memory we use in the heap
+    * If we do not deallocate the memory, we end up with something called a memory leak
+        * Your program is taking up more and more memory, but it's just waisting space
 
 * In the below example, we can allocate memory in the heap with the ``new`` keyword
 * Notice that the variable ``foo`` is a pointer to an integer
