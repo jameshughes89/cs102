@@ -54,6 +54,7 @@ Static Arrays
 
 
 * Or we can assign/change and/or retrieve the values with indexing
+* These static arrays have known sizes at compile time, but we can still change the contents
 * In the below example
     * The value at index ``3`` in ``foo`` will be set to ``99``
     * The value from index ``3`` in ``foo`` (``99``) will be copied to ``x``
