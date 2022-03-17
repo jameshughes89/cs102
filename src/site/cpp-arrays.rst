@@ -218,8 +218,8 @@ Dynamic Arrays
     delete[] foo;
 
 
-Deallocating RAM
-----------------
+Deallocating Memory
+-------------------
 
 * There is a catch to these dynamic arrays
 * Any memory we allocate on the heap needs to be managed by us
