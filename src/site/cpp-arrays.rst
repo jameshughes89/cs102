@@ -192,7 +192,46 @@ Dynamic Arrays
 * Even though the variable ``foo`` is an integer pointer, we can still index it like an array as we saw above
     * ``foo[1]``
 
-* Now we can create arrays that have their size determined at runtime
+* Now we can create arrays that have their size determined at runtime and use them like any other array
+
+.. code-block:: cpp
+    :linenos:
+
+    // Create array
+    int size;
+    std::cin >> size;
+    int* foo = new int[size];
+
+    // Put contents into array
+    for(int i = 0; i < size; i++){
+        foo[i] = i;
+    }
+
+    // print out array contents
+    for(int i = 0; i < size; i++){
+        std::cout << foo[i] << std::endl;
+    }
+
+    // Delete the array
+    delete[] foo;
+
+
+Deallocating RAM
+----------------
+
+* There is a catch to these dynamic arrays
+* Any memory we allocate on the heap needs to be managed by us
+* Cpp will allocate/deallocate memory that is on the stack
+* But cpp will trust that we will allocate/deallocate memory on the heap
+
+* We allocated memory to make ``foo`` on the heap
+* When we do not need the array anymore, we need to delete it
+* Take note of the ``delete[]`` at the end of the above example
+* This will tell cpp that the memory on the heap that was allocated for our array is not not needed anymore
+* This does **not** delete the integer pointer ``foo``; this depetes what ``foo`` was pointing to
+    * The integer pointer ``foo`` is allocated on the stack here
+
+
 
 
 Further Reading
