@@ -215,6 +215,7 @@ Dynamic Arrays
     }
 
     // Delete the array
+    // mind the []
     delete[] foo;
 
 
