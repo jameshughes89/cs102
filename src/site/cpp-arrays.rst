@@ -174,8 +174,25 @@ Dynamic Arrays
     int foo[size];
 
 
+* However, it is not unreasonable to want to have an array that's size is determined at runtime
+* Fortunately, there is still a way to do this, but we need to allocate the memory on the *heap*
+    * Cpp does not manage this memory for us
+    * We must take care to allocate and deallocate the memory we use in the heap
 
+* In the below example, we can allocate memory in the heap with the ``new`` keyword
+* Notice that the variable ``foo`` is a pointer to an integer
 
+.. code-block:: cpp
+    :linenos:
+
+    int size;
+    std::cin >> size;
+    int* foo = new int[size];
+
+* Even though the variable ``foo`` is an integer pointer, we can still index it like an array as we saw above
+    * ``foo[1]``
+
+* Now we can create arrays that have their size determined at runtime
 
 
 Further Reading
