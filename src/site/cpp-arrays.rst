@@ -98,6 +98,55 @@ As Function Parameters
     ``sizeof(foo)/sizeof(foo[0])``.
 
 
+Arrays vs. Pointers
+-------------------
+
+* Arrays and pointers behave similarly
+* In the below example, the when printing out ``foo`` we get the memory address of where the array starts
+* When printing out ``&foo[0]``, we get the memory address of the first element in the array
+    * These are the same
+    * ``foo == &foo[0]``
+
+.. code-block:: cpp
+    :linenos:
+
+    int foo[5];
+
+    // These are equivalent
+    std::cout << foo << std::endl;
+    std::cout << &foo[0] << std::endl;
+
+
+* In fact, we can even index an ``int*`` if it's pointing to an array
+    * You can also do this if it's not pointing to an array too, but this is a recipe for disaster
+
+.. code-block:: cpp
+    :linenos:
+
+    int foo[5] = {10, 11, 12, 13, 14};
+    int* bar = foo;
+
+    // These are equivalent
+    std::cout << foo[1] << std::endl;
+    std::cout << bar[1] << std::endl;
+
+
+* Even more interesting is pointer arithmetic for indexing
+    * Just because we can, doesn't mean we should though
+
+* This means, take the memory address, add 1 to it, and then dereference to get the contents of the address
+    * This does not actually add 1 --- it will add one integer's worth of bytes (so this would be + 4)
+
+.. code-block:: cpp
+    :linenos:
+
+    int foo[5] = {10, 11, 12, 13, 14};
+    int* bar = foo;
+
+    // These are equivalent
+    std::cout << *(foo + 1) << std::endl;
+    std::cout << *(bar + 1) << std::endl;
+
 
 Dynamic Arrays
 ==============
