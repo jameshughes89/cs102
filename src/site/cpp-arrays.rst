@@ -88,8 +88,14 @@ As Function Parameters
 .. warning::
 
     These arrays are just chunks of RAM and do **not** know their own size; we must keep track of the array length on
-    our own. In the above example, notice how the ``length`` was also included as a parameter. This would be required in
-    this situation as there would be no other way to retrieve the array's length.
+    our own. In the above example, notice how the ``length`` was also included as a parameter.
+
+    There is a way to get the length of an array, but it's a little cumbersome. The ``sizeof`` operator tells you how
+    much RAM a given value/type takes up. For example, if you ask ``sizeof(int)``, it will return the number of bytes
+    an integer needs (typically 4 bytes). Further, if you have an array ``int foo[5]``,  and ask ``sizeof(foo)``, it
+    will return the total amount of RAM that array uses (in this case, one would expect 20 bytes --- room for 5
+    integers, and an integer takes up 4 bytes). With this, I can calculate the size of the array with
+    ``sizeof(foo)/sizeof(foo[0])``.
 
 
 
