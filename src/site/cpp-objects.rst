@@ -12,6 +12,18 @@ C++ Lessons #4 --- Objects
     * For simplicity, some of the examples will use less than ideal implementations
 
 
+* The same example described in :doc:`Topic3 </topic3.rst>` is used here
+    * A collection of ``Friend`` objects stored in an ``ContactList`` obejct
+
+
+Friend
+======
+
+
+
+
+ContactList
+===========
 
 
 Further Reading
