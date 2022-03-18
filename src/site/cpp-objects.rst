@@ -68,6 +68,8 @@ Header
 Class
 -----
 
+* The class file is where we typically define and write the actual methods
+* Mind the use of ``Friend::`` before all the method names
 
 .. code-block:: cpp
     :linenos:
@@ -102,6 +104,8 @@ Class
     void Friend::setEmail(std::string email) {
         _email = email;
     }
+
+
 
 
 
