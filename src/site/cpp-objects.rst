@@ -19,6 +19,17 @@ C++ Lessons #4 --- Objects
 Friend
 ======
 
+* We will create a ``Friend`` class to keep track of a few details
+    * First Name
+    * Last Name
+    * Email
+
+* We will also want
+    * Constructor
+    * Some getters/setters
+
+* That's about it
+
 
 
 
