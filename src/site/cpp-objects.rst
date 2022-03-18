@@ -34,6 +34,13 @@ Friend
 Header
 ------
 
+* The first thing we want is a *header* file
+* Call this ``Friend.h``
+* This is where we typically declare all the member fields and methods the class will have
+* This file will also have all our ``#include``s too
+* Below is a complete ``Friend.h``
+
+
 .. code-block:: cpp
     :linenos:
 
@@ -42,6 +49,7 @@ Header
 
     class Friend {
         private:
+            // Starting with underscore is convention for private variables
             std::string _firstName;
             std::string _lastName;
             std::string _email;
@@ -53,13 +61,13 @@ Header
             std::string getLastName();
             std::string getEmail();
             void setEmail(std::string);
-
     };
 
 
 
 Class
 -----
+
 
 .. code-block:: cpp
     :linenos:
@@ -94,6 +102,7 @@ Class
     void Friend::setEmail(std::string email) {
         _email = email;
     }
+
 
 
 
