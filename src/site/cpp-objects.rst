@@ -109,6 +109,21 @@ Class
 Using the Friend Class
 ----------------------
 
+* We can create ``Friend`` objects on the stack, or the heap
+* In the below example
+    * The variable ``aFriend`` is a variable containing a ``Friend`` object
+    * ``bFriend`` is a variable containing the memory address of where a ``Friend`` object is in memory
+
+.. code-block:: cpp
+    :linenos:
+
+    int main() {
+        Friend aFriend("Bob", "Smith", "bSmith@gmail.com");
+
+        Friend* bFriend = new Friend("Jane", "Doe", "jdoe@gmail.com");
+    }
+
+
 
 
 ContactList
