@@ -136,6 +136,34 @@ Using the Friend Class
 * The big difference is that we need to dereference pointers, where we do not need to explicit dereference reference variables in Python and Java
 
 
+.. warning::
+
+    In the below example, the variables and what is happening is quite different.
+
+    Consider that ``wFriend`` is a variable containing a ``Friend`` object. When we assign ``xFriend = wFriend``, we
+    copy the contents of the variable (the ``Friend`` object) and put it into ``xFriend``. Given the simplicity of this
+    class, cpp is happy to make a copy for us on its own, but once classes get more sophisticated, we would need to
+    write a copy constructor for this scenario.
+
+    .. image:: img/cpp_friend_copy.png
+       :width: 250 px
+       :align: center
+
+    Similarly, ``yFriend`` is a variable containing a pointer to a ``Friend`` object. When we assign
+    ``zFriend = yFriend``, we copy over the contents of the variable (a ``Friend`` pointer) and put it into ``zFriend``.
+
+    .. image:: img/cpp_friend_pointer_copy.png
+       :width: 250 px
+       :align: center
+
+    .. code-block:: cpp
+        :linenos:
+
+        Friend wFriend("Clarence", "Cartwrite", "treelover1523@hotmail.com");
+        Friend xFriend = wFriend;
+
+        Friend* yFriend = new Friend("Sandy", "Seaside", "boatsboatsboats@yachtclub500.com");
+        Friend* zFriend = yFriend;
 
 
 ContactList
