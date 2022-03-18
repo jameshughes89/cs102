@@ -17,16 +17,18 @@ Making a Linked Sorted Bag
 
 We discussed the :download:`ArraySortedBag implementation<../main/java/ArraySortedBag.java>`, now you will build a linked version.
 
-1. Create a project and make a class where you will put your main method
+#. Create a project and make a class where you will put your main method
     * Perhaps call it ``Lab7``
 
-2. Download the :download:`SortedBag interface<../main/java/SortedBag.java>` and add it to your project
+#. Download the :download:`Bag interface<../main/java/Bag.java>` and add it to your project
 
-3. Create a ``LinkedSortedBag`` class
+#. Download the :download:`SortedBag interface<../main/java/SortedBag.java>` and add it to your project
 
-4. Complete the ``LinkedSortedBag`` class by fully implementing the ``SortedBag`` interface
+#. Create a ``LinkedSortedBag`` class
 
-5. Download and modify the :download:`ArraySortedBagTest<../test/java/ArraySortedBagTest.java>` to create a `LinkedSortedBagTest` to verify everything is working correctly
+#. Complete the ``LinkedSortedBag`` class by fully implementing the ``SortedBag`` interface
+
+#. Download and modify the :download:`ArraySortedBagTest<../test/java/ArraySortedBagTest.java>` to create a `LinkedSortedBagTest` to verify everything is working correctly
 
 
 Kattis Problems
