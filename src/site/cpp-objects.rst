@@ -124,6 +124,13 @@ Using the Friend Class
     }
 
 
+.. image:: img/cpp_friend.png
+   :width: 300 px
+   :align: center
+
+.. image:: img/cpp_friend_pointer.png
+   :width: 300 px
+   :align: center
 
 
 ContactList
