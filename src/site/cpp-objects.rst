@@ -106,7 +106,8 @@ Class
     }
 
 
-
+Using the Friend Class
+----------------------
 
 
 
