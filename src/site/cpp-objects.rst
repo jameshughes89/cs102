@@ -132,6 +132,11 @@ Using the Friend Class
    :width: 300 px
    :align: center
 
+* The example with the friend pointer will be more similar to what you are used to in Python and Java
+* The big difference is that we need to dereference pointers, where we do not need to explicit dereference reference variables in Python and Java
+
+
+
 
 ContactList
 ===========
