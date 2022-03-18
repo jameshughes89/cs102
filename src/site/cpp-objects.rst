@@ -31,6 +31,70 @@ Friend
 * That's about it
 
 
+Header
+------
+
+.. code-block:: cpp
+    :linenos:
+
+    // Friend.h
+    #include <string>
+
+    class Friend {
+        private:
+            std::string _firstName;
+            std::string _lastName;
+            std::string _email;
+
+        public:
+            Friend();
+            Friend(std::string, std::string, std::string);
+            std::string getFirstName();
+            std::string getLastName();
+            std::string getEmail();
+            void setEmail(std::string);
+
+    };
+
+
+
+Class
+-----
+
+.. code-block:: cpp
+    :linenos:
+
+    // Friend.cpp
+    #include "Friend.h"
+
+    Friend::Friend() {
+        _firstName = "Person";
+        _lastName = "Doe";
+        _email = "pDoe@email.com";
+    }
+
+    Friend::Friend(std::string firstName, std::string lastName, std::string email) {
+        _firstName = firstName;
+        _lastName = lastName;
+        _email = email;
+    }
+
+    std::string Friend::getFirstName() {
+        return _firstName;
+    }
+
+    std::string Friend::getLastName() {
+        return _lastName;
+    }
+
+    std::string Friend::getEmail() {
+        return _email;
+    }
+
+    void Friend::setEmail(std::string email) {
+        _email = email;
+    }
+
 
 
 ContactList
