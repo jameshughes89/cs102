@@ -744,7 +744,7 @@ toString
 
 * What should the string representation of our ``ContactList`` class be?
 * How about we simply print out the friend's information, one per line
-* To make a ``toString`` for the ``ContactList`` class,
+* To make a ``toString`` for the ``ContactList`` class
 
 
 .. code-block:: java
