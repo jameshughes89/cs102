@@ -59,7 +59,7 @@ Object
 * The inherited behaviour of ``equals`` checks if the references are to the same exact object
     * ``x.equals(y)`` checks if ``x`` and ``y`` are the same object (same as ``x == y``)
 
-* The inherited behaviour of ``toString`` is to return a string of the object's class name + @ + the has code of the object
+* The inherited behaviour of ``toString`` is to return a string of the object's class name + @ + the hash code of the object
 
 * If we do not override these methods in our classes, we can still use them, but get the default behaviour
 
