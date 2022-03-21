@@ -21,6 +21,19 @@ What Are They?
     analogue to a reference variable from Java in Cpp is an automatically dereferenced pointer.
 
 
+* Reference variables are a way to give a variable another name
+    * Alias
+
+* The ``&`` character is used to create reference variables
+    * ``&`` is already used for *and* and *address of*, but it is context sensitive
+
+* To create a reference for an integer, we use ``int&``
+    * Note the similarity to the pointer variables
+
+* Reference variables are assigned their value on creation
+* They cannot change which variable they are a reference for
+* They do not need to be dereferenced
+
 
 How To Use Them
 ===============
