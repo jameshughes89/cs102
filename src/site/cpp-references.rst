@@ -15,6 +15,10 @@ C++ Lessons #3 --- References
 What Are They?
 ==============
 
+.. warning::
+
+    Although the word used here is "reference", these are not the same as a reference variable in Java. The closest
+    analogue to a reference variable from Java in Cpp is an automatically dereferenced pointer.
 
 
 
