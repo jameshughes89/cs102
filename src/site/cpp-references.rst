@@ -56,3 +56,7 @@ How To Use Them
 
 .. image:: img/cpp-ref.gif
 
+
+Using With Functions
+====================
+
