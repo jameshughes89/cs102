@@ -38,5 +38,21 @@ What Are They?
 How To Use Them
 ===============
 
+* Below is an example of using a reference variable
+    * Create an ``int`` variable ``a``
+    * Assign ``6`` to ``a``
+    * Create a reference to an ``int`` called ``b`` and assign it to ``a``
+    * Change the contents of ``a``/ ``b`` through ``b``
 
+
+.. code-block:: cpp
+    :linenos:
+
+    int a;
+    a = 6;
+    int& b = a;
+    b = 7;
+
+
+.. image:: img/cpp-ref.gif
 
