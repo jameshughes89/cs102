@@ -64,7 +64,7 @@ Using With Functions
 Function With Regular Variable Parameters
 -----------------------------------------
 
-* In the below example, the ``add`` function creates two local variables ``x`` and ``y``
+* In the below example, the ``add`` function creates two local variables ``x`` and ``y`` to store integers
 
 .. code-block:: cpp
     :linenos:
@@ -88,6 +88,8 @@ Function With Regular Variable Parameters
 Function With Pointer Variable Parameters
 -----------------------------------------
 
+* In the below example, the ``add`` function creates three local variables ``x``, ``y``, and ``z`` to store pointers to integers
+
 .. code-block:: cpp
     :linenos:
 
@@ -102,9 +104,16 @@ Function With Pointer Variable Parameters
         add(&a, &b, &c);
     }
 
+.. image:: img/cpp-ref_pointer.png
+   :width: 300 px
+   :align: center
+
 
 Function With Reference Variable Parameters
 -------------------------------------------
+
+* In the below example, the ``add`` function gets reference to ``a``, ``b``, and ``c`` (labeled as ``x``, ``y``, and ``z``)
+    * No need for a copy
 
 .. code-block:: cpp
     :linenos:
@@ -119,3 +128,7 @@ Function With Reference Variable Parameters
         int c = 0;
         add(a, b, c);
     }
+
+.. image:: img/cpp-ref_reference.png
+   :width: 300 px
+   :align: center
