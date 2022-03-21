@@ -23,8 +23,3 @@ How To Use Them
 
 
 
-
-
-Further Reading
-===============
-
