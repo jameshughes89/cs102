@@ -64,8 +64,8 @@ ArrayIndexedBag
 
         private static final int DEFAULT_CAPACITY = 100;
         private static final int NOT_FOUND = -1;
-        protected T[] bag;
-        protected int rear;
+        private T[] bag;
+        private int rear;
 
         public ArrayIndexedBag() {
             this(DEFAULT_CAPACITY);
@@ -304,8 +304,8 @@ ArraySortedBag
 
         private static final int DEFAULT_CAPACITY = 100;
         private static final int NOT_FOUND = -1;
-        protected T[] bag;
-        protected int rear;
+        private T[] bag;
+        private int rear;
 
         public ArraySortedBag() {
             this(DEFAULT_CAPACITY);
