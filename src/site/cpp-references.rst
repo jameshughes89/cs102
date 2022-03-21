@@ -55,7 +55,8 @@ How To Use Them
 
 
 .. image:: img/cpp-ref.gif
-
+   :width: 300 px
+   :align: center
 
 Using With Functions
 ====================
@@ -63,10 +64,58 @@ Using With Functions
 Function With Regular Variable Parameters
 -----------------------------------------
 
+* In the below example, the ``add`` function creates two local variables ``x`` and ``y``
+
+.. code-block:: cpp
+    :linenos:
+
+    int add(int x, int y) {
+        return x + y;
+    }
+
+    int main(){
+        int a = 2;
+        int b = 3;
+        int c = 0;
+        c = add(a, b);
+    }
+
+.. image:: img/cpp-ref_regular.png
+   :width: 300 px
+   :align: center
+
 
 Function With Pointer Variable Parameters
 -----------------------------------------
 
+.. code-block:: cpp
+    :linenos:
+
+    void add(int* x, int* y int* z) {
+        *c = *x + *y;
+    }
+
+    int main(){
+        int a = 2;
+        int b = 3;
+        int c = 0;
+        add(&a, &b, &c);
+    }
+
 
 Function With Reference Variable Parameters
 -------------------------------------------
+
+.. code-block:: cpp
+    :linenos:
+
+    void add(int& x, int& y, int& z) {
+        z = x + y;
+    }
+
+    int main(){
+        int a = 2;
+        int b = 3;
+        int c = 0;
+        add(a, b, c);
+    }
