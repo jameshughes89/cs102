@@ -60,3 +60,13 @@ How To Use Them
 Using With Functions
 ====================
 
+Function With Regular Variable Parameters
+-----------------------------------------
+
+
+Function With Pointer Variable Parameters
+-----------------------------------------
+
+
+Function With Reference Variable Parameters
+-------------------------------------------
