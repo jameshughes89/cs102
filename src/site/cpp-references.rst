@@ -101,7 +101,7 @@ Function With Pointer Variable Parameters
         int a = 2;
         int b = 3;
         int c = 0;
-        add(&a, b, c);
+        add(a, b, &c);
     }
 
 .. image:: img/cpp-ref_pointer.png
