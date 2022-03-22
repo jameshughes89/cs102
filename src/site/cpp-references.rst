@@ -93,15 +93,15 @@ Function With Pointer Variable Parameters
 .. code-block:: cpp
     :linenos:
 
-    void add(int* x, int* y int* z) {
-        *c = *x + *y;
+    void add(int x, int y int* z) {
+        *c = x + y;
     }
 
     int main(){
         int a = 2;
         int b = 3;
         int c = 0;
-        add(&a, &b, &c);
+        add(&a, b, c);
     }
 
 .. image:: img/cpp-ref_pointer.png
@@ -118,7 +118,7 @@ Function With Reference Variable Parameters
 .. code-block:: cpp
     :linenos:
 
-    void add(int& x, int& y, int& z) {
+    void add(int x, int y, int& z) {
         z = x + y;
     }
 
