@@ -63,12 +63,22 @@ Header
     };
 
 
+* The last three lines are a way we can have accessors for a private fields
+* The first thing to note is that the whole method is actually written here in the header since it is only one line long
+* The first two return ``const std::string&`` --- a constant reference to a string
+    * These values can be accessed, but not changed (they're ``const``)
+    * You can access the like this ``someFriend.firstName()``
+
+* ``email()`` on the other hand does not return a ``const``, which means that this value may be changed
+    * You can modify the email like this ``someFriend.email() = "new email address"``
+
 
 Class
 -----
 
 * The class file is where we typically define and write the actual methods
 * Mind the use of ``Friend::`` before all the method names
+* Only the constructors are needed here
 
 .. code-block:: cpp
     :linenos:
