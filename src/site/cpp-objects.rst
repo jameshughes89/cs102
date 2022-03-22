@@ -26,7 +26,7 @@ Friend
 
 * We will also want
     * Constructor
-    * Some getters/setters
+    * Accessors
 
 * That's about it
 
@@ -49,18 +49,17 @@ Header
 
     class Friend {
         private:
-            // Starting with underscore is convention for private variables
-            std::string _firstName;
-            std::string _lastName;
-            std::string _email;
+            std::string firstName_;
+            std::string lastName_;
+            std::string email_;
 
-        public:
-            Friend();
-            Friend(std::string, std::string, std::string);
-            std::string getFirstName();
-            std::string getLastName();
-            std::string getEmail();
-            void setEmail(std::string);
+    public:
+        Friend();
+        Friend(std::string, std::string, std::string);
+
+        const std::string& firstName()  {return firstName_;}
+        const std::string& lastName()   {return lastName_;}
+              std::string& email()      {return email_;}
     };
 
 
@@ -86,22 +85,6 @@ Class
     Friend::Friend(std::string firstName, std::string lastName, std::string email) {
         _firstName = firstName;
         _lastName = lastName;
-        _email = email;
-    }
-
-    std::string Friend::getFirstName() {
-        return _firstName;
-    }
-
-    std::string Friend::getLastName() {
-        return _lastName;
-    }
-
-    std::string Friend::getEmail() {
-        return _email;
-    }
-
-    void Friend::setEmail(std::string email) {
         _email = email;
     }
 
