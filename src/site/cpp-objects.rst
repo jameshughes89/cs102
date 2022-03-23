@@ -1,5 +1,5 @@
 **************************
-C++ Lessons #6 --- Objects
+C++ Lessons #5 --- Objects
 **************************
 
 .. warning::
