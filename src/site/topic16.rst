@@ -250,7 +250,7 @@ toString
 
         public String toString() {
             StringBuilder builder = new StringBuilder();
-            Iterator<Integer> it = this.iterator();
+            Iterator<T> it = this.iterator();
             while(it.hasNext()) {
                 builder.append(it.next());
                 builder.append(", ");
