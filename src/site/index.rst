@@ -162,6 +162,8 @@ C++ Lessons
 
     cpp-syntax
     cpp-pointers
+    cpp-references
+    cpp-arrays
 
 
 ==================

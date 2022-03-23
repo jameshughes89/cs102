@@ -96,7 +96,7 @@ Constructors
 
 * Like the ``ContactList`` example, we will make two constructors
     * One will use the default value
-    * The other will allow us ot provide a starting size of the array
+    * The other will allow us to provide a starting size of the array
 
 
 .. code-block:: Java
