@@ -57,19 +57,20 @@ Header
         Friend();
         Friend(std::string, std::string, std::string);
 
-        const std::string& firstName()  {return firstName_;}
-        const std::string& lastName()   {return lastName_;}
-              std::string& email()      {return email_;}
+        const std::string& firstName() const    {return firstName_;}
+        const std::string& lastName() const     {return lastName_;}
+        const std::string& email() const        {return email_;}
+              std::string& email()              {return email_;}
     };
 
 
-* The last three lines are a way we can have accessors for a private fields
+* The last four lines are a way we can have accessors for a private fields
 * The first thing to note is that the whole method is actually written here in the header since it is only one line long
 * The first two return ``const std::string&`` --- a constant reference to a string
-    * These values can be accessed, but not changed (they're ``const``)
+    * These values can be accessed, but not changed
     * You can access the like this ``someFriend.firstName()``
 
-* ``email()`` on the other hand does not return a ``const``, which means that this value may be changed
+* ``email()`` on the other hand has another method that does not return a ``const``, which means that this value may be changed
     * You can modify the email like this ``someFriend.email() = "new email address"``
 
 
