@@ -3,7 +3,7 @@ import java.util.NoSuchElementException;
 
 public class LinkedIterator<T> implements Iterator<T> {
 
-    Node<T> current;
+    private Node<T> current;
 
     public LinkedIterator(Node<T> head) {
         current = head;
