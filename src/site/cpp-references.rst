@@ -42,7 +42,7 @@ How To Use Them
     * Create an ``int`` variable ``a``
     * Assign ``6`` to ``a``
     * Create a reference to an ``int`` called ``b`` and assign it to ``a``
-    * Change the contents of ``a``/ ``b`` through ``b``
+    * Change the contents of ``a``/``b`` through ``b``
 
 
 .. code-block:: cpp
