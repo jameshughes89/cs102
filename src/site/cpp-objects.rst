@@ -79,7 +79,7 @@ Implementation
 
 * The .cpp file is where we typically define and write the actual methods
 * Mind the use of ``Friend::`` before all the method names
-* Only the constructors are needed here
+* Only the constructors are needed here because the implementation for the others were declared in the header
 
 .. code-block:: cpp
     :linenos:
