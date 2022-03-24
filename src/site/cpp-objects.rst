@@ -74,10 +74,10 @@ Header
     * You can modify the email like this ``someFriend.email() = "new email address"``
 
 
-Class
------
+Implementation
+--------------
 
-* The class file is where we typically define and write the actual methods
+* The .cpp file is where we typically define and write the actual methods
 * Mind the use of ``Friend::`` before all the method names
 * Only the constructors are needed here
 
