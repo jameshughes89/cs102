@@ -63,6 +63,9 @@ Header
               std::string& email()              {return email_;}
     };
 
+* Notice the two constructors for the ``Friend``
+    * A default constructor that takes no parameters
+    * A constructor that takes three strings as parameters
 
 * The last four lines are a way we can have accessors for a private fields
 * The first thing to note is that the whole method is actually written here in the header since it is only one line long
@@ -112,8 +115,11 @@ Using the Friend Class
     :linenos:
 
     int main() {
-        Friend aFriend("Bob", "Smith", "bSmith@gmail.com");
+        // Create a friend on the stack with the default constructor
+        // Mind the missing parentheses
+        Friend aFriend;
 
+        // Create a friend in the heap and create a pointer variable
         Friend* bFriend = new Friend("Jane", "Doe", "jdoe@gmail.com");
     }
 
