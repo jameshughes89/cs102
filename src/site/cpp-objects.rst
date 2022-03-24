@@ -88,15 +88,15 @@ Class
     #include "Friend.h"
 
     Friend::Friend() {
-        _firstName = "Person";
-        _lastName = "Doe";
-        _email = "pDoe@email.com";
+        firstName_ = "Person";
+        lastName_ = "Doe";
+        email_ = "pDoe@email.com";
     }
 
     Friend::Friend(std::string firstName, std::string lastName, std::string email) {
-        _firstName = firstName;
-        _lastName = lastName;
-        _email = email;
+        firstName_ = firstName;
+        lastName_ = lastName;
+        email_ = email;
     }
 
 
