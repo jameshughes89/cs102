@@ -31,7 +31,7 @@ public interface Bag<T> extends Iterable<T> {
      * bag.
      *
      * @param target Element to be counted
-     * @return Number of times the element occured in the bag.
+     * @return Number of times the element occurred in the bag.
      */
     int getCount(T target);
 
