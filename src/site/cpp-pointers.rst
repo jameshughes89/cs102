@@ -12,6 +12,16 @@ C++ Lessons #2 --- Pointers
     * For simplicity, some of the examples will use less than ideal implementations
 
 
+.. note::
+
+    Here we will go over the basics of pointers in C/C++; however, in practice you will likely be making use of C++'s
+    smart pointers. 
+
+        * `std::unique_ptr <https://en.cppreference.com/w/cpp/memory/unique_ptr>`_
+        * `std::shared_ptr <https://en.cppreference.com/w/cpp/memory/shared_ptr>`_
+        * `std::weak_ptr <https://en.cppreference.com/w/cpp/memory/weak_ptr>`_
+
+
 * Variables we make in our program go into RAM
 
 .. code-block:: cpp
