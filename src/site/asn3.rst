@@ -132,7 +132,7 @@ In order to complete the ``LinkedPriorityQueue``, you will need write a construc
     * ``void enqueue(T element, int priority)``
     * ``void enqueue(T element)``
     * ``T dequeue()``
-    * ``T front()``
+    * ``T first()``
     * ``int size()``
     * ``boolean isEmpty()``
 
