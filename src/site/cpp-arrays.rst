@@ -15,9 +15,7 @@ C++ Lessons #4 --- Arrays
 .. note::
 
     Here we will go over the basics of arrays in C/C++; however, in practice you will likely be making use of C++'s
-    standard library's ``std::vector``.
-
-        * `std::vector <https://en.cppreference.com/w/cpp/container/vector/>`_
+    standard library's `std::vector <https://en.cppreference.com/w/cpp/container/vector/>`_.
 
 
 Static Arrays
