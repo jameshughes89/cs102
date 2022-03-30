@@ -33,7 +33,6 @@ Groups of People
 
 * A group of people is:
     * 2 people
-    * OR 2 people
     * OR 3 people
     * OR 4 people
     * OR ...
@@ -51,7 +50,7 @@ Groups of People
 * Based on this definition, if I ask you if 2 people are a **group of people**, the answer is clearly yes (the first point)
 * But if I ask you if 4 people is a **group of people**, we need to do some digging
     * In order to tell you if 4 people is a **group of people**, I need to know if 3 people is a **group of people**
-        * If 3 is, then I know 4 is since 4 is then be a **group of people** plus one more person
+        * If 3 is, then I know 4 is since 4 is 3, a **group of people**, plus one more person
     * To know if 3 people is a **group of people**, I must know if 2 people is a **group of people**
     * I know, by definition, that 2 people is, in fact, a **group of people**
     * Therefore, I know that 3 people is a **group of people**
@@ -145,7 +144,7 @@ Recursive Programming
 Factorial
 ---------
 
-* The factorial,  :math:`n!`, of a non-negative integer is the product of all non-negative between n and 1 inclusively
+* The factorial,  :math:`n!`, of a non-negative integer is the product of all non-negative integers between n and 1 inclusively
     * It also includes zero, but this is addressed below
 
     :math:`n! = n \times (n - 1) \times (n - 2) \times \dots \times 3 \times 2 \times 1`
@@ -178,9 +177,13 @@ Factorial
 * If I ask you what :math:`4!` is, we can calculate it by applying the rules; there are no real tricks to it
 
     :math:`4! = 4 * 3!`
+
         :math:`3! = 3 * 2!`
+
             :math:`2! = 2 * 1!`
+
                 :math:`1! = 1 * 0!`
+
                     :math:`0! = 1`
 
                 :math:`1! = 1 * 0! = 1 * 1 = 1`
