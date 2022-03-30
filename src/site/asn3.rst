@@ -112,7 +112,7 @@ than the person with a giant crack in their skull, but they will get seen before
 Notes About Your Implementation
 -------------------------------
 
-* You may find the regular ``LinkedPriorityQueue`` a good reference for starting
+* You may find the regular ``LinkedQueue`` a good reference for starting
 * Have priority values that are lower be considered "more important" (lower values get dequeued first)
 * Given the definition, all that matters is that when something gets dequeued, it has the most important priority
     * Do you write your enqueue such that you search for the correct insertion spot (:math:`O(n)`) and then always dequeue from the front (:math:`O(1)`)?
