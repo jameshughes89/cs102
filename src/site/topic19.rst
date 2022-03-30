@@ -50,7 +50,7 @@ Groups of People
 * Based on this definition, if I ask you if 2 people are a **group of people**, the answer is clearly yes (the first point)
 * But if I ask you if 4 people is a **group of people**, we need to do some digging
     * In order to tell you if 4 people is a **group of people**, I need to know if 3 people is a **group of people**
-        * If 3 is, then I know 4 is since 4 is then be a **group of people** plus one more person
+        * If 3 is, then I know 4 is since 4 is 3, a **group of people**, plus one more person
     * To know if 3 people is a **group of people**, I must know if 2 people is a **group of people**
     * I know, by definition, that 2 people is, in fact, a **group of people**
     * Therefore, I know that 3 people is a **group of people**
