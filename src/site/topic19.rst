@@ -33,7 +33,6 @@ Groups of People
 
 * A group of people is:
     * 2 people
-    * OR 2 people
     * OR 3 people
     * OR 4 people
     * OR ...
@@ -186,13 +185,13 @@ Factorial
             :math:`2! = 2 * 1!`
                 :math:`1! = 1 * 0!`
                     :math:`0! = 1`
-                    
+
                 :math:`1! = 1 * 0! = 1 * 1 = 1`
-                
+
             :math:`2! = 2 * 1! = 2 * 1 = 2`
-            
+
         :math:`3! = 3 * 2! = 3 * 2 = 6`
-        
+
     :math:`4! = 4 * 3! = 4 * 6 = 24`
 
 
