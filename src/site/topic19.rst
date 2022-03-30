@@ -181,9 +181,13 @@ Factorial
 * If I ask you what :math:`4!` is, we can calculate it by applying the rules; there are no real tricks to it
 
     :math:`4! = 4 * 3!`
+
         :math:`3! = 3 * 2!`
+
             :math:`2! = 2 * 1!`
+
                 :math:`1! = 1 * 0!`
+
                     :math:`0! = 1`
 
                 :math:`1! = 1 * 0! = 1 * 1 = 1`
