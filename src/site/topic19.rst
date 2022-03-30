@@ -77,7 +77,7 @@ Lists
 * We can define this recursively in a rather natural way
 
 * A list is:
-    * **Base Case** --- an empty list
+    * **Base Case** --- An empty list
     * **Recursive Case** --- There is a head of the list, followed by a tail that's a list
 
 * Consider the following list
