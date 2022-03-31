@@ -169,6 +169,21 @@ Using the Friend Class
 ContactList
 ===========
 
+* We will create a ``ContactList`` class to keep track of ``Friend`` objects
+* The ``ContactList`` will know it's
+    * Capacity (arrays do not know their capacity)
+    * Size (only one we would want access to)
+    * An array to hold to keep track of the ``Friend`` objects
+
+* We will also want
+    * Constructors
+    * A way to add ``Friend`` objects
+    * A way to remove ``Friend`` objects
+    * Access the size
+    * A way to update a ``Friend`` object's email
+    * A linear search
+    * A way to access a ``Friend`` from a specific intex 
+
 
 Further Reading
 ===============
