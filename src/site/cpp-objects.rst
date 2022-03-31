@@ -182,7 +182,51 @@ ContactList
     * Access the size
     * A way to update a ``Friend`` object's email
     * A linear search
-    * A way to access a ``Friend`` from a specific intex 
+    * A way to access a ``Friend`` from a specific intex
+
+
+Header
+------
+
+* Below is a complete ``ContactList.h``
+* Notice that the only private variable with an accessor is ``size_``
+* You will also notice the *deconstructor* ``~ContactList();``
+    * Simply put, deconstructors describe how to deallocate the memory assigned to the instance
+    * This will be discussed in more detail in the implementation section below
+
+* And you will also notice the *copy constructor* ``ContactList(const ContactList &contactList)``
+    * Simply, this describes how to make a copy of an instance of this class
+    * More on this in the implementation section
+
+.. code-block:: cpp
+    :linenos:
+
+    // ContactList.h
+    #include "Friend.h"
+
+    class ContactList {
+        private:
+            const int DEFAULT_CAPACITY = 10;
+            const int NOT_FOUND = -1;
+            int size_;
+            int capacity_;
+            Friend** friends_;
+
+            void expandCapacity();
+
+        public:
+            ContactList();
+            ContactList(int);
+            ContactList(const ContactList& contactList);
+            ~ContactList();
+
+            const int& size() const {return size_;}
+            void add(std::string, std::string, std::string);
+            void remove(std::string, std::string, std::string);
+            void updateEmail(std::string, std::string, std::string);
+            int find(std::string, std::string, std::string);
+            Friend* at(int);
+    };
 
 
 Further Reading
