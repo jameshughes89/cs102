@@ -226,6 +226,7 @@ Header
             void updateEmail(std::string, std::string, std::string);
             int find(std::string, std::string, std::string);
             Friend* at(int);
+            const Friend* operator[](std::size_t idx) const { return friends_[idx]; }
     };
 
 
