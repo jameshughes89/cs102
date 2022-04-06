@@ -146,7 +146,7 @@ Binary Search
     * :math:`n = 2^{h + 1} - 1`, where `h` is the "height" of the tree, or, the number of steps needed to go from the top to the bottom
     * :math:`h = log_{2}(n + 1) - 1`
 
-* Thus, the computational complexity of binary search is :math:`O(log_{2}(n)` since, as :math:`n` grows, the maximum number of steps we would need to take only grows like :math:`log_{2}(n)`
+* Thus, the computational complexity of binary search is :math:`O(log_{2}(n))` since, as :math:`n` grows, the maximum number of steps we would need to take only grows like :math:`log_{2}(n)`
 
 .. warning::
 
