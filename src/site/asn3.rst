@@ -196,7 +196,7 @@ The general idea is this
 * You'll need a way to keep track of each cell's predecessor in the path
     * Which cell did I step from to get to the current cell?
     * Perhaps a ``Map``?
-* Feel free to use as many private helper methods you need
+* Feel free to use as many private helper methods as you need
 
 .. warning::
     Do not get distracted by your assignment 2 solution in ``DfsMazeSolver``. Although there are similarities, the
