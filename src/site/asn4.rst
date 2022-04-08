@@ -3,7 +3,7 @@ Assignment #4: 1100010110111010001110110100111110001001
 *******************************************************
 
 * **Worth**: 10%
-* **DUE**: April 11th 11:55pm; submitted on MOODLE.
+* **UPDATED DUE DATE**: April 14th 11:55pm; submitted on MOODLE.
 
 
 Task
