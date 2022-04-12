@@ -174,7 +174,7 @@ encoding and decoding strings.
 Notes About Your Implementation
 -------------------------------
 
-* You will want to use a ``PrioriryQueue``, but instead of implementing one on your own, `this time you will use the one from java.util. <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/PriorityQueue.html>`_
+* You will want to use a ``PriorityQueue``, but instead of implementing one on your own, `this time you will use the one from java.util. <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/PriorityQueue.html>`_
     * `Make use of the constructor that takes a comparator <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/PriorityQueue.html#%3Cinit%3E(java.util.Comparator)>`_
     * Take care to notice the methods as this implementation does not call their add/remove ``enqueue``/``dequeue``
 
@@ -193,7 +193,7 @@ Notes About Your Implementation
 Implementing the Class
 ----------------------
 
-Your class should have at least one field --- a reverence to the root of the Huffman Tree. As discussed above, it is
+Your class should have at least one field --- a reference to the root of the Huffman Tree. As discussed above, it is
 recommended that you also include another field --- a map storing each character's bit string encoding.
 
 Complete the ``public static HuffmanCode fromString(String seed)`` method. This factory method will do all the setup for
