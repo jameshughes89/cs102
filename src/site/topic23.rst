@@ -35,7 +35,7 @@ Binary Search Tree Definition
        :width: 250 px
        :align: center
 
-* In the above example, note that the leftmost node is the smallest value in the tree and the rightmost is the largest.
+* In the above example, note that the leftmost node is the smallest value in the tree and the rightmost is the largest
 
 
 A Binary Search Tree is a Binary Tree
