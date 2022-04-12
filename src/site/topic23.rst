@@ -100,7 +100,7 @@ Binary Search
         return binarySearch(root, needle) != null;
     }
 
-    private boolean binaryContains(Node<T> current, T needle) {
+    private boolean binarySearch(Node<T> current, T needle) {
         if (current == null) {
             return false;
         } else if (current.getData().equals(needle)) {
