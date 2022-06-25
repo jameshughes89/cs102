@@ -127,11 +127,11 @@ Variables and Types
 * You will see that C++ and Java are very similar here
 * The only catch is that, unlike Java and Python, we don't get strings for free out of the box
 * We can use strings by including ``<string>``
-    * Or ``<iostream>`` since we get strings that that too
+    * Or ``<iostream>`` since we get strings from that too
 * Also note the use of ``std`` before the string type
 
 * Just like Java, with C++ you cannot swap the types we store in our variables like we could in Python
-    * Although, there kinda' is a way to do this in C++, but we will ignore that
+    * Although, there kinda is a way to do this in C++, but we will ignore that
 
 * Again, like Java, with C++ we can declare a variable on a single like and then assign it a value later
 
