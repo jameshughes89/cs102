@@ -72,7 +72,7 @@ C++ Lessons #1 --- C++ vs. Java vs. Python
 
 * Like Java:
     * You will also see the use of semicolons (``;``) at the end of the lines of code (we need these)
-    * We use braces (the squiggly brackets) for starting end ending the function ``{ ... }``
+    * We use braces (the squiggly brackets) for starting and ending the function ``{ ... }``
 
 
 Variables and Types
