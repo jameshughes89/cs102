@@ -16,7 +16,7 @@ python {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
     testImplementation 'org.assertj:assertj-core:3.23.1'
     testImplementation 'nl.jqno.equalsverifier:equalsverifier:3.10'
     testImplementation 'com.google.guava:guava-testlib:31.1-jre'
