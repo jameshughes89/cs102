@@ -48,7 +48,7 @@ C++ Lessons #1 --- C++ vs. Java vs. Python
     }
 
 
-* ``#include`` is kinda' like ``import`` like we used in Python
+* ``#include`` is like ``import`` like we used in Python
 * ``<iostream>`` in the standard input/output library for C++
     * It let's us use ``std::cout``, which is how we can print things
 
@@ -63,7 +63,7 @@ C++ Lessons #1 --- C++ vs. Java vs. Python
 
 * The ``std::cout`` is how we will print things out
     * The ``std`` part is the namespace where ``cout`` is
-        * *Kinda'* like the ``math`` in ``math.sin`` in Python (but not quite)
+        * *Kind of* like the ``math`` in ``math.sin`` in Python (but not quite)
     * ``std`` is short for *standard*
 
 * ``std::endl`` is how we end the line we're printing
@@ -127,11 +127,11 @@ Variables and Types
 * You will see that C++ and Java are very similar here
 * The only catch is that, unlike Java and Python, we don't get strings for free out of the box
 * We can use strings by including ``<string>``
-    * Or ``<iostream>`` since we get strings that that too
+    * Or ``<iostream>`` since we get strings from that too
 * Also note the use of ``std`` before the string type
 
 * Just like Java, with C++ you cannot swap the types we store in our variables like we could in Python
-    * Although, there kinda' is a way to do this in C++, but we will ignore that
+    * Although, there kind of is a way to do this in C++, but we will ignore that
 
 * Again, like Java, with C++ we can declare a variable on a single like and then assign it a value later
 
