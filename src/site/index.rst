@@ -121,8 +121,8 @@ Labs
     :maxdepth: 1
     :numbered:
 
-    lab1
-    lab2
+    labs/hello-world/hello-world
+    labs/objects-collections/objects-collections
     lab3
     lab4
     lab5
