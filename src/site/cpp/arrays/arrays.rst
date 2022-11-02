@@ -15,7 +15,7 @@ C++ Lessons --- Arrays
 .. note::
 
     Here we will go over the basics of arrays in C/C++; however, in practice you will likely be making use of C++'s
-    standard library's `std::vector <https://en.cppreference.com/w/cpp/container/vector/>`_.
+    standard library's `std::vector <https://en.cppreference.com/w/cpp/container/vector/>`__.
 
 
 Static Arrays
@@ -265,14 +265,14 @@ The Heap?
 Further Reading
 ===============
 
-* Read the `cplusplus.com <http://www.cplusplus.com/doc/tutorial/arrays/>`_ tutorial on arrays
+* Read the `cplusplus.com <http://www.cplusplus.com/doc/tutorial/arrays/>`__ tutorial on arrays
     * Images are taken directly from the cplusplus page
     * Click the images to visit the page
 
 * Read up on ``std::vector``
-    * `cppreference.com <https://en.cppreference.com/w/cpp/container/vector>`_
-    * `cplusplus.com <https://www.cplusplus.com/reference/vector/vector/>`_
+    * `cppreference.com <https://en.cppreference.com/w/cpp/container/vector>`__
+    * `cplusplus.com <https://www.cplusplus.com/reference/vector/vector/>`__
 
 * There also exists a ``std::array`` too, which you may find interesting
-    * `cppreference.com <https://en.cppreference.com/w/cpp/container/array>`_
-    * `cplusplus.com <https://www.cplusplus.com/reference/array/array/>`_
+    * `cppreference.com <https://en.cppreference.com/w/cpp/container/array>`__
+    * `cplusplus.com <https://www.cplusplus.com/reference/array/array/>`__

@@ -17,9 +17,9 @@ C++ Lessons --- Pointers
     Here we will go over the basics of pointers in C/C++; however, in practice you will likely be making use of C++'s
     smart pointers.
 
-        * `std::unique_ptr <https://en.cppreference.com/w/cpp/memory/unique_ptr>`_
-        * `std::shared_ptr <https://en.cppreference.com/w/cpp/memory/shared_ptr>`_
-        * `std::weak_ptr <https://en.cppreference.com/w/cpp/memory/weak_ptr>`_
+        * `std::unique_ptr <https://en.cppreference.com/w/cpp/memory/unique_ptr>`__
+        * `std::shared_ptr <https://en.cppreference.com/w/cpp/memory/shared_ptr>`__
+        * `std::weak_ptr <https://en.cppreference.com/w/cpp/memory/weak_ptr>`__
 
 
 * Variables we make in our program go into RAM
@@ -282,7 +282,7 @@ Fun Examples
 Further Reading
 ===============
 
-* `If you would like additional discussion and examples, check out cpp reference <https://en.cppreference.com/w/cpp/language/pointer>`_
+* `If you would like additional discussion and examples, check out cpp reference <https://en.cppreference.com/w/cpp/language/pointer>`__
 
-* Images are taken directly from `cplusplus.com <https://www.cplusplus.com/doc/tutorial/pointers/>`_
+* Images are taken directly from `cplusplus.com <https://www.cplusplus.com/doc/tutorial/pointers/>`__
     * Click the images to visit the page

@@ -13,7 +13,7 @@ C++ Lessons --- Objects
 
 
 * The same example described in :doc:`Topic3 </topic3.rst>` is used here
-    * A collection of ``Friend`` objects stored in an ``ContactList`` obejct
+    * A collection of ``Friend`` objects stored in an ``ContactList`` object
 
 
 Friend
@@ -173,5 +173,5 @@ ContactList
 Further Reading
 ===============
 
-* Read the `cplusplus.com <http://www.cplusplus.com/doc/tutorial/classes/>`_ tutorial on classes
-* Read the other `cplusplus.com <http://www.cplusplus.com/doc/tutorial/templates/>`_ tutorial on classes
+* Read the `cplusplus.com <http://www.cplusplus.com/doc/tutorial/classes/>`__ tutorial on classes
+* Read the other `cplusplus.com <http://www.cplusplus.com/doc/tutorial/templates/>`__ tutorial on classes
