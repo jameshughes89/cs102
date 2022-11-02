@@ -1,6 +1,6 @@
-******
-Lab #7
-******
+***********
+Sorted Bags
+***********
 
 * Refer to the topic pages for this lab
     * You will find many of the answers to your questions there
@@ -15,20 +15,20 @@ Lab #7
 Making a Linked Sorted Bag
 ==========================
 
-We discussed the :download:`ArraySortedBag implementation<../main/java/ArraySortedBag.java>`, now you will build a linked version.
+We discussed the :download:`ArraySortedBag implementation<../../../main/java/ArraySortedBag.java>`, now you will build a linked version.
 
 #. Create a project and make a class where you will put your main method
     * Perhaps call it ``Lab7``
 
-#. Download the :download:`Bag interface<../main/java/Bag.java>` and add it to your project
+#. Download the :download:`Bag interface<../../../main/java/Bag.java>` and add it to your project
 
-#. Download the :download:`SortedBag interface<../main/java/SortedBag.java>` and add it to your project
+#. Download the :download:`SortedBag interface<../../../main/java/SortedBag.java>` and add it to your project
 
 #. Create a ``LinkedSortedBag`` class
 
 #. Complete the ``LinkedSortedBag`` class by fully implementing the ``SortedBag`` interface
 
-#. Download and modify the :download:`ArraySortedBagTest<../test/java/ArraySortedBagTest.java>` to create a `LinkedSortedBagTest` to verify everything is working correctly
+#. Download and modify the :download:`ArraySortedBagTest<../../../test/java/ArraySortedBagTest.java>` to create a `LinkedSortedBagTest` to verify everything is working correctly
 
 
 Kattis Problems

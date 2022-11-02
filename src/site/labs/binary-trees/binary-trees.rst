@@ -1,6 +1,6 @@
-******
-Lab #9
-******
+************
+Binary Trees
+************
 
 * Refer to the topic pages for this lab
     * You will find many of the answers to your questions there
@@ -48,7 +48,7 @@ Binary Node
 
 1. Create a project
 2. Create a ``BinaryNode`` class
-    * This can be taken from the :download:`LinkedBinarySearchTree <../main/java/LinkedBinarySearchTree.java>` class since the static inner class is for binary nodes
+    * This can be taken from the :download:`LinkedBinarySearchTree <../../../main/java/LinkedBinarySearchTree.java>` class since the static inner class is for binary nodes
     * Just note that you will have to change the class name from ``Node`` to ``BinaryNode``
 
 3. Make sure it's all working by running the above provided ``main`` method for generating the tree

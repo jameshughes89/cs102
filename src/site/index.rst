@@ -127,9 +127,9 @@ Labs
     labs/stacks/stacks
     labs/linked-structures/linked-structures
     labs/queues/queues
-    lab7
-    lab8
-    lab9
+    labs/sorted-bags/sorted-bags
+    labs/recursion/recursion
+    labs/binary-trees/binary-trees
     lab10
     lab11
     lab12
