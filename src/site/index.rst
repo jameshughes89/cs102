@@ -84,6 +84,7 @@ Course Notes
 
 .. toctree::
     :maxdepth: 1
+    :numbered:
 
     topic1
     topic2
@@ -118,6 +119,7 @@ Labs
 
 .. toctree::
     :maxdepth: 1
+    :numbered:
 
     lab1
     lab2
@@ -159,6 +161,7 @@ C++ Lessons
 
 .. toctree::
     :maxdepth: 1
+    :numbered:
 
     cpp-syntax
     cpp-pointers
