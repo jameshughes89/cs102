@@ -1,6 +1,6 @@
-******
-Lab #3
-******
+**********
+Unit Tests
+**********
 
 * Refer to the topic pages for this lab
     * You will find many of the answers to your questions there
