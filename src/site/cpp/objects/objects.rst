@@ -124,11 +124,11 @@ Using the Friend Class
     }
 
 
-.. image:: img/cpp_friend.png
+.. image:: friend.png
    :width: 300 px
    :align: center
 
-.. image:: img/cpp_friend_pointer.png
+.. image:: friend_pointer.png
    :width: 300 px
    :align: center
 
@@ -145,14 +145,14 @@ Using the Friend Class
     class, cpp is happy to make a copy for us on its own, but once classes get more sophisticated, we would need to
     write a copy constructor for this scenario.
 
-    .. image:: img/cpp_friend_copy.png
+    .. image:: friend_copy.png
        :width: 250 px
        :align: center
 
     Similarly, ``yFriend`` is a variable containing a pointer to a ``Friend`` object. When we assign
     ``zFriend = yFriend``, we copy over the contents of the variable (a ``Friend`` pointer) and put it into ``zFriend``.
 
-    .. image:: img/cpp_friend_pointer_copy.png
+    .. image:: friend_pointer_copy.png
        :width: 250 px
        :align: center
 
