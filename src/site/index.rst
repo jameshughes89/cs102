@@ -131,8 +131,8 @@ Labs
     labs/recursion/recursion
     labs/binary-trees/binary-trees
     labs/heaps/heaps
-    labs/sorting/sorting
-    lab12
+    labs/sorting/sorting-basic
+    labs/sorting/sorting-recursive
 
 
 Assignments
