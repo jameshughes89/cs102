@@ -125,7 +125,7 @@ Labs
     labs/objects-collections/objects-collections
     labs/unit-tests/unit-tests
     labs/stacks/stacks
-    lab5
+    labs/linked-structures/linked-structures
     lab6
     lab7
     lab8
