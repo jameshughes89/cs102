@@ -1,5 +1,5 @@
 ******
-Lab #6
+Queues
 ******
 
 * Refer to the topic pages for this lab
@@ -21,15 +21,15 @@ of the queue at index ``0``. This is idea #1 from the :doc:`ArrayQueue topic</to
 1. Create a project and make a class where you will put your main method
     * Perhaps call it ``Lab6``
 
-2. Download the :download:`Queue interface<../main/java/Queue.java>` and add it to your project
+2. Download the :download:`Queue interface<../../../main/java/Queue.java>` and add it to your project
 
 3. Create a ``RudimentaryArrayQueue`` class
 
 4. Complete the ``RudimentaryArrayQueue`` class by fully implementing the ``Queue`` interface
-    * There will be a lot of overlap with the :download:`ArrayQueue<../main/java/ArrayQueue.java>` class
+    * There will be a lot of overlap with the :download:`ArrayQueue<../../../main/java/ArrayQueue.java>` class
     * You will need a way to move the elements down the array after a ``dequeue`` to remove the gap at index ``0`` --- perhaps a private method
 
-5. Download and modify the :download:`ArrayQueueTest<../test/java/ArrayQueueTest.java>` to create a `RudimentaryArrayQueueTest` to verify everything is working correctly
+5. Download and modify the :download:`ArrayQueueTest<../../../test/java/ArrayQueueTest.java>` to create a `RudimentaryArrayQueueTest` to verify everything is working correctly
     * Remember, even though we have a linear time ``dequeue`` and we saw an improved implementation, the ``RudimentaryArrayQueue`` is still, by definition, a queue
 
 

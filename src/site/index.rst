@@ -126,7 +126,7 @@ Labs
     labs/unit-tests/unit-tests
     labs/stacks/stacks
     labs/linked-structures/linked-structures
-    lab6
+    labs/queues/queues
     lab7
     lab8
     lab9
