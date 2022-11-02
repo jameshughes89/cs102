@@ -15,13 +15,16 @@ Unit Tests
 Unit Testing
 ============
 
-We're going to write tests for our ``CourseList`` class from :doc:`Lab2 </lab2>`. :doc:`Topic 6's aside on testing will be of great help here </topic6-testing>`.
+We're going to write tests for our ``CourseList`` class from the
+:doc:`Objects and Collections Lab </labs/objects-collections/objects-collections>`.
+:doc:`Topic 6's aside on testing will be of great help here </topic6-testing>`.
 
 
 Have a Working Implementation
 -----------------------------
 
-1. If you have not already, finish :doc:`Lab2 </lab2>`
+1. If you have not already, finish the
+:doc:`Objects and Collections Lab </labs/objects-collections/objects-collections>`
 
 
 Writing Tests
