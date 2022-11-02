@@ -1,6 +1,6 @@
-***************************
-C++ Lessons #2 --- Pointers
-***************************
+************************
+C++ Lessons --- Pointers
+************************
 
 .. warning::
 
@@ -15,7 +15,7 @@ C++ Lessons #2 --- Pointers
 .. note::
 
     Here we will go over the basics of pointers in C/C++; however, in practice you will likely be making use of C++'s
-    smart pointers. 
+    smart pointers.
 
         * `std::unique_ptr <https://en.cppreference.com/w/cpp/memory/unique_ptr>`_
         * `std::shared_ptr <https://en.cppreference.com/w/cpp/memory/shared_ptr>`_
