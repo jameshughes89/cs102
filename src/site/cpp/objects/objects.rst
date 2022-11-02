@@ -12,7 +12,7 @@ C++ Lessons --- Objects
     * For simplicity, some of the examples will use less than ideal implementations
 
 
-* The same example described in :doc:`Topic3 </topic3.rst>` is used here
+* The same example described in :doc:`Topic3 </topic3>` is used here
     * A collection of ``Friend`` objects stored in an ``ContactList`` object
 
 
