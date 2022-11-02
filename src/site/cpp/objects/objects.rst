@@ -37,7 +37,7 @@ Header
 * The first thing we want is a *header* file
 * Call this ``Friend.h``
 * This is where we typically declare all the member fields and methods the class will have
-* This file will also have all our ``#include``s too
+* This file will also have all our ``#include``\s too
 * Below is a complete ``Friend.h``
 
 
