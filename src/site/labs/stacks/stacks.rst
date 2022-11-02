@@ -1,5 +1,5 @@
 ******
-Lab #4
+Stacks
 ******
 
 * Refer to the topic pages for this lab
@@ -24,7 +24,7 @@ Implementing a Stack
 1. Create a project and make a class where you will put your main method
     * Perhaps call it ``Lab4``
 
-2. Download the :download:`Stack interface <../main/java/Stack.java>` and add it to your project
+2. Download the :download:`Stack interface <../../../main/java/Stack.java>` and add it to your project
 
 3. Create a new class for our ``ArrayStack`` implementation
 
@@ -32,7 +32,7 @@ Implementing a Stack
 
 .. warning::
 
-    I realize you can simply download the :download:`ArrayStack <../main/java/ArrayStack.java>` code and copy/paste, but
+    I realize you can simply download the :download:`ArrayStack <../../../main/java/ArrayStack.java>` code and copy/paste, but
     this defeats the purpose. I want you to slowly and deliberately implement each function and take the time to
     understand the details.
 

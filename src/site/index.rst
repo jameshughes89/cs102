@@ -123,8 +123,8 @@ Labs
 
     labs/hello-world/hello-world
     labs/objects-collections/objects-collections
-    lab3
-    lab4
+    labs/unit-tests/unit-tests
+    labs/stacks/stacks
     lab5
     lab6
     lab7
