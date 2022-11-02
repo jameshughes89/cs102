@@ -1,6 +1,6 @@
-*******
-Lab #10
-*******
+*****
+Heaps
+*****
 
 * Refer to the topic pages for this lab
     * You will find many of the answers to your questions there
@@ -21,7 +21,7 @@ Heaps
 
 Have you ever wanted to store a binary tree in an array?
 
-.. image:: img/heap_example.png
+.. image:: heap_example.png
    :width: 333 px
    :align: center
    :target: https://en.wikipedia.org/wiki/Heap_(data_structure)

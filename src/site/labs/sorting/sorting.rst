@@ -1,5 +1,5 @@
 *******
-Lab #11
+Sorting
 *******
 
 * Refer to the topic pages for this lab

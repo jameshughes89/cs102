@@ -130,8 +130,8 @@ Labs
     labs/sorted-bags/sorted-bags
     labs/recursion/recursion
     labs/binary-trees/binary-trees
-    lab10
-    lab11
+    labs/heaps/heaps
+    labs/sorting/sorting
     lab12
 
 
