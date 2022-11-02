@@ -167,11 +167,3 @@ C++ Lessons
     cpp-pointers
     cpp-references
     cpp-arrays
-
-
-==================
-
-     * :ref:`genindex`
-     * :ref:`modindex`
-     * :ref:`search`
-
