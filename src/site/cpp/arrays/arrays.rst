@@ -31,7 +31,7 @@ Static Arrays
     int foo[5];
 
 
-.. image:: img/cpp_static_array.png
+.. image:: static_array.png
    :width: 400 px
    :align: center
    :target: http://www.cplusplus.com/doc/tutorial/arrays/
@@ -45,7 +45,7 @@ Static Arrays
     int foo[] = {16, 2, 77, 40, 12071};
 
 
-.. image:: img/cpp_static_array_set.png
+.. image:: static_array_set.png
    :width: 400 px
    :align: center
    :target: http://www.cplusplus.com/doc/tutorial/arrays/
