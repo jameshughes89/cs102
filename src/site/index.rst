@@ -163,7 +163,7 @@ C++ Lessons
     :maxdepth: 1
     :numbered:
 
-    cpp-syntax
-    cpp-pointers
-    cpp-references
-    cpp-arrays
+    cpp/syntax/syntax
+    cpp/pointers/pointers
+    cpp/references/references
+    cpp/arrays/arrays

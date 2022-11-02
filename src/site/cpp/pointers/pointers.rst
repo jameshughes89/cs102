@@ -1,6 +1,6 @@
-***************************
-C++ Lessons #2 --- Pointers
-***************************
+************************
+C++ Lessons --- Pointers
+************************
 
 .. warning::
 
@@ -15,11 +15,11 @@ C++ Lessons #2 --- Pointers
 .. note::
 
     Here we will go over the basics of pointers in C/C++; however, in practice you will likely be making use of C++'s
-    smart pointers. 
+    smart pointers.
 
-        * `std::unique_ptr <https://en.cppreference.com/w/cpp/memory/unique_ptr>`_
-        * `std::shared_ptr <https://en.cppreference.com/w/cpp/memory/shared_ptr>`_
-        * `std::weak_ptr <https://en.cppreference.com/w/cpp/memory/weak_ptr>`_
+        * `std::unique_ptr <https://en.cppreference.com/w/cpp/memory/unique_ptr>`__
+        * `std::shared_ptr <https://en.cppreference.com/w/cpp/memory/shared_ptr>`__
+        * `std::weak_ptr <https://en.cppreference.com/w/cpp/memory/weak_ptr>`__
 
 
 * Variables we make in our program go into RAM
@@ -84,7 +84,7 @@ Pointer Variable
 * ``bar`` on the other hand just has type ``int``
 
 
-.. image:: img/cpp_pointer0.png
+.. image:: pointer0.png
    :width: 300 px
    :align: center
    :target: https://www.cplusplus.com/doc/tutorial/pointers/
@@ -99,7 +99,7 @@ Dereferencing
 
 * If you have a pointer variable, but you do not care about the memory address; you want to know what is stored *at* the memory address, we *dereference*
 
-.. image:: img/cpp_pointer0.png
+.. image:: pointer0.png
    :width: 300 px
    :align: center
    :target: https://www.cplusplus.com/doc/tutorial/pointers/
@@ -123,7 +123,7 @@ Dereferencing
     * Take the value there (``25``) and copy it to the integer variable ``baz``
 
 
-.. image:: img/cpp_pointer1.png
+.. image:: pointer1.png
    :width: 300 px
    :align: center
    :target: https://www.cplusplus.com/doc/tutorial/pointers/
@@ -282,7 +282,7 @@ Fun Examples
 Further Reading
 ===============
 
-* `If you would like additional discussion and examples, check out cpp reference <https://en.cppreference.com/w/cpp/language/pointer>`_
+* `If you would like additional discussion and examples, check out cpp reference <https://en.cppreference.com/w/cpp/language/pointer>`__
 
-* Images are taken directly from `cplusplus.com <https://www.cplusplus.com/doc/tutorial/pointers/>`_
+* Images are taken directly from `cplusplus.com <https://www.cplusplus.com/doc/tutorial/pointers/>`__
     * Click the images to visit the page

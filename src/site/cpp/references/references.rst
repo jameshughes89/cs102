@@ -1,6 +1,6 @@
-*****************************
-C++ Lessons #3 --- References
-*****************************
+**************************
+C++ Lessons --- References
+**************************
 
 .. warning::
 
@@ -54,7 +54,7 @@ How To Use Them
     b = 7;
 
 
-.. image:: img/cpp-ref.gif
+.. image:: reference.gif
    :width: 300 px
    :align: center
 
@@ -80,7 +80,7 @@ Function With Regular Variable Parameters
         c = add(a, b);
     }
 
-.. image:: img/cpp-ref_regular.png
+.. image:: reference_regular.png
    :width: 300 px
    :align: center
 
@@ -104,7 +104,7 @@ Function With Pointer Variable Parameters
         add(a, b, &c);
     }
 
-.. image:: img/cpp-ref_pointer.png
+.. image:: reference_pointer.png
    :width: 300 px
    :align: center
 
@@ -129,6 +129,6 @@ Function With Reference Variable Parameters
         add(a, b, c);
     }
 
-.. image:: img/cpp-ref_reference.png
+.. image:: reference_reference.png
    :width: 300 px
    :align: center

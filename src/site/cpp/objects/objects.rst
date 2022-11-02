@@ -1,6 +1,6 @@
-**************************
-C++ Lessons #5 --- Objects
-**************************
+***********************
+C++ Lessons --- Objects
+***********************
 
 .. warning::
 
@@ -12,8 +12,8 @@ C++ Lessons #5 --- Objects
     * For simplicity, some of the examples will use less than ideal implementations
 
 
-* The same example described in :doc:`Topic3 </topic3.rst>` is used here
-    * A collection of ``Friend`` objects stored in an ``ContactList`` obejct
+* The same example described in :doc:`Topic3 </topic3>` is used here
+    * A collection of ``Friend`` objects stored in an ``ContactList`` object
 
 
 Friend
@@ -37,7 +37,7 @@ Header
 * The first thing we want is a *header* file
 * Call this ``Friend.h``
 * This is where we typically declare all the member fields and methods the class will have
-* This file will also have all our ``#include``s too
+* This file will also have all our ``#include``\s too
 * Below is a complete ``Friend.h``
 
 
@@ -124,11 +124,11 @@ Using the Friend Class
     }
 
 
-.. image:: img/cpp_friend.png
+.. image:: friend.png
    :width: 300 px
    :align: center
 
-.. image:: img/cpp_friend_pointer.png
+.. image:: friend_pointer.png
    :width: 300 px
    :align: center
 
@@ -145,14 +145,14 @@ Using the Friend Class
     class, cpp is happy to make a copy for us on its own, but once classes get more sophisticated, we would need to
     write a copy constructor for this scenario.
 
-    .. image:: img/cpp_friend_copy.png
+    .. image:: friend_copy.png
        :width: 250 px
        :align: center
 
     Similarly, ``yFriend`` is a variable containing a pointer to a ``Friend`` object. When we assign
     ``zFriend = yFriend``, we copy over the contents of the variable (a ``Friend`` pointer) and put it into ``zFriend``.
 
-    .. image:: img/cpp_friend_pointer_copy.png
+    .. image:: friend_pointer_copy.png
        :width: 250 px
        :align: center
 
@@ -173,5 +173,5 @@ ContactList
 Further Reading
 ===============
 
-* Read the `cplusplus.com <http://www.cplusplus.com/doc/tutorial/classes/>`_ tutorial on classes
-* Read the other `cplusplus.com <http://www.cplusplus.com/doc/tutorial/templates/>`_ tutorial on classes
+* Read the `cplusplus.com <http://www.cplusplus.com/doc/tutorial/classes/>`__ tutorial on classes
+* Read the other `cplusplus.com <http://www.cplusplus.com/doc/tutorial/templates/>`__ tutorial on classes
