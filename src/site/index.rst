@@ -84,6 +84,7 @@ Course Notes
 
 .. toctree::
     :maxdepth: 1
+    :numbered:
 
     topic1
     topic2
@@ -118,19 +119,20 @@ Labs
 
 .. toctree::
     :maxdepth: 1
+    :numbered:
 
-    lab1
-    lab2
-    lab3
-    lab4
-    lab5
-    lab6
-    lab7
-    lab8
-    lab9
-    lab10
-    lab11
-    lab12
+    labs/hello-world/hello-world
+    labs/objects-collections/objects-collections
+    labs/unit-tests/unit-tests
+    labs/stacks/stacks
+    labs/linked-structures/linked-structures
+    labs/queues/queues
+    labs/sorted-bags/sorted-bags
+    labs/recursion/recursion
+    labs/binary-trees/binary-trees
+    labs/heaps/heaps
+    labs/sorting/sorting-basic
+    labs/sorting/sorting-recursive
 
 
 Assignments
@@ -159,6 +161,7 @@ C++ Lessons
 
 .. toctree::
     :maxdepth: 1
+    :numbered:
 
     cpp-syntax
     cpp-pointers

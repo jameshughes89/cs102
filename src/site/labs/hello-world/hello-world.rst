@@ -1,6 +1,6 @@
-******
-Lab #1
-******
+***********
+Hello World
+***********
 
 * Feel free to use your laptop if you have it
 * I strongly encourage you to work with others in the lab
@@ -20,7 +20,7 @@ Creating a Project
     * Don't use the templates
     * You should see something like this
 
-    .. image:: img/lab1_empty.png
+    .. image:: empty_project.png
        :width: 500 px
        :align: center
 
@@ -42,7 +42,7 @@ Creating a Project
     * *Run -> Run*
     * You may have to select the class you want to run
 
-    .. image:: img/lab1_helloworld.png
+    .. image:: hello_world_project.png
        :width: 500 px
        :align: center
 

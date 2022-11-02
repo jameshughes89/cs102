@@ -1,6 +1,6 @@
-******
-Lab #6
-******
+*******************
+Sorting Recursively
+*******************
 
 * Refer to the topic pages for this lab
     * You will find many of the answers to your questions there
@@ -12,25 +12,75 @@ Lab #6
     * Peer teaching and peer learning is super effective
 
 
-Making a Rudimentary Array Queue
-================================
+Starting Point
+==============
 
-Despite not being a great implementation, we're going to build a ``RudimentaryArrayQueue`` that always keeps the front
-of the queue at index ``0``. This is idea #1 from the :doc:`ArrayQueue topic</topic12>`.
+This lab focuses on the sorts discussed in :doc:`topic 26 </topic26>`. Note that, unlike the previous lab, here we use
+an unsorted bag instead of an array.
 
-1. Create a project and make a class where you will put your main method
-    * Perhaps call it ``Lab6``
+.. code-block:: java
 
-2. Download the :download:`Queue interface<../main/java/Queue.java>` and add it to your project
+    public static void main(String[] args){
 
-3. Create a ``RudimentaryArrayQueue`` class
+        IndexedBag<Integer> toSort = createUnsortedIntBag(10000, 10);
+        System.out.println(toSort);
 
-4. Complete the ``RudimentaryArrayQueue`` class by fully implementing the ``Queue`` interface
-    * There will be a lot of overlap with the :download:`ArrayQueue<../main/java/ArrayQueue.java>` class
-    * You will need a way to move the elements down the array after a ``dequeue`` to remove the gap at index ``0`` --- perhaps a private method
+        double startTime = System.nanoTime();
+        //quicksort(toSort);
+        mergesort(toSort);
+        double endTime = System.nanoTime();
 
-5. Download and modify the :download:`ArrayQueueTest<../test/java/ArrayQueueTest.java>` to create a `RudimentaryArrayQueueTest` to verify everything is working correctly
-    * Remember, even though we have a linear time ``dequeue`` and we saw an improved implementation, the ``RudimentaryArrayQueue`` is still, by definition, a queue
+        System.out.println(toSort);
+        System.out.println("runtime: " + (endTime - startTime)/1000000 + " ms");
+    }
+
+    public static IndexedBag createUnsortedIntBag(int n, int maxValue){
+        IndexedBag<Integer>  toSort= new ArrayIndexedBag<>(n);
+        for(int i = 0; i < n; ++i){
+            toSort.add((int)(Math.random() * maxValue));
+        }
+        return toSort;
+    }
+
+
+Quicksort
+=========
+
+1. Implement the quicksort algorithm
+2. Make sure it works and test it a few times and see what the runtimes are
+    * Change the size of the bag and the max value and see how it impacts runtimes
+    * For the purposes of this lab, do not worry about writing unit tests
+
+.. code-block:: java
+
+    public static <T extends Comparable<T>> void quicksort(IndexedBag<T> toSort){
+        // Fill me in
+    }
+
+
+Mergesort
+=========
+
+1. Implement the mergesort algorithm
+2. Make sure it works and test it a few times and see what the runtimes are
+    * Change the size of the bag and the max value and see how it impacts runtimes
+    * For the purposes of this lab, do not worry about writing unit tests
+
+.. code-block:: java
+
+    public static <T extends Comparable<T>> void mergesort(IndexedBag<T> toSort){
+        // Fill me in
+    }
+
+
+Comparing Sorts
+===============
+
+1. Run each of the sorts a few times and take note of the runtimes
+    * Play around with the size of the lists and the max value
+    * Do the times align with what you'd expect based on the computational complexities of each of the algorithms
+
+2. Compare these runtimes to the sorts completed in the previous lab.
 
 
 Kattis Problems

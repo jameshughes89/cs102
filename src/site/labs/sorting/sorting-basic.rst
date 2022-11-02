@@ -1,5 +1,5 @@
 *******
-Lab #12
+Sorting
 *******
 
 * Refer to the topic pages for this lab
@@ -11,64 +11,95 @@ Lab #12
     * I want people to get used to working together in the labs
     * Peer teaching and peer learning is super effective
 
+.. note::
+
+    This lab is making use of integer arrays for sorting, but if you would like, feel free to use ``IndexedBags``. If
+    choose to do this, here's a tip for your method declarations:
+
+    ``public static <T extends Comparable<T>> void bubbleSort(IndexedBag<T> toSort)``
+
+    Also remember to use ``.compareTo``.
+
 
 Starting Point
 ==============
 
-This lab focuses on the sorts discussed in :doc:`topic 26 </topic26>`. Note that, unlike the previous lab, here we use
-an unsorted bag instead of an array.
+This lab focuses on the sorts discussed in :doc:`topic 25 </topic25>`.
 
 .. code-block:: java
 
     public static void main(String[] args){
 
-        IndexedBag<Integer> toSort = createUnsortedIntBag(10000, 10);
-        System.out.println(toSort);
+        int[] toSort = createUnsortedArray(10000, 10);
+        printArray(toSort);
 
         double startTime = System.nanoTime();
-        //quicksort(toSort);
-        mergesort(toSort);
+        bubbleSort(toSort);
+        //insertionSort(toSort);
+        //selectionSort(toSort);
         double endTime = System.nanoTime();
 
-        System.out.println(toSort);
+        printArray(toSort);
         System.out.println("runtime: " + (endTime - startTime)/1000000 + " ms");
     }
 
-    public static IndexedBag createUnsortedIntBag(int n, int maxValue){
-        IndexedBag<Integer>  toSort= new ArrayIndexedBag<>(n);
+    public static int[] createUnsortedArray(int n, int maxValue){
+        int[]  toSort= new int[n];
         for(int i = 0; i < n; ++i){
-            toSort.add((int)(Math.random() * maxValue));
+            toSort[i] = (int)(Math.random() * maxValue);
         }
         return toSort;
     }
 
+    public static void printArray(int[] toPrint){
+        for(int value: toPrint){
+            System.out.print(value + ", ");
+        }
+        System.out.println();
+    }
 
-Quicksort
-=========
 
-1. Implement the quicksort algorithm
+Bubble Sort
+===========
+
+1. Implement the bubble sort algorithm
 2. Make sure it works and test it a few times and see what the runtimes are
-    * Change the size of the bag and the max value and see how it impacts runtimes
+    * Change the size of the array and the max value and see how it impacts runtimes
     * For the purposes of this lab, do not worry about writing unit tests
 
 .. code-block:: java
 
-    public static <T extends Comparable<T>> void quicksort(IndexedBag<T> toSort){
+    public static void bubbleSort(int[] toSort){
         // Fill me in
     }
 
 
-Mergesort
-=========
+Insertion Sort
+==============
 
-1. Implement the mergesort algorithm
+1. Implement the insertion sort algorithm
 2. Make sure it works and test it a few times and see what the runtimes are
-    * Change the size of the bag and the max value and see how it impacts runtimes
+    * Change the size of the array and the max value and see how it impacts runtimes
     * For the purposes of this lab, do not worry about writing unit tests
 
 .. code-block:: java
 
-    public static <T extends Comparable<T>> void mergesort(IndexedBag<T> toSort){
+    public static void insertionSort(int[] toSort){
+        // Fill me in
+    }
+
+
+Selection Sort
+==============
+
+1. Implement the selection sort algorithm
+2. Make sure it works and test it a few times and see what the runtimes are
+    * Change the size of the array and the max value and see how it impacts runtimes
+    * For the purposes of this lab, do not worry about writing unit tests
+
+.. code-block:: java
+
+    public static void selectionSort(int[] toSort){
         // Fill me in
     }
 
@@ -77,10 +108,14 @@ Comparing Sorts
 ===============
 
 1. Run each of the sorts a few times and take note of the runtimes
-    * Play around with the size of the lists and the max value
+    * Play around with the size of the arrays and the max value
     * Do the times align with what you'd expect based on the computational complexities of each of the algorithms
 
-2. Compare these runtimes to the sorts completed in the previous lab.
+2. Try throwing a counter variable into the inner loops of each of the sorts to see how many times the loops ran
+    * Calculate what the counts should be for each sort, in the worst and best cases, based on the size of the arrays you used
+    * :doc:`Refer to the computational complexity analysis provided on these sorting algorithms </topic25>`
+
+3. Can you rationalize the differences in runtimes?
 
 
 Kattis Problems

@@ -1,6 +1,6 @@
-******
-Lab #2
-******
+***********************
+Objects and Collections
+***********************
 
 * Refer to the topic pages for this lab
     * You will find many of the answers to your questions there

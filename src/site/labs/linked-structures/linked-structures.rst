@@ -1,6 +1,6 @@
-******
-Lab #5
-******
+*****************
+Linked Structures
+*****************
 
 * Refer to the topic pages for this lab
     * You will find many of the answers to your questions there
@@ -25,7 +25,7 @@ Node Class
     * Perhaps call it ``Lab5``
 
 2. Create a generic ``Node`` class
-    * Feel free to :download:`download this one <../main/java/Node.java>`
+    * Feel free to :download:`download this one <../../../main/java/Node.java>`
         * If you do though, be sure to understand it and don't just copy/paste
 
 3. Do a simple test to see if it works by making an instance in your main method and using the node's methods
