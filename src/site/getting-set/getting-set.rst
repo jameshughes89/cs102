@@ -13,11 +13,13 @@ Alternatively, you may use `OpenJDK <https://openjdk.java.net/>`_ which is actua
 
 Either way, make sure you are using JDK version 11 or higher.
 
+
 Other JDKs
 ^^^^^^^^^^
 
 There exist other distributions of JDks out there. Two cool ones are `Amazon's Corretto <https://aws.amazon.com/corretto/>`_
 and `Microsoft's OpenJDK <https://www.microsoft.com/openjdk>`_. You don't need these, but I thought I would let you know they exist.
+
 
 Integrated Development Environment
 ==================================
@@ -49,4 +51,4 @@ I've Still Got Issues
     * What about if I am using operating system X
     * etc.
 
-* `I am confident you can find the answers on my favourite website <https://www.google.ca/>`_ 
+* `I am confident you can find the answers on my favourite website <https://www.google.ca/>`_
