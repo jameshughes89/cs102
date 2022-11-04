@@ -76,7 +76,7 @@ Getting Started
 .. toctree::
     :maxdepth: 1
 
-    gettingset
+    getting-set/getting-set
 
 
 Course Notes
@@ -153,7 +153,7 @@ Course Outline
 .. toctree::
     :maxdepth: 1
 
-    outline
+    outline/outline
 
 
 C++ Lessons
