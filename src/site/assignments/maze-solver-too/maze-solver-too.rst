@@ -40,7 +40,7 @@ Provided Files
 * An ``Asn3`` class with an empty ``main``
 * Three maze files
 
-* :download:`All of this can be downloaded from here<./data/Assignment3.zip>`
+* :download:`All of this can be downloaded from here<Assignment3.zip>`
     * This is a compressed IntelliJ project
     * Just unzip, put it where you want on your computer, and you should be able to open this project through IntelliJ
 

@@ -141,10 +141,10 @@ Assignments
 .. toctree::
     :maxdepth: 1
 
-    asn1
-    asn2
-    asn3
-    asn4
+    assignments/country-catalogue/country-catalogue
+    assignments/maze-solver/maze-solver
+    assignments/maze-solver-too/maze-solver-too
+    assignments/huffman-codes/huffman-codes
 
 
 Course Outline

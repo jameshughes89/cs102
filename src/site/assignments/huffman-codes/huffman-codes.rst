@@ -39,7 +39,7 @@ Provided Files
 * A text file that may be used to seed the Huffman Code
 
 
-* :download:`All of this can be downloaded from here<./data/Assignment4.zip>`
+* :download:`All of this can be downloaded from here<Assignment4.zip>`
     * This is a compressed IntelliJ project
     * Just unzip, put it where you want on your computer, and you should be able to open this project through IntelliJ
 
