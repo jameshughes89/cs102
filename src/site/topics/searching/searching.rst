@@ -37,7 +37,7 @@ Linear Search
         * For every time it's the 2nd element, it could be in the second last position in another search
         * ...
 
-    .. image:: img/search_linear.png
+    .. image:: linear_search.png
        :width: 500 px
        :align: center
 
@@ -128,7 +128,7 @@ Binary Search
 
 * The complexity analysis of binary search may feel intimidating, but the trick is to not overthink it and take your time
 
-.. image:: img/search_binary.png
+.. image:: binary_search.png
    :width: 500 px
    :align: center
 
@@ -236,7 +236,7 @@ Recursive
 For next time
 =============
 
-* Download and play with the :download:`SearchingMethods <../main/java/SearchingMethods.java>` class
-* Download and run the :download:`SearchingMethodsTest <../test/java/SearchingMethodsTest.java>` tests
+* Download and play with the :download:`SearchingMethods </../main/java/SearchingMethods.java>` class
+* Download and run the :download:`SearchingMethodsTest </../test/java/SearchingMethodsTest.java>` tests
 * Read Chapter 9 Section 1
     * 7 pages

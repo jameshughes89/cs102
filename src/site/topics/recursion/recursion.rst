@@ -1,16 +1,16 @@
-***********************
-Topic #19 --- Recursion
-***********************
+*********
+Recursion
+*********
 
 |lineA| |lineB| |lineC|
 
-.. |lineA| image:: img/recursion_line.png
+.. |lineA| image:: line_example.png
     :width: 25%
 
-.. |lineB| image:: img/recursion_line.png
+.. |lineB| image:: line_example.png
     :width: 25%
 
-.. |lineC| image:: img/recursion_line.png
+.. |lineC| image:: line_example.png
     :width: 25%
 
 * How many people are in this line?
@@ -229,7 +229,7 @@ Factorial
 * Then, each frame will return the product to the calling function
     * Regardless of if the calling function is ``recursiveFactorial`` or ``main``
 
-    .. image:: img/recursion_recursiveFactorial.png
+    .. image:: recursive_factorial.png
        :width: 250 px
        :align: center
 
@@ -384,7 +384,7 @@ Fibonacci
     * The function has constant time operations
     * But we see that there are recursive calls, so, how many times does this function get called?
 
-.. image:: img/recursion_fibonacci.png
+.. image:: fibonacci.png
    :width: 500 px
    :align: center
 
@@ -433,7 +433,7 @@ Towers of Hanoi
     * A disk may never be placed on top of any smaller disk
     * All disks must be on some peg at all times, with the exception of the one currently being moved
 
-.. image:: img/recursion_tower.png
+.. image:: hanoi_tower.png
     :width: 500 px
     :align: center
     :alt: This image is taken from wikipedia: https://en.wikipedia.org/wiki/File:Tower_of_Hanoi.jpeg
@@ -441,7 +441,7 @@ Towers of Hanoi
 
 * `There is a legend that goes with this puzzle <https://en.wikipedia.org/wiki/Tower_of_Hanoi#Origins>`_
 
-    .. image:: img/recursion_tower.gif
+    .. image:: hanoi_tower.gif
         :width: 500 px
         :align: center
         :alt: This image is taken from wikipedia: https://en.wikipedia.org/wiki/File:Iterative_algorithm_solving_a_6_disks_Tower_of_Hanoi.gif
