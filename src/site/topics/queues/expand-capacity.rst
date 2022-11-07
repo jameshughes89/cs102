@@ -1,11 +1,11 @@
-**********************************
-Topic #12 Aside --- expandCapacity
-**********************************
+************************
+Aside --- expandCapacity
+************************
 
 ArrayStack
 ==========
 
-.. image:: img/arraystack0.png
+.. image:: /topics/stacks/arraystack0.png
    :width: 500 px
    :align: center
 
@@ -30,7 +30,7 @@ ArrayQueue
 * Consider the scenario where we attempt to use the ``expandCapacity`` we used for the ``ArrayStack``
     * Where we simply double the size of the array and copy the contents over
 
-.. image:: img/arrayqueue_expand_why.png
+.. image:: arrayqueue_expand_capacity_why.png
    :width: 500 px
    :align: center
 

@@ -1,6 +1,6 @@
-************************
-Topic #12 --- ArrayQueue
-************************
+**********
+ArrayQueue
+**********
 
 * We need to think of:
     * A container
@@ -21,7 +21,7 @@ Idea #1
 * Keep track of the ``rear`` index
 * Size will conveniently be ``rear``
 
-.. image:: img/arrayqueue_1idea0.png
+.. image:: arrayqueue_first_idea0.png
    :width: 500 px
    :align: center
 
@@ -29,7 +29,7 @@ Idea #1
 * Add the element to index ``rear``
 * Increment ``rear``
 
-.. image:: img/arrayqueue_1idea1.png
+.. image:: arrayqueue_first_idea1.png
    :width: 500 px
    :align: center
 
@@ -37,7 +37,7 @@ Idea #1
 * Requires that elements are shuffled down ``1`` index
 * Decrement ``rear``
 
-.. image:: img/arrayqueue_1idea2.png
+.. image:: arrayqueue_first_idea2.png
    :width: 500 px
    :align: center
 
@@ -59,7 +59,7 @@ Idea #2
 * Keep track of the ``rear`` index
 * Size will conveniently be ``rear - front``
 
-.. image:: img/arrayqueue_2idea0.png
+.. image:: arrayqueue_second_idea0.png
    :width: 500 px
    :align: center
 
@@ -67,7 +67,7 @@ Idea #2
 * Add the element to index ``rear``
 * Increment ``rear``
 
-.. image:: img/arrayqueue_2idea1.png
+.. image:: arrayqueue_second_idea1.png
    :width: 500 px
    :align: center
 
@@ -75,7 +75,7 @@ Idea #2
 * Increment ``front``
 
 
-.. image:: img/arrayqueue_2idea2.png
+.. image:: arrayqueue_second_idea2.png
    :width: 500 px
    :align: center
 
@@ -117,38 +117,38 @@ Idea #3
 
 * Take this "circular array" with 7 things in it
 
-.. image:: img/arrayqueue_circle0.png
+.. image:: arrayqueue_circle0.png
    :width: 500 px
    :align: center
 
 * If we ``dequeue`` 5 times, we end up with this
 
-.. image:: img/arrayqueue_circle1.png
+.. image:: arrayqueue_circle1.png
    :width: 500 px
    :align: center
 
 * And after 8 more ``enqueues`` we have this
 
-.. image:: img/arrayqueue_circle2.png
+.. image:: arrayqueue_circle2.png
    :width: 500 px
    :align: center
 
 
 * With this idea, we can think of our idea #3 implementation as this
 
-.. image:: img/arrayqueue_2idea0.png
+.. image:: arrayqueue_third_idea0.png
    :width: 500 px
    :align: center
 
 * After a bunch of ``enqueues`` and ``dequeues`` it will loop around like this
 
-.. image:: img/arrayqueue_2idea1.png
+.. image:: arrayqueue_third_idea1.png
    :width: 500 px
    :align: center
 
 * Here is the same scenario, but with the array shown as a linear array
 
-.. image:: img/arrayqueue_2idea2.png
+.. image:: arrayqueue_third_idea2.png
    :width: 500 px
    :align: center
 
@@ -226,13 +226,13 @@ Discussion
 Expand Capacity
 ---------------
 
-.. image:: img/arrayqueue_expand0.png
+.. image:: arrayqueue_expand_capacity0.png
    :width: 500 px
    :align: center
 
 * Suppose we ``enqueue`` one more element
 
-.. image:: img/arrayqueue_expand1.png
+.. image:: arrayqueue_expand_capacity1.png
    :width: 500 px
    :align: center
 
@@ -241,22 +241,22 @@ Expand Capacity
 
 * If we ``enqueue`` again, we'll need to call ``expandCapacity``
 * **However** we can't just double the size of the array and copy the contents over like we did before
-    * :doc:`See the aside on expandCapacity. </topic12-expand>`
+    * :doc:`See the aside on expandCapacity. <expand-capacity>`
 
-.. Skip arrayqueue_expand2 since it is just a copy of 1
-.. image:: img/arrayqueue_expand3.png
+.. Skip arrayqueue_expand_capacity2 since it is just a copy of 1
+.. image:: arrayqueue_expand_capacity3.png
    :width: 500 px
    :align: center
 
 * Instead, we could copy the contents into contiguous indices starting at index ``front``
 
-.. image:: img/arrayqueue_expand4.png
+.. image:: arrayqueue_expand_capacity4.png
    :width: 500 px
    :align: center
 
 * Or, we could even copy the contents into contiguous indices starting at the beginning (index ``0``) of the new array
 
-.. image:: img/arrayqueue_expand5.png
+.. image:: arrayqueue_expand_capacity5.png
    :width: 500 px
    :align: center
 
@@ -397,9 +397,9 @@ Testing
 For next time
 =============
 
-* Download and play with the :download:`ArrayQueue <../main/java/ArrayQueue.java>` code
-* Download and run the :download:`ArrayQueueTest <../test/java/ArrayQueueTest.java>` tests
-    * Or the more thorough tests found in :download:`ArrayQueueThoroughTest <../test/java/ArrayQueueThoroughTest.java>`
+* Download and play with the :download:`ArrayQueue </../main/java/ArrayQueue.java>` code
+* Download and run the :download:`ArrayQueueTest </../test/java/ArrayQueueTest.java>` tests
+    * Or the more thorough tests found in :download:`ArrayQueueThoroughTest </../test/java/ArrayQueueThoroughTest.java>`
 * Read Chapter 5 Section 7
     * 7 pages
 

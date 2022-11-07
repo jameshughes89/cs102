@@ -1,6 +1,6 @@
-***************************
-Topic #10 --- The Queue ADT
-***************************
+*************
+The Queue ADT
+*************
 
 * Queues are a collection of elements where
     * Things are added to one end (rear or tail)
@@ -14,21 +14,21 @@ Topic #10 --- The Queue ADT
 * For example, any ordinary single file line you have ever lined up in
     * Assuming people were following the rules and not cutting in line
 
-    .. image:: img/queue.png
+    .. image:: queue.png
        :width: 300 px
        :align: center
 
 **Adding to a Queue**
 
-    .. image:: img/queue_add.png
+    .. image:: queue_add.png
        :width: 500 px
        :align: center
 
 **Removing from a Queue**
 
-.. image:: img/queue_remove.png
-   :width: 500 px
-   :align: center
+    .. image:: queue_remove.png
+       :width: 500 px
+       :align: center
 
 
 Queue Operations
@@ -101,7 +101,7 @@ Rotating Cipher
     * Eigth by ``1``
     * ...
 
-.. image:: img/queue_cipher.png
+.. image:: cipher.png
    :width: 500 px
    :align: center
 
@@ -132,6 +132,6 @@ Interface
 For next time
 =============
 
-* Download the :download:`Queue.java<../main/java/Queue.java>` interface.
+* Download the :download:`Queue.java</../main/java/Queue.java>` interface.
 * Read Chapter 5 Sections 1 -- 5
     * 14 pages

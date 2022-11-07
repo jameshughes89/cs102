@@ -1,6 +1,6 @@
-*************************
-Topic #11 --- LinkedQueue
-*************************
+***********
+LinkedQueue
+***********
 
 * Now that we have an idea of what the Queue is, we need to think of how to implement it
     * Remember, the *what* and the *how* are separated
@@ -15,21 +15,21 @@ Topic #11 --- LinkedQueue
 Implementing a Queue --- Linked Container
 =========================================
 
-.. image:: img/linkedqueue0.png
+.. image:: linked_queue0.png
    :width: 500 px
    :align: center
 
 * Enqueuing happens at the rear
 * Notice that the rear reference is updated to the newly added (enqueued) thing
 
-.. image:: img/linkedqueue1.png
+.. image:: linked_queue1.png
    :width: 500 px
    :align: center
 
 * Dequeuing happens at the front
 * Again, notice how the front reference must be updated to the successor node of the thing being removed (dequeued)
 
-.. image:: img/linkedqueue2.png
+.. image:: linked_queue2.png
    :width: 500 px
    :align: center
 
