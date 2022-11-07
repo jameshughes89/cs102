@@ -1,6 +1,6 @@
-**************************
-Topic #26 --- More Sorting
-**************************
+*******************
+Sorting Recursively
+*******************
 
 * Other pretty cool sorting algorithms
 
@@ -8,7 +8,7 @@ Topic #26 --- More Sorting
 Mergesort
 =========
 
-.. image:: img/sort_mergesort.gif
+.. image:: merge_sort.gif
    :width: 333 px
    :align: center
    :target: https://en.wikipedia.org/wiki/Merge_sort
@@ -141,7 +141,7 @@ Merging
 Number of Merges
 ^^^^^^^^^^^^^^^^
 
-.. image:: img/sort_split.png
+.. image:: split_good.png
    :width: 500 px
    :align: center
 
@@ -155,7 +155,7 @@ Number of Merges
 Quicksort
 =========
 
-.. image:: img/sort_quicksort.gif
+.. image:: quick_sort.gif
    :width: 333 px
    :align: center
    :target: https://en.wikipedia.org/wiki/Quicksort
@@ -226,7 +226,7 @@ Complexity Analysis
 Good Pivots
 ^^^^^^^^^^^
 
-.. image:: img/sort_split.png
+.. image:: split_good.png
    :width: 500 px
    :align: center
 
@@ -247,7 +247,7 @@ Good Pivots
 Bad Pivots
 ^^^^^^^^^^
 
-.. image:: img/sort_split_bad.png
+.. image:: split_bad.png
    :width: 500 px
    :align: center
 

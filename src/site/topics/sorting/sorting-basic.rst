@@ -1,6 +1,6 @@
-*********************
-Topic #25 --- Sorting
-*********************
+*******
+Sorting
+*******
 
 * Like searching, sorting is a classic problem that we take for granted
 * We have all sorted things before
@@ -108,7 +108,7 @@ Bogosort
 Bubble Sort
 ===========
 
-.. image:: img/sort_bubblesort.gif
+.. image:: bubble_sort.gif
    :width: 333 px
    :align: center
    :target: https://en.wikipedia.org/wiki/Bubble_sort
@@ -236,7 +236,7 @@ Computational Complexity
 Insertion Sort
 ==============
 
-.. image:: img/sort_insertionsort.gif
+.. image:: insertion_sort.gif
    :width: 333 px
    :align: center
    :target: https://en.wikipedia.org/wiki/Insertion_sort
@@ -320,7 +320,7 @@ Algorithm
 Selection Sort
 ==============
 
-.. image:: img/sort_selectionsort.gif
+.. image:: selection_sort.gif
    :height: 333 px
    :align: center
    :target: https://en.wikipedia.org/wiki/Selection_sort
