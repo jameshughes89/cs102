@@ -1,11 +1,11 @@
-*************************
-Topic #14 --- Inheritance
-*************************
+***********
+Inheritance
+***********
 
 * Inheritance is a way to derive a new class from an existing one
 * This allows us to *inherit* functionality from the original class
 
-.. image:: img/inheritance_vehicle.png
+.. image:: vehicle.png
    :width: 500 px
    :align: center
 
@@ -14,7 +14,7 @@ Topic #14 --- Inheritance
 * But as you move down, the things are still a type of the element at the top
     * In our bag examples, a ``SortedBag`` *is a* ``Bag``
 
-.. image:: img/inheritance_bag.png
+.. image:: bag.png
    :width: 500 px
    :align: center
 
@@ -68,7 +68,7 @@ Object
 Collections Example
 ===================
 
-.. image:: img/inheritance_collections.png
+.. image:: collections_inheritance.png
    :width: 750 px
    :align: center
    :target: https://en.wikipedia.org/wiki/Java_collections_framework
@@ -185,7 +185,7 @@ Binding
 For next time
 =============
 
-* :doc:`Read the aside on inheriting from concrete classes </topic14-careful>`
+* :doc:`Read the aside on inheriting from concrete classes <careful>`
 * Have a *quick* look at the JDK specification link (you won't understand everything, but that's OK)
     * `AbstractCollection <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/AbstractCollection.html>`_
     * `Queue <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Queue.html>`_

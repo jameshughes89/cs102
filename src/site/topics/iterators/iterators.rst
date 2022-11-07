@@ -76,7 +76,7 @@ Array Iterator
 * However, if I am making my own collection, I will need to create an iterator for that collection and the underlying container
 
 * If the collection we are making is using an array, such as the ``ArrayStack``, we will make an iterator for an array
-    * :download:`ArrayIterator <../main/java/ArrayIterator.java>`
+    * :download:`ArrayIterator </../main/java/ArrayIterator.java>`
 
 .. code-block:: Java
     :linenos:
@@ -150,7 +150,7 @@ Array Iterator
 Linked Iterator
 ---------------
 
-* Similarly, if we want to make an iterator for a collection that has a linked structure for the underlying container, then we make a :download:`LinkedIterator <../main/java/LinkedIterator.java>`
+* Similarly, if we want to make an iterator for a collection that has a linked structure for the underlying container, then we make a :download:`LinkedIterator </../main/java/LinkedIterator.java>`
 
 .. code-block:: Java
     :linenos:
@@ -319,7 +319,7 @@ For Each
 For next time
 =============
 
-* Download the :download:`ArrayIterator <../main/java/ArrayIterator.java>` and its :download:`tests <../test/java/ArrayIteratorTest.java>`.
-* Download the :download:`LinkedIterator <../main/java/LinkedIterator.java>` and its :download:`tests <../test/java/LinkedIteratorTest.java>`.
+* Download the :download:`ArrayIterator </../main/java/ArrayIterator.java>` and its :download:`tests </../test/java/ArrayIteratorTest.java>`.
+* Download the :download:`LinkedIterator </../main/java/LinkedIterator.java>` and its :download:`tests </../test/java/LinkedIteratorTest.java>`.
 * Read Chapter 7
     * 12 pages

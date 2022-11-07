@@ -1,8 +1,8 @@
-**********************
-Topic #15 --- ArrayBag
-**********************
+*******************
+Bag Implementations
+*******************
 
-* :doc:`We already know what we want to do with our bags </topic13>`
+* :doc:`We already know what we want to do with our bags <bag-adt>`
 * We also extended the ``Bag`` to make more specialized bags
     * ``IndexedBag``
     * ``SortedBag``
@@ -13,7 +13,7 @@ Topic #15 --- ArrayBag
 Array Implementation Idea
 =========================
 
-.. image:: img/bag_arrayBag.png
+.. image:: array_bag.png
    :width: 500 px
    :align: center
 
@@ -50,7 +50,7 @@ ArrayIndexedBag
 .. warning::
 
     Only areas of note are presented here and some methods are skipped. See the
-    :download:`ArrayIndexedBag <../main/java/ArrayIndexedBag.java>` implementation to view the full implementation.
+    :download:`ArrayIndexedBag </../main/java/ArrayIndexedBag.java>` implementation to view the full implementation.
 
 
 .. code-block:: Java
@@ -291,7 +291,7 @@ ArraySortedBag
 .. warning::
 
     Like the indexed bag, some methods are skipped. See the
-    :download:`ArraySortedBag <../main/java/ArraySortedBag.java>` implementation to view the full implementation.
+    :download:`ArraySortedBag </../main/java/ArraySortedBag.java>` implementation to view the full implementation.
 
 .. code-block:: Java
     :linenos:
@@ -399,12 +399,12 @@ Testing
 Linked Implementation
 =====================
 
-.. image:: img/bag_linkedBag.png
+.. image:: linked_bag.png
    :width: 500 px
    :align: center
 
 * There is nothing stopping us from building a linked implementation of the bag
-* :doc:`Reviewing the different types of insertions and removals from a linked structure will help </topic7>`
+* :doc:`Reviewing the different types of insertions and removals from a linked structure will help </topics/linked-structures>`
 
 
 For next time
@@ -414,7 +414,7 @@ For next time
 
     Note that there are better implementations of these data structures. We will see one later in the course.
 
-* Download and play with the :download:`ArrayIndexedBag <../main/java/ArrayIndexedBag.java>` and  :download:`ArraySortedBag <../main/java/ArraySortedBag.java>` code
-* Download and play with the :download:`ArrayIndexedBagTest <../test/java/ArrayIndexedBagTest.java>` and :download:`ArraySortedBagTest <../test/java/ArraySortedBagTest.java>` code
+* Download and play with the :download:`ArrayIndexedBag </../main/java/ArrayIndexedBag.java>` and  :download:`ArraySortedBag </../main/java/ArraySortedBag.java>` code
+* Download and play with the :download:`ArrayIndexedBagTest </../test/java/ArrayIndexedBagTest.java>` and :download:`ArraySortedBagTest </../test/java/ArraySortedBagTest.java>` code
 * Read Chapter 6 Sections 6 & 7
     * 17 pages

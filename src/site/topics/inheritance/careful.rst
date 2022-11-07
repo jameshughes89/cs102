@@ -1,13 +1,13 @@
-***************************
-Topic #14 Aside --- Careful
-***************************
+*****************
+Aside --- Careful
+*****************
 
 .. warning::
 
     Don't think of objects as their real world counterparts --- that's a fallacy that OOP promised but failed to deliver
 
 
-.. image:: img/inheritance_bad.png
+.. image:: bad_inheritance.png
    :width: 750 px
    :align: center
 
@@ -21,11 +21,11 @@ Rectangles and Squares
 * A classic example used for teaching inheritance is squares and rectangle
     * `And it's also amusingly known for being a problematic example <https://en.wikipedia.org/wiki/Circle%E2%80%93ellipse_problem>`_
 
-.. image:: img/inheritance_rectangle.png
+.. image:: rectangle.png
    :height: 250 px
    :align: center
 
-.. image:: img/inheritance_square.png
+.. image:: square.png
    :height: 250 px
    :align: center
 

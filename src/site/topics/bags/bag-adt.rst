@@ -1,6 +1,6 @@
-***********************
-Topic #13 --- Bag ADT
-***********************
+*******
+Bag ADT
+*******
 
 * Like stacks and queues, bags are another data structure
 * However, bags are more general than stacks and queues
@@ -9,7 +9,7 @@ Topic #13 --- Bag ADT
 Bags
 =====
 
-.. image:: img/bag_general1.png
+.. image:: bag_general1.png
     :width: 500 px
     :align: center
 
@@ -46,7 +46,7 @@ Sorted Bags
 
 * The elements themselves are what determine the ordering
 
-.. image:: img/bag_sortedBag0.png
+.. image:: bag_sorted_bag0.png
    :width: 500 px
    :align: center
 
@@ -54,7 +54,7 @@ Sorted Bags
     * The elements **must** go where it belongs
 * We cannot specify where we add it because that may break our sorted ordering
 
-.. image:: img/bag_sortedBag1.png
+.. image:: bag_sorted_bag1.png
    :width: 500 px
    :align: center
 
@@ -73,13 +73,13 @@ Indexed Bags
 * User determines the ordering of the elements
 * Every time something is added or removed, the indices of the elements will need to be updated
 
-.. image:: img/bag_IndexedBag0.png
+.. image:: bag_indexed_bag0.png
    :width: 500 px
    :align: center
 
 * We can add to any arbitrary index, assuming it is valid
 
-.. image:: img/bag_IndexedBag1.png
+.. image:: bag_indexed_bag1.png
    :width: 500 px
    :align: center
 
@@ -206,9 +206,9 @@ For next time
 =============
 
 * Download the various bag interfaces:
-    * :download:`Bag <../main/java/Bag.java>`
-    * :download:`SortedBag <../main/java/SortedBag.java>`
-    * :download:`IndexedBag <../main/java/IndexedBag.java>`
+    * :download:`Bag </../main/java/Bag.java>`
+    * :download:`SortedBag </../main/java/SortedBag.java>`
+    * :download:`IndexedBag </../main/java/IndexedBag.java>`
 
 * Read Chapter 6 Section 1 -- 5 on Lists
     * 23 pages
