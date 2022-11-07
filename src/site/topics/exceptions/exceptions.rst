@@ -1,12 +1,12 @@
-************************
-Topic #17 --- Exceptions
-************************
+**********
+Exceptions
+**********
 
 * We've seen a number of exceptions at this point
 * We should also be familiar with them at a fairly high level
 * We should know how to use them and handle them
 
-.. image:: img/exceptions.png
+.. image:: exceptions.png
    :width: 500 px
    :align: center
    :target: https://www.tutorialspoint.com/java/java_exceptions.htm
@@ -194,6 +194,6 @@ Finally
 For next time
 =============
 
-* Read the :doc:`aside on creating your own exceptions. </topic17-create>`
+* Read the :doc:`aside on creating your own exceptions. <create>`
 * Go back and read Chapter 3 Section 5
     * 2 pages

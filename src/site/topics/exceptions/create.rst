@@ -1,8 +1,8 @@
-***********************************************
-Topic #17 Aside --- Creating Our Own Exceptions
-***********************************************
+*************************************
+Aside --- Creating Our Own Exceptions
+*************************************
 
-* :download:`We can even create our own exceptions by extending existing throwable/exception types <../main/java/EmptyCollectionException.java>`
+* :download:`We can even create our own exceptions by extending existing throwable/exception types </../main/java/EmptyCollectionException.java>`
 
 .. code-block:: java
     :linenos:

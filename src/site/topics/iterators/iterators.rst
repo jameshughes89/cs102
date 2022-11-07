@@ -1,6 +1,6 @@
-***********************
-Topic #16 --- Iterators
-***********************
+*********
+Iterators
+*********
 
 * Often we need to access every element in some *thing*
     * like an array, ``Stack``, ``Queue``, or ``Bag``
