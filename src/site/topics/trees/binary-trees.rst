@@ -38,7 +38,7 @@ Binary Tree Definition
 Traversals
 ==========
 
-.. image:: topics/linked-structures/links_example1.png
+.. image:: /topics/linked-structures/example1.png
    :width: 500 px
    :align: center
 

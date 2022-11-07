@@ -284,7 +284,7 @@ Heapsort
 * Heapsort's magic comes from the underlying data structure --- a heap
     * Or perhaps more accurately, a min heap
 
-* To learn about the heap data structure, see :doc:`lab 10 </lab10>`
+* To learn about the heap data structure, see :doc:`lab 10 </labs/heaps/heaps>`
 
 * To sort a collection of elements with a min heap, simply
     1. Add all elements to the min heap

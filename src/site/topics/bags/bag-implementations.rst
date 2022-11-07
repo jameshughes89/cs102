@@ -392,8 +392,8 @@ Testing
 -------
 
 * Although not discussed in depth here, check out the testing methods for these implementations to get a sense of what functionality is being tested and how
-    * :download:`ArrayIndexedBagTest <../test/java/ArrayIndexedBagTest.java>`
-    * :download:`ArraySortedBagTest <../test/java/ArraySortedBagTest.java>` code
+    * :download:`ArrayIndexedBagTest </../test/java/ArrayIndexedBagTest.java>`
+    * :download:`ArraySortedBagTest </../test/java/ArraySortedBagTest.java>` code
 
 
 Linked Implementation
@@ -404,7 +404,7 @@ Linked Implementation
    :align: center
 
 * There is nothing stopping us from building a linked implementation of the bag
-* :doc:`Reviewing the different types of insertions and removals from a linked structure will help </topics/linked-structures>`
+* :doc:`Reviewing the different types of insertions and removals from a linked structure will help </topics/linked-structures/linked-structures>`
 
 
 For next time

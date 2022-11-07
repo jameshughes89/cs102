@@ -86,7 +86,7 @@ Course Notes
     :maxdepth: 1
     :numbered:
 
-    topics/introduction/introduction
+    topics/intro/introduction
     topics/java-vs-python/java-vs-python
     topics/objects-review/objects-review
     topics/collections/collections
@@ -98,9 +98,9 @@ Course Notes
     topics/queues/queue-adt
     topics/queues/linked-queue
     topics/queues/array-queue
-    topics/bags/bad-adt
+    topics/bags/bag-adt
     topics/inheritance/inheritance
-    topics/bags/array-bag
+    topics/bags/bag-implementations
     topics/iterators/iterators
     topics/exceptions/exceptions
     topics/memory-callstack/memory-callstack
@@ -109,7 +109,7 @@ Course Notes
     topics/trees/tree-adt
     topics/trees/binary-trees
     topics/trees/binary-search-trees
-    topics/trees/linked-binary-search-tree
+    topics/trees/linked-binary-search-trees
     topics/sorting/sorting-basic
     topics/sorting/sorting-recursive
 

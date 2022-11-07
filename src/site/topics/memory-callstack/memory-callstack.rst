@@ -166,7 +166,7 @@ Garbage Collection
 
 * An object is *not reachable* when we can't get reference to it anymore
 
-.. image:: topics/linked-structures/example1.png
+.. image:: /topics/linked-structures/example1.png
    :width: 500 px
    :align: center
 

@@ -164,7 +164,7 @@ Testing LinkedStack
 ===================
 
 * To ensure correctness, we will write tests with JUnit
-    * :doc:`If you have not yet, read the testing aside <testing>`
+    * :doc:`If you have not yet, read the testing aside <unit-tests>`
 
 * All the tests will be the same as the ``ArrayStack``, except we do not need to check the ``expandCapacity``
     * ``expandCapacity`` is not a thing in our ``LinkedStack`` implementation

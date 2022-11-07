@@ -27,7 +27,7 @@ Linear Data Structures
 * Like a stack of plates
 * The last thing put on top of the stack will be the first thing off
 
-.. image:: topics/stacks/stack_example.png
+.. image:: /topics/stacks/stack_example.png
    :width: 500 px
    :align: center
 
@@ -36,7 +36,7 @@ Linear Data Structures
 * Like any line you've ever waited in
 * First person in the line will be the first person served
 
-.. image:: topics/queues/queue_example.png
+.. image:: /topics/queues/queue_example.png
    :width: 500 px
    :align: center
 
@@ -66,7 +66,7 @@ Nonlinear Data Structures
 * Like your file system
 * Information is stored in a hierarchy
 
-.. image:: topics/trees/tree_example.png
+.. image:: /topics/trees/tree_example.png
    :width: 500 px
    :align: center
 

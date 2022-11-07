@@ -114,7 +114,7 @@ Constructors
             stack = (T[]) new Object[size];
         }
 
-* You will see what we are doing overloading and  :doc:`constructor chaining </topic3-chaining>`
+* You will see what we are doing overloading and  :doc:`constructor chaining <chaining>`
 * You will also see that we are creating an array of type ``Object`` and then *casting* it to the generic type `T`
     * We cannot actually instantiate (create) a generic type
         * Asterisk
