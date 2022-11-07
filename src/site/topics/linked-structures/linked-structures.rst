@@ -1,6 +1,6 @@
-******************
-Topic #7 --- Links
-******************
+*****
+Links
+*****
 
 .. warning::
 
@@ -21,7 +21,7 @@ Linked Structure
 
 * A linked data structure is one that consists of objects referencing other objects
 
-    .. image:: img/links_example0.png
+    .. image:: example0.png
        :width: 500 px
        :align: center
 
@@ -42,7 +42,7 @@ Nodes
 * The series of nodes linked together is what makes up the singly linked structure
     * They link to their successor
 
-.. image:: img/node_example.png
+.. image:: node_example.png
    :width: 400 px
    :align: center
 
@@ -57,7 +57,7 @@ Nodes
 Inserting into a Linked Structure
 =================================
 
-.. image:: img/links_example1.png
+.. image:: example1.png
    :width: 500 px
    :align: center
 
@@ -80,19 +80,19 @@ Inserting into a Linked Structure
 Adding to the Front
 -------------------
 
-.. image:: img/links_addfront0.png
+.. image:: add_front0.png
    :width: 500 px
    :align: center
 
 * Make the node we want to insert's ``next`` reference the current head
 
-.. image:: img/links_addfront1.png
+.. image:: add_front1.png
    :width: 500 px
    :align: center
 
 * Make head, the reference to the start of the linked structure, point to the new node
 
-.. image:: img/links_addfront2.png
+.. image:: add_front2.png
    :width: 500 px
    :align: center
 
@@ -100,26 +100,26 @@ Adding to the Front
 Adding to the Middle
 --------------------
 
-.. image:: img/links_addmiddle0.png
+.. image:: add_middle0.png
    :width: 500 px
    :align: center
 
 * Locate the node the new node will come after
     * In this example, it is referred to as ``current``
 
-.. image:: img/links_addmiddle1.png
+.. image:: add_middle1.png
    :width: 500 px
    :align: center
 
 * Make the new node's ``next``  reference the preceding node's (``current``) ``next``
 
-.. image:: img/links_addmiddle2.png
+.. image:: add_middle2.png
    :width: 500 px
    :align: center
 
 * Have the preceding node's (``current``) ``next`` reference the new node
 
-.. image:: img/links_addmiddle3.png
+.. image:: add_middle3.png
    :width: 500 px
    :align: center
 
@@ -141,13 +141,13 @@ Deleting from the Front
 
 * Removing from the front may be the easiest operation
 
-.. image:: img/links_removefront0.png
+.. image:: remove_front0.png
    :width: 500 px
    :align: center
 
 * Make head, the reference to the start of the linked structure, point to the first node's ``next``
 
-.. image:: img/links_removefront1.png
+.. image:: remove_front1.png
    :width: 500 px
    :align: center
 
@@ -155,19 +155,19 @@ Deleting from the Front
 Deleting from the Middle
 ------------------------
 
-.. image:: img/links_removemiddle0.png
+.. image:: remove_middle0.png
    :width: 500 px
    :align: center
 
 * Locate the node to be deleted (``current``) and the node immediately before it (``previous``)
 
-.. image:: img/links_removemiddle1.png
+.. image:: remove_middle1.png
    :width: 500 px
    :align: center
 
 * Make the proceeding node's (``previous``) ``next`` reference the node to be deleted's (``current``) ``next``
 
-.. image:: img/links_removemiddle2.png
+.. image:: remove_middle2.png
    :width: 500 px
    :align: center
 
@@ -187,7 +187,7 @@ Node Implementation
     refer to the node ``someNode``, while the second means that the node referenced by ``head``\'s ``next`` node
     reference will refer to ``someNode``.
 
-.. image:: img/links_reference.png
+.. image:: reference_variable.png
    :width: 400 px
    :align: center
 
@@ -278,7 +278,7 @@ Variations
 Doubly Linked
 -------------
 
-.. image:: img/links_double.png
+.. image:: double_links.png
    :width: 400 px
    :align: center
 
@@ -288,7 +288,7 @@ Doubly Linked
 For next time
 =============
 
-* Download and play with the :download:`Node.java <../main/java/Node.java>` file
+* Download and play with the :download:`Node.java </../main/java/Node.java>` file
 * Try writing code to add/remove from the front/middle/end of the linked structure
 * Read Chapter 4 Sections 1 -- 3
     * 7 pages
