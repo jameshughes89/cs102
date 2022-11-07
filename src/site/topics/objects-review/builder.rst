@@ -1,6 +1,6 @@
-**************************
-Topic #3 Aside --- Builder
-**************************
+*****************
+Aside --- Builder
+*****************
 
 * Due to how Strings work, it ends up being wasteful to append to strings
     * They're *immutable*

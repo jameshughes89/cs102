@@ -1,6 +1,6 @@
-***********************
-Topic #6 --- ArrayStack
-***********************
+**********
+ArrayStack
+**********
 
 * We now are familiar with *what* we want the stack ADT to do without talking about *how*
 * Obviously, in order to use a stack in Java, we need to actually implement a stack
@@ -18,7 +18,7 @@ ArrayStack Implementation Issues
 
 * We've already seen that arrays are great for storing contiguous data
 
-.. image:: img/array.png
+.. image:: array.png
    :width: 500 px
    :align: center
 
@@ -37,19 +37,19 @@ ArrayStack Implementation Issues
     * ``pop`` at the ``top - 1`` index and update ``top``
 * Also, due to zero based indexing, the variable keeping track of ``top`` will always be the number of things in the stack (``size``)
 
-.. image:: img/arraystack0.png
+.. image:: arraystack0.png
    :width: 500 px
    :align: center
 
-.. image:: img/arraystack1.png
+.. image:: arraystack1.png
    :width: 500 px
    :align: center
 
-.. image:: img/arraystack2.png
+.. image:: arraystack2.png
    :width: 500 px
    :align: center
 
-.. image:: img/arraystack3.png
+.. image:: arraystack3.png
    :width: 500 px
    :align: center
 
@@ -86,7 +86,7 @@ Implementation
     since you are saying that you are implementing the interface, so Java is expecting you to implement all abstract
     methods from the interface. This error will go away once all abstract methods are implemented.
 
-        .. image:: img/warning_implement.png
+        .. image:: warning_implement.png
            :width: 500 px
            :align: center
 
@@ -131,7 +131,7 @@ Constructors
 
 * Creating an instance ``Stack<Integer> s = new ArrayStack<>(5);``
 
-        .. image:: img/arraystack_empty.png
+        .. image:: arraystack_empty.png
            :width: 500 px
            :align: center
 
@@ -267,13 +267,13 @@ For next time
 =============
 
 * Download and play with
-    * :download:`Stack <../main/java/Stack.java>`
-    * :download:`ArrayStack <../main/java/ArrayStack.java>`
-    * :download:`ArrayStack <../main/java/PlayingArrayStack.java>`
+    * :download:`Stack </../main/java/Stack.java>`
+    * :download:`ArrayStack </../main/java/ArrayStack.java>`
+    * :download:`ArrayStack </../main/java/PlayingArrayStack.java>`
 
-* :doc:`Check out the aside on testing </topic6-testing>`
-* Download and run the :download:`ArrayStackTest <../test/java/ArrayStackTest.java>` tests
-    * Or the more thorough tests found in :download:`ArrayStackThoroughTest <../test/java/ArrayStackThoroughTest.java>`
+* :doc:`Check out the aside on testing <unit-tests>`
+* Download and run the :download:`ArrayStackTest </../test/java/ArrayStackTest.java>` tests
+    * Or the more thorough tests found in :download:`ArrayStackThoroughTest </../test/java/ArrayStackThoroughTest.java>`
 * Finish reading Chapter 3
     * 16 pages
 
@@ -282,6 +282,6 @@ Playing Code
 
 * If everything was done correctly, the following code from ``PlayingArrayStack`` should work
 
-.. literalinclude:: ../main/java/PlayingArrayStack.java
+.. literalinclude:: /../main/java/PlayingArrayStack.java
    :language: java
    :linenos:

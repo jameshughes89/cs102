@@ -1,6 +1,6 @@
-**************************
-Topic #5 Aside --- Postfix
-**************************
+*****************
+Aside --- Postfix
+*****************
 
 * Postfix expression evaluation is one of the classic stack examples
 
@@ -37,7 +37,7 @@ Evaluate
 
 * With the pseudocode, evaluate ``7 4 -3 * 1 5 + / *``
 
-.. image:: img/stack_postfix.png
+.. image:: stack_postfix.png
    :width: 500 px
    :align: center
 

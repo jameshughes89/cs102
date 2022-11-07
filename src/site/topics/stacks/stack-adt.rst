@@ -1,6 +1,6 @@
-**************************
-Topic #5 --- The Stack ADT
-**************************
+*************
+The Stack ADT
+*************
 
 * Stacks are a collection of elements that are only added and removed from one end
     * The *top*
@@ -16,13 +16,13 @@ Topic #5 --- The Stack ADT
 
 **Adding to a Stack**
 
-.. image:: img/stack_add.png
+.. image:: stack_add.png
    :width: 500 px
    :align: center
 
 **Removing from a Stack**
 
-.. image:: img/stack_remove.png
+.. image:: stack_remove.png
    :width: 500 px
    :align: center
 
@@ -92,7 +92,7 @@ Example Use
 Maze Solving
 ------------
 
-    .. image:: img/maze.png
+    .. image:: maze.png
        :width: 250 px
        :align: center
 
@@ -134,7 +134,7 @@ Pseudocode for Traversing a Maze
 Example
 ^^^^^^^
 
-    .. image:: img/maze_gif.gif
+    .. image:: maze_animate.gif
        :width: 250 px
        :align: center
 
@@ -242,7 +242,7 @@ There has to be a Better Way!
 For next time
 =============
 
-* Checkout the :doc:`Postfix expression evaluation stack example. </topic5-postfix>`
-* Checkout the :download:`Stack.java<../main/java/Stack.java>` interface.
+* Checkout the :doc:`Postfix expression evaluation stack example. <postfix>`
+* Checkout the :download:`Stack.java</../main/java/Stack.java>` interface.
 * Read Chapter 3 Sections 2 -- 6
     * 13 pages

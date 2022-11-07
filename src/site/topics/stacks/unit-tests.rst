@@ -1,6 +1,6 @@
-************************
-Topic #6 Aside --- Tests
-************************
+**********
+Unit Tests
+**********
 
 * At the end of Topic 6 we played with our implementation by interacting with it
 * This also allowed us to test the basic functionality
@@ -40,13 +40,13 @@ JUnit
 
 1. Make a new folder/directory called ``test`` in your project next to ``src``
 
-.. image:: img/test_folder.png
+.. image:: test_folder.png
    :width: 600 px
    :align: center
 
 2. Right click the ``test`` folder and select *Mark Directory as -> Test Sources Root*
 
-.. image:: img/test_marktests.png
+.. image:: mark_tests.png
    :width: 600 px
    :align: center
 
@@ -56,7 +56,7 @@ JUnit
 4. We need to add JUnit to our class path and a simple way to do it is write ``@Test`` in the new class and hit Alt-Enter
 5. Select *Add 'JUnit5....*
 
-.. image:: img/test_altenter.png
+.. image:: alt_enter.png
    :width: 600 px
    :align: center
 
@@ -64,7 +64,7 @@ JUnit
 Testing ArrayStack
 ==================
 
-* Checkout the :download:`ArrayStackTest.java<../test/java/ArrayStackTest.java>` for testing the ``ArrayStack``.
+* Checkout the :download:`ArrayStackTest.java</../test/java/ArrayStackTest.java>` for testing the ``ArrayStack``.
 * Have a look at all the methods, the imports, function names, etc.
 
 * Below are some examples from the file:

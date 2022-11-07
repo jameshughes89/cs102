@@ -1,6 +1,6 @@
-***************************************
-Topic #3 Aside --- Constructor Chaining
-***************************************
+******************************
+Aside --- Constructor Chaining
+******************************
 
 * Constructor Chaining allows us to call a constructor from another constructor
 * In the below example, when we call ``this(MAX_CAPACITY)``, we're actually calling the second constructor

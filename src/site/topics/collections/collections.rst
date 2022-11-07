@@ -1,6 +1,6 @@
-************************
-Topic #4 --- Collections
-************************
+***********
+Collections
+***********
 
 * Collections
 * Abstract Data Types
