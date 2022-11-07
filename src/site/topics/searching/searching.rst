@@ -1,6 +1,6 @@
-***********************
-Topic #20 --- Searching
-***********************
+*********
+Searching
+*********
 
 * For our needs, we will say we want to search for a specified *thing* in *something* and know if it exists there or not
 * For example, does a given number exist within an array of numbers

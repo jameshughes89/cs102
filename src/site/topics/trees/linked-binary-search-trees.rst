@@ -1,6 +1,6 @@
-****************************************
-Topic #24 --- Linked Binary Search Trees
-****************************************
+**************************
+Linked Binary Search Trees
+**************************
 
 * Since we know the idea behind the binary search tree, we can now implement one
 * Given the way the binary search tree ideas were presented, a linked implementation may feel like an obvious choice
@@ -48,7 +48,7 @@ Static Node Class
 * Like the linked stack and linked queue, we will make use of nodes
 * You may remember that we had two options for doing this
     1. Simply create a top level node class
-    2. Create a :doc:`nested node class aside </topic8-nested>`
+    2. Create a :doc:`nested node class aside </topics/stacks/nested>`
 
 * To keep things clean, we will go with option #2
 
@@ -468,7 +468,7 @@ Get Count
 For next time
 =============
 
-* If you have not yet, look at the :download:`BinarySearchTree <../main/java/BinarySearchTree.java>` interface
-* Look at the :download:`LinkedBinarySearchTree <../main/java/LinkedBinarySearchTree.java>` implementation
+* If you have not yet, look at the :download:`BinarySearchTree </../main/java/BinarySearchTree.java>` interface
+* Look at the :download:`LinkedBinarySearchTree </../main/java/LinkedBinarySearchTree.java>` implementation
 * Read Chapter 11 Sections 1 -- 3
     * 17 pages

@@ -1,6 +1,6 @@
-*******************
-Topic #21 --- Trees
-*******************
+********
+Tree ADT
+********
 
 * Trees are *nonlinear* data structures
     * An easy way to think of this is, there is no obvious natural ordering
@@ -12,7 +12,7 @@ Topic #21 --- Trees
     * Decision trees
     * Table of contents of a book
 
-.. image:: img/tree_example.png
+.. image:: tree_example.png
    :width: 500 px
    :align: center
 
@@ -29,7 +29,7 @@ Tree Definition
 
 * Notice that this definition is recursive
 
-.. image:: img/tree_definition.png
+.. image:: tree_definition.png
    :width: 500 px
    :align: center
 
@@ -57,7 +57,7 @@ Nodes
     You may come across alternative definitions of trees; however, we are using this definition as it is the most
     common.
 
-.. image:: img/tree_nodes.png
+.. image:: tree_nodes.png
    :width: 500 px
    :align: center
 
@@ -79,7 +79,7 @@ Relationships
 * A **descendant** of a given node is the child, or the child's child, or the child's child's child, or ...
 
 
-.. image:: img/tree_base.png
+.. image:: tree_base.png
    :width: 500 px
    :align: center
 
@@ -93,11 +93,11 @@ Relationships
     * A subtree is itself a tree
     * A node may have many subtrees
 
-.. image:: img/tree_subtrees.png
+.. image:: tree_subtrees.png
    :width: 500 px
    :align: center
 
-.. image:: img/tree_subtree_root.png
+.. image:: tree_subtree_root.png
    :width: 500 px
    :align: center
 
@@ -122,7 +122,7 @@ Properties
 
 * The **height** of a tree is the number of levels the tree has
 
-.. image:: img/tree_path.png
+.. image:: tree_path.png
    :width: 500 px
    :align: center
 
@@ -134,7 +134,7 @@ Properties
 
 
 
-.. image:: img/tree_levels.png
+.. image:: tree_levels.png
    :width: 500 px
    :align: center
 
@@ -143,7 +143,7 @@ Properties
 * The **degree/arity of a tree** is the maximum degree/arity of the tree's nodes
 
 
-.. image:: img/tree_levels.png
+.. image:: tree_levels.png
    :width: 500 px
    :align: center
 

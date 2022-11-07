@@ -1,6 +1,6 @@
-*********************************
-Topic #23 --- Binary Search Trees
-*********************************
+*******************
+Binary Search Trees
+*******************
 
 * Now that we have covered binary trees, we can look at more specific types of binary trees
     * Namely, the binary *search* tree
@@ -24,14 +24,14 @@ Binary Search Tree Definition
     Alternatively, we could make the right subtree exclusively greater than, but this would disallow duplicates.
 
 
-.. image:: img/binarysearchtree_noyes.png
+.. image:: binary_search_tree_no_yes.png
    :width: 500 px
    :align: center
 
 * In the above example, the tree on the left is **not** a binary search tree since a value in the left subtree of the subtree with root 15 is greater than it (16)
 * The left tree is an example of a binary search tree
 
-    .. image:: img/binarysearchtree_base.png
+    .. image:: binary_search_tree_base.png
        :width: 250 px
        :align: center
 
@@ -85,7 +85,7 @@ Naive Search
 Binary Search
 -------------
 
-.. image:: img/binarysearchtree_binarysearch0.png
+.. image:: binary_search_tree_binary_search0.png
    :width: 250 px
    :align: center
 
@@ -118,7 +118,7 @@ Binary Search
 * They are nearly the same, except you will notice that, the naive search may search both subtrees
 * However, binary search will only ever travel down one subtree due to the ``if (current.getData().compareTo(needle) > 0)`` statement
 
-.. image:: img/binarysearchtree_binarysearch1.png
+.. image:: binary_search_tree_binary_search1.png
    :width: 250 px
    :align: center
 
@@ -133,7 +133,7 @@ Binary Search
     * 13 is greater than 12, therefore it must be in the right subtree
     * 12 has no right subtree, therefore 13 must **not** be in the tree
 
-.. image:: img/binarysearchtree_binarysearch2.png
+.. image:: binary_search_tree_binary_search2.png
    :width: 250 px
    :align: center
 
@@ -175,13 +175,13 @@ Add
 
 * Given the above pseudocode, consider adding 13 to the binary search tree
 
-.. image:: img/binarysearchtree_add0.png
+.. image:: binary_search_tree_add0.png
    :width: 250 px
    :align: center
 
 * Starting with an empty tree, follow the pseudocode to add the following 6 elements
 
-.. image:: img/binarysearchtree_add1.png
+.. image:: binary_search_tree_add1.png
    :width: 666 px
    :align: center
 
@@ -203,15 +203,15 @@ Min & Remove Min
 
 * Consider the following examples and think of how one would need to manage potential children of a node being removed
 
-.. image:: img/binarysearchtree_removemin0.png
+.. image:: binary_search_tree_remove_min0.png
    :width: 500 px
    :align: center
 
-.. image:: img/binarysearchtree_removemin1.png
+.. image:: binary_search_tree_remove_min1.png
    :width: 500 px
    :align: center
 
-.. image:: img/binarysearchtree_removemin2.png
+.. image:: binary_search_tree_remove_min2.png
    :width: 500 px
    :align: center
 
@@ -279,7 +279,7 @@ General Remove
 
 * A general remove is a little more complex than the remove min or max
 
-.. image:: img/binarysearchtree_removeuh.png
+.. image:: binary_search_tree_remove_uh.png
    :width: 250 px
    :align: center
 
@@ -312,15 +312,15 @@ General Remove
 
 * Below is an example of removing multiple elements from a binary search tree
 
-.. image:: img/binarysearchtree_remove1.png
+.. image:: binary_search_tree_remove1.png
    :width: 500 px
    :align: center
 
-.. image:: img/binarysearchtree_remove2.png
+.. image:: binary_search_tree_remove2.png
    :width: 500 px
    :align: center
 
-.. image:: img/binarysearchtree_remove3.png
+.. image:: binary_search_tree_remove3.png
    :width: 500 px
    :align: center
 
@@ -353,7 +353,7 @@ Degenerate vs. Balanced
 * A *balanced* tree has the property that for any node in the tree, the height of its left and right subtrees can differ by **at most** 1
     * Remember, the height of an empty tree is 0
 
-.. image:: img/binarysearchtree_balance.png
+.. image:: binary_search_tree_balance.png
    :width: 500 px
    :align: center
 
@@ -365,7 +365,7 @@ Degenerate vs. Balanced
 
 * Consider adding the numbers ``3, 5, 9, 12, 18, 20`` in that order to an empty binary search tree
 
-.. image:: img/binarysearchtree_degenerate_gif.gif
+.. image:: binary_search_tree_degenerate_animation.gif
    :width: 250 px
    :align: center
 
@@ -373,7 +373,7 @@ Degenerate vs. Balanced
 * This particular case is called a *degenerate* binary tree
     * It's effectively a linear data structure, not a tree
 
-.. image:: img/binarysearchtree_complexity.png
+.. image:: binary_search_tree_complexity.png
    :width: 250 px
    :align: center
 
@@ -390,8 +390,8 @@ Degenerate vs. Balanced
 For next time
 =============
 
-* Have a look at the :download:`BinarySearchTree <../main/java/BinarySearchTree.java>` interface
-* Have a look at the :download:`LinkedBinarySearchTree <../main/java/LinkedBinarySearchTree.java>` implementation
-* Check out :download:`LinkedBinarySearchTreeTest <../test/java/LinkedBinarySearchTreeTest.java>`
+* Have a look at the :download:`BinarySearchTree </../main/java/BinarySearchTree.java>` interface
+* Have a look at the :download:`LinkedBinarySearchTree </../main/java/LinkedBinarySearchTree.java>` implementation
+* Check out :download:`LinkedBinarySearchTreeTest </../test/java/LinkedBinarySearchTreeTest.java>`
 * Read Chapter 11 Sections 1 -- 3
     * 17 pages

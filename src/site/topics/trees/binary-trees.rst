@@ -1,6 +1,6 @@
-**************************
-Topic #22 --- Binary Trees
-**************************
+************
+Binary Trees
+************
 
 * A general **tree** is one where each node can have any number of children
 
@@ -10,7 +10,7 @@ Topic #22 --- Binary Trees
 Binary Tree Definition
 ======================
 
-.. image:: img/binarytree_example.png
+.. image:: binary_tree_example.png
    :width: 500 px
    :align: center
 
@@ -38,7 +38,7 @@ Binary Tree Definition
 Traversals
 ==========
 
-.. image:: img/links_example1.png
+.. image:: topics/linked-structures/links_example1.png
    :width: 500 px
    :align: center
 
@@ -48,7 +48,7 @@ Traversals
 
 * We could define other traversal orders if we wanted to, but that would be atypical
 
-.. image:: img/binarytree_example.png
+.. image:: binary_tree_example.png
    :width: 500 px
    :align: center
 
@@ -74,7 +74,7 @@ Pre-order
 
 * Notice that the root of the (sub)tree is accessed before (*pre-*) any recursive calls
 
-.. image:: img/binarytree_example.png
+.. image:: binary_tree_example.png
    :width: 500 px
    :align: center
 
@@ -101,7 +101,7 @@ In-order
 
 * Notice that the root of the (sub)tree is accessed *in* between any recursive calls
 
-.. image:: img/binarytree_example.png
+.. image:: binary_tree_example.png
    :width: 500 px
    :align: center
 
@@ -130,7 +130,7 @@ Post-order
 
 * Notice that the root of the (sub)tree is accessed after (*post-*) any recursive calls
 
-.. image:: img/binarytree_example.png
+.. image:: binary_tree_example.png
    :width: 500 px
    :align: center
 
@@ -162,7 +162,7 @@ Level-order
         * If it exists, enqueue the right child
 
 
-.. image:: img/binarytree_example.png
+.. image:: binary_tree_example.png
    :width: 500 px
    :align: center
 
@@ -186,7 +186,7 @@ Iterative Pre/In/Post-Order
 Traversal Analysis
 ------------------
 
-.. image:: img/binarytree_example.png
+.. image:: binary_tree_example.png
    :width: 500 px
    :align: center
 
@@ -271,7 +271,7 @@ Binary Tree Node
 * Until now, our node class has only had a single successor
 * However, there is no rule saying that we can't add more for our needs
 
-.. image:: img/binarytree_binarynode.png
+.. image:: binary_tree_node.png
    :width: 500 px
    :align: center
 
@@ -434,6 +434,6 @@ Linked Binary Tree
 For next time
 =============
 
-* Have a look at the :download:`BinaryTree <../main/java/BinaryTree.java>` interface
+* Have a look at the :download:`BinaryTree </../main/java/BinaryTree.java>` interface
 * Read Chapter 10 Sections 4 -- 7
     * 34 pages (mostly code though)
