@@ -28,7 +28,7 @@ Implementing a Stack
 
 3. Create a new class for our ``ArrayStack`` implementation
 
-4. :doc:`Complete your ArrayStack based on the course notes </topic6>`
+4. :doc:`Complete your ArrayStack based on the course notes </topics/stacks/array-stack>`
 
 .. warning::
 

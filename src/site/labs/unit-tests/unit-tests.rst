@@ -17,7 +17,7 @@ Unit Testing
 
 We're going to write tests for our ``CourseList`` class from the
 :doc:`Objects and Collections Lab </labs/objects-collections/objects-collections>`.
-:doc:`Topic 6's aside on testing will be of great help here </topic6-testing>`.
+:doc:`Topic 6's aside on testing will be of great help here </topics/stacks/unit-tests>`.
 
 
 Have a Working Implementation

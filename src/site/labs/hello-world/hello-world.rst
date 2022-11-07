@@ -72,7 +72,7 @@ Kattis
 
     I realize many of you will have solved these already in Python. Good, but now do it in Java.
 
-    Don't know how to do things in Java? Check out :doc:`topic 1 </topic1>` and :doc:`topic 2 </topic2>`.
+    Don't know how to do things in Java? Check out :doc:`topic 1 </topics/intro/introduction>` and :doc:`topic 2 </topics/java-vs-python/java-vs-python>`.
 
     Still stumped?
         * `Variables in Java? <https://www.google.ca/search?q=variables+in+java>`_

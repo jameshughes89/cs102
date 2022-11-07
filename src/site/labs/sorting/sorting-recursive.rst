@@ -15,7 +15,7 @@ Sorting Recursively
 Starting Point
 ==============
 
-This lab focuses on the sorts discussed in :doc:`topic 26 </topic26>`. Note that, unlike the previous lab, here we use
+This lab focuses on the sorts discussed in :doc:`topic 26 </topics/sorting/sorting-recursive>`. Note that, unlike the previous lab, here we use
 an unsorted bag instead of an array.
 
 .. code-block:: java

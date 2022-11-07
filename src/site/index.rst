@@ -86,32 +86,32 @@ Course Notes
     :maxdepth: 1
     :numbered:
 
-    topic1
-    topic2
-    topic3
-    topic4
-    topic5
-    topic6
-    topic7
-    topic8
-    topic9
-    topic10
-    topic11
-    topic12
-    topic13
-    topic14
-    topic15
-    topic16
-    topic17
-    topic18
-    topic19
-    topic20
-    topic21
-    topic22
-    topic23
-    topic24
-    topic25
-    topic26
+    topics/intro/introduction
+    topics/java-vs-python/java-vs-python
+    topics/objects-review/objects-review
+    topics/collections/collections
+    topics/stacks/stack-adt
+    topics/stacks/array-stack
+    topics/linked-structures/linked-structures
+    topics/stacks/linked-stack
+    topics/algorithm-analysis/algorithm-analysis
+    topics/queues/queue-adt
+    topics/queues/linked-queue
+    topics/queues/array-queue
+    topics/bags/bag-adt
+    topics/inheritance/inheritance
+    topics/bags/bag-implementations
+    topics/iterators/iterators
+    topics/exceptions/exceptions
+    topics/memory-callstack/memory-callstack
+    topics/recursion/recursion
+    topics/searching/searching
+    topics/trees/tree-adt
+    topics/trees/binary-trees
+    topics/trees/binary-search-trees
+    topics/trees/linked-binary-search-trees
+    topics/sorting/sorting-basic
+    topics/sorting/sorting-recursive
 
 
 Labs
