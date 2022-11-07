@@ -16,7 +16,7 @@ Making a Rudimentary Array Queue
 ================================
 
 Despite not being a great implementation, we're going to build a ``RudimentaryArrayQueue`` that always keeps the front
-of the queue at index ``0``. This is idea #1 from the :doc:`ArrayQueue topic</topic12>`.
+of the queue at index ``0``. This is idea #1 from the :doc:`ArrayQueue topic</topics/queues/array-queue>`.
 
 1. Create a project and make a class where you will put your main method
     * Perhaps call it ``Lab6``

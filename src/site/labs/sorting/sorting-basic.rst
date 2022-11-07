@@ -24,7 +24,7 @@ Sorting
 Starting Point
 ==============
 
-This lab focuses on the sorts discussed in :doc:`topic 25 </topic25>`.
+This lab focuses on the sorts discussed in :doc:`topic 25 </topics/sorting/sorting-basic>`.
 
 .. code-block:: java
 
@@ -113,7 +113,7 @@ Comparing Sorts
 
 2. Try throwing a counter variable into the inner loops of each of the sorts to see how many times the loops ran
     * Calculate what the counts should be for each sort, in the worst and best cases, based on the size of the arrays you used
-    * :doc:`Refer to the computational complexity analysis provided on these sorting algorithms </topic25>`
+    * :doc:`Refer to the computational complexity analysis provided on these sorting algorithms </topics/sorting/sorting-basic>`
 
 3. Can you rationalize the differences in runtimes?
 

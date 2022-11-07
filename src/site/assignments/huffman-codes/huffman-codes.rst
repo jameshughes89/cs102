@@ -51,7 +51,7 @@ Provided Files
 .. warning::
 
     Java may say that it cannot find JUnit. If this happens, you need to add JUnit to the project. Simply follow the
-    first few steps of :doc:`Topic 6's aside on testing </topic6-testing>`.
+    first few steps of :doc:`Topic 6's aside on testing </topics/stacks/unit-tests>`.
 
 
 Part 0 --- Read the Assignment
