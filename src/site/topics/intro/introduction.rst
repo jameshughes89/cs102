@@ -27,7 +27,7 @@ Linear Data Structures
 * Like a stack of plates
 * The last thing put on top of the stack will be the first thing off
 
-.. image:: img/stack_example.png
+.. image:: topics/stacks/stack_example.png
    :width: 500 px
    :align: center
 
@@ -36,7 +36,7 @@ Linear Data Structures
 * Like any line you've ever waited in
 * First person in the line will be the first person served
 
-.. image:: img/queue_example.png
+.. image:: topics/queues/queue_example.png
    :width: 500 px
    :align: center
 
@@ -47,7 +47,7 @@ Linear Data Structures
     * Indexed
     * Unordered
 
-.. image:: img/ordered_list_example.png
+.. image:: ordered_list_example.png
    :width: 500 px
    :align: center
 
@@ -66,7 +66,7 @@ Nonlinear Data Structures
 * Like your file system
 * Information is stored in a hierarchy
 
-.. image:: img/tree_example.png
+.. image:: topics/trees/tree_example.png
    :width: 500 px
    :align: center
 
@@ -75,7 +75,7 @@ Nonlinear Data Structures
 * Good for showing relationships between *things*
 * Like a road network, or flight routes
 
-.. image:: img/graph_example.png
+.. image:: graph_example.png
    :width: 500 px
    :align: center
 
