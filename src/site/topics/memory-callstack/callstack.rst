@@ -1,6 +1,6 @@
-*************************************
-Topic #18 --- Memory & The Call Stack
-*************************************
+***********************
+Memory & The Call Stack
+***********************
 
 
 * When running programs on our computer, memory is used and accessed in different ways
@@ -43,7 +43,7 @@ Memory is broken down into two broad sections:
 		        * We will ignore this here
 
 
-.. image:: img/memory_abstraction.png
+.. image:: memory_abstraction.png
    :width: 500 px
    :align: center
 
@@ -120,7 +120,7 @@ Call Frame
 
 * Running the above example would result in the call stack behaving like the below gif
 
-.. image:: img/callstack_gif.gif
+.. image:: callstack_animation.gif
    :width: 250 px
    :align: center
 
@@ -166,7 +166,7 @@ Garbage Collection
 
 * An object is *not reachable* when we can't get reference to it anymore
 
-.. image:: img/links_example1.png
+.. image:: topics/linked-structures/example1.png
    :width: 500 px
    :align: center
 
@@ -202,7 +202,7 @@ Stack Overflow
         uhOh();
     }
 
-.. image:: img/memory_overflow.png
+.. image:: memory_overflow.png
    :width: 250 px
    :align: center
 
