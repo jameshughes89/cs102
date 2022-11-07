@@ -1,6 +1,6 @@
-*******************************
-Topic #9 --- Algorithm Analysis
-*******************************
+******************
+Algorithm Analysis
+******************
 
 * What does it mean for an algorithm to be *good*?
 * What makes one algorithm for solving a given problem better than another?
@@ -46,7 +46,7 @@ Growth Function
     :math:`t(n) = 15n^{2} + 45n`
 
 
-.. image:: img/complexity_table.png
+.. image:: table.png
    :width: 500 px
    :align: center
 
@@ -59,7 +59,7 @@ Growth Function
     * Do they affect how big the numbers change as :math:`n` increases?
 
 
-.. image:: img/complexity_growth0.png
+.. image:: growth0.png
    :width: 600 px
    :align: center
 
@@ -121,7 +121,7 @@ Example Growth Functions and Their Order
 | :math:`t(n) = 2^{n} + 3n`            | :math:`O(2^{n})`       |
 +--------------------------------------+------------------------+
 
-    .. image:: img/complexity_growth1.png
+    .. image:: growth1.png
        :width: 500 px
        :align: center
 
@@ -188,7 +188,7 @@ Loops
 * We can think of the loop and a number line
 * Every time the loop runs, we put our finger on the next number
 
-.. image:: img/complexity_linear.png
+.. image:: linear.png
    :width: 750 px
    :align: center
 
@@ -218,7 +218,7 @@ Nested Loops
 
 **Order:** :math:`O(n^{2})`
 
-.. image:: img/complexity_quadratic.png
+.. image:: quadratic.png
    :width: 750 px
    :align: center
 
@@ -365,6 +365,6 @@ Pushing
 For next time
 =============
 
-* Read the :doc:`amortized time complexity aside. </topic9-amortized>`
+* Read the :doc:`amortized time complexity aside. <amortized>`
 * Read Chapter 2 of your text
     * 14 pages

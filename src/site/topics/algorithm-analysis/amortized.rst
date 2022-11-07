@@ -1,6 +1,6 @@
-********************************************
-Topic #9 Aside --- Amortized Time Complexity
-********************************************
+***********************************
+Aside --- Amortized Time Complexity
+***********************************
 
 .. warning::
 
@@ -51,13 +51,13 @@ Amortization
 * This tells us how much work is being done on average over the :math:`n +1` ``push`` calls
 * If we roughly divide this out, each term comes out to :math:`O(1)`
 
-.. image:: img/complexity_amortization0.png
+.. image:: amortization0.png
    :width: 500 px
    :align: center
 
 * Spread out the :math:`O(n)` work over the previous :math:`n` calls to ``push``
 
-.. image:: img/complexity_amortization1.png
+.. image:: amortization1.png
    :width: 500 px
    :align: center
 
