@@ -1,10 +1,10 @@
-************************************
-Topic #8 Aside --- Nested Node Class
-************************************
+***************************
+Aside --- Nested Node Class
+***************************
 
 * Consider the doubly linked structure
 
-.. image:: img/links_double.png
+.. image:: /topics/linked-structures/double_links.png
    :width: 400 px
    :align: center
 

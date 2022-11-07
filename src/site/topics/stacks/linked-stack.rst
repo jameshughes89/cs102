@@ -1,6 +1,6 @@
-************************
-Topic #8 --- LinkedStack
-************************
+***********
+LinkedStack
+***********
 
 * We have already implemented a ``Stack`` as an ``ArrayStack``
 * We have also seen how we can use a series of nodes to create a linked structure
@@ -9,7 +9,7 @@ Topic #8 --- LinkedStack
 StackADT
 ========
 
-* :download:`We already wrote our Stack.java<../main/java/Stack.java>` interface
+* :download:`We already wrote our Stack.java</../main/java/Stack.java>` interface
 
 * Remember, for a ``Stack`` we want
     * ``push``
@@ -28,19 +28,19 @@ Implementing a Stack --- Linked Container
     * All pushing and popping happens at the head end of the linked structure
 * We will also keep track of the count
 
-.. image:: img/linkedstack0.png
+.. image:: linked_stack0.png
    :width: 500 px
    :align: center
 
-.. image:: img/linkedstack1.png
+.. image:: linked_stack1.png
    :width: 500 px
    :align: center
 
-.. image:: img/linkedstack2.png
+.. image:: linked_stack2.png
    :width: 500 px
    :align: center
 
-.. image:: img/linkedstack3.png
+.. image:: linked_stack3.png
    :width: 500 px
    :align: center
 
@@ -164,7 +164,7 @@ Testing LinkedStack
 ===================
 
 * To ensure correctness, we will write tests with JUnit
-    * :doc:`If you have not yet, read the testing aside </topic6-testing>`
+    * :doc:`If you have not yet, read the testing aside <testing>`
 
 * All the tests will be the same as the ``ArrayStack``, except we do not need to check the ``expandCapacity``
     * ``expandCapacity`` is not a thing in our ``LinkedStack`` implementation
@@ -269,7 +269,7 @@ Introduction Errors for Fun
 
 * Once the change is made, run the tests to see what happens
 
-.. image:: img/linkedstack_assertfail.png
+.. image:: assert_fail.png
    :width: 600 px
    :align: center
 
@@ -278,10 +278,10 @@ For next time
 =============
 
 
-* Look into the :doc:`nested node class aside. </topic8-nested>`
-* Download and play with the :download:`LinkedStack <../main/java/LinkedStack.java>` code
-* Download and run the :download:`LinkedStackTest <../test/java/LinkedStackTest.java>` tests
-    * Or the more thorough tests found in :download:`LinkedStackThoroughTest <../test/java/LinkedStackThoroughTest.java>`
+* Look into the :doc:`nested node class aside. <nested>`
+* Download and play with the :download:`LinkedStack </../main/java/LinkedStack.java>` code
+* Download and run the :download:`LinkedStackTest </../test/java/LinkedStackTest.java>` tests
+    * Or the more thorough tests found in :download:`LinkedStackThoroughTest </../test/java/LinkedStackThoroughTest.java>`
 * Read Chapter 4 Section 6
     * 13 pages
 
@@ -294,6 +294,6 @@ Playing Code
     * ``ArrayStack`` -> ``LinkedStack``
 * If everything was done correctly, the following code from ``PlayingLinkedStack`` should work
 
-.. literalinclude:: ../main/java/PlayingArrayStack.java
+.. literalinclude:: /../main/java/PlayingArrayStack.java
    :language: java
    :linenos:
