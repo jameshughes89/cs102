@@ -1,6 +1,6 @@
-***************************
-Topic #3 --- Objects Review
-***************************
+**************
+Objects Review
+**************
 
 * Let's review the idea of objects
 
@@ -298,13 +298,13 @@ equals
                     && this.lastName.equals(other.lastName);
         }
 
-* Notice how we actually use the string's `equals` too
+* Notice how we actually use the string's ``equals`` too
 * In the above example, using ``this`` is not necessary, but may be helpful in eliminating ambiguity
 
 .. warning::
 
     The example ``equals()`` included in the ``Friend.java`` file is a little more complex,
-    but is a more complete and correct ``equals``. :doc:`See this aside for more details. </topic3-equals>`
+    but is a more complete and correct ``equals``. :doc:`See this aside for more details. <equals>`
 
 
 Creating an Instance of a Friend
@@ -336,7 +336,7 @@ Creating an Instance of a Friend
         * The equals bit
         * We have to be careful about what is actually stored in the ``aFriend``
 
-        .. image:: img/reference_aFriend.png
+        .. image:: reference_aFriend.png
            :width: 250 px
            :align: center
 
@@ -348,7 +348,7 @@ Creating an Instance of a Friend
 * ``bFriend`` has a ``firstName`` of Jane
 * They both have the ``firstName`` field, but the actual value associated with it differs
 
-    .. image:: img/reference_aFriend_bFriend.png
+    .. image:: reference_aFriend_bFriend.png
        :width: 500 px
        :align: center
 
@@ -393,7 +393,7 @@ References
 
 * This also means that the object that ``bFriend`` used to point to now has no reference to it
 
-    .. image:: img/reference_lost.png
+    .. image:: reference_lost.png
        :width: 500 px
        :align: center
 
@@ -459,7 +459,7 @@ Setting Fields and Writing the Constructor
 
 * First, notice that we actually wrote two constructors
     * Overloading
-    * We can even do something called :doc:`constructor chaining </topic3-chaining>`
+    * We can even do something called :doc:`constructor chaining <chaining>`
 
 * Since arrays have a fixed size, our strategy here is to make an array with a sufficiently large size, but only use what we need
 * The first constructor will make use of some constant value set in the class to make the array
@@ -470,7 +470,7 @@ Setting Fields and Writing the Constructor
 
 * We will have something like this created
 
-    .. image:: img/contacts.png
+    .. image:: contacts.png
        :width: 600 px
        :align: center
 
@@ -544,7 +544,7 @@ Adding Friends
         * `You could also use this instead <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Arrays.html#copyOf(T%5B%5D,int)>`_
     3. Make out friends array now reference the new bigger array
 
-.. image:: img/expandcapacity.png
+.. image:: expand_capacity.png
        :width: 600 px
        :align: center
 
@@ -603,13 +603,13 @@ Remove Friends
 
 * This will be discussed further a little later in the course
 
-.. image:: img/remove.png
+.. image:: remove.png
        :width: 600 px
        :align: center
 
 .. warning::
 
-    There is actually a bug in the above `remove` example. This is addressed below, but see if you can spot the bug
+    There is actually a bug in the above ``remove`` example. This is addressed below, but see if you can spot the bug
     yourself. **Hint:** It has to do with having multiple equal ``Friend`` objects in the ``friends`` array.
 
 
@@ -765,7 +765,7 @@ toString
 .. warning::
 
     Although the above example is correct, in practice we'd want to use something called a ``StringBuilder``.
-    :doc:`See this aside for more details. </topic3-builder>`
+    :doc:`See this aside for more details. <builder>`
 
 
 Friend Count
@@ -810,12 +810,12 @@ Playing Code
 ============
 
 * Download and play with
-    * :download:`Friend <../main/java/Friend.java>`
-    * :download:`ContactList <../main/java/ContactList.java>` code
-    * :download:`PlayingObjects <../main/java/PlayingObjects.java>`
+    * :download:`Friend </../main/java/Friend.java>`
+    * :download:`ContactList </../main/java/ContactList.java>` code
+    * :download:`PlayingObjects </../main/java/PlayingObjects.java>`
 
 * If everything was done correctly, the following code from ``PlayingObjects`` should work
 
-.. literalinclude:: ../main/java/PlayingObjects.java
+.. literalinclude:: /../main/java/PlayingObjects.java
    :language: java
    :linenos:
