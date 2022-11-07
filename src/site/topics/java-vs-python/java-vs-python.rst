@@ -1,6 +1,6 @@
-****************************
-Topic #2 --- Java vs. Python
-****************************
+***************
+Java vs. Python
+***************
 
 **Python**
 
@@ -821,7 +821,7 @@ For next time
     * 15 pages
 
 
-* :doc:`Although outside the scope of the course, if you would like to see how a C++ differs, check out the relevant C++ lesson. </cpp-syntax>`
-* :doc:`Although not part of the course, if you would like, check out C++ lesson on pointers. </cpp-pointers>`
+* :doc:`Although outside the scope of the course, if you would like to see how a C++ differs, check out the relevant C++ lesson. </cpp/syntax/syntax>`
+* :doc:`Although not part of the course, if you would like, check out C++ lesson on pointers. </cpp/pointers/pointers>`
 
 

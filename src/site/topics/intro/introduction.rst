@@ -1,8 +1,8 @@
-******************
-Topic #1 --- Intro
-******************
+************
+Introduction
+************
 
-:doc:`Read the outline </outline>`
+:doc:`Read the outline </outline/outline>`
 
 The main focus of this course is:
 
@@ -123,7 +123,7 @@ Java
 How do I go about programming Java!?
 ------------------------------------
 
-:doc:`Go here </gettingset>`
+:doc:`Go here </getting-set/getting-set>`
 
 
 Can we Write Code Now?
@@ -229,6 +229,6 @@ Can we Write Code Now?
 
 For next time
 =============
-* Get your computer at home :doc:`set up for CS 162 </gettingset>`
+* Get your computer at home :doc:`set up for CS 162 </getting-set/getting-set>`
 * Read Chapter 1 of your text
     * 15 pages
