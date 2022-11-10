@@ -207,19 +207,17 @@ the final exam.
 Labs
 ====
 
-The purpose of the labs is to give students guided, hands-on experience with programming. It is expected that students
-will come prepared to the labs by reading the lab instructions. Lab instructions will be available on the course website
-in advance. Students coming to lab unprepared will be asked to leave.
+The purpose of the weekly labs is to give students hands-on experience. Labs will have required assigned work and will
+revolve around `Kattis <https://open.kattis.com/>`_.
 
-* Labs begin the **first** week of class.
-* Lab exercises must be completed for marks. Each completed lab is worth 1% of your final grade (to a maximum of 10%).
-    * If less than 10 are given, the lab weights will be adjusted to make up 10% of the final grade.
-* You must attend the lab session for which you are registered.
-* It is your responsibility to ensure your attendance and exercise completion is recorded.
-* Students must bring their student identification to all labs.
-* There are no make-up labs, and students who are absent for a lab do not have the option of attending another lab.
-    * students who encounter serious health or other personal difficulties are encouraged to contact the professor.
+Labs begin on the 1st week of class. Lab attendance is mandatory and It is your responsibility to ensure your attendance
+is recorded.
 
+You may only attend the lab session for which you are registered. Students must bring their student identification to
+all labs.
+
+There are no make-up labs, and students who are absent for a lab do not have the option of attending another lab.
+Students who encounter serious health or other personal difficulties are encouraged to contact the professor.
 
 
 Email Contact
