@@ -4,18 +4,8 @@ Outline for Computer Science 162 --- Programming and Data Structures
 
 
 
-Winter 2022
+Winter 2023
 ===========
-
-.. warning::
-    This outline is written assuming in person lectures begin 2 weeks after the start of the semester. As of the time
-    of writing, the first two weeks are scheduled to be online only. If circumstances change, this outline will be
-    updated accordingly. The major changes that would occur are (a) online lectures, (b) online labs, (c) the removal
-    of the midterm and having its portion of the final grade spread over the assignments, and (d) the format of the
-    final exam.
-
-    None of the above warning should suggest that it is expected that things will change.
-
 
 
 Course Description
@@ -24,7 +14,6 @@ Course Description
 Continuing from the material in CSCI 161, this course covers memory management and data abstraction via classes and
 objects, and introduces the linear data structures lists, stacks, and queues. Structured programming is encouraged via
 modular development. Credit will be granted for only one of CSCI 162 and INFO 256. Three credits and a two-hour lab.
-
 
 
 Prerequisites
@@ -44,7 +33,6 @@ Instructor
 
 * James Hughes
 * Office: Annex 20B
-* Office Hours: Tuesday -- Friday, 10:00am -- 11:00am, **Virtual Only --- See Moodle**
 * Email: jhughes at stfx.ca
 
 
