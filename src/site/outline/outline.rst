@@ -31,7 +31,7 @@ prerequisites.
 Instructor
 ==========
 
-* James Hughes
+* Dr. James Hughes
 * Office: Annex 20B
 * Email: jhughes at stfx.ca
 
@@ -105,19 +105,19 @@ Student Evaluation (Tentative Dates)
 +------------------------+------------+---------------------+
 |                        | Worth      | Due                 |
 +========================+============+=====================+
-| Assignment 1           | 10%        | Early February-ish  |
+| Assignment 1           | 5%         | Late January-ish    |
 +------------------------+------------+---------------------+
-| Assignment 2           | 10%        | Late February-ish   |
+| Assignment 2           | 5%         | Mid February-ish    |
 +------------------------+------------+---------------------+
-| Assignment 3           | 10%        | Mid March-ish       |
+| Assignment 3           | 5%         | Mid March-ish       |
 +------------------------+------------+---------------------+
-| Assignment 4           | 10%        | Early April-ish     |
+| Assignment 4           | 5%         | Early April-ish     |
 +------------------------+------------+---------------------+
-| Labs                   | 10%        | Throughout          |
+| Test 1                 | 20%        | Late January-ish    |
 +------------------------+------------+---------------------+
-| Midterm Exam           | 20%        | Early March-ish     |
+| Test 2                 | 20%        | Late February-ish   |
 +------------------------+------------+---------------------+
-| Final Exam             | 30%        | TBA                 |
+| Final Exam             | 40%        | TBA                 |
 +------------------------+------------+---------------------+
 
 
