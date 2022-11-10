@@ -122,39 +122,35 @@ Student Evaluation (Tentative Dates)
 
 
 
-Assignment Submission
-=====================
+Assignments
+===========
 
-Instructions for the submission of assignments will be posted on the course website. It is each student's
-responsibility to read and follow the instructions. Failure to follow the submission instructions may result in the
-assignment receiving a mark of zero.
+Submission
+----------
+
+Instructions for the submission of assignments will be posted on the course website. It is each student's responsibility
+to read and follow the instructions. Failure to follow the submission instructions may result in the assignment
+receiving a mark of zero.
 
 You will be required to submit each programming assignment electronically. Details will be given in the assignment
-descriptions.
-
-We reserve the right to use similarity detection software to detect possible cheating cases.
+descriptions. We reserve the right to use similarity detection software to detect possible cheating cases.
 
 
+Due Dates
+---------
 
-Assignment Due Dates
-====================
-
-The date and exact time assignments are due will be given in the assignment specifications.
-
-Assignments are due on the posted due date, but will be accepted with no penalty for up to a maximum of 7 days after the
-posted date. Any submission past the 7 day period will not be accepted.
-
-No extensions will be given for assignments for after the 7 day late period.
+The date and exact time assignments are due will be given in the assignment specifications. No submissions will be taken
+after the due date; there are no late submissions. No extensions will be given for assignments.
 
 
-Assignment Marking
-==================
+Marking
+-------
 
 Assignments are marked by the Teaching Assistants, who follow marking schemes provided by instructors.
 
 A request for adjustment in an assignment mark must be made within 2 weeks of the date on which it was first available
 after marking. (Beyond that date, regrading will not be considered, regardless of whether you retrieved your
-assignment.) Such a request must be submitted to the course instructor in writing, and must include specific reasons why
+assignment). Such a request must be submitted to the course instructor in writing, and must include specific reasons why
 you believe you deserve more marks. The request must be accompanied by all materials that were originally handed in, as
 well as the original marker's grade summary sheet. The instructor will inform you by email when the reevaluation process
 is complete.
@@ -165,17 +161,47 @@ assignment, to guard against the possibility of errors in recording marks. It is
 until you are satisfied that your final mark for the course has been computed properly.
 
 
+Recoupment
+----------
+
+Since mistakes are expected and lost marks are meant to provide feedback and not intended to be a penalty, students can
+redeem 50% of their lost marks via *assignment recoupment*.
+
+Students will have **1 week** after their marked assignment is returned to incorporate feedback, correct mistakes, and
+resubmit their assignments for additional marking. All corrected mistakes can recoup 50% of the lost marks on that
+assignment. For example, if a student obtained 80/100 on the assignment after the regular submission, and the student
+correctly fixes errors that account for 12 of the 20 lost marks and resubmits for recoupment, the student will gain 6
+more marks for a total of 86/100 on the assignment. As always, no late submissions will be accepted and all work will be
+checked for plagiarism or cheating.
+
+There are some conditions, however. The marker will inform the student if their assignment is eligible for recoupment;
+only assignments deemed eligible may be resubmitted. Only assignments that were completed and attempted in earnest are
+eligible. Students with missing code/functions/portions of the assignment will not be eligible. If the student has
+portions of code that demonstrate a lack of a sincere attempt, the assignment will not be eligible for recoupment.
+
+Further, it is the responsibility of the student to make clear to the marker what exactly has been updated and changed.
+If the marker is unable to quickly determine what fixes the student has made, the resubmission will not be considered
+for recoupment. This could be in the form of notes in the Moodle submission with corresponding comments within the code.
+
 
 Tests
 =====
 
-* No cheating of any form is allowed
-* Tests and exams are closed book/laptop/notebook/etc.
-* Calculators will not be permitted
-* Use of a cell phone is not permitted
-* The possession of unauthorized devices during tests and examinations constitutes violation of academic integrity, as per section 3.8.2(b)(v) of the academic calendar
-* Anything that a reasonable person would deem as cheating is not permitted
+No cheating of any form is allowed. Tests and exams are closed book/laptop/notebook/etc. and calculators, cell phones
+and/or similar devices are not permitted. The possession of unauthorized devices during tests and examinations
+constitutes violation of academic integrity, as per section 3.8.2(b)(v) of the academic calendar. Further, anything that
+a reasonable person would deem as cheating is not permitted and will be investigated fully as academic misconduct.
 
+Test format will be in person; however, if necessary, the format *may* be changed to online. Students will be informed
+of the change as soon as possible.
+
+
+Missed Tests
+------------
+
+There are no make-up tests. If a student is unable to write a test, the weight of their test will be added to the
+subsequent test or final exam, whichever comes first. If both tests are missed, the weight of the tests will be added to
+the final exam.
 
 
 Labs
