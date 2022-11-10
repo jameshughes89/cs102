@@ -223,7 +223,7 @@ Students who encounter serious health or other personal difficulties are encoura
 Email Contact
 =============
 
-As far as you are concerned, my name is Dr. Hughes or Professor Hughes.
+**Email etiquette** --- Emails should be addressed to Dr./Prof. Hughes.
 
 I may need to send email messages to the whole class or to students individually. Email will be sent to the StFX email
 address assigned to students. It is the responsibility of the student to read this email on a regular basis. You may
@@ -240,6 +240,17 @@ account and include CSCI 162 in the subject line of the email. Lengthy and in-de
 office hours.
 
 
+Office Hours
+============
+
+Office hours are provided to students to facilitate their success --- students are encouraged to come to office hours.
+
+Students must understand that the professors and TAs are not there to provide them answers to problems, but to assist
+students solving their problems.
+
+As per university policy, masking and proper social distancing is required. Students refusing to follow this policy will
+be required to leave.
+
 
 Attendance
 ==========
@@ -247,15 +258,14 @@ Attendance
 Students missing three classes without reasonable cause will be reported to the Associate Dean. See section 3.7 of the
 academic calendar for more details.
 
-You will be reported to the Associate Dean of Academic Affairs' Office if you are repeatedly delinquent
-in assignments or attendance at classes or laboratories.
-
+You will be reported to the Associate Dean, Academic Affairs' Office if you are repeatedly delinquent in assignments or
+attendance at classes or laboratories.
 
 
 Copyright Policy
 ================
 
-The materials in CSCI 161 at StFX are the property of the instructor, unless stated otherwise by the instructor. Online
+The materials in CSCI 162 at StFX are the property of the instructor, unless stated otherwise by the instructor. Online
 posting or selling this material to third parties for distribution without permission is subject to Canadian Copyright
 law and is strictly prohibited.
 
@@ -270,7 +280,6 @@ violate an instructor's intellectual property rights and the Canadian Copyright 
 be subject to disciplinary actions.
 
 
-
 Statement of Academic Offenses
 ===============================
 
@@ -282,7 +291,6 @@ for academic misconduct. I will pursue academic offenses fully. I will apply -10
 advocate for an automatic failure in the course, or expulsion from the university when allowed.
 
 
-
 Use of Plagiarism-Checking Software
 ===================================
 
@@ -292,7 +300,6 @@ checking will be included as source documents in the reference database for the 
 papers subsequently submitted to the system.
 
 
-
 Use of Cheating-Analysis Software
 =================================
 
@@ -300,16 +307,11 @@ All submitted work may be subject to submission for similarity review by softwar
 coincidences in answer patterns that may indicate cheating (MOSS).
 
 
-
 Tutoring
 ========
 
-The role of tutoring is to help students understand course material. Tutors should not write assignments, etc. for the
-students who hire them.
-
-If you need help though, please just come by my office, or go see the TAs. We're here to help and most office hours are
-criminally underused (unless there's an assignment due... then it looks like Main st. at 4:45pm).
-
+The role of tutoring is to help students understand course material. Tutors should not write assignments or take-home
+tests for the students who hire them.
 
 
 Statement on Accommodation of Religious Observances
@@ -317,7 +319,6 @@ Statement on Accommodation of Religious Observances
 
 Requests for accommodation of specific religious or spiritual observance must be presented in writing to the instructor
 within the fist two weeks of class.
-
 
 
 Statement for Students with Disabilities
@@ -331,11 +332,11 @@ student-centered program of support. Located in Room 108 of the Angus L. MacDona
 meet with program staff to discuss options for support. Deadline for registering with the Center is two weeks prior to
 the end of classes each semester and 3 Business Days' notice is required for booking all accommodated tests and exams.
 
-To book an appointment please use the following:
+To book an appointment please use the following
+
 * link --- http://stfxcal.mywconline.com
 * Phone --- 902 867 5349
 * Email --- tramble@stfx.ca
-
 
 
 Academic Accommodation for Medical Illness
@@ -345,13 +346,11 @@ Those unable to attend class, submit an assignment, or write a test, should refe
 academic calendar.
 
 
-
 Scent Policy
 ============
 
 For the benefit of the many students that have a scent sensitivity, my classroom is a no-scent zone; please respect this
 policy.
-
 
 
 Equity
@@ -366,3 +365,12 @@ in general. If we cannot answer your questions or help you address your concerns
 Chair/Coordinator of the Department/Program or the Human Rights and Equity Advisor. Please note that a Human Rights and
 Equity Advisor will soon be appointed. In the meantime, students, faculty, or staff may also contact the Director of
 Human Resources at hr@stfx.ca or the Office of the AVP&P.
+
+
+Preferred Pronouns
+==================
+
+Professional courtesy and sensitivity are especially important with respect to individuals and topics dealing with
+differences of race, culture, religion, politics, sexual orientation, gender, gender variance, and nationalities. Class
+rosters are provided to the instructor with the student's legal name. Please advise me of this preference early in the
+semester. See policies at http://www2.mystfx.ca/equity/policies
