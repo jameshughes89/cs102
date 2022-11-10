@@ -292,7 +292,7 @@ advocate for an automatic failure in the course, or expulsion from the universit
 
 
 Use of Plagiarism-Checking Software
-===================================
+-----------------------------------
 
 All required papers/submissions may be subject to submission for textual similarity review to the commercial plagiarism
 detection software under license to the University for the detection of plagiarism. All papers submitted for such
@@ -301,7 +301,7 @@ papers subsequently submitted to the system.
 
 
 Use of Cheating-Analysis Software
-=================================
+---------------------------------
 
 All submitted work may be subject to submission for similarity review by software that will check for unusual
 coincidences in answer patterns that may indicate cheating (MOSS).
