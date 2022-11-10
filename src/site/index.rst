@@ -12,9 +12,7 @@ Professor
 
 * Dr. James Hughes
 * jhughes at stfx.ca
-* `@Modsurski <https://twitter.com/Modsurski>`_
 * `YouTube <https://www.youtube.com/channel/UCIruexBZJaawh_9WF_vjTPg>`_
-* `Twitch "Office Hours" <https://www.twitch.tv/conlabx>`_
 
 
 GitHub Repo
