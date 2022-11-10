@@ -3,7 +3,6 @@ Outline for Computer Science 162 --- Programming and Data Structures
 ********************************************************************
 
 
-
 Winter 2023
 ===========
 
@@ -27,14 +26,12 @@ receive no adjustment to your fees in the event that you are dropped from a cour
 prerequisites.
 
 
-
 Instructor
 ==========
 
 * Dr. James Hughes
 * Office: Annex 20B
 * Email: jhughes at stfx.ca
-
 
 
 Class Times
@@ -45,7 +42,6 @@ Class Times
 * Friday    12:15 -- 13:15, MULH 2032
 
 
-
 Lab
 ===
 
@@ -53,13 +49,11 @@ Lab
 * Sec 2: Monday   13:15 -- 15:15, MULH 4024
 
 
-
 Website
 =======
 
 * Mostly :doc:`this website </index>`
 * MOODLE
-
 
 
 Textbook and Lecture Notes
@@ -76,7 +70,6 @@ The textbook for this class is:
 J. Lewis and J. Chase,
 *Java Software Structures: Designing and Using Data Structures, 4th edition.*
 Upper Saddle River, NJ: Pearson, 2013.
-
 
 
 Topics
@@ -96,7 +89,6 @@ Below is a list of topics in no particular order that may or may not be covered 
 * Analysis of Algorithms
 * Trees & Binary Trees
 * Sorting Algorithms
-
 
 
 Student Evaluation (Tentative Dates)
@@ -121,9 +113,9 @@ Student Evaluation (Tentative Dates)
 +------------------------+------------+---------------------+
 
 
-
 Assignments
 ===========
+
 
 Submission
 ----------
@@ -373,4 +365,4 @@ Preferred Pronouns
 Professional courtesy and sensitivity are especially important with respect to individuals and topics dealing with
 differences of race, culture, religion, politics, sexual orientation, gender, gender variance, and nationalities. Class
 rosters are provided to the instructor with the student's legal name. Please advise me of this preference early in the
-semester. See policies at http://www2.mystfx.ca/equity/policies
+semester. See policies at http://www2.mystfx.ca/equity/policies.
