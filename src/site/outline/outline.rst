@@ -52,9 +52,9 @@ Instructor
 Class Times
 ===========
 
-* Tuesday   11:15 -- 12:15, MULH 2030
-* Wednesday 13:15 -- 14:15, MULH 2030
-* Friday    12:15 -- 13:15, MULH 2030
+* Tuesday   11:15 -- 12:15, MULH 2032
+* Wednesday 13:15 -- 14:15, MULH 2032
+* Friday    12:15 -- 13:15, MULH 2032
 
 
 
