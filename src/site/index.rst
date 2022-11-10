@@ -48,7 +48,6 @@ Office Hours
 * **James Hughes** Virtual Only --- See Moodle
     * Tuesday, 10am -- 11am
     * Wednesday, 10am -- 11am
-    * Thursday, 10am -- 11am
     * Friday, 10am -- 11am
 
 * **(TAs)** TBD
