@@ -1,5 +1,5 @@
 ************************
-CSCI 162 --- Winter 2022
+CSCI 162 --- Winter 2023
 ************************
 
 This course emphasizes the use of abstraction in programming. Elementary data structures are introduced (stacks, queues,
@@ -76,7 +76,7 @@ Getting Started
 .. toctree::
     :maxdepth: 1
 
-    gettingset
+    getting-set/getting-set
 
 
 Course Notes
@@ -84,33 +84,34 @@ Course Notes
 
 .. toctree::
     :maxdepth: 1
+    :numbered:
 
-    topic1
-    topic2
-    topic3
-    topic4
-    topic5
-    topic6
-    topic7
-    topic8
-    topic9
-    topic10
-    topic11
-    topic12
-    topic13
-    topic14
-    topic15
-    topic16
-    topic17
-    topic18
-    topic19
-    topic20
-    topic21
-    topic22
-    topic23
-    topic24
-    topic25
-    topic26
+    topics/intro/introduction
+    topics/java-vs-python/java-vs-python
+    topics/objects-review/objects-review
+    topics/collections/collections
+    topics/stacks/stack-adt
+    topics/stacks/array-stack
+    topics/linked-structures/linked-structures
+    topics/stacks/linked-stack
+    topics/algorithm-analysis/algorithm-analysis
+    topics/queues/queue-adt
+    topics/queues/linked-queue
+    topics/queues/array-queue
+    topics/bags/bag-adt
+    topics/inheritance/inheritance
+    topics/bags/bag-implementations
+    topics/iterators/iterators
+    topics/exceptions/exceptions
+    topics/memory-callstack/memory-callstack
+    topics/recursion/recursion
+    topics/searching/searching
+    topics/trees/tree-adt
+    topics/trees/binary-trees
+    topics/trees/binary-search-trees
+    topics/trees/linked-binary-search-trees
+    topics/sorting/sorting-basic
+    topics/sorting/sorting-recursive
 
 
 Labs
@@ -118,19 +119,20 @@ Labs
 
 .. toctree::
     :maxdepth: 1
+    :numbered:
 
-    lab1
-    lab2
-    lab3
-    lab4
-    lab5
-    lab6
-    lab7
-    lab8
-    lab9
-    lab10
-    lab11
-    lab12
+    labs/hello-world/hello-world
+    labs/objects-collections/objects-collections
+    labs/unit-tests/unit-tests
+    labs/stacks/stacks
+    labs/linked-structures/linked-structures
+    labs/queues/queues
+    labs/sorted-bags/sorted-bags
+    labs/recursion/recursion
+    labs/binary-trees/binary-trees
+    labs/heaps/heaps
+    labs/sorting/sorting-basic
+    labs/sorting/sorting-recursive
 
 
 Assignments
@@ -139,10 +141,10 @@ Assignments
 .. toctree::
     :maxdepth: 1
 
-    asn1
-    asn2
-    asn3
-    asn4
+    assignments/country-catalogue/country-catalogue
+    assignments/maze-solver/maze-solver
+    assignments/maze-solver-too/maze-solver-too
+    assignments/huffman-codes/huffman-codes
 
 
 Course Outline
@@ -151,7 +153,7 @@ Course Outline
 .. toctree::
     :maxdepth: 1
 
-    outline
+    outline/outline
 
 
 C++ Lessons
@@ -159,16 +161,9 @@ C++ Lessons
 
 .. toctree::
     :maxdepth: 1
+    :numbered:
 
-    cpp-syntax
-    cpp-pointers
-    cpp-references
-    cpp-arrays
-
-
-==================
-
-     * :ref:`genindex`
-     * :ref:`modindex`
-     * :ref:`search`
-
+    cpp/syntax/syntax
+    cpp/pointers/pointers
+    cpp/references/references
+    cpp/arrays/arrays
