@@ -3,19 +3,8 @@ Outline for Computer Science 162 --- Programming and Data Structures
 ********************************************************************
 
 
-
-Winter 2022
+Winter 2023
 ===========
-
-.. warning::
-    This outline is written assuming in person lectures begin 2 weeks after the start of the semester. As of the time
-    of writing, the first two weeks are scheduled to be online only. If circumstances change, this outline will be
-    updated accordingly. The major changes that would occur are (a) online lectures, (b) online labs, (c) the removal
-    of the midterm and having its portion of the final grade spread over the assignments, and (d) the format of the
-    final exam.
-
-    None of the above warning should suggest that it is expected that things will change.
-
 
 
 Course Description
@@ -24,7 +13,6 @@ Course Description
 Continuing from the material in CSCI 161, this course covers memory management and data abstraction via classes and
 objects, and introduces the linear data structures lists, stacks, and queues. Structured programming is encouraged via
 modular development. Credit will be granted for only one of CSCI 162 and INFO 256. Three credits and a two-hour lab.
-
 
 
 Prerequisites
@@ -38,24 +26,20 @@ receive no adjustment to your fees in the event that you are dropped from a cour
 prerequisites.
 
 
-
 Instructor
 ==========
 
-* James Hughes
+* Dr. James Hughes
 * Office: Annex 20B
-* Office Hours: Tuesday -- Friday, 10:00am -- 11:00am, **Virtual Only --- See Moodle**
 * Email: jhughes at stfx.ca
-
 
 
 Class Times
 ===========
 
-* Tuesday   11:15 -- 12:15, MULH 2030
-* Wednesday 13:15 -- 14:15, MULH 2030
-* Friday    12:15 -- 13:15, MULH 2030
-
+* Tuesday   11:15 -- 12:15, MULH 2032
+* Wednesday 13:15 -- 14:15, MULH 2032
+* Friday    12:15 -- 13:15, MULH 2032
 
 
 Lab
@@ -65,13 +49,11 @@ Lab
 * Sec 2: Monday   13:15 -- 15:15, MULH 4024
 
 
-
 Website
 =======
 
 * Mostly :doc:`this website </index>`
 * MOODLE
-
 
 
 Textbook and Lecture Notes
@@ -88,7 +70,6 @@ The textbook for this class is:
 J. Lewis and J. Chase,
 *Java Software Structures: Designing and Using Data Structures, 4th edition.*
 Upper Saddle River, NJ: Pearson, 2013.
-
 
 
 Topics
@@ -110,63 +91,58 @@ Below is a list of topics in no particular order that may or may not be covered 
 * Sorting Algorithms
 
 
-
 Student Evaluation (Tentative Dates)
 ====================================
 
 +------------------------+------------+---------------------+
 |                        | Worth      | Due                 |
 +========================+============+=====================+
-| Assignment 1           | 10%        | Early February-ish  |
+| Assignment 1           | 5%         | Late January-ish    |
 +------------------------+------------+---------------------+
-| Assignment 2           | 10%        | Late February-ish   |
+| Assignment 2           | 5%         | Mid February-ish    |
 +------------------------+------------+---------------------+
-| Assignment 3           | 10%        | Mid March-ish       |
+| Assignment 3           | 5%         | Mid March-ish       |
 +------------------------+------------+---------------------+
-| Assignment 4           | 10%        | Early April-ish     |
+| Assignment 4           | 5%         | Early April-ish     |
 +------------------------+------------+---------------------+
-| Labs                   | 10%        | Throughout          |
+| Test 1                 | 20%        | Late January-ish    |
 +------------------------+------------+---------------------+
-| Midterm Exam           | 20%        | Early March-ish     |
+| Test 2                 | 20%        | Late February-ish   |
 +------------------------+------------+---------------------+
-| Final Exam             | 30%        | TBA                 |
+| Final Exam             | 40%        | TBA                 |
 +------------------------+------------+---------------------+
 
 
+Assignments
+===========
 
-Assignment Submission
-=====================
 
-Instructions for the submission of assignments will be posted on the course website. It is each student's
-responsibility to read and follow the instructions. Failure to follow the submission instructions may result in the
-assignment receiving a mark of zero.
+Submission
+----------
+
+Instructions for the submission of assignments will be posted on the course website. It is each student's responsibility
+to read and follow the instructions. Failure to follow the submission instructions may result in the assignment
+receiving a mark of zero.
 
 You will be required to submit each programming assignment electronically. Details will be given in the assignment
-descriptions.
-
-We reserve the right to use similarity detection software to detect possible cheating cases.
+descriptions. Similarity detection software to detect possible cheating cases will be used.
 
 
+Due Dates
+---------
 
-Assignment Due Dates
-====================
-
-The date and exact time assignments are due will be given in the assignment specifications.
-
-Assignments are due on the posted due date, but will be accepted with no penalty for up to a maximum of 7 days after the
-posted date. Any submission past the 7 day period will not be accepted.
-
-No extensions will be given for assignments for after the 7 day late period.
+The date and exact time assignments are due will be given in the assignment specifications. No submissions will be taken
+after the due date; there are no late submissions. No extensions will be given for assignments.
 
 
-Assignment Marking
-==================
+Marking
+-------
 
 Assignments are marked by the Teaching Assistants, who follow marking schemes provided by instructors.
 
 A request for adjustment in an assignment mark must be made within 2 weeks of the date on which it was first available
 after marking. (Beyond that date, regrading will not be considered, regardless of whether you retrieved your
-assignment.) Such a request must be submitted to the course instructor in writing, and must include specific reasons why
+assignment). Such a request must be submitted to the course instructor in writing, and must include specific reasons why
 you believe you deserve more marks. The request must be accompanied by all materials that were originally handed in, as
 well as the original marker's grade summary sheet. The instructor will inform you by email when the reevaluation process
 is complete.
@@ -177,41 +153,69 @@ assignment, to guard against the possibility of errors in recording marks. It is
 until you are satisfied that your final mark for the course has been computed properly.
 
 
+Recoupment
+----------
+
+Since mistakes are expected and lost marks are meant to provide feedback and not intended to be a penalty, students can
+redeem 50% of their lost marks via *assignment recoupment*.
+
+Students will have **1 week** after their marked assignment is returned to incorporate feedback, correct mistakes, and
+resubmit their assignments for additional marking. All corrected mistakes can recoup 50% of the lost marks on that
+assignment. For example, if a student obtained 80/100 on the assignment after the regular submission, and the student
+correctly fixes errors that account for 12 of the 20 lost marks and resubmits for recoupment, the student will gain 6
+more marks for a total of 86/100 on the assignment. As always, no late submissions will be accepted and all work will be
+checked for plagiarism or cheating.
+
+There are some conditions, however. The marker will inform the student if their assignment is eligible for recoupment;
+only assignments deemed eligible may be resubmitted. Only assignments that were completed and attempted in earnest are
+eligible. Students with missing code/functions/portions of the assignment will not be eligible. If the student has
+portions of code that demonstrate a lack of a sincere attempt, the assignment will not be eligible for recoupment.
+
+Further, it is the responsibility of the student to make clear to the marker what exactly has been updated and changed.
+If the marker is unable to quickly determine what fixes the student has made, the resubmission will not be considered
+for recoupment. This could be in the form of notes in the Moodle submission with corresponding comments within the code.
+
 
 Tests
 =====
 
-* No cheating of any form is allowed
-* Tests and exams are closed book/laptop/notebook/etc.
-* Calculators will not be permitted
-* Use of a cell phone is not permitted
-* The possession of unauthorized devices during tests and examinations constitutes violation of academic integrity, as per section 3.8.2(b)(v) of the academic calendar
-* Anything that a reasonable person would deem as cheating is not permitted
+No cheating of any form is allowed. Tests and exams are closed book/laptop/notebook/etc. and calculators, cell phones
+and/or similar devices are not permitted. The possession of unauthorized devices during tests and examinations
+constitutes violation of academic integrity, as per section 3.8.2(b)(v) of the academic calendar. Further, anything that
+a reasonable person would deem as cheating is not permitted and will be investigated fully as academic misconduct.
 
+Test format will be in person; however, if necessary, the format *may* be changed to online. Students will be informed
+of the change as soon as possible.
+
+
+Missed Tests
+------------
+
+There are no make-up tests. If a student is unable to write a test, the weight of their test will be added to the
+following test or final exam, whichever comes first. If both tests are missed, the weight of the tests will be added to
+the final exam.
 
 
 Labs
 ====
 
-The purpose of the labs is to give students guided, hands-on experience with programming. It is expected that students
-will come prepared to the labs by reading the lab instructions. Lab instructions will be available on the course website
-in advance. Students coming to lab unprepared will be asked to leave.
+The purpose of the weekly labs is to give students hands-on experience. Labs will have required assigned work and will
+revolve around `Kattis <https://open.kattis.com/>`_.
 
-* Labs begin the **first** week of class.
-* Lab exercises must be completed for marks. Each completed lab is worth 1% of your final grade (to a maximum of 10%).
-    * If less than 10 are given, the lab weights will be adjusted to make up 10% of the final grade.
-* You must attend the lab session for which you are registered.
-* It is your responsibility to ensure your attendance and exercise completion is recorded.
-* Students must bring their student identification to all labs.
-* There are no make-up labs, and students who are absent for a lab do not have the option of attending another lab.
-    * students who encounter serious health or other personal difficulties are encouraged to contact the professor.
+Labs begin on the 1st week of class. Lab attendance is mandatory and It is your responsibility to ensure your attendance
+is recorded.
 
+You may only attend the lab session for which you are registered. Students must bring their student identification to
+all labs.
+
+There are no make-up labs, and students who are absent for a lab do not have the option of attending another lab.
+Students who encounter serious health or other personal difficulties are encouraged to contact the professor.
 
 
 Email Contact
 =============
 
-As far as you are concerned, my name is Dr. Hughes or Professor Hughes.
+**Email etiquette** --- Emails should be addressed to Dr./Prof. Hughes.
 
 I may need to send email messages to the whole class or to students individually. Email will be sent to the StFX email
 address assigned to students. It is the responsibility of the student to read this email on a regular basis. You may
@@ -228,6 +232,17 @@ account and include CSCI 162 in the subject line of the email. Lengthy and in-de
 office hours.
 
 
+Office Hours
+============
+
+Office hours are provided to students to facilitate their success --- students are encouraged to come to office hours.
+
+Students must understand that the professors and TAs are not there to provide them answers to problems, but to assist
+students solving their problems.
+
+As per university policy, masking and proper social distancing is required. Students refusing to follow this policy will
+be required to leave.
+
 
 Attendance
 ==========
@@ -235,15 +250,14 @@ Attendance
 Students missing three classes without reasonable cause will be reported to the Associate Dean. See section 3.7 of the
 academic calendar for more details.
 
-You will be reported to the Associate Dean of Academic Affairs' Office if you are repeatedly delinquent
-in assignments or attendance at classes or laboratories.
-
+You will be reported to the Associate Dean, Academic Affairs' Office if you are repeatedly delinquent in assignments or
+attendance at classes or laboratories.
 
 
 Copyright Policy
 ================
 
-The materials in CSCI 161 at StFX are the property of the instructor, unless stated otherwise by the instructor. Online
+The materials in CSCI 162 at StFX are the property of the instructor, unless stated otherwise by the instructor. Online
 posting or selling this material to third parties for distribution without permission is subject to Canadian Copyright
 law and is strictly prohibited.
 
@@ -258,7 +272,6 @@ violate an instructor's intellectual property rights and the Canadian Copyright 
 be subject to disciplinary actions.
 
 
-
 Statement of Academic Offenses
 ===============================
 
@@ -270,9 +283,8 @@ for academic misconduct. I will pursue academic offenses fully. I will apply -10
 advocate for an automatic failure in the course, or expulsion from the university when allowed.
 
 
-
 Use of Plagiarism-Checking Software
-===================================
+-----------------------------------
 
 All required papers/submissions may be subject to submission for textual similarity review to the commercial plagiarism
 detection software under license to the University for the detection of plagiarism. All papers submitted for such
@@ -280,24 +292,18 @@ checking will be included as source documents in the reference database for the 
 papers subsequently submitted to the system.
 
 
-
 Use of Cheating-Analysis Software
-=================================
+---------------------------------
 
 All submitted work may be subject to submission for similarity review by software that will check for unusual
 coincidences in answer patterns that may indicate cheating (MOSS).
 
 
-
 Tutoring
 ========
 
-The role of tutoring is to help students understand course material. Tutors should not write assignments, etc. for the
-students who hire them.
-
-If you need help though, please just come by my office, or go see the TAs. We're here to help and most office hours are
-criminally underused (unless there's an assignment due... then it looks like Main st. at 4:45pm).
-
+The role of tutoring is to help students understand course material. Tutors should not write assignments or take-home
+tests for the students who hire them.
 
 
 Statement on Accommodation of Religious Observances
@@ -305,7 +311,6 @@ Statement on Accommodation of Religious Observances
 
 Requests for accommodation of specific religious or spiritual observance must be presented in writing to the instructor
 within the fist two weeks of class.
-
 
 
 Statement for Students with Disabilities
@@ -319,11 +324,11 @@ student-centered program of support. Located in Room 108 of the Angus L. MacDona
 meet with program staff to discuss options for support. Deadline for registering with the Center is two weeks prior to
 the end of classes each semester and 3 Business Days' notice is required for booking all accommodated tests and exams.
 
-To book an appointment please use the following:
+To book an appointment please use the following
+
 * link --- http://stfxcal.mywconline.com
 * Phone --- 902 867 5349
 * Email --- tramble@stfx.ca
-
 
 
 Academic Accommodation for Medical Illness
@@ -333,13 +338,11 @@ Those unable to attend class, submit an assignment, or write a test, should refe
 academic calendar.
 
 
-
 Scent Policy
 ============
 
 For the benefit of the many students that have a scent sensitivity, my classroom is a no-scent zone; please respect this
 policy.
-
 
 
 Equity
@@ -354,3 +357,12 @@ in general. If we cannot answer your questions or help you address your concerns
 Chair/Coordinator of the Department/Program or the Human Rights and Equity Advisor. Please note that a Human Rights and
 Equity Advisor will soon be appointed. In the meantime, students, faculty, or staff may also contact the Director of
 Human Resources at hr@stfx.ca or the Office of the AVP&P.
+
+
+Preferred Pronouns
+==================
+
+Professional courtesy and sensitivity are especially important with respect to individuals and topics dealing with
+differences of race, culture, religion, politics, sexual orientation, gender, gender variance, and nationalities. Class
+rosters are provided to the instructor with the student's legal name. Please advise me of this preference early in the
+semester. See policies at http://www2.mystfx.ca/equity/policies.
