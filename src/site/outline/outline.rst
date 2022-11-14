@@ -192,7 +192,7 @@ Missed Tests
 ------------
 
 There are no make-up tests. If a student is unable to write a test, the weight of their test will be added to the
-subsequent test or final exam, whichever comes first. If both tests are missed, the weight of the tests will be added to
+following test or final exam, whichever comes first. If both tests are missed, the weight of the tests will be added to
 the final exam.
 
 
