@@ -67,19 +67,8 @@ MSCS Tutorial Nights
 `The Math, Stats, and CS Society now has a time and location for our free tutorial sessions. <https://www.mystfx.ca/computer-science/csci-tutorials>`_
 
 
-Getting Started
-===============
-
 .. toctree::
-    :maxdepth: 1
-
-    getting-set/getting-set
-
-
-Course Notes
-============
-
-.. toctree::
+    :caption: Course Notes
     :maxdepth: 1
     :numbered:
 
@@ -111,10 +100,8 @@ Course Notes
     topics/sorting/sorting-recursive
 
 
-Labs
-====
-
 .. toctree::
+    :caption: Labs
     :maxdepth: 1
     :numbered:
 
@@ -132,10 +119,8 @@ Labs
     labs/sorting/sorting-recursive
 
 
-Assignments
-===========
-
 .. toctree::
+    :caption: Assignments
     :maxdepth: 1
 
     assignments/country-catalogue/country-catalogue
@@ -144,19 +129,22 @@ Assignments
     assignments/huffman-codes/huffman-codes
 
 
-Course Outline
-==============
+.. toctree::
+    :caption: Getting Started
+    :maxdepth: 1
+
+    getting-set/getting-set
+
 
 .. toctree::
+    :caption: Outline
     :maxdepth: 1
 
     outline/outline
 
 
-C++ Lessons
-===========
-
 .. toctree::
+    :caption: C++ Lessons
     :maxdepth: 1
     :numbered:
 
