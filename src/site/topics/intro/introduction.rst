@@ -131,20 +131,20 @@ Abstract Data Types
 Java
 ====
 
-* I thought this was supposed to be C++?
-    * Not anymore
-
 * We are now going to switch programming languages to Java
+* What about Python?
 
-* But I liked Python
     * Don't worry, you'll quickly realize how similar Python and Java are
-    * More than that, the main and important ideas are the same between the languages
+    * More than that, the important ideas are the same between the languages
     * There are some java-*isms* I will point out along the way
+    * Python's flexibility often gets in the way when our programs grow in complexity
+
 
 .. warning::
 
     Programming and Java are **not** a direct learning objective of this course. We are learning abstraction, data structures,
     and algorithms.
+
 
 How do I go about programming Java!?
 ------------------------------------
