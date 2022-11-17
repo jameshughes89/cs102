@@ -42,7 +42,7 @@ Stacks
     :width: 500 px
     :align: center
 
-    An example of adding a plate to the top of a stack of plates.
+    Adding a plate to the top of a stack of plates.
 
 
 Queues
@@ -55,7 +55,7 @@ Queues
     :width: 500 px
     :align: center
 
-    An example of a first come first served queue/line.
+    A first come first served queue/line.
 
 
 Bags
@@ -71,7 +71,7 @@ Bags
     :width: 500 px
     :align: center
 
-    An example of an element being added to an ordered bag such that the order is preserved.
+    An element being added to an ordered bag such that the order is preserved.
 
 
 Nonlinear Data Structures
@@ -94,7 +94,7 @@ Trees
     :width: 500 px
     :align: center
 
-    An example of a file system on a computer.
+    A simple file system on a computer.
 
 
 Graphs
