@@ -114,14 +114,18 @@ Abstract Data Types
 -------------------
 
 * These *collections* of data are sometimes called *Abstract Data Types* (ADTs)
+
     * ADTs because they are an *abstract* idea of how we want to interact with our data
+
         * What they do and how we interact with them
-    * We do **not** want to talk about specific implementations and implementation issues
+
+    * We do **not** talk about specific implementations and implementation issues
 
 * A specific implementation of these ADTs is a *data structure*
-* They implement an ADT... like, the actual code
-    * ArrayStack
-    * LinkedStack
+* For example
+
+    * The ``Stack`` ADT could be implemented with an array --- ``ArrayStack``
+    * A ``Queue`` ADT could be implemented with a series of linked nodes --- ``LinkedQueue``
 
 
 Java
