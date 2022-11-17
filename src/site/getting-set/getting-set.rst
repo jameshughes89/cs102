@@ -2,6 +2,7 @@
 Getting set up for CSCI 162
 ***************************
 
+
 Java Development Kit --- Oracle or OpenJDK
 ==========================================
 
