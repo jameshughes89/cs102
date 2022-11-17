@@ -1,14 +1,13 @@
 /*
     Title and background colors for the class activity.
 */
-.rst-content .activity .admonition-title {
+/*  .rst-content .activity .admonition-title {
     background: #5594ca
 }
  
 .rst-content .activity {
     background: #c5dfff
-}
-
+} */
 /*
     Title and background colors for the class note.
     By default notes already has a template.
@@ -49,3 +48,14 @@
 } */
 
 /* Add new styles below */
+
+/* Left Navigation bar colour */
+.wy-side-nav-search {
+    background-color: #4B0000;
+}
+
+/* Left Navigation bar caption colour */
+.wy-menu-vertical header, .wy-menu-vertical p.caption {
+    color: #FC4C4C;
+
+}
