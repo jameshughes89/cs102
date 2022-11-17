@@ -28,8 +28,8 @@ public class LinkedPriorityQueue<T> implements PriorityQueue<T> {
         LinkedPriorityQueue<?>.PriorityNode thisCurrent = this.front;
         LinkedPriorityQueue<?>.PriorityNode thatCurrent = that.front;
         while (thisCurrent != null) {
-            if (thisCurrent.getPriority() != thatCurrent.getPriority() || !thisCurrent.getData()
-                    .equals(thatCurrent.getData())) {
+            if (thisCurrent.getPriority() != thatCurrent.getPriority() ||
+                    !thisCurrent.getData().equals(thatCurrent.getData())) {
                 return false;
             }
             thisCurrent = thisCurrent.getNext();

@@ -14,102 +14,25 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class MazeTest {
 
-    private static final String EMPTY_MAZE =
-            "";
-    private static final String NO_START_MAZE =
-            "#####\n" +
-                    "# # #\n" +
-                    "# # #\n" +
-                    "#   E\n" +
-                    "# # #\n" +
-                    "#####";
-    private static final String NO_END_MAZE =
-            "#####\n" +
-                    "# # #\n" +
-                    "# # #\n" +
-                    "S   #\n" +
-                    "# # #\n" +
-                    "#####";
+    private static final String EMPTY_MAZE = "";
+    private static final String NO_START_MAZE = "#####\n" + "# # #\n" + "# # #\n" + "#   E\n" + "# # #\n" + "#####";
+    private static final String NO_END_MAZE = "#####\n" + "# # #\n" + "# # #\n" + "S   #\n" + "# # #\n" + "#####";
     private static final String MULTIPLE_START_MAZE =
-            "#####\n" +
-                    "# # #\n" +
-                    "# # #\n" +
-                    "S   E\n" +
-                    "# # #\n" +
-                    "####S";
-    private static final String MULTIPLE_END_MAZE =
-            "#####\n" +
-                    "# # #\n" +
-                    "# # #\n" +
-                    "S   E\n" +
-                    "# # #\n" +
-                    "####E";
-    private static final String NON_EMPTY_MAZE =
-            "#####\n" +
-                    "# # #\n" +
-                    "# # #\n" +
-                    "S   E\n" +
-                    "# # #\n" +
-                    "#####";
-    private static final String SMALL_MAZE =
-            "SE";
-    private static final String LINE_MAZE =
-            "SE##################";
+            "#####\n" + "# # #\n" + "# # #\n" + "S   E\n" + "# # #\n" + "####S";
+    private static final String MULTIPLE_END_MAZE = "#####\n" + "# # #\n" + "# # #\n" + "S   E\n" + "# # #\n" + "####E";
+    private static final String NON_EMPTY_MAZE = "#####\n" + "# # #\n" + "# # #\n" + "S   E\n" + "# # #\n" + "#####";
+    private static final String SMALL_MAZE = "SE";
+    private static final String LINE_MAZE = "SE##################";
     private static final String WIDE_MAZE =
-            "SE######################################\n" +
-                    "########################################\n" +
-                    "########################################\n" +
-                    "########################################";
+            "SE######################################\n" + "########################################\n" +
+                    "########################################\n" + "########################################";
     private static final String SKINNY_MAZE =
-            "S\n" +
-                    "E\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#";
+            "S\n" + "E\n" + "#\n" + "#\n" + "#\n" + "#\n" + "#\n" + "#\n" + "#\n" + "#\n" + "#\n" + "#\n" + "#\n" +
+                    "#\n" + "#\n" + "#\n" + "#\n" + "#\n" + "#\n" + "#\n" + "#\n" + "#\n" + "#\n" + "#";
     private static final String TALL_MAZE =
-            "SE##\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####";
+            "SE##\n" + "####\n" + "####\n" + "####\n" + "####\n" + "####\n" + "####\n" + "####\n" + "####\n" +
+                    "####\n" + "####\n" + "####\n" + "####\n" + "####\n" + "####\n" + "####\n" + "####\n" + "####\n" +
+                    "####\n" + "####\n" + "####\n" + "####\n" + "####\n" + "####";
 
     private Maze classUnderTest;
 

@@ -15,8 +15,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AStarMazeSolverTest {
     private static final String MAZE_NO_SOLUTION = "#####\n" + "#   #\n" + "#   #\n" + "S  #E\n" + "#   #\n" + "#####";
-    private static final String MAZE_ONE_SOLUTION = "#####\n" + "#   #\n" + "#   #\n" + "S   E\n" + "#   #\n" + "#   #\n" + "#####";
-    private static final String MAZE_TWO_SOLUTION_ALPHA = "#####\n" + "#   #\n" + "#   #\n" + "S # E\n" + "#   #\n" + "#   #\n" + "#####";
+    private static final String MAZE_ONE_SOLUTION =
+            "#####\n" + "#   #\n" + "#   #\n" + "S   E\n" + "#   #\n" + "#   #\n" + "#####";
+    private static final String MAZE_TWO_SOLUTION_ALPHA =
+            "#####\n" + "#   #\n" + "#   #\n" + "S # E\n" + "#   #\n" + "#   #\n" + "#####";
 
     private static final String MAZE_TWO_SOLUTION_BETA = "####\n" + "S  #\n" + "#  E\n" + "####";
 
