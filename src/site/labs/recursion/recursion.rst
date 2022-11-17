@@ -3,7 +3,6 @@ Recursion
 *********
 
 * Feel free to use your laptop if you have it
-* Ensure I have recorded your completion --- failure to do so will result in a grade of 0
 * I strongly encourage you to work with others in the lab
 
     * When you get stuck, do me a favour and ask those sitting around you for help
