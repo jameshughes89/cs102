@@ -28,41 +28,50 @@ Data Structures
 Linear Data Structures
 ----------------------
 
+* A *linear data structure* is one where the data is stored in a line
+* Generally, everything has one thing that comes before it (predecessor) and one thing that comes after it (successor)
+
+
 Stacks
 ^^^^^^
 
 * Like a stack of plates
 * The last thing put on top of the stack will be the first thing off
 
-.. image:: /topics/stacks/stack_example.png
-   :width: 500 px
-   :align: center
+.. figure:: /topics/stacks/stack_example.png
+    :width: 500 px
+    :align: center
 
-**Queues**
+    An example of adding a plate to the top of a stack of plates.
+
+
+Queues
+^^^^^^
 
 * Like any line you've ever waited in
 * First person in the line will be the first person served
 
-.. image:: /topics/queues/queue_example.png
-   :width: 500 px
-   :align: center
+.. figure:: /topics/queues/queue_example.png
+    :width: 500 px
+    :align: center
 
-**Lists**
+    An example of a first come first served queue/line.
 
-* Basically Python lists, but we can define specific types
+
+Bags
+^^^^
+
+* Like Python lists, but we can define specific types
+
     * Ordered
     * Indexed
     * Unordered
 
-.. image:: ordered_list_example.png
-   :width: 500 px
-   :align: center
+.. figure:: ordered_bag_example.png
+    :width: 500 px
+    :align: center
 
-**What is meant by "linear" though?**
-
-    * The data is stored in, like, a line
-    * Generally, everything has one thing that comes before it (predecessor) and one thing that comes after it (successor)
-        * Watch edge cases though
+    An example of an element being added to an ordered bag such that the order is preserved.
 
 
 Nonlinear Data Structures
