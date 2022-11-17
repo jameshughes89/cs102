@@ -22,10 +22,14 @@ The main focus of this course is:
 Data Structures
 ===============
 
+* A data structure is, simple, some *structure* used to store, organize, and manage data
+
+
 Linear Data Structures
 ----------------------
 
-**Stacks**
+Stacks
+^^^^^^
 
 * Like a stack of plates
 * The last thing put on top of the stack will be the first thing off
