@@ -48,21 +48,21 @@ public class Friend {
         return firstName + " " + lastName + ":\t" + email;
     }
 
-//      This is what is included in topic3
-//    /**
-//     * Sample equals method for comparing two friend objects.
-//     * In this example, we will simply compare first and last
-//     * names
-//     *
-//     * This example is deliberately kept very simple and does
-//     * not actually override the toString properly.
-//     *
-//     * @return      if the two friend objects are equal
-//     */
-//    public boolean equals(Friend other) {
-//        return this.firstName.equals(other.firstName)
-//                && this.lastName.equals(other.lastName);
-//    }
+    //      This is what is included in topic3
+    //    /**
+    //     * Sample equals method for comparing two friend objects.
+    //     * In this example, we will simply compare first and last
+    //     * names
+    //     *
+    //     * This example is deliberately kept very simple and does
+    //     * not actually override the toString properly.
+    //     *
+    //     * @return      if the two friend objects are equal
+    //     */
+    //    public boolean equals(Friend other) {
+    //        return this.firstName.equals(other.firstName)
+    //                && this.lastName.equals(other.lastName);
+    //    }
 
     /**
      * Sample equals method for comparing two friend objects.
@@ -87,7 +87,6 @@ public class Friend {
         }
         // Cast o as a friend
         Friend other = (Friend) o;
-        return this.firstName.equals(other.firstName)
-                && this.lastName.equals(other.lastName);
+        return this.firstName.equals(other.firstName) && this.lastName.equals(other.lastName);
     }
 }

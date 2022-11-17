@@ -47,23 +47,6 @@ class ArrayQueueEqualsTest {
         gSingletonDefault.enqueue(100);
         gSingletonCapacity.enqueue(100);
 
-        new EqualsTester()
-                .addEqualityGroup(ArrayQueue.class)
-                .addEqualityGroup(gEmptyDefault,
-                        gEmptyCapacity)
-                .addEqualityGroup(gSingletonDefault,
-                        gSingletonCapacity)
-                .addEqualityGroup(gManyOneDefaultA,
-                        gManyOneDefaultB,
-                        gManyOneCapacity,
-                        gManyOneFront,
-                        gManyOneRear)
-                .addEqualityGroup(gManyTwoDefault,
-                        gManyTwoCapacity)
-                .addEqualityGroup(gReverseDefault,
-                        gReverseCapacity)
-                .addEqualityGroup(gTypeDefault,
-                        gTypeCapacity)
-                .testEquals();
+        new EqualsTester().addEqualityGroup(ArrayQueue.class).addEqualityGroup(gEmptyDefault, gEmptyCapacity).addEqualityGroup(gSingletonDefault, gSingletonCapacity).addEqualityGroup(gManyOneDefaultA, gManyOneDefaultB, gManyOneCapacity, gManyOneFront, gManyOneRear).addEqualityGroup(gManyTwoDefault, gManyTwoCapacity).addEqualityGroup(gReverseDefault, gReverseCapacity).addEqualityGroup(gTypeDefault, gTypeCapacity).testEquals();
     }
 }

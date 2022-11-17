@@ -65,14 +65,20 @@ public class LinkedStack<T> implements Stack<T> {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         LinkedStack<?> that = (LinkedStack<?>) o;
         if (this.size == that.size) {
             Node<?> thisCurrent = this.top;
             Node<?> thatCurrent = that.top;
             while (thisCurrent != null) {
-                if (!thisCurrent.data.equals(thatCurrent.data)) return false;
+                if (!thisCurrent.data.equals(thatCurrent.data)) {
+                    return false;
+                }
                 thisCurrent = thisCurrent.getNext();
                 thatCurrent = thatCurrent.getNext();
             }

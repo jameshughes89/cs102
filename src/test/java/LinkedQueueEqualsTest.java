@@ -32,16 +32,6 @@ class LinkedQueueEqualsTest {
 
         gSingleton.enqueue(100);
 
-        new EqualsTester()
-                .addEqualityGroup(LinkedQueue.class)
-                .addEqualityGroup(gEmpty)
-                .addEqualityGroup(gSingleton)
-                .addEqualityGroup(gManyOneA,
-                        gManyOneB,
-                        gManyOneDequeued)
-                .addEqualityGroup(gManyTwo)
-                .addEqualityGroup(gReverse)
-                .addEqualityGroup(gType)
-                .testEquals();
+        new EqualsTester().addEqualityGroup(LinkedQueue.class).addEqualityGroup(gEmpty).addEqualityGroup(gSingleton).addEqualityGroup(gManyOneA, gManyOneB, gManyOneDequeued).addEqualityGroup(gManyTwo).addEqualityGroup(gReverse).addEqualityGroup(gType).testEquals();
     }
 }
