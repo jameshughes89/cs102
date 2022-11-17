@@ -16,53 +16,60 @@ Unit Testing
 
 We're going to write tests for our ``CourseList`` class from the
 :doc:`Objects and Collections Lab </labs/objects-collections/objects-collections>`.
-:doc:`Topic 6's aside on testing will be of great help here </topics/stacks/unit-tests>`.
+:doc:`The Stack topic's aside on testing will be of great help here </topics/stacks/unit-tests>`.
 
 
 Have a Working Implementation
 -----------------------------
 
-1. If you have not already, finish the
+#. If you have not already, finish the
 :doc:`Objects and Collections Lab </labs/objects-collections/objects-collections>`
 
 
 Writing Tests
 -------------
 
-**Tips**
+.. note::
 
-* Make your test method names as descriptive as possible while still being brief
-* Follow some convention for your method names, something like ``methodConditionExpected()``
-    * ``sizeOfEmptyCourseListReturnsZero()``
-    * ``addingBeyondCapacityCallsExpandCapacityToMakeRoomForAdd()``
+    Make your test method names as descriptive as possible while still being brief. Follow some convention for your
+    method names, something like ``method_condition_expected()``. For example
+
+        * ``size_emptyCourse_returnsZero()``
+        * ``indexOf_existingCourse_returnsCorrectIndex()``
 
 
-1. Create your testing class for ``CourseList`` called ``CourseListTest``
+#. Create your testing class for ``CourseList`` called ``CourseListTest``.
 
-2. Write unit tests to test the ``size()`` method
+#. Write unit tests to test the ``size()`` method.
+
     * empty list has size zero?
     * non empty list has proper size?
     * list that has been emptied via removes has size zero?
 
-3. Write tests for ``add``
+#. Write tests for ``add``.
+
     * Is the added element added?
     * Can we add beyond a capacity limit?
 
-4. Write tests for ``remove``
+#. Write tests for ``remove``.
+
     * Does the element get removed?
     * What happens if we try to remove something that doesn't exist?
     * What happens when we call remove once for something that exists more than once in the ``CourseList``?
 
-5. Write tests for ``get``
+#. Write tests for ``get``.
+
     * Does it return the element from the correct index?
     * What happens if you try to get something from beyond the range?
     * What happens if you try to get something from a negative index?
 
 
-6. Write tests for ``indexOf``
+#. Write tests for ``indexOf``.
+
     * Try to figure out which tests you should have on your own/with a friend
 
-7. Write tests for the ``Course`` class
+#. Write tests for the ``Course`` class.
+
     * Try to figure out which tests you should have on your own/with a friend
 
 
@@ -71,40 +78,40 @@ Kattis Problems
 
 Recommended Kattis Problems (don't worry, you don’t need to do all of them or anything):
 
-1. https://open.kattis.com/problems/quadrant
-2. https://open.kattis.com/problems/judgingmoose
-3. https://open.kattis.com/problems/timeloop
-4. https://open.kattis.com/problems/oddities
-5. https://open.kattis.com/problems/fizzbuzz
-6. https://open.kattis.com/problems/twostones
-7. https://open.kattis.com/problems/spavanac
-8. https://open.kattis.com/problems/cetvrta
-9. https://open.kattis.com/problems/bus
-10. https://open.kattis.com/problems/timeloop
-11. https://open.kattis.com/problems/oddities
-12. https://open.kattis.com/problems/fizzbuzz
-13. https://open.kattis.com/problems/sibice
-14. https://open.kattis.com/problems/datum
-15. https://open.kattis.com/problems/dicecup
-16. https://open.kattis.com/problems/autori
-17. https://open.kattis.com/problems/apaxiaaans
-18. https://open.kattis.com/problems/hissingmicrophone
-19. https://open.kattis.com/problems/trik
-20. https://open.kattis.com/problems/pot
-21. https://open.kattis.com/problems/filip
-22. https://open.kattis.com/problems/reversebinary
-23. https://open.kattis.com/problems/sevenwonders
-24. https://open.kattis.com/problems/zamka
-25. https://open.kattis.com/problems/bijele
-26. https://open.kattis.com/problems/cold
-27. https://open.kattis.com/problems/nastyhacks
-28. https://open.kattis.com/problems/grassseed
-29. https://open.kattis.com/problems/pet
-30. https://open.kattis.com/problems/batterup
-31. https://open.kattis.com/problems/aboveaverage
-32. https://open.kattis.com/problems/icpcawards
-33. https://open.kattis.com/problems/quickbrownfox
-34. https://open.kattis.com/problems/nodup
-35. https://open.kattis.com/problems/conundrum
-36. https://open.kattis.com/problems/bela
-37. https://open.kattis.com/problems/kornislav
+#. https://open.kattis.com/problems/quadrant
+#. https://open.kattis.com/problems/judgingmoose
+#. https://open.kattis.com/problems/timeloop
+#. https://open.kattis.com/problems/oddities
+#. https://open.kattis.com/problems/fizzbuzz
+#. https://open.kattis.com/problems/twostones
+#. https://open.kattis.com/problems/spavanac
+#. https://open.kattis.com/problems/cetvrta
+#. https://open.kattis.com/problems/bus
+#. https://open.kattis.com/problems/timeloop
+#. https://open.kattis.com/problems/oddities
+#. https://open.kattis.com/problems/fizzbuzz
+#. https://open.kattis.com/problems/sibice
+#. https://open.kattis.com/problems/datum
+#. https://open.kattis.com/problems/dicecup
+#. https://open.kattis.com/problems/autori
+#. https://open.kattis.com/problems/apaxiaaans
+#. https://open.kattis.com/problems/hissingmicrophone
+#. https://open.kattis.com/problems/trik
+#. https://open.kattis.com/problems/pot
+#. https://open.kattis.com/problems/filip
+#. https://open.kattis.com/problems/reversebinary
+#. https://open.kattis.com/problems/sevenwonders
+#. https://open.kattis.com/problems/zamka
+#. https://open.kattis.com/problems/bijele
+#. https://open.kattis.com/problems/cold
+#. https://open.kattis.com/problems/nastyhacks
+#. https://open.kattis.com/problems/grassseed
+#. https://open.kattis.com/problems/pet
+#. https://open.kattis.com/problems/batterup
+#. https://open.kattis.com/problems/aboveaverage
+#. https://open.kattis.com/problems/icpcawards
+#. https://open.kattis.com/problems/quickbrownfox
+#. https://open.kattis.com/problems/nodup
+#. https://open.kattis.com/problems/conundrum
+#. https://open.kattis.com/problems/bela
+#. https://open.kattis.com/problems/kornislav
