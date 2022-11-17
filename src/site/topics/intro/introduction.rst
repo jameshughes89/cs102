@@ -2,22 +2,25 @@
 Introduction
 ************
 
+
 :doc:`Read the outline </outline/outline>`
 
 The main focus of this course is:
 
 * The organization and manipulation of data
-* Choosing how to organize data: into collections, such as
+* Organize data into collections, such as
+
     * Stacks
     * Queues
-    * Lists
+    * Bags
     * Trees
 
-* Choosing how to implement various data structures
+* How to implement various data structures
 * Algorithm Analysis
 
-Data Structures?
-================
+
+Data Structures
+===============
 
 Linear Data Structures
 ----------------------
