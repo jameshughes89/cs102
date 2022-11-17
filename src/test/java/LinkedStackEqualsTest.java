@@ -25,6 +25,13 @@ class LinkedStackEqualsTest {
         }
         gSingleton.push(100);
 
-        new EqualsTester().addEqualityGroup(LinkedStack.class).addEqualityGroup(gEmpty).addEqualityGroup(gSingleton).addEqualityGroup(gManyOneA, gManyOneB).addEqualityGroup(gManyTwo).addEqualityGroup(gReverse).addEqualityGroup(gType).testEquals();
+        new EqualsTester().addEqualityGroup(LinkedStack.class)
+                .addEqualityGroup(gEmpty)
+                .addEqualityGroup(gSingleton)
+                .addEqualityGroup(gManyOneA, gManyOneB)
+                .addEqualityGroup(gManyTwo)
+                .addEqualityGroup(gReverse)
+                .addEqualityGroup(gType)
+                .testEquals();
     }
 }

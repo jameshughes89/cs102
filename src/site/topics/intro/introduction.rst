@@ -14,7 +14,7 @@ The main focus of this course is:
     * Trees
 
 * Choosing how to implement various data structures
-* Algorithm Analysis
+* Algorithm Analysisgit add 
 
 Data Structures?
 ================

@@ -18,7 +18,6 @@ public class LinkedPriorityQueueTest {
         preState = new LinkedPriorityQueue<>();
     }
 
-
     @Nested
     class WhenNewEmpty {
 

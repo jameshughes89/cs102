@@ -4,7 +4,6 @@ import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-
 class ArrayStackThoroughTest {
 
     private Stack<Integer> classUnderTest;

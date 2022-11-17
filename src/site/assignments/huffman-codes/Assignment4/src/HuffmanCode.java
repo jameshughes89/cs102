@@ -11,11 +11,11 @@ import static java.util.stream.Collectors.*;
 
 public class HuffmanCode {
 
-
     public static HuffmanCode fromString(String seed) {
 
         return null;
     }
+
     public static HuffmanCode fromFile(String seedFile) {
         try {
             return HuffmanCode.fromString(Files.readString(Paths.get(seedFile)));
