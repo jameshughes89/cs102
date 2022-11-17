@@ -20,8 +20,12 @@ GitHub Repo
 
 * The course content is available on `GitHub <https://github.com/jameshughes89/cs102>`_
 * Feel free to submit issues, fork the repo, and submit pull requests
+
    * Follow the guidelines
+
+
 * In other words, feel free to make contributions to the course content
+
    * In fact, I encourage this
 
 
@@ -46,13 +50,17 @@ Office Hours
 `Office Hours Etiquette --- Don't Do This. <https://www.youtube.com/watch?v=lOTyUfOHgas>`_
 
 * **James Hughes** Virtual Only --- See Moodle
+
     * Tuesday, 10am -- 11am
     * Wednesday, 10am -- 11am
     * Friday, 10am -- 11am
 
+
 * **(TAs)** TBD
+
     * **TBD** (tbd at stfx.ca):
-    	* TBD
+
+        * TBD
 
 
 Learning Centre
@@ -64,22 +72,12 @@ Learning Centre
 MSCS Tutorial Nights
 ====================
 
-`The Math, Stats, and CS Society now has a time and location for our free tutorial sessions. <https://www.mystfx.ca/computer-science/csci-tutorials>`_
+The Math, Stats, and CS Society has a time and location for
+`free tutorial sessions. <https://www.mystfx.ca/computer-science/csci-tutorials>`_
 
-
-Getting Started
-===============
 
 .. toctree::
-    :maxdepth: 1
-
-    getting-set/getting-set
-
-
-Course Notes
-============
-
-.. toctree::
+    :caption: Course Notes
     :maxdepth: 1
     :numbered:
 
@@ -111,10 +109,8 @@ Course Notes
     topics/sorting/sorting-recursive
 
 
-Labs
-====
-
 .. toctree::
+    :caption: Labs
     :maxdepth: 1
     :numbered:
 
@@ -132,10 +128,8 @@ Labs
     labs/sorting/sorting-recursive
 
 
-Assignments
-===========
-
 .. toctree::
+    :caption: Assignments
     :maxdepth: 1
 
     assignments/country-catalogue/country-catalogue
@@ -144,19 +138,22 @@ Assignments
     assignments/huffman-codes/huffman-codes
 
 
-Course Outline
-==============
+.. toctree::
+    :caption: Getting Started
+    :maxdepth: 1
+
+    getting-set/getting-set
+
 
 .. toctree::
+    :caption: Outline
     :maxdepth: 1
 
     outline/outline
 
 
-C++ Lessons
-===========
-
 .. toctree::
+    :caption: C++ Lessons
     :maxdepth: 1
     :numbered:
 

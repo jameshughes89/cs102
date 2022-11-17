@@ -1,0 +1,51 @@
+/*
+    Title and background colors for the class activity.
+*/
+.rst-content .activity .admonition-title {
+    background: #5594ca
+}
+ 
+.rst-content .activity {
+    background: #c5dfff
+}
+
+/*
+    Title and background colors for the class note.
+    By default notes already has a template.
+    Uncomment to modify it.
+*/
+/* .rst-content .note .admonition-title {
+    background: #5594ca
+}
+ 
+.rst-content .note {
+    background: #c5dfff
+} */
+
+/*
+    Title and background colors for the class warning.
+    By default notes already has a template.
+    Uncomment to modify it.
+*/
+/* .rst-content .warning .admonition-title {
+    background: #5594ca
+}
+ 
+.rst-content .warning {
+    background: #c5dfff
+} */
+
+/*
+    Title and background colors for the class important.
+    By default notes already has a template.
+    Uncomment to modify it.
+*/
+/* .rst-content .important .admonition-title {
+    background: #5594ca
+}
+ 
+.rst-content .important {
+    background: #c5dfff
+} */
+
+/* Add new styles below */
