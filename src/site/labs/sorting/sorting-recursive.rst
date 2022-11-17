@@ -13,8 +13,11 @@ Sorting Recursively
 Starting Point
 ==============
 
-This lab focuses on the sorts discussed in :doc:`topic 26 </topics/sorting/sorting-recursive>`. Note that, unlike the previous lab, here we use
-an unsorted bag instead of an array.
+This lab focuses on the sorts discussed in :doc:`topic 26 </topics/sorting/sorting-recursive>`. Note that, unlike the
+previous lab, here we use an unsorted bag instead of an array.
+
+The below code can be used for setting up a bag to be sorted and timing the different sorting algorithms.
+
 
 .. code-block:: java
 
@@ -44,8 +47,9 @@ an unsorted bag instead of an array.
 Quicksort
 =========
 
-1. Implement the quicksort algorithm
-2. Make sure it works and test it a few times and see what the runtimes are
+#. Implement the quicksort algorithm.
+#. Make sure it works and test it a few times and see what the runtimes are.
+
     * Change the size of the bag and the max value and see how it impacts runtimes
     * For the purposes of this lab, do not worry about writing unit tests
 
@@ -59,8 +63,9 @@ Quicksort
 Mergesort
 =========
 
-1. Implement the mergesort algorithm
-2. Make sure it works and test it a few times and see what the runtimes are
+#. Implement the mergesort algorithm.
+#. Make sure it works and test it a few times and see what the runtimes are.
+
     * Change the size of the bag and the max value and see how it impacts runtimes
     * For the purposes of this lab, do not worry about writing unit tests
 
@@ -74,11 +79,12 @@ Mergesort
 Comparing Sorts
 ===============
 
-1. Run each of the sorts a few times and take note of the runtimes
+#. Run each of the sorts a few times and take note of the runtimes
+
     * Play around with the size of the lists and the max value
     * Do the times align with what you'd expect based on the computational complexities of each of the algorithms
 
-2. Compare these runtimes to the sorts completed in the previous lab.
+#. Compare these runtimes to the sorts completed in the previous lab.
 
 
 Kattis Problems
