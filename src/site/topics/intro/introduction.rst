@@ -139,21 +139,22 @@ Java
     * There are some java-*isms* I will point out along the way
     * Python's flexibility often gets in the way when our programs grow in complexity
 
-
 .. warning::
 
-    Programming and Java are **not** a direct learning objective of this course. We are learning abstraction, data structures,
-    and algorithms.
+    Programming and Java are **not** a direct learning objective of this course. We are learning abstraction, data
+    structures, and algorithms.
 
 
 How do I go about programming Java!?
 ------------------------------------
 
-:doc:`Go here </getting-set/getting-set>`
+* :doc:`Go here </getting-set/getting-set>`
 
 
 Can we Write Code Now?
 ----------------------
+
+* Below is an example of ``Hello, world!`` in Python and Java
 
 **Python**
 
@@ -178,12 +179,15 @@ Can we Write Code Now?
     }
 
 
-* Other than the boilerplate code in the Java example and the actual they're almost the same
-    * ``System.out.println("Hello, world!")`` is basically ``print``
+* Other than the boilerplate code in the Java example, they're nearly the same
+
+    * ``System.out.println("Hello, world!")`` is doing the job of ``print``
     * Mind the fact that our strings have double quotes " as single quotes is for a single character
+
         * ``"Hello"`` vs. ``'h'``
 
 * What about:
+
     * ``public``
     * ``class``
     * ``static``
@@ -192,10 +196,12 @@ Can we Write Code Now?
     * ``String[] args``
     * ``{`` ... ``}``
 
+
 ``public``
-    * Visibility modifier...
+
+    * Visibility modifier
     * Remember adding underscores in Python to our attributes?
-    * ... More on this later
+    * More on this later
 
 .. code-block:: python
     :linenos:
@@ -210,14 +216,19 @@ Can we Write Code Now?
 
 
 ``class``
+
     * This is the same idea as a Python class
     * Everything in Java needs to be within a class
 
 ``static``
+
     * Means that the function (or variable) belongs to the class, and not an instance of the class
+
         * We don't need to make an instance of the class to use the method
+
     * A good example of this in Java is the `Math class <https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html>`_.
-    * More on this later, but here is an example
+    * More on this later, but here is an example of calling a method on a class vs. an instance of the class
+
 
 .. code-block:: java
     :linenos:
@@ -231,30 +242,47 @@ Can we Write Code Now?
     anInstance.someMethod();
 
 ``void``
+
     * This is the return type of the function
-    * All values have a *type* in Java
+    * Like Python, all values have a *type* in Java
+
         * Variables
         * Return types
+
+    * Unlike Python, we must be explicit about our types in Java
     * In this case, the function returns nothing, so the type is ``void``
 
+
 ``main``
-    * A **very very very** special function.
+
+    * A **very very very** special function
     * The ``main`` function is the function that is called when we tell our computer to run our programs
     * Line 1 of the ``main`` function is the first line run by the program
 
+
 ``String[] args``
+
     * This defines a variable called ``args`` that is an array (indicated by the ``[]``) of ``Strings``
+
         * Remember, all values need a type
+
     * This is how we give our programs command line arguments
+
         * Basically parameters for our whole program
-    * More on this later
+
+    * More on this later --- not overly important right now
+
 
 ``{`` ... ``}``
+
     * In Java we don't use indentation to define scope, we use open and close squiggly braces
+    * You will quickly realize how great this is when compared to whitespace/indentation
 
 
-For next time
+For Next Time
 =============
+
 * Get your computer at home :doc:`set up for CS 162 </getting-set/getting-set>`
 * Read Chapter 1 of your text
+
     * 15 pages
