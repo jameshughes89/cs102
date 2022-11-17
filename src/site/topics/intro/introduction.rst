@@ -156,8 +156,6 @@ Can we Write Code Now?
 
 * Below is an example of ``Hello, world!`` in Python and Java
 
-**Python**
-
 .. code-block:: python
     :linenos:
     :emphasize-lines: 2
@@ -165,7 +163,6 @@ Can we Write Code Now?
     # Python --- hello world
     print("Hello, world!")
 
-**Java**
 
 .. code-block:: java
     :linenos:
