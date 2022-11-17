@@ -20,8 +20,12 @@ GitHub Repo
 
 * The course content is available on `GitHub <https://github.com/jameshughes89/cs102>`_
 * Feel free to submit issues, fork the repo, and submit pull requests
+
    * Follow the guidelines
+
+
 * In other words, feel free to make contributions to the course content
+
    * In fact, I encourage this
 
 
@@ -46,13 +50,17 @@ Office Hours
 `Office Hours Etiquette --- Don't Do This. <https://www.youtube.com/watch?v=lOTyUfOHgas>`_
 
 * **James Hughes** Virtual Only --- See Moodle
+
     * Tuesday, 10am -- 11am
     * Wednesday, 10am -- 11am
     * Friday, 10am -- 11am
 
+
 * **(TAs)** TBD
+
     * **TBD** (tbd at stfx.ca):
-    	* TBD
+
+        * TBD
 
 
 Learning Centre
@@ -64,7 +72,8 @@ Learning Centre
 MSCS Tutorial Nights
 ====================
 
-`The Math, Stats, and CS Society now has a time and location for our free tutorial sessions. <https://www.mystfx.ca/computer-science/csci-tutorials>`_
+The Math, Stats, and CS Society has a time and location for
+`free tutorial sessions. <https://www.mystfx.ca/computer-science/csci-tutorials>`_
 
 
 .. toctree::

@@ -2,6 +2,7 @@
 Getting set up for CSCI 162
 ***************************
 
+
 Java Development Kit --- Oracle or OpenJDK
 ==========================================
 
@@ -17,8 +18,10 @@ Either way, make sure you are using JDK version 11 or higher.
 Other JDKs
 ^^^^^^^^^^
 
-There exist other distributions of JDks out there. Two cool ones are `Amazon's Corretto <https://aws.amazon.com/corretto/>`_
-and `Microsoft's OpenJDK <https://www.microsoft.com/openjdk>`_. You don't need these, but I thought I would let you know they exist.
+There exist other distributions of JDks out there. Two cool ones are
+`Amazon's Corretto <https://aws.amazon.com/corretto/>`_
+and `Microsoft's OpenJDK <https://www.microsoft.com/openjdk>`_. You don't need these, but I thought I would let you know
+they exist.
 
 
 Integrated Development Environment
@@ -39,16 +42,16 @@ Officially:
 * We are using the Oracle or OpenJDK
 * We are using IntelliJ
 * Everything must run on the lab computers
-    * Or whatever are "lab computers" these days
 
 
 I've Still Got Issues
 =====================
 
-* If you are unsure about:
-    * Which processor architecture you have
-    * What is a compressed folder vs. an installer
-    * What about if I am using operating system X
-    * etc.
+If you are unsure about:
 
-* `I am confident you can find the answers on my favourite website <https://www.google.ca/>`_
+* Which processor architecture you have
+* What is a compressed folder vs. an installer
+* What about if I am using operating system X
+* etc.
+
+`I am confident you can find the answers on my favourite website <https://www.google.ca/>`_
