@@ -77,31 +77,37 @@ Bags
 Nonlinear Data Structures
 -------------------------
 
-**Trees**
+* Sometimes data has no natural linear ordering
+* For example, in the below figures:
+
+    * What comes after root in the filesystem example?
+    * What comes after "Toronto" in the graph example?
+
+
+Trees
+^^^^^
 
 * Like your file system
 * Information is stored in a hierarchy
 
-.. image:: /topics/trees/tree_example.png
-   :width: 500 px
-   :align: center
+.. figure:: /topics/trees/tree_example.png
+    :width: 500 px
+    :align: center
 
-**Graphs**
+    An example of a file system on a computer.
 
-* Good for showing relationships between *things*
+
+Graphs
+^^^^^^
+
+* A way to represent relationships between *things*
 * Like a road network, or flight routes
 
-.. image:: graph_example.png
-   :width: 500 px
-   :align: center
+.. Figure:: graph_example.png
+    :width: 500 px
+    :align: center
 
-**What is meant by "nonlinear" though?**
-
-    * Sometimes data has no natural ordering
-        * The data is *not* stored in a line
-    * What comes after "Toronto" in the graph example?
-    * What comes after root in the filesystem example?
-    * What comes after car?
+    A hypothetical network of available flights between airports.
 
 
 Abstract Data Types
