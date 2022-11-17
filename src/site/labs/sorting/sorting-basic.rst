@@ -24,6 +24,8 @@ Starting Point
 
 This lab focuses on the sorts discussed in :doc:`topic 25 </topics/sorting/sorting-basic>`.
 
+The below code can be used for setting up an array to be sorted and timing the different sorting algorithms.
+
 .. code-block:: java
 
     public static void main(String[] args){
@@ -60,8 +62,9 @@ This lab focuses on the sorts discussed in :doc:`topic 25 </topics/sorting/sorti
 Bubble Sort
 ===========
 
-1. Implement the bubble sort algorithm
-2. Make sure it works and test it a few times and see what the runtimes are
+#. Implement the bubble sort algorithm.
+#. Make sure it works and test it a few times and see what the runtimes are.
+
     * Change the size of the array and the max value and see how it impacts runtimes
     * For the purposes of this lab, do not worry about writing unit tests
 
@@ -75,8 +78,9 @@ Bubble Sort
 Insertion Sort
 ==============
 
-1. Implement the insertion sort algorithm
-2. Make sure it works and test it a few times and see what the runtimes are
+#. Implement the insertion sort algorithm.
+#. Make sure it works and test it a few times and see what the runtimes are.
+
     * Change the size of the array and the max value and see how it impacts runtimes
     * For the purposes of this lab, do not worry about writing unit tests
 
@@ -90,8 +94,9 @@ Insertion Sort
 Selection Sort
 ==============
 
-1. Implement the selection sort algorithm
-2. Make sure it works and test it a few times and see what the runtimes are
+#. Implement the selection sort algorithm.
+#. Make sure it works and test it a few times and see what the runtimes are.
+
     * Change the size of the array and the max value and see how it impacts runtimes
     * For the purposes of this lab, do not worry about writing unit tests
 
@@ -105,15 +110,17 @@ Selection Sort
 Comparing Sorts
 ===============
 
-1. Run each of the sorts a few times and take note of the runtimes
+#. Run each of the sorts a few times and take note of the runtimes.
+
     * Play around with the size of the arrays and the max value
     * Do the times align with what you'd expect based on the computational complexities of each of the algorithms
 
-2. Try throwing a counter variable into the inner loops of each of the sorts to see how many times the loops ran
+#. Try throwing a counter variable into the inner loops of each of the sorts to see how many times the loops ran.
+
     * Calculate what the counts should be for each sort, in the worst and best cases, based on the size of the arrays you used
     * :doc:`Refer to the computational complexity analysis provided on these sorting algorithms </topics/sorting/sorting-basic>`
 
-3. Can you rationalize the differences in runtimes?
+#. Can you rationalize the differences in runtimes?
 
 
 Kattis Problems
