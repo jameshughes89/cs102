@@ -553,27 +553,28 @@ Booleans
 Conditionals
 ------------
 
-.. code-block:: Python
-    :linenos:
+.. list-table:: Conditionals (If/Else)
+    :header-rows: 1
 
-    # Python --- if/else
-    # Assume some_boolean exists and is a boolean
-    if some_boolean:
-        print("it was true")
-    else:
-        print("it was false")
+    * - Python
+      - Java
 
+    * -     .. code-block:: Python
+                :linenos:
 
-.. code-block:: Java
-    :linenos:
+                if some_boolean:
+                    print("it was true")
+                else:
+                    print("it was false")
 
-    // Java --- if/else
-    // Assume someBoolean exists and is a boolean
-    if (someBoolean) {
-        System.out.println("it was true");
-    } else {
-        System.out.println("it was false");
-    }
+      -     .. code-block:: Java
+                :linenos:
+
+                if (someBoolean) {
+                    System.out.println("it was True");
+                } else {
+                    System.out.println("it was False");
+                }
 
 * Both examples above assume the variable ``someBoolean`` exists and is a boolean
 * Notice how the condition is in parentheses in the Java example
@@ -600,30 +601,34 @@ Loops
 While Loops
 -----------
 
-.. code-block:: Python
-    :linenos:
 
-    # Python --- while loop
-    c = 0
+.. list-table:: While Loops with Counter
+    :header-rows: 1
 
-    # While some condition is true
-    while c < 10:
-        print("c is now: " + str(c))
-        c+=1
+    * - Python
+      - Java
 
+    * -     .. code-block:: Python
+                :linenos:
 
-.. code-block:: Java
-    :linenos:
-    :emphasize-lines: 5
+                c = 0
 
-    // Java --- while loop
-    int c = 0;
+                # While some condition is true
+                while c < 10:
+                    print("c is now: " + str(c))
+                    c+=1
 
-    // While some condition is true
-    while (c < 10) {
-        System.out.println("c is now: " + c);
-        c++;
-    }
+      -     .. code-block:: Java
+                :linenos:
+                :emphasize-lines: 4
+
+                int c = 0;
+
+                // While some condition is True
+                while (c < 10) {
+                    System.out.println("c is now: " + c);
+                    c++;
+                }
 
 * Just like the ``if`` statements, we put the condition in parentheses
 * Note the ``c++`` --- this is the same thing as ``c+=1``, but even shorter
@@ -631,62 +636,68 @@ While Loops
 
 * Here is another example
 
-.. code-block:: Python
-    :linenos:
+.. list-table:: While Loops with General Condition
+    :header-rows: 1
 
-    # Python --- while loop again
-    stop = False
-    c = 0
+    * - Python
+      - Java
 
-    while not stop:
-        print("c is now: " + str(c))
-        c+=1
-        if c == 5:
-            stop = True
+    * -     .. code-block:: Python
+                :linenos:
 
+                stop = False
+                c = 0
 
-.. code-block:: Java
-    :linenos:
+                while not stop:
+                    print("c is now: " + str(c))
+                    c+=1
+                    if c == 5:
+                        stop = True
 
-    // Java --- while loop again
-    boolean stop = false;
-    int c = 0;
+      -     .. code-block:: Java
+                :linenos:
 
-    while (!stop) {
-        System.out.println("c is now: " + c);
-        c++;
-        if (c == 5) {
-            stop = true;
-        }
-    }
+                boolean stop = false;
+                int c = 0;
+
+                while (!stop) {
+                    System.out.println("c is now: " + c);
+                    c++;
+                    if (c == 5) {
+                        stop = true;
+                    }
+                }
 
 For Each Loop
 -------------
 
 * For loops in Python are basically *for each* loops
 
+.. list-table:: For Each Loops
+    :header-rows: 1
 
-.. code-block:: Python
-    :linenos:
+    * - Python
+      - Java
 
-    # Python --- for loop
-    aList = ['a', 'b', 'c', 'd']
+    * -     .. code-block:: Python
+                :linenos:
 
-    # For each thing 'c' in aList
-    for c in aList:
-        print(c)
+                aList = ['a', 'b', 'c', 'd']
 
+                # For each thing 'c' in aList
+                for c in aList:
+                    print(c)
 
-.. code-block:: Java
-    :linenos:
+      -     .. code-block:: Java
+                :linenos:
 
-    // Java --- for each loop
-    char[] anArray = {'a', 'b', 'c', 'd'};
+                char[] anArray = {'a', 'b', 'c', 'd'};
 
-    // For each character 'c' in anArray
-    for (char c : anArray) {
-        System.out.println(c);
-    }
+                // For each character 'c' in anArray
+                for (char c : anArray) {
+                    System.out.println(c);
+                }
+
 
 * It's remarkably similar, except
     * we specify the type of ``c``
@@ -696,30 +707,29 @@ For Each Loop
 For Loop
 --------
 
-* In Python, when we wanted to loop some number of times, often we would do something like this
+* Looping a specific number of times
 
+.. list-table:: Counting For Loops
+    :header-rows: 1
 
-.. code-block:: Python
-    :linenos:
+    * - Python
+      - Java
 
-    # Python --- for loop
-    # Run loop 10 times (0 -- 9)
-    for i in range(10):
-        print(i)
+    * -     .. code-block:: Python
+                :linenos:
 
+                # Run loop 10 times (0 -- 9)
+                for i in range(10):
+                    print(i)
 
-* In Java, we'd typically do it this way
+      -     .. code-block:: Java
+                :linenos:
+                :emphasize-lines: 2
 
-
-.. code-block:: Java
-    :linenos:
-    :emphasize-lines: 3
-
-    // Java --- for loop
-    // Run loop 10 times (0 -- 9)
-    for (int i = 0; i < 10; ++i) {
-        System.out.println(i);
-    }
+                // Run loop 10 times (0 -- 9)
+                for (int i = 0; i < 10; ++i) {
+                    System.out.println(i);
+                }
 
 * Here, we're running the first statement within the parentheses by the for loop once
     * ``int i = 0``
