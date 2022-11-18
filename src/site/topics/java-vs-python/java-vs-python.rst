@@ -7,6 +7,7 @@ Java vs. Python
 
     * - Python
       - Java
+
     * -     .. code-block:: python
                 :linenos:
 
@@ -102,23 +103,27 @@ Declaring & Assigning Variables
 * In Python, we didn't need to explicitly *declare* variables
     * They got created and automatically declared once they are assigned a value
 
-.. code-block:: python
-    :linenos:
-
-    # Python --- Assigning a variable
-    anotherInt = 11
-    print(anotherInt)
-
 * In Java, we have to explicitly declare variables
     * This tells the computer that you need to set aside enough memory for something of the specified type
 
-.. code-block:: java
-    :linenos:
+.. list-table:: Declaring and Assigning Variables
+    :header-rows: 1
 
-    // Java --- Declaring & Assigning
-    int anotherInt;                     // Declaration
-    anotherInt = 11;                    // Assignment
-    System.out.println(anotherInt);
+    * - Python
+      - Java
+
+    * -     .. code-block:: python
+                :linenos:
+
+                anotherInt = 11
+                print(anotherInt)
+
+      -     .. code-block:: java
+                :linenos:
+
+                int anotherInt;                     // Declaration
+                anotherInt = 11;                    // Assignment
+                System.out.println(anotherInt);
 
 * However, you can declare and assign a variable in a single line of code, like we saw in the examples above
 
@@ -126,39 +131,42 @@ Declaring & Assigning Variables
 Reusing Variables
 -----------------
 
-.. code-block:: python
-    :linenos:
+.. list-table:: Reusing Variables
+    :header-rows: 1
 
-    # Python --- Reusing variables
-    a = 5
-    print(a + 2)
+    * - Python
+      - Java
 
-    b = a + 7
-    print(b)
+    * -     .. code-block:: python
+                :linenos:
 
-    b = b + 1
-    print(b)
+                a = 5
+                print(a + 2)
 
-    b += 1
-    print(b)
+                b = a + 7
+                print(b)
 
+                b = b + 1
+                print(b)
 
-.. code-block:: java
-    :linenos:
-    :emphasize-lines: 2, 5
+                b += 1
+                print(b)
 
-    // Java --- Reusing variables
-    int a = 5;
-    System.out.println(a + 2);
+      -     .. code-block:: java
+                :linenos:
+                :emphasize-lines: 1, 4
 
-    int b = a + 7;
-    System.out.println(b);
+                int a = 5;
+                System.out.println(a + 2);
 
-    b = b + 1;
-    System.out.println(b);
+                int b = a + 7;
+                System.out.println(b);
 
-    b += 1;
-    System.out.println(b);
+                b = b + 1;
+                System.out.println(b);
+
+                b += 1;
+                System.out.println(b);
 
 
 * It's the same except for explicitly declaring the types for the variables the first time you use them
@@ -179,23 +187,24 @@ Constants
 * The convention is to use all upper case letters and separate words with underscores
     * ``THIS_IS_A_CONSTANT``
 * You **can** change the values during execution, but you shouldn't, because then you're breaking the convention
-
-.. code-block:: python
-    :linenos:
-
-    # Python --- Constants
-    SALES_TAX = 1.15    # This is a constant. Leave this alone!
-
-
 * Java will ensure that the value of the constant is set once and only once during the execution of the program
 * We use the special keyword ``final``
 
+.. list-table:: Constants
+    :header-rows: 1
 
-.. code-block:: java
-    :linenos:
+    * - Python
+      - Java
 
-    // Java --- Constants
-    final double SALES_TAX = 1.15;      // Java will get mad if we mess with this
+    * -     .. code-block:: python
+                :linenos:
+
+                SALES_TAX = 1.15    # Leave me alone
+
+      -     .. code-block:: java
+                :linenos:
+
+                final double SALES_TAX = 1.15;
 
 
 * We can change constant's values however we want while writing the code
