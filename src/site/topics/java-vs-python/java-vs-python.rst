@@ -82,18 +82,15 @@ Variables and Types
         * - Python
           - Java
         * -     .. code-block:: python
-                    :linenos:
 
                     otherInt = 5
                     otherInt = 'totally Not 5'
 
           -     .. code-block:: java
-                    :linenos:
                     :emphasize-lines: 3
 
                     int otherInt = 5;
-                    otherInt = "totally Not 5";     // Nope
-
+                    otherInt = "totally Not 5";     // Compiler error
 
 
 Declaring & Assigning Variables
@@ -314,7 +311,8 @@ Arrays
     In Java, we **cannot** index our arrays backwards like we could in Python.
 
 
-.. _label-topic2-java_vs_python-input_output:
+.. _label-java_vs_python-input_output:
+
 
 
 Input & Output
