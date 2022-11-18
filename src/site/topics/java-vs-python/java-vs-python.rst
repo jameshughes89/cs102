@@ -2,23 +2,26 @@
 Java vs. Python
 ***************
 
+.. list-table:: Hello World
+    :header-rows: 1
 
-.. code-block:: python
-    :linenos:
+    * - Python
+      - Java
+    * -     .. code-block:: python
+                :linenos:
 
-    # Python --- hello world
-    print("Hello, world!")
+                    # Python --- hello world
+                    print("Hello, world!")
 
+      -     .. code-block:: java
+                :linenos:
 
-.. code-block:: java
-    :linenos:
-
-    // Java --- hello world
-    public class SomeClass {
-        public static void main(String[] args){
-            System.out.println("Hello, world!");
-        }
-    }
+                // Java --- hello world
+                public class SomeClass {
+                    public static void main(String[] args){
+                        System.out.println("Hello, world!");
+                    }
+                }
 
 
 
