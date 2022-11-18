@@ -3,6 +3,11 @@
     background-color: #4B0000;
 }
 
+/* Top mobile view bar colour */
+.wy-nav-top {
+    background-color: #4B0000;
+}
+
 /* Left Navigation bar caption colour */
 .wy-menu-vertical header, .wy-menu-vertical p.caption {
     color: #FC4C4C;
