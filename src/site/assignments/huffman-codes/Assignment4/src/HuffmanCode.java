@@ -16,6 +16,7 @@ public class HuffmanCode {
 
         return null;
     }
+
     public static HuffmanCode fromFile(String seedFile) {
         try {
             return HuffmanCode.fromString(Files.readString(Paths.get(seedFile)));
