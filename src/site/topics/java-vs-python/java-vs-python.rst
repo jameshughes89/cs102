@@ -752,10 +752,11 @@ For Loop
 * In other words, this loop will run 10 times
     * ``0 -- 9``
 
+
 Comparison of For to While
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* It may be useful to show the comparison of a for loop to a while loop
+* It may be useful to show the comparison of a for loop to a while loop in Java
 
 .. code-block:: Java
     :linenos:
