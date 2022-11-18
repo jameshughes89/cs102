@@ -235,11 +235,14 @@ Arrays
 ======
 
 * Java does not come with lists ready to go like Python does
-    * Or, at least, we don't get them *as a language primitive*
+
+    * They are not provided as a *language primitive*
+
 * Java does however have *arrays*, which are similar-ish to lists
+
     * They store data in a sequential linear collection
     * They have a **fixed** size
-    * They have fewer built in functions
+    * They have fewer built in methods
 
 
 .. list-table:: Lists & Arrays
