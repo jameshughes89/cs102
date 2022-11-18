@@ -2,12 +2,10 @@
 Sorting Recursively
 *******************
 
-* Refer to the topic pages for this lab
-    * You will find many of the answers to your questions there
 * Feel free to use your laptop if you have it
 * I strongly encourage you to work with others in the lab
-* Ensure I have recorded your completion. Failure to do so will result in a grade of 0
-* When you get stuck, do me a favour and ask those sitting around you for help
+
+    * When you get stuck, do me a favour and ask those sitting around you for help
     * I want people to get used to working together in the labs
     * Peer teaching and peer learning is super effective
 
@@ -15,8 +13,11 @@ Sorting Recursively
 Starting Point
 ==============
 
-This lab focuses on the sorts discussed in :doc:`topic 26 </topics/sorting/sorting-recursive>`. Note that, unlike the previous lab, here we use
-an unsorted bag instead of an array.
+This lab focuses on the sorts discussed in :doc:`topic 26 </topics/sorting/sorting-recursive>`. Note that, unlike the
+previous lab, here we use an unsorted bag instead of an array.
+
+The below code can be used for setting up a bag to be sorted and timing the different sorting algorithms.
+
 
 .. code-block:: java
 
@@ -46,8 +47,9 @@ an unsorted bag instead of an array.
 Quicksort
 =========
 
-1. Implement the quicksort algorithm
-2. Make sure it works and test it a few times and see what the runtimes are
+#. Implement the quicksort algorithm.
+#. Make sure it works and test it a few times and see what the runtimes are.
+
     * Change the size of the bag and the max value and see how it impacts runtimes
     * For the purposes of this lab, do not worry about writing unit tests
 
@@ -61,8 +63,9 @@ Quicksort
 Mergesort
 =========
 
-1. Implement the mergesort algorithm
-2. Make sure it works and test it a few times and see what the runtimes are
+#. Implement the mergesort algorithm.
+#. Make sure it works and test it a few times and see what the runtimes are.
+
     * Change the size of the bag and the max value and see how it impacts runtimes
     * For the purposes of this lab, do not worry about writing unit tests
 
@@ -76,11 +79,12 @@ Mergesort
 Comparing Sorts
 ===============
 
-1. Run each of the sorts a few times and take note of the runtimes
+#. Run each of the sorts a few times and take note of the runtimes
+
     * Play around with the size of the lists and the max value
     * Do the times align with what you'd expect based on the computational complexities of each of the algorithms
 
-2. Compare these runtimes to the sorts completed in the previous lab.
+#. Compare these runtimes to the sorts completed in the previous lab.
 
 
 Kattis Problems
@@ -88,40 +92,40 @@ Kattis Problems
 
 Recommended Kattis Problems (don't worry, you don’t need to do all of them or anything):
 
-1. https://open.kattis.com/problems/quadrant
-2. https://open.kattis.com/problems/judgingmoose
-3. https://open.kattis.com/problems/timeloop
-4. https://open.kattis.com/problems/oddities
-5. https://open.kattis.com/problems/fizzbuzz
-6. https://open.kattis.com/problems/twostones
-7. https://open.kattis.com/problems/spavanac
-8. https://open.kattis.com/problems/cetvrta
-9. https://open.kattis.com/problems/bus
-10. https://open.kattis.com/problems/timeloop
-11. https://open.kattis.com/problems/oddities
-12. https://open.kattis.com/problems/fizzbuzz
-13. https://open.kattis.com/problems/sibice
-14. https://open.kattis.com/problems/datum
-15. https://open.kattis.com/problems/dicecup
-16. https://open.kattis.com/problems/autori
-17. https://open.kattis.com/problems/apaxiaaans
-18. https://open.kattis.com/problems/hissingmicrophone
-19. https://open.kattis.com/problems/trik
-20. https://open.kattis.com/problems/pot
-21. https://open.kattis.com/problems/filip
-22. https://open.kattis.com/problems/reversebinary
-23. https://open.kattis.com/problems/sevenwonders
-24. https://open.kattis.com/problems/zamka
-25. https://open.kattis.com/problems/bijele
-26. https://open.kattis.com/problems/cold
-27. https://open.kattis.com/problems/nastyhacks
-28. https://open.kattis.com/problems/grassseed
-29. https://open.kattis.com/problems/pet
-30. https://open.kattis.com/problems/batterup
-31. https://open.kattis.com/problems/aboveaverage
-32. https://open.kattis.com/problems/icpcawards
-33. https://open.kattis.com/problems/quickbrownfox
-34. https://open.kattis.com/problems/nodup
-35. https://open.kattis.com/problems/conundrum
-36. https://open.kattis.com/problems/bela
-37. https://open.kattis.com/problems/kornislav
+#. https://open.kattis.com/problems/quadrant
+#. https://open.kattis.com/problems/judgingmoose
+#. https://open.kattis.com/problems/timeloop
+#. https://open.kattis.com/problems/oddities
+#. https://open.kattis.com/problems/fizzbuzz
+#. https://open.kattis.com/problems/twostones
+#. https://open.kattis.com/problems/spavanac
+#. https://open.kattis.com/problems/cetvrta
+#. https://open.kattis.com/problems/bus
+#. https://open.kattis.com/problems/timeloop
+#. https://open.kattis.com/problems/oddities
+#. https://open.kattis.com/problems/fizzbuzz
+#. https://open.kattis.com/problems/sibice
+#. https://open.kattis.com/problems/datum
+#. https://open.kattis.com/problems/dicecup
+#. https://open.kattis.com/problems/autori
+#. https://open.kattis.com/problems/apaxiaaans
+#. https://open.kattis.com/problems/hissingmicrophone
+#. https://open.kattis.com/problems/trik
+#. https://open.kattis.com/problems/pot
+#. https://open.kattis.com/problems/filip
+#. https://open.kattis.com/problems/reversebinary
+#. https://open.kattis.com/problems/sevenwonders
+#. https://open.kattis.com/problems/zamka
+#. https://open.kattis.com/problems/bijele
+#. https://open.kattis.com/problems/cold
+#. https://open.kattis.com/problems/nastyhacks
+#. https://open.kattis.com/problems/grassseed
+#. https://open.kattis.com/problems/pet
+#. https://open.kattis.com/problems/batterup
+#. https://open.kattis.com/problems/aboveaverage
+#. https://open.kattis.com/problems/icpcawards
+#. https://open.kattis.com/problems/quickbrownfox
+#. https://open.kattis.com/problems/nodup
+#. https://open.kattis.com/problems/conundrum
+#. https://open.kattis.com/problems/bela
+#. https://open.kattis.com/problems/kornislav

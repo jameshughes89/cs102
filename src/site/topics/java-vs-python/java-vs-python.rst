@@ -2,26 +2,25 @@
 Java vs. Python
 ***************
 
-**Python**
+.. list-table:: Hello World
+    :header-rows: 1
 
-.. code-block:: python
-    :linenos:
+    * - Python
+      - Java
 
-    # Python --- hello world
-    print("Hello, world!")
+    * -     .. code-block:: python
+                :linenos:
 
+                print("Hello, world!")
 
-**Java**
+      -     .. code-block:: java
+                :linenos:
 
-.. code-block:: java
-    :linenos:
-
-    // Java --- hello world
-    public class SomeClass {
-        public static void main(String[] args){
-            System.out.println("Hello, world!");
-        }
-    }
+                public class SomeClass {
+                    public static void main(String[] args){
+                        System.out.println("Hello, world!");
+                    }
+                }
 
 
 
@@ -29,33 +28,32 @@ Variables and Types
 ===================
 
 
-**Python**
+.. list-table:: Declaring Variables
+    :header-rows: 1
 
-.. code-block:: python
-    :linenos:
-    :emphasize-lines: 2,3,4
+    * - Python
+      - Java
 
-    # Python --- Declaring and assigning variables
-    anInt = 5
-    aFloat = 5.5
-    aString = "5"       # Could have used '5'
+    * -     .. code-block:: python
+                :linenos:
 
+                anInt = 5
+                aFloat = 5.5
+                aString = "5"
 
-**Java**
+      -     .. code-block:: java
+                :linenos:
+                :emphasize-lines: 3,4,5,6
 
-.. code-block:: java
-    :linenos:
-    :emphasize-lines: 4,5,6
+                public class SomeClass {
+                    public static void main(String[] args){
+                        int anInt = 5;
+                        double aFloat = 5.5;    // doubles now for float
+                        String aString = "5";   // Mind the double quotes
+                        char aCharacter = '5';  // Single quote for character
 
-    // Java --- Declaring and assigning variables
-    public class SomeClass {
-        public static void main(String[] args){
-            int anInt = 5;
-            double aFloat = 5.5;    // doubles now for float
-            String aString = "5";   // Mind the double quotes
-
-        }
-    }
+                    }
+                }
 
 * Notice the five main differences:
     1. We **must** declare the variables with their types
@@ -75,26 +73,24 @@ Variables and Types
 
 .. warning::
 
-    Unlike how in Python you can change the type that the variable has...
+    Unlike how in Python you can change the type that the variable has, you cannot do that in Java; Java will not
+    compile the above code.
 
-    .. code-block:: python
-        :linenos:
+    .. list-table::
+        :header-rows: 1
 
-        # Python --- Reusing variables for different types
-        otherInt = 5
-        otherInt = 'totally Not 5'
+        * - Python
+          - Java
+        * -     .. code-block:: python
 
-    you **cannot** do this in Java.
+                    otherInt = 5
+                    otherInt = 'totally Not 5'
 
-    .. code-block:: java
-        :linenos:
-        :emphasize-lines: 3
+          -     .. code-block:: java
+                    :emphasize-lines: 3
 
-        // Java --- TRYING reusing variables for different types
-        int otherInt = 5;
-        otherInt = "totally Not 5";       // Broken code
-
-    Java will not compile the above code.
+                    int otherInt = 5;
+                    otherInt = "totally Not 5";     // Compiler error
 
 
 Declaring & Assigning Variables
@@ -104,23 +100,27 @@ Declaring & Assigning Variables
 * In Python, we didn't need to explicitly *declare* variables
     * They got created and automatically declared once they are assigned a value
 
-.. code-block:: python
-    :linenos:
-
-    # Python --- Assigning a variable
-    anotherInt = 11
-    print(anotherInt)
-
 * In Java, we have to explicitly declare variables
     * This tells the computer that you need to set aside enough memory for something of the specified type
 
-.. code-block:: java
-    :linenos:
+.. list-table:: Declaring and Assigning Variables
+    :header-rows: 1
 
-    // Java --- Declaring & Assigning
-    int anotherInt;                     // Declaration
-    anotherInt = 11;                    // Assignment
-    System.out.println(anotherInt);
+    * - Python
+      - Java
+
+    * -     .. code-block:: python
+                :linenos:
+
+                anotherInt = 11
+                print(anotherInt)
+
+      -     .. code-block:: java
+                :linenos:
+
+                int anotherInt;                     // Declaration
+                anotherInt = 11;                    // Assignment
+                System.out.println(anotherInt);
 
 * However, you can declare and assign a variable in a single line of code, like we saw in the examples above
 
@@ -128,43 +128,42 @@ Declaring & Assigning Variables
 Reusing Variables
 -----------------
 
-**Python**
+.. list-table:: Reusing Variables
+    :header-rows: 1
 
-.. code-block:: python
-    :linenos:
+    * - Python
+      - Java
 
-    # Python --- Reusing variables
-    a = 5
-    print(a + 2)
+    * -     .. code-block:: python
+                :linenos:
 
-    b = a + 7
-    print(b)
+                a = 5
+                print(a + 2)
 
-    b = b + 1
-    print(b)
+                b = a + 7
+                print(b)
 
-    b += 1
-    print(b)
+                b = b + 1
+                print(b)
 
+                b += 1
+                print(b)
 
-**Java**
+      -     .. code-block:: java
+                :linenos:
+                :emphasize-lines: 1, 4
 
-.. code-block:: java
-    :linenos:
-    :emphasize-lines: 2, 5
+                int a = 5;
+                System.out.println(a + 2);
 
-    // Java --- Reusing variables
-    int a = 5;
-    System.out.println(a + 2);
+                int b = a + 7;
+                System.out.println(b);
 
-    int b = a + 7;
-    System.out.println(b);
+                b = b + 1;
+                System.out.println(b);
 
-    b = b + 1;
-    System.out.println(b);
-
-    b += 1;
-    System.out.println(b);
+                b += 1;
+                System.out.println(b);
 
 
 * It's the same except for explicitly declaring the types for the variables the first time you use them
@@ -180,33 +179,30 @@ Constants
 * Recall *constants*
     * Variables that are set by the programmer but are **not** changed throughout execution of the program
 
-**Python**
-
 * Python, the language, does not enforce constants to not be altered
 * The idea of constants are maintained and respected among programmers
-* The convention is to use all upper case letters and seperate words with underscores
+* The convention is to use all upper case letters and separate words with underscores
     * ``THIS_IS_A_CONSTANT``
 * You **can** change the values during execution, but you shouldn't, because then you're breaking the convention
-
-.. code-block:: python
-    :linenos:
-
-    # Python --- Constants
-    SALES_TAX = 1.15    # This is a constant. Leave this alone!
-
-**Java**
-
 * Java will ensure that the value of the constant is set once and only once during the execution of the program
 * We use the special keyword ``final``
 
+.. list-table:: Constants
+    :header-rows: 1
 
-.. code-block:: java
-    :linenos:
+    * - Python
+      - Java
 
-    // Java --- Constants
-    final double SALES_TAX = 1.15;      // Java will get mad if we mess with this
+    * -     .. code-block:: python
+                :linenos:
 
-**REMEMBER:**
+                SALES_TAX = 1.15    # Leave me alone
+
+      -     .. code-block:: java
+                :linenos:
+
+                final double SALES_TAX = 1.15;
+
 
 * We can change constant's values however we want while writing the code
 * The point is that they will **not** change once set
@@ -222,36 +218,37 @@ Arrays
     * They have a **fixed** size
     * They have fewer built in functions
 
-**Python**
 
-.. code-block:: python
-    :linenos:
+.. list-table:: Lists & Arrays
+    :header-rows: 1
 
-    # Python --- Inline list, accessing and changing
-    aList = [10, 11, 12, 13]
+    * - Python
+      - Java
 
-    # Access the list at index 1
-    print(aList[1])
+    * -     .. code-block:: python
+                :linenos:
 
-    # Modify the list at index 1 and print
-    aList[1] = 21
-    print(aList[1])
+                aList = [10, 11, 12, 13]
 
+                # Access the list at index 1
+                print(aList[1])
 
-**Java**
+                # Modify the list at index 1
+                aList[1] = 21
+                print(aList[1])
 
-.. code-block:: java
-    :linenos:
+      -     .. code-block:: java
+                :linenos:
 
-    // Java --- Inline list, accessing and changing
-    int[] anArray = {10, 11, 12, 13};
+                int[] anArray = {10, 11, 12, 13};
 
-    // Access the array at index 1
-    System.out.println(anArray[1]);
+                // Access the array at index 1
+                System.out.println(anArray[1]);
 
-    // Modify the array at index 1 and print
-    anArray[1] = 21;
-    System.out.println(anArray[1]);
+                // Modify the array at index 1
+                anArray[1] = 21;
+                System.out.println(anArray[1]);
+
 
 * With the exception of the type and syntax, these look the same
     * We have to specify the type for Java ``int[]``
@@ -266,31 +263,34 @@ Arrays
         * ``aList.append(34)``
 
 * This means that we can't just start with an empty array and have it grow and grow
+* In Java, arrays have fixed sizes
 
-.. code-block:: python
-    :linenos:
+.. list-table:: "Growing" a List/Array
+    :header-rows: 1
 
-    # Python --- Grow a list
-    # List will start with 0
-    aList = []
+    * - Python
+      - Java
 
-    # List will grow to size 1,000
-    for i in range(1000):
-        aList.append(i)
+    * -     .. code-block:: python
+                :linenos:
 
-* If we wanted to do the above in Java, we would have to do the following:
+                # List will start with 0
+                aList = []
 
-.. code-block:: Java
-    :linenos:
+                # List will grow to size 1,000
+                for i in range(1000):
+                    aList.append(i)
 
-    // Java --- Grow a list
-    // Create a new array of size 1,000
-    int[] anArray = new int[1000];
+      -     .. code-block:: Java
+                :linenos:
 
-    // Put a number in each index in the array
-    for(int i = 0; i < anArray.length; i++){
-        anArray[i] = i;
-    }
+                // Create a new array of size 1,000
+                int[] anArray = new int[1000];
+
+                // Put a number in each index in the array
+                for(int i = 0; i < anArray.length; i++){
+                    anArray[i] = i;
+                }
 
 * Mind line 3, showing how to make an array of some size
     * They will be filled with some default value (0 in this case)
@@ -311,7 +311,9 @@ Arrays
     In Java, we **cannot** index our arrays backwards like we could in Python.
 
 
-.. _label-topic2-java_vs_python-input_output:
+.. _label-java_vs_python-input_output:
+
+
 
 Input & Output
 ==============
@@ -324,44 +326,44 @@ Input & Output
     * This is because Java isn't designed for console applications
     * Besides, the only place we will use this is on Kattis anyways
 
-**Python**
+.. list-table:: Reading Input
+    :header-rows: 1
 
-.. code-block:: Python
-    :linenos:
+    * - Python
+      - Java
 
-    theInput = input("gimmie something: ")
-    print(theInput)
+    * -     .. code-block:: Python
+                :linenos:
 
+                theInput = input()
+                print(theInput)
 
-**Java**
+      -     .. code-block:: Java
+                :linenos:
 
-.. code-block:: Java
-    :linenos:
+                // Outside class definition
+                import java.io.BufferedReader;
+                import java.io.InputStreamReader;
+                import java.io.IOException;
 
-    import java.io.BufferedReader;
-    import java.io.InputStreamReader;
-    import java.io.IOException;
+                ...
 
-    public class SomeClass {
-        public static void main(String[] args){
+                // Create a Stream Reader with the standard input
+                InputStreamReader stream = new InputStreamReader(System.in);
 
-            // Create a Stream Reader with the standard input
-            InputStreamReader stream = new InputStreamReader(System.in);
+                // Give the Stream Reader to a Buffered Reader
+                BufferedReader reader = new BufferedReader(stream);
 
-            // Give the Stream Reader to a Buffered Reader
-            BufferedReader reader = new BufferedReader(stream);
+                // We use the Buffered Reader to read the actual stream
+                // We use a try & catch because readLine may throw an
+                // exception that we must deal with
+                try {
+                    String theLine = reader.readLine();
+                    System.out.println(theLine);
+                } catch (IOException e){
+                    System.out.println("Something bad happened.");
+                }
 
-            // We use the Buffered Reader to read the actual stream
-            // We use a try & catch because readLine may throw an
-            // exception that we must deal with
-            try {
-                String theLine = reader.readLine();
-                System.out.println(theLine);
-            } catch (IOException e){
-                System.out.println("Something bad happened when reading.");
-            }
-        }
-    }
 
 * Mind the ``import`` statements
 * We read from a *stream*
@@ -413,47 +415,48 @@ Input & Output
 Functions
 =========
 
-**Python**
+.. list-table:: Function Definitions
+    :header-rows: 1
 
-.. code-block:: Python
-    :linenos:
-    :emphasize-lines: 2
+    * - Python
+      - Java
 
-    # Python --- Declaring a function
-    def someFunction(a, b):
-        c = a + b
-        return c
+    * -     .. code-block:: Python
+                :linenos:
+                :emphasize-lines: 2, 7
 
-    # Call the function
-    result = someFunction(1, 2)
-    print(result)
+                # Declaring a function
+                def someFunction(a, b):
+                    c = a + b
+                    return c
 
+                # Call the function
+                result = someFunction(1, 2)
+                print(result)
 
-**Java**
+      -     .. code-block:: Java
+                :linenos:
+                :emphasize-lines: 5, 10
 
-.. code-block:: Java
-    :linenos:
-    :emphasize-lines: 5, 10
+                // Java
+                public class SomeClass {
+                    public static void main(String[] args) {
+                        // Call the function
+                        int result = someFunction(1, 2);
+                        System.out.println(result);
+                    }
 
-    // Java
-    public class SomeClass {
-        public static void main(String[] args) {
-            // Call the function
-            int result = someFunction(1, 2);
-            System.out.println(result);
-        }
-
-        // Declare the Function
-        static int someFunction(int a, int b) {
-            int c = a + b;
-            return c;
-        }
-    }
+                    // Declare the Function
+                    static int someFunction(int a, int b) {
+                        int c = a + b;
+                        return c;
+                    }
+                }
 
 * We **must** tell the function its return type
     * ``int`` in this example, because the thing being returned is an int
     * If we happen to have no return value for our function, then use ``void``
-        * ``static void someOtherFunction( ... ) { ```
+        * ``static void someOtherFunction( ... ) { ``
 
 * Parameters have their types set
 
@@ -464,31 +467,32 @@ Functions
 
 * You will also see that, unlike in the Python example, we can declare the functions after the calling code
 
+
 Temperature Converter
 ---------------------
 
-**Python**
+.. list-table:: Function to Convert Fahrenheit to Celsius
+    :header-rows: 1
 
-.. code-block:: Python
-    :linenos:
-    :emphasize-lines: 3
+    * - Python
+      - Java
 
-    # Python --- Convert farenheit to celcius
-    def fahrenheit_to_celcius (fahrenheit):
-        celsius = (fahrenheit - 32) * 5/9
-        return celsius
+    * -     .. code-block:: Python
+                :linenos:
+                :emphasize-lines: 2
 
-**Java**
+                def fahrenheit_to_celsius(fahrenheit):
+                    celsius = (fahrenheit - 32) * 5/9
+                    return celsius
 
-.. code-block:: Java
-    :linenos:
-    :emphasize-lines: 3
+      -     .. code-block:: Java
+                :linenos:
+                :emphasize-lines: 2
 
-    // Java --- Convert farenheit to celcius
-    static double fahrenheitToCelcius(double fahrenheit) {
-        double celsius = (fahrenheit - 32) * 5.0/9.0;
-        return celsius;
-    }
+                static double fahrenheitToCelsius(double fahrenheit) {
+                    double celsius = (fahrenheit - 32) * 5.0/9.0;
+                    return celsius;
+                }
 
 
 * Pay special attention to the division taking place on like 3
@@ -498,7 +502,6 @@ Temperature Converter
 
 * This functionality is more typical
     * In fact, Python used to work this way too, and they made people mad when they changed
-
 
 
 Comments
@@ -526,7 +529,7 @@ Comments
      * @param fahrenheit    temperature in fahrenheit
      * @return              temperature in celsius
      */
-    static double FtoC(double fahrenheit) {
+    static double fahrenheitToCelsius(double fahrenheit) {
         double celsius = (fahrenheit - 32) * 5/9;
         return celsius;
     }
@@ -542,38 +545,36 @@ Booleans
 ========
 
 * Java has Boolean values, except they start with lower case letters
-    * Python --- ``someBool = True``
-    * Java --- ``boolean someBool = true;``
+    * Python --- ``some_boolean = True``
+    * Java --- ``boolean someBoolean = true;``
 
 Conditionals
 ------------
 
-**Python**
+.. list-table:: Conditionals (If/Else)
+    :header-rows: 1
 
-.. code-block:: Python
-    :linenos:
+    * - Python
+      - Java
 
-    # Python --- if/else
-    # Assume someBool exists and is a boolean
-    if someBool:
-        print("it was true")
-    else:
-        print("it was false")
+    * -     .. code-block:: Python
+                :linenos:
 
-**Java**
+                if some_boolean:
+                    print("it was true")
+                else:
+                    print("it was false")
 
-.. code-block:: Java
-    :linenos:
+      -     .. code-block:: Java
+                :linenos:
 
-    // Java --- if/else
-    // Assume someBool exists and is a boolean
-    if (someBool) {
-        System.out.println("it was true");
-    } else {
-        System.out.println("it was false");
-    }
+                if (someBoolean) {
+                    System.out.println("it was True");
+                } else {
+                    System.out.println("it was False");
+                }
 
-* Both examples above assume the variable ``someBool`` exists and is a boolean
+* Both examples above assume the variable ``someBoolean`` exists and is a boolean
 * Notice how the condition is in parentheses in the Java example
     * ``( ... )``
 
@@ -598,33 +599,34 @@ Loops
 While Loops
 -----------
 
-**Python**
 
-.. code-block:: Python
-    :linenos:
+.. list-table:: While Loops with Counter
+    :header-rows: 1
 
-    # Python --- while loop
-    c = 0
+    * - Python
+      - Java
 
-    # While some condition is true
-    while c < 10:
-        print("c is now: " + str(c))
-        c+=1
+    * -     .. code-block:: Python
+                :linenos:
 
-**Java**
+                c = 0
 
-.. code-block:: Java
-    :linenos:
-    :emphasize-lines: 5
+                # While some condition is true
+                while c < 10:
+                    print("c is now: " + str(c))
+                    c+=1
 
-    // Java --- while loop
-    int c = 0;
+      -     .. code-block:: Java
+                :linenos:
+                :emphasize-lines: 4
 
-    // While some condition is true
-    while (c < 10) {
-        System.out.println("c is now: " + c);
-        c++;
-    }
+                int c = 0;
+
+                // While some condition is True
+                while (c < 10) {
+                    System.out.println("c is now: " + c);
+                    c++;
+                }
 
 * Just like the ``if`` statements, we put the condition in parentheses
 * Note the ``c++`` --- this is the same thing as ``c+=1``, but even shorter
@@ -632,67 +634,68 @@ While Loops
 
 * Here is another example
 
-**Python**
+.. list-table:: While Loops with General Condition
+    :header-rows: 1
 
-.. code-block:: Python
-    :linenos:
+    * - Python
+      - Java
 
-    # Python --- while loop again
-    stop = False
-    c = 0
+    * -     .. code-block:: Python
+                :linenos:
 
-    while not stop:
-        print("c is now: " + str(c))
-        c+=1
-        if c == 5:
-            stop = True
+                stop = False
+                c = 0
 
-**Java**
+                while not stop:
+                    print("c is now: " + str(c))
+                    c+=1
+                    if c == 5:
+                        stop = True
 
-.. code-block:: Java
-    :linenos:
+      -     .. code-block:: Java
+                :linenos:
 
-    // Java --- while loop again
-    boolean stop = false;
-    int c = 0;
+                boolean stop = false;
+                int c = 0;
 
-    while (!stop) {
-        System.out.println("c is now: " + c);
-        c++;
-        if (c == 5) {
-            stop = true;
-        }
-    }
+                while (!stop) {
+                    System.out.println("c is now: " + c);
+                    c++;
+                    if (c == 5) {
+                        stop = true;
+                    }
+                }
 
 For Each Loop
 -------------
 
 * For loops in Python are basically *for each* loops
 
-**Python**
+.. list-table:: For Each Loops
+    :header-rows: 1
 
-.. code-block:: Python
-    :linenos:
+    * - Python
+      - Java
 
-    # Python --- for loop
-    aList = ['a', 'b', 'c', 'd']
+    * -     .. code-block:: Python
+                :linenos:
 
-    # For each thing 'c' in aList
-    for c in aList:
-        print(c)
+                aList = ['a', 'b', 'c', 'd']
 
-**Java**
+                # For each thing 'c' in aList
+                for c in aList:
+                    print(c)
 
-.. code-block:: Java
-    :linenos:
+      -     .. code-block:: Java
+                :linenos:
 
-    // Java --- for each loop
-    char[] anArray = {'a', 'b', 'c', 'd'};
+                char[] anArray = {'a', 'b', 'c', 'd'};
 
-    // For each character 'c' in anArray
-    for (char c : anArray) {
-        System.out.println(c);
-    }
+                // For each character 'c' in anArray
+                for (char c : anArray) {
+                    System.out.println(c);
+                }
+
 
 * It's remarkably similar, except
     * we specify the type of ``c``
@@ -702,32 +705,29 @@ For Each Loop
 For Loop
 --------
 
-* In Python, when we wanted to loop some number of times, often we would do something like this
+* Looping a specific number of times
 
-**Python**
+.. list-table:: Counting For Loops
+    :header-rows: 1
 
-.. code-block:: Python
-    :linenos:
+    * - Python
+      - Java
 
-    # Python --- for loop
-    # Run loop 10 times (0 -- 9)
-    for i in range(10):
-        print(i)
+    * -     .. code-block:: Python
+                :linenos:
 
+                # Run loop 10 times (0 -- 9)
+                for i in range(10):
+                    print(i)
 
-* In Java, we'd typically do it this way
+      -     .. code-block:: Java
+                :linenos:
+                :emphasize-lines: 2
 
-**Java**
-
-.. code-block:: Java
-    :linenos:
-    :emphasize-lines: 3
-
-    // Java --- for loop
-    // Run loop 10 times (0 -- 9)
-    for (int i = 0; i < 10; ++i) {
-        System.out.println(i);
-    }
+                // Run loop 10 times (0 -- 9)
+                for (int i = 0; i < 10; ++i) {
+                    System.out.println(i);
+                }
 
 * Here, we're running the first statement within the parentheses by the for loop once
     * ``int i = 0``
@@ -750,10 +750,11 @@ For Loop
 * In other words, this loop will run 10 times
     * ``0 -- 9``
 
+
 Comparison of For to While
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* It may be useful to show the comparison of a for loop to a while loop
+* It may be useful to show the comparison of a for loop to a while loop in Java
 
 .. code-block:: Java
     :linenos:
@@ -803,7 +804,8 @@ Java Conventions
 * Constants are all uppercase with underscores separating words (*snake case*)
     * ``static final int THIS_IS_A_CONSTANT = 555;``
 
-For next time
+
+For Next Time
 =============
 
 .. warning::
