@@ -20,7 +20,7 @@ public class AStarMazeSolverTest {
                     "#####\n" +
                     "#   #\n" +
                     "#   #\n" +
-                    "S  #E\n" + 
+                    "S  #E\n" +
                     "#   #\n" +
                     "#####";
     private static final String MAZE_ONE_SOLUTION =
