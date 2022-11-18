@@ -23,16 +23,41 @@ public class AStarMazeSolverTest {
     private static final String MAZE_TWO_SOLUTION_BETA = "####\n" + "S  #\n" + "#  E\n" + "####";
 
     private static final Set<Cell> PATH_NO_SOLUTION = Set.of();
-    private static final Set<Cell> PATH_ONE_SOLUTION = Set.of(new Cell('S', 0, 3), new Cell(' ', 1, 3), new Cell(' ', 2, 3), new Cell(' ', 3, 3), new Cell('E', 4, 3));
-    private static final Set<Cell> PATH_TWO_SOLUTION_ALPHA_A = Set.of(new Cell('S', 0, 3), new Cell(' ', 1, 3), new Cell(' ', 1, 2), new Cell(' ', 2, 2), new Cell(' ', 3, 2), new Cell(' ', 3, 3), new Cell('E', 4, 3));
-    private static final Set<Cell> PATH_TWO_SOLUTION_ALPHA_B = Set.of(new Cell('S', 0, 3), new Cell(' ', 1, 3), new Cell(' ', 1, 4), new Cell(' ', 2, 4), new Cell(' ', 3, 4), new Cell(' ', 3, 3), new Cell('E', 4, 3));
-    private static final Set<Cell> PATH_TWO_SOLUTION_BETA_A = Set.of(new Cell('S', 0, 1), new Cell(' ', 1, 1), new Cell(' ', 2, 1), new Cell(' ', 2, 2), new Cell('E', 3, 2));
-    private static final Set<Cell> PATH_TWO_SOLUTION_BETA_B = Set.of(new Cell('S', 0, 1), new Cell(' ', 1, 1), new Cell(' ', 1, 2), new Cell(' ', 2, 2), new Cell('E', 3, 2));
+    private static final Set<Cell> PATH_ONE_SOLUTION = Set.of(new Cell('S', 0, 3),
+            new Cell(' ', 1, 3),
+            new Cell(' ', 2, 3),
+            new Cell(' ', 3, 3),
+            new Cell('E', 4, 3));
+    private static final Set<Cell> PATH_TWO_SOLUTION_ALPHA_A = Set.of(new Cell('S', 0, 3),
+            new Cell(' ', 1, 3),
+            new Cell(' ', 1, 2),
+            new Cell(' ', 2, 2),
+            new Cell(' ', 3, 2),
+            new Cell(' ', 3, 3),
+            new Cell('E', 4, 3));
+    private static final Set<Cell> PATH_TWO_SOLUTION_ALPHA_B = Set.of(new Cell('S', 0, 3),
+            new Cell(' ', 1, 3),
+            new Cell(' ', 1, 4),
+            new Cell(' ', 2, 4),
+            new Cell(' ', 3, 4),
+            new Cell(' ', 3, 3),
+            new Cell('E', 4, 3));
+    private static final Set<Cell> PATH_TWO_SOLUTION_BETA_A = Set.of(new Cell('S', 0, 1),
+            new Cell(' ', 1, 1),
+            new Cell(' ', 2, 1),
+            new Cell(' ', 2, 2),
+            new Cell('E', 3, 2));
+    private static final Set<Cell> PATH_TWO_SOLUTION_BETA_B = Set.of(new Cell('S', 0, 1),
+            new Cell(' ', 1, 1),
+            new Cell(' ', 1, 2),
+            new Cell(' ', 2, 2),
+            new Cell('E', 3, 2));
 
     private MazeSolver classUnderTest;
 
     static Stream<Arguments> twoSolutionExamples() {
-        return Stream.of(Arguments.of(MAZE_TWO_SOLUTION_ALPHA, PATH_TWO_SOLUTION_ALPHA_A, PATH_TWO_SOLUTION_ALPHA_B), Arguments.of(MAZE_TWO_SOLUTION_BETA, PATH_TWO_SOLUTION_BETA_A, PATH_TWO_SOLUTION_BETA_B));
+        return Stream.of(Arguments.of(MAZE_TWO_SOLUTION_ALPHA, PATH_TWO_SOLUTION_ALPHA_A, PATH_TWO_SOLUTION_ALPHA_B),
+                Arguments.of(MAZE_TWO_SOLUTION_BETA, PATH_TWO_SOLUTION_BETA_A, PATH_TWO_SOLUTION_BETA_B));
     }
 
     @BeforeEach
