@@ -10,13 +10,11 @@ Java vs. Python
     * -     .. code-block:: python
                 :linenos:
 
-                    # Python --- hello world
-                    print("Hello, world!")
+                print("Hello, world!")
 
       -     .. code-block:: java
                 :linenos:
 
-                // Java --- hello world
                 public class SomeClass {
                     public static void main(String[] args){
                         System.out.println("Hello, world!");
@@ -29,32 +27,32 @@ Variables and Types
 ===================
 
 
+.. list-table:: Declaring Variables
+    :header-rows: 1
 
-.. code-block:: python
-    :linenos:
-    :emphasize-lines: 2,3,4
+    * - Python
+      - Java
 
-    # Python --- Declaring and assigning variables
-    anInt = 5
-    aFloat = 5.5
-    aString = "5"       # Could have used '5'
+    * -     .. code-block:: python
+                :linenos:
 
+                anInt = 5
+                aFloat = 5.5
+                aString = "5"
 
+      -     .. code-block:: java
+                :linenos:
+                :emphasize-lines: 3,4,5,6
 
-.. code-block:: java
-    :linenos:
-    :emphasize-lines: 4,5,6
+                public class SomeClass {
+                    public static void main(String[] args){
+                        int anInt = 5;
+                        double aFloat = 5.5;    // doubles now for float
+                        String aString = "5";   // Mind the double quotes
+                        char aCharacter = '5';  // Single quote for character
 
-    // Java --- Declaring and assigning variables
-    public class SomeClass {
-        public static void main(String[] args){
-            int anInt = 5;
-            double aFloat = 5.5;    // doubles now for float
-            String aString = "5";   // Mind the double quotes
-            char aCharacter = '5';  // Single quote for single character
-
-        }
-    }
+                    }
+                }
 
 * Notice the five main differences:
     1. We **must** declare the variables with their types
@@ -74,26 +72,27 @@ Variables and Types
 
 .. warning::
 
-    Unlike how in Python you can change the type that the variable has...
+    Unlike how in Python you can change the type that the variable has, you cannot do that in Java; Java will not
+    compile the above code.
 
-    .. code-block:: python
-        :linenos:
+    .. list-table::
+        :header-rows: 1
 
-        # Python --- Reusing variables for different types
-        otherInt = 5
-        otherInt = 'totally Not 5'
+        * - Python
+          - Java
+        * -     .. code-block:: python
+                    :linenos:
 
-    you **cannot** do this in Java.
+                    otherInt = 5
+                    otherInt = 'totally Not 5'
 
-    .. code-block:: java
-        :linenos:
-        :emphasize-lines: 3
+          -     .. code-block:: java
+                    :linenos:
+                    :emphasize-lines: 3
 
-        // Java --- TRYING reusing variables for different types
-        int otherInt = 5;
-        otherInt = "totally Not 5";       // Broken code
+                    int otherInt = 5;
+                    otherInt = "totally Not 5";     // Nope
 
-    Java will not compile the above code.
 
 
 Declaring & Assigning Variables
