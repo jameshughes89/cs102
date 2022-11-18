@@ -134,9 +134,9 @@ Declaring & Assigning Variables
                 System.out.println(anotherInt);
 
 
-* However, one could declare and assign a variable in a single line of code, like in the above examples
+* However, in Java, one could declare and assign a variable in a single line of code, like in the above examples
 
-    * For example, ``int anotherInt = 11;``
+    * ``int anotherInt = 11;`` --- variable is declared and assigned in a single line
 
 
 Reusing Variables
@@ -180,26 +180,35 @@ Reusing Variables
                 System.out.println(b);
 
 
-* It's the same except for explicitly declaring the types for the variables the first time you use them
+* The Python and Java code is nearly the same
+* The difference with Java is the need to explicitly declare the variable the first time they are used
 
 .. warning::
 
-    Just because you *can* doesn't mean you *should*. This isn't something you would likely want to be doing though.
+    Although it is fine to reuse variables, it is often not overly helpful. The above example really only makes sense
+    given that they are arbitrary values stored in variables with nondescript names.
+
+    Consider a variable for storing a temperature in Celsius --- ``temperatureInCelsius``. The circumstances where it
+    would make sense to assign a brand new value to this variable would be very limited.
 
 
 Constants
 ---------
 
 * Recall *constants*
-    * Variables that are set by the programmer but are **not** changed throughout execution of the program
 
-* Python, the language, does not enforce constants to not be altered
+    * Variables that are set by the programmer but are not changed *throughout the execution of the program*
+
+* Python, the language, does not enforce the rule that constants should not be altered
 * The idea of constants are maintained and respected among programmers
 * The convention is to use all upper case letters and separate words with underscores
+
     * ``THIS_IS_A_CONSTANT``
-* You **can** change the values during execution, but you shouldn't, because then you're breaking the convention
-* Java will ensure that the value of the constant is set once and only once during the execution of the program
-* We use the special keyword ``final``
+
+* Although one could change the values during execution, it would break the convention
+
+* Java will, however, ensure that the value of the constant is set once and not changed during execution
+* The special keyword ``final`` is used to declare a constant
 
 .. list-table:: Constants
     :header-rows: 1
@@ -218,8 +227,8 @@ Constants
                 final double SALES_TAX = 1.15;
 
 
-* We can change constant's values however we want while writing the code
-* The point is that they will **not** change once set
+* Remember, it is possible to change a constant's value before runtime
+* The point is that they will not change at runtime
 
 
 Arrays
