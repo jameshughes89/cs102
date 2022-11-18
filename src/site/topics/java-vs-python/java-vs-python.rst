@@ -53,26 +53,37 @@ Variables and Types
                     }
                 }
 
-* Notice the five main differences:
-    1. We **must** declare the variables with their types
-    2. We will use the word ``double`` to be floating point numbers
+* Notice a few main differences:
+
+    #. We **must** declare the variables with their types
+    #. We will use the word ``double`` to be floating point numbers
+
         * Technically we could still use ``float``, but I almost always see ``double``
         * A ``float`` takes up 4 bytes and a ``double`` takes up 8 (double the amount)
-    3. We use ``"double quotes"`` for strings --- a single character only uses single quotes: ``'a'``
+
+    #. We use ``"double quotes"`` for strings --- single quotes are used for a single character: ``'a'``
+
         * That does mean that we have a new type: a character (``char``)
         * ``char theLetterB = 'B';``
-    4. We use ``// for comments`` instead of ``# like in Python``
-    5. We end our statements in Java with a semicolon (``;``)
 
-.. warning::
-
-    From now on, I will **not** be including the ``class`` stuff and  ``public static void main(String[] args)`` unless necessary.
+    #. We use ``// for comments`` instead of ``# like in Python``
+    #. We end our statements in Java with a semicolon (``;``)
 
 
 .. warning::
 
-    Unlike how in Python you can change the type that the variable has, you cannot do that in Java; Java will not
-    compile the above code.
+    For the sake of brevity, from now on the ``class`` stuff and ``public static void main(String[] args)`` boilerplate
+    code will **not** be included in the code examples unless necessary.
+
+
+.. warning::
+
+    In Python one could change the value stored in a variable to something of a different type. In Java, this is **not**
+    possible since we need to be explicit about what the type of the value is to be stored in a variable.
+
+    If one writes code that would put a value of a type into a variable of another type, Java will not even compile the
+    code; the code will not even run. At first this may seem frustrating, but this ends up being very helpful as it
+    protects against certain bugs before the code even starts running.
 
     .. list-table::
         :header-rows: 1
