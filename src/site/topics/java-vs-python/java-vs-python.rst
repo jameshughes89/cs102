@@ -58,7 +58,7 @@ Variables and Types
     #. We **must** declare the variables with their types
     #. We will use the word ``double`` to be floating point numbers
 
-        * Technically we could still use ``float``, but I almost always see ``double``
+        * Technically we could still use ``float``, but ``double`` is very common
         * A ``float`` takes up 4 bytes and a ``double`` takes up 8 --- *double* the amount
 
     #. We use ``"double quotes"`` for strings --- single quotes are used for a single character: ``'a'``
@@ -93,23 +93,25 @@ Variables and Types
         * -     .. code-block:: python
 
                     otherInt = 5
-                    otherInt = 'totally Not 5'
+                    otherInt = 'totally not 5'
 
           -     .. code-block:: java
                     :emphasize-lines: 3
 
                     int otherInt = 5;
-                    otherInt = "totally Not 5";     // Compiler error
+                    otherInt = "totally not 5";     // Compiler error
 
 
 Declaring & Assigning Variables
 -------------------------------
 
 * There is a difference between *declaring* and *assigning* a variable
-* In Python, we didn't need to explicitly *declare* variables
+* In Python, one did not need to explicitly *declare* variables
+
     * They got created and automatically declared once they are assigned a value
 
-* In Java, we have to explicitly declare variables
+* In Java, one must explicitly declare variables
+
     * This tells the computer that you need to set aside enough memory for something of the specified type
 
 .. list-table:: Declaring and Assigning Variables
@@ -131,7 +133,10 @@ Declaring & Assigning Variables
                 anotherInt = 11;                    // Assignment
                 System.out.println(anotherInt);
 
-* However, you can declare and assign a variable in a single line of code, like we saw in the examples above
+
+* However, one could declare and assign a variable in a single line of code, like in the above examples
+
+    * For example, ``int anotherInt = 11;``
 
 
 Reusing Variables
