@@ -2,7 +2,6 @@
 Java vs. Python
 ***************
 
-**Python**
 
 .. code-block:: python
     :linenos:
@@ -10,8 +9,6 @@ Java vs. Python
     # Python --- hello world
     print("Hello, world!")
 
-
-**Java**
 
 .. code-block:: java
     :linenos:
@@ -29,7 +26,6 @@ Variables and Types
 ===================
 
 
-**Python**
 
 .. code-block:: python
     :linenos:
@@ -41,7 +37,6 @@ Variables and Types
     aString = "5"       # Could have used '5'
 
 
-**Java**
 
 .. code-block:: java
     :linenos:
@@ -53,6 +48,7 @@ Variables and Types
             int anInt = 5;
             double aFloat = 5.5;    // doubles now for float
             String aString = "5";   // Mind the double quotes
+            char aCharacter = '5';  // Single quote for single character
 
         }
     }
@@ -128,8 +124,6 @@ Declaring & Assigning Variables
 Reusing Variables
 -----------------
 
-**Python**
-
 .. code-block:: python
     :linenos:
 
@@ -146,8 +140,6 @@ Reusing Variables
     b += 1
     print(b)
 
-
-**Java**
 
 .. code-block:: java
     :linenos:
@@ -180,11 +172,9 @@ Constants
 * Recall *constants*
     * Variables that are set by the programmer but are **not** changed throughout execution of the program
 
-**Python**
-
 * Python, the language, does not enforce constants to not be altered
 * The idea of constants are maintained and respected among programmers
-* The convention is to use all upper case letters and seperate words with underscores
+* The convention is to use all upper case letters and separate words with underscores
     * ``THIS_IS_A_CONSTANT``
 * You **can** change the values during execution, but you shouldn't, because then you're breaking the convention
 
@@ -194,7 +184,6 @@ Constants
     # Python --- Constants
     SALES_TAX = 1.15    # This is a constant. Leave this alone!
 
-**Java**
 
 * Java will ensure that the value of the constant is set once and only once during the execution of the program
 * We use the special keyword ``final``
@@ -206,7 +195,6 @@ Constants
     // Java --- Constants
     final double SALES_TAX = 1.15;      // Java will get mad if we mess with this
 
-**REMEMBER:**
 
 * We can change constant's values however we want while writing the code
 * The point is that they will **not** change once set
@@ -222,7 +210,6 @@ Arrays
     * They have a **fixed** size
     * They have fewer built in functions
 
-**Python**
 
 .. code-block:: python
     :linenos:
@@ -238,7 +225,6 @@ Arrays
     print(aList[1])
 
 
-**Java**
 
 .. code-block:: java
     :linenos:
@@ -313,6 +299,7 @@ Arrays
 
 .. _label-topic2-java_vs_python-input_output:
 
+
 Input & Output
 ==============
 
@@ -324,16 +311,14 @@ Input & Output
     * This is because Java isn't designed for console applications
     * Besides, the only place we will use this is on Kattis anyways
 
-**Python**
-
 .. code-block:: Python
     :linenos:
 
+    # Python --- input
     theInput = input("gimmie something: ")
     print(theInput)
 
 
-**Java**
 
 .. code-block:: Java
     :linenos:
@@ -413,8 +398,6 @@ Input & Output
 Functions
 =========
 
-**Python**
-
 .. code-block:: Python
     :linenos:
     :emphasize-lines: 2
@@ -428,8 +411,6 @@ Functions
     result = someFunction(1, 2)
     print(result)
 
-
-**Java**
 
 .. code-block:: Java
     :linenos:
@@ -464,10 +445,9 @@ Functions
 
 * You will also see that, unlike in the Python example, we can declare the functions after the calling code
 
+
 Temperature Converter
 ---------------------
-
-**Python**
 
 .. code-block:: Python
     :linenos:
@@ -478,7 +458,6 @@ Temperature Converter
         celsius = (fahrenheit - 32) * 5/9
         return celsius
 
-**Java**
 
 .. code-block:: Java
     :linenos:
@@ -498,7 +477,6 @@ Temperature Converter
 
 * This functionality is more typical
     * In fact, Python used to work this way too, and they made people mad when they changed
-
 
 
 Comments
@@ -542,38 +520,35 @@ Booleans
 ========
 
 * Java has Boolean values, except they start with lower case letters
-    * Python --- ``someBool = True``
-    * Java --- ``boolean someBool = true;``
+    * Python --- ``some_boolean = True``
+    * Java --- ``boolean someBoolean = true;``
 
 Conditionals
 ------------
-
-**Python**
 
 .. code-block:: Python
     :linenos:
 
     # Python --- if/else
-    # Assume someBool exists and is a boolean
-    if someBool:
+    # Assume some_boolean exists and is a boolean
+    if some_boolean:
         print("it was true")
     else:
         print("it was false")
 
-**Java**
 
 .. code-block:: Java
     :linenos:
 
     // Java --- if/else
-    // Assume someBool exists and is a boolean
-    if (someBool) {
+    // Assume someBoolean exists and is a boolean
+    if (someBoolean) {
         System.out.println("it was true");
     } else {
         System.out.println("it was false");
     }
 
-* Both examples above assume the variable ``someBool`` exists and is a boolean
+* Both examples above assume the variable ``someBoolean`` exists and is a boolean
 * Notice how the condition is in parentheses in the Java example
     * ``( ... )``
 
@@ -598,8 +573,6 @@ Loops
 While Loops
 -----------
 
-**Python**
-
 .. code-block:: Python
     :linenos:
 
@@ -611,7 +584,6 @@ While Loops
         print("c is now: " + str(c))
         c+=1
 
-**Java**
 
 .. code-block:: Java
     :linenos:
@@ -632,8 +604,6 @@ While Loops
 
 * Here is another example
 
-**Python**
-
 .. code-block:: Python
     :linenos:
 
@@ -647,7 +617,6 @@ While Loops
         if c == 5:
             stop = True
 
-**Java**
 
 .. code-block:: Java
     :linenos:
@@ -669,7 +638,6 @@ For Each Loop
 
 * For loops in Python are basically *for each* loops
 
-**Python**
 
 .. code-block:: Python
     :linenos:
@@ -681,7 +649,6 @@ For Each Loop
     for c in aList:
         print(c)
 
-**Java**
 
 .. code-block:: Java
     :linenos:
@@ -704,7 +671,6 @@ For Loop
 
 * In Python, when we wanted to loop some number of times, often we would do something like this
 
-**Python**
 
 .. code-block:: Python
     :linenos:
@@ -717,7 +683,6 @@ For Loop
 
 * In Java, we'd typically do it this way
 
-**Java**
 
 .. code-block:: Java
     :linenos:
@@ -803,7 +768,8 @@ Java Conventions
 * Constants are all uppercase with underscores separating words (*snake case*)
     * ``static final int THIS_IS_A_CONSTANT = 555;``
 
-For next time
+
+For Next Time
 =============
 
 .. warning::
