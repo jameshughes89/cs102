@@ -93,11 +93,14 @@ public class ArrayStack<T> implements Stack<T> {
 
     @Override
     public final boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         ArrayStack<?> that = (ArrayStack<?>) o;
-        return top == that.top
-                && Arrays.equals(this.stack, 0, this.top, that.stack, 0, that.top);
+        return top == that.top && Arrays.equals(this.stack, 0, this.top, that.stack, 0, that.top);
     }
 
     @Override
