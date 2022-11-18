@@ -328,7 +328,7 @@ Input & Output
     * This is because Java isn't designed for console applications
     * Besides, the only place we will use this is on Kattis anyways
 
-.. list-table:: Input
+.. list-table:: Reading Input
     :header-rows: 1
 
     * - Python
@@ -417,43 +417,48 @@ Input & Output
 Functions
 =========
 
-.. code-block:: Python
-    :linenos:
-    :emphasize-lines: 2
+.. list-table:: Function Definitions
+    :header-rows: 1
 
-    # Python --- Declaring a function
-    def someFunction(a, b):
-        c = a + b
-        return c
+    * - Python
+      - Java
 
-    # Call the function
-    result = someFunction(1, 2)
-    print(result)
+    * -     .. code-block:: Python
+                :linenos:
+                :emphasize-lines: 2, 7
 
+                # Declaring a function
+                def someFunction(a, b):
+                    c = a + b
+                    return c
 
-.. code-block:: Java
-    :linenos:
-    :emphasize-lines: 5, 10
+                # Call the function
+                result = someFunction(1, 2)
+                print(result)
 
-    // Java
-    public class SomeClass {
-        public static void main(String[] args) {
-            // Call the function
-            int result = someFunction(1, 2);
-            System.out.println(result);
-        }
+      -     .. code-block:: Java
+                :linenos:
+                :emphasize-lines: 5, 10
 
-        // Declare the Function
-        static int someFunction(int a, int b) {
-            int c = a + b;
-            return c;
-        }
-    }
+                // Java
+                public class SomeClass {
+                    public static void main(String[] args) {
+                        // Call the function
+                        int result = someFunction(1, 2);
+                        System.out.println(result);
+                    }
+
+                    // Declare the Function
+                    static int someFunction(int a, int b) {
+                        int c = a + b;
+                        return c;
+                    }
+                }
 
 * We **must** tell the function its return type
     * ``int`` in this example, because the thing being returned is an int
     * If we happen to have no return value for our function, then use ``void``
-        * ``static void someOtherFunction( ... ) { ```
+        * ``static void someOtherFunction( ... ) { ``
 
 * Parameters have their types set
 
@@ -468,25 +473,28 @@ Functions
 Temperature Converter
 ---------------------
 
-.. code-block:: Python
-    :linenos:
-    :emphasize-lines: 3
+.. list-table:: Function to Convert Fahrenheit to Celsius
+    :header-rows: 1
 
-    # Python --- Convert farenheit to celcius
-    def fahrenheit_to_celcius (fahrenheit):
-        celsius = (fahrenheit - 32) * 5/9
-        return celsius
+    * - Python
+      - Java
 
+    * -     .. code-block:: Python
+                :linenos:
+                :emphasize-lines: 2
 
-.. code-block:: Java
-    :linenos:
-    :emphasize-lines: 3
+                def fahrenheit_to_celsius(fahrenheit):
+                    celsius = (fahrenheit - 32) * 5/9
+                    return celsius
 
-    // Java --- Convert farenheit to celcius
-    static double fahrenheitToCelcius(double fahrenheit) {
-        double celsius = (fahrenheit - 32) * 5.0/9.0;
-        return celsius;
-    }
+      -     .. code-block:: Java
+                :linenos:
+                :emphasize-lines: 2
+
+                static double fahrenheitToCelsius(double fahrenheit) {
+                    double celsius = (fahrenheit - 32) * 5.0/9.0;
+                    return celsius;
+                }
 
 
 * Pay special attention to the division taking place on like 3
