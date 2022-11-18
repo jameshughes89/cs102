@@ -25,8 +25,7 @@ class LinkedStackEqualsTest {
         }
         gSingleton.push(100);
 
-        new EqualsTester()
-                .addEqualityGroup(LinkedStack.class)
+        new EqualsTester().addEqualityGroup(LinkedStack.class)
                 .addEqualityGroup(gEmpty)
                 .addEqualityGroup(gSingleton)
                 .addEqualityGroup(gManyOneA, gManyOneB)
