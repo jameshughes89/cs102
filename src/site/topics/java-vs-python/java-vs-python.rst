@@ -222,33 +222,36 @@ Arrays
     * They have fewer built in functions
 
 
-.. code-block:: python
-    :linenos:
+.. list-table:: Lists & Arrays
+    :header-rows: 1
 
-    # Python --- Inline list, accessing and changing
-    aList = [10, 11, 12, 13]
+    * - Python
+      - Java
 
-    # Access the list at index 1
-    print(aList[1])
+    * -     .. code-block:: python
+                :linenos:
 
-    # Modify the list at index 1 and print
-    aList[1] = 21
-    print(aList[1])
+                aList = [10, 11, 12, 13]
 
+                # Access the list at index 1
+                print(aList[1])
 
+                # Modify the list at index 1
+                aList[1] = 21
+                print(aList[1])
 
-.. code-block:: java
-    :linenos:
+      -     .. code-block:: java
+                :linenos:
 
-    // Java --- Inline list, accessing and changing
-    int[] anArray = {10, 11, 12, 13};
+                int[] anArray = {10, 11, 12, 13};
 
-    // Access the array at index 1
-    System.out.println(anArray[1]);
+                // Access the array at index 1
+                System.out.println(anArray[1]);
 
-    // Modify the array at index 1 and print
-    anArray[1] = 21;
-    System.out.println(anArray[1]);
+                // Modify the array at index 1
+                anArray[1] = 21;
+                System.out.println(anArray[1]);
+
 
 * With the exception of the type and syntax, these look the same
     * We have to specify the type for Java ``int[]``
@@ -263,31 +266,34 @@ Arrays
         * ``aList.append(34)``
 
 * This means that we can't just start with an empty array and have it grow and grow
+* In Java, arrays have fixed sizes
 
-.. code-block:: python
-    :linenos:
+.. list-table:: "Growing" a List/Array
+    :header-rows: 1
 
-    # Python --- Grow a list
-    # List will start with 0
-    aList = []
+    * - Python
+      - Java
 
-    # List will grow to size 1,000
-    for i in range(1000):
-        aList.append(i)
+    * -     .. code-block:: python
+                :linenos:
 
-* If we wanted to do the above in Java, we would have to do the following:
+                # List will start with 0
+                aList = []
 
-.. code-block:: Java
-    :linenos:
+                # List will grow to size 1,000
+                for i in range(1000):
+                    aList.append(i)
 
-    // Java --- Grow a list
-    // Create a new array of size 1,000
-    int[] anArray = new int[1000];
+      -     .. code-block:: Java
+                :linenos:
 
-    // Put a number in each index in the array
-    for(int i = 0; i < anArray.length; i++){
-        anArray[i] = i;
-    }
+                // Create a new array of size 1,000
+                int[] anArray = new int[1000];
+
+                // Put a number in each index in the array
+                for(int i = 0; i < anArray.length; i++){
+                    anArray[i] = i;
+                }
 
 * Mind line 3, showing how to make an array of some size
     * They will be filled with some default value (0 in this case)
@@ -322,42 +328,44 @@ Input & Output
     * This is because Java isn't designed for console applications
     * Besides, the only place we will use this is on Kattis anyways
 
-.. code-block:: Python
-    :linenos:
+.. list-table:: Input
+    :header-rows: 1
 
-    # Python --- input
-    theInput = input("gimmie something: ")
-    print(theInput)
+    * - Python
+      - Java
 
+    * -     .. code-block:: Python
+                :linenos:
 
+                theInput = input()
+                print(theInput)
 
-.. code-block:: Java
-    :linenos:
+      -     .. code-block:: Java
+                :linenos:
 
-    import java.io.BufferedReader;
-    import java.io.InputStreamReader;
-    import java.io.IOException;
+                // Outside class definition
+                import java.io.BufferedReader;
+                import java.io.InputStreamReader;
+                import java.io.IOException;
 
-    public class SomeClass {
-        public static void main(String[] args){
+                ...
 
-            // Create a Stream Reader with the standard input
-            InputStreamReader stream = new InputStreamReader(System.in);
+                // Create a Stream Reader with the standard input
+                InputStreamReader stream = new InputStreamReader(System.in);
 
-            // Give the Stream Reader to a Buffered Reader
-            BufferedReader reader = new BufferedReader(stream);
+                // Give the Stream Reader to a Buffered Reader
+                BufferedReader reader = new BufferedReader(stream);
 
-            // We use the Buffered Reader to read the actual stream
-            // We use a try & catch because readLine may throw an
-            // exception that we must deal with
-            try {
-                String theLine = reader.readLine();
-                System.out.println(theLine);
-            } catch (IOException e){
-                System.out.println("Something bad happened when reading.");
-            }
-        }
-    }
+                // We use the Buffered Reader to read the actual stream
+                // We use a try & catch because readLine may throw an
+                // exception that we must deal with
+                try {
+                    String theLine = reader.readLine();
+                    System.out.println(theLine);
+                } catch (IOException e){
+                    System.out.println("Something bad happened.");
+                }
+
 
 * Mind the ``import`` statements
 * We read from a *stream*
