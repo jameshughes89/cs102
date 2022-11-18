@@ -12,31 +12,31 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class MazeTest {
 
-    private static final String EMPTY_MAZE =
-            "";
+    // @formatter:off
+    private static final String EMPTY_MAZE = "";
     private static final String NO_START_MAZE =
-            "#####\n" +
+                    "#####\n" +
                     "# # #\n" +
                     "# # #\n" +
                     "#   E\n" +
                     "# # #\n" +
                     "#####";
     private static final String NO_END_MAZE =
-            "#####\n" +
+                    "#####\n" +
                     "# # #\n" +
                     "# # #\n" +
                     "S   #\n" +
                     "# # #\n" +
                     "#####";
     private static final String MULTIPLE_START_MAZE =
-            "#####\n" +
+                    "#####\n" +
                     "# # #\n" +
                     "# # #\n" +
                     "S   E\n" +
                     "# # #\n" +
                     "####S";
     private static final String MULTIPLE_END_MAZE =
-            "#####\n" +
+                    "#####\n" +
                     "# # #\n" +
                     "# # #\n" +
                     "S   E\n" +
@@ -50,66 +50,28 @@ public class MazeTest {
                     "# # #\n" +
                     "#####";
     private static final String SMALL_MAZE =
-            "SE";
+                    "SE";
     private static final String LINE_MAZE =
-            "SE##################";
+                    "SE##################";
     private static final String WIDE_MAZE =
-            "SE######################################\n" +
+                    "SE######################################\n" +
                     "########################################\n" +
                     "########################################\n" +
                     "########################################";
     private static final String SKINNY_MAZE =
-            "S\n" +
-                    "E\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#\n" +
-                    "#";
+            "S\n" + "E\n" + "#\n" + "#\n" + "#\n" + "#\n" + "#\n" + "#\n" + "#\n" + "#\n" + "#\n" + "#\n" + "#\n" +
+                    "#\n" + "#\n" + "#\n" + "#\n" + "#\n" + "#\n" + "#\n" + "#\n" + "#\n" + "#\n" + "#";
     private static final String TALL_MAZE =
-            "SE##\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####\n" +
-                    "####";
+            "SE##\n" + "####\n" + "####\n" + "####\n" + "####\n" + "####\n" + "####\n" + "####\n" + "####\n" +
+                    "####\n" + "####\n" + "####\n" + "####\n" + "####\n" + "####\n" + "####\n" + "####\n" + "####\n" +
+                    "####\n" + "####\n" + "####\n" + "####\n" + "####\n" + "####";
+    // @formatter:on
 
     private Maze classUnderTest;
+
+    static Stream<String> mazeStringExamples() {
+        return Stream.of(NON_EMPTY_MAZE, SMALL_MAZE, LINE_MAZE, WIDE_MAZE, SKINNY_MAZE, TALL_MAZE);
+    }
 
     @Test
     @DisplayName("Making a maze with an empty String throws MazeEndpointsException.")
@@ -201,10 +163,6 @@ public class MazeTest {
     @DisplayName("Checking if an invalid location is in the maze returns false.")
     void isLocationInMaze_invalidIndex_returnsFalse(int x, int y) {
         assertFalse(classUnderTest.isLocationInMaze(x, y));
-    }
-
-    static Stream<String> mazeStringExamples() {
-        return Stream.of(NON_EMPTY_MAZE, SMALL_MAZE, LINE_MAZE, WIDE_MAZE, SKINNY_MAZE, TALL_MAZE);
     }
 
     @ParameterizedTest

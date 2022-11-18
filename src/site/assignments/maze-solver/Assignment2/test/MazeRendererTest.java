@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MazeRendererTest {
 
+    // @formatter:off
     private static final String MAZE =
             "#####\n" +
                     "#   #\n" +
@@ -16,8 +17,7 @@ public class MazeRendererTest {
                     "#   #\n" +
                     "#####";
 
-    private static final Set<Cell> PATH_FILL = Set.of(
-            new Cell(' ', 1, 1),
+    private static final Set<Cell> PATH_FILL = Set.of(new Cell(' ', 1, 1),
             new Cell(' ', 2, 1),
             new Cell(' ', 3, 1),
             new Cell(' ', 1, 2),
@@ -28,32 +28,27 @@ public class MazeRendererTest {
             new Cell(' ', 3, 3),
             new Cell(' ', 1, 4),
             new Cell(' ', 2, 4),
-            new Cell(' ', 3, 4)
-    );
+            new Cell(' ', 3, 4));
     private static final String EXPECTED_MAZE_FILL =
-            "#####\n" +
+                    "#####\n" +
                     "#ooo#\n" +
                     "#ooo#\n" +
                     "SoooE\n" +
                     "#ooo#\n" +
                     "#####\n" +
                     "Cells in final path: 12";
-    private static final Set<Cell> PATH_ON_START = Set.of(
-            new Cell('S', 0, 3)
-    );
+    private static final Set<Cell> PATH_ON_START = Set.of(new Cell('S', 0, 3));
     private static final String EXPECTED_MAZE_START =
-            "#####\n" +
+                    "#####\n" +
                     "#   #\n" +
                     "#   #\n" +
                     "o   E\n" +
                     "#   #\n" +
                     "#####\n" +
                     "Cells in final path: 1";
-    private static final Set<Cell> PATH_ON_END = Set.of(
-            new Cell('E', 4, 3)
-    );
+    private static final Set<Cell> PATH_ON_END = Set.of(new Cell('E', 4, 3));
     private static final String EXPECTED_MAZE_END =
-            "#####\n" +
+                    "#####\n" +
                     "#   #\n" +
                     "#   #\n" +
                     "S   o\n" +
@@ -61,7 +56,10 @@ public class MazeRendererTest {
                     "#####\n" +
                     "Cells in final path: 1";
     private static final Set<Cell> PATH_EMPTY = Set.of();
-    private static final String EXPECTED_MAZE_NONE = MAZE + "\nCells in final path: 0";
+    private static final String EXPECTED_MAZE_NONE =
+                    MAZE +
+                    "\nCells in final path: 0";
+    // @formatter:on
 
     private static final Maze maze = Maze.fromString(MAZE);
     private MazeRenderer classUnderTest;
