@@ -59,7 +59,7 @@ Variables and Types
     #. We will use the word ``double`` to be floating point numbers
 
         * Technically we could still use ``float``, but I almost always see ``double``
-        * A ``float`` takes up 4 bytes and a ``double`` takes up 8 (double the amount)
+        * A ``float`` takes up 4 bytes and a ``double`` takes up 8 --- *double* the amount
 
     #. We use ``"double quotes"`` for strings --- single quotes are used for a single character: ``'a'``
 
