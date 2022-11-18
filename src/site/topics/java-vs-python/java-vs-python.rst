@@ -244,7 +244,6 @@ Arrays
     * They have a **fixed** size
     * They have fewer built in methods
 
-
 .. list-table:: Lists & Arrays
     :header-rows: 1
 
@@ -277,19 +276,28 @@ Arrays
 
 
 * With the exception of the type and syntax, these look the same
+
     * We have to specify the type for Java ``int[]``
+
         * Note that ``int`` is an int and ``int[]`` is an array of ints
-    * We use squiggly braces (``{ ... }``) instead of brackets (``[ ... ]``)
 
-* One difference is that the Java arrays can't have mixed types like a Python list
-    * There is an asterisk added to this statement that we weill talk about later
+    * Squiggly braces (``{ ... }``)  are used instead of brackets (``[ ... ]``)
 
-* One **huge** difference is that the Java array used in the above example will **always** be size 4
-    * We **can't** list append to an array like we did with lists in Python
+
+* One difference is that Java arrays can't contain mixed types like a Python list
+
+    * There is an asterisk added to this statement that will be discussed later
+
+
+* One **major** difference is that the Java array used in the above example will **always** be size 4
+
+    * One cannot simply list append to an array like with lists in Python
+
         * ``aList.append(34)``
 
-* This means that we can't just start with an empty array and have it grow and grow
 * In Java, arrays have fixed sizes
+* This means that one cannot start with an empty array and have it grow and grow
+
 
 .. list-table:: "Growing" a List/Array
     :header-rows: 1
@@ -309,6 +317,7 @@ Arrays
 
       -     .. code-block:: Java
                 :linenos:
+                :emphasize-lines: 2, 5, 6
 
                 // Create a new array of size 1,000
                 int[] anArray = new int[1000];
@@ -318,29 +327,30 @@ Arrays
                     anArray[i] = i;
                 }
 
-* Mind line 3, showing how to make an array of some size
+* Mind line 2, showing how to make an empty array of a specific size
+
     * They will be filled with some default value (0 in this case)
-* Mind line 6, showing:
+
+* Mind line 5, showing:
+
     * A ``for`` loop (more on this later)
-    * Arrays have an attribute ``length`` that tells us its capacity
-* Mind line 7 showing us indexing the array in order to assign it a value
+    * Arrays have an attribute ``length`` that returns the array's capacity
+
+* Mind line 6 indexing the array in order to assign it a value
 
 
-* We can even make the size of the array based on some runtime determined value
-    * For example:
-        * If you have to read from a file, how big should the array be?
+* One could make the size of the array based on some runtime determined value --- for example:
+
+        * Reading data from a file to be stored in an array --- how big should the array be?
         * Perhaps the first line of the file contains how long the file is
         * ``String[] fileContents = new String[someValueReadIn]``
 
 .. warning::
 
-    In Java, we **cannot** index our arrays backwards like we could in Python.
+    In Java, it is not possible to index arrays backwards with negative values like in Python.
 
 
 .. _label-java_vs_python-input_output:
-
-
-
 Input & Output
 ==============
 
