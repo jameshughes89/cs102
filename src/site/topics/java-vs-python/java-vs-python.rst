@@ -311,7 +311,7 @@ Arrays
     In Java, we **cannot** index our arrays backwards like we could in Python.
 
 
-.. _label-topic2-java_vs_python-input_output:
+.. _label-java_vs_python-input_output:
 
 Input & Output
 ==============
