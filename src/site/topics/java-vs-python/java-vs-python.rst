@@ -531,7 +531,7 @@ Comments
      * @param fahrenheit    temperature in fahrenheit
      * @return              temperature in celsius
      */
-    static double FtoC(double fahrenheit) {
+    static double fahrenheitToCelsius(double fahrenheit) {
         double celsius = (fahrenheit - 32) * 5/9;
         return celsius;
     }
