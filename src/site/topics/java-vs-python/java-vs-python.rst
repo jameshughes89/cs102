@@ -35,14 +35,12 @@ Variables and Types
       - Java
 
     * -     .. code-block:: python
-                :linenos:
 
                 anInt = 5
                 aFloat = 5.5
                 aString = "5"
 
       -     .. code-block:: java
-                :linenos:
                 :emphasize-lines: 3,4,5,6
 
                 public class SomeClass {
