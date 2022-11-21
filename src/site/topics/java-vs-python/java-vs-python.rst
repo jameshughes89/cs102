@@ -812,6 +812,7 @@ For Loop
                     System.out.println(i);
                 }
 
+
 * In Java, the first statement within the parentheses is run once before anything loops
 
     * ``int i = 0``
