@@ -354,13 +354,17 @@ Arrays
 Input & Output
 ==============
 
-* We've already seen standard output in Java
+* Several of the above examples included the use of Java's standard output
+
     * ``System.out.print("print");``
     * ``System.out.println("print a line");``
 
-* Standard input with Java is a lot more verbose
-    * This is because Java isn't designed for console applications
-    * Besides, the only place we will use this is on Kattis anyways
+
+* Standard input with Java is more verbose than Python's
+
+    * This is because Java is not designed for console applications
+    * Fortunately, the only place this is used in this course is for the Kattis problems
+
 
 .. list-table:: Reading Input
     :header-rows: 1
@@ -401,28 +405,32 @@ Input & Output
                 }
 
 
-* Mind the ``import`` statements
-* We read from a *stream*
-    * Here our stream is the standard input (``System.in``)
+* Mind the ``import`` statements for Java
+* In Java, one reads from a *stream*
 
-* We create an ``InputStreamReader`` object
+    * Here the stream is the standard input (``System.in``)
+
+
+* An ``InputStreamReader`` object is created
+
     * The thing that reads the input from the stream
-    * Sadly, this will be one thing at a time
+    * With this, it only reads one thing at a time
 
-* We use a ``BufferedReader`` to *buffer* the stream reader
-    * So we can read in more than one at a time
 
-* You will also see that we put a ``try`` and ``catch`` around the ``reader.readLine()``
-    * This is done because ``.readLine()`` has an exception that may be thrown that you must deal with
-    * Don't worry, we'll go in more details on exceptions later in the class
+* A ``BufferedReader`` is used to *buffer* the stream reader
 
-* Like Python's ``input()``, ``.readLine()`` returns a ``String``
+    * To make it easier to read in more than one at a time
 
-* Alternatively, we can modify the above code to, arguably, clean up the code
-* This way, we just pass the buck of dealing with the exception to the caller of the function
-    * THEY need to deal with it, not us here
-    * In this example, it's the ``main`` method, so this will throw the exception at the person who ran the program
 
+* Also note the use of ``try`` and ``catch`` around the ``reader.readLine()``
+
+    * This is done because ``readLine()`` has an exception that may be thrown that you must deal with
+    * Although discussed last semester, exceptions will be covered in more detail later in the course
+
+
+* Like Python's ``input()``, ``readLine()`` returns a ``String``
+
+* Alternatively, one could modify the above code to, arguably, clean it up
 
 .. code-block:: Java
     :linenos:
@@ -446,6 +454,12 @@ Input & Output
             System.out.println(theLine);
         }
     }
+
+
+* This just passes the buck of dealing with the exception to the caller of the function
+
+    * In this example, it's the ``main`` method, so this will throw the exception at the person who ran the program
+    * This would cause the program to crash
 
 
 Functions
