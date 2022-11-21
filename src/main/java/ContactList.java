@@ -142,8 +142,12 @@ public class ContactList {
         return true;
     }
 
+    /**
+     * Clear the contents of the ContactList object; eliminate all Friends form the ContactList.
+     */
     public void clear() {
-        friends = new Friend[friends.length];
+        // Although the Friend object references may remain in the collection, by setting the size to 0, any new
+        // additions will automatically overwrite any existing references to Friend objects.
         size = 0;
     }
 
