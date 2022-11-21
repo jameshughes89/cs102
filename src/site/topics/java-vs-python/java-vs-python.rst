@@ -874,27 +874,36 @@ Comparison of For Loop to While Loop
 Java Conventions
 ================
 
-* The following is **not** exhaustive, but here are some important ones
+* The following is **not** exhaustive, but here are some important Java conventions to follow
 
 * Have one public class per file
-    * Not really a convention, more like a **must do**
+
+    * Not a convention; this is required
+
 
 * Class names start with capital letters
+
     * ``SomeClass``
 
+
 * File names are the same as the class
+
     * ``SomeClass.java``
-    * Also not so much of a convention as a requirement
+    * Not a convention; this is required
+
 
 * Functions/methods should be *camel case*, starting with a lower case
+
     * ``someFunction( ... )``
     * ``someOtherFunction( ... )``
 
 * Variables should be camelcase, starting with a lower case
+
     * ``int someVariable = 5;``
     * ``int someOtherVariable = 55;``
 
 * Constants are all uppercase with underscores separating words (*snake case*)
+
     * ``static final int THIS_IS_A_CONSTANT = 555;``
 
 
@@ -903,20 +912,23 @@ For Next Time
 
 .. warning::
 
-    If at any point you are thinking "Oh crap, how on earth am I going to remember all these differences?", `you're doing programming wrong <https://www.google.com/search?q=how+to+use+for+loops+in+java>`_.
+    If at any point you are thinking "Uh oh, how on earth am I going to remember all these differences?",
+    `you're doing programming wrong <https://www.google.com/search?q=how+to+use+for+loops+in+java>`_.
 
 
 * Practice
+
     * Use Kattis and solve problems you have already solved in Python, but use Java
     * `If at any point you feel stuck because you don't know how to do something in Java, I have good news for you <https://www.google.com/>`_.
 
 * `Check out Java's code conventions <https://www.oracle.com/java/technologies/javase/codeconventions-contents.html>`_
 
 * Read Chapter 1 of your text
+
     * 15 pages
 
 
 * :doc:`Although outside the scope of the course, if you would like to see how a C++ differs, check out the relevant C++ lesson. </cpp/syntax/syntax>`
-* :doc:`Although not part of the course, if you would like, check out C++ lesson on pointers. </cpp/pointers/pointers>`
+* :doc:`Although not part of the course, if you would like, check out the C++ lesson on pointers. </cpp/pointers/pointers>`
 
 
