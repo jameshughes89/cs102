@@ -1,11 +1,21 @@
+/***
+ * A plain old java class to keep track of friends. A Friend will know its first name, last name, and email address.
+ * This class provides getters/accessor methods for the attributes and can be checked for equality.
+ */
 public class Friend {
 
-    // Class Attribute Declaration
     private String firstName;
     private String lastName;
     private String email;
 
-    // Constructor and assigning attributes
+    /**
+     * Create an instance of a Friend. The constructor takes the first name, last name, and email address of the Friend
+     * to be created.
+     *
+     * @param firstName First name of the friend
+     * @param lastName  Last name of the friend
+     * @param email     Email address of the friend
+     */
     public Friend(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -16,46 +26,24 @@ public class Friend {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
     public String getLastName() {
         return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public String getEmail() {
         return email;
     }
 
-    /**
-     * Update the email address. Will only work if the email address
-     * contains the @ symbol for simple data correctness check
-     *
-     * @param email new email address
-     */
-    public void setEmail(String email) {
-        if (email.contains("@")) {
-            this.email = email;
-        }
-    }
-
     public String toString() {
-        return firstName + " " + lastName + ":\t" + email;
+        return String.format("Friend(%s, %s, %s)", firstName, lastName, email);
     }
 
 //      This is what is included in topic3
 //    /**
-//     * Sample equals method for comparing two friend objects.
-//     * In this example, we will simply compare first and last
+//     * Sample equals method for comparing two friend objects. In this example, we will simply compare first and last
 //     * names
 //     *
-//     * This example is deliberately kept very simple and does
-//     * not actually override the toString properly.
+//     * This example is deliberately kept very simple and does not actually override the toString properly.
 //     *
 //     * @return      if the two friend objects are equal
 //     */
@@ -65,12 +53,10 @@ public class Friend {
 //    }
 
     /**
-     * Sample equals method for comparing two friend objects.
-     * In this example, we will simply compare first and last
-     * names.
+     * Checks if two Friend objects are equal. Friend objects are considered equal if all their attributes are equal.
      *
-     * @param o an "object" being compared to
-     * @return if the two friend objects are equal
+     * @param o an "object" being compared to.
+     * @return True if the two objects are equal, false otherwise.
      */
     public boolean equals(Object o) {
         // If o is actually in the same memory address of this
@@ -81,13 +67,14 @@ public class Friend {
         if (o == null) {
             return false;
         }
-        // if o and this are of different classes, they're not the same
+        // if o and this are of different classes, they're not the equal
         if (o.getClass() != this.getClass()) {
             return false;
         }
         // Cast o as a friend
         Friend other = (Friend) o;
         return this.firstName.equals(other.firstName)
-                && this.lastName.equals(other.lastName);
+                && this.lastName.equals(other.lastName)
+                && this.email.equals(other.email);
     }
 }
