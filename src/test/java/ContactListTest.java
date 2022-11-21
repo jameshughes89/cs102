@@ -259,84 +259,31 @@ public class ContactListTest {
             @TestInstance(TestInstance.Lifecycle.PER_CLASS)
             class WhenDuplicate {
 
-                @Test
-                void add_successfullyAdd_returnsTrue() {
-                    assertTrue(classUnderTest.add(new Friend("Bob", "Smith", "bsmith@gmail.com")));
+                @BeforeEach
+                void addDuplicated() {
+                    classUnderTest.add(new Friend("Clarence", "Cartwrite", "treelover1523@hotmail.com"));
+                    classUnderTest.add(new Friend("Bob", "Smith", "bsmith@gmail.com"));
+                    classUnderTest.add(new Friend("Bob", "Smith", "bsmith@gmail.com"));
+                    classUnderTest.add(new Friend("Sandy", "Seaside", "boatsboatsboats@yachtclub500.com"));
                 }
 
                 @Test
-                void contains_existingFriend_returnsTrue() {
-
+                void indexOf_existingFriend_returnsIndexOfFirstOccurrence() {
+                    assertEquals(0, classUnderTest.indexOf(EXISTING_FRIEND));
                 }
 
                 @Test
-                void contains_nonexistentFriend_returnsFalse() {
-
-                }
-
-                @Test
-                void indexOf_existingFriend_returnsCorrectIndex() {
-
-                }
-
-                @Test
-                void indexOf_nonexistentFriend_throwsNoSuchElementException() {
-
-                }
-
-                @Test
-                void get_validIndex_returnsCorrectFriend() {
-
-                }
-
-                @Test
-                void get_negativeIndex_throwsIndexOutOfBoundsException() {
-
-                }
-
-                @Test
-                void get_tooLargeIndex_throwsIndexOutOfBoundsException() {
-
-                }
-
-                @Test
-                void remove_existingFriend_returnsTrue() {
-
-                }
-
-                @Test
-                void remove_existingFriend_removesFriend() {
-
-                }
-
-                @Test
-                void remove_nonexistentFriend_throwsNoSuchElementException() {
-
-                }
-
-                @Test
-                void clear_singleton_emptyCollection() {
-
-                }
-
-                @Test
-                void isEmpty_singleton_returnsFalse() {
-
-                }
-
-                @Test
-                void size_singleton_returnsOne() {
-
-                }
-
-                @Test
-                void toString_singleton_returnsCorrectString() {
-
+                void remove_existingFriend_removesFirstOccurrence() {
+                    ContactList expectAfterDuplicateRemove = new ContactList();
+                    expectAfterDuplicateRemove.add(new Friend("Sandy", "Seaside", "boatsboatsboats@yachtclub500.com"));
+                    expectAfterDuplicateRemove.add(new Friend("Clarence", "Cartwrite", "treelover1523@hotmail.com"));
+                    expectAfterDuplicateRemove.add(new Friend("Bob", "Smith", "bsmith@gmail.com"));
+                    expectAfterDuplicateRemove.add(new Friend("Bob", "Smith", "bsmith@gmail.com"));
+                    classUnderTest.remove(EXISTING_FRIEND);
+                    assertEquals(expectAfterDuplicateRemove, classUnderTest);
                 }
             }
-
         }
-
     }
 
     @Nested
