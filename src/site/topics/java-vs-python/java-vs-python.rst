@@ -462,10 +462,12 @@ Input & Output
     * This would cause the program to crash
 
 
-Functions
-=========
+Functions/Methods
+=================
 
-.. list-table:: Function Definitions
+* In Java, all functions are methods
+
+.. list-table:: Function/Method Definitions
     :header-rows: 1
 
     * - Python
@@ -491,37 +493,48 @@ Functions
                 // Java
                 public class SomeClass {
                     public static void main(String[] args) {
-                        // Call the function
-                        int result = someFunction(1, 2);
+                        // Call the method
+                        int result = someMethod(1, 2);
                         System.out.println(result);
                     }
 
-                    // Declare the Function
-                    static int someFunction(int a, int b) {
+                    // Declare the Method
+                    static int someMethod(int a, int b) {
                         int c = a + b;
                         return c;
                     }
                 }
 
-* We **must** tell the function its return type
-    * ``int`` in this example, because the thing being returned is an int
-    * If we happen to have no return value for our function, then use ``void``
-        * ``static void someOtherFunction( ... ) { ``
 
-* Parameters have their types set
+* In Java, methods must be explicitly told what their return type is
 
-* In the above example, the function is ``static``
-    * This is a function that belongs to the class, not an instance of the class
-        * In fact, we could have used this instead ``int result = SomeClass.someFunction(1, 2);``
-    * It's not a function we will call on an instance of some object
+    * ``int`` in this example, because the value being returned is an ``int``
+    * In the case where the method returns no value, the return type is set to ``void``
 
-* You will also see that, unlike in the Python example, we can declare the functions after the calling code
+        * ``static void someOtherMethod( ... ) {``
+
+
+* Parameters have their types included
+
+    * ``int a`` and ``int b`` in the parameter list
+
+* In the above example, the method is ``static``, which means it can act more like a function than a method
+
+    * This is a method that belongs to the class, not an instance of the class
+    * In other words, it's not a method we will call on an instance of some object
+
+
+* As seen in the above example, the method is defined *after* it is called
+
+    * The method ``someMethod`` is called within ``main``, but it is written below ``main``
+    * This is not required in Java, but is something one could do
+    * In Python, the interpreter needed to know the function existed before it could be referenced
 
 
 Temperature Converter
 ---------------------
 
-.. list-table:: Function to Convert Fahrenheit to Celsius
+.. list-table:: Function/Method to Convert Fahrenheit to Celsius
     :header-rows: 1
 
     * - Python
@@ -545,13 +558,18 @@ Temperature Converter
                 }
 
 
-* Pay special attention to the division taking place on like 3
-* If we wrote ``5/9``, since both ``5`` and ``9`` are integers, it will do integer division
-* Since integers do not have decimal values, we truncate the decimal off, so, ``5/9 = 0``
+* Pay special attention to the division taking place on like 2
+* If one wrote ``5/9``, since both ``5`` and ``9`` are integers, it will do integer division
+* Since integers do not have decimal values, it truncates the decimal off --- ``5/9 = 0``
+
     * In reality, we know it is 0.55555555555, but we are ditching everything after the decimal point
 
-* This functionality is more typical
+
+* This integer division functionality is more typical
+
     * In fact, Python used to work this way too, and they made people mad when they changed
+    * If one truly wants floating point division, then be sure to divide floating point values
+
 
 
 Comments
