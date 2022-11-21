@@ -1,8 +1,7 @@
 import org.junit.jupiter.api.Test;
 
-import java.util.NoSuchElementException;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class FriendTest {
 
@@ -35,7 +34,7 @@ public class FriendTest {
     void equals_unequalFriendObjects_areNotEqual() {
         Friend aFriend = new Friend("qwerty", "asdfgh", "zxcvbn");
         Friend bFriend = new Friend("ytrewq", "hgfdsa", "nbvcxz");
-        assertEquals(aFriend, bFriend);
+        assertNotEquals(aFriend, bFriend);
     }
 
     @Test
