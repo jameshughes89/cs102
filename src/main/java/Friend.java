@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 /***
  * A plain old java class to keep track of friends. A Friend will know its first name, last name, and email address.
  * This class provides getters/accessor methods for the attributes and can be checked for equality.
@@ -38,19 +40,19 @@ public class Friend {
         return String.format("Friend(%s, %s, %s)", firstName, lastName, email);
     }
 
-//      This is what is included in topic3
-//    /**
-//     * Sample equals method for comparing two friend objects. In this example, we will simply compare first and last
-//     * names
-//     *
-//     * This example is deliberately kept very simple and does not actually override the toString properly.
-//     *
-//     * @return      if the two friend objects are equal
-//     */
-//    public boolean equals(Friend other) {
-//        return this.firstName.equals(other.firstName)
-//                && this.lastName.equals(other.lastName);
-//    }
+    //      This is what is included in topic3
+    //    /**
+    //     * Sample equals method for comparing two friend objects. In this example, we will simply compare first and last
+    //     * names
+    //     *
+    //     * This example is deliberately kept very simple and does not actually override the toString properly.
+    //     *
+    //     * @return      if the two friend objects are equal
+    //     */
+    //    public boolean equals(Friend other) {
+    //        return this.firstName.equals(other.firstName)
+    //                && this.lastName.equals(other.lastName);
+    //    }
 
     /**
      * Checks if two Friend objects are equal. Friend objects are considered equal if all their attributes are equal.
@@ -73,8 +75,13 @@ public class Friend {
         }
         // Cast o as a friend
         Friend other = (Friend) o;
-        return this.firstName.equals(other.firstName)
-                && this.lastName.equals(other.lastName)
-                && this.email.equals(other.email);
+        return this.firstName.equals(other.firstName) &&
+                this.lastName.equals(other.lastName) &&
+                this.email.equals(other.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName, email);
     }
 }
