@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import java.util.NoSuchElementException;
 
@@ -22,6 +23,10 @@ public class ContactListTest {
 
     @Nested
     class WhenNewEmpty {
+
+        void add_successfullyAdd_returnsTrue() {
+            assertTrue(classUnderTest.add(new Friend("Bob", "Smith", "bsmith@gmail.com"));
+        }
 
         @Test
         void contains_empty_returnsFalse() {
@@ -67,6 +72,236 @@ public class ContactListTest {
         @Test
         void toString_empty_returnsEmptyString() {
             assertEquals("", classUnderTest.toString());
+        }
+
+        @Nested
+        class WhenSingleton {
+
+            @BeforeEach
+            void addSingleton() {
+                classUnderTest.add(new Friend("Bob", "Smith", "bsmith@gmail.com"));
+                preState.add(new Friend("Bob", "Smith", "bsmith@gmail.com"));
+            }
+
+
+            @Test
+            void contains_existingFriend_returnsTrue() {
+
+            }
+
+            @Test
+            void contains_nonexistentFriend_returnsFalse() {
+
+            }
+
+            @Test
+            void indexOf_existingFriend_returnsCorrectIndex() {
+
+            }
+
+            @Test
+            void indexOf_nonexistentFriend_throwsNoSuchElementException() {
+
+            }
+
+            @Test
+            void get_validIndex_returnsCorrectFriend() {
+
+            }
+
+            @Test
+            void get_negativeIndex_throwsIndexOutOfBoundsException() {
+
+            }
+
+            @Test
+            void get_tooLargeIndex_throwsIndexOutOfBoundsException() {
+
+            }
+
+            @Test
+            void remove_existingFriend_returnsTrue() {
+
+            }
+
+            @Test
+            void remove_existingFriend_removesFriend() {
+
+            }
+
+            @Test
+            void remove_nonexistentFriend_throwsNoSuchElementException() {
+
+            }
+
+            @Test
+            void clear_singleton_emptyCollection(){
+
+            }
+
+            @Test
+            void isEmpty_singleton_returnsFalse(){
+
+            }
+
+            @Test
+            void size_singleton_returnsOne(){
+
+            }
+
+            @Test
+            void toString_singleton_returnsCorrectString(){
+
+            }
+
+            @Nested
+            @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+            class WhenMany{
+                @Test
+                void contains_existingFriend_returnsTrue() {
+
+                }
+
+                @Test
+                void contains_nonexistentFriend_returnsFalse() {
+
+                }
+
+                @Test
+                void indexOf_existingFriend_returnsCorrectIndex() {
+
+                }
+
+                @Test
+                void indexOf_nonexistentFriend_throwsNoSuchElementException() {
+
+                }
+
+                @Test
+                void get_validIndex_returnsCorrectFriend() {
+
+                }
+
+                @Test
+                void get_negativeIndex_throwsIndexOutOfBoundsException() {
+
+                }
+
+                @Test
+                void get_tooLargeIndex_throwsIndexOutOfBoundsException() {
+
+                }
+
+                @Test
+                void remove_existingFriend_returnsTrue() {
+
+                }
+
+                @Test
+                void remove_existingFriend_removesFriend() {
+
+                }
+
+                @Test
+                void remove_nonexistentFriend_throwsNoSuchElementException() {
+
+                }
+
+                @Test
+                void clear_singleton_emptyCollection(){
+
+                }
+
+                @Test
+                void isEmpty_singleton_returnsFalse(){
+
+                }
+
+                @Test
+                void size_singleton_returnsOne(){
+
+                }
+
+                @Test
+                void toString_singleton_returnsCorrectString(){
+
+                }
+            }
+
+            @Nested
+            @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+            class WhenDuplicate{
+                @Test
+                void contains_existingFriend_returnsTrue() {
+
+                }
+
+                @Test
+                void contains_nonexistentFriend_returnsFalse() {
+
+                }
+
+                @Test
+                void indexOf_existingFriend_returnsCorrectIndex() {
+
+                }
+
+                @Test
+                void indexOf_nonexistentFriend_throwsNoSuchElementException() {
+
+                }
+
+                @Test
+                void get_validIndex_returnsCorrectFriend() {
+
+                }
+
+                @Test
+                void get_negativeIndex_throwsIndexOutOfBoundsException() {
+
+                }
+
+                @Test
+                void get_tooLargeIndex_throwsIndexOutOfBoundsException() {
+
+                }
+
+                @Test
+                void remove_existingFriend_returnsTrue() {
+
+                }
+
+                @Test
+                void remove_existingFriend_removesFriend() {
+
+                }
+
+                @Test
+                void remove_nonexistentFriend_throwsNoSuchElementException() {
+
+                }
+
+                @Test
+                void clear_singleton_emptyCollection(){
+
+                }
+
+                @Test
+                void isEmpty_singleton_returnsFalse(){
+
+                }
+
+                @Test
+                void size_singleton_returnsOne(){
+
+                }
+
+                @Test
+                void toString_singleton_returnsCorrectString(){
+
+                }
+            }
+
         }
 
     }
