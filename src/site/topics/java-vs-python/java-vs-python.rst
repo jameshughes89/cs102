@@ -616,8 +616,10 @@ Booleans
 ========
 
 * Java has Boolean values, except they start with lower case letters
+
     * Python --- ``some_boolean = True``
     * Java --- ``boolean someBoolean = true;``
+
 
 Conditionals
 ------------
@@ -640,27 +642,34 @@ Conditionals
                 :linenos:
 
                 if (someBoolean) {
-                    System.out.println("it was True");
+                    System.out.println("it was true");
                 } else {
-                    System.out.println("it was False");
+                    System.out.println("it was false");
                 }
 
+
 * Both examples above assume the variable ``someBoolean`` exists and is a boolean
-* Notice how the condition is in parentheses in the Java example
+* Notice how, unlike Python, the condition is in parentheses in the Java example
+
     * ``( ... )``
+
 
 Boolean Operators
 -----------------
 
-* Just like Python, we have comparison operators that return booleans
+* Just like Python, Java has comparison operators that return booleans
+
     * less than --- ``a < b``
     * sameness --- ``c == d``
     * *not* sameness --- ``e != f``
 
-* We've also got our logical operators
-    * and --- ``v && w``
-    * or --- ``x || y``
-    * not --- ``!z``
+
+* Logical operators also exist, but their syntax is a little different
+
+    * and --- ``v and w`` vs ``v && w``
+    * or --- ``x or y`` vs ``x || y``
+    * not --- ``not z`` vs ``!z``
+
 
 Loops
 =====
