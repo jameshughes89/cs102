@@ -7,8 +7,8 @@ import java.util.Objects;
  */
 public class ContactList {
 
-    static final int DEFAULT_CAPACITY = 10;
-    static final int NOT_FOUND = -1;
+    private static final int DEFAULT_CAPACITY = 10;
+    private static final int NOT_FOUND = -1;
 
     private int size;
     private Friend[] friends;
