@@ -598,14 +598,17 @@ Comments
      * @return              temperature in celsius
      */
     static double fahrenheitToCelsius(double fahrenheit) {
-        double celsius = (fahrenheit - 32) * 5/9;
+        double celsius = (fahrenheit - 32) * 5.0/9.0;
         return celsius;
     }
 
+
 * In the above Java example you will see
+
     * An example single line comment (``//``)
     * A multiline comment (``/* ... /*``)
     * An example of javadoc comments (``/** ... */``)
+
         * Mind the ``@param`` and ``@return``
 
 
