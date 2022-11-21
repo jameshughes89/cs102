@@ -86,7 +86,7 @@ public class ContactList {
         }
         // -1 will signify that we didn't find
         // what we were looking for
-        return -1;
+        return NOT_FOUND;
     }
 
     /**
