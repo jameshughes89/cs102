@@ -75,9 +75,9 @@ public final class Friend {
         }
         // Cast o as a friend
         Friend other = (Friend) o;
-        return this.firstName.equals(other.firstName) &&
-                this.lastName.equals(other.lastName) &&
-                this.email.equals(other.email);
+        return Objects.equals(this.firstName, other.firstName) &&
+                Objects.equals(this.lastName, other.lastName) &&
+                Objects.equals(this.email, other.email);
     }
 
     @Override
