@@ -135,7 +135,7 @@ public class ContactList {
         }
         int removeIndex = find(friend);
         // Although removeIndex could be equal to size-1, thereby the Friend is overwritten by itself, this will not
-        // matter since the array at index size-1 is set to null regardless.
+        // matter since the array at index size-1 is set to null and size would be set to 0 regardless.
         friends[removeIndex] = friends[size - 1];
         friends[size - 1] = null;
         size--;
