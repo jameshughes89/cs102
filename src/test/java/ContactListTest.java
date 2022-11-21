@@ -13,12 +13,10 @@ public class ContactListTest {
     private static final Friend NONEXISTENT_FRIEND = new Friend("Adam", "Fluffson", "fluffyman28@hotmail.com");
 
     private ContactList classUnderTest;
-    private ContactList preState;
 
     @BeforeEach
     void createContactLists() {
         classUnderTest = new ContactList();
-        preState = new ContactList();
     }
 
     @Nested
@@ -81,7 +79,6 @@ public class ContactListTest {
             @BeforeEach
             void addSingleton() {
                 classUnderTest.add(new Friend("Bob", "Smith", "bsmith@gmail.com"));
-                preState.add(new Friend("Bob", "Smith", "bsmith@gmail.com"));
             }
 
             @Test
@@ -165,6 +162,13 @@ public class ContactListTest {
             @Nested
             @TestInstance(TestInstance.Lifecycle.PER_CLASS)
             class WhenMany {
+
+                @BeforeEach
+                void addManyFriends() {
+                    classUnderTest.add(new Friend("Jane", "Doe", "jdoe@gmail.com"));
+                    classUnderTest.add(new Friend("Clarence", "Cartwrite", "treelover1523@hotmail.com"));
+                    classUnderTest.add(new Friend("Sandy", "Seaside", "boatsboatsboats@yachtclub500.com"));
+                }
 
                 @Test
                 void add_successfullyAdd_returnsTrue() {
