@@ -10,6 +10,9 @@ import static org.junit.Assert.*;
 public class ContactListTest {
 
     private static final Friend EXISTING_FRIEND = new Friend("Bob", "Smith", "bsmith@gmail.com");
+    private static final Friend ANOTHER_EXISTING_FRIEND = new Friend("Clarence",
+            "Cartwrite",
+            "treelover1523@hotmail.com");
     private static final Friend NONEXISTENT_FRIEND = new Friend("Adam", "Fluffson", "fluffyman28@hotmail.com");
 
     private ContactList classUnderTest;
@@ -177,72 +180,78 @@ public class ContactListTest {
 
                 @Test
                 void contains_existingFriend_returnsTrue() {
-
+                    assertTrue(classUnderTest.contains(EXISTING_FRIEND));
                 }
 
                 @Test
                 void contains_nonexistentFriend_returnsFalse() {
-
+                    assertFalse(classUnderTest.contains(NONEXISTENT_FRIEND));
                 }
 
                 @Test
                 void indexOf_existingFriend_returnsCorrectIndex() {
-
+                    assertEquals(2, classUnderTest.indexOf(ANOTHER_EXISTING_FRIEND));
                 }
 
                 @Test
                 void indexOf_nonexistentFriend_throwsNoSuchElementException() {
-
+                    assertThrows(NoSuchElementException.class, () -> classUnderTest.indexOf(NONEXISTENT_FRIEND));
                 }
 
                 @Test
                 void get_validIndex_returnsCorrectFriend() {
-
+                    assertEquals(ANOTHER_EXISTING_FRIEND, classUnderTest.get(2));
                 }
 
                 @Test
                 void get_negativeIndex_throwsIndexOutOfBoundsException() {
-
+                    assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.get(-1));
                 }
 
                 @Test
                 void get_tooLargeIndex_throwsIndexOutOfBoundsException() {
-
+                    assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.get(4));
                 }
 
                 @Test
                 void remove_existingFriend_returnsTrue() {
-
+                    assertTrue(classUnderTest.remove(ANOTHER_EXISTING_FRIEND));
                 }
 
                 @Test
                 void remove_existingFriend_removesFriend() {
-
+                    classUnderTest.remove(ANOTHER_EXISTING_FRIEND);
+                    assertFalse(classUnderTest.contains(ANOTHER_EXISTING_FRIEND));
                 }
 
                 @Test
                 void remove_nonexistentFriend_throwsNoSuchElementException() {
-
+                    assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(NONEXISTENT_FRIEND));
                 }
 
                 @Test
-                void clear_singleton_emptyCollection() {
-
+                void clear_many_emptyCollection() {
+                    classUnderTest.clear();
+                    assertEquals(new ContactList(), classUnderTest);
                 }
 
                 @Test
-                void isEmpty_singleton_returnsFalse() {
-
+                void isEmpty_many_returnsFalse() {
+                    assertFalse(classUnderTest.isEmpty());
                 }
 
                 @Test
-                void size_singleton_returnsOne() {
-
+                void size_many_returnsCorrectSize() {
+                    assertEquals(4, classUnderTest.size());
                 }
 
                 @Test
-                void toString_singleton_returnsCorrectString() {
-
+                void toString_many_returnsCorrectString() {
+                    String expected = "Friend(Bob, Smith, bsmith@gmail.com)\n" +
+                            "Friend(Jane, Doe, jdoe@gmail.com)\n" +
+                            "Friend(Clarence, Cartwrite, treelover1523@hotmail.com)\n" +
+                            "Friend(Sandy, Seaside, boatsboatsboats@yachtclub500.com)\n";
+                    assertEquals(expected, classUnderTest.toString());
                 }
             }
 
