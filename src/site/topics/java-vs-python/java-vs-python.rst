@@ -674,11 +674,11 @@ Boolean Operators
 Loops
 =====
 
-* Just as you would expect, Java has loops too
+* Just as one would expect, Java has loops too
+
 
 While Loops
 -----------
-
 
 .. list-table:: While Loops with Counter
     :header-rows: 1
@@ -702,19 +702,20 @@ While Loops
 
                 int c = 0;
 
-                // While some condition is True
+                // While some condition is true
                 while (c < 10) {
                     System.out.println("c is now: " + c);
                     c++;
                 }
 
-* Just like the ``if`` statements, we put the condition in parentheses
+
+* Just like the ``if`` statements, the condition is in parentheses
 * Note the ``c++`` --- this is the same thing as ``c+=1``, but even shorter
-    * You can still use your ``c+=1`` all you want in Java
 
-* Here is another example
+    * One could still use ``c+=1`` in Java though
 
-.. list-table:: While Loops with General Condition
+
+.. list-table:: Another While Loops Example
     :header-rows: 1
 
     * - Python
@@ -746,10 +747,11 @@ While Loops
                     }
                 }
 
+
 For Each Loop
 -------------
 
-* For loops in Python are basically *for each* loops
+* For loops in Python are effectively *for each* loops
 
 .. list-table:: For Each Loops
     :header-rows: 1
@@ -777,9 +779,10 @@ For Each Loop
                 }
 
 
-* It's remarkably similar, except
-    * we specify the type of ``c``
-    * use a ``:`` instead of a ``in``
+* It's very similar, except
+
+    * The type of ``c`` is specified
+    * A colon (``:``) is used instead of ``in``
 
 
 For Loop
@@ -805,34 +808,42 @@ For Loop
                 :emphasize-lines: 2
 
                 // Run loop 10 times (0 -- 9)
-                for (int i = 0; i < 10; ++i) {
+                for (int i = 0; i < 10; i++) {
                     System.out.println(i);
                 }
 
-* Here, we're running the first statement within the parentheses by the for loop once
-    * ``int i = 0``
-    * Create an int ``i`` and set it to ``0``
+* In Java, the first statement within the parentheses is run once before anything loops
 
-* The second statement in the parentheses is the condition we check every time the loop runs
+    * ``int i = 0``
+    * Create an integer ``i`` and assign it to ``0``
+
+
+* The second statement in the parentheses is the condition checked every time the loop runs
+
     * ``i < 10``
-    * check if ``i`` is less than ``10``
-    * This could be more general conditionals too
+    * Check if ``i`` is less than ``10``
+    * This could be a more general conditionals if needed
+
 
 * The third statement in the parentheses runs after each time the code block in the loop finishes
-    * ``++i``
-    * After we have finished the body of the for loop (``System.out.println(i);``), add ``1`` to ``i``
+
+    * ``i++``
+    * After the body of the loop finishes a single iteration, add ``1`` to ``i``
+
 
 * Overall, this says:
-    * Create an ``int i`` and set it to 0
+
+    * Create an ``int i`` and set it to ``0``
     * If ``i`` is less than ``10``, run the loop
     * Add ``1`` to ``i`` every time the loop runs
+
 
 * In other words, this loop will run 10 times
     * ``0 -- 9``
 
 
-Comparison of For to While
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Comparison of For Loop to While Loop
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * It may be useful to show the comparison of a for loop to a while loop in Java
 
@@ -848,15 +859,17 @@ Comparison of For to While
     // although, scope does come into play
     initializer;
     while (condition) {
-        loop;
+        loop stuff;
         step;
     }
 
 * In the above example, both loops are doing the same thing and have the same functionality
 * The only functional difference is scope
 * In the for loop example, the initialized stuff only exists within the loop
+
     * The ``i`` in ``int = i`` cannot be accessed outside the loop
-    * The initialized stuff for the while loop will exist outside the loop
+    * The initialized stuff in the while loop example will exist outside the loop
+
 
 Java Conventions
 ================
