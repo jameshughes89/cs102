@@ -4,11 +4,11 @@ import java.util.Objects;
  * A plain old java class to keep track of friends. A Friend will know its first name, last name, and email address.
  * This class provides getters/accessor methods for the attributes and can be checked for equality.
  */
-public class Friend {
+public final class Friend {
 
-    private String firstName;
-    private String lastName;
-    private String email;
+    private final String firstName;
+    private final String lastName;
+    private final String email;
 
     /**
      * Create an instance of a Friend. The constructor takes the first name, last name, and email address of the Friend

@@ -1,3 +1,4 @@
+import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -41,5 +42,14 @@ public class FriendTest {
     void toString_generalCase_returnsCorrectString() {
         Friend friend = new Friend("qwerty", "asdfgh", "zxcvbn");
         assertEquals("Friend(qwerty, asdfgh, zxcvbn)", friend.toString());
+    }
+
+    @Test
+    void equals_verify_contract() {
+        EqualsVerifier.forClass(Friend.class)
+                .withNonnullFields("firstName")
+                .withNonnullFields("lastName")
+                .withNonnullFields("email")
+                .verify();
     }
 }
