@@ -26,7 +26,7 @@ public class ContactListTest {
 
         @Test
         void add_successfullyAdd_returnsTrue() {
-            assertTrue(classUnderTest.add(new Friend("Bob", "Smith", "bsmith@gmail.com")));
+            assertTrue(classUnderTest.add(new Friend("", "", "")));
         }
 
         @Test
@@ -86,7 +86,7 @@ public class ContactListTest {
 
             @Test
             void add_successfullyAdd_returnsTrue() {
-                assertTrue(classUnderTest.add(new Friend("Bob", "Smith", "bsmith@gmail.com")));
+                assertTrue(classUnderTest.add(new Friend("", "", "")));
             }
 
             @Test
@@ -168,7 +168,7 @@ public class ContactListTest {
 
                 @Test
                 void add_successfullyAdd_returnsTrue() {
-                    assertTrue(classUnderTest.add(new Friend("Bob", "Smith", "bsmith@gmail.com")));
+                    assertTrue(classUnderTest.add(new Friend("", "", "")));
                 }
 
                 @Test
