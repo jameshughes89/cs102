@@ -24,8 +24,9 @@ public class ContactListTest {
     @Nested
     class WhenNewEmpty {
 
+        @Test
         void add_successfullyAdd_returnsTrue() {
-            assertTrue(classUnderTest.add(new Friend("Bob", "Smith", "bsmith@gmail.com"));
+            assertTrue(classUnderTest.add(new Friend("Bob", "Smith", "bsmith@gmail.com")));
         }
 
         @Test
@@ -83,80 +84,93 @@ public class ContactListTest {
                 preState.add(new Friend("Bob", "Smith", "bsmith@gmail.com"));
             }
 
+            @Test
+            void add_successfullyAdd_returnsTrue() {
+                assertTrue(classUnderTest.add(new Friend("Bob", "Smith", "bsmith@gmail.com")));
+            }
 
             @Test
             void contains_existingFriend_returnsTrue() {
-
+                assertTrue(classUnderTest.contains(EXISTING_FRIEND));
             }
 
             @Test
             void contains_nonexistentFriend_returnsFalse() {
-
+                assertFalse(classUnderTest.contains(NONEXISTENT_FRIEND));
             }
 
             @Test
             void indexOf_existingFriend_returnsCorrectIndex() {
-
+                assertEquals(0, classUnderTest.indexOf(EXISTING_FRIEND));
             }
 
             @Test
             void indexOf_nonexistentFriend_throwsNoSuchElementException() {
-
+                assertThrows(NoSuchElementException.class, () -> classUnderTest.indexOf(NONEXISTENT_FRIEND));
             }
 
             @Test
             void get_validIndex_returnsCorrectFriend() {
-
+                assertEquals(EXISTING_FRIEND, classUnderTest.get(0));
             }
 
             @Test
             void get_negativeIndex_throwsIndexOutOfBoundsException() {
-
+                assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.get(-1));
             }
 
             @Test
             void get_tooLargeIndex_throwsIndexOutOfBoundsException() {
-
+                assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.get(1));
             }
 
             @Test
             void remove_existingFriend_returnsTrue() {
-
+                assertTrue(classUnderTest.remove(EXISTING_FRIEND));
             }
 
             @Test
             void remove_existingFriend_removesFriend() {
-
+                classUnderTest.remove(EXISTING_FRIEND);
+                assertFalse(classUnderTest.contains(EXISTING_FRIEND));
             }
 
             @Test
             void remove_nonexistentFriend_throwsNoSuchElementException() {
-
+                assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(NONEXISTENT_FRIEND));
             }
 
             @Test
-            void clear_singleton_emptyCollection(){
-
+            void clear_singleton_emptyCollection() {
+                classUnderTest.clear();
+                assertEquals(new ContactList(), classUnderTest);
             }
 
             @Test
-            void isEmpty_singleton_returnsFalse(){
-
+            void isEmpty_singleton_returnsFalse() {
+                assertFalse(classUnderTest.isEmpty());
             }
 
             @Test
-            void size_singleton_returnsOne(){
-
+            void size_singleton_returnsOne() {
+                assertEquals(1, classUnderTest.size());
             }
 
             @Test
-            void toString_singleton_returnsCorrectString(){
-
+            void toString_singleton_returnsCorrectString() {
+                String expected = "Friend(Bob, Smith, bsmith@gmail.com)\n";
+                assertEquals(expected, classUnderTest.toString());
             }
 
             @Nested
             @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-            class WhenMany{
+            class WhenMany {
+
+                @Test
+                void add_successfullyAdd_returnsTrue() {
+                    assertTrue(classUnderTest.add(new Friend("Bob", "Smith", "bsmith@gmail.com")));
+                }
+
                 @Test
                 void contains_existingFriend_returnsTrue() {
 
@@ -208,29 +222,35 @@ public class ContactListTest {
                 }
 
                 @Test
-                void clear_singleton_emptyCollection(){
+                void clear_singleton_emptyCollection() {
 
                 }
 
                 @Test
-                void isEmpty_singleton_returnsFalse(){
+                void isEmpty_singleton_returnsFalse() {
 
                 }
 
                 @Test
-                void size_singleton_returnsOne(){
+                void size_singleton_returnsOne() {
 
                 }
 
                 @Test
-                void toString_singleton_returnsCorrectString(){
+                void toString_singleton_returnsCorrectString() {
 
                 }
             }
 
             @Nested
             @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-            class WhenDuplicate{
+            class WhenDuplicate {
+
+                @Test
+                void add_successfullyAdd_returnsTrue() {
+                    assertTrue(classUnderTest.add(new Friend("Bob", "Smith", "bsmith@gmail.com")));
+                }
+
                 @Test
                 void contains_existingFriend_returnsTrue() {
 
@@ -282,22 +302,22 @@ public class ContactListTest {
                 }
 
                 @Test
-                void clear_singleton_emptyCollection(){
+                void clear_singleton_emptyCollection() {
 
                 }
 
                 @Test
-                void isEmpty_singleton_returnsFalse(){
+                void isEmpty_singleton_returnsFalse() {
 
                 }
 
                 @Test
-                void size_singleton_returnsOne(){
+                void size_singleton_returnsOne() {
 
                 }
 
                 @Test
-                void toString_singleton_returnsCorrectString(){
+                void toString_singleton_returnsCorrectString() {
 
                 }
             }
