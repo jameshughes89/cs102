@@ -41,12 +41,12 @@ public class ContactListTest {
         }
 
         @Test
-        void indexOf_negativeIndex_throwsIndexOutOfBoundsException() {
+        void get_negativeIndex_throwsIndexOutOfBoundsException() {
             assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.get(-1));
         }
 
         @Test
-        void indexOf_tooLargeIndex_throwsIndexOutOfBoundsException() {
+        void get_tooLargeIndex_throwsIndexOutOfBoundsException() {
             assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.get(0));
         }
 
@@ -122,6 +122,12 @@ public class ContactListTest {
             @Test
             void get_tooLargeIndex_throwsIndexOutOfBoundsException() {
                 assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.get(1));
+            }
+
+            @Test
+            void remove_singleton_emptyCollection() {
+                classUnderTest.remove(EXISTING_FRIEND);
+                assertEquals(new ContactList(), classUnderTest);
             }
 
             @Test
@@ -214,6 +220,16 @@ public class ContactListTest {
                 }
 
                 @Test
+                void remove_existingFriend_correctOrder() {
+                    ContactList expectAfterRemove = new ContactList();
+                    expectAfterRemove.add(new Friend("Sandy", "Seaside", "boatsboatsboats@yachtclub500.com"));
+                    expectAfterRemove.add(new Friend("Jane", "Doe", "jdoe@gmail.com"));
+                    expectAfterRemove.add(new Friend("Clarence", "Cartwrite", "treelover1523@hotmail.com"));
+                    classUnderTest.remove(EXISTING_FRIEND);
+                    assertEquals(expectAfterRemove, classUnderTest);
+                }
+
+                @Test
                 void remove_existingFriend_returnsTrue() {
                     assertTrue(classUnderTest.remove(ANOTHER_EXISTING_FRIEND));
                 }
@@ -274,13 +290,13 @@ public class ContactListTest {
 
                 @Test
                 void remove_existingFriend_removesFirstOccurrence() {
-                    ContactList expectAfterDuplicateRemove = new ContactList();
-                    expectAfterDuplicateRemove.add(new Friend("Sandy", "Seaside", "boatsboatsboats@yachtclub500.com"));
-                    expectAfterDuplicateRemove.add(new Friend("Clarence", "Cartwrite", "treelover1523@hotmail.com"));
-                    expectAfterDuplicateRemove.add(new Friend("Bob", "Smith", "bsmith@gmail.com"));
-                    expectAfterDuplicateRemove.add(new Friend("Bob", "Smith", "bsmith@gmail.com"));
+                    ContactList expectAfterRemove = new ContactList();
+                    expectAfterRemove.add(new Friend("Sandy", "Seaside", "boatsboatsboats@yachtclub500.com"));
+                    expectAfterRemove.add(new Friend("Clarence", "Cartwrite", "treelover1523@hotmail.com"));
+                    expectAfterRemove.add(new Friend("Bob", "Smith", "bsmith@gmail.com"));
+                    expectAfterRemove.add(new Friend("Bob", "Smith", "bsmith@gmail.com"));
                     classUnderTest.remove(EXISTING_FRIEND);
-                    assertEquals(expectAfterDuplicateRemove, classUnderTest);
+                    assertEquals(expectAfterRemove, classUnderTest);
                 }
             }
         }
