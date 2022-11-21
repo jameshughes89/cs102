@@ -1,55 +1,58 @@
+import java.util.Arrays;
+import java.util.NoSuchElementException;
+import java.util.Objects;
+
+/**
+ * Class to keep track of a collection of Friend objects.
+ */
 public class ContactList {
 
     static final int DEFAULT_CAPACITY = 10;
+    static final int NOT_FOUND = -1;
 
-    private int friendCount;
+    private int size;
     private Friend[] friends;
-
-//    public ContactList() {
-//        friendCount = 0;
-//        friends = new Friend[DEFAULT_CAPACITY];
-//    }
 
     public ContactList() {
         // Call the constructor that
-        // takes an int as param
+        // takes an int as parameter
         this(DEFAULT_CAPACITY);
     }
 
     public ContactList(int capacity) {
-        friendCount = 0;
+        size = 0;
         friends = new Friend[capacity];
     }
 
     /**
-     * Add a new friend to the friends array. Will create an instance
-     * of a Friend based on parameters. If our array runs out of space
-     * we will expand capacity to manage the situation.
+     * Add a new friend to the ContactList.
      *
-     * @param firstName friends first name
-     * @param lastName  friends last name
-     * @param email     friends email address
+     * @param friend Friend object to add to the ContactList.
+     * @return True if the friend was added successfully, false otherwise.
      */
-    public void add(String firstName, String lastName, String email) {
-        // Create the Friend object
-        Friend newFriend = new Friend(firstName, lastName, email);
-
+    public boolean add(Friend friend) {
         // If we have run out of space in our array
-        // we need to deal with it
-        if (friendCount == friends.length) {
+        // we need to deal with it by making a new array
+        if (size() == friends.length) {
             expandCapacity();
         }
         // Add friend to the next available spot
-        friends[friendCount] = newFriend;
-        friendCount++;
+        friends[size] = friend;
+        size++;
+        return true;
     }
 
+    /**
+     * Private helper method for making room in the collection for new Friend objects. This method creates a new Friend
+     * array twice the size of the original (this.friends), copies over the contents of the original Friends array in
+     * order, and then assigns the friends class attribute to reference the new, bigger friends array.
+     */
     private void expandCapacity() {
         // Make a new array of twice the size of the previous
         Friend[] newFriends = new Friend[friends.length * 2];
 
-        // Copy over the contents of the friends list
-        // to the new bigger friends list
+        // Copy over the contents of the friends array
+        // to the new bigger friends array
         for (int i = 0; i < friends.length; ++i) {
             newFriends[i] = friends[i];
         }
@@ -57,14 +60,27 @@ public class ContactList {
         friends = newFriends;
     }
 
-    public int indexOf(String firstName, String lastName) {
-        // Create a temp friend object for easy
-        // use of the Friend class' equals()
-        Friend toFind = new Friend(firstName, lastName, "");
+    /**
+     * Check if a given Friend object exists within the collection.
+     *
+     * @param friend Friend object to check if it exists within the collection.
+     * @return True if the Friend exists within the collection, false otherwise.
+     */
+    public boolean contains(Friend friend) {
+        return find(friend) != NOT_FOUND;
+    }
 
+    /**
+     * Private helper method to find and return the index of a given Friend object within the collection. If no such
+     * Friend exists within the collection, a sentinel value of -1 is returned.
+     *
+     * @param friend Friend to find the index of.
+     * @return Index of the Friend within the collection, or -1 if no such Friend exists.
+     */
+    private int find(Friend friend) {
         // Linear search for the friend we are trying to find
-        for (int i = 0; i < friendCount; ++i) {
-            if (toFind.equals(friends[i])) {
+        for (int i = 0; i < size(); ++i) {
+            if (friend.equals(friends[i])) {
                 return i;
             }
         }
@@ -73,93 +89,108 @@ public class ContactList {
         return -1;
     }
 
+    /**
+     * Return the index of the specified Friend object within the collection. If no such Friend exists within the
+     * collection, a NoSuchElementException is thrown.
+     *
+     * @param friend Friend object to find the index of within the collection.
+     * @return Index of the Friend object.
+     * @throws NoSuchElementException If no equal Friend object exists within the collection, throw an exception.
+     */
+    public int indexOf(Friend friend) {
+        if (!contains(friend)) {
+            throw new NoSuchElementException();
+        }
+        return find(friend);
+    }
+
+    /**
+     * Return the Friend object at the specified index. If the provided index is out of bounds an
+     * IndexOutOfBoundsException is thrown.
+     *
+     * @param index Index of the Friend object to be returned.
+     * @return Friend object at the specified index.
+     * @throws IndexOutOfBoundsException If an invalid index is provided.
+     */
     public Friend get(int index) {
-        // Make sure the index provided is valid
-        if (index > -1 && index < friendCount) {
-            return friends[index];
-        } else {
-            return null;
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException();
         }
+        return friends[index];
     }
 
-    public Friend get(String firstName, String lastName) {
-        int index = indexOf(firstName, lastName);
-        return get(index);
-    }
-
-//    public void remove(String firstName, String lastName) {
-//        // Create a temp friend object for easy
-//        // use of the Friend class' equals()
-//        Friend toDelete = new Friend(firstName, lastName, "");
-//
-//        // Linear search for the friend we are trying to delete
-//        for (int i = 0; i < friendCount; ++i) {
-//            if (toDelete.equals(friends[i])) {
-//                // Have friend at the end of the array be referenced
-//                // by the array index we removed from
-//                friends[i] = friends[friendCount - 1];
-//                friends[friendCount - 1] = null;
-//                friendCount--;
-//            }
-//        }
-//    }
-
-    public void remove(String firstName, String lastName) {
-        int friendIndex = indexOf(firstName, lastName);
-        if (friendIndex != -1) {
-            // Have friend at the end of the array be referenced
-            // by the array index we removed from
-            friends[friendIndex] = friends[friendCount - 1];
-            friends[friendCount - 1] = null;
-            friendCount--;
+    /**
+     * Removes the specified Friend object from the collection. If no such Friend object exists, a
+     * NoSuchElementException is thrown. The removed object is removed from the collection by being replaced in the
+     * collection with the Friend object at the end of the collection. This, remove does not preserve the order of
+     * the Friend objects within the collection.
+     *
+     * @param friend Friend object to remove from the collection.
+     * @return True if the object was successfully removed, false otherwise.
+     * @throws NoSuchElementException If the Friend object does not exist within the collection.
+     */
+    public boolean remove(Friend friend) {
+        if (!contains(friend)) {
+            throw new NoSuchElementException();
         }
-    }
-
-//    public void updateEmail(String firstName, String lastName, String newEmail) {
-//        // Create a temp friend object for easy
-//        // use of the Friend class' equals()
-//        Friend toUpdate = new Friend(firstName, lastName, "");
-//
-//        // Linear search for the friend we are trying to update
-//        for (int i = 0; i < friendCount; ++i) {
-//            if (toUpdate.equals(friends[i])) {
-//                friends[i].setEmail(newEmail);
-//            }
-//        }
-//    }
-
-    public void updateEmail(String firstName, String lastName, String newEmail) {
-        int friendIndex = indexOf(firstName, lastName);
-        if (friendIndex != -1) {
-            friends[friendIndex].setEmail(newEmail);
-        }
+        int removeIndex = find(friend);
+        // Although removeIndex could be equal to size-1, thereby the Friend is overwritten by itself, this will not
+        // matter since the array at index size-1 is set to null regardless.
+        friends[removeIndex] = friends[size - 1];
+        friends[size - 1] = null;
+        size--;
+        return true;
     }
 
     public void clear() {
         friends = new Friend[friends.length];
-        friendCount = 0;
+        size = 0;
+    }
+
+    public boolean isEmpty() {
+        return size() == 0;
     }
 
     public int size() {
-        return friendCount;
+        return size;
     }
 
-//    public String toString() {
-//        String s = "";
-//        for (int i = 0; i < friendCount; ++i) {
-//            s = s + friends[i].toString() + "\n";
-//        }
-//        return s;
-//    }
+    //    public String toString() {
+    //        String s = "";
+    //        for (int i = 0; i < size(); i++) {
+    //            s = s + friends[i].toString() + "\n";
+    //        }
+    //        return s;
+    //    }
 
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < friendCount; ++i) {
+        for (int i = 0; i < size(); i++) {
             builder.append(friends[i].toString());
             builder.append("\n");
         }
-
         return builder.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ContactList that = (ContactList) o;
+        return this.size == that.size && Arrays.equals(this.friends, 0, this.size(), that.friends, 0, that.size());
+    }
+
+    @Override
+    public final int hashCode() {
+        int result = Objects.hash(this.size());
+        for (int i = 0; i < this.size(); i++) {
+            result = result * 97 + Objects.hashCode(this.friends[i]);
+        }
+        return result;
     }
 }
 
