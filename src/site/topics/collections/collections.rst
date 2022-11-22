@@ -127,7 +127,7 @@ Abstraction
 
     * We do this a lot in every day life
 
-* It is often helpful to try to separate the **WHAT** from the **HOW**
+* It is often helpful to try to separate the **what** from the **how**
 
     * *What* we can do
     * *How* it's actually done
