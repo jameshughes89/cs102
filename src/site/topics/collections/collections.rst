@@ -194,25 +194,30 @@ Data Structures
 * A data structure is an actual implementation of an ADT
 
 * Using the ``ContactList`` example, the *what* would be:
+
     * Keep track of ``Friend`` objects
     * Add and remove ``Friend`` objects
     * Get a ``Friend``
     * ...
 
-* And, the *how* would be the actual code we see
-    * We used an array to keep track of the ``Friend`` objects
-    * Do a linear search through the array to find a specific ``Friend``
+* The *how* would be the actual code we see
 
-* A large focus in this class will be both the *what* and the *how* and how to keep them separate
+    * An array was used to keep track of the ``Friend`` objects
+    * A linear search was done to check if a given ``Friend`` object was in the ``ContactList``
+
+* A large focus of this class will be both the *what* and the *how* and how to keep them separate
+
     * The interface and the implementation
 
 .. warning::
 
-    It is not uncommon for people to use data structure as a catch all to mean both the ADT and the specific implementation.
+    It is not uncommon for people to use data structure as a catch all to mean both the ADT and the specific
+    implementation.
 
 
-For next time
+For Next Time
 =============
 
 * Read Chapter 3 Section 1 of your text
+
     * 3 pages
