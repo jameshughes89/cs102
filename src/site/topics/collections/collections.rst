@@ -8,19 +8,25 @@ Collections
 * Implementations
 * Abstraction
 
+
 Collections and ADTs
 ====================
 
-* A collection is a group of *things* that we want to treat as a special conceptual unit
+* A collection is a group of *things* that are to be treated as a special conceptual unit
+
     * A contact list
     * A stamp collection
 
-* In computer science, we have a few popular elementary collections
+
+* In computer science there a few popular elementary collections
+
     * Stacks
     * Queues
+    * Bags
     * Lists
     * Trees
     * Graphs
+
 
 * This list is far from complete, but they will be a big part of your early computer science courses
 
