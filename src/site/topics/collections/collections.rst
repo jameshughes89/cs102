@@ -80,7 +80,7 @@ Bag
 Nonlinear Collections
 ---------------------
 
-* Sometimes there is no natural way to arrange our data in a nice sequential
+* Sometimes there is no natural way to arrange data in a linear sequence
 * Sometimes there are many successors
 * Sometimes the idea of successor does not make sense
 
@@ -88,28 +88,36 @@ Nonlinear Collections
 Trees
 ^^^^^
 
-.. image:: /topics/trees/tree_example.png
-   :width: 500 px
-   :align: center
+* Trees are a generalization of lists
 
+.. figure:: /topics/trees/tree_example.png
+    :width: 500 px
+    :align: center
+
+* If one were asked "What comes after Program Files" in the above example, there is no obvious answer
 * The data is arranged in a hierarchical way
 * Every element has at most one *parent*, but potentially many *children*
-* If I ask you "What comes after Program Files" in this example, there is no obvious answer
-* We can think of trees as a generalization of lists
+
 
 Graphs
 ^^^^^^
 
-.. image:: /topics/intro/graph_example.png
-   :width: 500 px
-   :align: center
+* Graphs are a generalization of trees
 
+.. figure:: /topics/intro/graph_example.png
+    :width: 500 px
+    :align: center
 
-* Data is often represented along with relationships to other data
+* Data may be represented with relationships to other data
+* Graphs are made up of
+
     * Vertices/Nodes
     * Edges
 
-* We can think of graphs as a generalization of trees
+* In the above example, each vertex/node (box) is an airport
+* The edges (lines) between the vertices/nodes represent the existence of a direct flight between the airports
+
+    * The relationship the airports have with one another
 
 
 Abstraction
