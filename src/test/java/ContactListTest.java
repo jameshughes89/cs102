@@ -220,16 +220,6 @@ public class ContactListTest {
                 }
 
                 @Test
-                void remove_existingFriend_correctOrder() {
-                    ContactList expectAfterRemove = new ContactList();
-                    expectAfterRemove.add(new Friend("Sandy", "Seaside", "boatsboatsboats@yachtclub500.com"));
-                    expectAfterRemove.add(new Friend("Jane", "Doe", "jdoe@gmail.com"));
-                    expectAfterRemove.add(new Friend("Clarence", "Cartwrite", "treelover1523@hotmail.com"));
-                    classUnderTest.remove(EXISTING_FRIEND);
-                    assertEquals(expectAfterRemove, classUnderTest);
-                }
-
-                @Test
                 void remove_existingFriend_returnsTrue() {
                     assertTrue(classUnderTest.remove(ANOTHER_EXISTING_FRIEND));
                 }
