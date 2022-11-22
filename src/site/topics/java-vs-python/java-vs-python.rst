@@ -459,7 +459,7 @@ Input & Output
     }
 
 
-* This just passes the buck of dealing with the exception to the caller of the function
+* This just passes the buck of dealing with the exception to the caller of the function/method
 
     * In this example, it's the ``main`` method, so this will throw the exception at the person who ran the program
     * This would cause the program to crash
