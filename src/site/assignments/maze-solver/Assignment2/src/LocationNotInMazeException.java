@@ -1,5 +1,5 @@
 public class LocationNotInMazeException extends RuntimeException {
-    
+
     public LocationNotInMazeException() {
         super();
     }

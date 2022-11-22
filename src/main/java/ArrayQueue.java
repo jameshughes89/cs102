@@ -105,15 +105,22 @@ public class ArrayQueue<T> implements Queue<T> {
 
     @Override
     public final boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         ArrayQueue<?> that = (ArrayQueue<?>) o;
-        if (this.size != that.size) return false;
+        if (this.size != that.size) {
+            return false;
+        }
         int thisCurrentIndex = this.front;
         int thatCurrentIndex = that.front;
         for (int i = 0; i < this.size; i++) {
-            if (!this.queue[thisCurrentIndex]
-                    .equals(that.queue[thatCurrentIndex])) return false;
+            if (!this.queue[thisCurrentIndex].equals(that.queue[thatCurrentIndex])) {
+                return false;
+            }
             thisCurrentIndex = this.nextIndex(thisCurrentIndex);
             thatCurrentIndex = that.nextIndex(thatCurrentIndex);
         }

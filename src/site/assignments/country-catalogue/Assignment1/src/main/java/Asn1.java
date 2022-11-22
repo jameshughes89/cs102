@@ -7,7 +7,7 @@ public class Asn1 {
     public static void main(String[] args) throws IOException {
 
         CountryCatalogue catalogue = new CountryCatalogue();
-        loadCountries(RELATIVE_RESOURCES + "data.txt",RELATIVE_RESOURCES + "continent.txt", catalogue);
+        loadCountries(RELATIVE_RESOURCES + "data.txt", RELATIVE_RESOURCES + "continent.txt", catalogue);
         Country country;
 
         System.out.println("Check constructor, add, expand, search");

@@ -80,14 +80,20 @@ public class LinkedQueue<T> implements Queue<T> {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         LinkedQueue<?> that = (LinkedQueue<?>) o;
         if (this.size == that.size) {
             Node<?> thisCurrent = this.front;
             Node<?> thatCurrent = that.front;
             while (thisCurrent != null) {
-                if (!thisCurrent.data.equals(thatCurrent.data)) return false;
+                if (!thisCurrent.data.equals(thatCurrent.data)) {
+                    return false;
+                }
                 thisCurrent = thisCurrent.getNext();
                 thatCurrent = thatCurrent.getNext();
             }
