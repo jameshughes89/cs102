@@ -48,18 +48,23 @@ Stack
 
 
 * Adding and removing data from a stack happens from one end
-* The last thing we add to the stack will be the first thing off
+* The last thing added to the stack will be the first thing removed
 
 
 Queue
 ^^^^^
 
-.. image:: /topics/queues/queue_example.png
-   :width: 500 px
-   :align: center
+.. figure:: /topics/queues/queue_example.png
+    :width: 500 px
+    :align: center
 
-* Adding to a queue happens at one end and removing happens at the other
+* Adding and removing data from a queue happens at *different* ends
+
+    * Adding happens to one end
+    * Removing happens from the other
+
 * The first thing that gets added would be the first thing to be removed
+
 
 List
 ^^^^
