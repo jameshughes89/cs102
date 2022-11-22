@@ -468,8 +468,6 @@ Input & Output
 Functions/Methods
 =================
 
-* In Java, all functions are methods
-
 .. list-table:: Function/Method Definitions
     :header-rows: 1
 
@@ -491,25 +489,24 @@ Functions/Methods
 
       -     .. code-block:: Java
                 :linenos:
-                :emphasize-lines: 5, 10
+                :emphasize-lines: 4, 9
 
-                // Java
                 public class SomeClass {
                     public static void main(String[] args) {
-                        // Call the method
-                        int result = someMethod(1, 2);
+                        // Call the function
+                        int result = someFunction(1, 2);
                         System.out.println(result);
                     }
 
-                    // Declare the Method
-                    static int someMethod(int a, int b) {
+                    // Declare the Function
+                    static int someFunction(int a, int b) {
                         int c = a + b;
                         return c;
                     }
                 }
 
 
-* In Java, methods must be explicitly told what their return type is
+* In Java, functions/methods must be explicitly told what their return type is
 
     * ``int`` in this example, because the value being returned is an ``int``
     * In the case where the method returns no value, the return type is set to ``void``
@@ -521,17 +518,81 @@ Functions/Methods
 
     * ``int a`` and ``int b`` in the parameter list
 
-* In the above example, the method is ``static``, which means it can act more like a function than a method
+* In the above example, the function is ``static``, which means it is a function and not a method
 
-    * This is a method that belongs to the class, not an instance of the class
+    * This is a function that belongs to the class, not an instance of the class
+    * If the function is not written with ``static``, it is then an instance method
     * In other words, it's not a method we will call on an instance of some object
 
 
-* As seen in the above example, the method is defined *after* it is called
+* As seen in the above example, the function is defined *after* it is called
 
-    * The method ``someMethod`` is called within ``main``, but it is written below ``main``
+    * The function ``someFunction`` is called within ``main``, but it is written below ``main``
     * This is not required in Java, but is something one could do
     * In Python, the interpreter needed to know the function existed before it could be referenced
+
+
+Instance Methods
+----------------
+
+* For instance methods in Java, there is no need to include ``self`` in the parameter list
+
+    * Although, Java has a similar keyword --- ``this``
+
+
+.. list-table:: Methods
+    :header-rows: 1
+
+    * - Python
+      - Java
+
+    * -     .. code-block:: Python
+                :linenos:
+
+                def some_method(self, add_me):
+                    self.some_instance_variable += add_me
+
+      -     .. code-block:: Java
+                :linenos:
+
+                public void someMethod(int addMe) {
+                    some_instance_variable += add_me
+                }
+
+
+Visibility Modifiers
+--------------------
+
+* In Python, there is a convention of adding an underscore (``_``) to the beginning of an attribute or method name
+* This is done to indicate that the attribute or method is not to be accessed directly from outside the class
+* In Java, the keywords ``public`` and ``private`` are used instead to specify attribute and method visibility
+* Further, Java will produce a compiler error if one tries to access something declared to be private
+
+
+.. list-table:: Visibility Modifiers
+    :header-rows: 1
+
+    * - Python
+      - Java
+    * -     .. code-block:: Python
+                :linenos:
+
+                def you_can_touch_me(self):
+                    # ...
+
+                def _do_not_touch_me(self):
+                    # ...
+
+      -     .. code-block:: Java
+                :linenos:
+
+                public void youCanTouchMe() {
+                    // ...
+                }
+
+                private void doNotTouchMe() {
+                    // ...
+                }
 
 
 Temperature Converter
