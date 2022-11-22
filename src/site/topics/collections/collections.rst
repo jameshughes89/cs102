@@ -66,17 +66,15 @@ Queue
 * The first thing that gets added would be the first thing to be removed
 
 
-List
-^^^^
+Bag
+^^^
 
-.. image:: /topics/intro/ordered_list_example.png
-   :width: 500 px
-   :align: center
+.. figure:: /topics/intro/ordered_bag_example.png
+    :width: 500 px
+    :align: center
 
-* Adding and removing from a list will depend on the type of list we have
-* In the above example, the list is ordered, so adding to the list should preserve the order
-
-* Python lists are *lists*, and they are a generalization of stacks and queues
+* Adding and removing from a bag will depend on the type of bag we have
+* In the above example, the bag is ordered, so adding to the bag must preserve the order
 
 
 Nonlinear Collections
