@@ -279,14 +279,11 @@ public class ContactListTest {
                 }
 
                 @Test
-                void remove_existingFriend_removesFirstOccurrence() {
-                    ContactList expectAfterRemove = new ContactList();
-                    expectAfterRemove.add(new Friend("Sandy", "Seaside", "boatsboatsboats@yachtclub500.com"));
-                    expectAfterRemove.add(new Friend("Clarence", "Cartwrite", "treelover1523@hotmail.com"));
-                    expectAfterRemove.add(new Friend("Bob", "Smith", "bsmith@gmail.com"));
-                    expectAfterRemove.add(new Friend("Bob", "Smith", "bsmith@gmail.com"));
+                void remove_allDuplicates_removesAllOccurrence() {
                     classUnderTest.remove(EXISTING_FRIEND);
-                    assertEquals(expectAfterRemove, classUnderTest);
+                    classUnderTest.remove(EXISTING_FRIEND);
+                    classUnderTest.remove(EXISTING_FRIEND);
+                    assertFalse(classUnderTest.contains(EXISTING_FRIEND));
                 }
             }
         }
