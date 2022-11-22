@@ -35,15 +35,17 @@ Linear Collections
 ------------------
 
 * Linear collections are those that arrange data in a sequential way where each thing has a predecessor and a successor
+
     * Except for the ends
 
 
 Stack
 ^^^^^
 
-.. image:: /topics/stacks/stack_example.png
-   :width: 500 px
-   :align: center
+.. figure:: /topics/stacks/stack_example.png
+    :width: 500 px
+    :align: center
+
 
 * Adding and removing data from a stack happens from one end
 * The last thing we add to the stack will be the first thing off
