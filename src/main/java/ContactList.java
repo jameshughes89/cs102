@@ -5,10 +5,10 @@ public class ContactList {
     private int friendCount;
     private Friend[] friends;
 
-//    public ContactList() {
-//        friendCount = 0;
-//        friends = new Friend[DEFAULT_CAPACITY];
-//    }
+    //    public ContactList() {
+    //        friendCount = 0;
+    //        friends = new Friend[DEFAULT_CAPACITY];
+    //    }
 
     public ContactList() {
         // Call the constructor that
@@ -87,22 +87,22 @@ public class ContactList {
         return get(index);
     }
 
-//    public void remove(String firstName, String lastName) {
-//        // Create a temp friend object for easy
-//        // use of the Friend class' equals()
-//        Friend toDelete = new Friend(firstName, lastName, "");
-//
-//        // Linear search for the friend we are trying to delete
-//        for (int i = 0; i < friendCount; ++i) {
-//            if (toDelete.equals(friends[i])) {
-//                // Have friend at the end of the array be referenced
-//                // by the array index we removed from
-//                friends[i] = friends[friendCount - 1];
-//                friends[friendCount - 1] = null;
-//                friendCount--;
-//            }
-//        }
-//    }
+    //    public void remove(String firstName, String lastName) {
+    //        // Create a temp friend object for easy
+    //        // use of the Friend class' equals()
+    //        Friend toDelete = new Friend(firstName, lastName, "");
+    //
+    //        // Linear search for the friend we are trying to delete
+    //        for (int i = 0; i < friendCount; ++i) {
+    //            if (toDelete.equals(friends[i])) {
+    //                // Have friend at the end of the array be referenced
+    //                // by the array index we removed from
+    //                friends[i] = friends[friendCount - 1];
+    //                friends[friendCount - 1] = null;
+    //                friendCount--;
+    //            }
+    //        }
+    //    }
 
     public void remove(String firstName, String lastName) {
         int friendIndex = indexOf(firstName, lastName);
@@ -115,18 +115,18 @@ public class ContactList {
         }
     }
 
-//    public void updateEmail(String firstName, String lastName, String newEmail) {
-//        // Create a temp friend object for easy
-//        // use of the Friend class' equals()
-//        Friend toUpdate = new Friend(firstName, lastName, "");
-//
-//        // Linear search for the friend we are trying to update
-//        for (int i = 0; i < friendCount; ++i) {
-//            if (toUpdate.equals(friends[i])) {
-//                friends[i].setEmail(newEmail);
-//            }
-//        }
-//    }
+    //    public void updateEmail(String firstName, String lastName, String newEmail) {
+    //        // Create a temp friend object for easy
+    //        // use of the Friend class' equals()
+    //        Friend toUpdate = new Friend(firstName, lastName, "");
+    //
+    //        // Linear search for the friend we are trying to update
+    //        for (int i = 0; i < friendCount; ++i) {
+    //            if (toUpdate.equals(friends[i])) {
+    //                friends[i].setEmail(newEmail);
+    //            }
+    //        }
+    //    }
 
     public void updateEmail(String firstName, String lastName, String newEmail) {
         int friendIndex = indexOf(firstName, lastName);
@@ -144,13 +144,13 @@ public class ContactList {
         return friendCount;
     }
 
-//    public String toString() {
-//        String s = "";
-//        for (int i = 0; i < friendCount; ++i) {
-//            s = s + friends[i].toString() + "\n";
-//        }
-//        return s;
-//    }
+    //    public String toString() {
+    //        String s = "";
+    //        for (int i = 0; i < friendCount; ++i) {
+    //            s = s + friends[i].toString() + "\n";
+    //        }
+    //        return s;
+    //    }
 
     public String toString() {
         StringBuilder builder = new StringBuilder();

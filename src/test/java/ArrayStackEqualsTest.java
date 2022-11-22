@@ -36,21 +36,13 @@ class ArrayStackEqualsTest {
         gSingletonDefault.push(100);
         gSingletonCapacity.push(100);
 
-        new EqualsTester()
-                .addEqualityGroup(ArrayStack.class)
-                .addEqualityGroup(gEmptyDefault,
-                        gEmptyCapacity)
-                .addEqualityGroup(gSingletonDefault,
-                        gSingletonCapacity)
-                .addEqualityGroup(gManyOneDefaultA,
-                        gManyOneDefaultB,
-                        gManyOneCapacity)
-                .addEqualityGroup(gManyTwoDefault,
-                        gManyTwoCapacity)
-                .addEqualityGroup(gReverseDefault,
-                        gReverseCapacity)
-                .addEqualityGroup(gTypeDefault,
-                        gTypeCapacity)
+        new EqualsTester().addEqualityGroup(ArrayStack.class)
+                .addEqualityGroup(gEmptyDefault, gEmptyCapacity)
+                .addEqualityGroup(gSingletonDefault, gSingletonCapacity)
+                .addEqualityGroup(gManyOneDefaultA, gManyOneDefaultB, gManyOneCapacity)
+                .addEqualityGroup(gManyTwoDefault, gManyTwoCapacity)
+                .addEqualityGroup(gReverseDefault, gReverseCapacity)
+                .addEqualityGroup(gTypeDefault, gTypeCapacity)
                 .testEquals();
     }
 }

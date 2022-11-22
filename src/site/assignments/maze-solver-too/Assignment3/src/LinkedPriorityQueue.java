@@ -16,15 +16,23 @@ public class LinkedPriorityQueue<T> implements PriorityQueue<T> {
      */
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         LinkedPriorityQueue<?> that = (LinkedPriorityQueue<?>) o;
-        if (this.size != that.size) return false;
+        if (this.size != that.size) {
+            return false;
+        }
         LinkedPriorityQueue<?>.PriorityNode thisCurrent = this.front;
         LinkedPriorityQueue<?>.PriorityNode thatCurrent = that.front;
         while (thisCurrent != null) {
-            if (thisCurrent.getPriority() != thatCurrent.getPriority()
-                    || !thisCurrent.getData().equals(thatCurrent.getData())) return false;
+            if (thisCurrent.getPriority() != thatCurrent.getPriority() ||
+                    !thisCurrent.getData().equals(thatCurrent.getData())) {
+                return false;
+            }
             thisCurrent = thisCurrent.getNext();
             thatCurrent = thatCurrent.getNext();
         }
@@ -72,8 +80,7 @@ public class LinkedPriorityQueue<T> implements PriorityQueue<T> {
 
         @Override
         public String toString() {
-            return "(p:" + String.valueOf(priority) +
-                    ", d:" + data.toString() + ")";
+            return "(p:" + String.valueOf(priority) + ", d:" + data.toString() + ")";
         }
     }
 }
