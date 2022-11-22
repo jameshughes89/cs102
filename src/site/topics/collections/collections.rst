@@ -123,22 +123,34 @@ Graphs
 Abstraction
 ===========
 
-* A really big idea for problem solving is *abstraction*
-    * You do this a lot in every day life
+* An important idea for problem solving is *abstraction*
 
-* We will try to separate the **WHAT** from the **HOW**
-    * What we can do
-    * How it's actually done
+    * We do this a lot in every day life
 
-* We know *what* we have to do to drive a car, but we don't need to know *how* the card does what it does
-* We know that we wanted to append things to lists in Python, but you didn't need to know how the Python list does that
+* It is often helpful to try to separate the **WHAT** from the **HOW**
+
+    * *What* we can do
+    * *How* it's actually done
+
+    * One may know *what* they have to do to drive a car
+    * But they don't need to know *how* cars actually work in detail in order to use the car
+
+    * One may know that they want to append things to lists in Python
+    * But they don't need to know how a Python list actually does that
+
 
 * The above ADTs are all just the *what*
-    * We can add and remove stuff to a list
-    * This is how we *interface* with the thing
 
-* At no point do we talk about *how* or *implement* these ADTs actually do their thing
-    * In fact, maybe there are multiple options for *how* for a given *what*
+    * We can add and remove things from a stack
+
+* This is how one *interfaces* with the thing
+* As of now, there has been no discussion on *how* these ADTs actually work under the hood
+
+    * The implementation of these ADTs will come later
+    * In fact, there is often several reasonable options *how* for a single *what*
+
+        * Implement a stack with an array?
+        * Implement a stack with a linked structure?
 
 
 Layering
