@@ -99,14 +99,14 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
         // Element must belong at rear
         return rear;
     }
-//    private int findInsertIndex(T element) {
-//        int searchIndex = 0;
-//        Iterator<T> it = this.iterator();
-//        while (it.hasNext() && it.next().compareTo(element) < 0) {
-//            searchIndex++;
-//        }
-//        return searchIndex;
-//    }
+    //    private int findInsertIndex(T element) {
+    //        int searchIndex = 0;
+    //        Iterator<T> it = this.iterator();
+    //        while (it.hasNext() && it.next().compareTo(element) < 0) {
+    //            searchIndex++;
+    //        }
+    //        return searchIndex;
+    //    }
 
     @Override
     public void add(T element) {
@@ -187,17 +187,17 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
         }
         return count;
     }
-//    @Override
-//    public int getCount(T target) {
-//        int count = 0;
-//        Iterator<T> it = this.iterator();
-//        while (it.hasNext()) {
-//            if (it.next().equals(target)) {
-//                count++;
-//            }
-//        }
-//        return count;
-//    }
+    //    @Override
+    //    public int getCount(T target) {
+    //        int count = 0;
+    //        Iterator<T> it = this.iterator();
+    //        while (it.hasNext()) {
+    //            if (it.next().equals(target)) {
+    //                count++;
+    //            }
+    //        }
+    //        return count;
+    //    }
 
     @Override
     public boolean isEmpty() {
@@ -222,13 +222,13 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
         }
         return builder.toString();
     }
-//    public String toString() {
-//        Iterator<T> it = this.iterator();
-//        StringBuilder builder = new StringBuilder();
-//        while (it.hasNext()) {
-//            builder.append(it.next());
-//            builder.append(", ");
-//        }
-//        return builder.toString();
-//    }
+    //    public String toString() {
+    //        Iterator<T> it = this.iterator();
+    //        StringBuilder builder = new StringBuilder();
+    //        while (it.hasNext()) {
+    //            builder.append(it.next());
+    //            builder.append(", ");
+    //        }
+    //        return builder.toString();
+    //    }
 }

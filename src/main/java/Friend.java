@@ -40,18 +40,19 @@ public final class Friend {
         return String.format("Friend(%s, %s, %s)", firstName, lastName, email);
     }
 
-    //      This is what is included in topic3
     //    /**
-    //     * Sample equals method for comparing two friend objects. In this example, we will simply compare first and last
+    //     * This equals is what is included in the course content.
+    //     * <p>
+    //     * Sample equals method for comparing two friend objects. In this example, we will simply compare first and
+    //     * last
     //     * names
-    //     *
+    //     * <p>
     //     * This example is deliberately kept very simple and does not actually override the toString properly.
     //     *
-    //     * @return      if the two friend objects are equal
+    //     * @return if the two friend objects are equal
     //     */
     //    public boolean equals(Friend other) {
-    //        return this.firstName.equals(other.firstName)
-    //                && this.lastName.equals(other.lastName);
+    //        return this.firstName.equals(other.firstName) && this.lastName.equals(other.lastName);
     //    }
 
     /**

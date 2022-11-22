@@ -14,8 +14,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class MazeTest {
 
-    private static final String EMPTY_MAZE =
-            "";
+    // @formatter:off
+    private static final String EMPTY_MAZE = "";
     private static final String NO_START_MAZE =
             "#####\n" +
                     "# # #\n" +
@@ -110,7 +110,7 @@ public class MazeTest {
                     "####\n" +
                     "####\n" +
                     "####";
-
+    // @formatter:on
     private Maze classUnderTest;
 
     static Stream<String> mazeStringExamples() {
