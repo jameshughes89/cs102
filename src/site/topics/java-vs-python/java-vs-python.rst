@@ -210,6 +210,9 @@ Constants
 * Java will, however, ensure that the value of the constant is set once and not changed during execution
 * The special keyword ``final`` is used to declare a constant
 
+    * Forces the variable to be set exactly once
+    * If somehow no value was assigned, there will be a compiler error
+
 .. list-table:: Constants
     :header-rows: 1
 
@@ -242,7 +245,7 @@ Arrays
 
     * They store data in a sequential linear collection
     * They have a **fixed** size
-    * They have fewer built in methods
+    * They have fewer built in functions
 
 .. list-table:: Lists & Arrays
     :header-rows: 1
