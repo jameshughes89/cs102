@@ -30,12 +30,13 @@ public class ArrayStack<T> implements Stack<T> {
     }
 
     @Override
-    public void push(T element) {
+    public boolean push(T element) {
         if (top == stack.length) {
             expandCapacity();
         }
         stack[top] = element;
         top++;
+        return true;
     }
 
     /**
