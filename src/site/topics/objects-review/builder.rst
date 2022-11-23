@@ -1,24 +1,27 @@
-*****************
-Aside --- Builder
-*****************
+************************
+Aside --- String Builder
+************************
 
-* Due to how Strings work, it ends up being wasteful to append to strings
-    * They're *immutable*
-        * Can't be changed once created
-    * Every time we append, we actually create a new string object
+* Due how ``String`` objects work, it ends up being wasteful to continually append to strings
 
-* Instead, the ``StringBuilder`` object can be used to eliminate the extra overhead
+    * ``String`` objects are *immutable*
 
-* Also, there is no need to call ``.toString()`` explicitly since Java will do this for us
-    * This is also true in the example without the ``StringBuilder``
+        * They cannot be changed once they are created
+
+    * When appending, a new ``String`` object needs to be created
+
+
+* An alternative to continually appending to a ``String`` is a ``StringBuilder``, which eliminates the extra overhead
+* See the below example of the ``ContactList`` class' ``toString`` that makes use of a ``StringBuilder``
 
 .. code-block:: java
     :linenos:
+    :emphasize-lines: 4
 
         public String toString() {
             StringBuilder builder = new StringBuilder();
-            for (int i = 0; i < friendCount; ++i) {
-                builder.append(friends[i]);
+            for (int i = 0; i < size(); i++) {
+                builder.append(friends[i].toString());
                 builder.append("\n");
             }
             return builder.toString();
