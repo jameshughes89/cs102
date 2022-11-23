@@ -80,7 +80,7 @@ public class ContactList {
     private int find(Friend friend) {
         // Linear search for the friend we are trying to find
         for (int i = 0; i < size(); ++i) {
-            if (friend.equals(friends[i])) {
+            if (Objects.equals(friend, friends[i])) {
                 return i;
             }
         }
