@@ -113,29 +113,42 @@ Stack ADT
 Example Use
 ===========
 
-* We'll use a stack to solve a problem without having to know how it is implemented
-    * We can even write the pseudocode for an algorithm using a stack
+* With only the *what*, it is possible to solve complex problems
+
 
 Maze Solving
 ------------
 
-    .. image:: maze.png
-       :width: 250 px
-       :align: center
+    .. figure:: maze.png
+        :width: 250 px
+        :align: center
+
+        A 6x6 maze. The green and red cells represent the start and end locations respectively. Black cells represent
+        walls and light blue represent open spaces.
 
 
 * Finding a path through a maze can be done with a simple *depth first search* algorithm
 * The high-level idea is simple
-    * Pick path you have not visited yet
-    * Keep going until you find the end or hit a dead end
-    * If you hit the end, you're done
-    * If you hit a dead end, just backtrack until you can find another path you haven't visited yet
+
+    * Pick a path not visited yet
+    * Keep travelling down the path until the end or a dead end is found
+    * If the end is found, done
+    * If a dead end is found, backtrack until another available unvisited path is found
     * Repeat
 
-* The backtracking is very easily handled by a stack
-    * The top is the last thing we looked at
-    * The thing after the top is the second last thing we looked at
+
+* The backtracking is handled by a stack
+
+    * The top of the stack is the last thing (cell) visited
+    * The thing after/below the top is the second last thing (cell) visited
     * ...
+
+
+* Thus, backtracking is done by
+
+    * Popping from the stack
+    * Checking if the top has any available unvisited paths
+
 
 Pseudocode for Traversing a Maze
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
