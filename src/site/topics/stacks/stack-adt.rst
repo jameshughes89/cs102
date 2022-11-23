@@ -2,13 +2,20 @@
 The Stack ADT
 *************
 
-* Stacks are a collection of elements that are only added and removed from one end
-    * The *top*
+* Stacks are a linear collection of elements
+* All adding and removing of elements happen at one end of the stack --- the *top*
+
+    * All elements are pushed (added) to the top of the stack
+    * All elements are popped (removed) from the top of the stack
+
 
 * Given this, the **L**\ ast thing **I**\ n will be the **F**\ irst thing **O**\ ut
+
     * LIFO
 
+
 * For example
+
     * A stack of plates that you'd see at a buffet
     * Webpage history with the back button
     * Undo in your text editor
