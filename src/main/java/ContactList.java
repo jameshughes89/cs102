@@ -95,11 +95,11 @@ public class ContactList {
      *
      * @param friend Friend object to find the index of within the collection.
      * @return Index of the Friend object.
-     * @throws NoSuchElementException If no equal Friend object exists within the collection, throw an exception.
+     * @throws NoSuchElementException Throw if no equal Friend object exists within the collection, throw an exception.
      */
     public int indexOf(Friend friend) {
         if (!contains(friend)) {
-            throw new NoSuchElementException();
+            throw new NoSuchElementException("Friend does not exist within ContactList.");
         }
         return find(friend);
     }
@@ -110,11 +110,14 @@ public class ContactList {
      *
      * @param index Index of the Friend object to be returned.
      * @return Friend object at the specified index.
-     * @throws IndexOutOfBoundsException If an invalid index is provided.
+     * @throws IndexOutOfBoundsException Throw if an invalid index is provided (negative, or too large).
      */
     public Friend get(int index) {
-        if (index < 0 || index >= size()) {
-            throw new IndexOutOfBoundsException();
+        if (index < 0) {
+            throw new IndexOutOfBoundsException("Cannot index with negative indices.");
+        }
+        if (index >= size()) {
+            throw new IndexOutOfBoundsException("Index beyond the size of the ContactList.");
         }
         return friends[index];
     }
@@ -127,11 +130,11 @@ public class ContactList {
      *
      * @param friend Friend object to remove from the collection.
      * @return True if the object was successfully removed, false otherwise.
-     * @throws NoSuchElementException If the Friend object does not exist within the collection.
+     * @throws NoSuchElementException Throws if the Friend object does not exist within the collection.
      */
     public boolean remove(Friend friend) {
         if (!contains(friend)) {
-            throw new NoSuchElementException();
+            throw new NoSuchElementException("Removing from an empty ContactList.");
         }
         int removeIndex = find(friend);
         // Although it is possible that the element being removed is replaced with itself, which happens when it is the
