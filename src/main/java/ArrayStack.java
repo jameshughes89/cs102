@@ -4,7 +4,7 @@ import java.util.Objects;
 
 /**
  * Implementation of a stack with an array as the container. The array container will automatically "grow" to
- * accommodate for adding beyond the initial capacity.
+ * accommodate adding beyond the initial capacity.
  *
  * @param <T> Type of elements that are to be on the stack.
  */
@@ -15,29 +15,28 @@ public class ArrayStack<T> implements Stack<T> {
     private int top;
 
     /**
-     * Create an ArrayStack of the default capacity.
+     * Create an empty ArrayStack of the default capacity.
      */
     public ArrayStack() {
         this(DEFAULT_CAPACITY);
     }
 
     /**
-     * Create an ArrayStack with the specified size.
+     * Create an empty ArrayStack with the specified capacity.
      *
-     * @param initialCapacity Starting capacity of the fixed length array.
+     * @param capacity Starting capacity of the fixed length array.
      */
     @SuppressWarnings("unchecked")
-    public ArrayStack(int initialCapacity) {
+    public ArrayStack(int capacity) {
         top = 0;
-        // Generic types cannot be instantiated so they are cast.
-        // This does generate a compile time warning that
-        // is being suppressed with the @ annotation.
-        stack = (T[]) new Object[initialCapacity];
+        // Generic types cannot be instantiated, so an array of type "Object" is created that is then cast to type T.
+        // This does generate a compile time warning that is being suppressed with the @ annotation.
+        stack = (T[]) new Object[capacity];
     }
 
     @Override
     public boolean push(T element) {
-        if (top == stack.length) {
+        if (size() == stack.length) {
             expandCapacity();
         }
         stack[top] = element;
@@ -46,8 +45,7 @@ public class ArrayStack<T> implements Stack<T> {
     }
 
     /**
-     * Doubles the size of the stack array and copy the
-     * contents over.
+     * Doubles the size of the stack array container and copy the  contents from the old array to the new array.
      */
     @SuppressWarnings("unchecked")
     private void expandCapacity() {
@@ -63,9 +61,9 @@ public class ArrayStack<T> implements Stack<T> {
         if (isEmpty()) {
             throw new NoSuchElementException("Popping from an empty stack.");
         }
+        T returnElement = stack[top - 1];
+        stack[top - 1] = null;
         top--;
-        T returnElement = stack[top];
-        stack[top] = null;
         return returnElement;
     }
 
@@ -90,11 +88,10 @@ public class ArrayStack<T> implements Stack<T> {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < top; ++i) {
-            builder.append(stack[i]);
-            builder.append(", ");
+        for (int i = 0; i < size(); i++) {
+            builder.insert(0, ", ");
+            builder.insert(0, stack[i]);
         }
-        builder.append("<-- Top");
         return builder.toString();
     }
 
