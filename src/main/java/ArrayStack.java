@@ -2,6 +2,12 @@ import java.util.Arrays;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 
+/**
+ * Implementation of a stack with an array as the container. The array container will automatically "grow" to
+ * accommodate for adding beyond the initial capacity.
+ *
+ * @param <T> Type of elements that are to be on the stack.
+ */
 public class ArrayStack<T> implements Stack<T> {
 
     private static final int DEFAULT_CAPACITY = 100;
@@ -23,7 +29,7 @@ public class ArrayStack<T> implements Stack<T> {
     @SuppressWarnings("unchecked")
     public ArrayStack(int initialCapacity) {
         top = 0;
-        // Generic types cannot be instantiated so we cast.
+        // Generic types cannot be instantiated so they are cast.
         // This does generate a compile time warning that
         // is being suppressed with the @ annotation.
         stack = (T[]) new Object[initialCapacity];
