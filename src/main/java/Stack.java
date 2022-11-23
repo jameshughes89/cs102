@@ -1,3 +1,11 @@
+/**
+ * A stack is a linear data structure that has all the action happen from one end referred to as the "top"; all
+ * additions (pushes) and removals (pops) happen from the same end, the "top". This data structure has a "last in,
+ * first out" (LIFO) property --- the last thing that was added to the stack would be the first thing removed from
+ * the stack if a remove were to happen. Adding and removing from anywhere else in the stack is disallowed.
+ *
+ * @param <T> Type of elements that are to be on the stack.
+ */
 public interface Stack<T> {
 
     /**
