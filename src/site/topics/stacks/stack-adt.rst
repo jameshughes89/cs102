@@ -89,16 +89,23 @@ Stack Context
 Stack ADT
 ---------
 
-* With this, we now know what the operators are and how they are used
+* The above describes the *what* of the stack
+
+    * What can a stack do
+
 
 * Notice how none of the above explains a single thing about *how* the stack is implemented
-    * Nothing about where we store the data
-    * Nothing about how the operators do what they do
 
-* Notice that this also has nothing to do with Java
+    * Nothing about where the data is stored
+    * Nothing about how the methods do what they do
+
+
+* Also notice that this has nothing to do with Java
+
     * Or Python
     * Or C++
     * Or ...
+
 
 * This is just the definition of the stack ADT
 
