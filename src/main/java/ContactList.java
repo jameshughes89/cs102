@@ -15,7 +15,7 @@ public class ContactList {
     private Friend[] friends;
 
     /**
-     * Create an empty ContactList with the array container's capacity being set to the defauly capacity.
+     * Create an empty ContactList with the array container's capacity being set to the default capacity.
      */
     public ContactList() {
         // Calls the constructor that takes an int as parameter
