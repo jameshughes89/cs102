@@ -197,20 +197,37 @@ Interface
 
 * There are many possible ways one could implement a stack data structure
 * But, all implementations must be a *stack*
-    * They must follow our definition of a stack ADT
 
-* In Java, we can create an **interface** that defines what the operations of the stack ADT are without actually implementing it
-* Then, when someone implements the stack ADT, the interface will make sure that the implementation *implements* the operators
+    * They must follow definition of what a stack ADT is
 
-* The interface will simply be a list of *abstract methods* and relevant constants
-    * Abstract methods are the method signature/header with no actual body
-    * Our methods will be ``public``
-        * ``public int someMethod(int a, int b);``
-        * Although, we don't actually have to say ``public`` here since it has to be
-    * Constants will be ``static final``
+
+* In Java, one can create an **interface** that defines what the operations of the stack ADT are
+* However, the interface only defines the *what*
+
+    * Interfaces do not define the *how*
+
+
+* If someone wants to implement the *how* of a stack ADT, the interface dictates what must be implemented
+* If the implementation does not implement the interface completely, a compile time error will occur
+
+* An interface is simply a list of *abstract methods* and relevant constants
+
+    * Abstract methods are the method signature with no actual body
+
+        * ``int someMethod(int a, int b);``
+        * No visibility modifier is included as it must be public
+
+
+    * Relevant constants will be ``static final``
+
 
 Stack Interface
 ------------------
+
+* Below is the Stack interface
+
+    * It only includes the *what*
+    * No actual implementation of any method is included
 
 .. code-block:: java
     :linenos:
@@ -218,7 +235,7 @@ Stack Interface
     public interface Stack <T> {
 
         // Javadoc comments within Stack.java file
-        void push(T element);
+        boolean push(T element);
         T pop();
         T peek();
         boolean isEmpty();
