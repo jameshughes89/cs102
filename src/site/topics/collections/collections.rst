@@ -46,6 +46,8 @@ Stack
     :width: 500 px
     :align: center
 
+    Adding a plate to the top of a stack of plates.
+
 
 * Adding and removing data from a stack happens from one end
 * The last thing added to the stack will be the first thing removed
@@ -57,6 +59,9 @@ Queue
 .. figure:: /topics/queues/queue_example.png
     :width: 500 px
     :align: center
+
+    A first come first served queue/line.
+
 
 * Adding and removing data from a queue happens at *different* ends
 
@@ -72,6 +77,9 @@ Bag
 .. figure:: /topics/intro/ordered_bag_example.png
     :width: 500 px
     :align: center
+
+    An element being added to an ordered bag such that the order is preserved.
+
 
 * Adding and removing from a bag will depend on the type of bag we have
 * In the above example, the bag is ordered, so adding to the bag must preserve the order
@@ -94,6 +102,9 @@ Trees
     :width: 500 px
     :align: center
 
+    A simple file system on a computer.
+
+
 * If one were asked "What comes after Program Files" in the above example, there is no obvious answer
 * The data is arranged in a hierarchical way
 * Every element has at most one *parent*, but potentially many *children*
@@ -107,6 +118,9 @@ Graphs
 .. figure:: /topics/intro/graph_example.png
     :width: 500 px
     :align: center
+
+    A hypothetical network of available flights between airports.
+
 
 * Data may be represented with relationships to other data
 * Graphs are made up of
