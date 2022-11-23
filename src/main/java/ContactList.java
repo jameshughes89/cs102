@@ -139,6 +139,8 @@ public class ContactList {
         // is decreased by 1 (size--), meaning the next add would happen at the index removedIndex/size-1, thereby
         // overwriting that value anyway.
         friends[removeIndex] = friends[size - 1];
+        // Further, by changing the last element to reference null, we know the data is gone.
+        friends[size - 1] = null;
         size--;
         return true;
     }
@@ -147,8 +149,7 @@ public class ContactList {
      * Clear the contents of the ContactList object; eliminate all Friends form the ContactList.
      */
     public void clear() {
-        // Although the Friend object references may remain in the collection, by setting the size to 0, any new
-        // additions will automatically overwrite any existing references to Friend objects.
+        friends = new Friend[friends.length];
         size = 0;
     }
 
