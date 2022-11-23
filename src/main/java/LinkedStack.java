@@ -12,11 +12,12 @@ public class LinkedStack<T> implements Stack<T> {
     }
 
     @Override
-    public void push(T element) {
+    public boolean push(T element) {
         Node<T> toPush = new Node<T>(element);
         toPush.setNext(top);
         top = toPush;
         size++;
+        return true;
     }
 
     @Override
