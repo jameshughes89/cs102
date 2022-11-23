@@ -2,27 +2,39 @@
 Aside --- Equals
 ****************
 
-* Below is a better and more correct implementation of the ``equals`` method
-* You will notice the type of the parameter has changed from ``Friend`` too ``Object``
+* Below is an improved and more correct implementation of the ``equals`` method
+* You will notice the type of the parameter has changed from ``Friend`` to ``Object``
+
     * The ``Object`` class is at the top of the class hierarchy
     * Every class we write will all have ``Object`` as a superclass
     * Every class we can have will actually be an ``Object``
-    * The more details on this will come later in the course
+    * More details on this will come later in the course
 
-* Here you will see that we check if the ``Object o`` is the actual thing we are comparing to
-    * Then obviously they are equal
 
-* We also check if it is null
+* Here it checks if the ``Object`` ``o`` is the actual thing being compared to --- ``if (o == this)``
+
+    * If they are aliases for the same object
+    * If they are, then obviously they are equal
+
+
+* It also check if it is null --- ``if (o == null)``
+
     * If it is null, then clearly ``this`` cannot be equal to ``o``
 
-* We check if they are of the same class or not
-    * If they are not, we say they are not equal
 
-* We then need to *downcast* the ``Object`` to something of class ``Friend``
-    * This lets us access the fields and methods for ``Friend`` from ``o``
+* It then checks if they are of the same class --- ``if (o.getClass() != this.getClass())``
+
+    * If they are not, then they are not equal
+
+
+* If the method gets to this point, it knows that ``o`` is of class ``Friend``
+* It *downcast* the ``Object`` to class ``Friend``
+
+    * This allows for accessing the fields and methods from ``Friend``
     * Again, more on this later in the course
 
-* Lastly, we check if the ``firstName`` and ``lastName`` are the same
+
+* Lastly, it check if all the attributes are equal
 
 .. code-block:: java
     :linenos:
