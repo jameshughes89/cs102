@@ -172,7 +172,7 @@ public class ContactList {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < size(); i++) {
-            builder.append(friends[i].toString());
+            builder.append(friends[i]);
             builder.append("\n");
         }
         return builder.toString();
