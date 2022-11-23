@@ -153,7 +153,7 @@ Maze Solving
 Pseudocode for Traversing a Maze
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block::
+.. code-block:: text
     :linenos:
 
     Add the start of the maze to the stack
@@ -161,14 +161,15 @@ Pseudocode for Traversing a Maze
     While the stack is not empty
         Get the top of the stack with a peek (current cell)
         If the top is the end
-            Huzzah, done!
+            done
 
         If an unvisited neighbour of the current cell exists
             Push the neighbour onto the stack
+
         If no admissible neighbour exists
             Pop from the stack
 
-    If we leave the loop with an empty stack, there is no solution
+    If the loop ever exists because of an empty stack, there is no solution
 
 
 Example
