@@ -100,7 +100,7 @@ public class ContactList {
      *
      * @param friend Friend object to find the index of within the collection.
      * @return Index of the Friend object.
-     * @throws NoSuchElementException Throw if no equal Friend object exists within the collection, throw an exception.
+     * @throws NoSuchElementException If no equal Friend object exists within the collection, throw an exception.
      */
     public int indexOf(Friend friend) {
         if (!contains(friend)) {
@@ -115,7 +115,7 @@ public class ContactList {
      *
      * @param index Index of the Friend object to be returned.
      * @return Friend object at the specified index.
-     * @throws IndexOutOfBoundsException Throw if an invalid index is provided (negative, or too large).
+     * @throws IndexOutOfBoundsException If an invalid index is provided (negative, or too large).
      */
     public Friend get(int index) {
         if (index < 0) {
@@ -135,7 +135,7 @@ public class ContactList {
      *
      * @param friend Friend object to remove from the collection.
      * @return True if the object was successfully removed, false otherwise.
-     * @throws NoSuchElementException Throws if the Friend object does not exist within the collection.
+     * @throws NoSuchElementException If the Friend object does not exist within the collection.
      */
     public boolean remove(Friend friend) {
         if (!contains(friend)) {
