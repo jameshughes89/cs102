@@ -35,14 +35,12 @@ Variables and Types
       - Java
 
     * -     .. code-block:: python
-                :linenos:
 
                 anInt = 5
                 aFloat = 5.5
                 aString = "5"
 
       -     .. code-block:: java
-                :linenos:
                 :emphasize-lines: 3,4,5,6
 
                 public class SomeClass {
@@ -55,26 +53,37 @@ Variables and Types
                     }
                 }
 
-* Notice the five main differences:
-    1. We **must** declare the variables with their types
-    2. We will use the word ``double`` to be floating point numbers
-        * Technically we could still use ``float``, but I almost always see ``double``
-        * A ``float`` takes up 4 bytes and a ``double`` takes up 8 (double the amount)
-    3. We use ``"double quotes"`` for strings --- a single character only uses single quotes: ``'a'``
+* Notice a few main differences:
+
+    #. We **must** declare the variables with their types
+    #. We will use the word ``double`` to be floating point numbers
+
+        * Technically we could still use ``float``, but ``double`` is very common
+        * A ``float`` takes up 4 bytes and a ``double`` takes up 8 --- *double* the amount
+
+    #. We use ``"double quotes"`` for strings --- single quotes are used for a single character: ``'a'``
+
         * That does mean that we have a new type: a character (``char``)
         * ``char theLetterB = 'B';``
-    4. We use ``// for comments`` instead of ``# like in Python``
-    5. We end our statements in Java with a semicolon (``;``)
 
-.. warning::
-
-    From now on, I will **not** be including the ``class`` stuff and  ``public static void main(String[] args)`` unless necessary.
+    #. We use ``// for comments`` instead of ``# like in Python``
+    #. We end our statements in Java with a semicolon (``;``)
 
 
 .. warning::
 
-    Unlike how in Python you can change the type that the variable has, you cannot do that in Java; Java will not
-    compile the above code.
+    For the sake of brevity, from now on the ``class`` stuff and ``public static void main(String[] args)`` boilerplate
+    code will **not** be included in the code examples unless necessary.
+
+
+.. warning::
+
+    In Python one could change the value stored in a variable to something of a different type. In Java, this is **not**
+    possible since we need to be explicit about what the type of the value is to be stored in a variable.
+
+    If one writes code that would put a value of a type into a variable of another type, Java will not even compile the
+    code; the code will not even run. At first this may seem frustrating, but this ends up being very helpful as it
+    protects against certain bugs before the code even starts running.
 
     .. list-table::
         :header-rows: 1
@@ -84,23 +93,25 @@ Variables and Types
         * -     .. code-block:: python
 
                     otherInt = 5
-                    otherInt = 'totally Not 5'
+                    otherInt = 'totally not 5'
 
           -     .. code-block:: java
                     :emphasize-lines: 3
 
                     int otherInt = 5;
-                    otherInt = "totally Not 5";     // Compiler error
+                    otherInt = "totally not 5";     // Compiler error
 
 
 Declaring & Assigning Variables
 -------------------------------
 
 * There is a difference between *declaring* and *assigning* a variable
-* In Python, we didn't need to explicitly *declare* variables
+* In Python, one did not need to explicitly *declare* variables
+
     * They got created and automatically declared once they are assigned a value
 
-* In Java, we have to explicitly declare variables
+* In Java, one must explicitly declare variables
+
     * This tells the computer that you need to set aside enough memory for something of the specified type
 
 .. list-table:: Declaring and Assigning Variables
@@ -122,7 +133,10 @@ Declaring & Assigning Variables
                 anotherInt = 11;                    // Assignment
                 System.out.println(anotherInt);
 
-* However, you can declare and assign a variable in a single line of code, like we saw in the examples above
+
+* However, in Java, one could declare and assign a variable in a single line of code, like in the above examples
+
+    * ``int anotherInt = 11;`` --- variable is declared and assigned in a single line
 
 
 Reusing Variables
@@ -166,26 +180,38 @@ Reusing Variables
                 System.out.println(b);
 
 
-* It's the same except for explicitly declaring the types for the variables the first time you use them
+* The Python and Java code is nearly the same
+* The difference with Java is the need to explicitly declare the variable the first time they are used
 
 .. warning::
 
-    Just because you *can* doesn't mean you *should*. This isn't something you would likely want to be doing though.
+    Although it is fine to reuse variables, it is often not overly helpful. The above example really only makes sense
+    given that they are arbitrary values stored in variables with nondescript names.
+
+    Consider a variable for storing a temperature in Celsius --- ``temperatureInCelsius``. The circumstances where it
+    would make sense to assign a brand new value to this variable would be very limited.
 
 
 Constants
 ---------
 
 * Recall *constants*
-    * Variables that are set by the programmer but are **not** changed throughout execution of the program
 
-* Python, the language, does not enforce constants to not be altered
+    * Variables that are set by the programmer but are not changed *throughout the execution of the program*
+
+* Python, the language, does not enforce the rule that constants should not be altered
 * The idea of constants are maintained and respected among programmers
 * The convention is to use all upper case letters and separate words with underscores
+
     * ``THIS_IS_A_CONSTANT``
-* You **can** change the values during execution, but you shouldn't, because then you're breaking the convention
-* Java will ensure that the value of the constant is set once and only once during the execution of the program
-* We use the special keyword ``final``
+
+* Although one could change the values during execution, it would break the convention
+
+* Java will, however, ensure that the value of the constant is set once and not changed during execution
+* The special keyword ``final`` is used to declare a constant
+
+    * Forces the variable to be set exactly once
+    * If somehow no value was assigned, there will be a compiler error
 
 .. list-table:: Constants
     :header-rows: 1
@@ -204,20 +230,22 @@ Constants
                 final double SALES_TAX = 1.15;
 
 
-* We can change constant's values however we want while writing the code
-* The point is that they will **not** change once set
+* Remember, it is possible to change a constant's value before runtime
+* The point is that they will not change at runtime
 
 
 Arrays
 ======
 
 * Java does not come with lists ready to go like Python does
-    * Or, at least, we don't get them *as a language primitive*
+
+    * They are not provided as a *language primitive*
+
 * Java does however have *arrays*, which are similar-ish to lists
+
     * They store data in a sequential linear collection
     * They have a **fixed** size
     * They have fewer built in functions
-
 
 .. list-table:: Lists & Arrays
     :header-rows: 1
@@ -251,19 +279,28 @@ Arrays
 
 
 * With the exception of the type and syntax, these look the same
+
     * We have to specify the type for Java ``int[]``
+
         * Note that ``int`` is an int and ``int[]`` is an array of ints
-    * We use squiggly braces (``{ ... }``) instead of brackets (``[ ... ]``)
 
-* One difference is that the Java arrays can't have mixed types like a Python list
-    * There is an asterisk added to this statement that we weill talk about later
+    * Squiggly braces (``{ ... }``)  are used instead of brackets (``[ ... ]``)
 
-* One **huge** difference is that the Java array used in the above example will **always** be size 4
-    * We **can't** list append to an array like we did with lists in Python
+
+* One difference is that Java arrays can't contain mixed types like a Python list
+
+    * There is an asterisk added to this statement that will be discussed later
+
+
+* One **major** difference is that the Java array used in the above example will **always** be size 4
+
+    * One cannot simply list append to an array like with lists in Python
+
         * ``aList.append(34)``
 
-* This means that we can't just start with an empty array and have it grow and grow
 * In Java, arrays have fixed sizes
+* This means that one cannot start with an empty array and have it grow and grow
+
 
 .. list-table:: "Growing" a List/Array
     :header-rows: 1
@@ -283,6 +320,7 @@ Arrays
 
       -     .. code-block:: Java
                 :linenos:
+                :emphasize-lines: 2, 5, 6
 
                 // Create a new array of size 1,000
                 int[] anArray = new int[1000];
@@ -292,39 +330,44 @@ Arrays
                     anArray[i] = i;
                 }
 
-* Mind line 3, showing how to make an array of some size
+* Mind line 2, showing how to make an empty array of a specific size
+
     * They will be filled with some default value (0 in this case)
-* Mind line 6, showing:
+
+* Mind line 5, showing:
+
     * A ``for`` loop (more on this later)
-    * Arrays have an attribute ``length`` that tells us its capacity
-* Mind line 7 showing us indexing the array in order to assign it a value
+    * Arrays have an attribute ``length`` that returns the array's capacity
+
+* Mind line 6 indexing the array in order to assign it a value
 
 
-* We can even make the size of the array based on some runtime determined value
-    * For example:
-        * If you have to read from a file, how big should the array be?
+* One could make the size of the array based on some runtime determined value --- for example:
+
+        * Reading data from a file to be stored in an array --- how big should the array be?
         * Perhaps the first line of the file contains how long the file is
         * ``String[] fileContents = new String[someValueReadIn]``
 
 .. warning::
 
-    In Java, we **cannot** index our arrays backwards like we could in Python.
+    In Java, it is not possible to index arrays backwards with negative values like in Python.
 
 
 .. _label-java_vs_python-input_output:
-
-
-
 Input & Output
 ==============
 
-* We've already seen standard output in Java
+* Several of the above examples included the use of Java's standard output
+
     * ``System.out.print("print");``
     * ``System.out.println("print a line");``
 
-* Standard input with Java is a lot more verbose
-    * This is because Java isn't designed for console applications
-    * Besides, the only place we will use this is on Kattis anyways
+
+* Standard input with Java is more verbose than Python's
+
+    * This is because Java is not designed for console applications
+    * Fortunately, the only place this is used in this course is for the Kattis problems
+
 
 .. list-table:: Reading Input
     :header-rows: 1
@@ -365,28 +408,32 @@ Input & Output
                 }
 
 
-* Mind the ``import`` statements
-* We read from a *stream*
-    * Here our stream is the standard input (``System.in``)
+* Mind the ``import`` statements for Java
+* In Java, one reads from a *stream*
 
-* We create an ``InputStreamReader`` object
+    * Here the stream is the standard input (``System.in``)
+
+
+* An ``InputStreamReader`` object is created
+
     * The thing that reads the input from the stream
-    * Sadly, this will be one thing at a time
+    * With this, it only reads one thing at a time
 
-* We use a ``BufferedReader`` to *buffer* the stream reader
-    * So we can read in more than one at a time
 
-* You will also see that we put a ``try`` and ``catch`` around the ``reader.readLine()``
-    * This is done because ``.readLine()`` has an exception that may be thrown that you must deal with
-    * Don't worry, we'll go in more details on exceptions later in the class
+* A ``BufferedReader`` is used to *buffer* the stream reader
 
-* Like Python's ``input()``, ``.readLine()`` returns a ``String``
+    * To make it easier to read in more than one at a time
 
-* Alternatively, we can modify the above code to, arguably, clean up the code
-* This way, we just pass the buck of dealing with the exception to the caller of the function
-    * THEY need to deal with it, not us here
-    * In this example, it's the ``main`` method, so this will throw the exception at the person who ran the program
 
+* Also note the use of ``try`` and ``catch`` around the ``reader.readLine()``
+
+    * This is done because ``readLine()`` has an exception that may be thrown that you must deal with
+    * Although discussed last semester, exceptions will be covered in more detail later in the course
+
+
+* Like Python's ``input()``, ``readLine()`` returns a ``String``
+
+* Alternatively, one could modify the above code to, arguably, clean it up
 
 .. code-block:: Java
     :linenos:
@@ -412,10 +459,16 @@ Input & Output
     }
 
 
-Functions
-=========
+* This just passes the buck of dealing with the exception to the caller of the function/method
 
-.. list-table:: Function Definitions
+    * In this example, it's the ``main`` method, so this will throw the exception at the person who ran the program
+    * This would cause the program to crash
+
+
+Functions/Methods
+=================
+
+.. list-table:: Function/Method Definitions
     :header-rows: 1
 
     * - Python
@@ -436,9 +489,8 @@ Functions
 
       -     .. code-block:: Java
                 :linenos:
-                :emphasize-lines: 5, 10
+                :emphasize-lines: 4, 9
 
-                // Java
                 public class SomeClass {
                     public static void main(String[] args) {
                         // Call the function
@@ -453,25 +505,100 @@ Functions
                     }
                 }
 
-* We **must** tell the function its return type
-    * ``int`` in this example, because the thing being returned is an int
-    * If we happen to have no return value for our function, then use ``void``
-        * ``static void someOtherFunction( ... ) { ``
 
-* Parameters have their types set
+* In Java, functions/methods must be explicitly told what their return type is
 
-* In the above example, the function is ``static``
+    * ``int`` in this example, because the value being returned is an ``int``
+    * In the case where the method returns no value, the return type is set to ``void``
+
+        * ``static void someOtherMethod( ... ) {``
+
+
+* Parameters have their types included
+
+    * ``int a`` and ``int b`` in the parameter list
+
+* In the above example, the function is ``static``, which means it is a function and not a method
+
     * This is a function that belongs to the class, not an instance of the class
-        * In fact, we could have used this instead ``int result = SomeClass.someFunction(1, 2);``
-    * It's not a function we will call on an instance of some object
+    * If the function is not written with ``static``, it is then an instance method
+    * In other words, it's not a method we will call on an instance of some object
 
-* You will also see that, unlike in the Python example, we can declare the functions after the calling code
+
+* As seen in the above example, the function is defined *after* it is called
+
+    * The function ``someFunction`` is called within ``main``, but it is written below ``main``
+    * This is not required in Java, but is something one could do
+    * In Python, the interpreter needed to know the function existed before it could be referenced
+
+
+Instance Methods
+----------------
+
+* For instance methods in Java, there is no need to include ``self`` in the parameter list
+
+    * Although, Java has a similar keyword --- ``this``
+
+
+.. list-table:: Methods
+    :header-rows: 1
+
+    * - Python
+      - Java
+
+    * -     .. code-block:: Python
+                :linenos:
+
+                def some_method(self, add_me):
+                    self.some_instance_variable += add_me
+
+      -     .. code-block:: Java
+                :linenos:
+
+                public void someMethod(int addMe) {
+                    some_instance_variable += add_me
+                }
+
+
+Visibility Modifiers
+--------------------
+
+* In Python, there is a convention of adding an underscore (``_``) to the beginning of an attribute or method name
+* This is done to indicate that the attribute or method is not to be accessed directly from outside the class
+* In Java, the keywords ``public`` and ``private`` are used instead to specify attribute and method visibility
+* Further, Java will produce a compiler error if one tries to access something declared to be private
+
+
+.. list-table:: Visibility Modifiers
+    :header-rows: 1
+
+    * - Python
+      - Java
+    * -     .. code-block:: Python
+                :linenos:
+
+                def you_can_touch_me(self):
+                    # ...
+
+                def _do_not_touch_me(self):
+                    # ...
+
+      -     .. code-block:: Java
+                :linenos:
+
+                public void youCanTouchMe() {
+                    // ...
+                }
+
+                private void doNotTouchMe() {
+                    // ...
+                }
 
 
 Temperature Converter
 ---------------------
 
-.. list-table:: Function to Convert Fahrenheit to Celsius
+.. list-table:: Function/Method to Convert Fahrenheit to Celsius
     :header-rows: 1
 
     * - Python
@@ -495,13 +622,18 @@ Temperature Converter
                 }
 
 
-* Pay special attention to the division taking place on like 3
-* If we wrote ``5/9``, since both ``5`` and ``9`` are integers, it will do integer division
-* Since integers do not have decimal values, we truncate the decimal off, so, ``5/9 = 0``
+* Pay special attention to the division taking place on like 2
+* If one wrote ``5/9``, since both ``5`` and ``9`` are integers, it will do integer division
+* Since integers do not have decimal values, it truncates the decimal off --- ``5/9 = 0``
+
     * In reality, we know it is 0.55555555555, but we are ditching everything after the decimal point
 
-* This functionality is more typical
+
+* This integer division functionality is more typical
+
     * In fact, Python used to work this way too, and they made people mad when they changed
+    * If one truly wants floating point division, then be sure to divide floating point values
+
 
 
 Comments
@@ -530,14 +662,17 @@ Comments
      * @return              temperature in celsius
      */
     static double fahrenheitToCelsius(double fahrenheit) {
-        double celsius = (fahrenheit - 32) * 5/9;
+        double celsius = (fahrenheit - 32) * 5.0/9.0;
         return celsius;
     }
 
+
 * In the above Java example you will see
+
     * An example single line comment (``//``)
     * A multiline comment (``/* ... /*``)
     * An example of javadoc comments (``/** ... */``)
+
         * Mind the ``@param`` and ``@return``
 
 
@@ -545,8 +680,10 @@ Booleans
 ========
 
 * Java has Boolean values, except they start with lower case letters
+
     * Python --- ``some_boolean = True``
     * Java --- ``boolean someBoolean = true;``
+
 
 Conditionals
 ------------
@@ -569,36 +706,43 @@ Conditionals
                 :linenos:
 
                 if (someBoolean) {
-                    System.out.println("it was True");
+                    System.out.println("it was true");
                 } else {
-                    System.out.println("it was False");
+                    System.out.println("it was false");
                 }
 
+
 * Both examples above assume the variable ``someBoolean`` exists and is a boolean
-* Notice how the condition is in parentheses in the Java example
+* Notice how, unlike Python, the condition is in parentheses in the Java example
+
     * ``( ... )``
+
 
 Boolean Operators
 -----------------
 
-* Just like Python, we have comparison operators that return booleans
+* Just like Python, Java has comparison operators that return booleans
+
     * less than --- ``a < b``
     * sameness --- ``c == d``
     * *not* sameness --- ``e != f``
 
-* We've also got our logical operators
-    * and --- ``v && w``
-    * or --- ``x || y``
-    * not --- ``!z``
+
+* Logical operators also exist, but their syntax is a little different
+
+    * and --- ``v and w`` vs ``v && w``
+    * or --- ``x or y`` vs ``x || y``
+    * not --- ``not z`` vs ``!z``
+
 
 Loops
 =====
 
-* Just as you would expect, Java has loops too
+* Just as one would expect, Java has loops too
+
 
 While Loops
 -----------
-
 
 .. list-table:: While Loops with Counter
     :header-rows: 1
@@ -622,19 +766,20 @@ While Loops
 
                 int c = 0;
 
-                // While some condition is True
+                // While some condition is true
                 while (c < 10) {
                     System.out.println("c is now: " + c);
                     c++;
                 }
 
-* Just like the ``if`` statements, we put the condition in parentheses
+
+* Just like the ``if`` statements, the condition is in parentheses
 * Note the ``c++`` --- this is the same thing as ``c+=1``, but even shorter
-    * You can still use your ``c+=1`` all you want in Java
 
-* Here is another example
+    * One could still use ``c+=1`` in Java though
 
-.. list-table:: While Loops with General Condition
+
+.. list-table:: Another While Loops Example
     :header-rows: 1
 
     * - Python
@@ -666,10 +811,11 @@ While Loops
                     }
                 }
 
+
 For Each Loop
 -------------
 
-* For loops in Python are basically *for each* loops
+* For loops in Python are effectively *for each* loops
 
 .. list-table:: For Each Loops
     :header-rows: 1
@@ -697,9 +843,10 @@ For Each Loop
                 }
 
 
-* It's remarkably similar, except
-    * we specify the type of ``c``
-    * use a ``:`` instead of a ``in``
+* It's very similar, except
+
+    * The type of ``c`` is specified
+    * A colon (``:``) is used instead of ``in``
 
 
 For Loop
@@ -725,34 +872,43 @@ For Loop
                 :emphasize-lines: 2
 
                 // Run loop 10 times (0 -- 9)
-                for (int i = 0; i < 10; ++i) {
+                for (int i = 0; i < 10; i++) {
                     System.out.println(i);
                 }
 
-* Here, we're running the first statement within the parentheses by the for loop once
-    * ``int i = 0``
-    * Create an int ``i`` and set it to ``0``
 
-* The second statement in the parentheses is the condition we check every time the loop runs
+* In Java, the first statement within the parentheses is run once before anything loops
+
+    * ``int i = 0``
+    * Create an integer ``i`` and assign it to ``0``
+
+
+* The second statement in the parentheses is the condition checked every time the loop runs
+
     * ``i < 10``
-    * check if ``i`` is less than ``10``
-    * This could be more general conditionals too
+    * Check if ``i`` is less than ``10``
+    * This could be a more general conditionals if needed
+
 
 * The third statement in the parentheses runs after each time the code block in the loop finishes
-    * ``++i``
-    * After we have finished the body of the for loop (``System.out.println(i);``), add ``1`` to ``i``
+
+    * ``i++``
+    * After the body of the loop finishes a single iteration, add ``1`` to ``i``
+
 
 * Overall, this says:
-    * Create an ``int i`` and set it to 0
+
+    * Create an ``int i`` and set it to ``0``
     * If ``i`` is less than ``10``, run the loop
     * Add ``1`` to ``i`` every time the loop runs
+
 
 * In other words, this loop will run 10 times
     * ``0 -- 9``
 
 
-Comparison of For to While
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Comparison of For Loop to While Loop
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * It may be useful to show the comparison of a for loop to a while loop in Java
 
@@ -768,40 +924,51 @@ Comparison of For to While
     // although, scope does come into play
     initializer;
     while (condition) {
-        loop;
+        loop stuff;
         step;
     }
 
 * In the above example, both loops are doing the same thing and have the same functionality
 * The only functional difference is scope
 * In the for loop example, the initialized stuff only exists within the loop
+
     * The ``i`` in ``int = i`` cannot be accessed outside the loop
-    * The initialized stuff for the while loop will exist outside the loop
+    * The initialized stuff in the while loop example will exist outside the loop
+
 
 Java Conventions
 ================
 
-* The following is **not** exhaustive, but here are some important ones
+* The following is **not** exhaustive, but here are some important Java conventions to follow
 
 * Have one public class per file
-    * Not really a convention, more like a **must do**
+
+    * Not a convention; this is required
+
 
 * Class names start with capital letters
+
     * ``SomeClass``
 
+
 * File names are the same as the class
+
     * ``SomeClass.java``
-    * Also not so much of a convention as a requirement
+    * Not a convention; this is required
+
 
 * Functions/methods should be *camel case*, starting with a lower case
+
     * ``someFunction( ... )``
     * ``someOtherFunction( ... )``
 
 * Variables should be camelcase, starting with a lower case
+
     * ``int someVariable = 5;``
     * ``int someOtherVariable = 55;``
 
 * Constants are all uppercase with underscores separating words (*snake case*)
+
     * ``static final int THIS_IS_A_CONSTANT = 555;``
 
 
@@ -810,20 +977,23 @@ For Next Time
 
 .. warning::
 
-    If at any point you are thinking "Oh crap, how on earth am I going to remember all these differences?", `you're doing programming wrong <https://www.google.com/search?q=how+to+use+for+loops+in+java>`_.
+    If at any point you are thinking "Uh oh, how on earth am I going to remember all these differences?",
+    `you're doing programming wrong <https://www.google.com/search?q=how+to+use+for+loops+in+java>`_.
 
 
 * Practice
+
     * Use Kattis and solve problems you have already solved in Python, but use Java
     * `If at any point you feel stuck because you don't know how to do something in Java, I have good news for you <https://www.google.com/>`_.
 
 * `Check out Java's code conventions <https://www.oracle.com/java/technologies/javase/codeconventions-contents.html>`_
 
 * Read Chapter 1 of your text
+
     * 15 pages
 
 
 * :doc:`Although outside the scope of the course, if you would like to see how a C++ differs, check out the relevant C++ lesson. </cpp/syntax/syntax>`
-* :doc:`Although not part of the course, if you would like, check out C++ lesson on pointers. </cpp/pointers/pointers>`
+* :doc:`Although not part of the course, if you would like, check out the C++ lesson on pointers. </cpp/pointers/pointers>`
 
 
