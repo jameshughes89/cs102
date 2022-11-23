@@ -6,6 +6,11 @@ Aside --- Constructor Chaining
 * In the below example, when ``this(DEFAULT_CAPACITY)`` is called, it actually calls the constructor that takes an int
 * This then has the second constructor do the work
 
+.. note::
+
+    The call to ``this`` must be first statement in the constructor body.
+
+
 .. code-block:: java
     :linenos:
     :emphasize-lines: 3
