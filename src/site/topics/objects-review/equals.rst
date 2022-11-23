@@ -47,7 +47,7 @@ Aside --- Equals
     ``someObject.equals(someOtherObject)`` checks if ``someObject`` and ``someOtherObject`` are equivalent based on
     ``someObject`` class' ``equals`` method.
 
-    ``Objects.equals(someObject, someOtherObject)`` also checks if ``someObject`` is null, and then checks if
+    ``Objects.equals(someObject, someOtherObject)`` also checks if ``someObject`` is ``null``, and then checks if
     ``someObject`` and ``someOtherObject`` are equivalent based on ``someObject`` class' ``equals`` method.
 
     The below example makes use of the third option to be safe around ``null``, but realistically, based on the way the
