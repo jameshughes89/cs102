@@ -23,7 +23,7 @@ public interface Stack<T> {
      * subsequent element exists, the "top" will be null and the stack will be empty.
      *
      * @return The element on the "top" of the stack.
-     * @throws EmptyCollectionException Throw if removing from an empty stack.
+     * @throws EmptyCollectionException If removing from an empty stack.
      */
     T pop();
 
@@ -32,7 +32,7 @@ public interface Stack<T> {
      * the collection unchanged.
      *
      * @return The element on the "top" of the stack.
-     * @throws EmptyCollectionException Throw if peeking from an empty stack.
+     * @throws EmptyCollectionException If peeking from an empty stack.
      */
     T peek();
 
