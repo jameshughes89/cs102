@@ -3,7 +3,7 @@ The Stack ADT
 *************
 
 * Stacks are a linear collection of elements
-* All adding and removing of elements happen at one end of the stack --- the *top*
+* All adding and removing of elements happens at one end of the stack --- the *top*
 
     * All elements are pushed (added) to the top of the stack
     * All elements are popped (removed) from the top of the stack
@@ -14,7 +14,7 @@ The Stack ADT
     * LIFO
 
 
-* For example
+* Consider the following examples of stacks
 
     * A stack of plates that you'd see at a buffet
     * Webpage history with the back button
@@ -64,13 +64,13 @@ Stack Context
 * Push
 
     * Add an element to the collection
-    * The element added will be the element on the top of the stack
+    * The element added will be the new top of the stack
 
 
 * Pop
 
     * Remove an element from the collection
-    * The removed element will be the current top of the stack
+    * The removed element will be from the top of the stack
     * The element after the removed element will be the new top, if it exists
     * The element removed is returned
 
@@ -78,10 +78,10 @@ Stack Context
 * Peek
 
     * Return the element on the top of the stack, but leave it on the stack
-    * Peeking does not remove the element from the stack
+    * Peeking does not alter the stack
 
 
-.. warning::
+.. note::
 
     It is against this definition of a stack to access anything from anywhere other than the *top* of the stack.
 
@@ -97,7 +97,7 @@ Stack ADT
 * Notice how none of the above explains a single thing about *how* the stack is implemented
 
     * Nothing about where the data is stored
-    * Nothing about how the methods do what they do
+    * Nothing about how the operations do what they do
 
 
 * Also notice that this has nothing to do with Java
@@ -139,15 +139,15 @@ Maze Solving
 
 * The backtracking is handled by a stack
 
-    * The top of the stack is the last thing (cell) visited
-    * The thing after/below the top is the second last thing (cell) visited
+    * The top of the stack is the last thing (cell from a pathway) visited
+    * The thing after/below the top is the second last thing (cell from a pathway) visited
     * ...
 
 
 * Thus, backtracking is done by
 
     * Popping from the stack
-    * Checking if the top has any available unvisited paths
+    * Checking if the new top has any available unvisited paths
 
 
 Pseudocode for Traversing a Maze
@@ -166,7 +166,7 @@ Pseudocode for Traversing a Maze
         If an unvisited neighbour of the current cell exists
             Push the neighbour onto the stack
 
-        If no admissible neighbour exists
+        Otherwise, if no admissible neighbour exists
             Pop from the stack
 
     If the loop ever exists because of an empty stack, there is no solution
@@ -207,10 +207,13 @@ Interface
     * Interfaces do not define the *how*
 
 
-* If someone wants to implement the *how* of a stack ADT, the interface dictates what must be implemented
-* If the implementation does not implement the interface completely, a compile time error will occur
+* If someone wants to implement the *how* of a stack ADT, they implement the interface
 
-* An interface is simply a list of *abstract methods* and relevant constants
+    * The interface dictates what must be implemented
+    * If the implementation does not implement the interface completely, a compile time error will occur
+
+
+* Ultimately, an interface is simply a list of *abstract methods* and relevant constants
 
     * Abstract methods are the method signature with no actual body
 
@@ -271,6 +274,9 @@ Generics
     * ...
 
 
+* This would require three unique interfaces (and implementations) for the stack
+
+
 There has to be a Better Way!
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -297,13 +303,19 @@ There has to be a Better Way!
         }
     }
 
-* In the above example, three different stacks are created, each with a different type of object as its contents
+
 * When creating an instance of the stack, the type is specified within the ``<`` and ``>`` symbols
 
     * This will be discussed more in the following topic
 
 
-.. warning::
+* In the above example, with the use of generics
+
+    * Three different stacks are created, each with a different type of object as its contents
+    * Only one interface (and implementation) is needed for all three
+
+
+.. note::
 
     The inclusion of ``<Type>`` on the instantiation side is not actually needed as Java can infer the type. Going
     forward, for simplicity, Java's *diamond operator* (``<>``) will be used, like so:
