@@ -2,21 +2,20 @@
 Aside --- Constructor Chaining
 ******************************
 
-* Constructor Chaining allows us to call a constructor from another constructor
-* In the below example, when we call ``this(MAX_CAPACITY)``, we're actually calling the second constructor
+* Constructor Chaining allows a constructor to call another constructor
+* In the below example, when ``this(DEFAULT_CAPACITY)`` is called, it actually calls the constructor that takes an int
 * This then has the second constructor do the work
 
 .. code-block:: java
     :linenos:
-    :emphasize-lines: 4
+    :emphasize-lines: 3
 
         public ContactList() {
-            // Call the constructor that
-            // takes an int as param
+            // Calls the constructor that takes an int as parameter
             this(DEFAULT_CAPACITY);
         }
 
         public ContactList(int capacity) {
-            friendCount = 0;
+            size = 0;
             friends = new Friend[capacity];
         }
