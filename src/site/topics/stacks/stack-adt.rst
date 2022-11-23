@@ -2,29 +2,38 @@
 The Stack ADT
 *************
 
-* Stacks are a collection of elements that are only added and removed from one end
-    * The *top*
+* Stacks are a linear collection of elements
+* All adding and removing of elements happens at one end of the stack --- the *top*
+
+    * All elements are pushed (added) to the top of the stack
+    * All elements are popped (removed) from the top of the stack
+
 
 * Given this, the **L**\ ast thing **I**\ n will be the **F**\ irst thing **O**\ ut
+
     * LIFO
 
-* For example
+
+* Consider the following examples of stacks
+
     * A stack of plates that you'd see at a buffet
     * Webpage history with the back button
     * Undo in your text editor
     * Callstack
 
-**Adding to a Stack**
 
-.. image:: stack_add.png
-   :width: 500 px
-   :align: center
+.. figure:: stack_add.png
+    :width: 500 px
+    :align: center
 
-**Removing from a Stack**
+    Adding (pushing) to the top of a stack.
 
-.. image:: stack_remove.png
-   :width: 500 px
-   :align: center
+
+.. figure:: stack_remove.png
+    :width: 500 px
+    :align: center
+
+    Removing (popping) from the top of a stack.
 
 
 Stack Operations
@@ -33,52 +42,70 @@ Stack Operations
 Collection Operations
 ---------------------
 
-* For the collections we're looking at, we need a way to:
+* In general, for the collections being discussed in this course, there needs to be a way to
+
     * Add something to the collection
     * Remove something from the collection
     * Look at something, but do not remove it
+    * Check if the collection is empty
+    * Determine the number of things in the collection
 
-* However, the way these are done may differ between collections
+* However, the way these are done may differ between the different types of collections
 
-* Other things we will want to do with our collections are:
-    * ``isEmpty`` --- See if the collection is empty
-    * ``size`` --- Check how many things are in the collection
-    * ``toString`` --- Get a string version of the collection
+* Additionally, it may be helpful to
+
+    * Generate a string representation of the collection --- ``toString``
+    * Check if two collections are equal --- ``equals``
 
 
 Stack Context
 -------------
 
-* **Push**
-    * Add something to the *top* of the stack
+* Push
 
-* **Pop**
-    * Remove something from the *top* of the stack
-
-* **Peek**
-    * Look at the thing on the *top* of the stack, but do **not** remove it
-
-* And we will also want our ``isEmpty``, ``size``, and ``toString``
+    * Add an element to the collection
+    * The element added will be the new top of the stack
 
 
-.. warning::
+* Pop
 
-    It is against our definition of a stack to access anything from anywhere other than the *top* of the stack.
+    * Remove an element from the collection
+    * The removed element will be from the top of the stack
+    * The element after the removed element will be the new top, if it exists
+    * The element removed is returned
+
+
+* Peek
+
+    * Return the element on the top of the stack, but leave it on the stack
+    * Peeking does not alter the stack
+
+
+.. note::
+
+    It is against this definition of a stack to access anything from anywhere other than the *top* of the stack.
 
 
 Stack ADT
 ---------
 
-* With this, we now know what the operators are and how they are used
+* The above describes the *what* of the stack
+
+    * What can a stack do
+
 
 * Notice how none of the above explains a single thing about *how* the stack is implemented
-    * Nothing about where we store the data
-    * Nothing about how the operators do what they do
 
-* Notice that this also has nothing to do with Java
+    * Nothing about where the data is stored
+    * Nothing about how the operations do what they do
+
+
+* Also notice that this has nothing to do with Java
+
     * Or Python
     * Or C++
     * Or ...
+
 
 * This is just the definition of the stack ADT
 
@@ -86,34 +113,47 @@ Stack ADT
 Example Use
 ===========
 
-* We'll use a stack to solve a problem without having to know how it is implemented
-    * We can even write the pseudocode for an algorithm using a stack
+* With only the *what*, it is possible to solve complex problems
+
 
 Maze Solving
 ------------
 
-    .. image:: maze.png
-       :width: 250 px
-       :align: center
+    .. figure:: maze.png
+        :width: 250 px
+        :align: center
+
+        A 6x6 maze. The green and red cells represent the start and end locations respectively. Black cells represent
+        walls and light blue represent open spaces.
 
 
 * Finding a path through a maze can be done with a simple *depth first search* algorithm
 * The high-level idea is simple
-    * Pick path you have not visited yet
-    * Keep going until you find the end or hit a dead end
-    * If you hit the end, you're done
-    * If you hit a dead end, just backtrack until you can find another path you haven't visited yet
+
+    * Pick a path not visited yet
+    * Keep travelling down the path until the end or a dead end is found
+    * If the end is found, done
+    * If a dead end is found, backtrack until another available unvisited path is found
     * Repeat
 
-* The backtracking is very easily handled by a stack
-    * The top is the last thing we looked at
-    * The thing after the top is the second last thing we looked at
+
+* The backtracking is handled by a stack
+
+    * The top of the stack is the last thing (cell from a pathway) visited
+    * The thing after/below the top is the second last thing (cell from a pathway) visited
     * ...
+
+
+* Thus, backtracking is done by
+
+    * Popping from the stack
+    * Checking if the new top has any available unvisited paths
+
 
 Pseudocode for Traversing a Maze
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block::
+.. code-block:: text
     :linenos:
 
     Add the start of the maze to the stack
@@ -121,27 +161,35 @@ Pseudocode for Traversing a Maze
     While the stack is not empty
         Get the top of the stack with a peek (current cell)
         If the top is the end
-            Huzzah, done!
+            done
 
         If an unvisited neighbour of the current cell exists
             Push the neighbour onto the stack
-        If no admissible neighbour exists
+
+        Otherwise, if no admissible neighbour exists
             Pop from the stack
 
-    If we leave the loop with an empty stack, there is no solution
+    If the loop ever exists because of an empty stack, there is no solution
 
 
 Example
 ^^^^^^^
 
-    .. image:: maze_animate.gif
-       :width: 250 px
-       :align: center
+    .. figure:: maze_animate.gif
+        :width: 250 px
+        :align: center
+
+        Animation of a depth first search through a 6x6 maze. The green and red cells represent the start and end
+        locations respectively. Black cells represent walls and light blue represent open spaces. Purple represents the
+        current location in the maze (top of the stack), grey represent spaces in a pathway being explored (currently
+        within the stack, but not the top), and orange represents spaces that were part of a dead end path (popped from
+        the stack).
 
 
 * Try to see where the ``push``, ``pop``, and ``peek`` operations are happening
+* Again, notice that this algorithm was described with only the *what* of a stack
 
-* Again, notice that we were able to use the idea of a stack to solve a problem despite not knowing the implementation
+    * There was no need to know how the stack was implemented in order to use it to solve a problem
 
 
 Interface
@@ -149,20 +197,40 @@ Interface
 
 * There are many possible ways one could implement a stack data structure
 * But, all implementations must be a *stack*
-    * They must follow our definition of a stack ADT
 
-* In Java, we can create an **interface** that defines what the operations of the stack ADT are without actually implementing it
-* Then, when someone implements the stack ADT, the interface will make sure that the implementation *implements* the operators
+    * They must follow definition of what a stack ADT is
 
-* The interface will simply be a list of *abstract methods* and relevant constants
-    * Abstract methods are the method signature/header with no actual body
-    * Our methods will be ``public``
-        * ``public int someMethod(int a, int b);``
-        * Although, we don't actually have to say ``public`` here since it has to be
-    * Constants will be ``static final``
+
+* In Java, one can create an **interface** that defines what the operations of the stack ADT are
+* However, the interface only defines the *what*
+
+    * Interfaces do not define the *how*
+
+
+* If someone wants to implement the *how* of a stack ADT, they implement the interface
+
+    * The interface dictates what must be implemented
+    * If the implementation does not implement the interface completely, a compile time error will occur
+
+
+* Ultimately, an interface is simply a list of *abstract methods* and relevant constants
+
+    * Abstract methods are the method signature with no actual body
+
+        * ``int someMethod(int a, int b);``
+        * No visibility modifier is included as it must be public
+
+
+    * Relevant constants will be ``static final``
+
 
 Stack Interface
 ------------------
+
+* Below is the Stack interface
+
+    * It only includes the *what*
+    * No actual implementation of any method is included
 
 .. code-block:: java
     :linenos:
@@ -170,7 +238,7 @@ Stack Interface
     public interface Stack <T> {
 
         // Javadoc comments within Stack.java file
-        void push(T element);
+        boolean push(T element);
         T pop();
         T peek();
         boolean isEmpty();
@@ -181,22 +249,32 @@ Stack Interface
 Generics
 --------
 
-* You are probably wondering what ``<T>`` is
 
-* Imagine you wanted to have a stack of type ``Integer``, then you'd have to make
-    * ``public void push(Integer element);``
+* The use of ``<T>`` is something new and not an idea discussed yet
+* This is probably best explained with an example
+
+* Imagine someone wanted to have a stack of type ``Integer``
+
+    * ``public boolean push(Integer element);``
     * ``public Integer pop();``
     * ...
 
-* Then, maybe you want to make a stack of Strings
-    * ``public void push(String element);``
+
+* Then, maybe someone else wants to make a stack of ``String`` objects
+
+    * ``public boolean push(String element);``
     * ``public String pop();``
     * ...
 
-* Then maybe a stack of Friends
-    * ``public void push(Friend element);``
+
+* Then maybe a stack of ``Friend`` objects
+
+    * ``public boolean push(Friend element);``
     * ``public Friend pop();``
     * ...
+
+
+* This would require three unique interfaces (and implementations) for the stack
 
 
 There has to be a Better Way!
@@ -204,31 +282,43 @@ There has to be a Better Way!
 
 * There is, **generics**
 
-* ``<T>`` is a stand-in for a specific type that we can specify later when we want to create a stack with a specific type
-    * You can think of it as like a variable for a type
+* ``<T>`` is a stand-in for a specific type that can be specified later when the stack is created
 
-* Jumping ahead a little, we can specify the type of things we want in our stack like this
-    * We will talk about ``ArrayStack`` in the next topic
+    * It can be thought of like a variable, but for a type
+
+
+* Although jumping ahead a little, consider the following example
+
+    * ``ArrayStack`` is discussed in the following topic
+
 
 .. code-block:: java
     :linenos:
 
     public class SomeClass {
         public static void main(String[] args) {
-
             Stack<Integer> myIntegerStack = new ArrayStack<Integer>();
             Stack<String> myStringStack = new ArrayStack<String>();
             Stack<Friend> myFriendStack = new ArrayStack<Friend>();
         }
     }
 
-* In the above example, we are creating three stacks, each with a different type of object as its contents
-* We have gotten a little ahead of ourselves, but the takeaway is, when we create the instance of the stack, we specify the type we want within the ``<`` and ``>`` brackets
-    * We will talk a little more about this in the next topic
 
-.. warning::
+* When creating an instance of the stack, the type is specified within the ``<`` and ``>`` symbols
 
-    We do not actually need to include the ``<Type>`` on the instantiation side. From now on, for simplicity, I will use the *diamond operator* (``<>``) like so:
+    * This will be discussed more in the following topic
+
+
+* In the above example, with the use of generics
+
+    * Three different stacks are created, each with a different type of object as its contents
+    * Only one interface (and implementation) is needed for all three
+
+
+.. note::
+
+    The inclusion of ``<Type>`` on the instantiation side is not actually needed as Java can infer the type. Going
+    forward, for simplicity, Java's *diamond operator* (``<>``) will be used, like so:
 
         .. code-block:: java
             :linenos:
@@ -239,10 +329,11 @@ There has to be a Better Way!
 
 
 
-For next time
+For Next Time
 =============
 
 * Checkout the :doc:`Postfix expression evaluation stack example. <postfix>`
 * Checkout the :download:`Stack.java</../main/java/Stack.java>` interface.
 * Read Chapter 3 Sections 2 -- 6
+
     * 13 pages
