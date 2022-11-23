@@ -72,10 +72,10 @@ public class ContactList {
 
     /**
      * Private helper method to find and return the index of a given Friend object within the collection. If no such
-     * Friend exists within the collection, a sentinel value of -1 is returned.
+     * Friend exists within the collection, a sentinel value of -1 (NOT_FOUND constant) is returned.
      *
      * @param friend Friend to find the index of.
-     * @return Index of the Friend within the collection, or -1 if no such Friend exists.
+     * @return Index of the Friend within the collection, or -1 (NOT_FOUND constant) if no such Friend exists.
      */
     private int find(Friend friend) {
         // Linear search for the friend we are trying to find
@@ -84,8 +84,8 @@ public class ContactList {
                 return i;
             }
         }
-        // -1 will signify that we didn't find
-        // what we were looking for
+        // -1 (NOT_FOUND constant) will signify that we
+        // didn't find what we were looking for
         return NOT_FOUND;
     }
 
