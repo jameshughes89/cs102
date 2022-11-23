@@ -246,20 +246,27 @@ Stack Interface
 Generics
 --------
 
-* You are probably wondering what ``<T>`` is
 
-* Imagine you wanted to have a stack of type ``Integer``, then you'd have to make
-    * ``public void push(Integer element);``
+* The use of ``<T>`` is something new and not an idea discussed yet
+* This is probably best explained with an example
+
+* Imagine someone wanted to have a stack of type ``Integer``
+
+    * ``public boolean push(Integer element);``
     * ``public Integer pop();``
     * ...
 
-* Then, maybe you want to make a stack of Strings
-    * ``public void push(String element);``
+
+* Then, maybe someone else wants to make a stack of ``String`` objects
+
+    * ``public boolean push(String element);``
     * ``public String pop();``
     * ...
 
-* Then maybe a stack of Friends
-    * ``public void push(Friend element);``
+
+* Then maybe a stack of ``Friend`` objects
+
+    * ``public boolean push(Friend element);``
     * ``public Friend pop();``
     * ...
 
@@ -269,31 +276,37 @@ There has to be a Better Way!
 
 * There is, **generics**
 
-* ``<T>`` is a stand-in for a specific type that we can specify later when we want to create a stack with a specific type
-    * You can think of it as like a variable for a type
+* ``<T>`` is a stand-in for a specific type that can be specified later when the stack is created
 
-* Jumping ahead a little, we can specify the type of things we want in our stack like this
-    * We will talk about ``ArrayStack`` in the next topic
+    * It can be thought of like a variable, but for a type
+
+
+* Although jumping ahead a little, consider the following example
+
+    * ``ArrayStack`` is discussed in the following topic
+
 
 .. code-block:: java
     :linenos:
 
     public class SomeClass {
         public static void main(String[] args) {
-
             Stack<Integer> myIntegerStack = new ArrayStack<Integer>();
             Stack<String> myStringStack = new ArrayStack<String>();
             Stack<Friend> myFriendStack = new ArrayStack<Friend>();
         }
     }
 
-* In the above example, we are creating three stacks, each with a different type of object as its contents
-* We have gotten a little ahead of ourselves, but the takeaway is, when we create the instance of the stack, we specify the type we want within the ``<`` and ``>`` brackets
-    * We will talk a little more about this in the next topic
+* In the above example, three different stacks are created, each with a different type of object as its contents
+* When creating an instance of the stack, the type is specified within the ``<`` and ``>`` symbols
+
+    * This will be discussed more in the following topic
+
 
 .. warning::
 
-    We do not actually need to include the ``<Type>`` on the instantiation side. From now on, for simplicity, I will use the *diamond operator* (``<>``) like so:
+    The inclusion of ``<Type>`` on the instantiation side is not actually needed as Java can infer the type. Going
+    forward, for simplicity, Java's *diamond operator* (``<>``) will be used, like so:
 
         .. code-block:: java
             :linenos:
@@ -304,10 +317,11 @@ There has to be a Better Way!
 
 
 
-For next time
+For Next Time
 =============
 
 * Checkout the :doc:`Postfix expression evaluation stack example. <postfix>`
 * Checkout the :download:`Stack.java</../main/java/Stack.java>` interface.
 * Read Chapter 3 Sections 2 -- 6
+
     * 13 pages
