@@ -3,7 +3,8 @@ import java.util.NoSuchElementException;
 import java.util.Objects;
 
 /**
- * Class to keep track of a collection of Friend objects.
+ * Class to keep track of a collection of Friend objects. The underlying contained for the class is an array that
+ * will automatically "grow" to
  */
 public class ContactList {
 
@@ -13,12 +14,20 @@ public class ContactList {
     private int size;
     private Friend[] friends;
 
+    /**
+     * Create an empty ContactList with the array container's capacity being set to the defauly capacity.
+     */
     public ContactList() {
         // Call the constructor that
         // takes an int as parameter
         this(DEFAULT_CAPACITY);
     }
 
+    /**
+     * Create an empty ContactList with the array container's capacity being set to the specified size.
+     *
+     * @param capacity Starting capacity of the fixed length array.
+     */
     public ContactList(int capacity) {
         size = 0;
         friends = new Friend[capacity];
