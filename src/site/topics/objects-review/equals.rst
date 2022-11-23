@@ -36,6 +36,25 @@ Aside --- Equals
 
 * Lastly, it check if all the attributes are equal
 
+.. note::
+
+    It is important to understand the difference between ``someObject == someOtherObject``,
+    ``someObject.equals(someOtherObject)``, and ``Objects.equals(someObject, someOtherObject)``.
+
+    With ``someObject == someOtherObject``, it checks if ``someObject`` and ``someOtherObject`` are referencing the same
+    object -- aliases.
+
+    ``someObject.equals(someOtherObject)`` checks if ``someObject`` and ``someOtherObject`` are equivalent based on
+    ``someObject`` class' ``equals`` method.
+
+    ``Objects.equals(someObject, someOtherObject)`` also checks if ``someObject`` is null, and then checks if
+    ``someObject`` and ``someOtherObject`` are equivalent based on ``someObject`` class' ``equals`` method.
+
+    The below example makes use of the third option to be safe around ``null``, but realistically, based on the way the
+    ``Friend`` class is written, it is not possible for an instance of ``Friend`` object to be created with ``null``
+    fields. In other words, the second option would be fine, but using the third option would still be more defensive.
+
+
 .. code-block:: java
     :linenos:
 
