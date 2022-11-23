@@ -26,3 +26,9 @@ Aside --- String Builder
             }
             return builder.toString();
         }
+
+.. note::
+
+    On line 4 in the above example, the instances of ``Friend`` objects are having their ``.toString()`` methods called.
+    This is actually unnecessary since the ``StringBuilder`` object's ``append`` method would call this automatically.
+    In other words, line 4 could read ``builder.append(friends[i]);``. 
