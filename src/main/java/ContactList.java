@@ -134,8 +134,10 @@ public class ContactList {
             throw new NoSuchElementException();
         }
         int removeIndex = find(friend);
-        // Although removeIndex could be equal to size-1, thereby the Friend is overwritten by itself, this will not
-        // matter since the array at index size-1 is set to null and size would be set to 0 regardless.
+        // Although it is possible that the element being removed is replaced with itself, which happens when it is the
+        // last element being removed (when removedIndex is equal to size-1), this will not actually matter since size
+        // is decreased by 1 (size--), meaning the next add would happen at the index removedIndex/size-1, thereby
+        // overwriting that value anyway.
         friends[removeIndex] = friends[size - 1];
         size--;
         return true;
