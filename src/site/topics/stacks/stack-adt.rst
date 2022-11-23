@@ -61,21 +61,29 @@ Collection Operations
 Stack Context
 -------------
 
-* **Push**
-    * Add something to the *top* of the stack
+* Push
 
-* **Pop**
-    * Remove something from the *top* of the stack
+    * Add an element to the collection
+    * The element added will be the element on the top of the stack
 
-* **Peek**
-    * Look at the thing on the *top* of the stack, but do **not** remove it
 
-* And we will also want our ``isEmpty``, ``size``, and ``toString``
+* Pop
+
+    * Remove an element from the collection
+    * The removed element will be the current top of the stack
+    * The element after the removed element will be the new top, if it exists
+    * The element removed is returned
+
+
+* Peek
+
+    * Return the element on the top of the stack, but leave it on the stack
+    * Peeking does not remove the element from the stack
 
 
 .. warning::
 
-    It is against our definition of a stack to access anything from anywhere other than the *top* of the stack.
+    It is against this definition of a stack to access anything from anywhere other than the *top* of the stack.
 
 
 Stack ADT
