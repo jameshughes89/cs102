@@ -8,19 +8,25 @@ Collections
 * Implementations
 * Abstraction
 
+
 Collections and ADTs
 ====================
 
-* A collection is a group of *things* that we want to treat as a special conceptual unit
+* A collection is a group of *things* that are to be treated as a special conceptual unit
+
     * A contact list
     * A stamp collection
 
-* In computer science, we have a few popular elementary collections
+
+* In computer science there a few popular elementary collections
+
     * Stacks
     * Queues
+    * Bags
     * Lists
     * Trees
     * Graphs
+
 
 * This list is far from complete, but they will be a big part of your early computer science courses
 
@@ -29,47 +35,60 @@ Linear Collections
 ------------------
 
 * Linear collections are those that arrange data in a sequential way where each thing has a predecessor and a successor
+
     * Except for the ends
 
 
 Stack
 ^^^^^
 
-.. image:: /topics/stacks/stack_example.png
-   :width: 500 px
-   :align: center
+.. figure:: /topics/stacks/stack_example.png
+    :width: 500 px
+    :align: center
+
+    Adding a plate to the top of a stack of plates.
+
 
 * Adding and removing data from a stack happens from one end
-* The last thing we add to the stack will be the first thing off
+* The last thing added to the stack will be the first thing removed
 
 
 Queue
 ^^^^^
 
-.. image:: /topics/queues/queue_example.png
-   :width: 500 px
-   :align: center
+.. figure:: /topics/queues/queue_example.png
+    :width: 500 px
+    :align: center
 
-* Adding to a queue happens at one end and removing happens at the other
+    A first come first served queue/line.
+
+
+* Adding and removing data from a queue happens at *different* ends
+
+    * Adding happens to one end
+    * Removing happens from the other
+
 * The first thing that gets added would be the first thing to be removed
 
-List
-^^^^
 
-.. image:: /topics/intro/ordered_list_example.png
-   :width: 500 px
-   :align: center
+Bag
+^^^
 
-* Adding and removing from a list will depend on the type of list we have
-* In the above example, the list is ordered, so adding to the list should preserve the order
+.. figure:: /topics/intro/ordered_bag_example.png
+    :width: 500 px
+    :align: center
 
-* Python lists are *lists*, and they are a generalization of stacks and queues
+    An element being added to an ordered bag such that the order is preserved.
+
+
+* Adding and removing from a bag will depend on the type of bag we have
+* In the above example, the bag is ordered, so adding to the bag must preserve the order
 
 
 Nonlinear Collections
 ---------------------
 
-* Sometimes there is no natural way to arrange our data in a nice sequential
+* Sometimes there is no natural way to arrange data in a linear sequence
 * Sometimes there are many successors
 * Sometimes the idea of successor does not make sense
 
@@ -77,73 +96,110 @@ Nonlinear Collections
 Trees
 ^^^^^
 
-.. image:: /topics/trees/tree_example.png
-   :width: 500 px
-   :align: center
+* Trees are a generalization of lists
 
+.. figure:: /topics/trees/tree_example.png
+    :width: 500 px
+    :align: center
+
+    A simple file system on a computer.
+
+
+* If one were asked "What comes after Program Files" in the above example, there is no obvious answer
 * The data is arranged in a hierarchical way
 * Every element has at most one *parent*, but potentially many *children*
-* If I ask you "What comes after Program Files" in this example, there is no obvious answer
-* We can think of trees as a generalization of lists
+
 
 Graphs
 ^^^^^^
 
-.. image:: /topics/intro/graph_example.png
-   :width: 500 px
-   :align: center
+* Graphs are a generalization of trees
+
+.. figure:: /topics/intro/graph_example.png
+    :width: 500 px
+    :align: center
+
+    A hypothetical network of available flights between airports.
 
 
-* Data is often represented along with relationships to other data
+* Data may be represented with relationships to other data
+* Graphs are made up of
+
     * Vertices/Nodes
     * Edges
 
-* We can think of graphs as a generalization of trees
+* In the above example, each vertex/node (box) is an airport
+* The edges (lines) between the vertices/nodes represent the existence of a direct flight between the airports
+
+    * The relationship the airports have with one another
 
 
 Abstraction
 ===========
 
-* A really big idea for problem solving is *abstraction*
-    * You do this a lot in every day life
+* An important idea for problem solving is *abstraction*
 
-* We will try to separate the **WHAT** from the **HOW**
-    * What we can do
-    * How it's actually done
+    * We do this a lot in every day life
 
-* We know *what* we have to do to drive a car, but we don't need to know *how* the card does what it does
-* We know that we wanted to append things to lists in Python, but you didn't need to know how the Python list does that
+* It is often helpful to try to separate the **what** from the **how**
+
+    * *What* we can do
+    * *How* it's actually done
+
+    * One may know *what* they have to do to drive a car
+    * But they don't need to know *how* cars actually work in detail in order to use the car
+
+    * One may know that they want to append things to lists in Python
+    * But they don't need to know how a Python list actually does that
+
 
 * The above ADTs are all just the *what*
-    * We can add and remove stuff to a list
-    * This is how we *interface* with the thing
 
-* At no point do we talk about *how* or *implement* these ADTs actually do their thing
-    * In fact, maybe there are multiple options for *how* for a given *what*
+    * We can add and remove things from a stack
+
+* This is how one *interfaces* with the thing
+* As of now, there has been no discussion on *how* these ADTs actually work under the hood
+
+    * The implementation of these ADTs will come later
+    * In fact, there is often several reasonable options *how* for a single *what*
+
+        * Implement a stack with an array?
+        * Implement a stack with a linked structure?
 
 
 Layering
 --------
 
 * If our systems are large, we may start to have multiple levels, or, *layers*, of abstraction
-* If this is the case, we may want to group our components and restrict how our layers of abstraction interact
+* If this is the case, one may want to group components and restrict how our layers of abstraction interact
 
-* In real life, we can play the layers game
+* Often we do this in real life too
+
     * Tell me how to cook pasta?
+
         * Boil salted water and then add pasta
+
     * Tell me in more detail
+
         * Get a pot, fill with water, put on stove, and ....
+
     * ...
     * ...
     * ...
+
     * Tell me in more detail
+
         * Neurons start to fire and muscles contract...
-    * MORE DETAIL
+
+    * More detail please
+
         * Ion pumps and ....
 
-* The point is, it's `turtles all the way down <https://en.wikipedia.org/wiki/Infinite_regress>`_
-* If I want to make pasta for dinner, I don't care, and I don't want to care about ion pumps
 
+* The point is, it's `turtles all the way down <https://en.wikipedia.org/wiki/Infinite_regress>`_
+* If I want to make pasta for dinner, I don't want to care about ion pumps
+
+    * Fortunately there are several layers between cooking pasta and the polarity of particles
 
 
 Data Structures
@@ -152,25 +208,30 @@ Data Structures
 * A data structure is an actual implementation of an ADT
 
 * Using the ``ContactList`` example, the *what* would be:
+
     * Keep track of ``Friend`` objects
     * Add and remove ``Friend`` objects
     * Get a ``Friend``
     * ...
 
-* And, the *how* would be the actual code we see
-    * We used an array to keep track of the ``Friend`` objects
-    * Do a linear search through the array to find a specific ``Friend``
+* The *how* would be the actual code we see
 
-* A large focus in this class will be both the *what* and the *how* and how to keep them separate
+    * An array was used to keep track of the ``Friend`` objects
+    * A linear search was done to check if a given ``Friend`` object was in the ``ContactList``
+
+* A large focus of this class will be both the *what* and the *how* and how to keep them separate
+
     * The interface and the implementation
 
 .. warning::
 
-    It is not uncommon for people to use data structure as a catch all to mean both the ADT and the specific implementation.
+    It is not uncommon for people to use data structure as a catch all to mean both the ADT and the specific
+    implementation.
 
 
-For next time
+For Next Time
 =============
 
 * Read Chapter 3 Section 1 of your text
+
     * 3 pages
