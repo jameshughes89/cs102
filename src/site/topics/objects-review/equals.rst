@@ -27,30 +27,28 @@ Aside --- Equals
 .. code-block:: java
     :linenos:
 
-        /**
-         * Sample equals method for comparing two friend objects.
-         * In this example, we will simply compare first and last
-         * names.
-         *
-         * @param o     an "object" being compared to
-         *
-         * @return      if the two friend objects are equal
-         */
-        public boolean equals(Object o) {
-            // If o is actually in the same memory address of this
-            if (o == this) {
-                return true;
-            }
-            // If o is null, then it's not equal
-            if (o == null) {
-                return false;
-            }
-            // if o and this are of different classes, they're not the same
-            if (o.getClass() != this.getClass()) {
-                return false;
-            }
-            // Cast o as a friend
-            Friend other = (Friend) o;
-            return this.firstName.equals(other.firstName)
-                    && this.lastName.equals(other.lastName);
+    /**
+     * Checks if two Friend objects are equal. Friend objects are considered equal if all their attributes are equal.
+     *
+     * @param o an "object" being compared to.
+     * @return True if the two objects are equal, false otherwise.
+     */
+    public boolean equals(Object o) {
+        // If o is actually in the same memory address of this
+        if (o == this) {
+            return true;
         }
+        // If o is null, then it's not equal
+        if (o == null) {
+            return false;
+        }
+        // if o and this are of different classes, they're not the equal
+        if (o.getClass() != this.getClass()) {
+            return false;
+        }
+        // Cast o as a friend
+        Friend other = (Friend) o;
+        return Objects.equals(this.firstName, other.firstName) &&
+                Objects.equals(this.lastName, other.lastName) &&
+                Objects.equals(this.email, other.email);
+    }
