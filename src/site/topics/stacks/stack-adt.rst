@@ -42,17 +42,20 @@ Stack Operations
 Collection Operations
 ---------------------
 
-* For the collections we're looking at, we need a way to:
+* In general, for the collections being discussed in this course, there needs to be a way to
+
     * Add something to the collection
     * Remove something from the collection
     * Look at something, but do not remove it
+    * Check if the collection is empty
+    * Determine the number of things in the collection
 
-* However, the way these are done may differ between collections
+* However, the way these are done may differ between the different types of collections
 
-* Other things we will want to do with our collections are:
-    * ``isEmpty`` --- See if the collection is empty
-    * ``size`` --- Check how many things are in the collection
-    * ``toString`` --- Get a string version of the collection
+* Additionally, it may be helpful to
+
+    * Generate a string representation of the collection --- ``toString``
+    * Check if two collections are equal --- ``equals``
 
 
 Stack Context
