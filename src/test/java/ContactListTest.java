@@ -37,22 +37,26 @@ public class ContactListTest {
 
         @Test
         void indexOf_empty_throwsNoSuchElementException() {
-            assertThrows(NoSuchElementException.class, () -> classUnderTest.indexOf(NONEXISTENT_FRIEND));
+            Exception e = assertThrows(NoSuchElementException.class, () -> classUnderTest.indexOf(NONEXISTENT_FRIEND));
+            assertEquals("Friend does not exist within ContactList.", e.getMessage());
         }
 
         @Test
         void get_negativeIndex_throwsIndexOutOfBoundsException() {
-            assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.get(-1));
+            Exception e = assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.get(-1));
+            assertEquals("Cannot index with negative indices.", e.getMessage());
         }
 
         @Test
         void get_tooLargeIndex_throwsIndexOutOfBoundsException() {
-            assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.get(0));
+            Exception e = assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.get(0));
+            assertEquals("Index beyond the size of the ContactList.", e.getMessage());
         }
 
         @Test
         void remove_empty_throwsNoSuchElementException() {
-            assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(NONEXISTENT_FRIEND));
+            Exception e = assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(NONEXISTENT_FRIEND));
+            assertEquals("Removing from an empty ContactList.", e.getMessage());
         }
 
         @Test
@@ -106,7 +110,9 @@ public class ContactListTest {
 
             @Test
             void indexOf_nonexistentFriend_throwsNoSuchElementException() {
-                assertThrows(NoSuchElementException.class, () -> classUnderTest.indexOf(NONEXISTENT_FRIEND));
+                Exception e = assertThrows(NoSuchElementException.class,
+                        () -> classUnderTest.indexOf(NONEXISTENT_FRIEND));
+                assertEquals("Friend does not exist within ContactList.", e.getMessage());
             }
 
             @Test
@@ -116,12 +122,15 @@ public class ContactListTest {
 
             @Test
             void get_negativeIndex_throwsIndexOutOfBoundsException() {
-                assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.get(-1));
+                Exception e = assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.get(-1));
+                assertEquals("Cannot index with negative indices.", e.getMessage());
+
             }
 
             @Test
             void get_tooLargeIndex_throwsIndexOutOfBoundsException() {
-                assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.get(1));
+                Exception e = assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.get(1));
+                assertEquals("Index beyond the size of the ContactList.", e.getMessage());
             }
 
             @Test
@@ -143,7 +152,9 @@ public class ContactListTest {
 
             @Test
             void remove_nonexistentFriend_throwsNoSuchElementException() {
-                assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(NONEXISTENT_FRIEND));
+                Exception e = assertThrows(NoSuchElementException.class,
+                        () -> classUnderTest.remove(NONEXISTENT_FRIEND));
+                assertEquals("Removing from an empty ContactList.", e.getMessage());
             }
 
             @Test
@@ -201,7 +212,9 @@ public class ContactListTest {
 
                 @Test
                 void indexOf_nonexistentFriend_throwsNoSuchElementException() {
-                    assertThrows(NoSuchElementException.class, () -> classUnderTest.indexOf(NONEXISTENT_FRIEND));
+                    Exception e = assertThrows(NoSuchElementException.class,
+                            () -> classUnderTest.indexOf(NONEXISTENT_FRIEND));
+                    assertEquals("Friend does not exist within ContactList.", e.getMessage());
                 }
 
                 @Test
@@ -211,12 +224,14 @@ public class ContactListTest {
 
                 @Test
                 void get_negativeIndex_throwsIndexOutOfBoundsException() {
-                    assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.get(-1));
+                    Exception e = assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.get(-1));
+                    assertEquals("Cannot index with negative indices.", e.getMessage());
                 }
 
                 @Test
                 void get_tooLargeIndex_throwsIndexOutOfBoundsException() {
-                    assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.get(4));
+                    Exception e = assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.get(4));
+                    assertEquals("Index beyond the size of the ContactList.", e.getMessage());
                 }
 
                 @Test
@@ -232,7 +247,9 @@ public class ContactListTest {
 
                 @Test
                 void remove_nonexistentFriend_throwsNoSuchElementException() {
-                    assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(NONEXISTENT_FRIEND));
+                    Exception e = assertThrows(NoSuchElementException.class,
+                            () -> classUnderTest.remove(NONEXISTENT_FRIEND));
+                    assertEquals("Removing from an empty ContactList.", e.getMessage());
                 }
 
                 @Test
@@ -253,8 +270,7 @@ public class ContactListTest {
 
                 @Test
                 void toString_many_returnsCorrectString() {
-                    String expected = "Friend(Bob, Smith, bsmith@gmail.com)\n" +
-                            "Friend(Jane, Doe, jdoe@gmail.com)\n" +
+                    String expected = "Friend(Bob, Smith, bsmith@gmail.com)\n" + "Friend(Jane, Doe, jdoe@gmail.com)\n" +
                             "Friend(Clarence, Cartwrite, treelover1523@hotmail.com)\n" +
                             "Friend(Sandy, Seaside, boatsboatsboats@yachtclub500.com)\n";
                     assertEquals(expected, classUnderTest.toString());
