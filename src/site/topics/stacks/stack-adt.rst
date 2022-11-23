@@ -21,17 +21,19 @@ The Stack ADT
     * Undo in your text editor
     * Callstack
 
-**Adding to a Stack**
 
-.. image:: stack_add.png
-   :width: 500 px
-   :align: center
+.. figure:: stack_add.png
+    :width: 500 px
+    :align: center
 
-**Removing from a Stack**
+    Adding (pushing) to the top of a stack.
 
-.. image:: stack_remove.png
-   :width: 500 px
-   :align: center
+
+.. figure:: stack_remove.png
+    :width: 500 px
+    :align: center
+
+    Removing (popping) from the top of a stack.
 
 
 Stack Operations
