@@ -175,14 +175,21 @@ Pseudocode for Traversing a Maze
 Example
 ^^^^^^^
 
-    .. image:: maze_animate.gif
-       :width: 250 px
-       :align: center
+    .. figure:: maze_animate.gif
+        :width: 250 px
+        :align: center
+
+        Animation of a depth first search through a 6x6 maze. The green and red cells represent the start and end
+        locations respectively. Black cells represent walls and light blue represent open spaces. Purple represents the
+        current location in the maze (top of the stack), grey represent spaces in a pathway being explored (currently
+        within the stack, but not the top), and orange represents spaces that were part of a dead end path (popped from
+        the stack).
 
 
 * Try to see where the ``push``, ``pop``, and ``peek`` operations are happening
+* Again, notice that this algorithm was described with only the *what* of a stack
 
-* Again, notice that we were able to use the idea of a stack to solve a problem despite not knowing the implementation
+    * There was no need to know how the stack was implemented in order to use it to solve a problem
 
 
 Interface
