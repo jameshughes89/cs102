@@ -52,7 +52,8 @@ Equals
 
     ``Objects.equals(someObject, someOtherObject)`` is the same as ``someObject.equals(someOtherObject)``, but makes the
     equality check *null safe*. In other words, it first checks if both ``someObject`` and ``someOtherObject`` are null,
-    then they are equal. Further, it won't produce a ``NullPointerException`` is ``someObject`` happens to be ``null``.
+    because then they are equal. Further, it won't produce a ``NullPointerException`` if ``someObject`` happens to be
+    ``null``.
     `Have a look at the relevant javadocs <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Objects.html#equals(java.lang.Object,java.lang.Object)>`__
 
     The below example makes use of the third option to be safe around ``null``, but realistically, based on the way the
