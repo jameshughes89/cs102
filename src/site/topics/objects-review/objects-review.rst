@@ -239,47 +239,61 @@ Accessors
 toString
 ^^^^^^^^
 
-* You may remember that ``__repr__`` in python was a special method that would return a string version of the object
-    * And, if you called ``print(some_object)``, the ``__repr__`` would automatically get called
+* In Python, for creating a string representation of an object, the ``__repr__`` magic method was used
 
-* When we wrote our own classes, we ended up overriding the ``__repr__`` we got for free
-    * The default one simply prints out the object name and a memory address, which wasn't very helpful
+    * If one called ``print(some_object)``, the ``__repr__`` would automatically get called
+
+
+* All classes *inherited* a ``__repr__`` for free, but the default behaviors was not all too helpful
+
     * ``<__main__.Friend object at 0x7f130d9c52e0>``
-    * *Technically*, the behaviour we get for free is inherited from the closest "super" class
-        * We will learn more about this later
+    * The inherited one simply provides the object name and a memory address
 
-* An example of a ``__repr__`` for our ``Friend`` class might look something like this
-* We just print out the name of the ``Friend`` and their email
+        * Inheritance is a topic discussed later in the course
 
-**Python**
+
+* If one wanted to change this behaviour, they would override the default ``__repr__``
+* An example of a ``__repr__`` for the ``Friend`` class in Python is below
 
 .. code-block:: python
     :linenos:
 
-    # Python --- __repr__
     def __repr__(self):
-        return self._first_name + " " + self._last_name \
-               + ":\t" + self._email
+        return f"Friend({self.first_name}, {self.last_name}, {self.email})"
+
+* An f-string was used in the above example, but string concatenation could have been used
+
+    * ``"Friend(" + self.first_name + ", " + self.last_name + ", " + self.email + ")"``
 
 
-* We can do the same thing in Java, but in java it's called ``toString()``
-* If we do not write our own, the default behaviour is to return a string of the class name and a *hash code*
+* The same principal exists in Java, but the method is called ``toString()``
+* The inherited behaviour is a little different --- it returns a string of the class name and a *hash code*
+
     * ``Friend@77459877``
-    * Again, *technically* the behaviour we get for free is inherited
 
-.. code-block:: java
+
+* One can override the inherited ``toString()``
+
+.. literalinclude:: /../main/java/Friend.java
+    :language: java
     :linenos:
+    :lineno-start: 40
+    :lines: 40-42
 
-        public String toString() {
-            return firstName + " " + lastName + ":\t" + email;
-        }
 
-* And like Python, we can simply print it and ``toString`` will automatically get called
+* In the above example, ``String.format`` was used, but string concatenation could have been used
+
+    * ``"Friend(" + firstName + ", " + lastName + ", " + email + ")"``
+
+
+* Like Python, ``toString`` is automatically get called when printing the object
+
     * ``System.out.println(aFriend);``
+
 
 .. warning::
 
-    The idea is that this *returns* a string; we do not want to just print something
+    The idea is that this *returns* a string; it does not just print something.
 
 
 equals
