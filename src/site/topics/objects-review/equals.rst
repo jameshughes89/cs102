@@ -50,8 +50,10 @@ Equals
     ``someObject.equals(someOtherObject)`` checks if ``someObject`` and ``someOtherObject`` are equivalent based on
     ``someObject`` class' ``equals`` method.
 
-    ``Objects.equals(someObject, someOtherObject)`` also checks if ``someObject`` is ``null``, and then checks if
-    ``someObject`` and ``someOtherObject`` are equivalent based on ``someObject`` class' ``equals`` method.
+    ``Objects.equals(someObject, someOtherObject)`` is the same as ``someObject.equals(someOtherObject)``, but makes the
+    equality check *null safe*. In other words, if both ``someObject`` and ``someOtherObject`` are null, then they are
+    equal. Further, it won't produce a ``NullPointerException`` is ``someObject`` happens to be ``null``.
+    `Have a look at the relevant javadocs <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Objects.html#equals(java.lang.Object,java.lang.Object)>`__
 
     The below example makes use of the third option to be safe around ``null``, but realistically, based on the way the
     ``Friend`` class is written, it is not possible for an instance of a ``Friend`` object to be created with ``null``
@@ -95,6 +97,7 @@ Equals
     * Here, ``Arrays.equals`` is used to check the equality on the array
 
         * The alternative would be to loop over the array and check equality on each element within the loop
+        * `Have a look at the relevant javadocs <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Arrays.html#equals(boolean%5B%5D,int,int,boolean%5B%5D,int,int)>`__
 
 
 .. code-block:: java
