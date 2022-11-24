@@ -272,7 +272,7 @@ toString
     * ``Friend@77459877``
 
 
-* One can override the inherited ``toString()``
+* One can override the inherited ``toString``
 
 .. literalinclude:: /../main/java/Friend.java
     :language: java
@@ -299,57 +299,56 @@ toString
 equals
 ^^^^^^
 
-* We had another special function that we liked to use called ``__eq__``
-* ``__eq__`` let us define what it means for two of the objects to be equivalent
-* It also let us call ``==`` on the objects too
+* Python also provides the ``__eq__`` magic method for describing equality
+* In Java, there is an ``equals`` method to define what it means for two objects to be equivalent
+* However, unlike Python, it does not overload the ``==`` operator
 
-* In Java, we use the ``equals()`` method to define what it means for two of the objects to be equivalent
-* **HOWEVER**, unlike Python, this doesn't overload the ``==`` operator
-    * ``==`` for the objects is reserved to check if the objects are literally the same object
-    * Same memory address --- it compares the memory addresses
+    * ``==`` for objects is reserved for checking if two things are literally the same object -- aliases
 
-* On the other hand, ``.equals()`` is used to actually compare the content of the objects in some way
-    * We need to think about what it means for two objects of the type to be &equivalent*
-
-* The default behaviour is to is to check if the objects are in the same memory address (``==``)
-    * Similar to ``toString``, the behaviour we get for free is inherited
+        * Same memory address --- it compares the memory addresses
 
 
-* So, what should it mean for two ``Friend`` objects to be *equal*?
-* Well, **we** get to define this
-* We can make it whatever we want
-    * Same eye colour?
-    * Same height and weight?
-    * Same number of skin cells?
+* ``equals`` is used to compare the content of the objects in some way
 
-* But, we need to really think about what makes sense in our context
-    * Let's go with their ``firstName`` and ``lastName`` being equal
-        * Although, this example is perhaps still not overly great
+    * This is where equality between objects of the class is defined
+
+
+* Like ``toString``, if not overridden, ``equals`` has the inherited behavior of checking sameness --- ``==``
+
+* For the ``Friend`` class, two objects will be equal if all their fields match
 
 .. code-block:: java
     :linenos:
 
-        /**
-         * Sample equals method for comparing two friend objects.
-         * In this example, we will simply compare first and last
-         * names.
-         *
-         * This example is deliberately kept very simple
-         *
-         * @return      if the two friend objects are equal
-         */
-        public boolean equals(Friend other) {
-            return this.firstName.equals(other.firstName)
-                    && this.lastName.equals(other.lastName);
-        }
+    /**
+     * Checks if two Friend objects are equal. Friend objects are considered equal if all their attributes are equal.
+     *
+     * @param other A Friend being compared to.
+     * @return True if the two objects are equal, false otherwise.
+     */
+    public boolean equals(Friend other) {
+        return this.firstName.equals(other.firstName) &&
+                this.lastName.equals(other.lastName) &&
+                this.email.equals(other.email);
+    }
 
-* Notice how we actually use the string's ``equals`` too
-* In the above example, using ``this`` is not necessary, but may be helpful in eliminating ambiguity
+* In the above example, notice the use of ``this`` and ``other``
+
+    * This eliminates any ambiguity of which ``Friend`` instance the field is coming from
+
+
+* Also notice the use of the ``equals`` method on the strings since it's a check for equality of strings, not sameness
+
+        * e.g., ``this.firstName.equals(other.firstName)``
+
 
 .. warning::
 
-    The example ``equals()`` included in the ``Friend.java`` file is a little more complex,
-    but is a more complete and correct ``equals``. :doc:`See this aside for more details. <equals>`
+    The above ``equals`` is actually not particularly good, but is included here for simplicity. The actual ``equals``
+    implemented in the provided ``Friend.java`` file is more complex, but better.
+
+    :doc:`Read the aside on equals for more details. <equals>` The more complex, but improved ``equals`` will be used
+    going forward in the course.
 
 
 Creating an Instance of a Friend
