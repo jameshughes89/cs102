@@ -109,7 +109,7 @@ Equals
             return false;
         }
         ContactList that = (ContactList) o;
-        return this.size == that.size && Arrays.equals(this.friends, 0, this.size(), that.friends, 0, that.size());
+        return Arrays.equals(this.friends, 0, this.size(), that.friends, 0, that.size());
     }
 
 
