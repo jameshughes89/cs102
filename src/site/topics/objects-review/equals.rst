@@ -91,5 +91,24 @@ Equals
 Hash Code
 =========
 
+* When properly writing the ``equals`` method, one should also write another special method --- ``hashCode()``
+
+    * The full details on what ``hashCode`` is and what it is for is beyond the scope of this course
+    * Briefly, it is a function used to convert the object into an ``int`` hash value
+    * Any two objects that are equal must have the same hash value
+    * Ideally, the hash value will be unique --- any *unequal* objects should have different hash values
 
 
+* Below is an example ``hashCode()`` for the ``Friend`` class
+
+    * This ``hashCode()`` effectively returns the sum of the hash values of the three ``String`` attributes
+    * For simple classes like the ``Friend`` class, this pattern will be typical
+
+
+.. code-block:: java
+    :linenos:
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName, email);
+    }
