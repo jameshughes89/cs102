@@ -98,15 +98,15 @@ High-Level Idea
 Contact List Example
 ====================
 
-* The above is very high-level
-* It may be easiest to learn with an example
-* Let's say we want to write a program to keep track of the contact information of our friends
-* I will make a class that will define what a ``Friend`` is
-* I will make another class that will define how we will manage a collection of ``Friend`` objects
+* It may be easier to learn these ideas with an example
+* Let's consider the following problem
 
-.. warning::
+    * There is a need to keep track of the name and email address of friends
+    * There is also a need to manage several friends' names and email addresses
 
-    The example may not make complete sense until it comes together in the end.
+
+* To do this, a class could be made to represent a friend --- ``Friend`` class
+* Another class can be made to keep track of the collection of friends --- ``ContactList`` class
 
 
 Friend Class
