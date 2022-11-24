@@ -9,20 +9,24 @@ Objects Review
 Objects and Classes
 ===================
 
-* Objects are *things* that typically know stuff, can do actions, and can be acted on
-* Often, when programming with Java, we will have interacting objects
+* Objects are *things* that typically contain data, can do some actions, and can be acted on
+* Often, when programming with Java, several objects will be interacting
 
 
 Objects
 -------
 
 * All objects have
-    * **Properties**
+
+    * Properties
+
         * These are the *data*
         * These are called *fields*
-        * They're variables, but they belong to an object
+        * They're variables, but they belong to an instance of an object
 
-    * **Behaviours**
+
+    * Behaviours
+
         * This is what the object can do
         * These are called **methods**
         * They're functions, but they belong to an object
@@ -32,21 +36,30 @@ Class
 -----
 
 * Every object belongs to a *class*
+
     * A *class* defines what it means to be an object of that class
 
+
 * For example
-    * We can think of ``Human`` as a class
+
+    * One could think of ``Human`` as a class
+
         * With the fields ``firstName`` and ``lastName``
         * And methods ``eat()`` and ``goToBed()``
 
-    * We can make Bob Smith an instance of the ``Human`` class
+
+    * One could make Bob Smith an instance of the ``Human`` class
+
         * ``firstName`` is Bob
         * ``lastName`` is Smith
+        *  Calling the method ``eat()`` would tell the specific instance to eat
+
 
 * All objects of the same class have the same fields, but their values can differ
+
     * All instances of ``Human`` have ``firstName`` and ``lastName``
     * But Bob Smith's ``firstName`` is Bob
-    * If we made an instance for Jane Doe, then their ``firstName`` would be Jane
+    * If there was another instance for Jane Doe, then their ``firstName`` would be Jane
 
 
 But Why?
