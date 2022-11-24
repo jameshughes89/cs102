@@ -104,7 +104,7 @@ public class ContactList {
      */
     public int indexOf(Friend friend) {
         if (!contains(friend)) {
-            throw new NoSuchElementException();
+            throw new NoSuchElementException(Objects.toString(friend));
         }
         return find(friend);
     }
@@ -115,11 +115,11 @@ public class ContactList {
      *
      * @param index Index of the Friend object to be returned.
      * @return Friend object at the specified index.
-     * @throws IndexOutOfBoundsException If an invalid index is provided.
+     * @throws IndexOutOfBoundsException If an invalid index is provided (negative, or too large).
      */
     public Friend get(int index) {
         if (index < 0 || index >= size()) {
-            throw new IndexOutOfBoundsException();
+            throw new IndexOutOfBoundsException(index);
         }
         return friends[index];
     }
@@ -136,7 +136,7 @@ public class ContactList {
      */
     public boolean remove(Friend friend) {
         if (!contains(friend)) {
-            throw new NoSuchElementException();
+            throw new NoSuchElementException(Objects.toString(friend));
         }
         int removeIndex = find(friend);
         // Although it is possible that the element being removed is replaced with itself, which happens when it is the
