@@ -148,9 +148,10 @@ Hash Code
 
 * Below is an example of the ``hashCode`` method for the ``ContactList`` class
 
-    * Although clearly more complex than the ``Friend`` class, it still follows the same basic pattern
+    * Although clearly more complex than the ``Friend`` class, it still follows the same basic idea
 
         * Sum the hash values of all the fields
+        * Although, the summing was delegated to the ``Objects`` ``hash`` method in the ``Friend`` class
 
 
 * First the ``size`` value is hashed
