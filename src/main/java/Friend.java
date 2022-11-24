@@ -6,6 +6,7 @@ import java.util.Objects;
  */
 public final class Friend {
 
+    // Fields for the Friend Class
     private final String firstName;
     private final String lastName;
     private final String email;

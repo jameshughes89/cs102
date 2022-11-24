@@ -140,41 +140,50 @@ Setting Fields and Writing the Constructor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * The constructor is a special method that is called automatically when an object of the class is created
-* We'd typically setup stuff that needs to be setup for an instance of the class in the constructor
+* Typically, setup related things that needs to happen for the object will be put in the constructor
 
-**Python**
+* In Python, the ``Friend`` class' constructor and the creation and assigning of fields would look like the following
+
+    * Remember, in Python ``self`` is used to refer to an instance of the class
 
 .. code-block:: python
     :linenos:
-    :emphasize-lines: 5
+    :emphasize-lines: 4
 
     class Friend:
 
-        # Python --- Constructor and
-        # creating and setting fields
+        # Python --- Constructor and creating and setting fields
         def __init__(self, first_name, last_name, email):
-            self._first_name = first_name
-            self._last_name = last_name
-            self._email = email
-
-* Remember, in Python we use ``self`` to refer to an instance of the class
-* Putting the underscore in front of the field name is a convention to mean private
+            self.first_name = first_name
+            self.last_name = last_name
+            self.email = email
 
 
-**Java**
+In Java, the class' declaration of fields, constructor, and assigning values to the fields would look like the following
 
 .. code-block:: java
     :linenos:
-    :emphasize-lines: 4,5,6,10,11,12
+    :emphasize-lines: 8, 9, 10, 21, 22, 23
 
-    public class Friend {
+    /***
+     * A plain old java class to keep track of friends. A Friend will know its first name, last name, and email address.
+     * This class provides getters/accessor methods for the attributes and can be checked for equality.
+     */
+    public final class Friend {
 
         // Class Attribute Declaration
-        private String firstName;
-        private String lastName;
-        private String email;
+        private final String firstName;
+        private final String lastName;
+        private final String email;
 
-        // Constructor and assigning fields
+        /**
+         * Create an instance of a Friend. The constructor takes the first name, last name, and email address of the
+         * Friend to be created.
+         *
+         * @param firstName First name of the friend
+         * @param lastName  Last name of the friend
+         * @param email     Email address of the friend
+         */
         public Friend(String firstName, String lastName, String email) {
             this.firstName = firstName;
             this.lastName = lastName;
@@ -182,15 +191,41 @@ Setting Fields and Writing the Constructor
         }
     }
 
-* The class is set to ``public`` so we can access it from any other class
-* We define the fields to have scope to the class
-    * So they are accessible to the whole class
+* The class is set to ``public`` so it can be accessed from any other class
+* The class is also set to ``final`` since, once an instance is created, it should not change --- immutable
 
-* The fields are ``private`` since we want to control how these fields are used
+* The fields are declared inside the class, but not within any method
+
+    * They can be accessed by the whole class
+
+
+* To provide control over how the fields are accessed outside the class, they are set to ``private`` and ``final``
+
+    * ``private`` means the fields are not directly accessible outside the class
+
+        * If they were assigned ``public``, it would behave like Python
+
+
+    * Although ``private``, the values of the fields will ultimately be accessible, but through accessor methods
+
+        * Discussed in more detail below
+
+
+    * The ``Friend`` class will be made in such a way that the data is immutable --- it doesn't change once set
+
+        * Thus, the fields are set to ``final`` so they can be set once and only once
+
+
+* Notice the java documentation (javadoc) comment is *above* the method
 * The constructor is ``public``, has the same name as the class, and does not have a ``self`` parameter
-* The ``this`` in the above example let's Java resolve the ambiguity
-    * ``this.firstName`` is the class attribute where ``firstName`` is a local parameter for the constructor
-    * It is not always necessary to use ``this`` in Java like how we use ``self`` in Python
+
+    * Although Java does have a similar keyword --- ``this``
+
+
+* The ``this`` in the above example let's Java resolve the ambiguity between the field and constructor parameter
+
+    * ``this.firstName`` is the field where ``firstName`` is a local parameter for the constructor
+    * It is not always necessary to use ``this`` in Java like how ``self`` is used in Python
 
 
 Getters and Setters
