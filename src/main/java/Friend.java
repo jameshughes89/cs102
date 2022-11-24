@@ -53,7 +53,9 @@ public final class Friend {
     //     * @return if the two friend objects are equal
     //     */
     //    public boolean equals(Friend other) {
-    //        return this.firstName.equals(other.firstName) && this.lastName.equals(other.lastName);
+    //        return this.firstName.equals(other.firstName) &&
+    //                this.lastName.equals(other.lastName) &&
+    //                this.email.equals(other.email);
     //    }
 
     /**
