@@ -266,7 +266,7 @@ toString
     * ``"Friend(" + self.first_name + ", " + self.last_name + ", " + self.email + ")"``
 
 
-* The same principal exists in Java, but the method is called ``toString()``
+* The same principal exists in Java, but the method is called ``toString``
 * The inherited behaviour is a little different --- it returns a string of the class name and a *hash code*
 
     * ``Friend@77459877``
@@ -300,6 +300,18 @@ equals
 ^^^^^^
 
 * Python also provides the ``__eq__`` magic method for describing equality
+
+.. code-block:: python
+    :linenos:
+
+    def __eq__(self, other) -> bool:
+        if isinstance(other, Friend):
+            return self.first_name == other.first_name and \
+                        self.last_name == other.last_name and \
+                        self.email == other.email
+        return False
+
+
 * In Java, there is an ``equals`` method to define what it means for two objects to be equivalent
 * However, unlike Python, it does not overload the ``==`` operator
 
@@ -344,11 +356,12 @@ equals
 
 .. warning::
 
-    The above ``equals`` is actually not particularly good, but is included here for simplicity. The actual ``equals``
+    The above ``equals`` is actually not particularly good, but is included here for simplicity. The ``equals``
     implemented in the provided ``Friend.java`` file is more complex, but better.
 
     :doc:`Read the aside on equals for more details. <equals>` The more complex, but improved ``equals`` will be used
     going forward in the course.
+
 
 
 Creating an Instance of a Friend
