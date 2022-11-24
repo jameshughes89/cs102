@@ -88,6 +88,32 @@ Equals
     }
 
 
+* Below is an example of the ``equals`` method for the ``ContactList`` class
+
+    * Notice that it follows the same pattern
+    * The only difference is the check on what needs to be equal
+    * Here, ``Arrays.equals`` is used to check the equality on the array
+
+        * The alternative would be to loop over the array and check equality on each element within the loop
+
+
+.. code-block:: java
+    :linenos:
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ContactList that = (ContactList) o;
+        return this.size == that.size && Arrays.equals(this.friends, 0, this.size(), that.friends, 0, that.size());
+    }
+
+
+
 Hash Code
 =========
 
@@ -99,9 +125,9 @@ Hash Code
     * Ideally, the hash value will be unique --- any *unequal* objects should have different hash values
 
 
-* Below is an example ``hashCode()`` for the ``Friend`` class
+* Below is an example ``hashCode`` for the ``Friend`` class
 
-    * This ``hashCode()`` effectively returns the sum of the hash values of the three ``String`` attributes
+    * This ``hashCode`` effectively returns the sum of the hash values of the three ``String`` attributes
     * For simple classes like the ``Friend`` class, this pattern will be typical
 
 
@@ -111,4 +137,31 @@ Hash Code
     @Override
     public int hashCode() {
         return Objects.hash(firstName, lastName, email);
+    }
+
+
+* Below is an example of the ``hashCode`` method for the ``ContactList`` class
+
+    * Although clearly more complex than the ``Friend`` class, it still follows the same basic pattern
+
+        * Sum the hash values of all the fields
+
+
+* First the ``size`` value is hashed
+* Then the array is iterated over and each element's hash is included to the running total that is ultimately returned
+* The value ``97`` is used to scale the result since it is a prime number
+
+    * This increases the chance of producing a unique hash value
+
+
+.. code-block:: java
+    :linenos:
+
+    @Override
+    public final int hashCode() {
+        int result = Objects.hash(this.size());
+        for (int i = 0; i < this.size(); i++) {
+            result = result * 97 + Objects.hashCode(this.friends[i]);
+        }
+        return result;
     }
