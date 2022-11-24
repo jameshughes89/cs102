@@ -62,6 +62,9 @@ Class
     * If there was another instance for Jane Doe, then their ``firstName`` would be Jane
 
 
+* Objects of the same class have the same methods, but calling a method on an instance only calls it on *that* instance
+
+
 But Why?
 --------
 
