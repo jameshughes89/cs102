@@ -207,6 +207,14 @@ In Java, the class' declaration of fields, constructor, and assigning values to 
     * It is not always necessary to use ``this`` in Java like how ``self`` is used in Python
 
 
+.. note::
+
+    Two of the major differences seen between Python and Java is the use of the visibility modifiers
+    ``public``/``private`` and ``final``.
+
+    At first one may feel these extra keywords make the code too verbose, but consider that these extra keywords provide
+    the programmer with more explicit control over how their code is or is not used and/or modified. Although these
+    keywords are not *necessary*, they are very powerful.
 
 
 Getters and Setters
