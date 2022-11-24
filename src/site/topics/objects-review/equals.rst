@@ -54,7 +54,7 @@ Equals
     ``someObject`` and ``someOtherObject`` are equivalent based on ``someObject`` class' ``equals`` method.
 
     The below example makes use of the third option to be safe around ``null``, but realistically, based on the way the
-    ``Friend`` class is written, it is not possible for an instance of ``Friend`` object to be created with ``null``
+    ``Friend`` class is written, it is not possible for an instance of a ``Friend`` object to be created with ``null``
     fields. In other words, the second option would be fine, but using the third option would still be more defensive.
 
 
