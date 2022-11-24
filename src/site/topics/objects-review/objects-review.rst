@@ -68,23 +68,30 @@ Class
 But Why?
 --------
 
-* Classes and objects make abstraction pretty easy
-    * How many of you know exactly how an internal combustion engine works?
-    * How many of you drove here today in a car with an internal combustion engine?
+* Classes and objects make abstraction easier
 
-* It also lets us encapsulate ideas together
-    * Although, there are arguments as to why this isn't great
+    * How many of you know exactly how your HVAC system works?
+    * How many of you have ever turned up the heat in your house?
+
+
+* It also makes encapsulating ideas together easier
+
+    * Although, there are several arguments as to why this isn't always great
 
 
 High-Level Idea
 ---------------
 
-* Your typical class will consist of
+* A typical class will consist of
+
     * Fields
     * Methods
     * Constructors (which are also methods)
 
-* In Java, we write our class code in a file with the same name as the class with the file extension being .java
+
+* In Java, class code is written in a file with the same name of the class
+
+    * The code is written in a file with a ".java" file extension
     * The ``Human`` class would be in a file called Human.java
 
 
