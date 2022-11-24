@@ -451,8 +451,16 @@ Creating an Instance of a Friend
 References
 ^^^^^^^^^^
 
-* We have to be careful about what is actually stored in these variables
-* We're not storing the object in that variable --- we store a reference to where the object is in memory
+* As noted above, be careful about what is actually stored in these variables
+* The objects themselves are not stored in the variables
+* Instead, references to where the objects are in memory are stored in the variables
+
+* In the below example, ``bFriend = aFriend`` copies the contents of ``aFriend`` and puts the copy in ``bFriend``
+
+    * But the contents of ``aFriend`` is a reference to a ``Friend``
+    * The *reference* stored in ``aFriend`` gets copied; the ``Friend`` is **not** copied
+    * This results in an aliases --- both ``aFriend`` and ``bFriend`` reference the exact same object
+
 
 .. code-block:: java
     :linenos:
@@ -464,19 +472,21 @@ References
     bFriend = aFriend;
 
 
-* In the above example, ``bFriend = aFriend`` copies the contents of ``aFriend`` and puts the copy in ``bFriend``
-    * So, the reference stored in ``aFriend`` gets copied
-
 * This also means that the object that ``bFriend`` used to point to now has no reference to it
 
     .. image:: reference_lost.png
        :width: 500 px
        :align: center
 
+
 .. warning::
 
-    You may think that assignment works differently for primitive types when compared and objects,
-    but, think about what is actually stored in the variable.
+    One may feel that the assignment works different between primitive types when compared to objects, but this is
+    wrong.
+
+    Remember what is stored in the variables --- the contents of the variables are copied. The variables may store a
+    primitive type, or maybe a reference to an object. Either way, it's the variable's contents that are copied. 
+
 
 
 Contact List Class
