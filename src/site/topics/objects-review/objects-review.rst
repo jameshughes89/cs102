@@ -112,21 +112,28 @@ Contact List Example
 Friend Class
 ------------
 
-* What type of information should our ``Friend`` class keep track of?
+* For this particular problem, the ``Friend`` class can be kept simple
+
+    * This is a good thing
+
+
+* The only information the ``Friend`` objects need to know is their
+
     * First Name
     * Last Name
     * Email Address
-    * ...
 
-* We know we need a constructor, which was ``__init__`` in Python
 
-* What behaviours should our ``Friend`` instances have?
-    * Hmmmmmm....
-    * Well, based on what I remember from Python, we should have
-        * accessors and mutators
-            * getters and setters
-        * the ``__repr__`` thing?
-        * ``__eq__``?
+* A constructor will be be needed that describes the setup for the ``Friend`` object
+
+    * Assigning the values to the fields
+
+
+* The behaviours of the ``Friend`` class will also be kept simple
+
+    * A way to retrieve information from the ``Friend``
+    * A way to obtain a string representation of the ``Friend``
+    * A way to check if two ``Friend`` objects are equal
 
 
 Setting Fields and Writing the Constructor
