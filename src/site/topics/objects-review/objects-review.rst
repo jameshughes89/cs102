@@ -2,7 +2,8 @@
 Objects Review
 **************
 
-* Let's review the idea of objects
+* Defining objects and data structures is similar between Python and Java
+* Most of the differences are syntax related
 
 
 Objects and Classes
