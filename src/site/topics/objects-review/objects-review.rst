@@ -210,11 +210,11 @@ In Java, the class' declaration of fields, constructor, and assigning values to 
 .. note::
 
     Two of the major differences seen between Python and Java is the use of the visibility modifiers
-    ``public``/``private`` and ``final``.
+    ``public``/``private`` and ``final``. This was done to tell Java that instances of this class are to be immutable.
 
     At first one may feel these extra keywords make the code too verbose, but consider that these extra keywords provide
-    the programmer with more explicit control over how their code is or is not used and/or modified. Although these
-    keywords are not *necessary*, they are very powerful.
+    the programmer with more explicit control over how their code is or is not used. Although these keywords are not
+    *necessary*, they are very powerful. 
 
 
 Getters and Setters
