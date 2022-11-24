@@ -161,35 +161,13 @@ Setting Fields and Writing the Constructor
 
 In Java, the class' declaration of fields, constructor, and assigning values to the fields would look like the following
 
-.. code-block:: java
+.. literalinclude:: /../main/java/Friend.java
+    :language: java
     :linenos:
+    :lines: 3-26
     :emphasize-lines: 8, 9, 10, 21, 22, 23
 
-    /***
-     * A plain old java class to keep track of friends. A Friend will know its first name, last name, and email address.
-     * This class provides getters/accessor methods for the attributes and can be checked for equality.
-     */
-    public final class Friend {
 
-        // Class Attribute Declaration
-        private final String firstName;
-        private final String lastName;
-        private final String email;
-
-        /**
-         * Create an instance of a Friend. The constructor takes the first name, last name, and email address of the
-         * Friend to be created.
-         *
-         * @param firstName First name of the friend
-         * @param lastName  Last name of the friend
-         * @param email     Email address of the friend
-         */
-        public Friend(String firstName, String lastName, String email) {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.email = email;
-        }
-    }
 
 * The class is set to ``public`` so it can be accessed from any other class
 * The class is also set to ``final`` since, once an instance is created, it should not change --- immutable
