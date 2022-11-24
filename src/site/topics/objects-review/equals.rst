@@ -156,6 +156,11 @@ Hash Code
 
 * First the ``size`` value is hashed
 * Then the array is iterated over and each element's hash is included to the running total that is ultimately returned
+* Also notice the use of the ``Objects`` class' ``hashCode`` method
+
+    * Like the ``Objects`` class' ``equals`` method, this is a null safe way to use the ``Friend`` class' ``hashCode``
+
+
 * The value ``97`` is used to scale the result since it is a prime number
 
     * This increases the chance of producing a unique hash value
