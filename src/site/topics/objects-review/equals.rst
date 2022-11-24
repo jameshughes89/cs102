@@ -1,6 +1,9 @@
-****************
-Aside --- Equals
-****************
+****************************
+Aside --- Equals & Hash Code
+****************************
+
+Equals
+======
 
 * Below is an improved and more correct implementation of the ``equals`` method
 * You will notice the type of the parameter has changed from ``Friend`` to ``Object``
@@ -83,3 +86,10 @@ Aside --- Equals
                 Objects.equals(this.lastName, other.lastName) &&
                 Objects.equals(this.email, other.email);
     }
+
+
+Hash Code
+=========
+
+
+
