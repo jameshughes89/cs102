@@ -455,9 +455,9 @@ References
 * The objects themselves are not stored in the variables
 * Instead, references to where the objects are in memory are stored in the variables
 
-* In the below example, ``bFriend = aFriend`` copies the contents of ``aFriend`` and puts the copy in ``bFriend``
+* In the below example, ``bFriend = aFriend`` copies the contents of ``aFriend`` and puts the copy in the ``bFriend``
 
-    * But the contents of ``aFriend`` is a reference to a ``Friend``
+    * But the contents of the ``aFriend`` variable is a reference to a ``Friend``
     * The *reference* stored in ``aFriend`` gets copied; the ``Friend`` is **not** copied
     * This results in an aliases --- both ``aFriend`` and ``bFriend`` reference the exact same object
 
@@ -473,6 +473,7 @@ References
 
 
 * This also means that the object that ``bFriend`` used to point to now has no reference to it
+* This would cause Java to delete the Jane ``Friend`` object
 
     .. image:: reference_lost.png
        :width: 500 px
@@ -485,7 +486,7 @@ References
     wrong.
 
     Remember what is stored in the variables --- the contents of the variables are copied. The variables may store a
-    primitive type, or maybe a reference to an object. Either way, it's the variable's contents that are copied. 
+    primitive type, or maybe a reference to an object. Either way, it's the variable's contents that are copied.
 
 
 
