@@ -220,6 +220,14 @@ In Java, the class' declaration of fields, constructor, and assigning values to 
 Accessors
 ^^^^^^^^^
 
+* Below are the accessor/getter methods for the fields
+* All these methods do are return their respective values
+* They are ``public`` as they should be accessible outside the class
+* Note, however, that there are no methods to set any of the field values
+
+    * The ``Friend`` is immutable --- can access data, but cannot change it
+
+
 .. literalinclude:: /../main/java/Friend.java
     :language: java
     :linenos:
@@ -227,34 +235,6 @@ Accessors
     :lines: 28-38
 
 
-* Getter and setter for ``firstName``
-    * Would be the same for ``lastName``
-
-* Notice that we do not need the ``this`` in front of ``firstName``
-
-* You may still feel like making the fields private and then writing the getters and setters is silly
-    * Honestly, in this example, it likely is a bad idea
-    * We will revisit the use of the getters and setters in this class later
-
-* Here is a contrived example to show where the use of a setter can check the data first before making a change
-
-
-**Java**
-
-.. code-block:: java
-    :linenos:
-
-        /**
-         * Update the email address. Will only work if the email address
-         * contains the @ symbol for simple data correctness check
-         *
-         * @param email     new email address
-         */
-        public void setEmail(String email) {
-            if (email.contains("@")) {
-                this.email = email;
-            }
-        }
 
 toString
 ^^^^^^^^
