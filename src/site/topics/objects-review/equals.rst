@@ -152,14 +152,14 @@ Hash Code
     * Although clearly more complex than the ``Friend`` class, it still follows the same basic idea
 
         * Sum the hash values of all the fields
-        * Although, the summing was delegated to the ``Objects`` ``hash`` method in the ``Friend`` class
+        * Although, the summing was delegated to the ``Objects`` ``hash`` function in the ``Friend`` class
 
 
 * First the ``size`` value is hashed
 * Then the array is iterated over and each element's hash is included to the running total that is ultimately returned
-* Also notice the use of the ``Objects`` class' ``hashCode`` method
+* Also notice the use of the ``Objects`` class' ``hashCode`` function
 
-    * Like the ``Objects`` class' ``equals`` method, this is a null safe way to use the ``Friend`` class' ``hashCode``
+    * Like the ``Objects`` class' ``equals`` function, this is a null safe way to use the ``Friend`` class' ``hashCode``
 
 
 * The value ``97`` is used to scale the result since it is a prime number
