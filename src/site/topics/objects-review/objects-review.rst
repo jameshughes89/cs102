@@ -214,25 +214,19 @@ In Java, the class' declaration of fields, constructor, and assigning values to 
 
     At first one may feel these extra keywords make the code too verbose, but consider that these extra keywords provide
     the programmer with more explicit control over how their code is or is not used. Although these keywords are not
-    *necessary*, they are very powerful. 
+    *necessary*, they are very powerful.
 
 
-Getters and Setters
-^^^^^^^^^^^^^^^^^^^
+Accessors
+^^^^^^^^^
 
-**Java**
-
-.. code-block:: java
+.. literalinclude:: /../main/java/Friend.java
+    :language: java
     :linenos:
-    :emphasize-lines: 2
+    :lineno-start: 27
+    :lines: 27-39
+    :emphasize-lines: 8, 9, 10, 21, 22, 23
 
-        public String getFirstName() {
-            return firstName;
-        }
-
-        public void setFirstName(String firstName) {
-            this.firstName = firstName;
-        }
 
 * Getter and setter for ``firstName``
     * Would be the same for ``lastName``
