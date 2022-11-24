@@ -196,7 +196,7 @@ In Java, the class' declaration of fields, constructor, and assigning values to 
 
 
 * Notice the java documentation (javadoc) comment is *above* the method
-* The constructor is ``public``, has the same name as the class, and does not have a ``self`` parameter
+* The constructor is ``public``, has the same name as the class and file, and does not have a ``self`` parameter
 
     * Although Java does have a similar keyword --- ``this``
 
@@ -205,6 +205,8 @@ In Java, the class' declaration of fields, constructor, and assigning values to 
 
     * ``this.firstName`` is the field where ``firstName`` is a local parameter for the constructor
     * It is not always necessary to use ``this`` in Java like how ``self`` is used in Python
+
+
 
 
 Getters and Setters
