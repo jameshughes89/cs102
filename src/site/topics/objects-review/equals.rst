@@ -122,7 +122,10 @@ Hash Code
     * The full details on what ``hashCode`` is and what it is for is beyond the scope of this course
     * Briefly, it is a function used to convert the object into an ``int`` hash value
     * Any two objects that are equal must have the same hash value
-    * Ideally, the hash value will be unique --- any *unequal* objects should have different hash values
+    * Ideally, the hash value should aim to have different hashes
+
+        * Any *unequal* objects should have different hash values
+        * Unfortunately, hash *collisions* --- cases where unequal things have the same hash --- are inevitable
 
 
 * Below is an example ``hashCode`` for the ``Friend`` class
