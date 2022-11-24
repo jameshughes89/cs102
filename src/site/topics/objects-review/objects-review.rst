@@ -164,7 +164,8 @@ In Java, the class' declaration of fields, constructor, and assigning values to 
 .. literalinclude:: /../main/java/Friend.java
     :language: java
     :linenos:
-    :lines: 3-26
+    :lineno-start: 3
+    :lines: 3-27
     :emphasize-lines: 8, 9, 10, 21, 22, 23
 
 
