@@ -11,6 +11,7 @@ Objects and Classes
 * Objects are *things* that typically know stuff, can do actions, and can be acted on
 * Often, when programming with Java, we will have interacting objects
 
+
 Objects
 -------
 
@@ -24,6 +25,7 @@ Objects
         * This is what the object can do
         * These are called **methods**
         * They're functions, but they belong to an object
+
 
 Class
 -----
@@ -67,6 +69,7 @@ High-Level Idea
 
 * In Java, we write our class code in a file with the same name as the class with the file extension being .java
     * The ``Human`` class would be in a file called Human.java
+
 
 Contact List Example
 ====================
@@ -372,6 +375,7 @@ Creating an Instance of a Friend
 
 * What do you think the output of this would be?
 
+
 References
 ^^^^^^^^^^
 
@@ -632,6 +636,7 @@ Update Friend's Email
             }
         }
 
+
 Index Of Friend
 ^^^^^^^^^^^^^^^
 
@@ -798,6 +803,7 @@ What We Get
     * For example
         * You all used Python lists, but you didn't know any of their implementation details
         * And it didn't matter!
+
 
 For next time
 =============
