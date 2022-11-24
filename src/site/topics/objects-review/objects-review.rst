@@ -129,7 +129,7 @@ Friend Class
     * Assigning the values to the fields
 
 
-* The behaviours of the ``Friend`` class will also be kept simple
+* The behaviours of the ``Friend`` class
 
     * A way to retrieve information from the ``Friend``
     * A way to obtain a string representation of the ``Friend``
