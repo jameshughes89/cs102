@@ -367,6 +367,9 @@ equals
 Creating an Instance of a Friend
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+* Below is an example of creating an instance of a ``Friend`` object based on the ``Friend`` class
+* It is a simple example where an instance is created, but that is all
+
 .. code-block:: java
     :linenos:
 
@@ -377,21 +380,31 @@ Creating an Instance of a Friend
             // Create an instance of a Friend
             // Assign the variable to reference the newly created Friend
             Friend aFriend = new Friend("Bob", "Smith", "bsmith@gmail.com");
-
         }
     }
 
-* Here's an example of us actually creating an instance of the ``Friend`` class
-* This is a really really really simple example where we create it and do nothing with it
+* There is a bit going on:
 
-* There is a bit going on here:
-    * Declare a ``Friend`` variable
+    * Declare a variable of type ``Friend``
+
         * ``Friend aFriend``
-    * Create an instance of a ``Friend``
+
+
+    * Create an instance of a ``Friend`` object
+
         * ``new Friend("Bob", "Smith", "bsmith@gmail.com")``
+
+
     * Assign the variable to reference the newly created object
-        * The equals bit
-        * We have to be careful about what is actually stored in the ``aFriend``
+
+        * The single equals is used for assignment --- ``=``
+
+
+.. note::
+
+    Be mindful about what is *actually* stored in the ``aFriend`` variable. The object is not stored in the variable,
+    but a *reference* to the object is.
+
 
         .. image:: reference_aFriend.png
            :width: 250 px
@@ -399,10 +412,13 @@ Creating an Instance of a Friend
 
 
 
-* If I were to write another line of code like this
+* If the following line of code was run, two instances of a ``Friend`` would exist
+
     * ``Friend bFriend = new Friend("Jane", "Doe", "jdoe@gmail.com");``
+
 * ``aFriend`` would have a ``firstName`` of Bob
 * ``bFriend`` has a ``firstName`` of Jane
+
 * They both have the ``firstName`` field, but the actual value associated with it differs
 
     .. image:: reference_aFriend_bFriend.png
@@ -411,7 +427,8 @@ Creating an Instance of a Friend
 
 
 * Below is an example of two ``Friend`` objects being created and being used
-    * We get ``aFriend``'s first name
+
+    * Get ``aFriend``\'s first name
     * Use the ``toString`` method
     * Use the ``equals`` method
 
@@ -427,7 +444,8 @@ Creating an Instance of a Friend
     System.out.println(aFriend.equals(bFriend));
 
 
-* What do you think the output of this would be?
+* What is the output of the above code?
+
 
 
 References
