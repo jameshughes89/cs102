@@ -2,17 +2,22 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.NoSuchElementException;
+import java.util.stream.Stream;
 
 import static org.junit.Assert.*;
 
 public class ContactListTest {
 
-    private static final Friend EXISTING_FRIEND = new Friend("Bob", "Smith", "bsmith@gmail.com");
+
     private static final Friend EXISTING_FRIEND_FIRST = new Friend("Bob", "Smith", "bsmith@gmail.com");
     private static final Friend EXISTING_FRIEND_MIDDLE = new Friend("Clarence", "Cartwrite", "treelover@hotmail.com");
     private static final Friend EXISTING_FRIEND_END = new Friend("Adam", "Fluffson", "fluffyman28@hotmail.com");
+    private static final Friend EXISTING_FRIEND_DUPLICATES = new Friend("Bob", "Smith", "bsmith@gmail.com");
     private static final Friend NONEXISTENT_FRIEND = new Friend("Adrian", "Andrews", "aandrews@hotmail.com");
 
     private ContactList classUnderTest;
@@ -172,6 +177,12 @@ public class ContactListTest {
             @TestInstance(TestInstance.Lifecycle.PER_CLASS)
             class WhenMany {
 
+                static Stream<Arguments> existingFriendsStream() {
+                    return Stream.of(Arguments.of(EXISTING_FRIEND_FIRST, 0),
+                            Arguments.of(EXISTING_FRIEND_MIDDLE, 2),
+                            Arguments.of(EXISTING_FRIEND_END, 4));
+                }
+
                 @BeforeEach
                 void addManyFriends() {
                     classUnderTest.add(new Friend("Jane", "Doe", "jdoe@gmail.com"));
@@ -185,9 +196,10 @@ public class ContactListTest {
                     assertTrue(classUnderTest.add(new Friend("", "", "")));
                 }
 
-                @Test
-                void contains_existingFriend_returnsTrue() {
-                    assertTrue(classUnderTest.contains(EXISTING_FRIEND_MIDDLE));
+                @ParameterizedTest
+                @MethodSource("existingFriendsStream")
+                void contains_existingFriend_returnsTrue(Friend friend, int index) {
+                    assertTrue(classUnderTest.contains(friend));
                 }
 
                 @Test
@@ -195,9 +207,10 @@ public class ContactListTest {
                     assertFalse(classUnderTest.contains(NONEXISTENT_FRIEND));
                 }
 
-                @Test
-                void indexOf_existingFriend_returnsCorrectIndex() {
-                    assertEquals(2, classUnderTest.indexOf(EXISTING_FRIEND_MIDDLE));
+                @ParameterizedTest
+                @MethodSource("existingFriendsStream")
+                void indexOf_existingFriend_returnsCorrectIndex(Friend friend, int index) {
+                    assertEquals(index, classUnderTest.indexOf(friend));
                 }
 
                 @Test
@@ -205,9 +218,10 @@ public class ContactListTest {
                     assertThrows(NoSuchElementException.class, () -> classUnderTest.indexOf(NONEXISTENT_FRIEND));
                 }
 
-                @Test
-                void get_validIndex_returnsCorrectFriend() {
-                    assertEquals(EXISTING_FRIEND_MIDDLE, classUnderTest.get(2));
+                @ParameterizedTest
+                @MethodSource("existingFriendsStream")
+                void get_validIndex_returnsCorrectFriend(Friend friend, int index) {
+                    assertEquals(friend, classUnderTest.get(index));
                 }
 
                 @Test
@@ -220,15 +234,17 @@ public class ContactListTest {
                     assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.get(5));
                 }
 
-                @Test
-                void remove_existingFriend_returnsTrue() {
-                    assertTrue(classUnderTest.remove(EXISTING_FRIEND_MIDDLE));
+                @ParameterizedTest
+                @MethodSource("existingFriendsStream")
+                void remove_existingFriend_returnsTrue(Friend friend, int index) {
+                    assertTrue(classUnderTest.remove(friend));
                 }
 
-                @Test
-                void remove_existingFriend_removesFriend() {
-                    classUnderTest.remove(EXISTING_FRIEND_MIDDLE);
-                    assertFalse(classUnderTest.contains(EXISTING_FRIEND_MIDDLE));
+                @ParameterizedTest
+                @MethodSource("existingFriendsStream")
+                void remove_existingFriend_removesFriend(Friend friend, int index) {
+                    classUnderTest.remove(friend);
+                    assertFalse(classUnderTest.contains(friend));
                 }
 
                 @Test
@@ -278,15 +294,15 @@ public class ContactListTest {
 
                 @Test
                 void indexOf_existingFriend_returnsIndexOfFirstOccurrence() {
-                    assertEquals(0, classUnderTest.indexOf(EXISTING_FRIEND));
+                    assertEquals(0, classUnderTest.indexOf(EXISTING_FRIEND_DUPLICATES));
                 }
 
                 @Test
                 void remove_allDuplicates_removesAllOccurrence() {
-                    classUnderTest.remove(EXISTING_FRIEND);
-                    classUnderTest.remove(EXISTING_FRIEND);
-                    classUnderTest.remove(EXISTING_FRIEND);
-                    assertFalse(classUnderTest.contains(EXISTING_FRIEND));
+                    classUnderTest.remove(EXISTING_FRIEND_DUPLICATES);
+                    classUnderTest.remove(EXISTING_FRIEND_DUPLICATES);
+                    classUnderTest.remove(EXISTING_FRIEND_DUPLICATES);
+                    assertFalse(classUnderTest.contains(EXISTING_FRIEND_DUPLICATES));
                 }
             }
         }
