@@ -186,7 +186,7 @@ public class ContactListTest {
 
                 @Test
                 void contains_existingFriend_returnsTrue() {
-                    assertTrue(classUnderTest.contains(EXISTING_FRIEND));
+                    assertTrue(classUnderTest.contains(ANOTHER_EXISTING_FRIEND));
                 }
 
                 @Test
