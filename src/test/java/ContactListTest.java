@@ -177,7 +177,7 @@ public class ContactListTest {
             @TestInstance(TestInstance.Lifecycle.PER_CLASS)
             class WhenMany {
 
-                static Stream<Arguments> existingFriendsStream() {
+                Stream<Arguments> existingFriendsStream() {
                     return Stream.of(Arguments.of(EXISTING_FRIEND_FIRST, 0),
                             Arguments.of(EXISTING_FRIEND_MIDDLE, 2),
                             Arguments.of(EXISTING_FRIEND_END, 4));
