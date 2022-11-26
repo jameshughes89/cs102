@@ -270,7 +270,7 @@ toString
 * The inherited behaviour is a little different --- it returns a string of the class name and the object's  *hash code*
 
     * `This is, more or less, a memory address of where the object is in memory <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#hashCode()>`__
-    * ``Friend@77459877``
+    * For example --- ``Friend@77459877``
 
 
 * One can override the inherited ``toString``
