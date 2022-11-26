@@ -6,6 +6,7 @@ import java.util.Objects;
  */
 public final class Friend {
 
+    // Fields for the Friend Class
     private final String firstName;
     private final String lastName;
     private final String email;
@@ -52,7 +53,9 @@ public final class Friend {
     //     * @return if the two friend objects are equal
     //     */
     //    public boolean equals(Friend other) {
-    //        return this.firstName.equals(other.firstName) && this.lastName.equals(other.lastName);
+    //        return this.firstName.equals(other.firstName) &&
+    //                this.lastName.equals(other.lastName) &&
+    //                this.email.equals(other.email);
     //    }
 
     /**
