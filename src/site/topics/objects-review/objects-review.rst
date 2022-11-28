@@ -677,6 +677,41 @@ Contains and Find
 
 
 
+Index Of
+^^^^^^^^
+
+* The ``indexOf`` method returns the index of the specified ``Friend``, if it exists
+
+.. literalinclude:: /../main/java/ContactList.java
+    :language: java
+    :linenos:
+    :lineno-start: 97
+    :lines: 97-110
+
+
+* This method checks if the ``Friend`` exists, and if it does not, it throws an exception
+
+    * The provided ``Friend`` is provided to the exception for its message
+
+* If it does exist, this method simply delegates the work to the private ``find`` method
+
+
+Get
+^^^
+
+* The ``get`` method returns the ``Friend`` at the specified index
+
+.. literalinclude:: /../main/java/ContactList.java
+    :language: java
+    :linenos:
+    :lineno-start: 112
+    :lines: 112-125
+
+* If the index is out of bounds, an exception is thrown
+
+    * The invalid index is provided to the exception for its message
+
+
 Remove Friends
 ^^^^^^^^^^^^^^
 
@@ -693,20 +728,15 @@ Remove Friends
 * Remove first checks if the ``Friend`` object exists within the ``ContactList``
 
     * If does not exist, an exception will be thrown
-
+    * The provided ``Friend`` is provided to the exception for its message
 
 * To actually remove the ``Friend``, all that needs to happen is for the program to lose reference to it
-
-    * Garbage
-
-
 * In the above example, the array at the index of the ``Friend`` to be removed is set to the ``Friend`` at the end of the array
 
     * ``friendCount - 1``
 
 
 * Once this is done, the array has no reference to the ``Friend`` that was removed
-
 * The array at index ``friendCount - 1`` is set to ``null``
 
     * Although not necessary, it is not a bad idea to explicitly remove the reference at the end
