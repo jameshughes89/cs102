@@ -637,11 +637,14 @@ Adding Friends
     * If the array had enough room, ``expandCapacity`` is not called
 
 * Either way, the ``Friend`` being added via the ``add`` method will always go to the next available spot
+* When done, this method returns a ``boolean`` indicating if the ``add`` worked correctly
 
 * Also notice that the ``expandCapacity`` method is ``private``
 
     * This method is important for the inner workings of the ``ContactList`` class
     * This method is not something one wants a user of this ``ContactList`` class to care about
+
+
 
 
 
