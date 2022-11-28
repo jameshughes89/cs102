@@ -494,12 +494,17 @@ References
 Contact List Class
 ------------------
 
-* We need a way to keep track of our ``Friend`` objects
-* To do this, we will make a new class called ``ContactList``
+* With the ``Friend`` class complete, there needs to be a way to keep track of and manage the ``Friend`` objects
+* To do this, a new class called ``ContactList`` will be created
+
 * What fields should this have?
-    * A list of the ``Friends`` we're keeping track of
-        * For this we can use an array
-    * A count of how many ``Friend`` objects our ``ContactList`` contains
+
+    * A way to keep track of the ``Friends`` in the ``ContactList``
+
+        * An array will be used here
+
+    * A count of how many ``Friend`` objects the ``ContactList`` contains
+
         * Just an ``int``
 
 
