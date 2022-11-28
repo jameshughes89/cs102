@@ -511,61 +511,86 @@ Contact List Class
 Setting Fields and Writing the Constructor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* In the below examples, ``class ContactList:`` and ``public class ContactList {`` are excluded
+* Below is an example of a constructor for the ``ContactList`` class in Python
 
-**Python**
+    * The ``_friends`` list should be *private*
+    * The length of that list will be the number of ``Friend`` objects in the ``ContactList``
 
 .. code-block:: python
     :linenos:
 
     def __init__(self):
-        self._friend_count = 0
         self._friends = []
 
 
-* In this Python example, keeping track of ``_friend_count`` is perhaps not necessary since we can simply use ``len(self._friends)``
-* We can keep appending and appending to our ``_friends`` list
 
-**Java**
+* The Java example below includes a few new ideas
 
-.. code-block:: java
+.. literalinclude:: /../main/java/ContactList.java
+    :language: java
     :linenos:
-
-    public class ContactList {
-
-        static final int DEFAULT_CAPACITY = 10;
-
-        private int friendCount;
-        private Friend[] friends;
-
-        public ContactList() {
-            friendCount = 0;
-            friends = new Friend[DEFAULT_CAPACITY];
-        }
-
-        public ContactList(int capacity) {
-            friendCount = 0;
-            friends = new Friend[capacity];
-        }
-    }
+    :lineno-start: 1
+    :lines: 1-33
 
 
-* First, notice that we actually wrote two constructors
-    * Overloading
-    * We can even do something called :doc:`constructor chaining <chaining>`
+* Things to notice
 
-* Since arrays have a fixed size, our strategy here is to make an array with a sufficiently large size, but only use what we need
-* The first constructor will make use of some constant value set in the class to make the array
-* The second will take a capacity as a parameter and make the array that size
+    * The imports
+    * The two constants
+    * The declaring of the fields
+    * Two constructors
 
-* If we create a ``ContactList`` object
-    * ``ContactList contacts = new ContactList(5);``
+
+* Most of these are ideas one should already be familiar with
+
+    * The imports are used for functionality described below
+    * One constant, ``DEFAULT_CAPACITY``,  defines the default size an array should have --- more on this below
+    * The other constant, ``NOT_FOUND``, is used to provide a name to the sentinel value of ``-1`` --- more detail below
+    * The declaring of the fields is similar to what was seen in the ``Friend`` class
+
+
+* Having two constructors is a new idea that was not used in Python
+* In several programming languages, it is possible to have multiple methods with the same name that take different parameters
+
+    * This is valued *overloading*
+
+
+* Notice that one constructor takes no parameters and the other takes a single integer ``capacity``
+* For now, focus on the second one; the one that takes the parameter
+* It first sets the size of the ``ContactList`` field to ``0`` since a new ``ContactList`` is empty
+* It then creates a new empty ``Friend`` array of size ``capacity``
+
+    * Remember, arrays have a fixed size
+    * The strategy here is to make an array that is sufficiently large, but only use what is needed
+    * Consider the following example,
+
+        * The array is size ``10``
+        * Only two ``Friend`` objects are in the ``ContactList``
+        * Then only indices ``0`` and ``1`` of the array are actually used
+
+
+* The second constructor, the one that takes an integer, is used to create a new ``ContacList`` with the array of some specified size
+* The first constructor, the one with no parameter, is used to create a new ``ContactList`` with a default capacity
+
+    * More precisely, the default capacity set to the class constant ``DEFAULT_CAPACITY``
+    * It does this with the use of constructor chaining
+
+        * The use of ``this(DEFAULT_CAPACITY)`` simply calls the constructor that takes a single integer as a parameter
+        * In this example, it ultimately calls ``ContactList(10)``
+        * See the :doc:`constructor chaining <chaining>` aside for more details
+
+    * The fact that ``DEFAULT_CAPACITY `` was set to 10 is entirely arbitrary
+    * Further, the inclusion of the constructor that takes no parameter is entirely optional
+
 
 * We will have something like this created
 
-    .. image:: contacts.png
-       :width: 600 px
-       :align: center
+    .. figure:: contacts.png
+        :width: 600 px
+        :align: center
+
+        Example of an empty ``ContactList``  that was created ``ContactList contacts = new ContactList(5);``.
+
 
 
 Adding Friends
