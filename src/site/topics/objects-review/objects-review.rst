@@ -813,29 +813,11 @@ toString
     :doc:`See the aside on string builders for more details. <builder>`
 
 
-
-What We Get
-===========
-
-* Modularity
-    * Break a problem down into smaller components
-    * Ideally, these components should be independent from each other
-    * Each component performs a well defined task
-    * We encapsulate data and behaviours together
-
-* Information Hiding
-    * Hide some of the implementation details
-    * It can protect important pieces of the system from being modified by others bits
-    * It gives us some control over how our code is used
-    * For example
-        * You all used Python lists, but you didn't know any of their implementation details
-        * And it didn't matter!
-
-
-For next time
+For Next Time
 =============
 
-* Assuming you have not done it, read Chapter 1 of your text
+* Read Chapter 1 of the text
+
     * 15 pages
 
 
@@ -843,6 +825,7 @@ Playing Code
 ============
 
 * Download and play with
+
     * :download:`Friend </../main/java/Friend.java>`
     * :download:`ContactList </../main/java/ContactList.java>` code
     * :download:`PlayingObjects </../main/java/PlayingObjects.java>`
