@@ -579,7 +579,7 @@ Setting Fields and Writing the Constructor
         * In this example, it ultimately calls ``ContactList(10)``
         * See the :doc:`constructor chaining <chaining>` aside for more details
 
-    * The fact that ``DEFAULT_CAPACITY `` was set to 10 is entirely arbitrary
+    * The fact that ``DEFAULT_CAPACITY`` was set to 10 is entirely arbitrary
     * Further, the inclusion of the constructor that takes no parameter is entirely optional
 
 
@@ -645,31 +645,46 @@ Adding Friends
 
 
 
+Contains and Find
+^^^^^^^^^^^^^^^^^
+
+.. literalinclude:: /../main/java/ContactList.java
+    :language: java
+    :linenos:
+    :lineno-start: 69
+    :lines: 69-95
+
+
+* The ``find`` method, which is ``private``, is an internal helper method for finding the index of a given ``Friend``
+* This method is just a linear search
+
+    * Mind the use of ``Objects.equals`` which is a null safe way to check if two objects are equal
+
+
+* If no such ``Friend`` object exists, a special *sentinel* value of ``-1`` is returned
+
+    * Referred to by the class constant ``NOT_FOUND``
+    * This sentinel value has special meaning
+
+        * Since ``-1`` is not a valid index, it can be used to indicate that the object was not found
+
+
+* The ``contains`` method returns a ``boolean`` indicating if a ``Friend`` object exists within the ``ContactList``
+* This method makes use of the private ``find`` method
+
+
+
 Remove Friends
 ^^^^^^^^^^^^^^
 
-**Java**
-
-.. code-block:: java
+.. literalinclude:: /../main/java/ContactList.java
+    :language: java
     :linenos:
-    :emphasize-lines: 8, 11
+    :lineno-start: 127
+    :lines: 127-151
 
-        public void remove(String firstName, String lastName) {
-            // Create a temp friend object for easy
-            // use of the Friend class' equals()
-            Friend toDelete = new Friend(firstName, lastName, "");
 
-            // Linear search for the friend we are trying to delete
-            for (int i = 0; i < friendCount; ++i) {
-                if (toDelete.equals(friends[i])) {
-                    // Have friend at the end of the array be referenced
-                    // by the array index we removed from
-                    friends[i] = friends[friendCount - 1];
-                    friends[friendCount - 1] = null;
-                    friendCount--;
-                }
-            }
-        }
+
 
 * We'll create a temporary ``Friend`` based on the parameters so we can make use of our ``Friend`` class' ``.equals``
 * To remove the ``Friend`` all we need to do it lose reference to it
