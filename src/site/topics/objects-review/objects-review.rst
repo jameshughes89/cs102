@@ -788,31 +788,29 @@ Size and isEmpty
 toString
 ^^^^^^^^
 
-* What should the string representation of our ``ContactList`` class be?
-* How about we simply print out the friend's information, one per line
-* To make a ``toString`` for the ``ContactList`` class
+* A good representation of the collection would be an aggregate of the string representations of the ``Friend`` objects
 
+    * Have each ``Friend`` within the ``ContactList`` be on its own line
 
 .. code-block:: java
     :linenos:
     :emphasize-lines: 4
 
-        public String toString() {
-            String s = "";
-            for (int i = 0; i < friendCount; ++i) {
-                s = s + friends[i].toString() + "\n";
-            }
-            return s;
+    public String toString() {
+        String s = "";
+        for (int i = 0; i < size(); i++) {
+            s = s + friends[i].toString() + "\n";
         }
+        return s;
+    }
 
-* Notice that we can actually make good use of the ``Friend`` class' ``toString`` method
 
+* Notice that this actually makes use of the ``Friend`` class' ``toString`` method
 
 .. warning::
 
-    Although the above example is correct, in practice we'd want to use something called a ``StringBuilder``.
-    :doc:`See this aside for more details. <builder>`
-
+    Although the above example is correct, in practice one would want to use something called a ``StringBuilder``.
+    :doc:`See the aside on string builders for more details. <builder>`
 
 
 
