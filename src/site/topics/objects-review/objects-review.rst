@@ -795,6 +795,7 @@ toString
 
 
 * Notice that this actually makes use of the ``Friend`` class' ``toString`` method
+* This method makes use of string concatenation
 
 .. warning::
 
