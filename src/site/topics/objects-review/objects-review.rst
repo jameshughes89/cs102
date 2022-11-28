@@ -508,23 +508,11 @@ Contact List Class
         * Just an ``int``
 
 
+* The Python examples are not included for the ``ContactList`` class
+
+
 Setting Fields and Writing the Constructor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-* Below is an example of a constructor for the ``ContactList`` class in Python
-
-    * The ``_friends`` list should be *private*
-    * The length of that list will be the number of ``Friend`` objects in the ``ContactList``
-
-.. code-block:: python
-    :linenos:
-
-    def __init__(self):
-        self._friends = []
-
-
-
-* The Java example below includes a few new ideas
 
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
@@ -596,16 +584,7 @@ Setting Fields and Writing the Constructor
 Adding Friends
 ^^^^^^^^^^^^^^
 
-* Adding a friend to the collection in Python could be done by appending to the ``_friends`` field
-
-.. code-block:: python
-    :linenos:
-
-    def add(self, friend):
-        self._friends.append(friend)
-
-
-* In Java, things are a little different since
+* There is some complexity involved with adding a ``Friend`` to the ``ContactList``
 
     * Arrays have a fixed size
     * The capacity of the array is not the same as the number of ``Friends`` in the collection
@@ -645,9 +624,6 @@ Adding Friends
     * This method is not something one wants a user of this ``ContactList`` class to care about
 
 
-
-
-
 Contains and Find
 ^^^^^^^^^^^^^^^^^
 
@@ -674,7 +650,6 @@ Contains and Find
 
 * The ``contains`` method returns a ``boolean`` indicating if a ``Friend`` object exists within the ``ContactList``
 * This method makes use of the private ``find`` method
-
 
 
 Index Of
