@@ -596,84 +596,53 @@ Setting Fields and Writing the Constructor
 Adding Friends
 ^^^^^^^^^^^^^^
 
-**Python**
+* Adding a friend to the collection in Python could be done by appending to the ``_friends`` field
 
 .. code-block:: python
     :linenos:
 
-    def add(self, first_name, last_name, email):
-        # Make the friend object
-        new_friend = Friend(first_name, last_name, email)
-
-        # Append friend to our friends list
-        # and update friend count
-        self._friends.append(new_friend)
-        self._friends_count += 1
+    def add(self, friend):
+        self._friends.append(friend)
 
 
-**Java**
+* In Java, things are a little different since
 
-.. code-block:: java
+    * Arrays have a fixed size
+    * The capacity of the array is not the same as the number of ``Friends`` in the collection
+
+.. literalinclude:: /../main/java/ContactList.java
+    :language: java
     :linenos:
-    :emphasize-lines: 16, 17, 18
+    :lineno-start: 35
+    :lines: 35-67
+    :emphasize-lines: 9, 10, 11
 
-        /**
-         * Add a new friend to the friends array. Will create an instance
-         * of a Friend based on parameters. If our array runs out of space
-         * we will expand capacity to manage the situation.
-         *
-         * @param firstName     friends first name
-         * @param lastName      friends last name
-         * @param email         friends email address
-         */
-        public void add(String firstName, String lastName, String email) {
-            // Create the Friend object
-            Friend newFriend = new Friend(firstName, lastName, email);
 
-            // If we have run out of space in our array
-            // we need to deal with it
-            if (friendCount == friends.length) {
-                expandCapacity();
-            }
-            // Add friend to the next available spot
-            friends[friendCount] = newFriend;
-            friendCount++;
-        }
+* Since the array has a fixed size, it's not possible to add more ``Friend`` objects beyond the size of the array
+* However, it would be ideal if it were possible to continually add ``Friend`` objects without worrying about the capacity
+* If more space is needed, a simple solution is
 
-        private void expandCapacity() {
-            // Make a new array of twice the size of the previous
-            Friend[] newFriends = new Friend[friends.length * 2];
+    * Make a new array that is bigger
+    * Copy over the contents of the old array to the new array
+    * Assign the field ``friends`` to reference the new, bigger array
 
-            // Copy over the contents of the friends list
-            // to the new bigger friends list
-            for(int i = 0; i < friends.length; ++i) {
-                newFriends[i] = friends[i];
-            }
-            // Have friends now reference the new friends
-            friends = newFriends;
-        }
-
-* You may notice that ``friendCount`` plays double duty here --- friends count and next available spot in the array
-
-* Since our array has a fixed size, we can't simply keep adding to it
-* Our solution is to ``expandCapacity``
-    1. Create a new array twice as big as the original
-    2. Copy over the contents of the original array to the new bigger array
-        * `You could also use this instead <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Arrays.html#copyOf(T%5B%5D,int)>`_
-    3. Make out friends array now reference the new bigger array
 
 .. image:: expand_capacity.png
        :width: 600 px
        :align: center
 
-* The ``expandCapacity`` method gets called automatically by the ``add`` method if our array has run out of space
-* If the array had enough room, ``expandCapacity`` is never called
-* Either way, when we add the ``newFriend`` to our array, we are now guaranteed to have room
 
-* You will also see that the ``expandCapacity`` method is ``private``
+* The ``expandCapacity`` method gets called automatically by the ``add`` method if the array has run out of space
+
+    * If the array had enough room, ``expandCapacity`` is not called
+
+* Either way, the ``Friend`` being added via the ``add`` method will always go to the next available spot
+
+* Also notice that the ``expandCapacity`` method is ``private``
+
     * This method is important for the inner workings of the ``ContactList`` class
-    * This method is not something I want the user of my class to care about
-        * Abstraction
+    * This method is not something one wants a user of this ``ContactList`` class to care about
+
 
 
 Remove Friends
