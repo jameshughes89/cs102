@@ -407,9 +407,11 @@ Creating an Instance of a Friend
     but a *reference* to the object is.
 
 
-        .. image:: reference_aFriend.png
-           :width: 250 px
-           :align: center
+        .. figure:: reference_aFriend.png
+            :width: 250 px
+            :align: center
+
+            The ``aFriend`` variable holds a *reference* to an instance of a ``Friend`` object, not a ``Friend``.
 
 
 
@@ -422,9 +424,11 @@ Creating an Instance of a Friend
 
 * They both have the ``firstName`` field, but the actual value associated with it differs
 
-    .. image:: reference_aFriend_bFriend.png
-       :width: 500 px
-       :align: center
+    .. figure:: reference_aFriend_bFriend.png
+        :width: 500 px
+        :align: center
+
+        Two reference variables referencing two seperate individual ``Friend`` objects.
 
 
 * Below is an example of two ``Friend`` objects being created and being used
@@ -476,9 +480,13 @@ References
 * This also means that the object that ``bFriend`` used to point to now has no reference to it
 * This would cause Java to delete the Jane ``Friend`` object
 
-    .. image:: reference_lost.png
-       :width: 500 px
-       :align: center
+    .. figure:: reference_lost.png
+        :width: 500 px
+        :align: center
+
+        The ``Friend`` object that was referenced by ``bFriend`` now has no reference to it. The ``bFriend`` reference
+        variable refers to the same ``Friend`` the ``aFriend`` reference variable refers to. The ``aFriend`` and
+        ``bFriend`` reference variables are aliases for the same ``Friend`` object.
 
 
 .. warning::
@@ -606,9 +614,13 @@ Adding Friends
     * Assign the field ``friends`` to reference the new, bigger array
 
 
-.. image:: expand_capacity.png
-       :width: 600 px
-       :align: center
+.. figure:: expand_capacity.png
+    :width: 600 px
+    :align: center
+
+    "Expanding" the capacity. No array actually grows, but a new array that is larger is created and the contents of the
+    old array is copied to the new array. The object's field that references the array is updated to refer to the new
+    larger array.
 
 
 * The ``expandCapacity`` method gets called automatically by the ``add`` method if the array has run out of space
@@ -719,10 +731,12 @@ Remove Friends
 
 * After the ``Friend`` has been removed, the size of the ``ContactList`` needs to be decreased by 1
 
+.. figure:: remove.png
+    :width: 600 px
+    :align: center
 
-.. image:: remove.png
-       :width: 600 px
-       :align: center
+    ``Friend`` objects are removed by deliberately losing reference to them. After a ``remove``, the array index that
+    referred to the ``Friend`` that was removed now refers to the ``Friend`` that was at the end of the ``ContactList``.
 
 
 Clear Friends
