@@ -753,18 +753,35 @@ Remove Friends
 Clear Friends
 ^^^^^^^^^^^^^
 
-.. code-block:: java
+* Clear out all the ``Friend`` objects within the ``ContactList``
+
+.. literalinclude:: /../main/java/ContactList.java
+    :language: java
     :linenos:
+    :lineno-start: 153
+    :lines: 153-159
 
-        public void clear() {
-            friends = new Friend[friends.length];
-            friendCount = 0;
-        }
 
-* For this, just make a new, empty array of the same size of the original array
+* Here, simply create a new empty array and set the size to ``0``
 * Since the old array referenced by ``friends`` has no more reference, it get managed by the garbage collector
+* One could have gone through the array and set each index to reference ``null``, but this is easier
+* Further, setting the size to ``0`` would also be sufficient
 
-* We could have gone through the array and set each index to reference ``null``, but the above is easier
+
+Size and isEmpty
+^^^^^^^^^^^^^^^^
+
+.. literalinclude:: /../main/java/ContactList.java
+    :language: java
+    :linenos:
+    :lineno-start: 161
+    :lines: 161-167
+
+
+* ``isEmpty`` returns a ``boolean`` indicating if the ``ContactList`` is empty or not
+* The ``size`` method returns the number of ``Friends`` actually within the ``ContactList``
+
+    * Remember, the size of the array and the number of ``Friends`` in the ``ContactList`` are different things
 
 
 
@@ -797,18 +814,6 @@ toString
     :doc:`See this aside for more details. <builder>`
 
 
-Friend Count
-^^^^^^^^^^^^
-
-* We will want to be able to know how many ``Friend`` objects we have in our ``ContactList``
-* Basically a getter for the ``friendCount`` field
-
-.. code-block:: java
-    :linenos:
-
-        public int size() {
-            return friendCount;
-        }
 
 
 What We Get
