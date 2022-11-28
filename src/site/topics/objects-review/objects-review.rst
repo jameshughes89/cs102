@@ -677,6 +677,9 @@ Contains and Find
 Remove Friends
 ^^^^^^^^^^^^^^
 
+* Below is an example of a ``remove`` method that will remove a ``Friend`` from the ``ContactList``
+* This method returns a ``boolean`` to indicate if the ``remove`` was successful
+
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
     :linenos:
@@ -684,35 +687,35 @@ Remove Friends
     :lines: 127-151
 
 
+* Remove first checks if the ``Friend`` object exists within the ``ContactList``
+
+    * If does not exist, an exception will be thrown
 
 
-* We'll create a temporary ``Friend`` based on the parameters so we can make use of our ``Friend`` class' ``.equals``
-* To remove the ``Friend`` all we need to do it lose reference to it
+* To actually remove the ``Friend``, all that needs to happen is for the program to lose reference to it
+
     * Garbage
-* In the above example, we made the array at the index of the removed ``Friend`` to reference the ``Friend`` at the end of the array
+
+
+* In the above example, the array at the index of the ``Friend`` to be removed is set to the ``Friend`` at the end of the array
+
     * ``friendCount - 1``
-* After this, the array has no reference to the ``Friend`` that was removed
 
-* You may notice that the array at index ``friendCount - 1`` is set to ``null``
-    * This is done to deal with the edge case of removing the last friend
 
-* You may also notice that this method, as it is written, will not do anything special if the ``Friend`` we try to remove does not exist
-* What should we do in this scenario?
-    * Ignore it?
-    * Return a boolean?
-    * Crash the program?
-    * Explode?
+* Once this is done, the array has no reference to the ``Friend`` that was removed
 
-* This will be discussed further a little later in the course
+* The array at index ``friendCount - 1`` is set to ``null``
+
+    * Although not necessary, it is not a bad idea to explicitly remove the reference at the end
+
+
+* After the ``Friend`` has been removed, the size of the ``ContactList`` needs to be decreased by 1
+
 
 .. image:: remove.png
        :width: 600 px
        :align: center
 
-.. warning::
-
-    There is actually a bug in the above ``remove`` example. This is addressed below, but see if you can spot the bug
-    yourself. **Hint:** It has to do with having multiple equal ``Friend`` objects in the ``friends`` array.
 
 
 Update Friend's Email
