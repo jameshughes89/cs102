@@ -178,6 +178,12 @@ public class ContactListTest {
             class WhenMany {
 
                 static Stream<Arguments> existingFriendsStream() {
+                    return Stream.of(Arguments.of(EXISTING_FRIEND_FIRST),
+                            Arguments.of(EXISTING_FRIEND_MIDDLE),
+                            Arguments.of(EXISTING_FRIEND_END));
+                }
+
+                static Stream<Arguments> existingFriendsStreamAndIndices() {
                     return Stream.of(Arguments.of(EXISTING_FRIEND_FIRST, 0),
                             Arguments.of(EXISTING_FRIEND_MIDDLE, 2),
                             Arguments.of(EXISTING_FRIEND_END, 4));
@@ -198,7 +204,7 @@ public class ContactListTest {
 
                 @ParameterizedTest
                 @MethodSource("existingFriendsStream")
-                void contains_existingFriend_returnsTrue(Friend friend, int index) {
+                void contains_existingFriend_returnsTrue(Friend friend) {
                     assertTrue(classUnderTest.contains(friend));
                 }
 
@@ -208,7 +214,7 @@ public class ContactListTest {
                 }
 
                 @ParameterizedTest
-                @MethodSource("existingFriendsStream")
+                @MethodSource("existingFriendsStreamAndIndices")
                 void indexOf_existingFriend_returnsCorrectIndex(Friend friend, int index) {
                     assertEquals(index, classUnderTest.indexOf(friend));
                 }
@@ -219,7 +225,7 @@ public class ContactListTest {
                 }
 
                 @ParameterizedTest
-                @MethodSource("existingFriendsStream")
+                @MethodSource("existingFriendsStreamAndIndices")
                 void get_validIndex_returnsCorrectFriend(Friend friend, int index) {
                     assertEquals(friend, classUnderTest.get(index));
                 }
@@ -236,13 +242,13 @@ public class ContactListTest {
 
                 @ParameterizedTest
                 @MethodSource("existingFriendsStream")
-                void remove_existingFriend_returnsTrue(Friend friend, int index) {
+                void remove_existingFriend_returnsTrue(Friend friend) {
                     assertTrue(classUnderTest.remove(friend));
                 }
 
                 @ParameterizedTest
                 @MethodSource("existingFriendsStream")
-                void remove_existingFriend_removesFriend(Friend friend, int index) {
+                void remove_existingFriend_removesFriend(Friend friend) {
                     classUnderTest.remove(friend);
                     assertFalse(classUnderTest.contains(friend));
                 }
