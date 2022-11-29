@@ -79,19 +79,19 @@ public class LinkedStack<T> implements Stack<T> {
             return false;
         }
         LinkedStack<?> that = (LinkedStack<?>) o;
-        if (this.size == that.size) {
-            Node<?> thisCurrent = this.top;
-            Node<?> thatCurrent = that.top;
-            while (thisCurrent != null) {
-                if (!thisCurrent.data.equals(thatCurrent.data)) {
-                    return false;
-                }
-                thisCurrent = thisCurrent.getNext();
-                thatCurrent = thatCurrent.getNext();
-            }
-            return true;
+        if (this.size() != that.size()) {
+            return false;
         }
-        return false;
+        Node<?> thisCurrent = this.top;
+        Node<?> thatCurrent = that.top;
+        while (thisCurrent != null) {
+            if (!Objects.equals(thisCurrent.getData(), thatCurrent.getData())) {
+                return false;
+            }
+            thisCurrent = thisCurrent.getNext();
+            thatCurrent = thatCurrent.getNext();
+        }
+        return true;
     }
 
     @Override
