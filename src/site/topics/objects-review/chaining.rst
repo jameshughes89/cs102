@@ -11,16 +11,10 @@ Aside --- Constructor Chaining
     The call to ``this`` must be first statement in the constructor body.
 
 
-.. code-block:: java
+.. literalinclude:: /../main/java/ContactList.java
+    :language: java
     :linenos:
-    :emphasize-lines: 3
+    :lineno-start: 17
+    :lines: 17-33
+    :emphasize-lines: 6
 
-        public ContactList() {
-            // Calls the constructor that takes an int as parameter
-            this(DEFAULT_CAPACITY);
-        }
-
-        public ContactList(int capacity) {
-            size = 0;
-            friends = new Friend[capacity];
-        }
