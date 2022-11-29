@@ -110,7 +110,7 @@ public class ArrayStack<T> implements Stack<T> {
     @Override
     public final int hashCode() {
         int result = Objects.hash(top);
-        for (int i = 0; i < Math.min(this.top, this.stack.length); i++) {
+        for (int i = 0; i < size(); i++) {
             result = result * 97 + Objects.hashCode(stack[i]);
         }
         return result;
