@@ -3,7 +3,8 @@ import java.util.NoSuchElementException;
 import java.util.Objects;
 
 /**
- * Class to keep track of a collection of Friend objects.
+ * Class to keep track of a collection of Friend objects. The underlying contained for the class is an array that
+ * will automatically "grow" to accommodate adding beyond the initial capacity.
  */
 public class ContactList {
 
@@ -13,12 +14,19 @@ public class ContactList {
     private int size;
     private Friend[] friends;
 
+    /**
+     * Create an empty ContactList with the array container's capacity being set to the default capacity.
+     */
     public ContactList() {
-        // Call the constructor that
-        // takes an int as parameter
+        // Calls the constructor that takes an int as parameter
         this(DEFAULT_CAPACITY);
     }
 
+    /**
+     * Create an empty ContactList with the array container's capacity being set to the specified size.
+     *
+     * @param capacity Starting capacity of the fixed length array.
+     */
     public ContactList(int capacity) {
         size = 0;
         friends = new Friend[capacity];
@@ -31,8 +39,7 @@ public class ContactList {
      * @return True if the friend was added successfully, false otherwise.
      */
     public boolean add(Friend friend) {
-        // If we have run out of space in our array
-        // we need to deal with it by making a new array
+        // If we have run out of space in our array we need to deal with it by making a new array
         if (size() == friends.length) {
             expandCapacity();
         }
@@ -51,8 +58,7 @@ public class ContactList {
         // Make a new array of twice the size of the previous
         Friend[] newFriends = new Friend[friends.length * 2];
 
-        // Copy over the contents of the friends array
-        // to the new bigger friends array
+        // Copy over the contents of the friends array to the new bigger friends array
         for (int i = 0; i < friends.length; ++i) {
             newFriends[i] = friends[i];
         }
@@ -84,8 +90,7 @@ public class ContactList {
                 return i;
             }
         }
-        // -1 (NOT_FOUND constant) will signify that we
-        // didn't find what we were looking for
+        // -1 (NOT_FOUND constant) will signify that we didn't find what we were looking for
         return NOT_FOUND;
     }
 
@@ -99,7 +104,7 @@ public class ContactList {
      */
     public int indexOf(Friend friend) {
         if (!contains(friend)) {
-            throw new NoSuchElementException();
+            throw new NoSuchElementException(Objects.toString(friend));
         }
         return find(friend);
     }
@@ -110,11 +115,11 @@ public class ContactList {
      *
      * @param index Index of the Friend object to be returned.
      * @return Friend object at the specified index.
-     * @throws IndexOutOfBoundsException If an invalid index is provided.
+     * @throws IndexOutOfBoundsException If an invalid index is provided (negative, or too large).
      */
     public Friend get(int index) {
         if (index < 0 || index >= size()) {
-            throw new IndexOutOfBoundsException();
+            throw new IndexOutOfBoundsException(index);
         }
         return friends[index];
     }
@@ -131,7 +136,7 @@ public class ContactList {
      */
     public boolean remove(Friend friend) {
         if (!contains(friend)) {
-            throw new NoSuchElementException();
+            throw new NoSuchElementException(Objects.toString(friend));
         }
         int removeIndex = find(friend);
         // Although it is possible that the element being removed is replaced with itself, which happens when it is the
@@ -172,7 +177,7 @@ public class ContactList {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < size(); i++) {
-            builder.append(friends[i].toString());
+            builder.append(friends[i]);
             builder.append("\n");
         }
         return builder.toString();
@@ -187,7 +192,7 @@ public class ContactList {
             return false;
         }
         ContactList that = (ContactList) o;
-        return this.size == that.size && Arrays.equals(this.friends, 0, this.size(), that.friends, 0, that.size());
+        return Arrays.equals(this.friends, 0, this.size(), that.friends, 0, that.size());
     }
 
     @Override

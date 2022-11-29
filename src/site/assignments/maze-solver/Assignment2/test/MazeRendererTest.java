@@ -10,7 +10,7 @@ public class MazeRendererTest {
 
     // @formatter:off
     private static final String MAZE =
-            "#####\n" +
+                    "#####\n" +
                     "#   #\n" +
                     "#   #\n" +
                     "S   E\n" +

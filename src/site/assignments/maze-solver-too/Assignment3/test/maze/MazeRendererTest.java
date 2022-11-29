@@ -12,7 +12,7 @@ public class MazeRendererTest {
 
     // @formatter:off
     private static final String MAZE =
-            "#####\n" +
+                    "#####\n" +
                     "#   #\n" +
                     "#   #\n" +
                     "S   E\n" +
@@ -32,7 +32,7 @@ public class MazeRendererTest {
             new Cell(' ', 2, 4),
             new Cell(' ', 3, 4));
     private static final String EXPECTED_MAZE_FILL =
-            "#####\n" +
+                    "#####\n" +
                     "#ooo#\n" +
                     "#ooo#\n" +
                     "SoooE\n" +
@@ -41,7 +41,7 @@ public class MazeRendererTest {
                     "Cells in final path: 12";
     private static final Set<Cell> PATH_ON_START = Set.of(new Cell('S', 0, 3));
     private static final String EXPECTED_MAZE_START =
-            "#####\n" +
+                    "#####\n" +
                     "#   #\n" +
                     "#   #\n" +
                     "o   E\n" +
@@ -50,7 +50,7 @@ public class MazeRendererTest {
                     "Cells in final path: 1";
     private static final Set<Cell> PATH_ON_END = Set.of(new Cell('E', 4, 3));
     private static final String EXPECTED_MAZE_END =
-            "#####\n" +
+                    "#####\n" +
                     "#   #\n" +
                     "#   #\n" +
                     "S   o\n" +

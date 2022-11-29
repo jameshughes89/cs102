@@ -2,313 +2,374 @@
 Objects Review
 **************
 
-* Let's review the idea of objects
+* Defining objects and data structures is similar between Python and Java
+* Most of the differences are syntax related
 
 
 Objects and Classes
 ===================
 
-* Objects are *things* that typically know stuff, can do actions, and can be acted on
-* Often, when programming with Java, we will have interacting objects
+* Objects are *things* that typically contain data, can do some actions, and can be acted on
+* Often, when programming with Java, several objects will be interacting
+
 
 Objects
 -------
 
 * All objects have
-    * **Properties**
+
+    * Properties
+
         * These are the *data*
         * These are called *fields*
-        * They're variables, but they belong to an object
+        * They're variables, but they belong to an instance of an object
 
-    * **Behaviours**
+
+    * Behaviours
+
         * This is what the object can do
         * These are called **methods**
         * They're functions, but they belong to an object
+
 
 Class
 -----
 
 * Every object belongs to a *class*
+
     * A *class* defines what it means to be an object of that class
 
+
 * For example
-    * We can think of ``Human`` as a class
+
+    * One could think of ``Human`` as a class
+
         * With the fields ``firstName`` and ``lastName``
         * And methods ``eat()`` and ``goToBed()``
 
-    * We can make Bob Smith an instance of the ``Human`` class
+
+    * One could make Bob Smith an instance of the ``Human`` class
+
         * ``firstName`` is Bob
         * ``lastName`` is Smith
+        *  Calling the method ``eat()`` would tell the specific instance to eat
+
 
 * All objects of the same class have the same fields, but their values can differ
+
     * All instances of ``Human`` have ``firstName`` and ``lastName``
     * But Bob Smith's ``firstName`` is Bob
-    * If we made an instance for Jane Doe, then their ``firstName`` would be Jane
+    * If there was another instance for Jane Doe, then their ``firstName`` would be Jane
+
+
+* Objects of the same class have the same methods, but calling a method on an instance only calls it on *that* instance
 
 
 But Why?
 --------
 
-* Classes and objects make abstraction pretty easy
-    * How many of you know exactly how an internal combustion engine works?
-    * How many of you drove here today in a car with an internal combustion engine?
+* Classes and objects make abstraction easier
 
-* It also lets us encapsulate ideas together
-    * Although, there are arguments as to why this isn't great
+    * How many of you know exactly how your HVAC system works?
+    * How many of you have ever turned up the heat in your house?
+
+
+* It also makes encapsulating ideas together easier
+
+    * Although, there are several arguments as to why this isn't always great
 
 
 High-Level Idea
 ---------------
 
-* Your typical class will consist of
+* A typical class will consist of
+
     * Fields
     * Methods
     * Constructors (which are also methods)
 
-* In Java, we write our class code in a file with the same name as the class with the file extension being .java
+
+* In Java, class code is written in a file with the same name of the class
+
+    * The code is written in a file with a ".java" file extension
     * The ``Human`` class would be in a file called Human.java
+
 
 Contact List Example
 ====================
 
-* The above is very high-level
-* It may be easiest to learn with an example
-* Let's say we want to write a program to keep track of the contact information of our friends
-* I will make a class that will define what a ``Friend`` is
-* I will make another class that will define how we will manage a collection of ``Friend`` objects
+* It may be easier to learn these ideas with an example
+* Let's consider the following problem
 
-.. warning::
+    * There is a need to keep track of the name and email address of friends
+    * There is also a need to manage several friends' names and email addresses
 
-    The example may not make complete sense until it comes together in the end.
+
+* To do this, a class could be made to represent a friend --- ``Friend`` class
+* Another class can be made to keep track of the collection of friends --- ``ContactList`` class
 
 
 Friend Class
 ------------
 
-* What type of information should our ``Friend`` class keep track of?
+* For this particular problem, the ``Friend`` class can be kept simple
+
+    * This is a good thing
+
+
+* The only information the ``Friend`` objects need to know is their
+
     * First Name
     * Last Name
     * Email Address
-    * ...
 
-* We know we need a constructor, which was ``__init__`` in Python
 
-* What behaviours should our ``Friend`` instances have?
-    * Hmmmmmm....
-    * Well, based on what I remember from Python, we should have
-        * accessors and mutators
-            * getters and setters
-        * the ``__repr__`` thing?
-        * ``__eq__``?
+* A constructor will be be needed that describes the setup for the ``Friend`` object
+
+    * Assigning the values to the fields
+
+
+* The behaviours of the ``Friend`` class
+
+    * A way to retrieve information from the ``Friend``
+    * A way to obtain a string representation of the ``Friend``
+    * A way to check if two ``Friend`` objects are equal
 
 
 Setting Fields and Writing the Constructor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * The constructor is a special method that is called automatically when an object of the class is created
-* We'd typically setup stuff that needs to be setup for an instance of the class in the constructor
+* Typically, setup related things that needs to happen for the object will be put in the constructor
 
-**Python**
+* In Python, the ``Friend`` class' constructor and the creation and assigning of fields would look like the following
+
+    * Remember, in Python ``self`` is used to refer to an instance of the class
 
 .. code-block:: python
     :linenos:
-    :emphasize-lines: 5
+    :emphasize-lines: 4
 
     class Friend:
 
-        # Python --- Constructor and
-        # creating and setting fields
+        # Python --- Constructor and creating and setting fields
         def __init__(self, first_name, last_name, email):
-            self._first_name = first_name
-            self._last_name = last_name
-            self._email = email
-
-* Remember, in Python we use ``self`` to refer to an instance of the class
-* Putting the underscore in front of the field name is a convention to mean private
+            self.first_name = first_name
+            self.last_name = last_name
+            self.email = email
 
 
-**Java**
+In Java, the class' declaration of fields, constructor, and assigning values to the fields would look like the following
 
-.. code-block:: java
+.. literalinclude:: /../main/java/Friend.java
+    :language: java
     :linenos:
-    :emphasize-lines: 4,5,6,10,11,12
-
-    public class Friend {
-
-        // Class Attribute Declaration
-        private String firstName;
-        private String lastName;
-        private String email;
-
-        // Constructor and assigning fields
-        public Friend(String firstName, String lastName, String email) {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.email = email;
-        }
-    }
-
-* The class is set to ``public`` so we can access it from any other class
-* We define the fields to have scope to the class
-    * So they are accessible to the whole class
-
-* The fields are ``private`` since we want to control how these fields are used
-* The constructor is ``public``, has the same name as the class, and does not have a ``self`` parameter
-* The ``this`` in the above example let's Java resolve the ambiguity
-    * ``this.firstName`` is the class attribute where ``firstName`` is a local parameter for the constructor
-    * It is not always necessary to use ``this`` in Java like how we use ``self`` in Python
+    :lineno-start: 3
+    :lines: 3-26
+    :emphasize-lines: 8, 9, 10, 21, 22, 23
 
 
-Getters and Setters
-^^^^^^^^^^^^^^^^^^^
 
-**Java**
+* The class is set to ``public`` so it can be accessed from any other class
+* The class is also set to ``final`` since, once an instance is created, it should not change --- immutable
 
-.. code-block:: java
+* The fields are declared inside the class, but not within any method
+
+    * They can be accessed by the whole class
+
+
+* To provide control over how the fields are accessed outside the class, they are set to ``private`` and ``final``
+
+    * ``private`` means the fields are not directly accessible outside the class
+
+        * If they were assigned ``public``, it would behave like Python
+
+
+    * Although ``private``, the values of the fields will ultimately be accessible, but through accessor methods
+
+        * Discussed in more detail below
+
+
+    * The ``Friend`` class will be made in such a way that the data is immutable --- it doesn't change once set
+
+        * Thus, the fields are set to ``final`` so they can be set once and only once
+
+
+* Notice the java documentation (javadoc) comment is *above* the method
+* The constructor is ``public``, has the same name as the class and file, and does not have a ``self`` parameter
+
+    * Although Java does have a similar keyword --- ``this``
+
+
+* The ``this`` in the above example let's Java resolve the ambiguity between the field and constructor parameter
+
+    * ``this.firstName`` is the field where ``firstName`` is a local parameter for the constructor
+    * It is not always necessary to use ``this`` in Java like how ``self`` is used in Python
+
+
+.. note::
+
+    Two of the major differences seen between Python and Java is the use of the visibility modifiers
+    ``public``/``private`` and ``final``. This was done to tell Java that instances of this class are to be immutable.
+
+    At first one may feel these extra keywords make the code too verbose, but consider that these extra keywords provide
+    the programmer with more explicit control over how their code is or is not used. Although these keywords are not
+    *necessary*, they are very powerful.
+
+
+Accessors
+^^^^^^^^^
+
+* Below are the accessor/getter methods for the fields
+* All these methods do are return their respective values
+* They are ``public`` as they should be accessible outside the class
+* Note, however, that there are no methods to set any of the field values
+
+    * The ``Friend`` is immutable --- can access data, but cannot change it
+
+
+.. literalinclude:: /../main/java/Friend.java
+    :language: java
     :linenos:
-    :emphasize-lines: 2
-
-        public String getFirstName() {
-            return firstName;
-        }
-
-        public void setFirstName(String firstName) {
-            this.firstName = firstName;
-        }
-
-* Getter and setter for ``firstName``
-    * Would be the same for ``lastName``
-
-* Notice that we do not need the ``this`` in front of ``firstName``
-
-* You may still feel like making the fields private and then writing the getters and setters is silly
-    * Honestly, in this example, it likely is a bad idea
-    * We will revisit the use of the getters and setters in this class later
-
-* Here is a contrived example to show where the use of a setter can check the data first before making a change
+    :lineno-start: 28
+    :lines: 28-38
 
 
-**Java**
-
-.. code-block:: java
-    :linenos:
-
-        /**
-         * Update the email address. Will only work if the email address
-         * contains the @ symbol for simple data correctness check
-         *
-         * @param email     new email address
-         */
-        public void setEmail(String email) {
-            if (email.contains("@")) {
-                this.email = email;
-            }
-        }
 
 toString
 ^^^^^^^^
 
-* You may remember that ``__repr__`` in python was a special method that would return a string version of the object
-    * And, if you called ``print(some_object)``, the ``__repr__`` would automatically get called
+* In Python, for creating a string representation of an object, the ``__repr__`` magic method was used
 
-* When we wrote our own classes, we ended up overriding the ``__repr__`` we got for free
-    * The default one simply prints out the object name and a memory address, which wasn't very helpful
+    * If one called ``print(some_object)``, the ``__repr__`` would automatically get called
+
+
+* All classes *inherited* a ``__repr__`` for free, but the default behaviors was not all too helpful
+
     * ``<__main__.Friend object at 0x7f130d9c52e0>``
-    * *Technically*, the behaviour we get for free is inherited from the closest "super" class
-        * We will learn more about this later
+    * The inherited one simply provides the object name and a memory address
 
-* An example of a ``__repr__`` for our ``Friend`` class might look something like this
-* We just print out the name of the ``Friend`` and their email
+        * Inheritance is a topic discussed later in the course
 
-**Python**
+
+* If one wanted to change this behaviour, they would override the default ``__repr__``
+* An example of a ``__repr__`` for the ``Friend`` class in Python is below
 
 .. code-block:: python
     :linenos:
 
-    # Python --- __repr__
     def __repr__(self):
-        return self._first_name + " " + self._last_name \
-               + ":\t" + self._email
+        return f"Friend({self.first_name}, {self.last_name}, {self.email})"
+
+* An f-string was used in the above example, but string concatenation could have been used
+
+    * ``"Friend(" + self.first_name + ", " + self.last_name + ", " + self.email + ")"``
 
 
-* We can do the same thing in Java, but in java it's called ``toString()``
-* If we do not write our own, the default behaviour is to return a string of the class name and a *hash code*
-    * ``Friend@77459877``
-    * Again, *technically* the behaviour we get for free is inherited
+* The same principal exists in Java, but the method is called ``toString``
+* The inherited behaviour is a little different --- it returns a string of the class name and the object's  *hash code*
 
-.. code-block:: java
+    * `This is, more or less, a memory address of where the object is in memory <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#hashCode()>`__
+    * For example --- ``Friend@77459877``
+
+
+* One can override the inherited ``toString``
+
+.. literalinclude:: /../main/java/Friend.java
+    :language: java
     :linenos:
+    :lineno-start: 40
+    :lines: 40-42
 
-        public String toString() {
-            return firstName + " " + lastName + ":\t" + email;
-        }
 
-* And like Python, we can simply print it and ``toString`` will automatically get called
+* In the above example, ``String.format`` was used, but string concatenation could have been used
+
+    * ``"Friend(" + firstName + ", " + lastName + ", " + email + ")"``
+
+
+* Like Python, ``toString`` is automatically get called when printing the object
+
     * ``System.out.println(aFriend);``
+
 
 .. warning::
 
-    The idea is that this *returns* a string; we do not want to just print something
+    The idea is that this *returns* a string; it does not just print something.
 
 
 equals
 ^^^^^^
 
-* We had another special function that we liked to use called ``__eq__``
-* ``__eq__`` let us define what it means for two of the objects to be equivalent
-* It also let us call ``==`` on the objects too
+* Python also provides the ``__eq__`` magic method for describing equality
 
-* In Java, we use the ``equals()`` method to define what it means for two of the objects to be equivalent
-* **HOWEVER**, unlike Python, this doesn't overload the ``==`` operator
-    * ``==`` for the objects is reserved to check if the objects are literally the same object
-    * Same memory address --- it compares the memory addresses
+.. code-block:: python
+    :linenos:
 
-* On the other hand, ``.equals()`` is used to actually compare the content of the objects in some way
-    * We need to think about what it means for two objects of the type to be &equivalent*
-
-* The default behaviour is to is to check if the objects are in the same memory address (``==``)
-    * Similar to ``toString``, the behaviour we get for free is inherited
+    def __eq__(self, other) -> bool:
+        if isinstance(other, Friend):
+            return self.first_name == other.first_name and \
+                        self.last_name == other.last_name and \
+                        self.email == other.email
+        return False
 
 
-* So, what should it mean for two ``Friend`` objects to be *equal*?
-* Well, **we** get to define this
-* We can make it whatever we want
-    * Same eye colour?
-    * Same height and weight?
-    * Same number of skin cells?
+* In Java, there is an ``equals`` method to define what it means for two objects to be equivalent
+* However, unlike Python, it does not overload the ``==`` operator
 
-* But, we need to really think about what makes sense in our context
-    * Let's go with their ``firstName`` and ``lastName`` being equal
-        * Although, this example is perhaps still not overly great
+    * ``==`` for objects is reserved for checking if two things are literally the same object -- aliases
+
+        * Same memory address --- it compares the memory addresses
+
+
+* ``equals`` is used to compare the content of the objects in some way
+
+    * This is where equality between objects of the class is defined
+
+
+* Like ``toString``, if not overridden, ``equals`` has the inherited behavior of checking sameness --- ``==``
+
+* For the ``Friend`` class, two objects will be equal if all their fields match
 
 .. code-block:: java
     :linenos:
 
-        /**
-         * Sample equals method for comparing two friend objects.
-         * In this example, we will simply compare first and last
-         * names.
-         *
-         * This example is deliberately kept very simple
-         *
-         * @return      if the two friend objects are equal
-         */
-        public boolean equals(Friend other) {
-            return this.firstName.equals(other.firstName)
-                    && this.lastName.equals(other.lastName);
-        }
+    /**
+     * Checks if two Friend objects are equal. Friend objects are considered equal if all their attributes are equal.
+     *
+     * @param other A Friend being compared to.
+     * @return True if the two objects are equal, false otherwise.
+     */
+    public boolean equals(Friend other) {
+        return this.firstName.equals(other.firstName) &&
+                this.lastName.equals(other.lastName) &&
+                this.email.equals(other.email);
+    }
 
-* Notice how we actually use the string's ``equals`` too
-* In the above example, using ``this`` is not necessary, but may be helpful in eliminating ambiguity
+* In the above example, notice the use of ``this`` and ``other``
+
+    * This eliminates any ambiguity of which ``Friend`` instance the field is coming from
+
+
+* Also notice the use of the ``equals`` method on the strings since it's a check for equality of strings, not sameness
+
+        * e.g., ``this.firstName.equals(other.firstName)``
+
 
 .. warning::
 
-    The example ``equals()`` included in the ``Friend.java`` file is a little more complex,
-    but is a more complete and correct ``equals``. :doc:`See this aside for more details. <equals>`
+    The above ``equals`` is actually not particularly good, but is included here for simplicity. The ``equals``
+    implemented in the provided ``Friend.java`` file is more complex, but better.
+
+    :doc:`Read the aside on equals for more details. <equals>` The more complex, but improved ``equals`` will be used
+    going forward in the course.
+
 
 
 Creating an Instance of a Friend
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Below is an example of creating an instance of a ``Friend`` object based on the ``Friend`` class
+* It is a simple example where an instance is created, but that is all
 
 .. code-block:: java
     :linenos:
@@ -320,21 +381,31 @@ Creating an Instance of a Friend
             // Create an instance of a Friend
             // Assign the variable to reference the newly created Friend
             Friend aFriend = new Friend("Bob", "Smith", "bsmith@gmail.com");
-
         }
     }
 
-* Here's an example of us actually creating an instance of the ``Friend`` class
-* This is a really really really simple example where we create it and do nothing with it
+* There is a bit going on:
 
-* There is a bit going on here:
-    * Declare a ``Friend`` variable
+    * Declare a variable of type ``Friend``
+
         * ``Friend aFriend``
-    * Create an instance of a ``Friend``
+
+
+    * Create an instance of a ``Friend`` object
+
         * ``new Friend("Bob", "Smith", "bsmith@gmail.com")``
+
+
     * Assign the variable to reference the newly created object
-        * The equals bit
-        * We have to be careful about what is actually stored in the ``aFriend``
+
+        * The single equals is used for assignment --- ``=``
+
+
+.. note::
+
+    Be mindful about what is *actually* stored in the ``aFriend`` variable. The object is not stored in the variable,
+    but a *reference* to the object is.
+
 
         .. image:: reference_aFriend.png
            :width: 250 px
@@ -342,10 +413,13 @@ Creating an Instance of a Friend
 
 
 
-* If I were to write another line of code like this
+* If the following line of code was run, two instances of a ``Friend`` would exist
+
     * ``Friend bFriend = new Friend("Jane", "Doe", "jdoe@gmail.com");``
+
 * ``aFriend`` would have a ``firstName`` of Bob
 * ``bFriend`` has a ``firstName`` of Jane
+
 * They both have the ``firstName`` field, but the actual value associated with it differs
 
     .. image:: reference_aFriend_bFriend.png
@@ -354,7 +428,8 @@ Creating an Instance of a Friend
 
 
 * Below is an example of two ``Friend`` objects being created and being used
-    * We get ``aFriend``'s first name
+
+    * Get ``aFriend``\'s first name
     * Use the ``toString`` method
     * Use the ``equals`` method
 
@@ -370,13 +445,23 @@ Creating an Instance of a Friend
     System.out.println(aFriend.equals(bFriend));
 
 
-* What do you think the output of this would be?
+* What is the output of the above code?
+
+
 
 References
 ^^^^^^^^^^
 
-* We have to be careful about what is actually stored in these variables
-* We're not storing the object in that variable --- we store a reference to where the object is in memory
+* As noted above, be careful about what is actually stored in these variables
+* The objects themselves are not stored in the variables
+* Instead, references to where the objects are in memory are stored in the variables
+
+* In the below example, ``bFriend = aFriend`` copies the contents of ``aFriend`` and puts the copy in the ``bFriend``
+
+    * But the contents of the ``aFriend`` variable is a reference to a ``Friend``
+    * The *reference* stored in ``aFriend`` gets copied; the ``Friend`` is **not** copied
+    * This results in an aliases --- both ``aFriend`` and ``bFriend`` reference the exact same object
+
 
 .. code-block:: java
     :linenos:
@@ -388,19 +473,22 @@ References
     bFriend = aFriend;
 
 
-* In the above example, ``bFriend = aFriend`` copies the contents of ``aFriend`` and puts the copy in ``bFriend``
-    * So, the reference stored in ``aFriend`` gets copied
-
 * This also means that the object that ``bFriend`` used to point to now has no reference to it
+* This would cause Java to delete the Jane ``Friend`` object
 
     .. image:: reference_lost.png
        :width: 500 px
        :align: center
 
+
 .. warning::
 
-    You may think that assignment works differently for primitive types when compared and objects,
-    but, think about what is actually stored in the variable.
+    One may feel that the assignment works different between primitive types when compared to objects, but this is
+    wrong.
+
+    Remember what is stored in the variables --- the contents of the variables are copied. The variables may store a
+    primitive type, or maybe a reference to an object. Either way, it's the variable's contents that are copied.
+
 
 
 Contact List Class
@@ -632,6 +720,7 @@ Update Friend's Email
             }
         }
 
+
 Index Of Friend
 ^^^^^^^^^^^^^^^
 
@@ -798,6 +887,7 @@ What We Get
     * For example
         * You all used Python lists, but you didn't know any of their implementation details
         * And it didn't matter!
+
 
 For next time
 =============
