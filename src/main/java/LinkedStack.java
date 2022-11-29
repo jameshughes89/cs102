@@ -12,6 +12,9 @@ public class LinkedStack<T> implements Stack<T> {
     private Node<T> top;
     private int size;
 
+    /**
+     * Create an empty LinkedStack.
+     */
     public LinkedStack() {
         top = null;
         size = 0;
