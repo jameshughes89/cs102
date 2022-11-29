@@ -49,7 +49,6 @@ class ArrayStackEqualsTest {
         unequalSomeEqual.push(30);
         unequalSomeEqual.push(40);
 
-
         new EqualsTester().addEqualityGroup(ArrayStack.class)
                 .addEqualityGroup(emptyA, emptyB, emptyC)
                 .addEqualityGroup(singletonA, singletonB, singletonC)
