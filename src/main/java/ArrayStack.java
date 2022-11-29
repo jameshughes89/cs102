@@ -104,7 +104,7 @@ public class ArrayStack<T> implements Stack<T> {
             return false;
         }
         ArrayStack<?> that = (ArrayStack<?>) o;
-        return top == that.top && Arrays.equals(this.stack, 0, this.top, that.stack, 0, that.top);
+        return Arrays.equals(this.stack, 0, this.top, that.stack, 0, that.top);
     }
 
     @Override
