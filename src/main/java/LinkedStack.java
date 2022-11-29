@@ -23,7 +23,7 @@ public class LinkedStack<T> implements Stack<T> {
     @Override
     public T pop() {
         if (isEmpty()) {
-            throw new NoSuchElementException("Popping from an empty stack.");
+            throw new NoSuchElementException();
         }
         T returnElement = top.getData();
         top = top.getNext();
@@ -34,14 +34,14 @@ public class LinkedStack<T> implements Stack<T> {
     @Override
     public T peek() {
         if (isEmpty()) {
-            throw new NoSuchElementException("Peeking from an empty stack.");
+            throw new NoSuchElementException();
         }
         return top.getData();
     }
 
     @Override
     public boolean isEmpty() {
-        return size == 0;
+        return size() == 0;
     }
 
     @Override
