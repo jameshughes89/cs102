@@ -1,5 +1,7 @@
-import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import java.util.NoSuchElementException;
 
@@ -7,81 +9,180 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ArrayStackTest {
 
-    @Test
-    @DisplayName("A new stack starts empty.")
-    void aNewStackIsEmpty() {
-        Stack<Integer> stack = new ArrayStack<>();
-        assertTrue(stack.isEmpty());
+
+    private ArrayStack<Integer> classUnderTest;
+
+    @BeforeEach
+    void createStack() {
+        classUnderTest = new ArrayStack<>();
     }
 
-    @Test
-    @DisplayName("An empty stack has size 0.")
-    void emptyStackHasSizeZero() {
-        Stack<Integer> stack = new ArrayStack<>();
-        assertEquals(0, stack.size());
-    }
+    @Nested
+    class WhenNewEmpty {
 
-    @Test
-    @DisplayName("isEmpty return false when it is non empty.")
-    void nonEmptyStackIsEmptyReturnsFalse() {
-        Stack<Integer> stack = new ArrayStack<>();
-        stack.push(99);
-        assertFalse(stack.isEmpty());
-    }
-
-    @Test
-    @DisplayName("Pushing items updates the size of the stack.")
-    void pushingUpdatesSize() {
-        Stack<Integer> stack = new ArrayStack<>();
-        stack.push(99);
-        stack.push(101);
-        assertEquals(2, stack.size());
-    }
-
-    @Test
-    @DisplayName("Pushing an item results in it being on the top.")
-    void pushedItemIsTopOfStack() {
-        Stack<Integer> stack = new ArrayStack<>();
-        stack.push(99);
-        assertEquals(99, stack.peek());
-    }
-
-    @Test
-    @DisplayName("Pushing 6 elements on stack expands capacity.")
-    void pushingBeyondCapacityCallsExpandCapacityToMakeRoom() {
-        // Initializing to 5 means pushing 6 items should call
-        // expandCapacity() such that the sixth item pushed
-        // would be on top
-        Stack<Integer> stack = new ArrayStack<>(5);
-        for (int i = 0; i < 6; ++i) {
-            stack.push(i);
+        @Test
+        void push_successfulAdd_returnsTrue() {
+            assertTrue(classUnderTest.push(11));
         }
-        assertEquals(5, stack.peek());
-    }
 
-    @Test
-    @DisplayName("Push and Pop returns in LIFO order.")
-    void pushingAndPoppingReturnsElementsInLIFOOrder() {
-        Stack<Integer> stack = new ArrayStack<>();
-        for (int i = 0; i < 6; ++i) {
-            stack.push(i);
+        @Test
+        void push_empty_newTop() {
+            classUnderTest.push(11);
+            assertEquals(11, classUnderTest.peek());
         }
-        for (int i = 5; i >= 0; --i) {
-            assertEquals(i, stack.pop());
+
+        @Test
+        void pop_empty_throwsNoSuchElementException() {
+            assertThrows(NoSuchElementException.class, () -> classUnderTest.pop());
+        }
+
+        @Test
+        void peek_empty_throwsNoSuchElementException() {
+            assertThrows(NoSuchElementException.class, () -> classUnderTest.peek());
+        }
+
+        @Test
+        void isEmpty_empty_returnsTrue() {
+            assertTrue(classUnderTest.isEmpty());
+        }
+
+        @Test
+        void size_empty_returnsZero() {
+            assertEquals(0, classUnderTest.size());
+        }
+
+        @Test
+        void toString_empty_returnsEmptyString() {
+            assertEquals("", classUnderTest.toString());
+        }
+
+        @Nested
+        class WhenSingleton {
+
+            @BeforeEach
+            void addSingleton() {
+                classUnderTest.push(10);
+            }
+
+            @Test
+            void push_successfullyAdds_returnsTrue() {
+                assertTrue(classUnderTest.push(11));
+            }
+
+            @Test
+            void push_singleton_newTop() {
+                classUnderTest.push(11);
+                assertEquals(11, classUnderTest.peek());
+            }
+
+            @Test
+            void pop_singleton_returnsTop() {
+                assertEquals(10, classUnderTest.pop());
+            }
+
+            @Test
+            void pop_singleton_emptyStack() {
+                classUnderTest.pop();
+                assertEquals(new ArrayStack<>(), classUnderTest);
+            }
+
+            @Test
+            void peek_singleton_returnsTop() {
+                assertEquals(10, classUnderTest.peek());
+            }
+
+            @Test
+            void peek_singleton_unchangedTop() {
+                classUnderTest.peek();
+                assertEquals(10, classUnderTest.peek());
+            }
+
+            @Test
+            void isEmpty_singleton_returnsFalse() {
+                assertFalse(classUnderTest.isEmpty());
+            }
+
+            @Test
+            void size_singleton_returnsOne() {
+                assertEquals(1, classUnderTest.size());
+            }
+
+            @Test
+            void toString_singleton_returnsCorrectString() {
+                assertEquals("10, ", classUnderTest.toString());
+            }
+
+            @Nested
+            @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+            class WhenMany {
+
+                @BeforeEach
+                void addMany() {
+                    classUnderTest.push(20);
+                    classUnderTest.push(30);
+                    classUnderTest.push(40);
+                }
+
+                @Test
+                void push_successfullyAdds_returnsTrue() {
+                    assertTrue(classUnderTest.push(11));
+                }
+
+                @Test
+                void push_many_newTop() {
+                    classUnderTest.push(11);
+                    assertEquals(11, classUnderTest.peek());
+                }
+
+                @Test
+                void pop_many_returnsTop() {
+                    assertEquals(40, classUnderTest.pop());
+                }
+
+                @Test
+                void pop_many_newTop() {
+                    classUnderTest.pop();
+                    assertEquals(30, classUnderTest.peek());
+                }
+
+                @Test
+                void peek_many_returnsTop() {
+                    assertEquals(40, classUnderTest.peek());
+                }
+
+                @Test
+                void peek_many_unchangedTop() {
+                    classUnderTest.peek();
+                    assertEquals(40, classUnderTest.peek());
+                }
+
+                @Test
+                void isEmpty_many_returnsFalse() {
+                    assertFalse(classUnderTest.isEmpty());
+                }
+
+                @Test
+                void size_many_returnsCorrectSize() {
+                    assertEquals(4, classUnderTest.size());
+                }
+
+                @Test
+                void toString_singleton_returnsCorrectString() {
+                    assertEquals("40, 30, 20, 10, ", classUnderTest.toString());
+                }
+            }
         }
     }
 
-    @Test
-    @DisplayName("Pop throws NoSuchElementException when stack is empty.")
-    void popEmptyStackThrowsException() {
-        Stack<Integer> stack = new ArrayStack<>();
-        assertThrows(NoSuchElementException.class, () -> stack.pop());
-    }
+    @Nested
+    class WhenLarge {
 
-    @Test
-    @DisplayName("Peek throws NoSuchElementException when stack is empty.")
-    void peekEmptyStackThrowsException() {
-        Stack<Integer> stack = new ArrayStack<>();
-        assertThrows(NoSuchElementException.class, () -> stack.peek());
+        @Test
+        void push_large_successfullyExpandsCapacity() {
+            for (int i = 0; i < 1000; i++) {
+                classUnderTest.push(i);
+            }
+            assertEquals(1000, classUnderTest.size());
+        }
     }
 }
