@@ -14,21 +14,15 @@ Aside --- String Builder
 * An alternative to continually appending to a ``String`` is a ``StringBuilder``, which eliminates the extra overhead
 * See the below example of the ``ContactList`` class' ``toString`` that makes use of a ``StringBuilder``
 
-.. code-block:: java
+.. literalinclude:: /../main/java/ContactList.java
+    :language: java
     :linenos:
+    :lineno-start: 177
+    :lines: 177-184
     :emphasize-lines: 4
 
-        public String toString() {
-            StringBuilder builder = new StringBuilder();
-            for (int i = 0; i < size(); i++) {
-                builder.append(friends[i].toString());
-                builder.append("\n");
-            }
-            return builder.toString();
-        }
 
 .. note::
 
-    On line 4 in the above example, the instances of ``Friend`` objects are having their ``.toString()`` methods called.
-    This is actually unnecessary since the ``StringBuilder`` object's ``append`` method would call this automatically.
-    In other words, line 4 could read ``builder.append(friends[i]);``. 
+    In the above example, the instances of ``Friend`` objects are not having their ``.toString()`` methods called.
+    This is unnecessary here since the ``StringBuilder`` object's ``append`` method would call this automatically.
