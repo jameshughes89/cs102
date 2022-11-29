@@ -281,7 +281,6 @@ For next time
 * Look into the :doc:`nested node class aside. <nested>`
 * Download and play with the :download:`LinkedStack </../main/java/LinkedStack.java>` code
 * Download and run the :download:`LinkedStackTest </../test/java/LinkedStackTest.java>` tests
-    * Or the more thorough tests found in :download:`LinkedStackThoroughTest </../test/java/LinkedStackThoroughTest.java>`
 * Read Chapter 4 Section 6
     * 13 pages
 
