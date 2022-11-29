@@ -11,10 +11,12 @@ class ArrayStackTest {
 
 
     private ArrayStack<Integer> classUnderTest;
+    private ArrayStack<Integer> preState;
 
     @BeforeEach
     void createStack() {
         classUnderTest = new ArrayStack<>();
+        preState = new ArrayStack<>();
     }
 
     @Nested
@@ -62,6 +64,7 @@ class ArrayStackTest {
             @BeforeEach
             void addSingleton() {
                 classUnderTest.push(10);
+                preState.push(10);
             }
 
             @Test
@@ -92,9 +95,9 @@ class ArrayStackTest {
             }
 
             @Test
-            void peek_singleton_unchangedTop() {
+            void peek_singleton_unchanged() {
                 classUnderTest.peek();
-                assertEquals(10, classUnderTest.peek());
+                assertEquals(preState, classUnderTest);
             }
 
             @Test
@@ -121,6 +124,9 @@ class ArrayStackTest {
                     classUnderTest.push(20);
                     classUnderTest.push(30);
                     classUnderTest.push(40);
+                    preState.push(20);
+                    preState.push(30);
+                    preState.push(40);
                 }
 
                 @Test
@@ -151,9 +157,9 @@ class ArrayStackTest {
                 }
 
                 @Test
-                void peek_many_unchangedTop() {
+                void peek_many_unchanged() {
                     classUnderTest.peek();
-                    assertEquals(40, classUnderTest.peek());
+                    assertEquals(preState, classUnderTest);
                 }
 
                 @Test
