@@ -9,7 +9,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.NoSuchElementException;
 import java.util.stream.Stream;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ContactListTest {
 
@@ -276,8 +276,7 @@ public class ContactListTest {
 
                 @Test
                 void toString_many_returnsCorrectString() {
-                    String expected = "Friend(Bob, Smith, bsmith@gmail.com)\n" +
-                            "Friend(Jane, Doe, jdoe@gmail.com)\n" +
+                    String expected = "Friend(Bob, Smith, bsmith@gmail.com)\n" + "Friend(Jane, Doe, jdoe@gmail.com)\n" +
                             "Friend(Clarence, Cartwrite, treelover@hotmail.com)\n" +
                             "Friend(Sandy, Seaside, boatsboatsboats@yachtclub500.com)\n" +
                             "Friend(Adam, Fluffson, fluffyman28@hotmail.com)\n";
