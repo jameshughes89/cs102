@@ -273,7 +273,6 @@ For next time
 
 * :doc:`Check out the aside on testing <unit-tests>`
 * Download and run the :download:`ArrayStackTest </../test/java/ArrayStackTest.java>` tests
-    * Or the more thorough tests found in :download:`ArrayStackThoroughTest </../test/java/ArrayStackThoroughTest.java>`
 * Finish reading Chapter 3
     * 16 pages
 
