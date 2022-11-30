@@ -22,6 +22,11 @@ public class LinkedQueueThoroughTest {
     class WhenNewEmpty {
 
         @Test
+        void enqueue_successfullyAdds_returnsTrue() {
+            assertTrue(classUnderTest.enqueue(1));
+        }
+
+        @Test
         void isEmpty_empty_returnsTrue() {
             assertTrue(classUnderTest.isEmpty());
         }
@@ -55,6 +60,12 @@ public class LinkedQueueThoroughTest {
                 classUnderTest.enqueue(11);
                 preState.enqueue(11);
             }
+
+            @Test
+            void enqueue_successfullyAdds_returnsTrue() {
+                assertTrue(classUnderTest.enqueue(1));
+            }
+
 
             @Test
             void isEmpty_singleton_returnsFalse() {
@@ -106,6 +117,12 @@ public class LinkedQueueThoroughTest {
                     preState.enqueue(33);
                 }
 
+                @Test
+                void enqueue_successfullyAdds_returnsTrue() {
+                    assertTrue(classUnderTest.enqueue(1));
+                }
+
+                
                 @Test
                 void isEmpty_many_returnsFalse() {
                     assertFalse(classUnderTest.isEmpty());
