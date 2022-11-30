@@ -83,6 +83,7 @@ public class LinkedStack<T> implements Stack<T> {
         }
         Node<?> thisCurrent = this.top;
         Node<?> thatCurrent = that.top;
+        // Since this and that have the same size, if thisCurrent exists, thatCurrent must
         while (thisCurrent != null) {
             if (!Objects.equals(thisCurrent.getData(), thatCurrent.getData())) {
                 return false;
