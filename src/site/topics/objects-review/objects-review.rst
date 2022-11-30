@@ -649,7 +649,7 @@ Contains and Find
 * The ``find`` method, which is ``private``, is an internal helper method for finding the index of a given ``Friend``
 * This method is just a linear search
 
-    * Mind the use of ``Objects.equals`` which is a null safe way to check if two objects are equal
+    * Mind the use of ``Objects.equals`` which is a null safe way to check if two objects are equal via their defined ``equals`` method
 
 
 * If no such ``Friend`` object exists, a special *sentinel* value of ``-1`` is returned
