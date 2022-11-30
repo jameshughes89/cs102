@@ -1,11 +1,19 @@
-import java.util.NoSuchElementException;
 import java.util.Objects;
 
+/**
+ * Implementation of a stack with a linked structure as the container. The class contains a static inner class defining
+ * a node for the linked structure.
+ *
+ * @param <T> Type of elements that are to be on the stack.
+ */
 public class LinkedStack<T> implements Stack<T> {
 
     private Node<T> top;
     private int size;
 
+    /**
+     * Create an empty LinkedStack.
+     */
     public LinkedStack() {
         top = null;
         size = 0;
@@ -23,7 +31,7 @@ public class LinkedStack<T> implements Stack<T> {
     @Override
     public T pop() {
         if (isEmpty()) {
-            throw new NoSuchElementException("Popping from an empty stack.");
+            throw new EmptyCollectionException();
         }
         T returnElement = top.getData();
         top = top.getNext();
@@ -34,14 +42,14 @@ public class LinkedStack<T> implements Stack<T> {
     @Override
     public T peek() {
         if (isEmpty()) {
-            throw new NoSuchElementException("Peeking from an empty stack.");
+            throw new EmptyCollectionException();
         }
         return top.getData();
     }
 
     @Override
     public boolean isEmpty() {
-        return size == 0;
+        return size() == 0;
     }
 
     @Override
@@ -52,15 +60,12 @@ public class LinkedStack<T> implements Stack<T> {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append(", ");
         Node<T> currentNode = top;
         while (currentNode != null) {
-            builder.insert(0, currentNode.getData());
-            builder.insert(0, ", ");
+            builder.append(currentNode.getData());
+            builder.append(", ");
             currentNode = currentNode.getNext();
         }
-        builder.delete(0, 2);
-        builder.append("<-- Top");
         return builder.toString();
     }
 
@@ -73,19 +78,19 @@ public class LinkedStack<T> implements Stack<T> {
             return false;
         }
         LinkedStack<?> that = (LinkedStack<?>) o;
-        if (this.size == that.size) {
-            Node<?> thisCurrent = this.top;
-            Node<?> thatCurrent = that.top;
-            while (thisCurrent != null) {
-                if (!thisCurrent.data.equals(thatCurrent.data)) {
-                    return false;
-                }
-                thisCurrent = thisCurrent.getNext();
-                thatCurrent = thatCurrent.getNext();
-            }
-            return true;
+        if (this.size() != that.size()) {
+            return false;
         }
-        return false;
+        Node<?> thisCurrent = this.top;
+        Node<?> thatCurrent = that.top;
+        while (thisCurrent != null && thatCurrent != null) {
+            if (!Objects.equals(thisCurrent.getData(), thatCurrent.getData())) {
+                return false;
+            }
+            thisCurrent = thisCurrent.getNext();
+            thatCurrent = thatCurrent.getNext();
+        }
+        return true;
     }
 
     @Override
@@ -100,16 +105,10 @@ public class LinkedStack<T> implements Stack<T> {
     }
 
     /**
-     * A Node class for a singly linked structure. Each node
-     * contains a reference to data of type T, which may be
-     * null, and a reference to the next/subsequent/successor
-     * singly linked node, which may also be null.
-     * <p>
-     * This class is a static nested class since the node
-     * class is only needed for the implementation of the
-     * LinkedStack.
+     * A Node class for a singly linked structure. Each node contains a nullable reference to data of type T, and a
+     * reference to the next/subsequent/successor singly linked node, which may be a null reference.
      *
-     * @param <T> Type of the data being stored in the node
+     * @param <T> Type of the data being stored in the node.
      */
     private static class Node<T> {
 
