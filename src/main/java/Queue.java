@@ -30,13 +30,14 @@ public interface Queue<T> {
     T dequeue();
 
     /**
-     * Looks at the item at the front of the queue and returns it as the value
-     * of this method. After the method completes, the item will still be at the
-     * front of the queue.
+     * Return the element at the front of the queue. Calling first leaves the element at the front of the queue and
+     * leaves the collection unchanged.
      *
-     * @return The item at the front of the queue.
+     * @return The element at the front of the queue.
+     * @throws EmptyCollectionException If calling first on an empty queue.
      */
     T first();
+
 
     /**
      * Tests if the queue is empty and returns a Boolean.
