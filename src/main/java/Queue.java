@@ -8,13 +8,15 @@
  */
 public interface Queue<T> {
 
+
     /**
-     * Enqueues (adds) an item to the end of the queue. After the method completes
-     * the item added will be the thing at the end of the queue
+     * Adds (enqueues) an element to the queue. The enqueue adds the element at the back of the queue such that it
+     * becomes the new last thing in the queue.
      *
-     * @param element The item to be enqueued (added) to the end of the queue.
+     * @param element The item to be enqueued (added) to the queue.
+     * @return True if the element was enqueued (added) successfully, false otherwise.
      */
-    void enqueue(T element);
+    boolean enqueue(T element);
 
     /**
      * Dequeues (removes) the item at the front of the queue and returns it as the value
