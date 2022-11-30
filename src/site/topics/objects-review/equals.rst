@@ -61,34 +61,11 @@ Equals
     fields. In other words, the second option would be fine, but using the third option would still be more defensive.
 
 
-.. code-block:: java
+.. literalinclude:: /../main/java/Friend.java
+    :language: java
     :linenos:
-
-    /**
-     * Checks if two Friend objects are equal. Friend objects are considered equal if all their attributes are equal.
-     *
-     * @param o an "object" being compared to.
-     * @return True if the two objects are equal, false otherwise.
-     */
-    public boolean equals(Object o) {
-        // If o is actually in the same memory address of this
-        if (o == this) {
-            return true;
-        }
-        // If o is null, then it's not equal
-        if (o == null) {
-            return false;
-        }
-        // if o and this are of different classes, they're not the equal
-        if (o.getClass() != this.getClass()) {
-            return false;
-        }
-        // Cast o as a friend
-        Friend other = (Friend) o;
-        return Objects.equals(this.firstName, other.firstName) &&
-                Objects.equals(this.lastName, other.lastName) &&
-                Objects.equals(this.email, other.email);
-    }
+    :lineno-start: 61
+    :lines: 61-86
 
 
 * Below is an example of the ``equals`` method for the ``ContactList`` class
@@ -101,20 +78,11 @@ Equals
         * `Have a look at the relevant javadocs <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Arrays.html#equals(boolean%5B%5D,int,int,boolean%5B%5D,int,int)>`__
 
 
-.. code-block:: java
+.. literalinclude:: /../main/java/ContactList.java
+    :language: java
     :linenos:
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        ContactList that = (ContactList) o;
-        return Arrays.equals(this.friends, 0, this.size(), that.friends, 0, that.size());
-    }
+    :lineno-start: 186
+    :lines: 186-203
 
 
 
@@ -138,13 +106,11 @@ Hash Code
     * For simple classes like the ``Friend`` class, this pattern will be typical
 
 
-.. code-block:: java
+.. literalinclude:: /../main/java/Friend.java
+    :language: java
     :linenos:
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(firstName, lastName, email);
-    }
+    :lineno-start: 88
+    :lines: 88-91
 
 
 * Below is an example of the ``hashCode`` method for the ``ContactList`` class
@@ -167,14 +133,8 @@ Hash Code
     * This increases the chance of producing a unique hash value
 
 
-.. code-block:: java
+.. literalinclude:: /../main/java/ContactList.java
+    :language: java
     :linenos:
-
-    @Override
-    public final int hashCode() {
-        int result = Objects.hash(this.size());
-        for (int i = 0; i < this.size(); i++) {
-            result = result * 97 + Objects.hashCode(this.friends[i]);
-        }
-        return result;
-    }
+    :lineno-start: 205
+    :lines: 205-212

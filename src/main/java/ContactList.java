@@ -183,6 +183,13 @@ public class ContactList {
         return builder.toString();
     }
 
+    /**
+     * Checks if two ContactList objects are equal. ContactList objects are considered equal if the contents of their
+     * friends field, an array, are all equal.
+     *
+     * @param o an "object" being compared to.
+     * @return True if the two objects are equal, false otherwise.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) {
