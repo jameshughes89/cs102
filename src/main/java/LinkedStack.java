@@ -1,4 +1,3 @@
-import java.util.NoSuchElementException;
 import java.util.Objects;
 
 /**
@@ -32,7 +31,7 @@ public class LinkedStack<T> implements Stack<T> {
     @Override
     public T pop() {
         if (isEmpty()) {
-            throw new NoSuchElementException();
+            throw new EmptyCollectionException();
         }
         T returnElement = top.getData();
         top = top.getNext();
@@ -43,7 +42,7 @@ public class LinkedStack<T> implements Stack<T> {
     @Override
     public T peek() {
         if (isEmpty()) {
-            throw new NoSuchElementException();
+            throw new EmptyCollectionException();
         }
         return top.getData();
     }
