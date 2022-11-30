@@ -1,8 +1,8 @@
 /**
  * A queue is a linear data structure that has all additions (enqueues) happen at one end (back/tail), and all removals
- * (dequeues) happen at the other end (front/head). This data structure has a "first in, first out" (FIFO) property ---
- * the first thing that was added to the queue would be the first thing that gets removed if a remove were to happen.
- * Adding and removing from anywhere else but is disallowed.
+ * (dequeues) happen at the other end (front/head). Adding and removing from anywhere else but is disallowed. This data
+ * structure has a "first in, first out" (FIFO) property --- the first element that was added to the queue would be the
+ * first element that gets removed if a remove were to happen.
  *
  * @param <T> Type of elements that are to be in the queue.
  */
@@ -31,7 +31,7 @@ public interface Queue<T> {
 
     /**
      * Return the element at the front of the queue. Calling first leaves the element at the front of the queue and
-     * leaves the collection unchanged.
+     * leaves the queue unchanged.
      *
      * @return The element at the front of the queue.
      * @throws EmptyCollectionException If calling first on an empty queue.
@@ -40,15 +40,15 @@ public interface Queue<T> {
 
 
     /**
-     * Tests if the queue is empty and returns a Boolean.
+     * Checks if the queue is currently empty.
      *
-     * @return true if the queue is empty (no items), false otherwise
+     * @return True if the queue is empty, false otherwise.
      */
     boolean isEmpty();
 
     /**
-     * Returns the number of elements in the queue. This method does not handle
-     * the size exceeding Integer.MAX_VALUE.
+     * Returns the number of elements in the queue. This method does not handle the case of size exceeding
+     * Integer.MAX_VALUE.
      *
      * @return The number of elements in the queue.
      */
