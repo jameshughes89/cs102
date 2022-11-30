@@ -66,7 +66,6 @@ Equals
     :linenos:
     :lineno-start: 61
     :lines: 61-86
-    :emphasize-lines: 6
 
 
 * Below is an example of the ``equals`` method for the ``ContactList`` class
@@ -82,24 +81,8 @@ Equals
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
     :linenos:
-    :lineno-start: 17
-    :lines: 17-33
-    :emphasize-lines: 6
-
-.. code-block:: java
-    :linenos:
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        ContactList that = (ContactList) o;
-        return Arrays.equals(this.friends, 0, this.size(), that.friends, 0, that.size());
-    }
+    :lineno-start: 186
+    :lines: 186-203
 
 
 
@@ -123,13 +106,11 @@ Hash Code
     * For simple classes like the ``Friend`` class, this pattern will be typical
 
 
-.. code-block:: java
+.. literalinclude:: /../main/java/Friend.java
+    :language: java
     :linenos:
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(firstName, lastName, email);
-    }
+    :lineno-start: 88
+    :lines: 88-91
 
 
 * Below is an example of the ``hashCode`` method for the ``ContactList`` class
@@ -152,14 +133,8 @@ Hash Code
     * This increases the chance of producing a unique hash value
 
 
-.. code-block:: java
+.. literalinclude:: /../main/java/ContactList.java
+    :language: java
     :linenos:
-
-    @Override
-    public final int hashCode() {
-        int result = Objects.hash(this.size());
-        for (int i = 0; i < this.size(); i++) {
-            result = result * 97 + Objects.hashCode(this.friends[i]);
-        }
-        return result;
-    }
+    :lineno-start: 205
+    :lines: 205-212
