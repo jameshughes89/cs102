@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ArrayStackTest {
 
-
     private ArrayStack<Integer> classUnderTest;
     private ArrayStack<Integer> preState;
 
