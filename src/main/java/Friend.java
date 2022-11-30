@@ -64,6 +64,7 @@ public final class Friend {
      * @param o an "object" being compared to.
      * @return True if the two objects are equal, false otherwise.
      */
+    @Override
     public boolean equals(Object o) {
         // If o is actually in the same memory address of this
         if (o == this) {

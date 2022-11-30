@@ -61,34 +61,12 @@ Equals
     fields. In other words, the second option would be fine, but using the third option would still be more defensive.
 
 
-.. code-block:: java
+.. literalinclude:: /../main/java/Friend.java
+    :language: java
     :linenos:
-
-    /**
-     * Checks if two Friend objects are equal. Friend objects are considered equal if all their attributes are equal.
-     *
-     * @param o an "object" being compared to.
-     * @return True if the two objects are equal, false otherwise.
-     */
-    public boolean equals(Object o) {
-        // If o is actually in the same memory address of this
-        if (o == this) {
-            return true;
-        }
-        // If o is null, then it's not equal
-        if (o == null) {
-            return false;
-        }
-        // if o and this are of different classes, they're not the equal
-        if (o.getClass() != this.getClass()) {
-            return false;
-        }
-        // Cast o as a friend
-        Friend other = (Friend) o;
-        return Objects.equals(this.firstName, other.firstName) &&
-                Objects.equals(this.lastName, other.lastName) &&
-                Objects.equals(this.email, other.email);
-    }
+    :lineno-start: 61
+    :lines: 61-86
+    :emphasize-lines: 6
 
 
 * Below is an example of the ``equals`` method for the ``ContactList`` class
@@ -100,6 +78,13 @@ Equals
         * The alternative would be to loop over the array and check equality on each element within the loop
         * `Have a look at the relevant javadocs <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Arrays.html#equals(boolean%5B%5D,int,int,boolean%5B%5D,int,int)>`__
 
+
+.. literalinclude:: /../main/java/ContactList.java
+    :language: java
+    :linenos:
+    :lineno-start: 17
+    :lines: 17-33
+    :emphasize-lines: 6
 
 .. code-block:: java
     :linenos:
