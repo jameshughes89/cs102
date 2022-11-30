@@ -18,12 +18,14 @@ public interface Queue<T> {
      */
     boolean enqueue(T element);
 
+
     /**
-     * Dequeues (removes) the item at the front of the queue and returns it as the value
-     * of this method. After the method completes, the item after the front will be the
-     * new front if it exists, otherwise the queue will be empty.
+     * Removes (dequeues) an element from the queue and returns the removed element. The dequeue removes the element
+     * from the front of the queue such that the subsequent element, if it exists, becomes the new front of the queue.
+     * If no subsequent element exists, the front will be null and the queue will be empty.
      *
-     * @return The item at the front of the queue.
+     * @return The element at the front of the queue.
+     * @throws EmptyCollectionException If removing from an empty queue.
      */
     T dequeue();
 
