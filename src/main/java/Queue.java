@@ -1,3 +1,11 @@
+/**
+ * A queue is a linear data structure that has all additions (enqueues) happen at one end (back/tail), and all removals
+ * (dequeues) happen at the other end (front/head). This data structure has a "first in, first out" (FIFO) property ---
+ * the first thing that was added to the queue would be the first thing that gets removed if a remove were to happen.
+ * Adding and removing from anywhere else but is disallowed.
+ *
+ * @param <T> Type of elements that are to be in the queue.
+ */
 public interface Queue<T> {
 
     /**
