@@ -2,18 +2,23 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.NoSuchElementException;
+import java.util.stream.Stream;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ContactListTest {
 
-    private static final Friend EXISTING_FRIEND = new Friend("Bob", "Smith", "bsmith@gmail.com");
-    private static final Friend ANOTHER_EXISTING_FRIEND = new Friend("Clarence",
-            "Cartwrite",
-            "treelover1523@hotmail.com");
-    private static final Friend NONEXISTENT_FRIEND = new Friend("Adam", "Fluffson", "fluffyman28@hotmail.com");
+
+    private static final Friend EXISTING_FRIEND_FIRST = new Friend("Bob", "Smith", "bsmith@gmail.com");
+    private static final Friend EXISTING_FRIEND_MIDDLE = new Friend("Clarence", "Cartwrite", "treelover@hotmail.com");
+    private static final Friend EXISTING_FRIEND_END = new Friend("Adam", "Fluffson", "fluffyman28@hotmail.com");
+    private static final Friend EXISTING_FRIEND_DUPLICATES = new Friend("Bob", "Smith", "bsmith@gmail.com");
+    private static final Friend NONEXISTENT_FRIEND = new Friend("Adrian", "Andrews", "aandrews@hotmail.com");
 
     private ContactList classUnderTest;
 
@@ -91,7 +96,7 @@ public class ContactListTest {
 
             @Test
             void contains_existingFriend_returnsTrue() {
-                assertTrue(classUnderTest.contains(EXISTING_FRIEND));
+                assertTrue(classUnderTest.contains(EXISTING_FRIEND_FIRST));
             }
 
             @Test
@@ -101,7 +106,7 @@ public class ContactListTest {
 
             @Test
             void indexOf_existingFriend_returnsCorrectIndex() {
-                assertEquals(0, classUnderTest.indexOf(EXISTING_FRIEND));
+                assertEquals(0, classUnderTest.indexOf(EXISTING_FRIEND_FIRST));
             }
 
             @Test
@@ -111,7 +116,7 @@ public class ContactListTest {
 
             @Test
             void get_validIndex_returnsCorrectFriend() {
-                assertEquals(EXISTING_FRIEND, classUnderTest.get(0));
+                assertEquals(EXISTING_FRIEND_FIRST, classUnderTest.get(0));
             }
 
             @Test
@@ -126,19 +131,19 @@ public class ContactListTest {
 
             @Test
             void remove_singleton_emptyCollection() {
-                classUnderTest.remove(EXISTING_FRIEND);
+                classUnderTest.remove(EXISTING_FRIEND_FIRST);
                 assertEquals(new ContactList(), classUnderTest);
             }
 
             @Test
             void remove_existingFriend_returnsTrue() {
-                assertTrue(classUnderTest.remove(EXISTING_FRIEND));
+                assertTrue(classUnderTest.remove(EXISTING_FRIEND_FIRST));
             }
 
             @Test
             void remove_existingFriend_removesFriend() {
-                classUnderTest.remove(EXISTING_FRIEND);
-                assertFalse(classUnderTest.contains(EXISTING_FRIEND));
+                classUnderTest.remove(EXISTING_FRIEND_FIRST);
+                assertFalse(classUnderTest.contains(EXISTING_FRIEND_FIRST));
             }
 
             @Test
@@ -172,11 +177,24 @@ public class ContactListTest {
             @TestInstance(TestInstance.Lifecycle.PER_CLASS)
             class WhenMany {
 
+                static Stream<Arguments> existingFriendsStream() {
+                    return Stream.of(Arguments.of(EXISTING_FRIEND_FIRST),
+                            Arguments.of(EXISTING_FRIEND_MIDDLE),
+                            Arguments.of(EXISTING_FRIEND_END));
+                }
+
+                static Stream<Arguments> existingFriendsStreamAndIndices() {
+                    return Stream.of(Arguments.of(EXISTING_FRIEND_FIRST, 0),
+                            Arguments.of(EXISTING_FRIEND_MIDDLE, 2),
+                            Arguments.of(EXISTING_FRIEND_END, 4));
+                }
+
                 @BeforeEach
                 void addManyFriends() {
                     classUnderTest.add(new Friend("Jane", "Doe", "jdoe@gmail.com"));
-                    classUnderTest.add(new Friend("Clarence", "Cartwrite", "treelover1523@hotmail.com"));
+                    classUnderTest.add(new Friend("Clarence", "Cartwrite", "treelover@hotmail.com"));
                     classUnderTest.add(new Friend("Sandy", "Seaside", "boatsboatsboats@yachtclub500.com"));
+                    classUnderTest.add(new Friend("Adam", "Fluffson", "fluffyman28@hotmail.com"));
                 }
 
                 @Test
@@ -184,9 +202,10 @@ public class ContactListTest {
                     assertTrue(classUnderTest.add(new Friend("", "", "")));
                 }
 
-                @Test
-                void contains_existingFriend_returnsTrue() {
-                    assertTrue(classUnderTest.contains(EXISTING_FRIEND));
+                @ParameterizedTest
+                @MethodSource("existingFriendsStream")
+                void contains_existingFriend_returnsTrue(Friend friend) {
+                    assertTrue(classUnderTest.contains(friend));
                 }
 
                 @Test
@@ -194,9 +213,10 @@ public class ContactListTest {
                     assertFalse(classUnderTest.contains(NONEXISTENT_FRIEND));
                 }
 
-                @Test
-                void indexOf_existingFriend_returnsCorrectIndex() {
-                    assertEquals(2, classUnderTest.indexOf(ANOTHER_EXISTING_FRIEND));
+                @ParameterizedTest
+                @MethodSource("existingFriendsStreamAndIndices")
+                void indexOf_existingFriend_returnsCorrectIndex(Friend friend, int index) {
+                    assertEquals(index, classUnderTest.indexOf(friend));
                 }
 
                 @Test
@@ -204,9 +224,10 @@ public class ContactListTest {
                     assertThrows(NoSuchElementException.class, () -> classUnderTest.indexOf(NONEXISTENT_FRIEND));
                 }
 
-                @Test
-                void get_validIndex_returnsCorrectFriend() {
-                    assertEquals(ANOTHER_EXISTING_FRIEND, classUnderTest.get(2));
+                @ParameterizedTest
+                @MethodSource("existingFriendsStreamAndIndices")
+                void get_validIndex_returnsCorrectFriend(Friend friend, int index) {
+                    assertEquals(friend, classUnderTest.get(index));
                 }
 
                 @Test
@@ -216,18 +237,20 @@ public class ContactListTest {
 
                 @Test
                 void get_tooLargeIndex_throwsIndexOutOfBoundsException() {
-                    assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.get(4));
+                    assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.get(5));
                 }
 
-                @Test
-                void remove_existingFriend_returnsTrue() {
-                    assertTrue(classUnderTest.remove(ANOTHER_EXISTING_FRIEND));
+                @ParameterizedTest
+                @MethodSource("existingFriendsStream")
+                void remove_existingFriend_returnsTrue(Friend friend) {
+                    assertTrue(classUnderTest.remove(friend));
                 }
 
-                @Test
-                void remove_existingFriend_removesFriend() {
-                    classUnderTest.remove(ANOTHER_EXISTING_FRIEND);
-                    assertFalse(classUnderTest.contains(ANOTHER_EXISTING_FRIEND));
+                @ParameterizedTest
+                @MethodSource("existingFriendsStream")
+                void remove_existingFriend_removesFriend(Friend friend) {
+                    classUnderTest.remove(friend);
+                    assertFalse(classUnderTest.contains(friend));
                 }
 
                 @Test
@@ -248,15 +271,16 @@ public class ContactListTest {
 
                 @Test
                 void size_many_returnsCorrectSize() {
-                    assertEquals(4, classUnderTest.size());
+                    assertEquals(5, classUnderTest.size());
                 }
 
                 @Test
                 void toString_many_returnsCorrectString() {
-                    String expected = "Friend(Bob, Smith, bsmith@gmail.com)\n" +
-                            "Friend(Jane, Doe, jdoe@gmail.com)\n" +
-                            "Friend(Clarence, Cartwrite, treelover1523@hotmail.com)\n" +
-                            "Friend(Sandy, Seaside, boatsboatsboats@yachtclub500.com)\n";
+                    String expected = "Friend(Bob, Smith, bsmith@gmail.com)\n" + "Friend(Jane, Doe, jdoe@gmail.com)\n" +
+                            "Friend(Clarence, Cartwrite, treelover@hotmail.com)\n" +
+                            "Friend(Sandy, Seaside, boatsboatsboats@yachtclub500.com)\n" +
+                            "Friend(Adam, Fluffson, fluffyman28@hotmail.com)\n";
+                    ;
                     assertEquals(expected, classUnderTest.toString());
                 }
             }
@@ -267,7 +291,7 @@ public class ContactListTest {
 
                 @BeforeEach
                 void addDuplicated() {
-                    classUnderTest.add(new Friend("Clarence", "Cartwrite", "treelover1523@hotmail.com"));
+                    classUnderTest.add(new Friend("Clarence", "Cartwrite", "treelover@hotmail.com"));
                     classUnderTest.add(new Friend("Bob", "Smith", "bsmith@gmail.com"));
                     classUnderTest.add(new Friend("Bob", "Smith", "bsmith@gmail.com"));
                     classUnderTest.add(new Friend("Sandy", "Seaside", "boatsboatsboats@yachtclub500.com"));
@@ -275,15 +299,15 @@ public class ContactListTest {
 
                 @Test
                 void indexOf_existingFriend_returnsIndexOfFirstOccurrence() {
-                    assertEquals(0, classUnderTest.indexOf(EXISTING_FRIEND));
+                    assertEquals(0, classUnderTest.indexOf(EXISTING_FRIEND_DUPLICATES));
                 }
 
                 @Test
                 void remove_allDuplicates_removesAllOccurrence() {
-                    classUnderTest.remove(EXISTING_FRIEND);
-                    classUnderTest.remove(EXISTING_FRIEND);
-                    classUnderTest.remove(EXISTING_FRIEND);
-                    assertFalse(classUnderTest.contains(EXISTING_FRIEND));
+                    classUnderTest.remove(EXISTING_FRIEND_DUPLICATES);
+                    classUnderTest.remove(EXISTING_FRIEND_DUPLICATES);
+                    classUnderTest.remove(EXISTING_FRIEND_DUPLICATES);
+                    assertFalse(classUnderTest.contains(EXISTING_FRIEND_DUPLICATES));
                 }
             }
         }

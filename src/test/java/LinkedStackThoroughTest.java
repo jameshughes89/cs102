@@ -11,8 +11,8 @@ class LinkedStackThoroughTest {
 
     @BeforeEach
     void newStack() {
-        classUnderTest = new ArrayStack<>();
-        preState = new ArrayStack<>();
+        classUnderTest = new LinkedStack<>();
+        preState = new LinkedStack<>();
     }
 
     @Nested
@@ -86,7 +86,7 @@ class LinkedStackThoroughTest {
             @DisplayName("Pop on singleton Stack results in an empty stack.")
             void pop_singleton_emptyStack() {
                 classUnderTest.pop();
-                assertEquals(new ArrayStack<>(), classUnderTest);
+                assertEquals(new LinkedStack<>(), classUnderTest);
             }
 
             @Test
