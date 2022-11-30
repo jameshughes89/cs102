@@ -1,7 +1,12 @@
 import java.util.Arrays;
-import java.util.NoSuchElementException;
 import java.util.Objects;
 
+/**
+ * Implementation of a stack with an array as the container. The array container will automatically "grow" to
+ * accommodate adding beyond the initial capacity.
+ *
+ * @param <T> Type of elements that are to be on the stack.
+ */
 public class ArrayStack<T> implements Stack<T> {
 
     private static final int DEFAULT_CAPACITY = 100;
@@ -9,29 +14,28 @@ public class ArrayStack<T> implements Stack<T> {
     private int top;
 
     /**
-     * Create an ArrayStack of the default capacity.
+     * Create an empty ArrayStack of the default capacity.
      */
     public ArrayStack() {
         this(DEFAULT_CAPACITY);
     }
 
     /**
-     * Create an ArrayStack with the specified size.
+     * Create an empty ArrayStack with the specified capacity.
      *
-     * @param initialCapacity Starting capacity of the fixed length array.
+     * @param capacity Starting capacity of the fixed length array.
      */
     @SuppressWarnings("unchecked")
-    public ArrayStack(int initialCapacity) {
+    public ArrayStack(int capacity) {
         top = 0;
-        // Generic types cannot be instantiated so we cast.
-        // This does generate a compile time warning that
-        // is being suppressed with the @ annotation.
-        stack = (T[]) new Object[initialCapacity];
+        // Generic types cannot be instantiated, so an array of type "Object" is created that is then cast to type T.
+        // This does generate a compile time warning that is being suppressed with the @ annotation.
+        stack = (T[]) new Object[capacity];
     }
 
     @Override
     public boolean push(T element) {
-        if (top == stack.length) {
+        if (size() == stack.length) {
             expandCapacity();
         }
         stack[top] = element;
@@ -40,13 +44,12 @@ public class ArrayStack<T> implements Stack<T> {
     }
 
     /**
-     * Doubles the size of the stack array and copy the
-     * contents over.
+     * Doubles the size of the stack array container and copy the contents from the old array to the new array.
      */
     @SuppressWarnings("unchecked")
     private void expandCapacity() {
         T[] newStack = (T[]) new Object[stack.length * 2];
-        for (int i = 0; i < stack.length; ++i) {
+        for (int i = 0; i < stack.length; i++) {
             newStack[i] = stack[i];
         }
         stack = newStack;
@@ -55,18 +58,18 @@ public class ArrayStack<T> implements Stack<T> {
     @Override
     public T pop() {
         if (isEmpty()) {
-            throw new NoSuchElementException("Popping from an empty stack.");
+            throw new EmptyCollectionException();
         }
+        T returnElement = stack[top - 1];
+        stack[top - 1] = null;
         top--;
-        T returnElement = stack[top];
-        stack[top] = null;
         return returnElement;
     }
 
     @Override
     public T peek() {
         if (isEmpty()) {
-            throw new NoSuchElementException("Peeking from an empty stack.");
+            throw new EmptyCollectionException();
         }
         return stack[top - 1];
     }
@@ -84,11 +87,10 @@ public class ArrayStack<T> implements Stack<T> {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < top; ++i) {
-            builder.append(stack[i]);
-            builder.append(", ");
+        for (int i = 0; i < size(); i++) {
+            builder.insert(0, ", ");
+            builder.insert(0, stack[i]);
         }
-        builder.append("<-- Top");
         return builder.toString();
     }
 
@@ -101,13 +103,13 @@ public class ArrayStack<T> implements Stack<T> {
             return false;
         }
         ArrayStack<?> that = (ArrayStack<?>) o;
-        return top == that.top && Arrays.equals(this.stack, 0, this.top, that.stack, 0, that.top);
+        return Arrays.equals(this.stack, 0, this.top, that.stack, 0, that.top);
     }
 
     @Override
     public final int hashCode() {
         int result = Objects.hash(top);
-        for (int i = 0; i < Math.min(this.top, this.stack.length); i++) {
+        for (int i = 0; i < size(); i++) {
             result = result * 97 + Objects.hashCode(stack[i]);
         }
         return result;
