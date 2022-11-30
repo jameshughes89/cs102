@@ -22,13 +22,14 @@ public class ArrayQueue<T> implements Queue<T> {
     }
 
     @Override
-    public void enqueue(T element) {
+    public boolean enqueue(T element) {
         if (size == queue.length) {
             expandCapacity();
         }
         queue[rear] = element;
         rear = nextIndex(rear);
         size++;
+        return true;
     }
 
     /**

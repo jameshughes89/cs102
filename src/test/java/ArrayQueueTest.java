@@ -47,6 +47,14 @@ public class ArrayQueueTest {
     }
 
     @Test
+    @DisplayName("Enqueuing successfully returns true.")
+    void enqueuingSuccessfullyReturnsTrue() {
+        Queue<Integer> queue = new ArrayQueue<>();
+        assertTrue(queue.enqueue(99));
+
+    }
+
+    @Test
     @DisplayName("Enqueueing and Dequeuing returns in FIFO order.")
     void enqueueingAndDequeuingReturnsElementsInFIFOOrder() {
         Queue<Integer> queue = new ArrayQueue<>();

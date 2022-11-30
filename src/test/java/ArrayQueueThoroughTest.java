@@ -22,6 +22,11 @@ public class ArrayQueueThoroughTest {
     class WhenNewEmpty {
 
         @Test
+        void enqueue_successfullyAdds_returnsTrue() {
+            assertTrue(classUnderTest.enqueue(1));
+        }
+
+        @Test
         void isEmpty_empty_returnsTrue() {
             assertTrue(classUnderTest.isEmpty());
         }
@@ -55,6 +60,12 @@ public class ArrayQueueThoroughTest {
                 classUnderTest.enqueue(11);
                 preState.enqueue(11);
             }
+
+            @Test
+            void enqueue_successfullyAdds_returnsTrue() {
+                assertTrue(classUnderTest.enqueue(1));
+            }
+
 
             @Test
             void isEmpty_singleton_returnsFalse() {
@@ -104,6 +115,11 @@ public class ArrayQueueThoroughTest {
                     classUnderTest.enqueue(33);
                     preState.enqueue(22);
                     preState.enqueue(33);
+                }
+
+                @Test
+                void enqueue_successfullyAdds_returnsTrue() {
+                    assertTrue(classUnderTest.enqueue(1));
                 }
 
                 @Test
