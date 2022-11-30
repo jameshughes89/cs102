@@ -14,7 +14,7 @@ public class LinkedQueue<T> implements Queue<T> {
     }
 
     @Override
-    public void enqueue(T element) {
+    public boolean enqueue(T element) {
         Node<T> toEnqueue = new Node<>(element);
 
         // If nothing is in the queue, then the front is null
@@ -30,6 +30,7 @@ public class LinkedQueue<T> implements Queue<T> {
         // enqueued element.
         rear = toEnqueue;
         size++;
+        return true;
     }
 
     @Override
