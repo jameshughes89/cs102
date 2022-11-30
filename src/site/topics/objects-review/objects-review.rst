@@ -407,9 +407,11 @@ Creating an Instance of a Friend
     but a *reference* to the object is.
 
 
-        .. image:: reference_aFriend.png
-           :width: 250 px
-           :align: center
+        .. figure:: reference_aFriend.png
+            :width: 250 px
+            :align: center
+
+            The ``aFriend`` variable holds a *reference* to an instance of a ``Friend`` object, not a ``Friend``.
 
 
 
@@ -422,9 +424,11 @@ Creating an Instance of a Friend
 
 * They both have the ``firstName`` field, but the actual value associated with it differs
 
-    .. image:: reference_aFriend_bFriend.png
-       :width: 500 px
-       :align: center
+    .. figure:: reference_aFriend_bFriend.png
+        :width: 500 px
+        :align: center
+
+        Two reference variables referencing two seperate individual ``Friend`` objects.
 
 
 * Below is an example of two ``Friend`` objects being created and being used
@@ -476,9 +480,13 @@ References
 * This also means that the object that ``bFriend`` used to point to now has no reference to it
 * This would cause Java to delete the Jane ``Friend`` object
 
-    .. image:: reference_lost.png
-       :width: 500 px
-       :align: center
+    .. figure:: reference_lost.png
+        :width: 500 px
+        :align: center
+
+        The ``Friend`` object that was referenced by ``bFriend`` now has no reference to it. The ``bFriend`` reference
+        variable refers to the same ``Friend`` the ``aFriend`` reference variable refers to. The ``aFriend`` and
+        ``bFriend`` reference variables are aliases for the same ``Friend`` object.
 
 
 .. warning::
@@ -494,405 +502,312 @@ References
 Contact List Class
 ------------------
 
-* We need a way to keep track of our ``Friend`` objects
-* To do this, we will make a new class called ``ContactList``
+* With the ``Friend`` class complete, there needs to be a way to keep track of and manage the ``Friend`` objects
+* To do this, a new class called ``ContactList`` will be created
+
 * What fields should this have?
-    * A list of the ``Friends`` we're keeping track of
-        * For this we can use an array
-    * A count of how many ``Friend`` objects our ``ContactList`` contains
+
+    * A way to keep track of the ``Friends`` in the ``ContactList``
+
+        * An array will be used here
+
+    * A count of how many ``Friend`` objects the ``ContactList`` contains
+
         * Just an ``int``
+
+
+* The Python examples are not included for the ``ContactList`` class
 
 
 Setting Fields and Writing the Constructor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* In the below examples, ``class ContactList:`` and ``public class ContactList {`` are excluded
-
-**Python**
-
-.. code-block:: python
+.. literalinclude:: /../main/java/ContactList.java
+    :language: java
     :linenos:
-
-    def __init__(self):
-        self._friend_count = 0
-        self._friends = []
+    :lineno-start: 1
+    :lines: 1-33
 
 
-* In this Python example, keeping track of ``_friend_count`` is perhaps not necessary since we can simply use ``len(self._friends)``
-* We can keep appending and appending to our ``_friends`` list
+* Things to notice
 
-**Java**
-
-.. code-block:: java
-    :linenos:
-
-    public class ContactList {
-
-        static final int DEFAULT_CAPACITY = 10;
-
-        private int friendCount;
-        private Friend[] friends;
-
-        public ContactList() {
-            friendCount = 0;
-            friends = new Friend[DEFAULT_CAPACITY];
-        }
-
-        public ContactList(int capacity) {
-            friendCount = 0;
-            friends = new Friend[capacity];
-        }
-    }
+    * The imports
+    * The two constants
+    * The declaring of the fields
+    * Two constructors
 
 
-* First, notice that we actually wrote two constructors
-    * Overloading
-    * We can even do something called :doc:`constructor chaining <chaining>`
+* Most of these are ideas one should already be familiar with
 
-* Since arrays have a fixed size, our strategy here is to make an array with a sufficiently large size, but only use what we need
-* The first constructor will make use of some constant value set in the class to make the array
-* The second will take a capacity as a parameter and make the array that size
+    * The imports are used for functionality described below
+    * One constant, ``DEFAULT_CAPACITY``,  defines the default size an array should have --- more on this below
+    * The other constant, ``NOT_FOUND``, is used to provide a name to the sentinel value of ``-1`` --- more detail below
+    * The declaring of the fields is similar to what was seen in the ``Friend`` class
 
-* If we create a ``ContactList`` object
-    * ``ContactList contacts = new ContactList(5);``
+
+* Having two constructors is a new idea that was not used in Python
+* In several programming languages, it is possible to have multiple methods with the same name that take different parameters
+
+    * This is valued *overloading*
+
+
+* Notice that one constructor takes no parameters and the other takes a single integer ``capacity``
+* For now, focus on the second one; the one that takes the parameter
+* It first sets the size of the ``ContactList`` field to ``0`` since a new ``ContactList`` is empty
+* It then creates a new empty ``Friend`` array of size ``capacity``
+
+    * Remember, arrays have a fixed size
+    * The strategy here is to make an array that is sufficiently large, but only use what is needed
+    * Consider the following example,
+
+        * The array is size ``10``
+        * Only two ``Friend`` objects are in the ``ContactList``
+        * Then only indices ``0`` and ``1`` of the array are actually used
+
+
+* The second constructor, the one that takes an integer, is used to create a new ``ContacList`` with the array of some specified size
+* The first constructor, the one with no parameter, is used to create a new ``ContactList`` with a default capacity
+
+    * More precisely, the default capacity set to the class constant ``DEFAULT_CAPACITY``
+    * It does this with the use of constructor chaining
+
+        * The use of ``this(DEFAULT_CAPACITY)`` simply calls the constructor that takes a single integer as a parameter
+        * In this example, it ultimately calls ``ContactList(10)``
+        * See the :doc:`constructor chaining <chaining>` aside for more details
+
+    * The fact that ``DEFAULT_CAPACITY`` was set to 10 is entirely arbitrary
+    * Further, the inclusion of the constructor that takes no parameter is entirely optional
+
 
 * We will have something like this created
 
-    .. image:: contacts.png
-       :width: 600 px
-       :align: center
+    .. figure:: contacts.png
+        :width: 600 px
+        :align: center
+
+        Example of an empty ``ContactList``  that was created ``ContactList contacts = new ContactList(5);``.
+
 
 
 Adding Friends
 ^^^^^^^^^^^^^^
 
-**Python**
+* There is some complexity involved with adding a ``Friend`` to the ``ContactList``
 
-.. code-block:: python
+    * Arrays have a fixed size
+    * The capacity of the array is not the same as the number of ``Friends`` in the collection
+
+.. literalinclude:: /../main/java/ContactList.java
+    :language: java
     :linenos:
-
-    def add(self, first_name, last_name, email):
-        # Make the friend object
-        new_friend = Friend(first_name, last_name, email)
-
-        # Append friend to our friends list
-        # and update friend count
-        self._friends.append(new_friend)
-        self._friends_count += 1
+    :lineno-start: 35
+    :lines: 35-67
+    :emphasize-lines: 9, 10, 11
 
 
-**Java**
+* Since the array has a fixed size, it's not possible to add more ``Friend`` objects beyond the size of the array
+* However, it would be ideal if it were possible to continually add ``Friend`` objects without worrying about the capacity
+* If more space is needed, a simple solution is
 
-.. code-block:: java
-    :linenos:
-    :emphasize-lines: 16, 17, 18
+    * Make a new array that is bigger
+    * Copy over the contents of the old array to the new array
+    * Assign the field ``friends`` to reference the new, bigger array
 
-        /**
-         * Add a new friend to the friends array. Will create an instance
-         * of a Friend based on parameters. If our array runs out of space
-         * we will expand capacity to manage the situation.
-         *
-         * @param firstName     friends first name
-         * @param lastName      friends last name
-         * @param email         friends email address
-         */
-        public void add(String firstName, String lastName, String email) {
-            // Create the Friend object
-            Friend newFriend = new Friend(firstName, lastName, email);
 
-            // If we have run out of space in our array
-            // we need to deal with it
-            if (friendCount == friends.length) {
-                expandCapacity();
-            }
-            // Add friend to the next available spot
-            friends[friendCount] = newFriend;
-            friendCount++;
-        }
+.. figure:: expand_capacity.png
+    :width: 600 px
+    :align: center
 
-        private void expandCapacity() {
-            // Make a new array of twice the size of the previous
-            Friend[] newFriends = new Friend[friends.length * 2];
+    "Expanding" the capacity. No array actually grows, but a new array that is larger is created and the contents of the
+    old array is copied to the new array. The object's field that references the array is updated to refer to the new
+    larger array.
 
-            // Copy over the contents of the friends list
-            // to the new bigger friends list
-            for(int i = 0; i < friends.length; ++i) {
-                newFriends[i] = friends[i];
-            }
-            // Have friends now reference the new friends
-            friends = newFriends;
-        }
 
-* You may notice that ``friendCount`` plays double duty here --- friends count and next available spot in the array
+* The ``expandCapacity`` method gets called automatically by the ``add`` method if the array has run out of space
 
-* Since our array has a fixed size, we can't simply keep adding to it
-* Our solution is to ``expandCapacity``
-    1. Create a new array twice as big as the original
-    2. Copy over the contents of the original array to the new bigger array
-        * `You could also use this instead <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Arrays.html#copyOf(T%5B%5D,int)>`_
-    3. Make out friends array now reference the new bigger array
+    * If the array had enough room, ``expandCapacity`` is not called
 
-.. image:: expand_capacity.png
-       :width: 600 px
-       :align: center
+* Either way, the ``Friend`` being added via the ``add`` method will always go to the next available spot
+* When done, this method returns a ``boolean`` indicating if the ``add`` worked correctly
 
-* The ``expandCapacity`` method gets called automatically by the ``add`` method if our array has run out of space
-* If the array had enough room, ``expandCapacity`` is never called
-* Either way, when we add the ``newFriend`` to our array, we are now guaranteed to have room
+* Also notice that the ``expandCapacity`` method is ``private``
 
-* You will also see that the ``expandCapacity`` method is ``private``
     * This method is important for the inner workings of the ``ContactList`` class
-    * This method is not something I want the user of my class to care about
-        * Abstraction
+    * This method is not something one wants a user of this ``ContactList`` class to care about
 
 
-Remove Friends
-^^^^^^^^^^^^^^
+Contains and Find
+^^^^^^^^^^^^^^^^^
 
-**Java**
-
-.. code-block:: java
+.. literalinclude:: /../main/java/ContactList.java
+    :language: java
     :linenos:
-    :emphasize-lines: 8, 11
-
-        public void remove(String firstName, String lastName) {
-            // Create a temp friend object for easy
-            // use of the Friend class' equals()
-            Friend toDelete = new Friend(firstName, lastName, "");
-
-            // Linear search for the friend we are trying to delete
-            for (int i = 0; i < friendCount; ++i) {
-                if (toDelete.equals(friends[i])) {
-                    // Have friend at the end of the array be referenced
-                    // by the array index we removed from
-                    friends[i] = friends[friendCount - 1];
-                    friends[friendCount - 1] = null;
-                    friendCount--;
-                }
-            }
-        }
-
-* We'll create a temporary ``Friend`` based on the parameters so we can make use of our ``Friend`` class' ``.equals``
-* To remove the ``Friend`` all we need to do it lose reference to it
-    * Garbage
-* In the above example, we made the array at the index of the removed ``Friend`` to reference the ``Friend`` at the end of the array
-    * ``friendCount - 1``
-* After this, the array has no reference to the ``Friend`` that was removed
-
-* You may notice that the array at index ``friendCount - 1`` is set to ``null``
-    * This is done to deal with the edge case of removing the last friend
-
-* You may also notice that this method, as it is written, will not do anything special if the ``Friend`` we try to remove does not exist
-* What should we do in this scenario?
-    * Ignore it?
-    * Return a boolean?
-    * Crash the program?
-    * Explode?
-
-* This will be discussed further a little later in the course
-
-.. image:: remove.png
-       :width: 600 px
-       :align: center
-
-.. warning::
-
-    There is actually a bug in the above ``remove`` example. This is addressed below, but see if you can spot the bug
-    yourself. **Hint:** It has to do with having multiple equal ``Friend`` objects in the ``friends`` array.
+    :lineno-start: 69
+    :lines: 69-95
 
 
-Update Friend's Email
-^^^^^^^^^^^^^^^^^^^^^
+* The ``find`` method, which is ``private``, is an internal helper method for finding the index of a given ``Friend``
+* This method is just a linear search
 
-.. code-block:: java
+    * Mind the use of ``Objects.equals`` which is a null safe way to check if two objects are equal via their defined ``equals`` method
+
+
+* If no such ``Friend`` object exists, a special *sentinel* value of ``-1`` is returned
+
+    * Referred to by the class constant ``NOT_FOUND``
+    * This sentinel value has special meaning
+
+        * Since ``-1`` is not a valid index, it can be used to indicate that the object was not found
+
+
+* The ``contains`` method returns a ``boolean`` indicating if a ``Friend`` object exists within the ``ContactList``
+* This method makes use of the private ``find`` method
+
+
+Index Of
+^^^^^^^^
+
+* The ``indexOf`` method returns the index of the specified ``Friend``, if it exists
+
+.. literalinclude:: /../main/java/ContactList.java
+    :language: java
     :linenos:
-
-        public void updateEmail(String firstName, String lastName, String newEmail) {
-            // Create a temp friend object for easy
-            // use of the Friend class' equals()
-            Friend toUpdate = new Friend(firstName, lastName, "");
-
-            // Linear search for the friend we are trying to update
-            for (int i = 0; i < friendCount; ++i) {
-                if (toUpdate.equals(friends[i])) {
-                    friends[i].setEmail(newEmail);
-                }
-            }
-        }
+    :lineno-start: 97
+    :lines: 97-110
 
 
-Index Of Friend
-^^^^^^^^^^^^^^^
+* This method checks if the ``Friend`` exists, and if it does not, it throws an exception
 
-* You may have noticed that ``remove`` and ``updateEmail`` look very similar
-* Perhaps we should make another method called ``indexOf`` that does a linear search through the array
-* If we find the thing, we'll return its index, otherwise return -1
+    * The provided ``Friend`` is provided to the exception for its message
 
-.. code-block:: java
-    :linenos:
-    :emphasize-lines: 18, 29
-
-        public int indexOf(String firstName, String lastName) {
-            // Create a temp friend object for easy
-            // use of the Friend class' equals()
-            Friend toFind = new Friend(firstName, lastName, "");
-
-            // Linear search for the friend we are trying to find
-            for (int i = 0; i < friendCount; ++i) {
-                if (toFind.equals(friends[i])) {
-                    return i;
-                }
-            }
-            // -1 will signify that we didn't find
-            // what we were looking for
-            return -1;
-        }
-
-        public void remove(String firstName, String lastName) {
-            int friendIndex = indexOf(firstName, lastName);
-            if (friendIndex != -1) {
-                // Have friend at the end of the array be referenced
-                // by the array index we removed from
-                friends[friendIndex] = friends[friendCount - 1];
-                friends[friendCount - 1] = null;
-                friendCount--;
-            }
-        }
-
-        public void updateEmail(String firstName, String lastName, String newEmail) {
-            int friendIndex = indexOf(firstName, lastName);
-            if (friendIndex != -1) {
-                friends[friendIndex].setEmail(newEmail);
-            }
-        }
-
-.. warning::
-
-    The above change actually altered the functionality of the ``remove`` and ``updateEmail`` methods.
-    Try to figure out what has changed. Is this change good or bad? **Hint:** What happens if there are
-    multiple ``Friend`` objects with the same ``firstName`` and ``lastName``?
-
-    The bug mentioned under ``remove`` has to do with duplicates getting missed in the removal process. This can happen when the
-    element at index ``i`` is being replaced with a reference to something that just so happens to be a duplicate. This
-    would then cause this item to be skipped because ``i`` is immediately incremented after the replacement.
+* If it does exist, this method simply delegates the work to the private ``find`` method
 
 
 Get
 ^^^
 
-* We will want a method to return an actual ``Friend`` object based on a given index
+* The ``get`` method returns the ``Friend`` at the specified index
 
-.. code-block:: java
+.. literalinclude:: /../main/java/ContactList.java
+    :language: java
     :linenos:
-    :emphasize-lines: 3
+    :lineno-start: 112
+    :lines: 112-125
 
-        public Friend get(int index) {
-            // Make sure the index provided is valid
-            if (index > -1 && index < friendCount) {
-                return friends[index];
-            } else {
-                return null;
-            }
-        }
+* If the index is out of bounds, an exception is thrown
 
-* Realistically, the check on the index here could be much better, but we will talk about this stuff later in the course
+    * The invalid index is provided to the exception for its message
 
-* We could overload ``get`` and add another version that will take the ``firstName`` and ``lastName`` of a ``Friend`` and return that ``Friend``
 
-.. code-block:: java
+Remove Friends
+^^^^^^^^^^^^^^
+
+* Below is an example of a ``remove`` method that will remove a ``Friend`` from the ``ContactList``
+* This method returns a ``boolean`` to indicate if the ``remove`` was successful
+
+.. literalinclude:: /../main/java/ContactList.java
+    :language: java
     :linenos:
+    :lineno-start: 127
+    :lines: 127-151
 
-        public Friend get(String firstName, String lastName) {
-            int index = indexOf(firstName, lastName);
-            return get(index);
-        }
 
-* Easy to write since we make use of the functions that exist that do all the work for us already
+* Remove first checks if the ``Friend`` object exists within the ``ContactList``
+
+    * If does not exist, an exception will be thrown
+    * The provided ``Friend`` is provided to the exception for its message
+
+* To actually remove the ``Friend``, all that needs to happen is for the program to lose reference to it
+* In the above example, the array at the index of the ``Friend`` to be removed is set to the ``Friend`` at the end of the array
+
+    * ``friendCount - 1``
+
+
+* Once this is done, the array has no reference to the ``Friend`` that was removed
+* The array at index ``friendCount - 1`` is set to ``null``
+
+    * Although not necessary, it is not a bad idea to explicitly remove the reference at the end
+
+
+* After the ``Friend`` has been removed, the size of the ``ContactList`` needs to be decreased by 1
+
+.. figure:: remove.png
+    :width: 600 px
+    :align: center
+
+    ``Friend`` objects are removed by deliberately losing reference to them. After a ``remove``, the array index that
+    referred to the ``Friend`` that was removed now refers to the ``Friend`` that was at the end of the ``ContactList``.
 
 
 Clear Friends
 ^^^^^^^^^^^^^
 
-.. code-block:: java
+* Clear out all the ``Friend`` objects within the ``ContactList``
+
+.. literalinclude:: /../main/java/ContactList.java
+    :language: java
     :linenos:
+    :lineno-start: 153
+    :lines: 153-159
 
-        public void clear() {
-            friends = new Friend[friends.length];
-            friendCount = 0;
-        }
 
-* For this, just make a new, empty array of the same size of the original array
+* Here, simply create a new empty array and set the size to ``0``
 * Since the old array referenced by ``friends`` has no more reference, it get managed by the garbage collector
+* One could have gone through the array and set each index to reference ``null``, but this is easier
+* Further, setting the size to ``0`` would also be sufficient
 
-* We could have gone through the array and set each index to reference ``null``, but the above is easier
+
+Size and isEmpty
+^^^^^^^^^^^^^^^^
+
+.. literalinclude:: /../main/java/ContactList.java
+    :language: java
+    :linenos:
+    :lineno-start: 161
+    :lines: 161-167
+
+
+* ``isEmpty`` returns a ``boolean`` indicating if the ``ContactList`` is empty or not
+* The ``size`` method returns the number of ``Friends`` actually within the ``ContactList``
+
+    * Remember, the size of the array and the number of ``Friends`` in the ``ContactList`` are different things
 
 
 
 toString
 ^^^^^^^^
 
-* What should the string representation of our ``ContactList`` class be?
-* How about we simply print out the friend's information, one per line
-* To make a ``toString`` for the ``ContactList`` class
+* A good representation of the collection would be an aggregate of the string representations of the ``Friend`` objects
 
+    * Have each ``Friend`` within the ``ContactList`` be on its own line
 
 .. code-block:: java
     :linenos:
     :emphasize-lines: 4
 
-        public String toString() {
-            String s = "";
-            for (int i = 0; i < friendCount; ++i) {
-                s = s + friends[i].toString() + "\n";
-            }
-            return s;
+    public String toString() {
+        String s = "";
+        for (int i = 0; i < size(); i++) {
+            s = s + friends[i].toString() + "\n";
         }
+        return s;
+    }
 
-* Notice that we can actually make good use of the ``Friend`` class' ``toString`` method
 
+* Notice that this actually makes use of the ``Friend`` class' ``toString`` method
+* This method makes use of string concatenation
 
 .. warning::
 
-    Although the above example is correct, in practice we'd want to use something called a ``StringBuilder``.
-    :doc:`See this aside for more details. <builder>`
+    Although the above example is correct, in practice one would want to use something called a ``StringBuilder``.
+    :doc:`See the aside on string builders for more details. <builder>`
 
 
-Friend Count
-^^^^^^^^^^^^
-
-* We will want to be able to know how many ``Friend`` objects we have in our ``ContactList``
-* Basically a getter for the ``friendCount`` field
-
-.. code-block:: java
-    :linenos:
-
-        public int size() {
-            return friendCount;
-        }
-
-
-What We Get
-===========
-
-* Modularity
-    * Break a problem down into smaller components
-    * Ideally, these components should be independent from each other
-    * Each component performs a well defined task
-    * We encapsulate data and behaviours together
-
-* Information Hiding
-    * Hide some of the implementation details
-    * It can protect important pieces of the system from being modified by others bits
-    * It gives us some control over how our code is used
-    * For example
-        * You all used Python lists, but you didn't know any of their implementation details
-        * And it didn't matter!
-
-
-For next time
+For Next Time
 =============
 
-* Assuming you have not done it, read Chapter 1 of your text
+* Read Chapter 1 of the text
+
     * 15 pages
 
 
@@ -900,6 +815,7 @@ Playing Code
 ============
 
 * Download and play with
+
     * :download:`Friend </../main/java/Friend.java>`
     * :download:`ContactList </../main/java/ContactList.java>` code
     * :download:`PlayingObjects </../main/java/PlayingObjects.java>`
