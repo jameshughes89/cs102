@@ -117,10 +117,66 @@ public class ArrayQueueTest {
             @Nested
             @TestInstance(TestInstance.Lifecycle.PER_CLASS)
             class WhenMany {
+                @BeforeEach
+                void addMany() {
+                    classUnderTest.enqueue(20);
+                    classUnderTest.enqueue(30);
+                    classUnderTest.enqueue(40);
+                    preState.enqueue(20);
+                    preState.enqueue(30);
+                    preState.enqueue(40);
+                }
 
+
+                @Test
+                void enqueue_successfullyAdds_returnsTrue() {
+                    assertTrue(classUnderTest.enqueue(11));
+                }
+
+                @Test
+                void enqueue_many_unchangedFirst() {
+                    classUnderTest.enqueue(11);
+                    assertEquals(10, classUnderTest.first());
+                }
+
+                @Test
+                void dequeue_many_returnsFirst() {
+                    assertEquals(10, classUnderTest.dequeue());
+                }
+
+                @Test
+                void dequeue_many_newFirst() {
+                    classUnderTest.dequeue();
+                    assertEquals(20, classUnderTest.first());
+                }
+
+                @Test
+                void first_many_returnsFirst() {
+                    assertEquals(10, classUnderTest.first());
+                }
+
+                @Test
+                void first_many_unchanged() {
+                    classUnderTest.first();
+                    assertEquals(preState, classUnderTest);
+                }
+
+                @Test
+                void isEmpty_many_returnsFalse() {
+                    assertFalse(classUnderTest.isEmpty());
+                }
+
+                @Test
+                void size_many_returnsCorrectSize() {
+                    assertEquals(4, classUnderTest.size());
+                }
+
+                @Test
+                void toString_singleton_returnsCorrectString() {
+                    assertEquals("10, 20, 30, 40, ", classUnderTest.toString());
+                }
             }
         }
-
     }
 
     @Nested
