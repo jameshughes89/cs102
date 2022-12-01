@@ -1,12 +1,21 @@
 import java.util.NoSuchElementException;
 import java.util.Objects;
 
+/**
+ * Implementation of a queue with a linked structure as the container. The class contains a static inner class defining
+ * a node for the linked structure.
+ *
+ * @param <T> Type of elements that are to be in the queue.
+ */
 public class LinkedQueue<T> implements Queue<T> {
 
     private Node<T> front;
     private Node<T> rear;
     private int size;
 
+    /**
+     * Create an empty LinkedQueue.
+     */
     public LinkedQueue() {
         front = null;
         rear = null;
@@ -115,16 +124,10 @@ public class LinkedQueue<T> implements Queue<T> {
     }
 
     /**
-     * A Node class for a singly linked structure. Each node
-     * contains a reference to data of type T, which may be
-     * null, and a reference to the next/subsequent/successor
-     * singly linked node, which may also be null.
-     * <p>
-     * This class is a static nested class since the node
-     * class is only needed for the implementation of the
-     * LinkedQueue.
+     * A Node class for a singly linked structure. Each node contains a nullable reference to data of type T, and a
+     * reference to the next/subsequent/successor singly linked node, which may be a null reference.
      *
-     * @param <T> Type of the data being stored in the node
+     * @param <T> Type of the data being stored in the node.
      */
     private static class Node<T> {
 
