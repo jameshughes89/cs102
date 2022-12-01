@@ -102,6 +102,7 @@ public class ArrayQueue<T> implements Queue<T> {
         return (currentIndex + 1) % queue.length;
     }
 
+    @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
         int currentIndex = front;
