@@ -1,4 +1,3 @@
-import java.util.NoSuchElementException;
 import java.util.Objects;
 
 /**
@@ -26,17 +25,14 @@ public class LinkedQueue<T> implements Queue<T> {
     public boolean enqueue(T element) {
         Node<T> toEnqueue = new Node<>(element);
 
-        // If nothing is in the queue, then the front is null
-        // and the enqueued element will become the front,
-        // otherwise, the enqueued element is added after the
-        // current rear.
+        // If nothing is in the queue, then the front is null and the enqueued element will become the front. If the
+        // queue is not empty, the enqueued element is added after the current rear.
         if (isEmpty()) {
             front = toEnqueue;
         } else {
             rear.setNext(toEnqueue);
         }
-        // Either way, the rear of the queue will be the newly
-        // enqueued element.
+        // Either way, the rear of the queue will be the newly enqueued element.
         rear = toEnqueue;
         size++;
         return true;
@@ -45,13 +41,12 @@ public class LinkedQueue<T> implements Queue<T> {
     @Override
     public T dequeue() {
         if (isEmpty()) {
-            throw new NoSuchElementException("Dequeueing from an empty queue.");
+            throw new EmptyCollectionException();
         }
         T returnElement = front.getData();
         front = front.getNext();
         size--;
-        // Although front will update properly regardless, rear
-        // should be set to null if we dequeue the last element
+        // The front will update correctly regardless. The rear must be set to null if the queue is now empty.
         if (isEmpty()) {
             rear = null;
         }
@@ -61,14 +56,14 @@ public class LinkedQueue<T> implements Queue<T> {
     @Override
     public T first() {
         if (isEmpty()) {
-            throw new NoSuchElementException("First from an empty queue.");
+            throw new EmptyCollectionException();
         }
         return front.getData();
     }
 
     @Override
     public boolean isEmpty() {
-        return size == 0;
+        return size() == 0;
     }
 
     @Override
@@ -76,9 +71,9 @@ public class LinkedQueue<T> implements Queue<T> {
         return size;
     }
 
+    @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("Front --> ");
         Node<T> currentNode = front;
         while (currentNode != null) {
             builder.append(currentNode.getData());
@@ -97,19 +92,19 @@ public class LinkedQueue<T> implements Queue<T> {
             return false;
         }
         LinkedQueue<?> that = (LinkedQueue<?>) o;
-        if (this.size == that.size) {
-            Node<?> thisCurrent = this.front;
-            Node<?> thatCurrent = that.front;
-            while (thisCurrent != null) {
-                if (!thisCurrent.data.equals(thatCurrent.data)) {
-                    return false;
-                }
-                thisCurrent = thisCurrent.getNext();
-                thatCurrent = thatCurrent.getNext();
-            }
-            return true;
+        if (this.size != that.size) {
+            return false;
         }
-        return false;
+        Node<?> thisCurrent = this.front;
+        Node<?> thatCurrent = that.front;
+        while (thisCurrent != null && thatCurrent != null) {
+            if (!Objects.equals(thisCurrent.getData(), thatCurrent.getData())) {
+                return false;
+            }
+            thisCurrent = thisCurrent.getNext();
+            thatCurrent = thatCurrent.getNext();
+        }
+        return true;
     }
 
     @Override
