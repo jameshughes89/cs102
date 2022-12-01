@@ -188,5 +188,21 @@ public class ArrayQueueTest {
             }
             assertEquals(1000, classUnderTest.size());
         }
+
+        @Test
+        void push_large_fifoOrdering() {
+            for (int i = 0; i < 1000; i++) {
+                classUnderTest.enqueue(i);
+            }
+            for (int i = 0; i < 500; i++) {
+                classUnderTest.dequeue();
+            }
+            for (int i = 1000; i < 1500; i++) {
+                classUnderTest.enqueue(i);
+            }
+            for (int i = 500; i < 1500; i++) {
+                assertEquals(i, classUnderTest.dequeue());
+            }
+        }
     }
 }
