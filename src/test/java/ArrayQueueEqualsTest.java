@@ -13,13 +13,19 @@ class ArrayQueueEqualsTest {
         ArrayQueue<Integer> singletonA = new ArrayQueue<>();
         ArrayQueue<Integer> singletonB = new ArrayQueue<>();
         ArrayQueue<Integer> singletonC = new ArrayQueue<>(1000);
+        ArrayQueue<Integer> singletonD = new ArrayQueue<>();        // Different start
         singletonA.enqueue(10);
         singletonB.enqueue(10);
         singletonC.enqueue(10);
+        singletonD.enqueue(0);
+        singletonD.dequeue();
+        singletonD.enqueue(10);
 
         ArrayQueue<Integer> manyA = new ArrayQueue<>();
         ArrayQueue<Integer> manyB = new ArrayQueue<>();
         ArrayQueue<Integer> manyC = new ArrayQueue<>(1000);
+        ArrayQueue<Integer> manyD = new ArrayQueue<>();             // Different start
+        ArrayQueue<Integer> manyW = new ArrayQueue<>(5);    // Wraps rear
         manyA.enqueue(10);
         manyA.enqueue(20);
         manyA.enqueue(30);
@@ -29,6 +35,20 @@ class ArrayQueueEqualsTest {
         manyC.enqueue(10);
         manyC.enqueue(20);
         manyC.enqueue(30);
+        manyD.enqueue(0);
+        manyD.dequeue();
+        manyD.enqueue(10);
+        manyD.enqueue(20);
+        manyD.enqueue(30);
+        manyW.enqueue(0);
+        manyW.enqueue(0);
+        manyW.enqueue(0);
+        manyW.dequeue();
+        manyW.dequeue();
+        manyW.dequeue();
+        manyW.enqueue(10);
+        manyW.enqueue(20);
+        manyW.enqueue(30);
 
         ArrayQueue<Integer> unequalDifferentValues = new ArrayQueue<>();
         unequalDifferentValues.enqueue(110);
@@ -51,8 +71,8 @@ class ArrayQueueEqualsTest {
 
         new EqualsTester().addEqualityGroup(ArrayQueue.class)
                 .addEqualityGroup(emptyA, emptyB, emptyC)
-                .addEqualityGroup(singletonA, singletonB, singletonC)
-                .addEqualityGroup(manyA, manyB, manyC)
+                .addEqualityGroup(singletonA, singletonB, singletonC, singletonD)
+                .addEqualityGroup(manyA, manyB, manyC, manyD, manyW)
                 .addEqualityGroup(unequalDifferentValues)
                 .addEqualityGroup(unequalDifferentOrder)
                 .addEqualityGroup(unequalDifferentSizes)
