@@ -1,59 +1,62 @@
 import com.google.common.testing.EqualsTester;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class ArrayQueueEqualsTest {
 
     @Test
     @SuppressWarnings("UnstableApiUsage")
-    @DisplayName("Verify Equals.")
     public void equals_verify_contract() {
-        ArrayQueue<Integer> gEmptyDefault = new ArrayQueue<>();
-        ArrayQueue<Integer> gEmptyCapacity = new ArrayQueue<>(10);
-        ArrayQueue<Integer> gSingletonDefault = new ArrayQueue<>();
-        ArrayQueue<Integer> gSingletonCapacity = new ArrayQueue<>(10);
-        ArrayQueue<Integer> gManyOneDefaultA = new ArrayQueue<>();
-        ArrayQueue<Integer> gManyOneDefaultB = new ArrayQueue<>();
-        ArrayQueue<Integer> gManyOneCapacity = new ArrayQueue<>(5);
-        ArrayQueue<Integer> gManyOneFront = new ArrayQueue<>();
-        ArrayQueue<Integer> gManyOneRear = new ArrayQueue<>(6);
-        ArrayQueue<Integer> gManyTwoDefault = new ArrayQueue<>();
-        ArrayQueue<Integer> gManyTwoCapacity = new ArrayQueue<>(10);
-        ArrayQueue<Integer> gReverseDefault = new ArrayQueue<>();
-        ArrayQueue<Integer> gReverseCapacity = new ArrayQueue<>(10);
-        ArrayQueue<Character> gTypeDefault = new ArrayQueue<>();
-        ArrayQueue<Character> gTypeCapacity = new ArrayQueue<>(10);
+        ArrayQueue<Integer> emptyA = new ArrayQueue<>();
+        ArrayQueue<Integer> emptyB = new ArrayQueue<>();
+        ArrayQueue<Integer> emptyC = new ArrayQueue<>(1000);
 
-        // Move front down
-        gManyOneFront.enqueue(0);
-        gManyOneFront.dequeue();
-        gManyOneRear.enqueue(0);
-        gManyOneRear.dequeue();
+        ArrayQueue<Integer> singletonA = new ArrayQueue<>();
+        ArrayQueue<Integer> singletonB = new ArrayQueue<>();
+        ArrayQueue<Integer> singletonC = new ArrayQueue<>(1000);
+        singletonA.enqueue(10);
+        singletonB.enqueue(10);
+        singletonC.enqueue(10);
 
-        for (int i = 0; i < 6; i++) {
-            gManyOneDefaultA.enqueue(i);
-            gManyOneDefaultB.enqueue(i);
-            gManyOneCapacity.enqueue(i);
-            gManyOneFront.enqueue(i);
-            gManyOneRear.enqueue(i);        // Rear will wrap to index 0
-            gManyTwoDefault.enqueue(i * 11);
-            gManyTwoCapacity.enqueue(i * 11);
-            gReverseDefault.enqueue(5 - i);
-            gReverseCapacity.enqueue(5 - i);
-            gTypeDefault.enqueue((char) i);
-            gTypeCapacity.enqueue((char) i);
-        }
+        ArrayQueue<Integer> manyA = new ArrayQueue<>();
+        ArrayQueue<Integer> manyB = new ArrayQueue<>();
+        ArrayQueue<Integer> manyC = new ArrayQueue<>(1000);
+        manyA.enqueue(10);
+        manyA.enqueue(20);
+        manyA.enqueue(30);
+        manyB.enqueue(10);
+        manyB.enqueue(20);
+        manyB.enqueue(30);
+        manyC.enqueue(10);
+        manyC.enqueue(20);
+        manyC.enqueue(30);
 
-        gSingletonDefault.enqueue(100);
-        gSingletonCapacity.enqueue(100);
+        ArrayQueue<Integer> unequalDifferentValues = new ArrayQueue<>();
+        unequalDifferentValues.enqueue(110);
+        unequalDifferentValues.enqueue(120);
+        unequalDifferentValues.enqueue(130);
+
+        ArrayQueue<Integer> unequalDifferentOrder = new ArrayQueue<>();
+        unequalDifferentOrder.enqueue(30);
+        unequalDifferentOrder.enqueue(20);
+        unequalDifferentOrder.enqueue(10);
+
+        ArrayQueue<Integer> unequalDifferentSizes = new ArrayQueue<>();
+        unequalDifferentSizes.enqueue(10);
+        unequalDifferentSizes.enqueue(20);
+
+        ArrayQueue<Integer> unequalSomeEqual = new ArrayQueue<>();
+        unequalSomeEqual.enqueue(20);
+        unequalSomeEqual.enqueue(30);
+        unequalSomeEqual.enqueue(40);
 
         new EqualsTester().addEqualityGroup(ArrayQueue.class)
-                .addEqualityGroup(gEmptyDefault, gEmptyCapacity)
-                .addEqualityGroup(gSingletonDefault, gSingletonCapacity)
-                .addEqualityGroup(gManyOneDefaultA, gManyOneDefaultB, gManyOneCapacity, gManyOneFront, gManyOneRear)
-                .addEqualityGroup(gManyTwoDefault, gManyTwoCapacity)
-                .addEqualityGroup(gReverseDefault, gReverseCapacity)
-                .addEqualityGroup(gTypeDefault, gTypeCapacity)
+                .addEqualityGroup(emptyA, emptyB, emptyC)
+                .addEqualityGroup(singletonA, singletonB, singletonC)
+                .addEqualityGroup(manyA, manyB, manyC)
+                .addEqualityGroup(unequalDifferentValues)
+                .addEqualityGroup(unequalDifferentOrder)
+                .addEqualityGroup(unequalDifferentSizes)
+                .addEqualityGroup(unequalSomeEqual)
                 .testEquals();
     }
 }
