@@ -182,7 +182,7 @@ public class ArrayQueueTest {
     @Nested
     class WhenLarge {
         @Test
-        void push_large_successfullyExpandsCapacity() {
+        void enqueue_large_successfullyExpandsCapacity() {
             for (int i = 0; i < 1000; i++) {
                 classUnderTest.enqueue(i);
             }
@@ -190,7 +190,7 @@ public class ArrayQueueTest {
         }
 
         @Test
-        void push_large_fifoOrdering() {
+        void dequeue_large_fifoOrdering() {
             for (int i = 0; i < 1000; i++) {
                 classUnderTest.enqueue(i);
             }
