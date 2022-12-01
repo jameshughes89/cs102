@@ -1,6 +1,11 @@
-import java.util.NoSuchElementException;
 import java.util.Objects;
 
+/**
+ * Implementation of a queue with an array as the container. The array container will automatically "grow" to
+ * accommodate adding beyond the initial capacity.
+ *
+ * @param <T> Type of elements that are to be on the queue.
+ */
 public class ArrayQueue<T> implements Queue<T> {
 
     private static final int DEFAULT_CAPACITY = 100;
@@ -9,16 +14,24 @@ public class ArrayQueue<T> implements Queue<T> {
     private int rear;
     private int size;
 
+    /**
+     * Create an empty ArrayQueue of the default capacity.
+     */
     public ArrayQueue() {
         this(DEFAULT_CAPACITY);
     }
 
+    /**
+     * Create an empty ArrayQueue with the specified capacity.
+     *
+     * @param capacity Starting capacity of the fixed length array.
+     */
     @SuppressWarnings("unchecked")
-    public ArrayQueue(int initialCapacity) {
+    public ArrayQueue(int capacity) {
         front = 0;
         rear = 0;
         size = 0;
-        queue = (T[]) new Object[initialCapacity];
+        queue = (T[]) new Object[capacity];
     }
 
     @Override
@@ -33,11 +46,9 @@ public class ArrayQueue<T> implements Queue<T> {
     }
 
     /**
-     * Doubles the size of the queue array and copy the
-     * contents over.
-     * <p>
-     * Mind where we copy from the original queue and
-     * the updates to front and rear
+     * Doubles the size of the queue array container and copy the contents from the old array to the new array. Note
+     * that the elements are copied to the beginning (index 0) of the new array and the front and rear fields are
+     * updated.
      */
     @SuppressWarnings("unchecked")
     private void expandCapacity() {
@@ -54,7 +65,7 @@ public class ArrayQueue<T> implements Queue<T> {
     @Override
     public T dequeue() {
         if (isEmpty()) {
-            throw new NoSuchElementException("Dequeueing from an empty queue.");
+            throw new EmptyCollectionException();
         }
         T returnElement = queue[front];
         front = nextIndex(front);
@@ -65,14 +76,14 @@ public class ArrayQueue<T> implements Queue<T> {
     @Override
     public T first() {
         if (isEmpty()) {
-            throw new NoSuchElementException("First from an empty queue.");
+            throw new EmptyCollectionException();
         }
         return queue[front];
     }
 
     @Override
     public boolean isEmpty() {
-        return size == 0;
+        return size() == 0;
     }
 
     @Override
@@ -81,9 +92,8 @@ public class ArrayQueue<T> implements Queue<T> {
     }
 
     /**
-     * Calculates the next valid index. This method is used to have the index
-     * increment with an automatic wrapping back to index zero if there is no
-     * more room left at the end of the array.
+     * Calculates the next valid index for the front or rear fields. This method is used to have the index increment
+     * with an automatic wrapping back to index zero if there is no more room left at the end of the array.
      *
      * @param currentIndex Index to find next index of
      * @return Wrapping next index
@@ -94,7 +104,6 @@ public class ArrayQueue<T> implements Queue<T> {
 
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("Front --> ");
         int currentIndex = front;
         for (int i = 0; i < size; ++i) {
             builder.append(queue[currentIndex]);
@@ -118,8 +127,9 @@ public class ArrayQueue<T> implements Queue<T> {
         }
         int thisCurrentIndex = this.front;
         int thatCurrentIndex = that.front;
+        // Since this and that are the same size, this.size can be used safely in the for loop
         for (int i = 0; i < this.size; i++) {
-            if (!this.queue[thisCurrentIndex].equals(that.queue[thatCurrentIndex])) {
+            if (!Objects.equals(this.queue[thisCurrentIndex], that.queue[thatCurrentIndex])) {
                 return false;
             }
             thisCurrentIndex = this.nextIndex(thisCurrentIndex);
