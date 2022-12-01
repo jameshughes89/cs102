@@ -58,6 +58,62 @@ public class ArrayQueueTest {
         @Nested
         class WhenSingleton {
 
+
+            @BeforeEach
+            void addSingleton() {
+                classUnderTest.enqueue(10);
+                preState.enqueue(10);
+            }
+
+            @Test
+            void enqueue_successfullyAdds_returnsTrue() {
+                assertTrue(classUnderTest.enqueue(11));
+            }
+
+            @Test
+            void enqueue_singleton_unchangedFirst() {
+                classUnderTest.enqueue(11);
+                assertEquals(10, classUnderTest.first());
+            }
+
+            @Test
+            void dequeue_singleton_returnsFirst() {
+                assertEquals(10, classUnderTest.dequeue());
+            }
+
+            @Test
+            void dequeue_singleton_emptyQueue() {
+                classUnderTest.dequeue();
+                assertEquals(new ArrayQueue<>(), classUnderTest);
+            }
+
+            @Test
+            void first_singleton_returnsFirst() {
+                assertEquals(10, classUnderTest.first());
+            }
+
+            @Test
+            void first_singleton_unchanged() {
+                classUnderTest.first();
+                assertEquals(preState, classUnderTest);
+            }
+
+            @Test
+            void isEmpty_singleton_returnsFalse() {
+                assertFalse(classUnderTest.isEmpty());
+            }
+
+            @Test
+            void size_singleton_returnsOne() {
+                assertEquals(1, classUnderTest.size());
+            }
+
+            @Test
+            void toString_singleton_returnsCorrectString() {
+                assertEquals("10, ", classUnderTest.toString());
+            }
+
+
             @Nested
             @TestInstance(TestInstance.Lifecycle.PER_CLASS)
             class WhenMany {
