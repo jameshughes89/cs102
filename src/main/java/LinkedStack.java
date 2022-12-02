@@ -4,7 +4,7 @@ import java.util.Objects;
  * Implementation of a stack with a linked structure as the container. The class contains a static inner class defining
  * a node for the linked structure.
  *
- * @param <T> Type of elements that are to be on the stack.
+ * @param <T> Type of elements that are to be in the stack.
  */
 public class LinkedStack<T> implements Stack<T> {
 
