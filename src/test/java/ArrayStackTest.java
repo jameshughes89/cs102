@@ -187,5 +187,24 @@ class ArrayStackTest {
             }
             assertEquals(1000, classUnderTest.size());
         }
+
+        @Test
+        void pop_large_lifoOrdering() {
+            for (int i = 0; i < 1000; i++) {
+                classUnderTest.push(i);
+            }
+            for (int i = 0; i < 500; i++) {
+                classUnderTest.pop();
+            }
+            for (int i = 1000; i < 1500; i++) {
+                classUnderTest.push(i);
+            }
+            for (int i = 1500 - 1; i >= 1000; i--) {
+                assertEquals(i, classUnderTest.pop());
+            }
+            for (int i = 500 - 1; i >= 0; i--) {
+                assertEquals(i, classUnderTest.pop());
+            }
+        }
     }
 }
