@@ -36,9 +36,9 @@ Variables and Types
 
     * -     .. code-block:: python
 
-                anInt = 5
-                aFloat = 5.5
-                aString = "5"
+                an_int = 5
+                a_float = 5.5
+                a_string = "5"
 
       -     .. code-block:: java
                 :emphasize-lines: 3,4,5,6
@@ -92,8 +92,8 @@ Variables and Types
           - Java
         * -     .. code-block:: python
 
-                    otherInt = 5
-                    otherInt = 'totally not 5'
+                    other_int = 5
+                    other_int = 'totally not 5'
 
           -     .. code-block:: java
                     :emphasize-lines: 3
@@ -123,8 +123,8 @@ Declaring & Assigning Variables
     * -     .. code-block:: python
                 :linenos:
 
-                anotherInt = 11
-                print(anotherInt)
+                another_int = 11
+                print(another_int)
 
       -     .. code-block:: java
                 :linenos:
@@ -256,14 +256,14 @@ Arrays
     * -     .. code-block:: python
                 :linenos:
 
-                aList = [10, 11, 12, 13]
+                a_list = [10, 11, 12, 13]
 
                 # Access the list at index 1
-                print(aList[1])
+                print(a_list[1])
 
                 # Modify the list at index 1
-                aList[1] = 21
-                print(aList[1])
+                a_list[1] = 21
+                print(a_list[1])
 
       -     .. code-block:: java
                 :linenos:
@@ -296,7 +296,7 @@ Arrays
 
     * One cannot simply list append to an array like with lists in Python
 
-        * ``aList.append(34)``
+        * ``a_list.append(34)``
 
 * In Java, arrays have fixed sizes
 * This means that one cannot start with an empty array and have it grow and grow
@@ -312,11 +312,11 @@ Arrays
                 :linenos:
 
                 # List will start with 0
-                aList = []
+                a_list = []
 
                 # List will grow to size 1,000
                 for i in range(1000):
-                    aList.append(i)
+                    a_list.append(i)
 
       -     .. code-block:: Java
                 :linenos:
@@ -378,8 +378,8 @@ Input & Output
     * -     .. code-block:: Python
                 :linenos:
 
-                theInput = input()
-                print(theInput)
+                the_input = input()
+                print(the_input)
 
       -     .. code-block:: Java
                 :linenos:
@@ -479,12 +479,12 @@ Functions/Methods
                 :emphasize-lines: 2, 7
 
                 # Declaring a function
-                def someFunction(a, b):
+                def some_function(a, b):
                     c = a + b
                     return c
 
                 # Call the function
-                result = someFunction(1, 2)
+                result = some_function(1, 2)
                 print(result)
 
       -     .. code-block:: Java
@@ -626,7 +626,7 @@ Temperature Converter
 * If one wrote ``5/9``, since both ``5`` and ``9`` are integers, it will do integer division
 * Since integers do not have decimal values, it truncates the decimal off --- ``5/9 = 0``
 
-    * In reality, we know it is 0.55555555555, but we are ditching everything after the decimal point
+    * In reality, although it is 0.55555555555, everything after the decimal point is truncated
 
 
 * This integer division functionality is more typical
@@ -826,10 +826,10 @@ For Each Loop
     * -     .. code-block:: Python
                 :linenos:
 
-                aList = ['a', 'b', 'c', 'd']
+                a_list = ['a', 'b', 'c', 'd']
 
                 # For each thing 'c' in aList
-                for c in aList:
+                for c in a_list:
                     print(c)
 
       -     .. code-block:: Java
