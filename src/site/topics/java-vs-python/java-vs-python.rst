@@ -96,7 +96,7 @@ Variables and Types
                     other_int = 'totally not 5'
 
           -     .. code-block:: java
-                    :emphasize-lines: 3
+                    :emphasize-lines: 2
 
                     int otherInt = 5;
                     otherInt = "totally not 5";     // Compiler error
@@ -354,6 +354,7 @@ Arrays
 
 
 .. _label-java_vs_python-input_output:
+
 Input & Output
 ==============
 
