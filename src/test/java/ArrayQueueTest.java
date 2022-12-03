@@ -1,101 +1,192 @@
-import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-
-import java.util.NoSuchElementException;
+import org.junit.jupiter.api.TestInstance;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ArrayQueueTest {
 
-    @Test
-    @DisplayName("A new queue starts empty.")
-    void aNewQueueIsEmpty() {
-        Queue<Integer> queue = new ArrayQueue<>();
-        assertTrue(queue.isEmpty());
+    private ArrayQueue<Integer> classUnderTest;
+    private ArrayQueue<Integer> preState;
+
+    @BeforeEach
+    void createStack() {
+        classUnderTest = new ArrayQueue<>();
+        preState = new ArrayQueue<>();
     }
 
-    @Test
-    @DisplayName("An empty queue has size 0.")
-    void emptyQueueHasSizeZero() {
-        Queue<Integer> queue = new ArrayQueue<>();
-        assertEquals(0, queue.size());
-    }
+    @Nested
+    class WhenNewEmpty {
 
-    @Test
-    @DisplayName("isEmpty return false when it is non empty.")
-    void nonEmptyQueueIsEmptyReturnsFalse() {
-        Queue<Integer> queue = new ArrayQueue<>();
-        queue.enqueue(99);
-        assertFalse(queue.isEmpty());
-    }
-
-    @Test
-    @DisplayName("Enqueuing items updates the size of the queue.")
-    void enqueuingUpdatesSize() {
-        Queue<Integer> queue = new ArrayQueue<>();
-        queue.enqueue(99);
-        queue.enqueue(101);
-        assertEquals(2, queue.size());
-    }
-
-    @Test
-    @DisplayName("Enqueuing one item results in it being the first.")
-    void enqueuingOneItemIsFirst() {
-        Queue<Integer> queue = new ArrayQueue<>();
-        queue.enqueue(99);
-        assertEquals(99, queue.first());
-    }
-
-    @Test
-    @DisplayName("Enqueuing successfully returns true.")
-    void enqueuingSuccessfullyReturnsTrue() {
-        Queue<Integer> queue = new ArrayQueue<>();
-        assertTrue(queue.enqueue(99));
-
-    }
-
-    @Test
-    @DisplayName("Enqueueing and Dequeuing returns in FIFO order.")
-    void enqueueingAndDequeuingReturnsElementsInFIFOOrder() {
-        Queue<Integer> queue = new ArrayQueue<>();
-        for (int i = 0; i < 6; ++i) {
-            queue.enqueue(i);
+        @Test
+        void enqueue_successfullyAdds_returnsTrue() {
+            assertTrue(classUnderTest.enqueue(11));
         }
-        for (int i = 0; i < 6; ++i) {
-            assertEquals(i, queue.dequeue());
+
+        @Test
+        void enqueue_empty_newTop() {
+            classUnderTest.enqueue(11);
+            assertEquals(11, classUnderTest.first());
+        }
+
+        @Test
+        void dequeue_empty_throwsEmptyCollectionException() {
+            assertThrows(EmptyCollectionException.class, () -> classUnderTest.dequeue());
+        }
+
+        @Test
+        void first_empty_throwsEmptyCollectionException() {
+            assertThrows(EmptyCollectionException.class, () -> classUnderTest.first());
+        }
+
+        @Test
+        void isEmpty_empty_returnsTrue() {
+            assertTrue(classUnderTest.isEmpty());
+        }
+
+        @Test
+        void size_empty_returnsZero() {
+            assertEquals(0, classUnderTest.size());
+        }
+
+        @Test
+        void toString_empty_returnsEmptyString() {
+            assertEquals("", classUnderTest.toString());
+        }
+
+        @Nested
+        class WhenSingleton {
+
+
+            @BeforeEach
+            void addSingleton() {
+                classUnderTest.enqueue(10);
+                preState.enqueue(10);
+            }
+
+            @Test
+            void enqueue_successfullyAdds_returnsTrue() {
+                assertTrue(classUnderTest.enqueue(11));
+            }
+
+            @Test
+            void enqueue_singleton_unchangedFirst() {
+                classUnderTest.enqueue(11);
+                assertEquals(10, classUnderTest.first());
+            }
+
+            @Test
+            void dequeue_singleton_returnsFirst() {
+                assertEquals(10, classUnderTest.dequeue());
+            }
+
+            @Test
+            void dequeue_singleton_emptyQueue() {
+                classUnderTest.dequeue();
+                assertEquals(new ArrayQueue<>(), classUnderTest);
+            }
+
+            @Test
+            void first_singleton_returnsFirst() {
+                assertEquals(10, classUnderTest.first());
+            }
+
+            @Test
+            void first_singleton_unchanged() {
+                classUnderTest.first();
+                assertEquals(preState, classUnderTest);
+            }
+
+            @Test
+            void isEmpty_singleton_returnsFalse() {
+                assertFalse(classUnderTest.isEmpty());
+            }
+
+            @Test
+            void size_singleton_returnsOne() {
+                assertEquals(1, classUnderTest.size());
+            }
+
+            @Test
+            void toString_singleton_returnsCorrectString() {
+                assertEquals("10, ", classUnderTest.toString());
+            }
+
+
+            @Nested
+            @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+            class WhenMany {
+                @BeforeEach
+                void addMany() {
+                    classUnderTest.enqueue(20);
+                    classUnderTest.enqueue(30);
+                    classUnderTest.enqueue(40);
+                    preState.enqueue(20);
+                    preState.enqueue(30);
+                    preState.enqueue(40);
+                }
+
+
+                @Test
+                void enqueue_successfullyAdds_returnsTrue() {
+                    assertTrue(classUnderTest.enqueue(11));
+                }
+
+                @Test
+                void enqueue_many_unchangedFirst() {
+                    classUnderTest.enqueue(11);
+                    assertEquals(10, classUnderTest.first());
+                }
+
+                @Test
+                void dequeue_many_returnsFirst() {
+                    assertEquals(10, classUnderTest.dequeue());
+                }
+
+                @Test
+                void dequeue_many_newFirst() {
+                    classUnderTest.dequeue();
+                    assertEquals(20, classUnderTest.first());
+                }
+
+                @Test
+                void first_many_returnsFirst() {
+                    assertEquals(10, classUnderTest.first());
+                }
+
+                @Test
+                void first_many_unchanged() {
+                    classUnderTest.first();
+                    assertEquals(preState, classUnderTest);
+                }
+
+                @Test
+                void isEmpty_many_returnsFalse() {
+                    assertFalse(classUnderTest.isEmpty());
+                }
+
+                @Test
+                void size_many_returnsCorrectSize() {
+                    assertEquals(4, classUnderTest.size());
+                }
+
+                @Test
+                void toString_singleton_returnsCorrectString() {
+                    assertEquals("10, 20, 30, 40, ", classUnderTest.toString());
+                }
+            }
         }
     }
 
-    @Test
-    @DisplayName("Enqueuing 6 elements expands capacity while maintaining queues FIFO ordering.")
-    void enqueuingBeyondCapacityCallsExpandCapacityToMakeRoomWhileMaintainingQueueOrdering() {
-        Queue<Integer> queue = new ArrayQueue<>(5);
-        queue.enqueue(99);
-        queue.dequeue();
-        // front = rear = 1
-        for (int i = 0; i < 6; ++i) {
-            queue.enqueue(i);
+    @Nested
+    class WhenLarge {
+        @Test
+        void enqueue_large_successfullyExpandsCapacity() {
+            for (int i = 0; i < 1000; i++) {
+                classUnderTest.enqueue(i);
+            }
+            assertEquals(1000, classUnderTest.size());
         }
-        // After 6 enqueues, expandCapacity is called.
-        // Ensure first was not overwritten by 6th
-        // consecutive enqueue and whole queue is in
-        // proper FIFO order with 6th element at the rear
-        for (int i = 0; i < 6; ++i) {
-            assertEquals(i, queue.dequeue());
-        }
-    }
-
-    @Test
-    @DisplayName("Dequeuing throws NoSuchElementException when queue is empty.")
-    void dequeueEmptyQueueThrowsException() {
-        Queue<Integer> queue = new ArrayQueue<>();
-        assertThrows(NoSuchElementException.class, () -> queue.dequeue());
-    }
-
-    @Test
-    @DisplayName("First throws NoSuchElementException when queue is empty.")
-    void firstEmptyQueueThrowsException() {
-        Queue<Integer> queue = new ArrayQueue<>();
-        assertThrows(NoSuchElementException.class, () -> queue.first());
     }
 }

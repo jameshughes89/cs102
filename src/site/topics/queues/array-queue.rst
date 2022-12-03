@@ -399,7 +399,6 @@ For next time
 
 * Download and play with the :download:`ArrayQueue </../main/java/ArrayQueue.java>` code
 * Download and run the :download:`ArrayQueueTest </../test/java/ArrayQueueTest.java>` tests
-    * Or the more thorough tests found in :download:`ArrayQueueThoroughTest </../test/java/ArrayQueueThoroughTest.java>`
 * Read Chapter 5 Section 7
     * 7 pages
 
