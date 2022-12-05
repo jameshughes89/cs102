@@ -250,45 +250,65 @@ Exceptional Situations
 ``size`` and ``isEmpty``
 ------------------------
 
-.. code-block:: Java
+.. literalinclude:: /../main/java/ArrayStack.java
+    :language: java
     :linenos:
-    :emphasize-lines: 2
+    :lineno-start: 77
+    :lines: 77-85
+    :emphasize-lines: 3
 
-        public int size() {
-            return top;
-        }
 
-        public boolean isEmpty() {
-            return size() == 0;
-        }
+* Notice how, because of zero based indexing, ``top`` is both
 
-* Notice how, because of zero based indexing
-    * ``top`` tells us the next available spot in the array
-    * And the number of things in the stack
+    * The index of the next available spot in the ``stack`` array
+    * The number of elements in the stack
 
-toString
---------
 
-.. code-block:: Java
+``toString``
+------------
+
+.. literalinclude:: /../main/java/ArrayStack.java
+    :language: java
     :linenos:
+    :lineno-start: 87
+    :lines: 87-95
+    :emphasize-lines: 6
 
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < top; ++i) {
-            builder.append(stack[i]);
-            builder.append(", ");
-        }
-        builder.append("<-- Top");
-        return builder.toString();
-    }
 
-* See if you can figure out what the ``toString`` will return based on this code
+* The above ``toString`` example uses :doc:`a string builder. </topics/objects-review/builder>`
+* Ideally the top element in the stack would be the left most element in the string representation of a stack
+* However, index ``0`` in the ``stack`` array is the bottom of the stack
+* For this reason, each element is inserted to the front of the string builder
+
+
+``equals`` and ``hashCode``
+---------------------------
+
+.. literalinclude:: /../main/java/ArrayStack.java
+    :language: java
+    :linenos:
+    :lineno-start: 97
+    :lines: 97-116
+    :emphasize-lines: 10
+
+
+* Two ``ArrayStack`` objects are considered equal if the contents of the ``stack`` arrays are equal
+
+
+.. note::
+
+    Like the other methods in the class, the ``@Override`` annotations on the ``toString``, ``equals``, and ``hashCode``
+    methods tell the compiler that the method is overriding one in another class. However, unlike ``push``, ``pop``,
+    ``peek``, ``size``, and ``isEmpty`` methods, the overridden methods are not from the ``Stack`` interface, but the
+    ``Object`` class. All classes inherit from the ``Object`` class which has implementations of the ``toString``,
+    ``equals``, and ``hashCode`` methods.
 
 
 For Next Time
 =============
 
 * Download and play with
+
     * :download:`Stack </../main/java/Stack.java>`
     * :download:`ArrayStack </../main/java/ArrayStack.java>`
     * :download:`ArrayStack </../main/java/PlayingArrayStack.java>`
@@ -296,6 +316,7 @@ For Next Time
 * :doc:`Check out the aside on testing <unit-tests>`
 * Download and run the :download:`ArrayStackTest </../test/java/ArrayStackTest.java>` tests
 * Finish reading Chapter 3
+
     * 16 pages
 
 
