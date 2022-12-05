@@ -10,50 +10,80 @@ ArrayStack
     * How will the top of the stack be managed?
 
 
-Implementing a Stack with an Array
-==================================
+Implementing an ``ArrayStack``
+=============================
+
+* Arrays are great for storing contiguous data
+
+.. figure:: array.png
+    :width: 500 px
+    :align: center
+
+    An array of size 10 storing references to six elements. The references to the six elements are stored within the
+    array indices 0 -- 5.
 
 
+* If an array is used for storing the data in the stack, how should the top of the stack be kept track of?
+* One way would be to have the top of the stack always be index ``0``
 
-ArrayStack Implementation Issues
---------------------------------
+    * Pro --- Always know where the top is
+    * Con --- Every ``push`` and ``pop`` requires all elements within the stack to be moved
 
-* We've already seen that arrays are great for storing contiguous data
+        * If there are :math:`n` elements in the stack, all must be moved
 
-.. image:: array.png
-   :width: 500 px
-   :align: center
 
-* If this is the case, how should we keep track of the top of the stack?
+* Another option is to have the top be the other end
 
-* What are the pros and cons of making keeping the top index 0?
-    * We always know where the top is
-    * Every time we ``push`` or ``pop`` we'd need to move everything in the stack
+    * Pro --- No need to move anything for a ``push`` or ``pop``
 
-* What are the pros and cons of making the top the other end?
-    * We'd need another variable to keep track of where the top is
-    * We do not need to shuffle anything around
+        * If there are :math:`n` elements in the stack, none need to move
 
-* The strategy we will use is a variable to keep track of *the next available spot* in the array
-    * ``push`` at the ``top`` index and update ``top``
-    * ``pop`` at the ``top - 1`` index and update ``top``
-* Also, due to zero based indexing, the variable keeping track of ``top`` will always be the number of things in the stack (``size``)
+    * Con --- Must keep track of which index the top currently is
 
-.. image:: arraystack0.png
-   :width: 500 px
-   :align: center
 
-.. image:: arraystack1.png
-   :width: 500 px
-   :align: center
+* Although both strategies work, the latter will be used since the ``push`` and ``pop`` operations require less work
 
-.. image:: arraystack2.png
-   :width: 500 px
-   :align: center
 
-.. image:: arraystack3.png
-   :width: 500 px
-   :align: center
+Implementation Issues
+---------------------
+
+* An array will be used to hold the data
+* The ``top`` will always refer to the *next available spot* in the array
+* Due to zero based indexing, the value of ``top`` will also correspond to the number of elements in the stack
+* All ``push`` operations will happen at the ``top`` index and require an update to ``top``
+* All ``pop`` operations will happen at the ``top - 1`` index and require an update to ``top``
+
+
+.. figure:: arraystack0.png
+    :width: 500 px
+    :align: center
+
+    An example ``ArrayStack`` containing four elements. Note the value stored in ``top`` refers to the next available
+    spot in the array --- where the next pushed element would go. Also notice that the value in ``top`` corresponds to
+    the number of elements currently in the stack.
+
+
+.. figure:: arraystack1.png
+    :width: 500 px
+    :align: center
+
+    The state of the ``ArrayStack`` after an element was pushed. Note that the value of ``top`` was increased by one
+    such that it refers to the next available spot in the array.
+
+
+.. figure:: arraystack2.png
+    :width: 500 px
+    :align: center
+
+    The state of the ``ArrayStack`` after an element was popped. Note that the value of ``top`` was decreased by one.
+
+
+.. figure:: arraystack3.png
+    :width: 500 px
+    :align: center
+
+    The state of the ``ArrayStack`` after another element was popped. Note that, again, the value of ``top`` was
+    decreased by one such that it refers to the next available spot in the array.
 
 
 Implementation
