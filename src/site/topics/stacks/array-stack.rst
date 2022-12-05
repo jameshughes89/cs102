@@ -102,7 +102,7 @@ Implementation
 
 * The fields are
 
-    * An integer (``top``) to heep track of where the top of the stack is
+    * An integer ``top`` to keep track of where the top of the stack is
     * The ``stack`` array to hold the elements in the stack
 
         * Since the ``ArrayStack`` is generic its type is ``T``
@@ -116,16 +116,19 @@ Implementation
     :emphasize-lines: 1
 
 
-
 .. warning::
 
-    When you start implementing an interface, you may see your IDE telling you there is an error. This is to be expected
-    since you are saying that you are implementing the interface, so Java is expecting you to implement all abstract
-    methods from the interface. This error will go away once all abstract methods are implemented.
+    When starting to implement an interface, the IDE may produce a error saying that the interface is not implemented.
+    This is because Java is expecting all abstract methods from the interface to be implemented. This error will go away
+    once all abstract methods are implemented.
 
-        .. image:: warning_implement.png
-           :width: 500 px
-           :align: center
+        .. figure:: warning_implement.png
+            :width: 500 px
+            :align: center
+
+            Example of the error IntelliJ will produce if not all abstract methods from the ``Stack`` interface are
+            implemented.
+
 
 
 Constructors
