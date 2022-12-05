@@ -225,7 +225,7 @@ Interface
 
 
 Stack Interface
-------------------
+---------------
 
 * Below is the Stack interface
 
@@ -247,7 +247,7 @@ Stack Interface
 
 
 Generics
---------
+========
 
 
 * The use of ``<T>`` is something new and not an idea discussed yet
@@ -278,9 +278,9 @@ Generics
 
 
 There has to be a Better Way!
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------
 
-* There is, **generics**
+* There is --- **generics**
 
 * ``<T>`` is a stand-in for a specific type that can be specified later when the stack is created
 
