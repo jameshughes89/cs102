@@ -205,63 +205,50 @@ Push
 Pop and Peek
 ------------
 
-* ``pop`` and ``peek`` will be similar, except peek leaves the top alone
+* The ``pop`` and ``peek`` methods will be similar, except peek leaves the stack unchanged
 
-.. code-block:: Java
+.. literalinclude:: /../main/java/ArrayStack.java
+    :language: java
     :linenos:
-    :emphasize-lines: 2, 3, 4, 12, 13, 14
-
-        public T pop() {
-            if (isEmpty()) {
-                throw new NoSuchElementException();
-            }
-            top--;
-            T returnElement = stack[top];
-            stack[top] = null;
-            return returnElement;
-        }
-
-        public T peek() {
-            if (isEmpty()) {
-                throw new NoSuchElementException();
-            }
-            return stack[top - 1];
-        }
+    :lineno-start: 58
+    :lines: 58-75
+    :emphasize-lines: 3, 4, 5, 14, 15, 16
 
 
+Exceptional Situations
+^^^^^^^^^^^^^^^^^^^^^^
 
+* What should happen if someone tries to ``pop`` or ``peek`` from an empty stack?
 
-**Exceptional Situations**
-
-* What should we do when someone tries to ``pop`` or ``peek`` from an empty stack?
-    * Ignore and do nothing?
+    * Ignore it and do nothing?
     * Crash the program?
     * Something else?
 
-* Hard to say
-* What should be done is not up to us as the people implementing the stack
 
-* As a rule, you should follow `the principal of least surprise <https://en.wikipedia.org/wiki/Principle_of_least_astonishment>`_
-* Should we expect to get nothing back when requesting the top?
-* Perhaps it's more reasonable that the request was invalid in the first place
+* What should be done in this situation is not up to those implementing the stack
+* As a rule, one should follow `the principal of least surprise <https://en.wikipedia.org/wiki/Principle_of_least_astonishment>`_
 
-* Imagine having two apples and asking the two apples for the third apple
-* The natural response the apples would have is "...wut?"
-    * An exception
+* Consider someone using the ``ArrayStack`` class --- should they ever expect to get nothing back when requesting the top?
 
-* Remember, we are implementing a stack that can be used somewhere else
-* What should be done will depend on what the code using the stack is doing
-* The point is, I cannot possibly know what you will want to do tomorrow with my stack implementation
+    * No --- the ``pop`` and ``peek`` methods explicitly say they return a value
 
-* What I can do however is throw an exception to let the user know something exceptional happened
-* It is up to them to deal with the situation
 
-.. warning::
+* Perhaps it's more reasonable to assume that the request was invalid in the first place
 
-    To use the ``NoSuchElementException``, we will need to import it --- ``import java.util.NoSuchElementException;``
+    * An exceptional thing happened
 
-size and isEmpty
-----------------
+
+* Remember, the ``ArrayStack`` is designed to be general purpose and can be used in many situations
+* What should be done when calling ``pop`` or ``peek`` on an empty stack will depend on the specific situation
+
+* The point is, when implementing the ``ArrayStack``, it is not possible to know what should be done in the exceptional situation
+* What can be done, however, is to throw an exception to inform the user that something exceptional happened
+* Then it is up to the user to deal with the exceptional situation as they see fit
+
+
+
+``size`` and ``isEmpty``
+------------------------
 
 .. code-block:: Java
     :linenos:
