@@ -134,47 +134,45 @@ Implementation
 Constructors
 ------------
 
-* Like the ``ContactList`` example, we will make two constructors
-    * One will use the default value
-    * The other will allow us to provide a starting size of the array
+* Like the ``ContactList`` example, there will be two constructors
+
+    * One making use of the default value
+    * The other to create an array of a specified starting capacity
 
 
-.. code-block:: Java
+.. literalinclude:: /../main/java/ArrayStack.java
+    :language: java
     :linenos:
-    :emphasize-lines: 2, 9
+    :lineno-start: 16
+    :lines: 16-34
+    :emphasize-lines: 5, 18
 
-        public ArrayStack() {
-            this(DEFAULT_CAPACITY);
-        }
 
-        public ArrayStack(int size) {
-            top = 0;
-            // Generic types cannot be instantiated so we cast
-            // This does generate a compile time warning
-            stack = (T[]) new Object[size];
-        }
+* This is making use of :doc:`constructor chaining </topics/objects-review/chaining>`
+* Notice that the array being created is an array of type ``Object`` that is ``cast`` to the generic type ``T``
 
-* You will see what we are doing overloading and  :doc:`constructor chaining </topics/objects-review/chaining>`
-* You will also see that we are creating an array of type ``Object`` and then *casting* it to the generic type `T`
-    * We cannot actually instantiate (create) a generic type
-        * Asterisk
-    * Java also forbids creating a generic array
-        * `Details are outside the scope of this topic and likely class <https://dzone.com/articles/covariance-and-contravariance>`_
+    * Java forbids creating a generic array
+    * `Details are outside the scope of this topic and likely class <https://dzone.com/articles/covariance-and-contravariance>`_
 
-* When doing this, Java will warn us that there is now an unchecked type conversion
+* When doing this, Java will warn that there is now an unchecked type conversion
+
     * Java can't guarantee that the cast will work right
 
-* You can ignore this here
-* However, if we'd like, we can suppress the warning by adding the following before the constructor
+* This can be ignored, however, the warning may be suppressed by adding the following before the constructor
+
     * ``@SuppressWarnings("unchecked")``
 
 
 * Creating an instance ``Stack<Integer> s = new ArrayStack<>(5);``
 
-        .. image:: arraystack_empty.png
-           :width: 500 px
-           :align: center
+.. figure:: arraystack_empty.png
+    :width: 400 px
+    :align: center
 
+    A visualization of an ``ArrayStack`` created with a starting capacity of ``5``. The instance ``s`` could have been
+    created with ``Stack<Integer> s = new ArrayStack<>(5);``. Although the type ``Integer`` is specified in the
+    declaration, there is nothing within the figure to indicate that the elements within the stack would be of type
+    ``Integer``.
 
 
 Push
