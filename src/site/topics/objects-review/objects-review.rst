@@ -96,10 +96,10 @@ High-Level Idea
 
 
 Contact List Example
-====================
+--------------------
 
 * It may be easier to learn these ideas with an example
-* Let's consider the following problem
+* Cconsider the following problem
 
     * There is a need to keep track of the name and email address of friends
     * There is also a need to manage several friends' names and email addresses
@@ -112,7 +112,7 @@ Contact List Example
 
 
 Friend Class
-------------
+============
 
 * For this particular problem, the ``Friend`` class can be kept simple
 
