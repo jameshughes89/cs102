@@ -10,8 +10,8 @@ ArrayStack
     * How will the top of the stack be managed?
 
 
-Implementing an ``ArrayStack``
-=============================
+Implementing a Stack with an Array
+==================================
 
 * Arrays are great for storing contiguous data
 
@@ -86,31 +86,36 @@ Implementation Issues
     decreased by one such that it refers to the next available spot in the array.
 
 
+
 Implementation
---------------
+==============
 
-* Let's start our implementation of the ``ArrayStack``
+* The ``ArrayStack`` class will *implement* the ``Stack`` interface
 
-.. code-block:: Java
-    :linenos:
-    :emphasize-lines: 1
+    * This ensures that the ``ArrayStack`` implementation actually implements the operations required to make it a ``Stack``
 
-    public class ArrayStack<T> implements Stack<T> {
-
-        private static final int DEFAULT_CAPACITY = 100;
-        private T[] stack;
-        private int top;
-
-    }
-
-
-* We want our ``ArrayStack`` to implement the ``Stack`` interface
-    * This way anyone using our implementation knows that it is a ``Stack``
         * The ``ArrayStack`` **is a** ``Stack``
         * Anything expecting a ``Stack`` will be happy getting an ``ArrayStack`` since **it is a stack**
-    * Note line 1 where we specifically say ``ArrayStack<T> implements Stack<T>``
 
-* Since our ``ArrayStack`` is generic, we don't know what type the array should be at this stage, so we make it an array of type ``T``
+    * Note line 10 in the below example where it specifies that the ``ArrayStack<T> implements Stack<T>``
+
+
+* The fields are
+
+    * An integer (``top``) to heep track of where the top of the stack is
+    * The ``stack`` array to hold the elements in the stack
+
+        * Since the ``ArrayStack`` is generic its type is ``T``
+
+
+.. literalinclude:: /../main/java/ArrayStack.java
+    :language: java
+    :linenos:
+    :lineno-start: 10
+    :lines: 10-14
+    :emphasize-lines: 1
+
+
 
 .. warning::
 
@@ -124,7 +129,7 @@ Implementation
 
 
 Constructors
-^^^^^^^^^^^^
+------------
 
 * Like the ``ContactList`` example, we will make two constructors
     * One will use the default value
@@ -170,7 +175,7 @@ Constructors
 
 
 Push
-^^^^
+----
 
 .. code-block:: Java
     :linenos:
@@ -200,7 +205,7 @@ Push
 
 
 Pop and Peek
-^^^^^^^^^^^^
+------------
 
 * ``pop`` and ``peek`` will be similar, except peek leaves the top alone
 
@@ -258,7 +263,7 @@ Pop and Peek
     To use the ``NoSuchElementException``, we will need to import it --- ``import java.util.NoSuchElementException;``
 
 size and isEmpty
-^^^^^^^^^^^^^^^^
+----------------
 
 .. code-block:: Java
     :linenos:
@@ -277,7 +282,7 @@ size and isEmpty
     * And the number of things in the stack
 
 toString
-^^^^^^^^
+--------
 
 .. code-block:: Java
     :linenos:
@@ -295,7 +300,7 @@ toString
 * See if you can figure out what the ``toString`` will return based on this code
 
 
-For next time
+For Next Time
 =============
 
 * Download and play with
@@ -307,6 +312,7 @@ For next time
 * Download and run the :download:`ArrayStackTest </../test/java/ArrayStackTest.java>` tests
 * Finish reading Chapter 3
     * 16 pages
+
 
 Playing Code
 ============
