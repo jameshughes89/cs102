@@ -84,6 +84,7 @@ The Math, Stats, and CS Society has a time and location for
     topics/intro/introduction
     topics/java-vs-python/java-vs-python
     topics/objects-review/objects-review
+    topics/objects-review/data-structures-review
     topics/collections/collections
     topics/stacks/stack-adt
     topics/stacks/array-stack
