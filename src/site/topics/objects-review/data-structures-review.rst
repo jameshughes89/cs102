@@ -2,6 +2,14 @@
 Data Structures Review
 **********************
 
+* Like objects, defining a data structure is similar between Python and Java
+* Most of the differences are syntax related
+
+.. note::
+
+    Although Python code was included for the previous topic defining a ``Friend`` class, for brevity and an exercise in
+    understanding Java, Python is not included here when defining the data structure.
+
 
 Contact List Class
 ------------------

@@ -2,7 +2,7 @@
 Objects Review
 **************
 
-* Defining objects and data structures is similar between Python and Java
+* Defining objects is similar between Python and Java
 * Most of the differences are syntax related
 
 
@@ -107,6 +107,8 @@ Contact List Example
 
 * To do this, a class could be made to represent a friend --- ``Friend`` class
 * Another class can be made to keep track of the collection of friends --- ``ContactList`` class
+
+    * This will be covered in the following topic
 
 
 Friend Class
@@ -428,7 +430,7 @@ Creating an Instance of a Friend
         :width: 500 px
         :align: center
 
-        Two reference variables referencing two seperate individual ``Friend`` objects.
+        Two reference variables referencing two separate individual ``Friend`` objects.
 
 
 * Below is an example of two ``Friend`` objects being created and being used
