@@ -1,5 +1,3 @@
-import java.util.NoSuchElementException;
-
 public class PlayingArrayStack {
     public static void main(String[] args) {
         // Create an ArrayStack
@@ -54,12 +52,12 @@ public class PlayingArrayStack {
         // Test peek and pop throwing exception
         try {
             myStack.peek();
-        } catch (NoSuchElementException e) {
+        } catch (EmptyCollectionException e) {
             e.printStackTrace();
         }
         try {
             myStack.pop();
-        } catch (NoSuchElementException e) {
+        } catch (EmptyCollectionException e) {
             e.printStackTrace();
         }
     }
