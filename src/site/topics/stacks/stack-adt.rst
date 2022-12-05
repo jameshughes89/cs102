@@ -280,7 +280,7 @@ Generics
 There has to be a Better Way!
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* There is, **generics**
+* There is --- **generics**
 
 * ``<T>`` is a stand-in for a specific type that can be specified later when the stack is created
 
