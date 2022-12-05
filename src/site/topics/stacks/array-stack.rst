@@ -178,31 +178,28 @@ Constructors
 Push
 ----
 
-.. code-block:: Java
+.. literalinclude:: /../main/java/ArrayStack.java
+    :language: java
     :linenos:
-    :emphasize-lines: 2, 3, 13
+    :lineno-start: 36
+    :lines: 36-56
+    :emphasize-lines: 1, 3, 4, 5, 15
 
-        public void push(T element) {
-            if (top == stack.length) {
-                expandCapacity();
-            }
-            stack[top] = element;
-            top++;
-        }
 
-        /**
-         * Doubles the size of the stack array and copy the
-         * contents over.
-         */
-        private void expandCapacity() {
-            T[] newStack = (T[]) new Object[stack.length * 2];
-            for (int i = 0; i < stack.length; ++i) {
-                newStack[i] = stack[i];
-            }
-            stack = newStack;
-        }
+* Notice the ``@Override`` annotation before the ``push`` method
 
-* Like the ``ContactList`` example, we will need to watch the size of our array
+    * This tells the compiler that the method ``push`` from the interface is being overridden
+    * It is not required to include this annotation, but it can help eliminate errors
+
+* Like the ``ContactList`` example, a private ``expandCapacity`` method is included
+
+    * If trying to ``push`` to a stack that has a full ``stack`` array, ``expandCapacity`` is called
+    * The private ``expandCapacity`` method will
+
+        * Make a new and larger array
+        * Copy the contents of the old ``stack`` array to the new array
+        * Set the field ``stack`` to reference the new larger array
+
 
 
 Pop and Peek
