@@ -225,7 +225,7 @@ Interface
 
 
 Stack Interface
-------------------
+---------------
 
 * Below is the Stack interface
 
