@@ -1,5 +1,3 @@
-import java.util.NoSuchElementException;
-
 public class PlayingLinkedStack {
     public static void main(String[] args) {
         // Create a LinkedStack
@@ -56,12 +54,12 @@ public class PlayingLinkedStack {
         // Test peek and pop throwing exception
         try {
             myStack.peek();
-        } catch (NoSuchElementException e) {
+        } catch (EmptyCollectionException e) {
             e.printStackTrace();
         }
         try {
             myStack.pop();
-        } catch (NoSuchElementException e) {
+        } catch (EmptyCollectionException e) {
             e.printStackTrace();
         }
     }
