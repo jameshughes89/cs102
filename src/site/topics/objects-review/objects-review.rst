@@ -249,8 +249,8 @@ Accessors
 
 
 
-toString
---------
+``toString``
+------------
 
 * In Python, for creating a string representation of an object, the ``__repr__`` magic method was used
 
@@ -310,8 +310,8 @@ toString
     The idea is that this *returns* a string; it does not just print something.
 
 
-equals
-------
+``equals``
+----------
 
 * Python also provides the ``__eq__`` magic method for describing equality
 
