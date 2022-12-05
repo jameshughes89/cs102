@@ -237,6 +237,17 @@ Accessors
     :lines: 28-38
 
 
+* In Python, accessors were not used as one could simply access the field directly
+
+    * ``my_friend.first_name``
+
+
+* This *could* be done in Java if the fields were set to ``public``
+* However, it would make it possible to modify the fields directly, which is not ideal
+
+    * Accessors allow the data to be accessed, but not changed
+
+
 
 toString
 --------
