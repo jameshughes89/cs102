@@ -297,7 +297,7 @@ Exceptional Situations
 
 .. note::
 
-    Like the other methods in the class, the ``@Override`` annotations on the ``toString``, ``equals``, and ``hashCode``
+    Like the other methods in the class, the ``@Override`` annotation on the ``toString``, ``equals``, and ``hashCode``
     methods tell the compiler that the method is overriding one in another class. However, unlike ``push``, ``pop``,
     ``peek``, ``size``, and ``isEmpty`` methods, the overridden methods are not from the ``Stack`` interface, but the
     ``Object`` class. All classes inherit from the ``Object`` class which has implementations of the ``toString``,
