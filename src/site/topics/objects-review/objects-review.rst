@@ -139,7 +139,7 @@ Friend Class
 
 
 Setting Fields and Writing the Constructor
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------------
 
 * The constructor is a special method that is called automatically when an object of the class is created
 * Typically, setup related things that needs to happen for the object will be put in the constructor
@@ -220,7 +220,7 @@ In Java, the class' declaration of fields, constructor, and assigning values to 
 
 
 Accessors
-^^^^^^^^^
+---------
 
 * Below are the accessor/getter methods for the fields
 * All these methods do are return their respective values
@@ -239,7 +239,7 @@ Accessors
 
 
 toString
-^^^^^^^^
+--------
 
 * In Python, for creating a string representation of an object, the ``__repr__`` magic method was used
 
@@ -300,7 +300,7 @@ toString
 
 
 equals
-^^^^^^
+------
 
 * Python also provides the ``__eq__`` magic method for describing equality
 
@@ -368,7 +368,7 @@ equals
 
 
 Creating an Instance of a Friend
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+================================
 
 * Below is an example of creating an instance of a ``Friend`` object based on the ``Friend`` class
 * It is a simple example where an instance is created, but that is all
@@ -456,7 +456,7 @@ Creating an Instance of a Friend
 
 
 References
-^^^^^^^^^^
+==========
 
 * As noted above, be careful about what is actually stored in these variables
 * The objects themselves are not stored in the variables
