@@ -2,271 +2,313 @@
 ArrayStack
 **********
 
-* We now are familiar with *what* we want the stack ADT to do without talking about *how*
-* Obviously, in order to use a stack in Java, we need to actually implement a stack
+* Having seen *what* a stack can do
+* It is time to start discussing *how*
+* There are a few implementation issues to consider
 
-* We now need to think about implementation issues
-    * How are we going to keep track of our data?
-    * How will we know where the top is?
-        * This will depend on the choice of how we store the data
+    * How is the data going to be stored?
+    * How will the top of the stack be managed?
 
-Implementing a Stack --- Array Container
-========================================
 
-ArrayStack Implementation Issues
---------------------------------
+Implementing a Stack with an Array
+==================================
 
-* We've already seen that arrays are great for storing contiguous data
+* Arrays are great for storing contiguous data
 
-.. image:: array.png
-   :width: 500 px
-   :align: center
+.. figure:: array.png
+    :width: 500 px
+    :align: center
 
-* If this is the case, how should we keep track of the top of the stack?
+    An array of size 10 storing references to six elements. The references to the six elements are stored within the
+    array indices 0 -- 5.
 
-* What are the pros and cons of making keeping the top index 0?
-    * We always know where the top is
-    * Every time we ``push`` or ``pop`` we'd need to move everything in the stack
 
-* What are the pros and cons of making the top the other end?
-    * We'd need another variable to keep track of where the top is
-    * We do not need to shuffle anything around
+* If an array is used for storing the data in the stack, how should the top of the stack be kept track of?
+* One way would be to have the top of the stack always be index ``0``
 
-* The strategy we will use is a variable to keep track of *the next available spot* in the array
-    * ``push`` at the ``top`` index and update ``top``
-    * ``pop`` at the ``top - 1`` index and update ``top``
-* Also, due to zero based indexing, the variable keeping track of ``top`` will always be the number of things in the stack (``size``)
+    * Pro --- Always know where the top is
+    * Con --- Every ``push`` and ``pop`` requires all elements within the stack to be moved
 
-.. image:: arraystack0.png
-   :width: 500 px
-   :align: center
+        * If there are :math:`n` elements in the stack, all must be moved
 
-.. image:: arraystack1.png
-   :width: 500 px
-   :align: center
 
-.. image:: arraystack2.png
-   :width: 500 px
-   :align: center
+* Another option is to have the top be the other end
 
-.. image:: arraystack3.png
-   :width: 500 px
-   :align: center
+    * Pro --- No need to move anything for a ``push`` or ``pop``
+
+        * If there are :math:`n` elements in the stack, none need to move
+
+    * Con --- Must keep track of which index the top currently is
+
+
+* Although both strategies work, the latter will be used since the ``push`` and ``pop`` operations require less work
+
+
+Implementation Issues
+---------------------
+
+* An array will be used to hold the data
+* The ``top`` will always refer to the *next available spot* in the array
+* Due to zero based indexing, the value of ``top`` will also correspond to the number of elements in the stack
+* All ``push`` operations will happen at the ``top`` index and require an update to ``top``
+* All ``pop`` operations will happen at the ``top - 1`` index and require an update to ``top``
+
+
+.. figure:: arraystack0.png
+    :width: 500 px
+    :align: center
+
+    An example ``ArrayStack`` containing four elements. Note the value stored in ``top`` refers to the next available
+    spot in the array --- where the next pushed element would go. Also notice that the value in ``top`` corresponds to
+    the number of elements currently in the stack.
+
+
+.. figure:: arraystack1.png
+    :width: 500 px
+    :align: center
+
+    The state of the ``ArrayStack`` after an element was pushed. Note that the value of ``top`` was increased by one
+    such that it refers to the next available spot in the array.
+
+
+.. figure:: arraystack2.png
+    :width: 500 px
+    :align: center
+
+    The state of the ``ArrayStack`` after an element was popped. Note that the value of ``top`` was decreased by one.
+
+
+.. figure:: arraystack3.png
+    :width: 500 px
+    :align: center
+
+    The state of the ``ArrayStack`` after another element was popped. Note that, again, the value of ``top`` was
+    decreased by one such that it refers to the next available spot in the array.
+
 
 
 Implementation
---------------
+==============
 
-* Let's start our implementation of the ``ArrayStack``
+* The ``ArrayStack`` class will *implement* the ``Stack`` interface
 
-.. code-block:: Java
-    :linenos:
-    :emphasize-lines: 1
+    * This ensures that the ``ArrayStack`` implementation actually implements the operations required to make it a ``Stack``
 
-    public class ArrayStack<T> implements Stack<T> {
-
-        private static final int DEFAULT_CAPACITY = 100;
-        private T[] stack;
-        private int top;
-
-    }
-
-
-* We want our ``ArrayStack`` to implement the ``Stack`` interface
-    * This way anyone using our implementation knows that it is a ``Stack``
         * The ``ArrayStack`` **is a** ``Stack``
         * Anything expecting a ``Stack`` will be happy getting an ``ArrayStack`` since **it is a stack**
-    * Note line 1 where we specifically say ``ArrayStack<T> implements Stack<T>``
 
-* Since our ``ArrayStack`` is generic, we don't know what type the array should be at this stage, so we make it an array of type ``T``
+    * Note line 10 in the below example where it specifies that the ``ArrayStack<T> implements Stack<T>``
+
+
+* The fields are
+
+    * An integer ``top`` to keep track of where the top of the stack is
+    * The ``stack`` array to hold the elements in the stack
+
+        * Since the ``ArrayStack`` is generic its type is ``T``
+
+
+.. literalinclude:: /../main/java/ArrayStack.java
+    :language: java
+    :linenos:
+    :lineno-start: 10
+    :lines: 10-14
+    :emphasize-lines: 1
+
 
 .. warning::
 
-    When you start implementing an interface, you may see your IDE telling you there is an error. This is to be expected
-    since you are saying that you are implementing the interface, so Java is expecting you to implement all abstract
-    methods from the interface. This error will go away once all abstract methods are implemented.
+    When starting to implement an interface, the IDE may produce a error saying that the interface is not implemented.
+    This is because Java is expecting all abstract methods from the interface to be implemented. This error will go away
+    once all abstract methods are implemented.
 
-        .. image:: warning_implement.png
-           :width: 500 px
-           :align: center
+        .. figure:: warning_implement.png
+            :width: 500 px
+            :align: center
+
+            Example of the error IntelliJ will produce if not all abstract methods from the ``Stack`` interface are
+            implemented.
+
 
 
 Constructors
-^^^^^^^^^^^^
+------------
 
-* Like the ``ContactList`` example, we will make two constructors
-    * One will use the default value
-    * The other will allow us to provide a starting size of the array
+* Like the ``ContactList`` example, there will be two constructors
+
+    * One making use of the default value
+    * The other to create an array of a specified starting capacity
 
 
-.. code-block:: Java
+.. literalinclude:: /../main/java/ArrayStack.java
+    :language: java
     :linenos:
-    :emphasize-lines: 2, 9
+    :lineno-start: 16
+    :lines: 16-34
+    :emphasize-lines: 5, 18
 
-        public ArrayStack() {
-            this(DEFAULT_CAPACITY);
-        }
 
-        public ArrayStack(int size) {
-            top = 0;
-            // Generic types cannot be instantiated so we cast
-            // This does generate a compile time warning
-            stack = (T[]) new Object[size];
-        }
+* This is making use of :doc:`constructor chaining </topics/objects-review/chaining>`
+* Notice that the array being created is an array of type ``Object`` that is ``cast`` to the generic type ``T``
 
-* You will see what we are doing overloading and  :doc:`constructor chaining </topics/objects-review/chaining>`
-* You will also see that we are creating an array of type ``Object`` and then *casting* it to the generic type `T`
-    * We cannot actually instantiate (create) a generic type
-        * Asterisk
-    * Java also forbids creating a generic array
-        * `Details are outside the scope of this topic and likely class <https://dzone.com/articles/covariance-and-contravariance>`_
+    * Java forbids creating a generic array
+    * `Details are outside the scope of this topic and likely class <https://dzone.com/articles/covariance-and-contravariance>`_
 
-* When doing this, Java will warn us that there is now an unchecked type conversion
+* When doing this, Java will warn that there is now an unchecked type conversion
+
     * Java can't guarantee that the cast will work right
 
-* You can ignore this here
-* However, if we'd like, we can suppress the warning by adding the following before the constructor
+* This can be ignored, however, the warning may be suppressed by adding the following before the constructor
+
     * ``@SuppressWarnings("unchecked")``
 
 
 * Creating an instance ``Stack<Integer> s = new ArrayStack<>(5);``
 
-        .. image:: arraystack_empty.png
-           :width: 500 px
-           :align: center
+.. figure:: arraystack_empty.png
+    :width: 400 px
+    :align: center
 
+    A visualization of an ``ArrayStack`` created with a starting capacity of ``5``. The instance ``s`` could have been
+    created with ``Stack<Integer> s = new ArrayStack<>(5);``. Although the type ``Integer`` is specified in the
+    declaration, there is nothing within the figure to indicate that the elements within the stack would be of type
+    ``Integer``.
 
 
 Push
-^^^^
+----
 
-.. code-block:: Java
+.. literalinclude:: /../main/java/ArrayStack.java
+    :language: java
     :linenos:
-    :emphasize-lines: 2, 3, 13
+    :lineno-start: 36
+    :lines: 36-56
+    :emphasize-lines: 1, 3, 4, 5, 15
 
-        public void push(T element) {
-            if (top == stack.length) {
-                expandCapacity();
-            }
-            stack[top] = element;
-            top++;
-        }
 
-        /**
-         * Doubles the size of the stack array and copy the
-         * contents over.
-         */
-        private void expandCapacity() {
-            T[] newStack = (T[]) new Object[stack.length * 2];
-            for (int i = 0; i < stack.length; ++i) {
-                newStack[i] = stack[i];
-            }
-            stack = newStack;
-        }
+* Notice the ``@Override`` annotation before the ``push`` method
 
-* Like the ``ContactList`` example, we will need to watch the size of our array
+    * This tells the compiler that the method ``push`` from the interface is being overridden
+    * It is not required to include this annotation, but it can help eliminate errors
+
+* Like the ``ContactList`` example, a private ``expandCapacity`` method is included
+
+    * If trying to ``push`` to a stack that has a full ``stack`` array, ``expandCapacity`` is called
+    * The private ``expandCapacity`` method will
+
+        * Make a new and larger array
+        * Copy the contents of the old ``stack`` array to the new array
+        * Set the field ``stack`` to reference the new larger array
+
 
 
 Pop and Peek
-^^^^^^^^^^^^
+------------
 
-* ``pop`` and ``peek`` will be similar, except peek leaves the top alone
+* The ``pop`` and ``peek`` methods will be similar, except peek leaves the stack unchanged
 
-.. code-block:: Java
+.. literalinclude:: /../main/java/ArrayStack.java
+    :language: java
     :linenos:
-    :emphasize-lines: 2, 3, 4, 12, 13, 14
-
-        public T pop() {
-            if (isEmpty()) {
-                throw new NoSuchElementException();
-            }
-            top--;
-            T returnElement = stack[top];
-            stack[top] = null;
-            return returnElement;
-        }
-
-        public T peek() {
-            if (isEmpty()) {
-                throw new NoSuchElementException();
-            }
-            return stack[top - 1];
-        }
+    :lineno-start: 58
+    :lines: 58-75
+    :emphasize-lines: 3, 4, 5, 14, 15, 16
 
 
+Exceptional Situations
+^^^^^^^^^^^^^^^^^^^^^^
 
+* What should happen if someone tries to ``pop`` or ``peek`` from an empty stack?
 
-**Exceptional Situations**
-
-* What should we do when someone tries to ``pop`` or ``peek`` from an empty stack?
-    * Ignore and do nothing?
+    * Ignore it and do nothing?
     * Crash the program?
     * Something else?
 
-* Hard to say
-* What should be done is not up to us as the people implementing the stack
 
-* As a rule, you should follow `the principal of least surprise <https://en.wikipedia.org/wiki/Principle_of_least_astonishment>`_
-* Should we expect to get nothing back when requesting the top?
-* Perhaps it's more reasonable that the request was invalid in the first place
+* What should be done in this situation is not up to those implementing the stack
+* As a rule, one should follow `the principal of least surprise <https://en.wikipedia.org/wiki/Principle_of_least_astonishment>`_
 
-* Imagine having two apples and asking the two apples for the third apple
-* The natural response the apples would have is "...wut?"
-    * An exception
+* Consider someone using the ``ArrayStack`` class --- should they ever expect to get nothing back when requesting the top?
 
-* Remember, we are implementing a stack that can be used somewhere else
-* What should be done will depend on what the code using the stack is doing
-* The point is, I cannot possibly know what you will want to do tomorrow with my stack implementation
+    * No --- the ``pop`` and ``peek`` methods explicitly say they return a value
 
-* What I can do however is throw an exception to let the user know something exceptional happened
-* It is up to them to deal with the situation
 
-.. warning::
+* Perhaps it's more reasonable to assume that the request was invalid in the first place
 
-    To use the ``NoSuchElementException``, we will need to import it --- ``import java.util.NoSuchElementException;``
+    * An exceptional thing happened
 
-size and isEmpty
-^^^^^^^^^^^^^^^^
 
-.. code-block:: Java
+* Remember, the ``ArrayStack`` is designed to be general purpose and can be used in many situations
+* What should be done when calling ``pop`` or ``peek`` on an empty stack will depend on the specific situation
+
+* The point is, when implementing the ``ArrayStack``, it is not possible to know what should be done in the exceptional situation
+* What can be done, however, is to throw an exception to inform the user that something exceptional happened
+* Then it is up to the user to deal with the exceptional situation as they see fit
+
+
+
+``size`` and ``isEmpty``
+------------------------
+
+.. literalinclude:: /../main/java/ArrayStack.java
+    :language: java
     :linenos:
-    :emphasize-lines: 2
+    :lineno-start: 77
+    :lines: 77-85
+    :emphasize-lines: 3
 
-        public int size() {
-            return top;
-        }
 
-        public boolean isEmpty() {
-            return size() == 0;
-        }
+* Notice how, because of zero based indexing, ``top`` is both
 
-* Notice how, because of zero based indexing
-    * ``top`` tells us the next available spot in the array
-    * And the number of things in the stack
+    * The index of the next available spot in the ``stack`` array
+    * The number of elements in the stack
 
-toString
-^^^^^^^^
 
-.. code-block:: Java
+``toString``
+------------
+
+.. literalinclude:: /../main/java/ArrayStack.java
+    :language: java
     :linenos:
-
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < top; ++i) {
-            builder.append(stack[i]);
-            builder.append(", ");
-        }
-        builder.append("<-- Top");
-        return builder.toString();
-    }
-
-* See if you can figure out what the ``toString`` will return based on this code
+    :lineno-start: 87
+    :lines: 87-95
+    :emphasize-lines: 6
 
 
-For next time
+* The above ``toString`` example uses :doc:`a string builder. </topics/objects-review/builder>`
+* Ideally the top element in the stack would be the left most element in the string representation of a stack
+* However, index ``0`` in the ``stack`` array is the bottom of the stack
+* For this reason, each element is inserted to the front of the string builder
+
+
+``equals`` and ``hashCode``
+---------------------------
+
+.. literalinclude:: /../main/java/ArrayStack.java
+    :language: java
+    :linenos:
+    :lineno-start: 97
+    :lines: 97-116
+    :emphasize-lines: 10
+
+
+* Two ``ArrayStack`` objects are considered equal if the contents of the ``stack`` arrays are equal
+
+
+.. note::
+
+    Like the other methods in the class, the ``@Override`` annotation on the ``toString``, ``equals``, and ``hashCode``
+    methods tell the compiler that the method is overriding one in another class. However, unlike ``push``, ``pop``,
+    ``peek``, ``size``, and ``isEmpty`` methods, the overridden methods are not from the ``Stack`` interface, but the
+    ``Object`` class. All classes inherit from the ``Object`` class which has implementations of the ``toString``,
+    ``equals``, and ``hashCode`` methods.
+
+
+For Next Time
 =============
 
 * Download and play with
+
     * :download:`Stack </../main/java/Stack.java>`
     * :download:`ArrayStack </../main/java/ArrayStack.java>`
     * :download:`ArrayStack </../main/java/PlayingArrayStack.java>`
@@ -274,7 +316,9 @@ For next time
 * :doc:`Check out the aside on testing <unit-tests>`
 * Download and run the :download:`ArrayStackTest </../test/java/ArrayStackTest.java>` tests
 * Finish reading Chapter 3
+
     * 16 pages
+
 
 Playing Code
 ============
