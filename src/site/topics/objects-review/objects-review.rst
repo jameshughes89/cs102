@@ -343,38 +343,87 @@ Accessors
 
 * For the ``Friend`` class, two objects will be equal if all their fields match
 
-.. code-block:: java
+.. literalinclude:: /../main/java/Friend.java
+    :language: java
     :linenos:
-
-    /**
-     * Checks if two Friend objects are equal. Friend objects are considered equal if all their attributes are equal.
-     *
-     * @param other A Friend being compared to.
-     * @return True if the two objects are equal, false otherwise.
-     */
-    public boolean equals(Friend other) {
-        return this.firstName.equals(other.firstName) &&
-                this.lastName.equals(other.lastName) &&
-                this.email.equals(other.email);
-    }
-
-* In the above example, notice the use of ``this`` and ``other``
-
-    * This eliminates any ambiguity of which ``Friend`` instance the field is coming from
+    :lineno-start: 61
+    :lines: 61-86
 
 
-* Also notice the use of the ``equals`` method on the strings since it's a check for equality of strings, not sameness
+* There is a lot going on in this method
 
-        * e.g., ``this.firstName.equals(other.firstName)``
+* First it checks if the ``Object`` ``o`` is the actual thing being compared to --- ``if (o == this)``
+
+    * If they are aliases for the same object
+    * If they are, then obviously they are equal
 
 
-.. warning::
+* It also check if it is null --- ``if (o == null)``
 
-    The above ``equals`` is actually not particularly good, but is included here for simplicity. The ``equals``
-    implemented in the provided ``Friend.java`` file is more complex, but better.
+    * If it is null, then clearly ``this`` cannot be equal to ``o``
 
-    :doc:`Read the aside on equals for more details. <equals>` The more complex, but improved ``equals`` will be used
-    going forward in the course.
+
+* It then checks if they are of the same class --- ``if (o.getClass() != this.getClass())``
+
+    * If they are not, then they are not equal
+
+
+* If the method gets to this point, it knows that ``o`` is of class ``Friend``
+* It *downcast* the ``Object`` to class ``Friend``
+
+    * This allows for accessing the fields and methods from ``Friend``
+
+
+* Lastly, it check if all the attributes are equal
+
+
+.. note::
+
+    It is important to understand the difference between ``someObject == someOtherObject``,
+    ``someObject.equals(someOtherObject)``, and ``Objects.equals(someObject, someOtherObject)``.
+
+    With ``someObject == someOtherObject``, it checks if ``someObject`` and ``someOtherObject`` are referencing the same
+    object -- aliases.
+
+    ``someObject.equals(someOtherObject)`` checks if ``someObject`` and ``someOtherObject`` are equivalent based on
+    ``someObject`` class' ``equals`` method.
+
+    ``Objects.equals(someObject, someOtherObject)`` is the same as ``someObject.equals(someOtherObject)``, but makes the
+    equality check *null safe*. In other words, it first checks if both ``someObject`` and ``someOtherObject`` are null,
+    because then they are equal. Further, it won't produce a ``NullPointerException`` if ``someObject`` happens to be
+    ``null``.
+    `Have a look at the relevant javadocs <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Objects.html#equals(java.lang.Object,java.lang.Object)>`__
+
+    The below example makes use of the third option to be safe around ``null``, but realistically, based on the way the
+    ``Friend`` class is written, it is not possible for an instance of a ``Friend`` object to be created with ``null``
+    fields. In other words, the second option would be fine, but using the third option would still be more defensive.
+
+
+``hashCode``
+^^^^^^^^^^^^
+
+* When properly writing the ``equals`` method, one should also write another special method --- ``hashCode()``
+
+    * The full details on what ``hashCode`` is and what it is for is beyond the scope of this course
+    * Briefly, it is a function used to convert the object into an ``int`` hash value
+    * Any two objects that are equal must have the same hash value
+    * Ideally, the hash value should aim to have different hashes
+
+        * Any *unequal* objects should have different hash values
+        * Unfortunately, hash *collisions* --- cases where unequal things have the same hash --- are inevitable
+
+
+* Below is an example ``hashCode`` for the ``Friend`` class
+
+    * This ``hashCode`` effectively returns the sum of the hash values of the three ``String`` attributes
+    * For simple classes like the ``Friend`` class, this pattern will be typical
+
+
+.. literalinclude:: /../main/java/Friend.java
+    :language: java
+    :linenos:
+    :lineno-start: 88
+    :lines: 88-91
 
 
 
