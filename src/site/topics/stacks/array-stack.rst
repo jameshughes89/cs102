@@ -2,16 +2,18 @@
 ArrayStack
 **********
 
-* We now are familiar with *what* we want the stack ADT to do without talking about *how*
-* Obviously, in order to use a stack in Java, we need to actually implement a stack
+* Having seen *what* a stack can do
+* It is time to start discussing *how*
+* There are a few implementation issues to consider
 
-* We now need to think about implementation issues
-    * How are we going to keep track of our data?
-    * How will we know where the top is?
-        * This will depend on the choice of how we store the data
+    * How is the data going to be stored?
+    * How will the top of the stack be managed?
 
-Implementing a Stack --- Array Container
-========================================
+
+Implementing a Stack with an Array
+==================================
+
+
 
 ArrayStack Implementation Issues
 --------------------------------
