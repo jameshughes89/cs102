@@ -247,7 +247,7 @@ Stack Interface
 
 
 Generics
---------
+========
 
 
 * The use of ``<T>`` is something new and not an idea discussed yet
@@ -278,7 +278,7 @@ Generics
 
 
 There has to be a Better Way!
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------
 
 * There is --- **generics**
 
