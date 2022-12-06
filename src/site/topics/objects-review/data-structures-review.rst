@@ -336,6 +336,10 @@ toString
 
 
 
+``equals`` and ``hashCode``
+---------------------------
+
+
 For Next Time
 =============
 
