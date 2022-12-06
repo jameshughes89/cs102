@@ -7,19 +7,21 @@ LinkedStack
 * Now, being aware of linked structures, a linked based stack may be implemented --- ``LinkedStack``
 
 
-StackADT
-========
+Stack ADT
+=========
 
-* :download:`We already wrote our Stack.java</../main/java/Stack.java>` interface
+* :download:`The Stack interface was already written </../main/java/Stack.java>`
 
-* Remember, for a ``Stack`` we want
+* Remember, based on the interface, a stack must implement the following methods
+
     * ``push``
     * ``pop``
     * ``peek``
-    * ``size``
     * ``isEmpty``
+    * ``size``
 
-* Also remember that these say nothing about *how* exactly these are implemented
+
+* Also remember that the interface strictly defines the *what* and says nothing about the *how*
 
 
 Implementing a Stack --- Linked Container
