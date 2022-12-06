@@ -133,10 +133,6 @@ The Math, Stats, and CS Society has a time and location for
     :caption: Assignments
     :maxdepth: 1
 
-    assignments/country-catalogue/country-catalogue
-    assignments/maze-solver/maze-solver
-    assignments/maze-solver-too/maze-solver-too
-    assignments/huffman-codes/huffman-codes
 
 
 .. toctree::
