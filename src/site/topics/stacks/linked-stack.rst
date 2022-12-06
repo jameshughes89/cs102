@@ -172,6 +172,11 @@ toString
 * We have it matching the output format that the ``ArrayStack``'s ``toString`` had
 
 
+
+Nested Node Class
+=================
+
+
 For Next Time
 =============
 
