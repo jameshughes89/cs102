@@ -72,7 +72,6 @@ Implementation
     :linenos:
     :lineno-start: 3
     :lines: 1-20
-    :emphasize-lines: 1
 
 
 * Like the ``ArrayStack``, the ``LinkedStack`` will implement the ``Stack`` interface
@@ -176,12 +175,65 @@ toString
 Nested Node Class
 =================
 
+* Consider the doubly linked structure
+
+.. figure:: /topics/linked-structures/double_links.png
+    :width: 400 px
+    :align: center
+
+* Since this structure need a reference to both the ``next`` and ``previous`` nodes, the existing ``Node`` class will not work
+* Also consider that the ``Node`` class would only be used for a linked implementation of something
+
+    * As far as the user of a ``LinkedStack`` is concerned, they don't care about the ``Node`` class, they just care that the ``LinkedStack`` works
+
+        * *I don't know, I don't want to know*
+
+
+    * Similar idea to the private method ``expandCapacity`` in the ``ArrayStack``
+
+
+* Does it make sense to have the ``Node`` class accessible from everywhere?
+
+
+Nested Classes
+--------------
+
+* Thinking about the doubly linked structure, what should the node class be called, ``Node``?
+
+    * This would be a problem if there already exists a ``Node`` class
+
+
+* Instead, the ``Node`` class can be put inside the ``LinkedStack`` class
+
+    * If this is done, the ``Node`` class can still be accessed by the ``LinkedStack`` class
+    * But, it's only accessible from within that class, so it keeps the ``Node`` class out of the way of all other classes
+
+
+* Going back to the doubly linked structure, a ``Node`` class can exist within the class using the doubly linked structure
+
+    * It will not introduce any ambiguity since the singly linked and doubly linked structure's ``Node`` classes are nested within their respective classes
+
+
+* Perhaps this is not *that* big of a problem, and there are other ways around it
+* But since the two classes are inextricably connected, nesting ``Node`` makes sense
+
+
+Nesting in LinkedStack
+----------------------
+
+* Below is an example of the nested ``Node`` class at the end of the ``LinkedStack`` class
+
+.. literalinclude:: /../main/java/LinkedStack.java
+    :language: java
+    :linenos:
+    :lineno-start: 107
+    :lines: 107-142
+
+
 
 For Next Time
 =============
 
-
-* Look into the :doc:`nested node class aside. <nested>`
 * Download and play with the :download:`LinkedStack </../main/java/LinkedStack.java>` code
 * Download and run the :download:`LinkedStackTest </../test/java/LinkedStackTest.java>` tests
 * Read Chapter 4 Section 6
