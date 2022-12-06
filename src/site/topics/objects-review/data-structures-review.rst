@@ -192,7 +192,15 @@ Index Of
 
 * This method checks if the ``Friend`` exists, and if it does not, it throws an exception
 
-    * The provided ``Friend`` is provided to the exception for its message
+    * A string representation of the provided ``Friend`` is given to the exception for its message
+
+        * It uses ``Objects.toString`` as it is null safe
+
+
+    * This way the exception provides details on what happened
+    * For example, if trying to get the index a ``Friend`` object that does not exist
+
+        * ``Exception in thread "main" java.util.NoSuchElementException: Friend(Sammy, Silver, samtheman@yahoo.com)``
 
 * If it does exist, this method simply delegates the work to the private ``find`` method
 
