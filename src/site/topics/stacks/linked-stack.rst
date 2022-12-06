@@ -223,6 +223,8 @@ Nesting in LinkedStack
 
 * Below is an example of the nested ``Node`` class at the end of the ``LinkedStack`` class
 
+    * Notice that it is both ``private`` and ``static``
+
 .. literalinclude:: /../main/java/LinkedStack.java
     :language: java
     :linenos:
