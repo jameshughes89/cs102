@@ -305,26 +305,35 @@ toString
 
     * Have each ``Friend`` within the ``ContactList`` be on its own line
 
-.. code-block:: java
+
+* One could simply loop over the array and perform several string concatenations
+* However, due how ``String`` objects work, it ends up being wasteful to continually append to strings
+
+    * ``String`` objects are *immutable*
+
+        * They cannot be changed once they are created
+
+
+    * When appending, a new ``String`` object needs to be created
+
+
+* An alternative to continually appending to a ``String`` is a ``StringBuilder``, which eliminates the extra overhead
+* See the below example of the ``ContactList`` class' ``toString`` that makes use of a ``StringBuilder``
+
+.. literalinclude:: /../main/java/ContactList.java
+    :language: java
     :linenos:
+    :lineno-start: 177
+    :lines: 177-184
     :emphasize-lines: 4
 
-    public String toString() {
-        String s = "";
-        for (int i = 0; i < size(); i++) {
-            s = s + friends[i].toString() + "\n";
-        }
-        return s;
-    }
 
+.. note::
 
-* Notice that this actually makes use of the ``Friend`` class' ``toString`` method
-* This method makes use of string concatenation
+    In the above example, the instances of ``Friend`` objects are not having their ``.toString()`` methods called
+    explicitly. This is unnecessary here since the ``StringBuilder`` object's ``append`` method would call it
+    automatically.
 
-.. warning::
-
-    Although the above example is correct, in practice one would want to use something called a ``StringBuilder``.
-    :doc:`See the aside on string builders for more details. <builder>`
 
 
 For Next Time
