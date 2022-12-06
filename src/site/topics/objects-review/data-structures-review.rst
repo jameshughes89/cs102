@@ -219,6 +219,7 @@ Get
 * If the index is out of bounds, an exception is thrown
 
     * The invalid index is provided to the exception for its message
+    * Example message from an exception being thrown --- ``Exception in thread "main" java.lang.IndexOutOfBoundsException: Index out of range: 99``
 
 
 Remove Friends
@@ -237,21 +238,22 @@ Remove Friends
 * Remove first checks if the ``Friend`` object exists within the ``ContactList``
 
     * If does not exist, an exception will be thrown
-    * The provided ``Friend`` is provided to the exception for its message
+    * A string representation of the provided ``Friend`` is given to the exception for its message
+
 
 * To actually remove the ``Friend``, all that needs to happen is for the program to lose reference to it
-* In the above example, the array at the index of the ``Friend`` to be removed is set to the ``Friend`` at the end of the array
+* In the above example, the array at the index of the ``Friend`` to be removed is set to reference the ``Friend`` at the end of the array
 
-    * ``friendCount - 1``
+    * ``friends[size - 1]``
 
 
 * Once this is done, the array has no reference to the ``Friend`` that was removed
-* The array at index ``friendCount - 1`` is set to ``null``
+* The array at index ``size - 1`` is set to ``null``
 
     * Although not necessary, it is not a bad idea to explicitly remove the reference at the end
 
 
-* After the ``Friend`` has been removed, the size of the ``ContactList`` needs to be decreased by 1
+* After the ``Friend`` has been removed, the size of the ``ContactList`` needs to be decreased by ``1``
 
 .. figure:: remove.png
     :width: 600 px
@@ -274,7 +276,7 @@ Clear Friends
 
 
 * Here, simply create a new empty array and set the size to ``0``
-* Since the old array referenced by ``friends`` has no more reference, it get managed by the garbage collector
+* Since the old array referenced by ``friends`` has no more reference to it, it get managed by the garbage collector
 * One could have gone through the array and set each index to reference ``null``, but this is easier
 * Further, setting the size to ``0`` would also be sufficient
 
