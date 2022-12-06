@@ -70,7 +70,7 @@ Implementation
 .. literalinclude:: /../main/java/LinkedStack.java
     :language: java
     :linenos:
-    :lineno-start: 3
+    :lineno-start: 1
     :lines: 1-20
 
 
@@ -78,98 +78,70 @@ Implementation
 * The constructor creates an empty stack with nothing in it
 
 
-Push
-----
+``Push``
+--------
 
-.. code-block:: java
+.. literalinclude:: /../main/java/LinkedStack.java
+    :language: java
     :linenos:
-    :emphasize-lines: 4, 5
+    :lineno-start: 22
+    :lines: 22-29
 
-        @Override
-        public void push(T element) {
-            Node<T> toPush = new Node<T>(element);
-            toPush.setNext(top);
-            top = toPush;
-            size++;
-        }
 
 * In ``push``, notice how this is just *adding to the front of a linked structure*
 
 
-Pop & Peek
-----------
 
-.. code-block:: java
+``Pop`` & ``Peek``
+------------------
+
+.. literalinclude:: /../main/java/LinkedStack.java
+    :language: java
     :linenos:
-    :emphasize-lines: 7
+    :lineno-start: 31
+    :lines: 31-48
 
-        @Override
-        public T pop() {
-            if (isEmpty()) {
-                throw new NoSuchElementException();
-            }
-            T returnElement = top.getData();
-            top = top.getNext();
-            size--;
-            return returnElement;
-        }
-
-        @Override
-        public T peek() {
-            if (isEmpty()) {
-                throw new NoSuchElementException();
-            }
-            return top.getData();
-        }
 
 * Like the ``ArrayStack``, popping or peeking from an empty stack throws an exception
 * Notice how ``pop`` does a *remove/delete from the front of a linked structure*
 
 
-Size and isEmpty
-----------------
+``size`` and ``isEmpty``
+------------------------
 
-.. code-block:: java
+.. literalinclude:: /../main/java/LinkedStack.java
+    :language: java
     :linenos:
-
-        @Override
-        public boolean isEmpty() {
-            return size == 0;
-        }
-
-        @Override
-        public int size() {
-            return size;
-        }
-
-* The ``LinkedStack`` is empty if its ``size == 0``
-    * Can you think of another way to check if it's empty?
+    :lineno-start: 50
+    :lines: 50-58
 
 
-toString
---------
+* The ``LinkedStack`` is empty if its ``size() == 0``
 
-.. code-block:: java
+    * How else could this condition be checked?
+
+
+``toString``
+------------
+
+.. literalinclude:: /../main/java/LinkedStack.java
+    :language: java
     :linenos:
+    :lineno-start: 60
+    :lines: 60-70
 
-        @Override
-        public String toString() {
-            StringBuilder builder = new StringBuilder();
-            builder.append(", ");
-            Node<T> currentNode = top;
-            while (currentNode != null) {
-                builder.insert(0, currentNode.getData());
-                builder.insert(0, ", ");
-                currentNode = currentNode.getNext();
-            }
-            builder.delete(0, 2);
-            builder.append("<-- Top");
-            return builder.toString();
-        }
 
-* It's a little ugly here
-* We have it matching the output format that the ``ArrayStack``'s ``toString`` had
+* This is matching the output format that the ``ArrayStack``\'s ``toString`` had
 
+
+``equals`` & ``hashCode``
+-------------------------
+
+.. literalinclude:: /../main/java/LinkedStack.java
+    :language: java
+    :linenos:
+    :lineno-start: 72
+    :lines: 72-105
 
 
 Nested Node Class
