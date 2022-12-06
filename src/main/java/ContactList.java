@@ -166,13 +166,6 @@ public class ContactList {
         return size;
     }
 
-    //    public String toString() {
-    //        String s = "";
-    //        for (int i = 0; i < size(); i++) {
-    //            s = s + friends[i].toString() + "\n";
-    //        }
-    //        return s;
-    //    }
 
     public String toString() {
         StringBuilder builder = new StringBuilder();
