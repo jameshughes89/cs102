@@ -175,8 +175,8 @@ Constructors
     ``Integer``.
 
 
-Push
-----
+``Push``
+--------
 
 .. literalinclude:: /../main/java/ArrayStack.java
     :language: java
@@ -202,8 +202,8 @@ Push
 
 
 
-Pop and Peek
-------------
+``Pop`` and ``Peek``
+--------------------
 
 * The ``pop`` and ``peek`` methods will be similar, except peek leaves the stack unchanged
 
