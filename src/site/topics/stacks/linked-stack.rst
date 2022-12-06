@@ -67,23 +67,16 @@ Implementing a Stack with a Linked Structure
 Implementation
 ==============
 
-.. code-block:: java
+.. literalinclude:: /../main/java/LinkedStack.java
+    :language: java
     :linenos:
+    :lineno-start: 3
+    :lines: 1-20
+    :emphasize-lines: 1
 
-    import java.util.NoSuchElementException;
 
-    public class LinkedStack<T> implements Stack<T> {
-
-        private Node<T> top;
-        private int size;
-
-        public LinkedStack() {
-            top = null;
-            size = 0;
-        }
-
-* Like the ``ArrayStack``, we want our ``LinkedStack`` to implement the ``Stack`` interface
-* The constructor starts the stack as empty with nothing on it
+* Like the ``ArrayStack``, the ``LinkedStack`` will implement the ``Stack`` interface
+* The constructor creates an empty stack with nothing in it
 
 
 Push
