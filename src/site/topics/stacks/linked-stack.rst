@@ -2,9 +2,10 @@
 LinkedStack
 ***********
 
-* We have already implemented a ``Stack`` as an ``ArrayStack``
-* We have also seen how we can use a series of nodes to create a linked structure
-* Let's now implement a ``Stack`` as a ``LinkedStack`` which uses a linked structure to hold onto the data
+* The ``Stack`` was defined with an interface
+* An array based implementation of the stack was created --- ``ArrayStack``
+* Now, being aware of linked structures, a linked based stack may be implemented --- ``LinkedStack``
+
 
 StackADT
 ========
