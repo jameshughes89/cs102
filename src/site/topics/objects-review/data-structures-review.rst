@@ -106,13 +106,6 @@ Adding Friends
     * Arrays have a fixed size
     * The capacity of the array is not the same as the number of ``Friends`` in the collection
 
-.. literalinclude:: /../main/java/ContactList.java
-    :language: java
-    :linenos:
-    :lineno-start: 35
-    :lines: 35-67
-    :emphasize-lines: 9, 10, 11
-
 
 * Since the array has a fixed size, it's not possible to add more ``Friend`` objects beyond the size of the array
 * However, it would be ideal if it were possible to continually add ``Friend`` objects without worrying about the capacity
@@ -120,7 +113,7 @@ Adding Friends
 
     * Make a new array that is bigger
     * Copy over the contents of the old array to the new array
-    * Assign the field ``friends`` to reference the new, bigger array
+    * Assign the array field ``friends`` to reference the new, bigger array
 
 
 .. figure:: expand_capacity.png
@@ -132,13 +125,25 @@ Adding Friends
     larger array.
 
 
+.. literalinclude:: /../main/java/ContactList.java
+    :language: java
+    :linenos:
+    :lineno-start: 35
+    :lines: 35-67
+    :emphasize-lines: 9, 10, 11
+
+
 * The ``expandCapacity`` method gets called automatically by the ``add`` method if the array has run out of space
 
     * If the array had enough room, ``expandCapacity`` is not called
 
 * Either way, the ``Friend`` being added via the ``add`` method will always go to the next available spot
-* When done, this method returns a ``boolean`` indicating if the ``add`` worked correctly
 
+    * Notice that the value in the ``size`` field also corresponds to the next available spot in the array
+    * For example, if there are ``0`` ``Friend`` objects in the ``ContactList``, the next available spot in the array is ``0``
+
+
+* When done, this method returns a ``boolean`` indicating if the ``add`` worked correctly
 * Also notice that the ``expandCapacity`` method is ``private``
 
     * This method is important for the inner workings of the ``ContactList`` class
