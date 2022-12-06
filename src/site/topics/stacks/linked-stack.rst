@@ -227,5 +227,6 @@ Playing Code
 * If everything was done correctly, the following code from ``PlayingLinkedStack`` should work
 
 .. literalinclude:: /../main/java/PlayingLinkedStack.java
-   :language: java
-   :linenos:
+    :language: java
+    :linenos:
+    :emphasize-lines: 4
