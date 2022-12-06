@@ -21,14 +21,11 @@ Contact List Class
 
     * A way to keep track of the ``Friends`` in the ``ContactList``
 
-        * An array will be used here
+        * An *array* will be used here
 
     * A count of how many ``Friend`` objects the ``ContactList`` contains
 
         * Just an ``int``
-
-
-* The Python examples are not included for the ``ContactList`` class
 
 
 Setting Fields and Writing the Constructor
@@ -52,7 +49,7 @@ Setting Fields and Writing the Constructor
 * Most of these are ideas one should already be familiar with
 
     * The imports are used for functionality described below
-    * One constant, ``DEFAULT_CAPACITY``,  defines the default size an array should have --- more on this below
+    * One constant, ``DEFAULT_CAPACITY``, defines the default size an array should have --- more on this below
     * The other constant, ``NOT_FOUND``, is used to provide a name to the sentinel value of ``-1`` --- more detail below
     * The declaring of the fields is similar to what was seen in the ``Friend`` class
 
@@ -60,12 +57,12 @@ Setting Fields and Writing the Constructor
 * Having two constructors is a new idea that was not used in Python
 * In several programming languages, it is possible to have multiple methods with the same name that take different parameters
 
-    * This is valued *overloading*
+    * This is called *overloading*
 
 
 * Notice that one constructor takes no parameters and the other takes a single integer ``capacity``
 * For now, focus on the second one; the one that takes the parameter
-* It first sets the size of the ``ContactList`` field to ``0`` since a new ``ContactList`` is empty
+* It first sets the ``size`` field of the ``ContactList`` to ``0`` since a new ``ContactList`` is empty
 * It then creates a new empty ``Friend`` array of size ``capacity``
 
     * Remember, arrays have a fixed size
@@ -87,11 +84,11 @@ Setting Fields and Writing the Constructor
         * In this example, it ultimately calls ``ContactList(10)``
         * See the :doc:`constructor chaining <chaining>` aside for more details
 
-    * The fact that ``DEFAULT_CAPACITY`` was set to 10 is entirely arbitrary
+    * The fact that ``DEFAULT_CAPACITY`` was set to ``10`` in this class is entirely arbitrary
     * Further, the inclusion of the constructor that takes no parameter is entirely optional
 
 
-* We will have something like this created
+* Below is a visualization of a new and empty ``ContactList``
 
     .. figure:: contacts.png
         :width: 600 px
