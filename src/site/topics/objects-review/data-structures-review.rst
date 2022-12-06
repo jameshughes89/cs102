@@ -12,7 +12,7 @@ Data Structures Review
 
 
 Contact List Class
-------------------
+==================
 
 * With the ``Friend`` class complete, there needs to be a way to keep track of and manage the ``Friend`` objects
 * To do this, a new class called ``ContactList`` will be created
@@ -32,7 +32,7 @@ Contact List Class
 
 
 Setting Fields and Writing the Constructor
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------------
 
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
@@ -102,7 +102,7 @@ Setting Fields and Writing the Constructor
 
 
 Adding Friends
-^^^^^^^^^^^^^^
+--------------
 
 * There is some complexity involved with adding a ``Friend`` to the ``ContactList``
 
@@ -149,7 +149,7 @@ Adding Friends
 
 
 Contains and Find
-^^^^^^^^^^^^^^^^^
+-----------------
 
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
@@ -177,7 +177,7 @@ Contains and Find
 
 
 Index Of
-^^^^^^^^
+--------
 
 * The ``indexOf`` method returns the index of the specified ``Friend``, if it exists
 
@@ -196,7 +196,7 @@ Index Of
 
 
 Get
-^^^
+---
 
 * The ``get`` method returns the ``Friend`` at the specified index
 
@@ -212,7 +212,7 @@ Get
 
 
 Remove Friends
-^^^^^^^^^^^^^^
+--------------
 
 * Below is an example of a ``remove`` method that will remove a ``Friend`` from the ``ContactList``
 * This method returns a ``boolean`` to indicate if the ``remove`` was successful
@@ -252,7 +252,7 @@ Remove Friends
 
 
 Clear Friends
-^^^^^^^^^^^^^
+-------------
 
 * Clear out all the ``Friend`` objects within the ``ContactList``
 
@@ -270,7 +270,7 @@ Clear Friends
 
 
 Size and isEmpty
-^^^^^^^^^^^^^^^^
+----------------
 
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
@@ -287,7 +287,7 @@ Size and isEmpty
 
 
 toString
-^^^^^^^^
+--------
 
 * A good representation of the collection would be an aggregate of the string representations of the ``Friend`` objects
 
