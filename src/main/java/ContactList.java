@@ -166,7 +166,13 @@ public class ContactList {
         return size;
     }
 
-
+    /**
+     * Create a string representation of the ContactList. The string representation will be an aggregate of the
+     * string representations of each of the Friend objects within the ContactList. Each Friend object's string will
+     * be on its own line. If the ContactList is empty, an empty string is returned.
+     *
+     * @return String representation of the ContactList.
+     */
     public String toString() {
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < size(); i++) {

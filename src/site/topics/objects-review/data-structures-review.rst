@@ -323,9 +323,9 @@ toString
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
     :linenos:
-    :lineno-start: 177
-    :lines: 177-184
-    :emphasize-lines: 4
+    :lineno-start: 169
+    :lines: 169-183
+    :emphasize-lines: 11
 
 
 .. note::
