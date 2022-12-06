@@ -339,6 +339,45 @@ toString
 ``equals`` and ``hashCode``
 ---------------------------
 
+.. literalinclude:: /../main/java/ContactList.java
+    :language: java
+    :linenos:
+    :lineno-start: 185
+    :lines: 185-202
+
+* Here, ``Arrays.equals`` is used to check the equality on the array
+
+    * The alternative would be to loop over the array and check equality on each element within the loop
+    * `Have a look at the relevant javadocs <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Arrays.html#equals(boolean%5B%5D,int,int,boolean%5B%5D,int,int)>`__
+
+
+.. literalinclude:: /../main/java/ContactList.java
+    :language: java
+    :linenos:
+    :lineno-start: 204
+    :lines: 204-211
+
+
+* Above is an example of the ``hashCode`` method for the ``ContactList`` class
+
+    * Although clearly more complex than the ``Friend`` class in the previous topic, it still follows the same basic idea
+
+        * Sum the hash values of all the fields
+        * Although, the summing was delegated to the ``Objects`` ``hash`` function in the ``Friend`` class
+
+
+* First the ``size`` value is hashed
+* Then the array is iterated over and each element's hash is included to the running total that is ultimately returned
+* Also notice the use of the ``Objects`` class' ``hashCode`` function
+
+    * Like the ``Objects`` class' ``equals`` function, this is a null safe way to use the ``Friend`` class' ``hashCode``
+
+
+* The value ``97`` is used to scale the result since it is a prime number
+
+    * This increases the chance of producing a unique hash value
+
+
 
 For Next Time
 =============
