@@ -24,28 +24,44 @@ Stack ADT
 * Also remember that the interface strictly defines the *what* and says nothing about the *how*
 
 
-Implementing a Stack --- Linked Container
-=========================================
+Implementing a Stack with a Linked Structure
+============================================
 
-* We will keep track of the top of the stack with a field called ``top`` that references the head of the linked structure
-    * All pushing and popping happens at the head end of the linked structure
-* We will also keep track of the count
+* The top of the stack will be managed by a field called ``top`` that is a reference to the head of a linked structure
+* All pushing and popping will happen at the head end of the linked structure
+* An additional field will be needed to keep track of the size of the stack
 
-.. image:: linked_stack0.png
-   :width: 500 px
-   :align: center
+.. figure:: linked_stack0.png
+    :width: 500 px
+    :align: center
 
-.. image:: linked_stack1.png
-   :width: 500 px
-   :align: center
+    An example ``LinkedStack`` containing four elements. Note the value stored in ``top`` is a reference to a ``Node``
+    object that contains the element on the *top* of the stack.
 
-.. image:: linked_stack2.png
-   :width: 500 px
-   :align: center
 
-.. image:: linked_stack3.png
-   :width: 500 px
-   :align: center
+.. figure:: linked_stack1.png
+    :width: 500 px
+    :align: center
+
+    The state of the ``LinkedStack`` after an element was pushed. Note that ``top`` changed to reference a new ``Node``
+    containing the newly pushed element.
+
+
+.. figure:: linked_stack2.png
+    :width: 500 px
+    :align: center
+
+    The state of the ``LinkedStack`` after an element was popped. Note that ``top`` changed to reference the ``Node``
+    that was after the ``Node`` that contained the element on the top of the stack (the ``Node`` that was removed).
+
+
+.. figure:: linked_stack3.png
+    :width: 500 px
+    :align: center
+
+    The state of the ``LinkedStack`` after another element was popped. Note that, again, ``top`` changed to reference
+    the ``Node`` that was after the ``Node`` that contained the element on the top of the stack.
+
 
 
 Implementation
