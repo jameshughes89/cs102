@@ -65,7 +65,7 @@ Implementing a Stack with a Linked Structure
 
 
 Implementation
---------------
+==============
 
 .. code-block:: java
     :linenos:
@@ -87,7 +87,7 @@ Implementation
 
 
 Push
-^^^^
+----
 
 .. code-block:: java
     :linenos:
@@ -105,7 +105,7 @@ Push
 
 
 Pop & Peek
-^^^^^^^^^^
+----------
 
 .. code-block:: java
     :linenos:
@@ -135,7 +135,7 @@ Pop & Peek
 
 
 Size and isEmpty
-^^^^^^^^^^^^^^^^
+----------------
 
 .. code-block:: java
     :linenos:
@@ -155,7 +155,7 @@ Size and isEmpty
 
 
 toString
-^^^^^^^^
+--------
 
 .. code-block:: java
     :linenos:
