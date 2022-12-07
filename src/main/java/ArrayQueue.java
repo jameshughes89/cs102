@@ -4,7 +4,7 @@ import java.util.Objects;
  * Implementation of a queue with an array as the container. The array container will automatically "grow" to
  * accommodate adding beyond the initial capacity.
  *
- * @param <T> Type of elements that are to be on the queue.
+ * @param <T> Type of elements that are to be in the queue.
  */
 public class ArrayQueue<T> implements Queue<T> {
 
