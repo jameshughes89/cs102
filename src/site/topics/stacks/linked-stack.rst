@@ -2,297 +2,231 @@
 LinkedStack
 ***********
 
-* We have already implemented a ``Stack`` as an ``ArrayStack``
-* We have also seen how we can use a series of nodes to create a linked structure
-* Let's now implement a ``Stack`` as a ``LinkedStack`` which uses a linked structure to hold onto the data
+* The ``Stack`` was defined with an interface
+* An array based implementation of the stack was created --- ``ArrayStack``
+* Now, being aware of linked structures, a linked based stack may be implemented --- ``LinkedStack``
 
-StackADT
-========
 
-* :download:`We already wrote our Stack.java</../main/java/Stack.java>` interface
+Stack ADT
+=========
 
-* Remember, for a ``Stack`` we want
+* :download:`The Stack interface was already written </../main/java/Stack.java>`
+
+* Remember, based on the interface, a stack must implement the following methods
+
     * ``push``
     * ``pop``
     * ``peek``
-    * ``size``
     * ``isEmpty``
+    * ``size``
 
-* Also remember that these say nothing about *how* exactly these are implemented
+
+* Also remember that the interface strictly defines the *what* and says nothing about the *how*
 
 
-Implementing a Stack --- Linked Container
-=========================================
+Implementing a Stack with a Linked Structure
+============================================
 
-* We will keep track of the top of the stack with a field called ``top`` that references the head of the linked structure
-    * All pushing and popping happens at the head end of the linked structure
-* We will also keep track of the count
+* The top of the stack will be managed by a field called ``top`` that is a reference to the head of a linked structure
+* All pushing and popping will happen at the head end of the linked structure
+* An additional field will be needed to keep track of the size of the stack
 
-.. image:: linked_stack0.png
-   :width: 500 px
-   :align: center
+.. figure:: linked_stack0.png
+    :width: 500 px
+    :align: center
 
-.. image:: linked_stack1.png
-   :width: 500 px
-   :align: center
+    An example ``LinkedStack`` containing four elements. Note the value stored in ``top`` is a reference to a ``Node``
+    object that contains the element on the *top* of the stack.
 
-.. image:: linked_stack2.png
-   :width: 500 px
-   :align: center
 
-.. image:: linked_stack3.png
-   :width: 500 px
-   :align: center
+.. figure:: linked_stack1.png
+    :width: 500 px
+    :align: center
+
+    The state of the ``LinkedStack`` after an element was pushed. Note that ``top`` changed to reference a new ``Node``
+    containing the newly pushed element.
+
+
+.. figure:: linked_stack2.png
+    :width: 500 px
+    :align: center
+
+    The state of the ``LinkedStack`` after an element was popped. Note that ``top`` changed to reference the ``Node``
+    that was after the ``Node`` that contained the element on the top of the stack (the ``Node`` that was removed).
+
+
+.. figure:: linked_stack3.png
+    :width: 500 px
+    :align: center
+
+    The state of the ``LinkedStack`` after another element was popped. Note that, again, ``top`` changed to reference
+    the ``Node`` that was after the ``Node`` that contained the element on the top of the stack.
+
 
 
 Implementation
---------------
+==============
 
-.. code-block:: java
+.. literalinclude:: /../main/java/LinkedStack.java
+    :language: java
     :linenos:
-
-    import java.util.NoSuchElementException;
-
-    public class LinkedStack<T> implements Stack<T> {
-
-        private Node<T> top;
-        private int size;
-
-        public LinkedStack() {
-            top = null;
-            size = 0;
-        }
-
-* Like the ``ArrayStack``, we want our ``LinkedStack`` to implement the ``Stack`` interface
-* The constructor starts the stack as empty with nothing on it
+    :lineno-start: 1
+    :lines: 1-20
 
 
-Push
-^^^^
+* Like the ``ArrayStack``, the ``LinkedStack`` will implement the ``Stack`` interface
+* The constructor creates an empty stack with nothing in it
 
-.. code-block:: java
+
+``Push``
+--------
+
+.. literalinclude:: /../main/java/LinkedStack.java
+    :language: java
     :linenos:
-    :emphasize-lines: 4, 5
+    :lineno-start: 22
+    :lines: 22-29
 
-        @Override
-        public void push(T element) {
-            Node<T> toPush = new Node<T>(element);
-            toPush.setNext(top);
-            top = toPush;
-            size++;
-        }
 
 * In ``push``, notice how this is just *adding to the front of a linked structure*
 
 
-Pop & Peek
-^^^^^^^^^^
 
-.. code-block:: java
+``Pop`` & ``Peek``
+------------------
+
+.. literalinclude:: /../main/java/LinkedStack.java
+    :language: java
     :linenos:
-    :emphasize-lines: 7
+    :lineno-start: 31
+    :lines: 31-48
 
-        @Override
-        public T pop() {
-            if (isEmpty()) {
-                throw new NoSuchElementException();
-            }
-            T returnElement = top.getData();
-            top = top.getNext();
-            size--;
-            return returnElement;
-        }
-
-        @Override
-        public T peek() {
-            if (isEmpty()) {
-                throw new NoSuchElementException();
-            }
-            return top.getData();
-        }
 
 * Like the ``ArrayStack``, popping or peeking from an empty stack throws an exception
 * Notice how ``pop`` does a *remove/delete from the front of a linked structure*
 
 
-Size and isEmpty
-^^^^^^^^^^^^^^^^
+``size`` and ``isEmpty``
+------------------------
 
-.. code-block:: java
+.. literalinclude:: /../main/java/LinkedStack.java
+    :language: java
     :linenos:
-
-        @Override
-        public boolean isEmpty() {
-            return size == 0;
-        }
-
-        @Override
-        public int size() {
-            return size;
-        }
-
-* The ``LinkedStack`` is empty if its ``size == 0``
-    * Can you think of another way to check if it's empty?
+    :lineno-start: 50
+    :lines: 50-58
 
 
-toString
-^^^^^^^^
+* The ``LinkedStack`` is empty if its ``size() == 0``
 
-.. code-block:: java
+    * How else could this condition be checked?
+
+
+``toString``
+------------
+
+.. literalinclude:: /../main/java/LinkedStack.java
+    :language: java
     :linenos:
-
-        @Override
-        public String toString() {
-            StringBuilder builder = new StringBuilder();
-            builder.append(", ");
-            Node<T> currentNode = top;
-            while (currentNode != null) {
-                builder.insert(0, currentNode.getData());
-                builder.insert(0, ", ");
-                currentNode = currentNode.getNext();
-            }
-            builder.delete(0, 2);
-            builder.append("<-- Top");
-            return builder.toString();
-        }
-
-* It's a little ugly here
-* We have it matching the output format that the ``ArrayStack``'s ``toString`` had
+    :lineno-start: 60
+    :lines: 60-70
 
 
-Testing LinkedStack
-===================
+* This is matching the output format that the ``ArrayStack``\'s ``toString`` had
 
-* To ensure correctness, we will write tests with JUnit
-    * :doc:`If you have not yet, read the testing aside <unit-tests>`
 
-* All the tests will be the same as the ``ArrayStack``, except we do not need to check the ``expandCapacity``
-    * ``expandCapacity`` is not a thing in our ``LinkedStack`` implementation
+``equals`` & ``hashCode``
+-------------------------
 
-.. code-block:: java
+.. literalinclude:: /../main/java/LinkedStack.java
+    :language: java
     :linenos:
-
-        @Test
-        @DisplayName("A new stack starts empty.")
-        void aNewStackIsEmpty() {
-            Stack<Integer> stack = new LinkedStack<>();
-            assertTrue(stack.isEmpty());
-        }
-
-        @Test
-        @DisplayName("An empty stack has size 0.")
-        void emptyStackHasSizeZero() {
-            Stack<Integer> stack = new LinkedStack<>();
-            assertEquals(0, stack.size());
-        }
-
-        @Test
-        @DisplayName("isEmpty return false when it is non empty.")
-        void nonEmptyStackIsEmptyReturnsFalse() {
-            Stack<Integer> stack = new LinkedStack<>();
-            stack.push(99);
-            assertFalse(stack.isEmpty());
-        }
-
-        @Test
-        @DisplayName("Pushing items updates the size of the stack.")
-        void pushingUpdatesSize() {
-            Stack<Integer> stack = new LinkedStack<>();
-            stack.push(99);
-            stack.push(101);
-            assertEquals(2, stack.size());
-        }
-
-        @Test
-        @DisplayName("Pushing an item results in it being on the top.")
-        void pushedItemIsTopOfStack() {
-            Stack<Integer> stack = new LinkedStack<>();
-            stack.push(99);
-            assertEquals(99, stack.peek());
-        }
-
-        @Test
-        @DisplayName("Push and Pop returns in LIFO order.")
-        void pushingAndPoppingReturnsElementsInLIFOOrder() {
-            Stack<Integer> stack = new LinkedStack<>();
-            for (int i = 0; i < 6; ++i) {
-                stack.push(i);
-            }
-            for (int i = 5; i >= 0; --i) {
-                assertEquals(i, stack.pop());
-            }
-        }
-
-        @Test
-        @DisplayName("Pop throws NoSuchElementException when stack is empty.")
-        void popEmptyStackThrowsException() {
-            Stack<Integer> stack = new LinkedStack<>();
-            assertThrows(NoSuchElementException.class, () -> stack.pop());
-        }
-
-        @Test
-        @DisplayName("Peek throws NoSuchElementException when stack is empty.")
-        void peekEmptyStackThrowsException() {
-            Stack<Integer> stack = new LinkedStack<>();
-            assertThrows(NoSuchElementException.class, () -> stack.peek());
-        }
+    :lineno-start: 72
+    :lines: 72-105
 
 
-Introduction Errors for Fun
----------------------------
+Nested Node Class
+=================
 
-* To see what happens when a test fails, let's add an error into our ``LinkedStack`` implementation
-* Comment out the ``size`` updates in the ``LinkedStack`` class
+* Consider the doubly linked structure
 
-.. code-block:: java
+.. figure:: /topics/linked-structures/double_links.png
+    :width: 400 px
+    :align: center
+
+* Since this structure need a reference to both the ``next`` and ``previous`` nodes, the existing ``Node`` class will not work
+* Also consider that the ``Node`` class would only be used for a linked implementation of something
+
+    * As far as the user of a ``LinkedStack`` is concerned, they don't care about the ``Node`` class, they just care that the ``LinkedStack`` works
+
+        * *I don't know, I don't want to know*
+
+
+    * Similar idea to the private method ``expandCapacity`` in the ``ArrayStack``
+
+
+* Does it make sense to have the ``Node`` class accessible from everywhere?
+
+
+Nested Classes
+--------------
+
+* Thinking about the doubly linked structure, what should the node class be called, ``Node``?
+
+    * This would be a problem if there already exists a ``Node`` class
+
+
+* Instead, the ``Node`` class can be put inside the ``LinkedStack`` class
+
+    * If this is done, the ``Node`` class can still be accessed by the ``LinkedStack`` class
+    * But, it's only accessible from within that class, so it keeps the ``Node`` class out of the way of all other classes
+
+
+* Going back to the doubly linked structure, a ``Node`` class can exist within the class using the doubly linked structure
+
+    * It will not introduce any ambiguity since the singly linked and doubly linked structure's ``Node`` classes are nested within their respective classes
+
+
+* Perhaps this is not *that* big of a problem, and there are other ways around it
+* But since the two classes are inextricably connected, nesting ``Node`` makes sense
+
+
+Nesting in LinkedStack
+----------------------
+
+* Below is an example of the nested ``Node`` class at the end of the ``LinkedStack`` class
+
+    * Notice that it is both ``private`` and ``static``
+
+.. literalinclude:: /../main/java/LinkedStack.java
+    :language: java
     :linenos:
-    :emphasize-lines: 6, 16
-
-        @Override
-        public void push(T element) {
-            Node<T> toPush = new Node<T>(element);
-            toPush.setNext(top);
-            top = toPush;
-            //size++;
-        }
-
-        @Override
-        public T pop() {
-            if (isEmpty()) {
-                throw new NoSuchElementException();
-            }
-            T returnElement = top.getData();
-            top = top.getNext();
-            //size--;
-            return returnElement;
-        }
-
-* Once the change is made, run the tests to see what happens
-
-.. image:: assert_fail.png
-   :width: 600 px
-   :align: center
+    :lineno-start: 107
+    :lines: 107-142
 
 
-For next time
+
+For Next Time
 =============
 
-
-* Look into the :doc:`nested node class aside. <nested>`
 * Download and play with the :download:`LinkedStack </../main/java/LinkedStack.java>` code
 * Download and run the :download:`LinkedStackTest </../test/java/LinkedStackTest.java>` tests
 * Read Chapter 4 Section 6
+
     * 13 pages
 
 
 Playing Code
 ============
 
-* We can use the same code from ``PlayingArrayStack`` to play with the ``LinkedStack``
-* We only need to make one change
+* One could use the same code from ``PlayingArrayStack`` to play with the ``LinkedStack``
+* Only need to make one change
+
     * ``ArrayStack`` -> ``LinkedStack``
+
+
 * If everything was done correctly, the following code from ``PlayingLinkedStack`` should work
 
-.. literalinclude:: /../main/java/PlayingArrayStack.java
-   :language: java
-   :linenos:
+.. literalinclude:: /../main/java/PlayingLinkedStack.java
+    :language: java
+    :linenos:
+    :emphasize-lines: 4
