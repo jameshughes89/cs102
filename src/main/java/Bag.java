@@ -1,59 +1,65 @@
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
+/**
+ * A bag is a linear data structure. Bags have no defined ordering. Elements can be added and removed from a Bag.
+ *
+ * @param <T> Type of elements that are to be in the bag.
+ */
 public interface Bag<T> extends Iterable<T> {
 
     /**
      * Add an element to the bag.
      *
-     * @param element item to be added to the bag
+     * @param element Element to be added to the bag.
+     * @return True if the element was added successfully, false otherwise.
      */
-    void add(T element);
+    boolean add(T element);
 
     /**
-     * Removes and returns a reference to the element equal to the specified element.
-     * If no such element exists a NoSuchElementException is thrown.
+     * Removes an element from the bag.
      *
-     * @param element Specified element to find return
-     * @return Element equal to specified element
+     * @param element Element to be removed from the bag.
+     * @return True if the element was removed successfully, false otherwise.
+     * @throws NoSuchElementException If the provided element does not exist within the bag.
      */
-    T remove(T element);
+    boolean remove(T element);
 
     /**
-     * Determines if a specified element is contained within the bag.
+     * Checks if an element is contained within the bag.
      *
-     * @param target Element to be searched for
-     * @return True if the element is found, false otherwise
+     * @param target Element to check if it exists within the bag.
+     * @return True if the element is contained within the bag, false otherwise.
      */
     boolean contains(T target);
 
     /**
-     * Returns the number of occurrences of a specified element in the
-     * bag.
+     * Returns the number of occurrences of an element contained within the bag.
      *
-     * @param target Element to be counted
-     * @return Number of times the element occurred in the bag.
+     * @param target Element to be counted.
+     * @return Number of times the element can be found in the bag.
      */
     int getCount(T target);
 
     /**
-     * Tests if the bag is empty and returns a Boolean.
+     * Check if the bag is currently empty.
      *
-     * @return True if the bag is empty (no items), false otherwise
+     * @return True if the bag is empty, false otherwise.
      */
     boolean isEmpty();
 
     /**
-     * Returns the total number of elements in the bag
+     * Returns the number of elements in the bag. This method does not handle the case of size exceeding
+     * Integer.MAX_VALUE.
      *
-     * @return Number of elements in the bag
+     * @return The number of elements in the bag.
      */
     int size();
 
     /**
-     * Returns an iterator object for the elements in the bag in
-     * the proper order for the bag type.
+     * Returns an iterator for the elements in the bag.
      *
-     * @return Iterator object for bag instance
+     * @return Iterator for the bag.
      */
     Iterator<T> iterator();
 }
