@@ -17,7 +17,7 @@ public interface Bag<T> extends Iterable<T> {
     boolean add(T element);
 
     /**
-     * Removes an element from the bag.
+     * Removes a single instance of the specified element from the bag.
      *
      * @param element Element to be removed from the bag.
      * @return True if the element was removed successfully, false otherwise.
@@ -26,9 +26,9 @@ public interface Bag<T> extends Iterable<T> {
     boolean remove(T element);
 
     /**
-     * Checks if an element is contained within the bag.
+     * Returns true if the bag contains the specified element.
      *
-     * @param target Element to check if it exists within the bag.
+     * @param target Element whose presence in the bag is to be tested.
      * @return True if the element is contained within the bag, false otherwise.
      */
     boolean contains(T target);
@@ -39,10 +39,10 @@ public interface Bag<T> extends Iterable<T> {
      * @param target Element to be counted.
      * @return Number of times the element can be found in the bag.
      */
-    int getCount(T target);
+    int count(T target);
 
     /**
-     * Check if the bag is currently empty.
+     * Returns true if the bag contains no elements.
      *
      * @return True if the bag is empty, false otherwise.
      */
@@ -57,9 +57,9 @@ public interface Bag<T> extends Iterable<T> {
     int size();
 
     /**
-     * Returns an iterator for the elements in the bag.
+     * Returns an iterator over the elements in the bag.
      *
-     * @return Iterator for the bag.
+     * @return An Iterator over the elements in the bag.
      */
     Iterator<T> iterator();
 }
