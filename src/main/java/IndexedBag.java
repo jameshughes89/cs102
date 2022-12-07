@@ -25,7 +25,7 @@ public interface IndexedBag<T> extends Bag<T> {
      * @param index   Index at which the specified element is to be inserted.
      * @param element Element to be inserted to the IndexedBag.
      * @return True if the element was added successfully, false otherwise.
-     * @throws IndexOutOfBoundsException If the index is out of range (index < 0 || index >= size()).
+     * @throws IndexOutOfBoundsException If the index is out of range (index < 0 || index > size()).
      */
     boolean add(int index, T element);
 

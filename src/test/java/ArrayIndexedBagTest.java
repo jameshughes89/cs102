@@ -8,6 +8,32 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ArrayIndexedBagTest {
 
     @Test
+    void add_successfullyAdds_returnsTrue() {
+        IndexedBag<Integer> bag = new ArrayIndexedBag<>();
+        assertTrue(bag.add(10));
+    }
+
+    @Test
+    void add_successfullyAddsAtIndex_returnsTrue() {
+        IndexedBag<Integer> bag = new ArrayIndexedBag<>();
+        assertTrue(bag.add(0, 10));
+    }
+
+    @Test
+    void remove_successfullyremoves_returnsTrue() {
+        IndexedBag<Integer> bag = new ArrayIndexedBag<>();
+        bag.add(10);
+        assertTrue(bag.remove(Integer.valueOf(10)));
+    }
+
+    @Test
+    void set_successfullySets_returnsPreviousElement() {
+        IndexedBag<Integer> bag = new ArrayIndexedBag<>();
+        bag.add(10);
+        assertEquals(10, bag.set(0, 20));
+    }
+
+    @Test
     void aNewIndexedBagIsEmpty() {
         IndexedBag<Integer> bag = new ArrayIndexedBag<>();
         assertTrue(bag.isEmpty());
@@ -74,7 +100,7 @@ public class ArrayIndexedBagTest {
         bag.add(99);
         bag.add(2);
         bag.add(99);
-        assertEquals(1, bag.getCount(1));
+        assertEquals(1, bag.count(1));
     }
 
     @Test
@@ -86,7 +112,7 @@ public class ArrayIndexedBagTest {
         bag.add(99);
         bag.add(2);
         bag.add(99);
-        assertEquals(3, bag.getCount(99));
+        assertEquals(3, bag.count(99));
     }
 
     @Test
@@ -98,7 +124,7 @@ public class ArrayIndexedBagTest {
         bag.add(99);
         bag.add(2);
         bag.add(99);
-        assertEquals(0, bag.getCount(101));
+        assertEquals(0, bag.count(101));
     }
 
     @Test
@@ -225,12 +251,12 @@ public class ArrayIndexedBagTest {
     }
 
     @Test
-    void removeByValueFromIndexedBagReturnsValue() {
+    void removeByValueFromIndexedBagReturnsTrue() {
         IndexedBag<Integer> bag = new ArrayIndexedBag<>();
         bag.add(99);
         bag.add(101);
         bag.add(103);
-        assertEquals(101, bag.remove(Integer.valueOf(101)));
+        assertTrue(bag.remove(Integer.valueOf(101)));
     }
 
     @Test
@@ -250,7 +276,7 @@ public class ArrayIndexedBagTest {
         bag.add(99);
         bag.add(99);
         bag.remove(Integer.valueOf(99));
-        assertEquals(2, bag.getCount(99));
+        assertEquals(2, bag.count(99));
     }
 
     @Test
