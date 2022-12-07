@@ -1,6 +1,12 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+/**
+ * Implementation of an IndexedBag with an array as the container. The array container will automatically "grow" to
+ * accommodate adding beyond the initial capacity.
+ *
+ * @param <T> Type of elements that are to be in the IndexedBag.
+ */
 public class ArrayIndexedBag<T> implements IndexedBag<T> {
 
     private static final int DEFAULT_CAPACITY = 100;
