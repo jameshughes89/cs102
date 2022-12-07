@@ -109,7 +109,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
     //    }
 
     @Override
-    public void add(T element) {
+    public boolean add(T element) {
         if (size() == bag.length) {
             expandCapacity();
         }
@@ -117,6 +117,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
         shiftRight(insertIndex);
         bag[insertIndex] = element;
         rear++;
+        return true;
     }
 
     @Override
@@ -142,7 +143,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
     }
 
     @Override
-    public T remove(T element) {
+    public boolean remove(T element) {
         if (isEmpty()) {
             throw new NoSuchElementException("Removing from an empty bag.");
         }
@@ -153,7 +154,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
         T returnElement = bag[removeIndex];
         shiftLeft(removeIndex);
         rear--;
-        return returnElement;
+        return true;
     }
 
     @Override
@@ -178,7 +179,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
     }
 
     @Override
-    public int getCount(T target) {
+    public int count(T target) {
         int count = 0;
         for (T bagElement : this) {
             if (bagElement.equals(target)) {

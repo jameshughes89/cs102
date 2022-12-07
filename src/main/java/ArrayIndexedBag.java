@@ -1,6 +1,12 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+/**
+ * Implementation of an IndexedBag with an array as the container. The array container will automatically "grow" to
+ * accommodate adding beyond the initial capacity.
+ *
+ * @param <T> Type of elements that are to be in the IndexedBag.
+ */
 public class ArrayIndexedBag<T> implements IndexedBag<T> {
 
     private static final int DEFAULT_CAPACITY = 100;
@@ -92,12 +98,13 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
     //    }
 
     @Override
-    public void add(T element) {
+    public boolean add(T element) {
         add(rear, element);
+        return true;
     }
 
     @Override
-    public void add(int index, T element) {
+    public boolean add(int index, T element) {
         if (index > size()) {
             throw new IndexOutOfBoundsException(String.format("Bag has no index %d to add to.", index));
         }
@@ -107,14 +114,17 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
         shiftRight(index);
         bag[index] = element;
         rear++;
+        return true;
     }
 
     @Override
-    public void set(int index, T element) {
+    public T set(int index, T element) {
         if (index >= size()) {
             throw new IndexOutOfBoundsException(String.format("Bag has no element at index %d.", index));
         }
+        T toReturn = bag[index];
         bag[index] = element;
+        return toReturn;
     }
 
     @Override
@@ -137,13 +147,14 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
     }
 
     @Override
-    public T remove(T element) {
+    public boolean remove(T element) {
         if (isEmpty()) {
             throw new NoSuchElementException("Removing from an empty bag.");
         }
         // If indexOf throws an exception, this method propagates it
         int removeIndex = indexOf(element);
-        return remove(removeIndex);
+        remove(removeIndex);
+        return true;
     }
 
     @Override
@@ -161,7 +172,7 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
     }
 
     @Override
-    public int getCount(T target) {
+    public int count(T target) {
         int count = 0;
         for (T bagElement : this) {
             if (bagElement.equals(target)) {

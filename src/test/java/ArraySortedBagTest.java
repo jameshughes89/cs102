@@ -8,6 +8,19 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ArraySortedBagTest {
 
     @Test
+    void add_successfullyAdds_returnsTrue() {
+        SortedBag<Integer> bag = new ArraySortedBag<>();
+        assertTrue(bag.add(10));
+    }
+
+    @Test
+    void remove_successfullyremoves_returnsTrue() {
+        SortedBag<Integer> bag = new ArraySortedBag<>();
+        bag.add(10);
+        assertTrue(bag.remove(Integer.valueOf(10)));
+    }
+
+    @Test
     void aNewSortedBagIsEmpty() {
         SortedBag<Integer> bag = new ArraySortedBag<>();
         assertTrue(bag.isEmpty());
@@ -58,7 +71,7 @@ public class ArraySortedBagTest {
         bag.add(99);
         bag.add(2);
         bag.add(99);
-        assertEquals(1, bag.getCount(1));
+        assertEquals(1, bag.count(1));
     }
 
     @Test
@@ -70,7 +83,7 @@ public class ArraySortedBagTest {
         bag.add(99);
         bag.add(2);
         bag.add(99);
-        assertEquals(3, bag.getCount(99));
+        assertEquals(3, bag.count(99));
     }
 
     @Test
@@ -82,7 +95,7 @@ public class ArraySortedBagTest {
         bag.add(99);
         bag.add(2);
         bag.add(99);
-        assertEquals(0, bag.getCount(101));
+        assertEquals(0, bag.count(101));
     }
 
     @Test
@@ -240,12 +253,12 @@ public class ArraySortedBagTest {
     }
 
     @Test
-    void removeReturnsSpecifiedElementFromSortedBag() {
+    void removeReturnsTrue() {
         SortedBag<Integer> bag = new ArraySortedBag<>();
         bag.add(99);
         bag.add(101);
         bag.add(103);
-        assertEquals(101, bag.remove(101));
+        assertTrue(bag.remove(101));
     }
 
     @Test
@@ -265,7 +278,7 @@ public class ArraySortedBagTest {
         bag.add(99);
         bag.add(99);
         bag.remove(99);
-        assertEquals(2, bag.getCount(99));
+        assertEquals(2, bag.count(99));
     }
 
     @Test
