@@ -49,7 +49,7 @@ Office Hours
 
 `Office Hours Etiquette --- Don't Do This. <https://www.youtube.com/watch?v=lOTyUfOHgas>`_
 
-* **James Hughes** Virtual Only --- See Moodle
+* **James Hughes**
 
     * Tuesday, 10am -- 11am
     * Wednesday, 10am -- 11am
