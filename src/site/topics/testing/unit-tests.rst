@@ -76,50 +76,76 @@ JUnit
         Alternatively, one could select the dropdown arrow on the red light bulb for the same menu.
 
 
-Testing ArrayStack
-==================
+Testing the Friend Class
+========================
 
+* Checkout the :download:`FriendTest.java</../test/java/FriendTest.java>` for testing the ``Friend`` class
 * For now, the new ideas introduced here are
 
-    * ``@Test`` annotation
-    * Assertions
+    * ``@Test`` annotation --- marking a method as a test
+    * Assertions --- a mechanism for checking something
 
-* Checkout the :download:`ArrayStackTest.java</../test/java/ArrayStackTest.java>` for testing the ``ArrayStack``.
-* Have a look at all the methods, the imports, function names, etc.
 
-* Below are some examples from the file:
+* Below are excerpts from the ``FriendTest`` class
 
-.. code-block:: java
+.. literalinclude:: /../test/java/FriendTest.java
+    :language: java
     :linenos:
-    :emphasize-lines: 5
-
-    @Test
-    @DisplayName("A new stack starts empty.")
-    void aNewStackIsEmpty() {
-        Stack<Integer> stack = new ArrayStack<>();
-        assertTrue(stack.isEmpty());
-    }
-
-* Things to note:
-    * We add ``@Test`` before the function name
-    * We include ``@DisplayName`` to provide a good description of what is being tested
-        * This is not actually needed
-    * The function name ``aNewStackIsEmpty`` is descriptive
-
-* The ``assertTrue`` is being used to test a specific thing here
-    * If the stack is in fact empty after it is created
+    :lineno-start: 9
+    :lines: 9-13
 
 
-.. code-block:: java
+* Consider the first test within the test class as shown above
+* The method is marked with ``@Test`` to mark the method as a test method for Junit
+* It has a descriptive name of the form ``unitUnderTest_case_expectedResult``
+
+    * ``getFirstName_generalCase_returnsFirstName``
+    * ``getFirstName`` is the method being tested
+    * Since there is no real special condition or case for this test, it has ``generalCase`` in its name
+    * ``returnsFirstName`` is the expected result of calling the method
+
+* It uses ``assertEquals`` to check that the expected string ``"qwerty"`` is what is returned by ``getFirstName()``
+
+
+.. literalinclude:: /../test/java/FriendTest.java
+    :language: java
     :linenos:
-    :emphasize-lines: 5
+    :lineno-start: 27
+    :lines: 27-39
 
-    @Test
-    @DisplayName("An empty stack has size 0.")
-    void emptyStackHasSizeZero() {
-        Stack<Integer> stack = new ArrayStack<>();
-        assertEquals(0, stack.size());
-    }
 
-* Given that we have a test for ``aNewStackIsEmpty``, if this passes, we know our newly created stack is empty
-* We can now test if the ``size`` of the stack is 0 when it is empty
+* Consider the above two tests
+
+    * ``equals_equalFriendObjects_areEqual``
+    * ``equals_unequalFriendObjects_areNotEqual``
+
+
+* These tests are named such that the cases (equal/unequal ``Friend`` objects) is clear
+* These tests also make use of different asserts
+
+    * ``assertEquals``
+    * ``assertNotEquals``
+
+
+.. warning::
+
+    The above tests for equality are sufficient for the purposes of this course, but they could be improved. Within the
+    provided ``FriendTest`` class is a test method that makes use of ``EqualsVerifier``, which helps with testing
+    equality on objects. Although this improved equality test is provided, the simpler equality tests are sufficient
+    here.
+
+        .. literalinclude:: /../test/java/FriendTest.java
+            :language: java
+            :linenos:
+            :lineno-start: 47
+            :lines: 47-54
+
+
+
+For Next Time
+=============
+
+* Download and play with
+
+    * :download:`Friend </../main/java/Friend.java>`
+    * :download:`FriendTest.java</../test/java/FriendTest.java>`
