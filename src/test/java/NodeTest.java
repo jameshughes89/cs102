@@ -31,4 +31,16 @@ public class NodeTest {
         classUnderTest.setNext(nextNode);
         assertSame(nextNode, classUnderTest.getNext());
     }
+
+    @Test
+    void getData_dataConstructor_returnsData() {
+        classUnderTest = new Node<>(10);
+        assertEquals(10, classUnderTest.getData());
+    }
+
+    @Test
+    void getNext_dataConstructor_returnsNull() {
+        classUnderTest = new Node<>();
+        assertNull(classUnderTest.getNext());
+    }
 }
