@@ -136,6 +136,12 @@ public class ArrayIndexedBagTest {
             }
 
             @Test
+            void add_validIndex_addsAtCorrectIndex() {
+                classUnderTest.add(0, 0);
+                assertEquals(0, classUnderTest.get(0));
+            }
+
+            @Test
             void add_negativeIndex_throwsIndexOutOfBoundsException() {
                 assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.add(-1, 0));
             }
@@ -284,9 +290,9 @@ public class ArrayIndexedBagTest {
 
                 @BeforeEach
                 void addMany() {
+                    classUnderTest.add(20);
                     classUnderTest.add(30);
-                    classUnderTest.add(1, 20);
-                    classUnderTest.add(3, 40);
+                    classUnderTest.add(40);
                     classUnderTest.add(50);
                 }
 
@@ -299,6 +305,13 @@ public class ArrayIndexedBagTest {
                 @CsvSource({"0, 100", "2, 300", "4, 500"})
                 void add_validIndex_returnsTrue(int index, Integer element) {
                     assertTrue(classUnderTest.add(index, element));
+                }
+
+                @ParameterizedTest
+                @CsvSource({"0, 100", "2, 300", "4, 500"})
+                void add_validIndex_addsAtCorrectIndex(int index, Integer element) {
+                    classUnderTest.add(index, element);
+                    assertEquals(element, classUnderTest.get(index));
                 }
 
                 @Test
