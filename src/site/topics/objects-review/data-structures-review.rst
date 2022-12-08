@@ -98,8 +98,8 @@ Setting Fields and Writing the Constructor
 
 
 
-Adding Friends
---------------
+``add``
+-------
 
 * There is some complexity involved with adding a ``Friend`` to the ``ContactList``
 
@@ -150,8 +150,8 @@ Adding Friends
     * This method is not something one wants a user of this ``ContactList`` class to care about
 
 
-Contains and Find
------------------
+``contains`` and ``find``
+-------------------------
 
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
@@ -178,8 +178,8 @@ Contains and Find
 * This method makes use of the private ``find`` method
 
 
-Index Of
---------
+``indexOf``
+-----------
 
 * The ``indexOf`` method returns the index of the specified ``Friend``, if it exists
 
@@ -205,8 +205,8 @@ Index Of
 * If it does exist, this method simply delegates the work to the private ``find`` method
 
 
-Get
----
+``get``
+-------
 
 * The ``get`` method returns the ``Friend`` at the specified index
 
@@ -222,8 +222,8 @@ Get
     * Example message from an exception being thrown --- ``Exception in thread "main" java.lang.IndexOutOfBoundsException: Index out of range: 99``
 
 
-Remove Friends
---------------
+``remove``
+----------
 
 * Below is an example of a ``remove`` method that will remove a ``Friend`` from the ``ContactList``
 * This method returns a ``boolean`` to indicate if the ``remove`` was successful
@@ -263,8 +263,8 @@ Remove Friends
     referred to the ``Friend`` that was removed now refers to the ``Friend`` that was at the end of the ``ContactList``.
 
 
-Clear Friends
--------------
+``clear``
+---------
 
 * Clear out all the ``Friend`` objects within the ``ContactList``
 
@@ -281,8 +281,8 @@ Clear Friends
 * Further, setting the size to ``0`` would also be sufficient
 
 
-Size and isEmpty
-----------------
+``size`` and ``isEmpty``
+------------------------
 
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
@@ -298,8 +298,8 @@ Size and isEmpty
 
 
 
-toString
---------
+``toString``
+------------
 
 * A good representation of the collection would be an aggregate of the string representations of the ``Friend`` objects
 
