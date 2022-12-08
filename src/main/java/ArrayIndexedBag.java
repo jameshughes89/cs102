@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -33,25 +34,10 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
     }
 
     /**
-     * Doubles the size of the bag array and copy the
-     * contents over.
-     */
-    @SuppressWarnings("unchecked")
-    private void expandCapacity() {
-        T[] newBag = (T[]) new Object[bag.length * 2];
-        for (int i = 0; i < bag.length; ++i) {
-            newBag[i] = bag[i];
-        }
-        bag = newBag;
-    }
-
-    /**
-     * Shifts elements in an array down (towards index 0) towards
-     * the starting index specified. This method assumes that
-     * the calling function manages the rear field.
+     * Shifts elements in an array down (towards index 0) to the starting index specified. The element at the starting
+     * index will be overwritten.
      *
-     * @param start Index of where shift starts/stops and element
-     *              overwritten.
+     * @param start Index of element to be overwritten and where shifting moves down to.
      */
     private void shiftLeft(int start) {
         for (int i = start; i < rear - 1; ++i) {
@@ -61,13 +47,10 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
     }
 
     /**
-     * Shifts elements in an array up (towards index rear) away
-     * from the starting index specified. This method assumes that
-     * the calling function manages the rear field and any
-     * need of expandCapacity().
+     * Shifts elements in an array up (towards index rear) away from the starting index specified. The array location
+     * at the starting index will be "open". This method assumes there is room in the array to facilitate the shifting.
      *
-     * @param start Index of where shifting starts/stops and where
-     *              space is opened.
+     * @param start Index of where the array has a new "open" location and where shifting moves up from.
      */
     private void shiftRight(int start) {
         for (int i = rear; i > start; --i) {
@@ -113,11 +96,11 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
 
     @Override
     public boolean add(int index, T element) {
-        if (index > size()) {
-            throw new IndexOutOfBoundsException(String.format("Bag has no index %d to add to.", index));
+        if (index < 0 || index > size()) {
+            throw new IndexOutOfBoundsException(index);
         }
         if (size() == bag.length) {
-            expandCapacity();
+            bag = Arrays.copyOf(bag, bag.length * 2);
         }
         shiftRight(index);
         bag[index] = element;
