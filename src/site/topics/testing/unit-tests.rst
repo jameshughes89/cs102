@@ -44,12 +44,16 @@ JUnit
         :width: 600 px
         :align: center
 
+        Right click the project in the project view and select New -> Directory. Call this new directory "test".
+
 
 #. Right click the ``test`` folder and select *Mark Directory as -> Test Sources Root*
 
     .. figure:: mark_tests.png
         :width: 600 px
         :align: center
+
+        Right click the new "test" folder to mark it as the "Test Sources Root".
 
 
 #. Create a new class for testing named such that it is the class name followed by "Test"
@@ -59,7 +63,7 @@ JUnit
 
 #. Add JUnit to the class path
 
-    * A simple way to do it is to write ``@Test`` in the new class and press Alt+Enter
+    * A simple way to do it is to write ``@Test`` in the new class and press Alt + Enter
 
 
 #. Select *Add 'JUnit5....*
@@ -67,6 +71,9 @@ JUnit
     .. figure:: alt_enter.png
         :width: 600 px
         :align: center
+
+        Pressing Alt + Enter with ``@Test`` selected will cause a popup to appear where "Junit5..." will be an option.
+        Alternatively, one could select the dropdown arrow on the red light bulb for the same menu.
 
 
 Testing ArrayStack
