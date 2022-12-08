@@ -378,6 +378,14 @@ toString
     * This increases the chance of producing a unique hash value
 
 
+.. warning::
+
+    The ``ContactListTest`` class is provided below, but it will not be covered here. Testing collections can be
+    difficult for a variety of reasons. The first collection that testing will be discussed with will be the
+    ``ArrayStack`` as it is a simpler collection.
+
+    Nevertheless, feel free to explore the ``ContactListTest`` below.
+
 
 For Next Time
 =============
@@ -394,6 +402,7 @@ Playing Code
 
     * :download:`Friend </../main/java/Friend.java>`
     * :download:`ContactList </../main/java/ContactList.java>` code
+    * :download:`ContactList </../test/java/ContactListTest.java>` tests
     * :download:`PlayingObjects </../main/java/PlayingObjects.java>`
 
 * If everything was done correctly, the following code from ``PlayingObjects`` should work
