@@ -40,7 +40,7 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
      * @param start Index of element to be overwritten and where shifting moves down to.
      */
     private void shiftLeft(int start) {
-        for (int i = start; i < rear - 1; ++i) {
+        for (int i = start; i < rear - 1; i++) {
             bag[i] = bag[i + 1];
         }
         bag[rear - 1] = null;
@@ -48,25 +48,26 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
 
     /**
      * Shifts elements in an array up (towards index rear) away from the starting index specified. The array location
-     * at the starting index will be "open". This method assumes there is room in the array to facilitate the shifting.
+     * at the specified starting index will be open. This method assumes there is room in the array to facilitate the
+     * shifting.
      *
-     * @param start Index of where the array has a new "open" location and where shifting moves up from.
+     * @param start Index of where the array has a new open location and where shifting moves up from.
      */
     private void shiftRight(int start) {
-        for (int i = rear; i > start; --i) {
+        for (int i = rear; i > start; i--) {
             bag[i] = bag[i - 1];
         }
         bag[start] = null;
     }
 
     /**
-     * Find the index of a specified target element. If the element
-     * does not exist, return NOT_FOUND
+     * Find and return the index of a given target element within the collection. If no such element exists within the
+     * collection, a sentinel value of -1 (NOT_FOUND constant) is returned.
      *
-     * @param target Element to be found
-     * @return Index of the element if found, NOT_FOUND otherwise
+     * @param target Element to find the index of.
+     * @return Index of the target element within the collection, or -1 (NOT_FOUND constant) if no such element exists.
      */
-    private int sentinelIndexOf(T target) {
+    private int find(T target) {
         int searchIndex = 0;
         for (T bagElement : this) {
             if (bagElement.equals(target)) {
@@ -76,7 +77,7 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
         }
         return NOT_FOUND;
     }
-    //    private int sentinelIndexOf(T target) {
+    //    private int find(T target) {
     //        int searchIndex = 0;
     //        Iterator<T> it = this.iterator();
     //        while (it.hasNext()) {
@@ -90,8 +91,7 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
 
     @Override
     public boolean add(T element) {
-        add(rear, element);
-        return true;
+        return add(rear, element);
     }
 
     @Override
