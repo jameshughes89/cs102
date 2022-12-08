@@ -78,17 +78,6 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
         }
         return NOT_FOUND;
     }
-    //    private int find(T target) {
-    //        int searchIndex = 0;
-    //        Iterator<T> it = this.iterator();
-    //        while (it.hasNext()) {
-    //            if (it.next().equals(target)) {
-    //                return searchIndex;
-    //            }
-    //            searchIndex++;
-    //        }
-    //        return NOT_FOUND;
-    //    }
 
     @Override
     public boolean add(T element) {
@@ -173,17 +162,6 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
         }
         return count;
     }
-    //    @Override
-    //    public int getCount(T target) {
-    //        int count = 0;
-    //        Iterator<T> it = this.iterator();
-    //        while (it.hasNext()) {
-    //            if (it.next().equals(target)) {
-    //                count++;
-    //            }
-    //        }
-    //        return count;
-    //    }
 
     @Override
     public boolean isEmpty() {
@@ -208,13 +186,4 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
         }
         return builder.toString();
     }
-    //    public String toString() {
-    //        Iterator<T> it = this.iterator();
-    //        StringBuilder builder = new StringBuilder();
-    //        while (it.hasNext()) {
-    //            builder.append(it.next());
-    //            builder.append(", ");
-    //        }
-    //        return builder.toString();
-    //    }
 }
