@@ -2,6 +2,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -286,8 +288,117 @@ public class ArrayIndexedBagTest {
 
                 @BeforeEach
                 void addMany() {
-                    // add both ways
+                    classUnderTest.add(30);
+                    classUnderTest.add(1, 20);
+                    classUnderTest.add(3, 40);
+                    classUnderTest.add(50);
+                    preState.add(30);
+                    preState.add(1, 20);
+                    preState.add(3, 40);
+                    preState.add(50);
                 }
+
+                @Test
+                void add_elementArgument_returnsTrue() {
+                    assertTrue(classUnderTest.add(0));
+                }
+
+                @ParameterizedTest
+                @CsvSource({"0, 100", "2, 300", "4, 500"})
+                void add_validIndex_returnsTrue(int index, Integer element) {
+                    assertTrue(classUnderTest.add(index, element));
+                }
+
+                @Test
+                void add_negativeIndex_throwsIndexOutOfBoundsException() {
+                    assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.add(-1, 0));
+                }
+
+                @Test
+                void add_tooLargeIndex_throwsIndexOutOfBoundsException() {
+                    assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.add(6, 0));
+                }
+
+                @ParameterizedTest
+                @CsvSource({"0, 100, 10", "2, 300, 30", "4, 500, 50"})
+                void set_validIndex_returnsOriginalElement(int index, Integer element, Integer original) {
+                    assertEquals(original, classUnderTest.set(index, element));
+                }
+
+                @ParameterizedTest
+                @CsvSource({"0, 100", "2, 300", "4, 500"})
+                void set_validIndex_changesElement(int index, Integer element) {
+                    classUnderTest.set(index, element);
+                    assertEquals(element, classUnderTest.get(index));
+                }
+
+                @Test
+                void set_negativeIndex_throwsIndexOutOfBoundsException() {
+                    assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.set(-1, 0));
+                }
+
+                @Test
+                void set_tooLargeIndex_throwsIndexOutOfBoundsException() {
+                    assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.set(5, 0));
+                }
+
+                @ParameterizedTest
+                @CsvSource({"0, 10", "2, 30", "4, 50"})
+                void get_validIndex_returnsElement(int index, Integer element) {
+                    assertEquals(element, classUnderTest.get(index));
+                }
+
+                @Test
+                void get_negativeIndex_throwsIndexOutOfBoundsException() {
+                    assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.get(-1));
+                }
+
+                @Test
+                void get_tooLargeIndex_throwsIndexOutOfBoundsException() {
+                    assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.get(5));
+                }
+
+                @ParameterizedTest
+                @CsvSource({"0, 10", "2, 30", "4, 50"})
+                void remove_validIndex_returnsElement(int index, Integer element) {
+                    assertEquals(element, classUnderTest.remove(index));
+                }
+
+                @ParameterizedTest
+                @CsvSource({"0, 10", "2, 30", "4, 50"})
+                void remove_validIndex_removesElement(int index, Integer element) {
+                    classUnderTest.remove(index);
+                    assertFalse(classUnderTest.contains(element));
+                }
+
+                @Test
+                void remove_negativeIndex_throwsIndexOutOfBoundsException() {
+                    assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.remove(-1));
+                }
+
+                @Test
+                void remove_tooLargeIndex_throwsIndexOutOfBoundsException() {
+                    assertThrows(IndexOutOfBoundsException.class, () -> classUnderTest.remove(5));
+                }
+
+                @ParameterizedTest
+                @CsvSource({"10", "30", "50"})
+                void remove_existingElement_returnsTrue(Integer element) {
+                    assertTrue(classUnderTest.remove(element));
+                }
+
+                @ParameterizedTest
+                @CsvSource({"10", "30", "50"})
+                void remove_existingElement_removesElement(Integer element) {
+                    classUnderTest.remove(element);
+                    assertFalse(classUnderTest.contains(element));
+                }
+
+                @Test
+                void remove_nonexistentElement_throwsNoSuchElementException() {
+                    assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(Integer.valueOf(0)));
+                }
+
             }
 
             @Nested
