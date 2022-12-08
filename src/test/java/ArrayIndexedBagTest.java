@@ -442,7 +442,29 @@ public class ArrayIndexedBagTest {
                     assertEquals(5, classUnderTest.size());
                 }
 
+                @Test
+                void iterator_many_hasNextTrueCorrectTimes() {
+                    Iterator<Integer> iterator = classUnderTest.iterator();
+                    for (int i = 0; i < 5; i++) {
+                        assertTrue(iterator.hasNext());
+                        iterator.next();
+                    }
+                    assertFalse(iterator.hasNext());
+                }
 
+                @Test
+                void iterator_singleton_nextReturnsCorrectElements() {
+                    Iterator<Integer> iterator = classUnderTest.iterator();
+                    for (int i = 10; i <= 50; i += 10) {
+                        assertEquals(i, iterator.next());
+                    }
+                    assertThrows(NoSuchElementException.class, () -> iterator.next());
+                }
+
+                @Test
+                void toString_singleton_returnsCorrectString() {
+                    assertEquals("10, 20, 30, 40, 50, ", classUnderTest.toString());
+                }
             }
 
             @Nested
