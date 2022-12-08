@@ -1,6 +1,7 @@
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import java.util.Objects;
 
 /**
  * Implementation of an IndexedBag with an array as the container. The array container will automatically "grow" to
@@ -96,6 +97,7 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
 
     @Override
     public boolean add(int index, T element) {
+        // Index == size() is valid as that just appends
         if (index < 0 || index > size()) {
             throw new IndexOutOfBoundsException(index);
         }
@@ -110,8 +112,8 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
 
     @Override
     public T set(int index, T element) {
-        if (index >= size()) {
-            throw new IndexOutOfBoundsException(String.format("Bag has no element at index %d.", index));
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException(index);
         }
         T toReturn = bag[index];
         bag[index] = element;
@@ -120,16 +122,16 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
 
     @Override
     public T get(int index) {
-        if (index >= size()) {
-            throw new IndexOutOfBoundsException(String.format("Bag has no element at index %d.", index));
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException(index);
         }
         return bag[index];
     }
 
     @Override
     public T remove(int index) {
-        if (index >= size()) {
-            throw new IndexOutOfBoundsException(String.format("Bag has no element at index %d.", index));
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException(index);
         }
         T returnElement = bag[index];
         shiftLeft(index);
@@ -140,7 +142,7 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
     @Override
     public boolean remove(T element) {
         if (isEmpty()) {
-            throw new NoSuchElementException("Removing from an empty bag.");
+            throw new NoSuchElementException();
         }
         // If indexOf throws an exception, this method propagates it
         int removeIndex = indexOf(element);
@@ -150,16 +152,15 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
 
     @Override
     public int indexOf(T target) {
-        int index = sentinelIndexOf(target);
-        if (index == NOT_FOUND) {
-            throw new NoSuchElementException("Element not contained in bag.");
+        if (!contains(target)) {
+            throw new NoSuchElementException(Objects.toString(target));
         }
-        return index;
+        return find(target);
     }
 
     @Override
     public boolean contains(T target) {
-        return sentinelIndexOf(target) != NOT_FOUND;
+        return find(target) != NOT_FOUND;
     }
 
     @Override
