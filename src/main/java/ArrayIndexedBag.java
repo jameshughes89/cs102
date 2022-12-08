@@ -178,6 +178,7 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
         return new ArrayIterator<>(bag, size());
     }
 
+    @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
         for (T bagElement : this) {
@@ -185,5 +186,26 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
             builder.append(", ");
         }
         return builder.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ArrayIndexedBag<?> that = (ArrayIndexedBag<?>) o;
+        return Arrays.equals(this.bag, 0, this.rear, that.bag, 0, that.rear);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(rear);
+        for (int i = 0; i < size(); i++) {
+            result = 31 * result + Objects.hashCode(bag[i]);
+        }
+        return result;
     }
 }
