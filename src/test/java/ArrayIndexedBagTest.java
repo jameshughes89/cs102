@@ -12,14 +12,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ArrayIndexedBagTest {
 
-
     private ArrayIndexedBag<Integer> classUnderTest;
-    private ArrayIndexedBag<Integer> preState;
 
     @BeforeEach
     void createStack() {
         classUnderTest = new ArrayIndexedBag<>();
-        preState = new ArrayIndexedBag<>();
     }
 
     @Nested
@@ -126,7 +123,6 @@ public class ArrayIndexedBagTest {
             @BeforeEach
             void addSingleton() {
                 classUnderTest.add(10);
-                preState.add(10);
             }
 
             @Test
@@ -292,10 +288,6 @@ public class ArrayIndexedBagTest {
                     classUnderTest.add(1, 20);
                     classUnderTest.add(3, 40);
                     classUnderTest.add(50);
-                    preState.add(30);
-                    preState.add(1, 20);
-                    preState.add(3, 40);
-                    preState.add(50);
                 }
 
                 @Test
@@ -473,9 +465,34 @@ public class ArrayIndexedBagTest {
 
                 @BeforeEach
                 void addDuplicated() {
-
+                    classUnderTest.add(20);
+                    classUnderTest.add(10);
+                    classUnderTest.add(20);
+                    classUnderTest.add(10);
+                    classUnderTest.add(20);
                 }
 
+                @Test
+                void remove_duplicateElements_removesFirstOccurrence() {
+                    classUnderTest.remove(Integer.valueOf(20));
+                    assertEquals(10, classUnderTest.get(1));
+                }
+
+                @Test
+                void remove_duplicateElements_removesOneOccurrence() {
+                    classUnderTest.remove(Integer.valueOf(20));
+                    assertEquals(2, classUnderTest.count(20));
+                }
+
+                @Test
+                void indexOf_duplicateElements_returnsFirstOccurrenceIndex() {
+                    assertEquals(1, classUnderTest.indexOf(20));
+                }
+
+                @Test
+                void count_duplicateElements_returnsCorrectCount() {
+                    assertEquals(3, classUnderTest.count(20));
+                }
             }
         }
     }
