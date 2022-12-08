@@ -399,6 +399,50 @@ public class ArrayIndexedBagTest {
                     assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(Integer.valueOf(0)));
                 }
 
+                @ParameterizedTest
+                @CsvSource({"0, 10", "2, 30", "4, 50"})
+                void indexOf_existingElement_returnsCorrectIndex(int index, Integer element) {
+                    assertEquals(index, classUnderTest.indexOf(element));
+                }
+
+                @Test
+                void indexOf_nonexistentElement_throwsNoSuchElementException() {
+                    assertThrows(NoSuchElementException.class, () -> classUnderTest.indexOf(0));
+                }
+
+                @ParameterizedTest
+                @CsvSource({"10", "30", "50"})
+                void contains_existingElement_returnsTrue(Integer element) {
+                    assertTrue(classUnderTest.contains(element));
+                }
+
+                @Test
+                void contains_nonexistentElement_returnsFalse() {
+                    assertFalse(classUnderTest.contains(0));
+                }
+
+                @ParameterizedTest
+                @CsvSource({"10", "30", "50"})
+                void count_existingElement_returnsOne(Integer element) {
+                    assertEquals(1, classUnderTest.count(element));
+                }
+
+                @Test
+                void count_nonexistentElement_returnsZero() {
+                    assertEquals(0, classUnderTest.count(0));
+                }
+
+                @Test
+                void isEmpty_many_returnsFalse() {
+                    assertFalse(classUnderTest.isEmpty());
+                }
+
+                @Test
+                void size_many_returnsCorrectSize() {
+                    assertEquals(5, classUnderTest.size());
+                }
+
+
             }
 
             @Nested
