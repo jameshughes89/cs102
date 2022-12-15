@@ -275,7 +275,6 @@ Exceptional Situations
     :emphasize-lines: 6
 
 
-* The above ``toString`` example uses :doc:`a string builder. </topics/objects-review/builder>`
 * Ideally the top element in the stack would be the left most element in the string representation of a stack
 * However, index ``0`` in the ``stack`` array is the bottom of the stack
 * For this reason, each element is inserted to the front of the string builder
