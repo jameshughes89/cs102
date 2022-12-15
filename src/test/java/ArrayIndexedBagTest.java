@@ -12,14 +12,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ArrayIndexedBagTest {
 
-
     private ArrayIndexedBag<Integer> classUnderTest;
-    private ArrayIndexedBag<Integer> preState;
 
     @BeforeEach
     void createStack() {
         classUnderTest = new ArrayIndexedBag<>();
-        preState = new ArrayIndexedBag<>();
     }
 
     @Nested
@@ -126,7 +123,6 @@ public class ArrayIndexedBagTest {
             @BeforeEach
             void addSingleton() {
                 classUnderTest.add(10);
-                preState.add(10);
             }
 
             @Test
@@ -137,6 +133,12 @@ public class ArrayIndexedBagTest {
             @Test
             void add_validIndex_returnsTrue() {
                 assertTrue(classUnderTest.add(0, 0));
+            }
+
+            @Test
+            void add_validIndex_addsAtCorrectIndex() {
+                classUnderTest.add(0, 0);
+                assertEquals(0, classUnderTest.get(0));
             }
 
             @Test
@@ -288,14 +290,10 @@ public class ArrayIndexedBagTest {
 
                 @BeforeEach
                 void addMany() {
+                    classUnderTest.add(20);
                     classUnderTest.add(30);
-                    classUnderTest.add(1, 20);
-                    classUnderTest.add(3, 40);
+                    classUnderTest.add(40);
                     classUnderTest.add(50);
-                    preState.add(30);
-                    preState.add(1, 20);
-                    preState.add(3, 40);
-                    preState.add(50);
                 }
 
                 @Test
@@ -307,6 +305,13 @@ public class ArrayIndexedBagTest {
                 @CsvSource({"0, 100", "2, 300", "4, 500"})
                 void add_validIndex_returnsTrue(int index, Integer element) {
                     assertTrue(classUnderTest.add(index, element));
+                }
+
+                @ParameterizedTest
+                @CsvSource({"0, 100", "2, 300", "4, 500"})
+                void add_validIndex_addsAtCorrectIndex(int index, Integer element) {
+                    classUnderTest.add(index, element);
+                    assertEquals(element, classUnderTest.get(index));
                 }
 
                 @Test
@@ -399,6 +404,72 @@ public class ArrayIndexedBagTest {
                     assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(Integer.valueOf(0)));
                 }
 
+                @ParameterizedTest
+                @CsvSource({"0, 10", "2, 30", "4, 50"})
+                void indexOf_existingElement_returnsCorrectIndex(int index, Integer element) {
+                    assertEquals(index, classUnderTest.indexOf(element));
+                }
+
+                @Test
+                void indexOf_nonexistentElement_throwsNoSuchElementException() {
+                    assertThrows(NoSuchElementException.class, () -> classUnderTest.indexOf(0));
+                }
+
+                @ParameterizedTest
+                @CsvSource({"10", "30", "50"})
+                void contains_existingElement_returnsTrue(Integer element) {
+                    assertTrue(classUnderTest.contains(element));
+                }
+
+                @Test
+                void contains_nonexistentElement_returnsFalse() {
+                    assertFalse(classUnderTest.contains(0));
+                }
+
+                @ParameterizedTest
+                @CsvSource({"10", "30", "50"})
+                void count_existingElement_returnsOne(Integer element) {
+                    assertEquals(1, classUnderTest.count(element));
+                }
+
+                @Test
+                void count_nonexistentElement_returnsZero() {
+                    assertEquals(0, classUnderTest.count(0));
+                }
+
+                @Test
+                void isEmpty_many_returnsFalse() {
+                    assertFalse(classUnderTest.isEmpty());
+                }
+
+                @Test
+                void size_many_returnsCorrectSize() {
+                    assertEquals(5, classUnderTest.size());
+                }
+
+                @Test
+                void iterator_many_hasNextTrueCorrectTimes() {
+                    Iterator<Integer> iterator = classUnderTest.iterator();
+                    for (int i = 0; i < 5; i++) {
+                        assertTrue(iterator.hasNext());
+                        iterator.next();
+                    }
+                    assertFalse(iterator.hasNext());
+                }
+
+                @Test
+                void iterator_singleton_nextReturnsCorrectElements() {
+                    Iterator<Integer> iterator = classUnderTest.iterator();
+                    for (int i = 10; i <= 50; i += 10) {
+                        assertEquals(i, iterator.next());
+                    }
+                    assertThrows(NoSuchElementException.class, () -> iterator.next());
+                }
+
+                @Test
+                void toString_singleton_returnsCorrectString() {
+                    assertEquals("10, 20, 30, 40, 50, ", classUnderTest.toString());
+                }
             }
 
             @Nested
@@ -407,9 +478,34 @@ public class ArrayIndexedBagTest {
 
                 @BeforeEach
                 void addDuplicated() {
-
+                    classUnderTest.add(20);
+                    classUnderTest.add(10);
+                    classUnderTest.add(20);
+                    classUnderTest.add(10);
+                    classUnderTest.add(20);
                 }
 
+                @Test
+                void remove_duplicateElements_removesFirstOccurrence() {
+                    classUnderTest.remove(Integer.valueOf(20));
+                    assertEquals(10, classUnderTest.get(1));
+                }
+
+                @Test
+                void remove_duplicateElements_removesOneOccurrence() {
+                    classUnderTest.remove(Integer.valueOf(20));
+                    assertEquals(2, classUnderTest.count(20));
+                }
+
+                @Test
+                void indexOf_duplicateElements_returnsFirstOccurrenceIndex() {
+                    assertEquals(1, classUnderTest.indexOf(20));
+                }
+
+                @Test
+                void count_duplicateElements_returnsCorrectCount() {
+                    assertEquals(3, classUnderTest.count(20));
+                }
             }
         }
     }
