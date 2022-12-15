@@ -24,7 +24,7 @@ public class NodeTest {
     void getNext_nextExists_returnsNext() {
         Node<Integer> node = new Node<>();
         Node<Integer> nextNode = new Node<>();
-        node.setNext(new Node<>());
+        node.setNext(nextNode);
         assertSame(nextNode, node.getNext());
     }
 
