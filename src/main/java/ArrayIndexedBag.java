@@ -26,11 +26,11 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
     /**
      * Create an empty ArrayIndexedBag with the specified capacity.
      *
-     * @param capacity Starting capacity of the fixed length array.
+     * @param initialCapacity Starting capacity of the fixed length array.
      */
     @SuppressWarnings("unchecked")
-    public ArrayIndexedBag(int capacity) {
-        bag = (T[]) new Object[capacity];
+    public ArrayIndexedBag(int initialCapacity) {
+        bag = (T[]) new Object[initialCapacity];
         rear = 0;
     }
 
