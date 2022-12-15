@@ -26,7 +26,7 @@ Unit Testing
 
 
 * It also obviously helps with testing and debugging
-* It there are ever breaking changes to the unit/component being tested, the automated testing will find it
+* It there are ever breaking changes to the unit/component being tested, the automated testing should find it
 
 * Writing tests can be a bit of an art, so it's best to get a lot of practice
 
@@ -132,7 +132,7 @@ Testing the Friend Class
     The above tests for equality are sufficient for the purposes of this course, but they could be improved. Within the
     provided ``FriendTest`` class is a test method that makes use of ``EqualsVerifier``, which helps with testing
     equality on objects. Although this improved equality test is provided, the simpler equality tests are sufficient
-    here.
+    here. Do note that ``EqualsVerifier`` is an external dependency that is not included with Java or IntelliJ. 
 
         .. literalinclude:: /../test/java/FriendTest.java
             :language: java
