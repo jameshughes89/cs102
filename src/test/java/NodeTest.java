@@ -3,44 +3,38 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class NodeTest {
-    private Node<Integer> classUnderTest;
-
     @Test
     void getData_dataNotExists_returnsNull() {
-        classUnderTest = new Node<>();
-        assertNull(classUnderTest.getData());
+        assertNull(new Node<>().getData());
     }
 
     @Test
     void getNext_nextNotExists_returnsNull() {
-        classUnderTest = new Node<>();
-        assertNull(classUnderTest.getNext());
+        assertNull(new Node<>().getNext());
     }
 
     @Test
     void getData_dataExists_returnsData() {
-        classUnderTest = new Node<>();
-        classUnderTest.setData(10);
-        assertEquals(10, classUnderTest.getData());
+        Node<Integer> node = new Node<>();
+        node.setData(10);
+        assertEquals(10, node.getData());
     }
 
     @Test
     void getNext_nextExists_returnsNext() {
-        classUnderTest = new Node<>();
+        Node<Integer> node = new Node<>();
         Node<Integer> nextNode = new Node<>();
-        classUnderTest.setNext(nextNode);
-        assertSame(nextNode, classUnderTest.getNext());
+        node.setNext(new Node<>());
+        assertSame(nextNode, node.getNext());
     }
 
     @Test
     void getData_dataConstructor_returnsData() {
-        classUnderTest = new Node<>(10);
-        assertEquals(10, classUnderTest.getData());
+        assertEquals(10, new Node<>(10).getData());
     }
 
     @Test
     void getNext_dataConstructor_returnsNull() {
-        classUnderTest = new Node<>();
-        assertNull(classUnderTest.getNext());
+        assertNull(new Node<>().getNext());
     }
 }
