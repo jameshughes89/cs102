@@ -1,3 +1,4 @@
+import java.util.NoSuchElementException;
 import java.util.Objects;
 
 /**
@@ -41,7 +42,7 @@ public class LinkedQueue<T> implements Queue<T> {
     @Override
     public T dequeue() {
         if (isEmpty()) {
-            throw new EmptyCollectionException();
+            throw new NoSuchElementException();
         }
         T returnElement = front.getData();
         front = front.getNext();
@@ -56,7 +57,7 @@ public class LinkedQueue<T> implements Queue<T> {
     @Override
     public T first() {
         if (isEmpty()) {
-            throw new EmptyCollectionException();
+            throw new NoSuchElementException();
         }
         return front.getData();
     }
