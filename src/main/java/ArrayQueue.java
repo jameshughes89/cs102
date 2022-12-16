@@ -66,7 +66,7 @@ public class ArrayQueue<T> implements Queue<T> {
     @Override
     public T dequeue() {
         if (isEmpty()) {
-            throw new NoSuchElementException();
+            throw new NoSuchElementException("Empty queue");
         }
         T returnElement = queue[front];
         front = nextIndex(front);
@@ -77,7 +77,7 @@ public class ArrayQueue<T> implements Queue<T> {
     @Override
     public T first() {
         if (isEmpty()) {
-            throw new NoSuchElementException();
+            throw new NoSuchElementException("Empty queue");
         }
         return queue[front];
     }

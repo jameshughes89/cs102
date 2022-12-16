@@ -42,7 +42,7 @@ public class LinkedQueue<T> implements Queue<T> {
     @Override
     public T dequeue() {
         if (isEmpty()) {
-            throw new NoSuchElementException();
+            throw new NoSuchElementException("Empty queue");
         }
         T returnElement = front.getData();
         front = front.getNext();
@@ -57,7 +57,7 @@ public class LinkedQueue<T> implements Queue<T> {
     @Override
     public T first() {
         if (isEmpty()) {
-            throw new NoSuchElementException();
+            throw new NoSuchElementException("Empty queue");
         }
         return front.getData();
     }

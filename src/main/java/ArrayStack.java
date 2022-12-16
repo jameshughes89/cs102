@@ -59,7 +59,7 @@ public class ArrayStack<T> implements Stack<T> {
     @Override
     public T pop() {
         if (isEmpty()) {
-            throw new NoSuchElementException();
+            throw new NoSuchElementException("Empty stack");
         }
         T returnElement = stack[top - 1];
         stack[top - 1] = null;
@@ -70,7 +70,7 @@ public class ArrayStack<T> implements Stack<T> {
     @Override
     public T peek() {
         if (isEmpty()) {
-            throw new NoSuchElementException();
+            throw new NoSuchElementException("Empty stack");
         }
         return stack[top - 1];
     }
