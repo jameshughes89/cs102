@@ -48,23 +48,35 @@ Linked Structure
 Nodes
 =====
 
-* A *node* is a basic unit in our linked structures
-* Here we are focusing on *singly linked structures*
+* A *node* is a basic unit in the linked structures
+* For the following examples, the focus is on *singly linked structures*
+
     * Each node has only one *link*
 
 * The series of nodes linked together is what makes up the singly linked structure
-    * They link to their successor
 
-.. image:: node_example.png
-   :width: 400 px
-   :align: center
+    * The nodes link to their successor nodes
 
-* A node for a singly linked structure typically has only two fields
-    * **data** --- the stuff we want to hold
-        * To compare to the array, this would be the stuff we're putting into the cells of the array
+
+    .. figure:: node_example.png
+        :width: 400 px
+        :align: center
+
+        Example single node containing a reference to some data and a reference to a successor/next node. These
+        references may refer to null.
+
+
+* A node for a singly linked structure typically has two fields
+
+    * **data** --- a reference to the data to be stored
+
+        * To compare to the array, this would be the data put into the cells of the array
+
+
     * **next** --- a reference to the successor/next node
+
         * Arrays don't have this because the successor is just in the next cell in the array
-            * Asterisk
+
 
 
 Inserting into a Linked Structure
