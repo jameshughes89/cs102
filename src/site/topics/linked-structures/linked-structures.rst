@@ -82,80 +82,104 @@ Nodes
 Inserting into a Linked Structure
 =================================
 
-.. image:: example1.png
-   :width: 500 px
-   :align: center
+.. figure:: example1.png
+    :width: 500 px
+    :align: center
 
-* Given the example linked structure
-* How would you access the *first* item's data?
-* How would you access the *second* item's data?
-* How would you access the *third* item's data?
-* How would you access the predecessor?
-* **HINT:** What are the fields we have in our nodes?
+    Example of a singly linked structure. Note that "head" is not a node, but a reference to a node.
 
-* How would we add something to the *front* of this linked structure?
-* How would we add something to the *middle* of this linked structure?
-* How would we add something to the *end* of this linked structure?
 
-* How would we remove something to the *front* of this linked structure?
-* How would we remove something to the *middle* of this linked structure?
-* How would we remove something to the *end* of this linked structure?
+* With a reference to the head of the linked structure and the two fields (``data`` and ``next``) of the node class
+
+    * How would one access the *first* node's data?
+    * How would one access the *second* node's data?
+    * How would one access an arbitrary node's data?
+    * How would you access the predecessor?
+
+    * How would we add something to the *front* of this linked structure?
+    * How would we add something to the *middle* of this linked structure?
+    * How would we add something to the *end* of this linked structure?
+
+    * How would we remove something to the *front* of this linked structure?
+    * How would we remove something to the *middle* of this linked structure?
+    * How would we remove something to the *end* of this linked structure?
+
 
 
 Adding to the Front
 -------------------
 
-.. image:: add_front0.png
-   :width: 500 px
-   :align: center
+* Given a reference to the front of the linked structure (``head``) and a reference to the node to be inserted (``node``)
 
-* Make the node we want to insert's ``next`` reference the current head
 
-.. image:: add_front1.png
-   :width: 500 px
-   :align: center
+.. figure:: add_front0.png
+    :width: 500 px
+    :align: center
 
-* Make head, the reference to the start of the linked structure, point to the new node
+* Have the node to be inserted's ``next`` reference the node referenced by ``head``
 
-.. image:: add_front2.png
-   :width: 500 px
-   :align: center
+
+.. figure:: add_front1.png
+    :width: 500 px
+    :align: center
+
+* Have ``head`` reference the new node, which is the new front of the linked structure
+
+
+.. figure:: add_front2.png
+    :width: 500 px
+    :align: center
+
+* The new node is now at the front of the linked structure
 
 
 Adding to the Middle
 --------------------
 
-.. image:: add_middle0.png
-   :width: 500 px
-   :align: center
+* Given a reference to the front of the linked structure (``head``) and a reference to the node to be inserted (``node``)
 
-* Locate the node the new node will come after
-    * In this example, it is referred to as ``current``
 
-.. image:: add_middle1.png
-   :width: 500 px
-   :align: center
+.. figure:: add_middle0.png
+    :width: 500 px
+    :align: center
 
-* Make the new node's ``next``  reference the preceding node's (``current``) ``next``
+* Locate the node the new node will be inserted after
+* In this example, ``current`` is a reference to the node the new node will be inserted after
 
-.. image:: add_middle2.png
-   :width: 500 px
-   :align: center
 
-* Have the preceding node's (``current``) ``next`` reference the new node
+.. figure:: add_middle1.png
+    :width: 500 px
+    :align: center
 
-.. image:: add_middle3.png
-   :width: 500 px
-   :align: center
+* Have the new node's ``next`` reference its soon to be predecessor's (``current``) ``next``
+
+    * This is the node that the node being inserted will come before
+
+
+.. figure:: add_middle2.png
+    :width: 500 px
+    :align: center
+
+* Update the predecessor's (``current``) ``next`` to reference the new node being inserted
+
+.. figure:: add_middle3.png
+    :width: 500 px
+    :align: center
+
+* The new node is now at the desired location
 
 
 Adding to the End
 -----------------
 
-* We see that adding to the middle is a more general case compared to adding to the front
+* Adding to the middle is a more general case compared to adding to the front
+
     * Adding to the front is a special case
 
-* Is adding to the rear a special case?
+
+* The process to add to the end of a linked structure is the same as adding to the middle
+
+    * The difference is that the predecessor's next will have been ``null``, but this does not change the algorithm
 
 
 Removing from a Linked Structure
