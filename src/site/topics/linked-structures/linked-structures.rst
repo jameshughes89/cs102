@@ -2,18 +2,23 @@
 Links
 *****
 
-.. warning::
+.. note::
 
-    We are not yet defining a new ADT. We're just prepping to start implementing other ADTs with something other than an array.
+    This topic is not introducing a ADT. Instead, it is introducing the idea of linked structures. These linked
+    structures may be used to implement ADTs
 
 
 * Arrays have a fixed size
-    * But we can do the ``expandCapacity`` trick
 
-* When using an array, we may have to shift things around when adding and removing
+    * But the ``expandCapacity`` trick can hide this
+
+
+* When using an array, data may need to me shifted around when adding and/or removing
 * Traditionally speaking, arrays are in contiguous memory addresses
+
     * The successor value is in the next array cell
-    * JVM asterisk --- In Java, arrays are objects, and objects go into the *heap*, which isn't necessarily contiguous.
+    * JVM asterisk --- In Java, arrays are objects, and objects go into the *heap*, which isn't necessarily contiguous
+
 
 
 Linked Structure
