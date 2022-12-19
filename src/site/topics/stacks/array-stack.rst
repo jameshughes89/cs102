@@ -310,7 +310,7 @@ For Next Time
 
     * :download:`Stack </../main/java/Stack.java>`
     * :download:`ArrayStack </../main/java/ArrayStack.java>`
-    * :download:`ArrayStackTest </../test/java/ArrayStackTest.java>` tests
+    * :download:`ArrayStackTest </../test/java/ArrayStackTest.java>`
     * :download:`ArrayStack playing code </../main/java/PlayingArrayStack.java>`
 
 
