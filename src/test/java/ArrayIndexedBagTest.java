@@ -5,7 +5,9 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -265,18 +267,14 @@ public class ArrayIndexedBagTest {
             }
 
             @Test
-            void iterator_singleton_hasNextTrueOnce() {
+            void iterator_singleton_returnsElementsInCorrectOrder() {
                 Iterator<Integer> iterator = classUnderTest.iterator();
-                assertTrue(iterator.hasNext());
-                iterator.next();
-                assertFalse(iterator.hasNext());
-            }
-
-            @Test
-            void iterator_singleton_nextReturnsCorrectElements() {
-                Iterator<Integer> iterator = classUnderTest.iterator();
-                assertEquals(10, iterator.next());
-                assertThrows(NoSuchElementException.class, () -> iterator.next());
+                List<Integer> expected = List.of(10);
+                List<Integer> list = new ArrayList<>();
+                while (iterator.hasNext()){
+                    list.add(iterator.next());
+                }
+                assertEquals(expected, list);
             }
 
             @Test
@@ -448,22 +446,14 @@ public class ArrayIndexedBagTest {
                 }
 
                 @Test
-                void iterator_many_hasNextTrueCorrectTimes() {
+                void iterator_many_returnsElementsInCorrectOrder() {
                     Iterator<Integer> iterator = classUnderTest.iterator();
-                    for (int i = 0; i < 5; i++) {
-                        assertTrue(iterator.hasNext());
-                        iterator.next();
+                    List<Integer> expected = List.of(10, 20, 30, 40, 50);
+                    List<Integer> list = new ArrayList<>();
+                    while (iterator.hasNext()){
+                        list.add(iterator.next());
                     }
-                    assertFalse(iterator.hasNext());
-                }
-
-                @Test
-                void iterator_singleton_nextReturnsCorrectElements() {
-                    Iterator<Integer> iterator = classUnderTest.iterator();
-                    for (int i = 10; i <= 50; i += 10) {
-                        assertEquals(i, iterator.next());
-                    }
-                    assertThrows(NoSuchElementException.class, () -> iterator.next());
+                    assertEquals(expected, list);
                 }
 
                 @Test
