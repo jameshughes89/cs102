@@ -310,10 +310,10 @@ For Next Time
 
     * :download:`Stack </../main/java/Stack.java>`
     * :download:`ArrayStack </../main/java/ArrayStack.java>`
-    * :download:`ArrayStack </../main/java/PlayingArrayStack.java>`
+    * :download:`ArrayStackTest </../test/java/ArrayStackTest.java>` tests
+    * :download:`ArrayStack playing code </../main/java/PlayingArrayStack.java>`
 
-* :doc:`Check out the aside on testing <unit-tests>`
-* Download and run the :download:`ArrayStackTest </../test/java/ArrayStackTest.java>` tests
+
 * Finish reading Chapter 3
 
     * 16 pages
