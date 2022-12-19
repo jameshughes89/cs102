@@ -185,45 +185,50 @@ Adding to the End
 Removing from a Linked Structure
 =================================
 
-Deleting from the Front
------------------------
-
-* Removing from the front may be the easiest operation
-
-.. image:: remove_front0.png
-   :width: 500 px
-   :align: center
-
-* Make head, the reference to the start of the linked structure, point to the first node's ``next``
-
-.. image:: remove_front1.png
-   :width: 500 px
-   :align: center
-
-
-Deleting from the Middle
-------------------------
-
-.. image:: remove_middle0.png
-   :width: 500 px
-   :align: center
-
-* Locate the node to be deleted (``current``) and the node immediately before it (``previous``)
-
-.. image:: remove_middle1.png
-   :width: 500 px
-   :align: center
-
-* Make the proceeding node's (``previous``) ``next`` reference the node to be deleted's (``current``) ``next``
-
-.. image:: remove_middle2.png
-   :width: 500 px
-   :align: center
-
-Deleting from the End
+Remove from the Front
 ---------------------
 
-* Is deleting from the end a special case?
+* Removing from the front may be the easiest operation
+* Given a reference to the front of the linked structure (``head``)
+
+.. figure:: remove_front0.png
+    :width: 500 px
+    :align: center
+
+* Update ``head``, the reference to the front of the linked structure, to refer to the current front's ``next``
+
+
+.. figure:: remove_front1.png
+    :width: 500 px
+    :align: center
+
+* With no reference to the old front, it is effectively removed from the linked structure
+
+
+Remove from the Middle
+----------------------
+
+* Given a reference to the front of the linked structure (``head``)
+* Locate the node to be removed (``current``) and the node immediately before it (``previous``)
+
+.. figure:: remove_middle0.png
+    :width: 500 px
+    :align: center
+
+* Have the predecessor's (``previous``) ``next`` refer to the node being removed's (``current``) ``next``
+
+
+.. figure:: remove_middle1.png
+    :width: 500 px
+    :align: center
+
+* There is now no way to access the removed node from the linked structure
+
+
+Remove from the End
+-------------------
+
+* Like adding to the end of a linked structure, the process of removing from the end is the same as removing from the middle
 
 
 Node Implementation
