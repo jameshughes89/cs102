@@ -234,115 +234,78 @@ Remove from the End
 Node Implementation
 ===================
 
-.. warning::
-
-    Note that ``head`` is **not** a node; ``head`` is a reference to a node. For example, ``head = someNode;`` and
-    ``head.setNext(someNode);`` have two very different meanings. The first means that our reference ``head`` will
-    refer to the node ``someNode``, while the second means that the node referenced by ``head``\'s ``next`` node
-    reference will refer to ``someNode``.
-
-.. image:: reference_variable.png
-   :width: 400 px
-   :align: center
+.. figure:: reference_variable.png
+    :width: 400 px
+    :align: center
 
 * Remember, reference variables contain a reference to an object
-* The linked structure uses these references to link it together
+* The linked structure uses these references to link the structure together
 
 * The node implementation for the singly linked structure is kept simple
+
     * A field to keep track of the data
     * A field to keep track of the next/successor node
     * Constructors
     * Getters and setters
 
-.. code-block:: java
+
+.. literalinclude:: /../main/java/Node.java
+    :language: java
     :linenos:
 
-    public class Node<T> {
-
-        private T data;
-        private Node<T> next;
-
-        public Node() {
-            this(null);
-        }
-
-        public Node(T data) {
-            this.data = data;
-            this.next = null;
-        }
-
-        public T getData() {
-            return data;
-        }
-
-        public void setData(T data) {
-            this.data = data;
-        }
-
-        public Node<T> getNext() {
-            return next;
-        }
-
-        public void setNext(Node<T> next) {
-            this.next = next;
-        }
-    }
 
 
 Explore the Implementation
 --------------------------
 
-.. code-block:: java
+.. literalinclude:: /../main/java/PlayingLinks.java
+    :language: java
     :linenos:
 
-    // Create a Node
-    Node<Integer> head = new Node<>(5);
-    System.out.println(head.getData());
 
-    // Make a linked structure of the numbers 0 -- 9
-    Node<Integer> currentNode = head;
-    Node<Integer> newNode;
 
-    for (int i = 1; i < 10; ++i) {
-        newNode = new Node<>(i);
-        currentNode.setNext(newNode);
-        currentNode = currentNode.getNext();
-    }
+.. warning::
 
-    // Print the contents of the linked structure
-    currentNode = head;
-    while (currentNode!= null) {
-        System.out.println(currentNode.getData());
-        currentNode = currentNode.getNext();
-    }
-
-    // Try adding to the front, middle, and end of the structure
-
-    // Try removing from the front, middle, and end of the structure
+    As previously mentioned, ``head`` is **not** a node; ``head`` is a reference to a node. For example,
+    ``head = someNode;`` and ``head.setNext(someNode);`` have two very different meanings. The first means that the
+    node reference variable ``head`` will refer to the node ``someNode``, while the second means that the node
+    referenced by ``head``\'s ``next`` node reference will refer to ``someNode``.
 
 
 Variations
 ==========
 
-* For many of the stuff we're learning, there are variations
-* You may be wondering: *Can we add references going more than one direction?*
+* Like most things learned in this course, there are variations for nodes
+* One may be wondering: *Can nodes have references to their predecessors too?*
+
     * Absolutely
 
 
 Doubly Linked
 -------------
 
-.. image:: double_links.png
-   :width: 400 px
-   :align: center
+.. figure:: double_links.png
+    :width: 400 px
+    :align: center
 
-* How would our ``Node`` implementation need to change to achieve this?
+    An example of a doubly linked structure. In addition to the ``data`` and ``next`` field, each node also has a field
+    to access its predecessor. This particular example includes reference variables for the front (``head``) and end
+    (``tail``) of the linked structure.
 
 
-For next time
+* How would the ``Node`` implementation need to change to facilitate this?
+
+
+For Next Time
 =============
 
-* Download and play with the :download:`Node.java </../main/java/Node.java>` file
+* Download and play with
+
+    * :download:`Node </../main/java/Node.java>`
+    * :download:`Linked structure playing code </../main/java/PlayingLinks.java>`
+
+
 * Try writing code to add/remove from the front/middle/end of the linked structure
 * Read Chapter 4 Sections 1 -- 3
+
     * 7 pages
