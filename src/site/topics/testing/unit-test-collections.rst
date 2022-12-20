@@ -70,14 +70,39 @@ Collection Testing Complexities
 Strategies for Testing Collections
 ==================================
 
+* Two easy ways to help manage the complexities of testing collections
+
+    * Common setup code
+    * Laying out the tests with nested classes
 
 
-* How to cope
+Common Setup Code
+-----------------
+
+.. literalinclude:: /../test/java/ArrayStackTest.java
+    :language: java
+    :linenos:
+    :lineno-start: 1
+    :lines: 1-17
+    :emphasize-lines: 10, 11, 13-17
 
 
-* Setup code
-* Nested class
-* Example tests
+* The above code is the beginning of the test class for the array stack
+* Notice the use of class fields ``classUnderTest`` and ``preState``
+
+    * ``classUnderTest`` is a reference to a stack instance used for testing
+    * ``preState`` is a reference to a copy of the stack instance that is used to check for changes to the stack (more on this later)
+
+
+* Also notice the ``createStack`` method that is annotated with ``@BeforeEach``
+
+    * This method actually creates the instances of the stacks
+    * This method will be called *before* each test method is invoked
+
+
+* With this common setup code, all tests within the test class will have access to the field
+
+    * Thus, there is no need to create an instance of a stack inside each test
 
 
 
