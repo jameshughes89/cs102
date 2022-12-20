@@ -113,7 +113,7 @@ Nested Test Classes
 
 .. literalinclude:: /../test/java/ArrayStackTest.java
     :language: java
-    :lines: 8-9, 13-21, 58-66, 115-128, 176-178
+    :lines: 8-21, 58-66, 115-128, 176-178
 
 
 * The above example is the skeleton of the test class for the array stack
@@ -130,6 +130,41 @@ Nested Test Classes
     * For now, do not worry about this detail too much
 
 
+Setup Code Within Nested Classes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* As discussed above, the ``createStack`` method annotated with ``@BeforeEach`` is called before each test
+* However, *all* methods annotated with ``@BeforeEach`` are run before each test within the same class
+
+* There is no additional setup code directly within the ``WhenNewEmpty`` nested class
+
+    * There is nothing more that needs to be done to prepare the instance of the stack for the empty tests
+    * All tests for the case when the stack is empty will exist directly within this class
+
+
+* But there is an additional setup method, ``addSingleton``, that exists within the ``WhenSingleton`` nested class
+
+    * This method adds a single element to the stack in preparation for testing the stack when it has one element
+    * The stack instance already exists because the ``createStack`` method will have already been run
+    * All tests for the case when the stack has a single element will exist directly within this class
+
+
+* There is another setup method, ``addMany``, within the ``WhenMany`` nested class
+
+    * This method adds three additional elements to the stack
+    * The stack will already exist and have a single element because of the setup code in the encapsulating/outside classes
+    * All tests for the case when a stack has many elements will exist directly within this class
+
+
+Examples From ``ArrayStackTest``
+================================
+
+* The below code is an excerpt from the :download:`ArrayStackTest </../test/java/ArrayStackTest.java>` class
+* Only the ``pop`` and ``peek`` tests are included here for brevity
+
+.. literalinclude:: /../test/java/ArrayStackTest.java
+    :language: java
+    :lines: 8-21, 33-42, 58-66, 78-99, 115-128, 140-161, 176-178, 191
 
 
 .. note::
