@@ -105,6 +105,14 @@ Common Setup Code
     * Thus, there is no need to create an instance of a stack inside each test
 
 
+Nested Test Classes
+-------------------
+
+* Another way to help layout the tests in a clean way is to use nested test classes
+* A nested test class can share the setup code from the enclosing/outside class while also allowing for additional setup code
+* This is probably best explained with an example
+
+
 
 .. note::
 
