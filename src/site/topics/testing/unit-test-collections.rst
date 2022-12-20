@@ -3,7 +3,7 @@ Unit Testing Collections
 ************************
 
 * There has been an emphasis on writing code defensively
-* Ideally, code is written in such a way that, not only is correct, but easy to test, understand, and reason about
+* Ideally, code is written in such a way that is, not only correct, but easy to test, understand, and reason about
 * For example:
 
     * Immutability --- If the data cannot change, it makes the program more predictable
@@ -11,7 +11,7 @@ Unit Testing Collections
     * Functions operate independently --- Self contained functionality is easier to understand and use
 
 
-* However, collections pose a problem since they are often
+* However, collections pose a problem
 
     * Mutable --- their states change constantly through adding and removing data
     * Side effects --- their methods may have side effects (modifying the contents of the collection)
@@ -22,7 +22,7 @@ Collection Testing Complexities
 ===============================
 
 * Like before, there is still a need to test all public methods
-* However, unlike before, there is a need to test methods under certain conditions
+* However, unlike the previous testing example, there is a need to test methods under certain conditions
 
 * Consider the ``pop`` method from the stack
 
@@ -37,7 +37,7 @@ Collection Testing Complexities
             :lines: 33-36
 
 
-    * What should happen when ``pop`` is called on a stack with one thing in it?
+    * What should happen when ``pop`` is called on a stack with one element?
 
         * Returns top
         * Result in an empty stack
@@ -49,7 +49,7 @@ Collection Testing Complexities
             :lines: 78-87
 
 
-    * What should happen when ``pop`` is called on a stack with many things in it?
+    * What should happen when ``pop`` is called on a stack with many elements?
 
         * Returns top
         * Results in a new top
@@ -100,7 +100,7 @@ Common Setup Code
     * This method will be called *before* each test method is invoked
 
 
-* With this common setup code, all tests within the test class will have access to the field
+* With this, all tests within the test class will have access to the field
 
     * Thus, there is no need to create an instance of a stack inside each test
 
@@ -123,7 +123,7 @@ Nested Test Classes
     * ``WhenSingleton``, which is nested within ``WhenNewEmpty``
     * ``WhenMany``, which is nested within ``WhenSingleton``
 
-* Each of these nested classes is annotated with ``Nested``
+* Each of these nested classes is annotated with ``@Nested``
 * The ``WhenMany`` class also has the ``@TestInstance(TestInstance.Lifecycle.PER_CLASS)`` annotation
 
     * This specifies that a new test instance is created once per test class
