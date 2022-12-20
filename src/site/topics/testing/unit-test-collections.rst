@@ -106,6 +106,12 @@ Common Setup Code
 
 
 
+.. note::
+
+    The above suggested layout is by no means the *correct* way or a standard for testing collections. It is simply a
+    strategy to help manage the complexities of testing collections.
+
+
 For Next Time
 =============
 
