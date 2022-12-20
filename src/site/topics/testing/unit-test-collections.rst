@@ -110,7 +110,25 @@ Nested Test Classes
 
 * Another way to help layout the tests in a clean way is to use nested test classes
 * A nested test class can share the setup code from the enclosing/outside class while also allowing for additional setup code
-* This is probably best explained with an example
+
+.. literalinclude:: /../test/java/ArrayStackTest.java
+    :language: java
+    :lines: 8-9, 13-21, 58-66, 115-128, 176-178
+
+
+* The above example is the skeleton of the test class for the array stack
+* This example contains three nested classes
+
+    * ``WhenNewEmpty``, which is nested within ``ArrayStackTest``
+    * ``WhenSingleton``, which is nested within ``WhenNewEmpty``
+    * ``WhenMany``, which is nested within ``WhenSingleton``
+
+* Each of these nested classes is annotated with ``Nested``
+* The ``WhenMany`` class also has the ``@TestInstance(TestInstance.Lifecycle.PER_CLASS)`` annotation
+
+    * This specifies that a new test instance is created once per test class
+    * For now, do not worry about this detail too much
+
 
 
 
