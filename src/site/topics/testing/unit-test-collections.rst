@@ -18,15 +18,62 @@ Unit Testing Collections
     * Interconnected methods --- Adding and removing data from a collection are inextricably connected
 
 
-Collection Testing Strategies
-=============================
+Collection Testing Complexities
+===============================
+
+* Like before, there is still a need to test all public methods
+* However, unlike before, there is a need to test methods under certain conditions
+
+* Consider the ``pop`` method from the stack
+
+    * What should happen when ``pop`` is called on an empty stack?
+
+        * An exception should be thrown
+
+        .. literalinclude:: /../test/java/ArrayStackTest.java
+            :language: java
+            :linenos:
+            :lineno-start: 33
+            :lines: 33-36
+
+
+    * What should happen when ``pop`` is called on a stack with one thing in it?
+
+        * Returns top
+        * Result in an empty stack
+
+        .. literalinclude:: /../test/java/ArrayStackTest.java
+            :language: java
+            :linenos:
+            :lineno-start: 78
+            :lines: 78-87
+
+
+    * What should happen when ``pop`` is called on a stack with many things in it?
+
+        * Returns top
+        * Results in a new top
+
+        .. literalinclude:: /../test/java/ArrayStackTest.java
+            :language: java
+            :linenos:
+            :lineno-start: 140
+            :lines: 140-149
+
+
+* Notice that the expected behaviors differs depending on the state
+* Further, it's not possible to test ``pop`` without first having elements in the stack
+
+    * Having called ``push``
+
+
+Strategies for Testing Collections
+==================================
 
 
 
 * How to cope
-* what to test
 
-* test the interface
 
 * Setup code
 * Nested class
