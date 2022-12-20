@@ -89,6 +89,7 @@ The Math, Stats, and CS Society has a time and location for
     topics/collections/collections
     topics/stacks/stack-adt
     topics/stacks/array-stack
+    topics/testing/unit-test-collections
     topics/linked-structures/linked-structures
     topics/stacks/linked-stack
     topics/algorithm-analysis/algorithm-analysis
