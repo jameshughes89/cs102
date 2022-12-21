@@ -1,3 +1,5 @@
+import java.util.NoSuchElementException;
+
 /**
  * A SortedBag is a Bag where the elements are kept in some defined ordering. A SortedBag has an order defined by the
  * characteristics of the type of elements within the SortedBag; the elements themselves determine the ordering. All
@@ -21,7 +23,7 @@ public interface SortedBag<T extends Comparable<? super T>> extends Bag<T> {
      * elements within the SortedBag is preserved. Returns the element that was removed from the SortedBag.
      *
      * @return The first (lowest) element currently in the SortedBag.
-     * @throws EmptyCollectionException If the SortedBag is empty.
+     * @throws NoSuchElementException If the SortedBag is empty.
      */
     T removeFirst();
 
@@ -30,7 +32,7 @@ public interface SortedBag<T extends Comparable<? super T>> extends Bag<T> {
      * elements within the SortedBag is preserved. Returns the element that was removed from the SortedBag.
      *
      * @return The last (highest) element currently in the SortedBag.
-     * @throws EmptyCollectionException If the SortedBag is empty.
+     * @throws NoSuchElementException If the SortedBag is empty.
      */
     T removeLast();
 
@@ -38,7 +40,7 @@ public interface SortedBag<T extends Comparable<? super T>> extends Bag<T> {
      * Returns the first (lowest) element currently in the SortedBag.
      *
      * @return The first (lowest) element currently in the SortedBag.
-     * @throws EmptyCollectionException If the SortedBag is empty.
+     * @throws NoSuchElementException If the SortedBag is empty.
      */
     T first();
 
@@ -46,7 +48,7 @@ public interface SortedBag<T extends Comparable<? super T>> extends Bag<T> {
      * Returns the last (highest) element currently in the SortedBag.
      *
      * @return The last (highest) element currently in the SortedBag.
-     * @throws EmptyCollectionException If the SortedBag is empty.
+     * @throws NoSuchElementException If the SortedBag is empty.
      */
     T last();
 }
