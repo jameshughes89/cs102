@@ -31,6 +31,12 @@ public class ArraySortedBagTest {
             class WhenMany {
 
             }
+
+            @Nested
+            @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+            class WhenDuplicate {
+
+            }
         }
     }
 
