@@ -2,6 +2,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -202,11 +204,148 @@ public class ArraySortedBagTest {
             @TestInstance(TestInstance.Lifecycle.PER_CLASS)
             class WhenMany {
 
+                @BeforeEach
+                void addMany() {
+                    classUnderTest.add(20);
+                    classUnderTest.add(30);
+                    classUnderTest.add(40);
+                    classUnderTest.add(50);
+                }
+
+                @Test
+                void add_successfulAdd_returnsTrue() {
+                    assertTrue(classUnderTest.add(0));
+                }
+
+                @Test
+                void add_many_correctLocation() {
+                    // UNIMPLEMENTED --- HOW DO? THINK LATER?
+                }
+
+                @ParameterizedTest
+                @CsvSource({"10", "30", "50"})
+                void remove_existingElement_returnsTrue(Integer element) {
+                    assertTrue(classUnderTest.remove(element));
+                }
+
+                @ParameterizedTest
+                @CsvSource({"10", "30", "50"})
+                void remove_existingElement_removesElement(Integer element) {
+                    classUnderTest.remove(element);
+                    assertFalse(classUnderTest.contains(element));
+                }
+
+                @Test
+                void remove_nonexistentElement_throwsNoSuchElementException() {
+                    assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(0));
+                }
+
+                @Test
+                void removeFirst_many_returnsElement() {
+                    assertEquals(10, classUnderTest.removeFirst());
+                }
+
+                @Test
+                void removeFirst_many_removesElement() {
+                    classUnderTest.removeFirst();
+                    assertFalse(classUnderTest.contains(10));
+                }
+
+                @Test
+                void removeLast_many_returnsElement() {
+                    assertEquals(50, classUnderTest.removeLast());
+                }
+
+                @Test
+                void removeLast_many_removesElement() {
+                    classUnderTest.removeLast();
+                    assertFalse(classUnderTest.contains(50));
+                }
+
+                @Test
+                void first_many_returnsElement() {
+                    assertEquals(10, classUnderTest.first());
+                }
+
+                @Test
+                void last_many_returnsElement() {
+                    assertEquals(50, classUnderTest.last());
+                }
+
+                @ParameterizedTest
+                @CsvSource({"10", "30", "50"})
+                void contains_existingElement_returnsTrue(Integer element) {
+                    assertTrue(classUnderTest.contains(element));
+                }
+
+                @Test
+                void contains_nonexistentElement_returnsFalse() {
+                    assertFalse(classUnderTest.contains(0));
+                }
+
+                @ParameterizedTest
+                @CsvSource({"10", "30", "50"})
+                void count_existingElement_returnsOne(Integer element) {
+                    assertEquals(1, classUnderTest.count(element));
+                }
+
+                @Test
+                void count_nonexistentElement_returnsZero() {
+                    assertEquals(0, classUnderTest.count(0));
+                }
+
+                @Test
+                void isEmpty_many_returnsFalse() {
+                    assertFalse(classUnderTest.isEmpty());
+                }
+
+                @Test
+                void size_many_returnsCorrectSize() {
+                    assertEquals(5, classUnderTest.size());
+                }
+
+                @Test
+                void iterator_many_returnsElementsInCorrectOrder() {
+                    Iterator<Integer> iterator = classUnderTest.iterator();
+                    List<Integer> expected = List.of(10, 20, 30, 40, 50);
+                    List<Integer> list = new ArrayList<>();
+                    while (iterator.hasNext()) {
+                        list.add(iterator.next());
+                    }
+                    assertEquals(expected, list);
+                }
+
+                @Test
+                void toString_singleton_returnsCorrectString() {
+                    assertEquals("10, 20, 30, 40, 50, ", classUnderTest.toString());
+                }
+
+
             }
 
             @Nested
             @TestInstance(TestInstance.Lifecycle.PER_CLASS)
             class WhenDuplicate {
+
+                @BeforeEach
+                void addDuplicated() {
+                    classUnderTest.add(20);
+                    classUnderTest.add(10);
+                    classUnderTest.add(20);
+                    classUnderTest.add(10);
+                    classUnderTest.add(20);
+                }
+
+                @Test
+                void remove_duplicateElements_removesSingleOccurrence() {
+                    classUnderTest.remove(20);
+                    assertEquals(2, classUnderTest.count(20));
+                }
+
+                @Test
+                void count_duplicateElements_returnsCorrectCount() {
+                    assertEquals(3, classUnderTest.count(20));
+                }
 
             }
         }
