@@ -14,10 +14,18 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
     private T[] bag;
     private int rear;
 
+    /**
+     * Create an empty ArraySortedBag of the default capacity.
+     */
     public ArraySortedBag() {
         this(DEFAULT_CAPACITY);
     }
 
+    /**
+     * Create an empty ArraySortedBag with the specified capacity.
+     *
+     * @param initialCapacity Starting capacity of the fixed length array.
+     */
     @SuppressWarnings("unchecked")
     public ArraySortedBag(int initialCapacity) {
         bag = (T[]) new Comparable[initialCapacity];
