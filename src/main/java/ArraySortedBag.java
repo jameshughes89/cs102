@@ -1,6 +1,12 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+/**
+ * Implementation of a SortedBag with an array as the container. The array container will automatically "grow" to
+ * accommodate adding beyond the initial capacity.
+ *
+ * @param <T> Type of elements that are to be in the SortedBag.
+ */
 public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBag<T> {
 
     private static final int DEFAULT_CAPACITY = 100;
