@@ -51,7 +51,7 @@ class ArraySortedBagEqualsTest {
         new EqualsTester().addEqualityGroup(ArraySortedBag.class)
                 .addEqualityGroup(emptyA, emptyB, emptyC)
                 .addEqualityGroup(singletonA, singletonB, singletonC)
-                .addEqualityGroup(manyA, manyB, manyC, manyDifferentOrder.add(30))
+                .addEqualityGroup(manyA, manyB, manyC, manyDifferentOrder)
                 .addEqualityGroup(unequalDifferentValues)
                 .addEqualityGroup(unequalDifferentSizes)
                 .addEqualityGroup(unequalSomeEqual)
