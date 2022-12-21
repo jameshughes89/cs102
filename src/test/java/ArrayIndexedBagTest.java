@@ -6,7 +6,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -268,13 +267,9 @@ public class ArrayIndexedBagTest {
 
             @Test
             void iterator_singleton_returnsElementsInCorrectOrder() {
-                Iterator<Integer> iterator = classUnderTest.iterator();
-                List<Integer> expected = List.of(10);
                 List<Integer> list = new ArrayList<>();
-                while (iterator.hasNext()) {
-                    list.add(iterator.next());
-                }
-                assertEquals(expected, list);
+                classUnderTest.iterator().forEachRemaining(list::add);
+                assertEquals(List.of(10), list);
             }
 
             @Test
@@ -446,14 +441,10 @@ public class ArrayIndexedBagTest {
                 }
 
                 @Test
-                void iterator_many_returnsElementsInCorrectOrder() {
-                    Iterator<Integer> iterator = classUnderTest.iterator();
-                    List<Integer> expected = List.of(10, 20, 30, 40, 50);
+                void iterator_singleton_returnsElementsInCorrectOrder() {
                     List<Integer> list = new ArrayList<>();
-                    while (iterator.hasNext()) {
-                        list.add(iterator.next());
-                    }
-                    assertEquals(expected, list);
+                    classUnderTest.iterator().forEachRemaining(list::add);
+                    assertEquals(List.of(10, 20, 30, 40, 50), list);
                 }
 
                 @Test
