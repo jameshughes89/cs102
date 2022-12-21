@@ -25,14 +25,14 @@ public class ArrayQueue<T> implements Queue<T> {
     /**
      * Create an empty ArrayQueue with the specified capacity.
      *
-     * @param capacity Starting capacity of the fixed length array.
+     * @param initialCapacity Starting capacity of the fixed length array.
      */
     @SuppressWarnings("unchecked")
-    public ArrayQueue(int capacity) {
+    public ArrayQueue(int initialCapacity) {
         front = 0;
         rear = 0;
         size = 0;
-        queue = (T[]) new Object[capacity];
+        queue = (T[]) new Object[initialCapacity];
     }
 
     @Override

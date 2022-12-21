@@ -25,11 +25,11 @@ public class ContactList {
     /**
      * Create an empty ContactList with the array container's capacity being set to the specified size.
      *
-     * @param capacity Starting capacity of the fixed length array.
+     * @param initialCapacity Starting capacity of the fixed length array.
      */
-    public ContactList(int capacity) {
+    public ContactList(int initialCapacity) {
         size = 0;
-        friends = new Friend[capacity];
+        friends = new Friend[initialCapacity];
     }
 
     /**
