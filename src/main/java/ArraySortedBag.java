@@ -87,17 +87,37 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
 
     @Override
     public boolean remove(T element) {
-        return false;
+        if (isEmpty()) {
+            throw new NoSuchElementException("Empty bag");
+        }
+        int index = find(element);
+        if (index == NOT_FOUND){
+            throw new NoSuchElementException(Objects.toString(element));
+        }
+        shiftLeft(index);
+        rear--;
+        return true;
     }
 
     @Override
     public T removeFirst() {
-        return null;
+        if (isEmpty()) {
+            throw new NoSuchElementException("Empty bag");
+        }
+        T returnElement = bag[0];
+        shiftLeft(0);
+        rear--;
+        return returnElement;
     }
 
     @Override
     public T removeLast() {
-        return null;
+        if (isEmpty()) {
+            throw new NoSuchElementException("Empty bag");
+        }
+        T returnElement = bag[rear - 1];
+        rear--;
+        return returnElement;
     }
 
     @Override
