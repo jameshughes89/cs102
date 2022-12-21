@@ -102,14 +102,20 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
 
     @Override
     public T first() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("Empty bag");
+        }
         return bag[0];
     }
 
     @Override
     public T last() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("Empty bag");
+        }
         return bag[rear-1];
     }
-    
+
     @Override
     public boolean contains(T target) {
         return find(target) != NOT_FOUND;
