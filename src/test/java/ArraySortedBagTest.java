@@ -3,12 +3,15 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -91,6 +94,12 @@ public class ArraySortedBagTest {
         @Nested
         class WhenSingleton {
 
+            static Stream<Arguments> elementsToAdd() {
+                return Stream.of(Arguments.of(0, List.of(0, 10)),
+                        Arguments.of(10, List.of(10, 10)),
+                        Arguments.of(20, List.of(10, 20)));
+            }
+
             @BeforeEach
             void addSingleton() {
                 classUnderTest.add(10);
@@ -101,9 +110,15 @@ public class ArraySortedBagTest {
                 assertTrue(classUnderTest.add(0));
             }
 
-            @Test
-            void add_singleton_correctLocation() {
-                // UNIMPLEMENTED --- HOW DO? THINK LATER?
+            @ParameterizedTest
+            @MethodSource("elementsToAdd")
+            void add_singleton_correctLocation(int element, List<Integer> expected) {
+                List<Integer> list = new ArrayList<>();
+                classUnderTest.add(element);
+                while (!classUnderTest.isEmpty()) {
+                    list.add(classUnderTest.removeFirst());
+                }
+                assertEquals(expected, list);
             }
 
             @Test
@@ -204,6 +219,13 @@ public class ArraySortedBagTest {
             @TestInstance(TestInstance.Lifecycle.PER_CLASS)
             class WhenMany {
 
+                static Stream<Arguments> elementsToAdd() {
+                    return Stream.of(Arguments.of(0, List.of(0, 10, 20, 30, 40, 50)),
+                            Arguments.of(10, List.of(10, 10, 20, 30, 40, 50)),
+                            Arguments.of(25, List.of(10, 20, 25, 30, 40, 50)),
+                            Arguments.of(60, List.of(10, 20, 30, 40, 50, 60)));
+                }
+
                 @BeforeEach
                 void addMany() {
                     classUnderTest.add(20);
@@ -217,9 +239,15 @@ public class ArraySortedBagTest {
                     assertTrue(classUnderTest.add(0));
                 }
 
-                @Test
-                void add_many_correctLocation() {
-                    // UNIMPLEMENTED --- HOW DO? THINK LATER?
+                @ParameterizedTest
+                @MethodSource("elementsToAdd")
+                void add_many_correctLocation(int element, List<Integer> expected) {
+                    List<Integer> list = new ArrayList<>();
+                    classUnderTest.add(element);
+                    while (!classUnderTest.isEmpty()) {
+                        list.add(classUnderTest.removeFirst());
+                    }
+                    assertEquals(expected, list);
                 }
 
                 @ParameterizedTest
@@ -319,8 +347,6 @@ public class ArraySortedBagTest {
                 void toString_singleton_returnsCorrectString() {
                     assertEquals("10, 20, 30, 40, 50, ", classUnderTest.toString());
                 }
-
-
             }
 
             @Nested
@@ -346,7 +372,6 @@ public class ArraySortedBagTest {
                 void count_duplicateElements_returnsCorrectCount() {
                     assertEquals(3, classUnderTest.count(20));
                 }
-
             }
         }
     }
