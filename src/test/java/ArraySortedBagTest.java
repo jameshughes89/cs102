@@ -49,12 +49,12 @@ public class ArraySortedBagTest {
         }
 
         @Test
-        void contains_nonexistentElement_returnsFalse() {
+        void contains_empty_returnsFalse() {
             assertFalse(classUnderTest.contains(0));
         }
 
         @Test
-        void count_nonexistentElement_returnsZero() {
+        void count_empty_returnsZero() {
             assertEquals(0, classUnderTest.count(0));
         }
 
@@ -82,7 +82,6 @@ public class ArraySortedBagTest {
         void toString_empty_returnsEmptyString() {
             assertEquals("", classUnderTest.toString());
         }
-
 
         @Nested
         class WhenSingleton {
