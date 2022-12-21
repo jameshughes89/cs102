@@ -102,15 +102,14 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
 
     @Override
     public T first() {
-        return null;
+        return bag[0];
     }
 
     @Override
     public T last() {
-        return null;
+        return bag[rear-1];
     }
-
-
+    
     @Override
     public boolean contains(T target) {
         return find(target) != NOT_FOUND;
