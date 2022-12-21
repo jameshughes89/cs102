@@ -75,22 +75,22 @@ public class ArrayIndexedBagTest {
         }
 
         @Test
-        void remove_nonexistentElement_throwsNoSuchElementException() {
+        void remove_empty_throwsNoSuchElementException() {
             assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(Integer.valueOf(0)));
         }
 
         @Test
-        void indexOf_nonexistentElement_throwsNoSuchElementException() {
+        void indexOf_empty_throwsNoSuchElementException() {
             assertThrows(NoSuchElementException.class, () -> classUnderTest.indexOf(0));
         }
 
         @Test
-        void contains_nonexistentElement_returnsFalse() {
+        void contains_empty_returnsFalse() {
             assertFalse(classUnderTest.contains(0));
         }
 
         @Test
-        void count_nonexistentElement_returnsZero() {
+        void count_empty_returnsZero() {
             assertEquals(0, classUnderTest.count(0));
         }
 
@@ -271,7 +271,7 @@ public class ArrayIndexedBagTest {
                 Iterator<Integer> iterator = classUnderTest.iterator();
                 List<Integer> expected = List.of(10);
                 List<Integer> list = new ArrayList<>();
-                while (iterator.hasNext()){
+                while (iterator.hasNext()) {
                     list.add(iterator.next());
                 }
                 assertEquals(expected, list);
@@ -450,7 +450,7 @@ public class ArrayIndexedBagTest {
                     Iterator<Integer> iterator = classUnderTest.iterator();
                     List<Integer> expected = List.of(10, 20, 30, 40, 50);
                     List<Integer> list = new ArrayList<>();
-                    while (iterator.hasNext()){
+                    while (iterator.hasNext()) {
                         list.add(iterator.next());
                     }
                     assertEquals(expected, list);
