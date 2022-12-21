@@ -1,3 +1,5 @@
+import java.util.NoSuchElementException;
+
 /**
  * A queue is a linear data structure that has all additions (enqueues) happen at one end (back/tail), and all removals
  * (dequeues) happen at the other end (front/head). Adding and removing from anywhere else but is disallowed. This data
@@ -25,7 +27,7 @@ public interface Queue<T> {
      * If no subsequent element exists, the front will be null and the queue will be empty.
      *
      * @return The element at the front of the queue.
-     * @throws EmptyCollectionException If removing from an empty queue.
+     * @throws NoSuchElementException If removing from an empty queue.
      */
     T dequeue();
 
@@ -34,7 +36,7 @@ public interface Queue<T> {
      * leaves the queue unchanged.
      *
      * @return The element at the front of the queue.
-     * @throws EmptyCollectionException If calling first on an empty queue.
+     * @throws NoSuchElementException If calling first on an empty queue.
      */
     T first();
 

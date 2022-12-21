@@ -3,6 +3,8 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
+import java.util.NoSuchElementException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class LinkedQueueTest {
@@ -31,13 +33,13 @@ class LinkedQueueTest {
         }
 
         @Test
-        void dequeue_empty_throwsEmptyCollectionException() {
-            assertThrows(EmptyCollectionException.class, () -> classUnderTest.dequeue());
+        void dequeue_empty_throwsNoSuchElementException() {
+            assertThrows(NoSuchElementException.class, () -> classUnderTest.dequeue());
         }
 
         @Test
-        void first_empty_throwsEmptyCollectionException() {
-            assertThrows(EmptyCollectionException.class, () -> classUnderTest.first());
+        void first_empty_throwsNoSuchElementException() {
+            assertThrows(NoSuchElementException.class, () -> classUnderTest.first());
         }
 
         @Test
