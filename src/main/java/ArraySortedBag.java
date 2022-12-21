@@ -79,9 +79,35 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
         return NOT_FOUND;
     }
 
+    /**
+     * Linear search through the bag to find the index of where the element should be inserted. If equal elements
+     * exist within the collection, the returned index will be after the existing equal elements.
+     *
+     * @param element Item to be inserted.
+     * @return Index where the element should be inserted.
+     */
+    private int findInsertIndex(T element) {
+        int searchIndex = 0;
+        for (T bagElement : this) {
+            if (element.compareTo(bagElement) <= 0) {
+                return searchIndex;
+            }
+            searchIndex++;
+        }
+        // Element must belong at rear
+        return rear;
+    }
+
     @Override
     public boolean add(T element) {
-        return false;
+        if (size() == bag.length) {
+            bag = Arrays.copyOf(bag, bag.length * 2);
+        }
+        int insertIndex = findInsertIndex(element);
+        shiftRight(insertIndex);
+        bag[insertIndex] = element;
+        rear++;
+        return true;
     }
 
 
