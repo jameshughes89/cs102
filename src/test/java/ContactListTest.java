@@ -177,10 +177,8 @@ public class ContactListTest {
             @TestInstance(TestInstance.Lifecycle.PER_CLASS)
             class WhenMany {
 
-                static Stream<Arguments> existingFriendsStream() {
-                    return Stream.of(Arguments.of(EXISTING_FRIEND_FIRST),
-                            Arguments.of(EXISTING_FRIEND_MIDDLE),
-                            Arguments.of(EXISTING_FRIEND_END));
+                static Stream<Friend> existingFriendsStream() {
+                    return Stream.of(EXISTING_FRIEND_FIRST, EXISTING_FRIEND_MIDDLE, EXISTING_FRIEND_END);
                 }
 
                 static Stream<Arguments> existingFriendsStreamAndIndices() {
@@ -276,7 +274,8 @@ public class ContactListTest {
 
                 @Test
                 void toString_many_returnsCorrectString() {
-                    String expected = "Friend(Bob, Smith, bsmith@gmail.com)\n" + "Friend(Jane, Doe, jdoe@gmail.com)\n" +
+                    String expected = "Friend(Bob, Smith, bsmith@gmail.com)\n" +
+                            "Friend(Jane, Doe, jdoe@gmail.com)\n" +
                             "Friend(Clarence, Cartwrite, treelover@hotmail.com)\n" +
                             "Friend(Sandy, Seaside, boatsboatsboats@yachtclub500.com)\n" +
                             "Friend(Adam, Fluffson, fluffyman28@hotmail.com)\n";
