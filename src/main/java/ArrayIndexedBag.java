@@ -1,5 +1,7 @@
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import java.util.Objects;
 
 /**
  * Implementation of an IndexedBag with an array as the container. The array container will automatically "grow" to
@@ -14,10 +16,18 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
     private T[] bag;
     private int rear;
 
+    /**
+     * Create an empty ArrayIndexedBag of the default capacity.
+     */
     public ArrayIndexedBag() {
         this(DEFAULT_CAPACITY);
     }
 
+    /**
+     * Create an empty ArrayIndexedBag with the specified capacity.
+     *
+     * @param initialCapacity Starting capacity of the fixed length array.
+     */
     @SuppressWarnings("unchecked")
     public ArrayIndexedBag(int initialCapacity) {
         bag = (T[]) new Object[initialCapacity];
@@ -25,57 +35,40 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
     }
 
     /**
-     * Doubles the size of the bag array and copy the
-     * contents over.
-     */
-    @SuppressWarnings("unchecked")
-    private void expandCapacity() {
-        T[] newBag = (T[]) new Object[bag.length * 2];
-        for (int i = 0; i < bag.length; ++i) {
-            newBag[i] = bag[i];
-        }
-        bag = newBag;
-    }
-
-    /**
-     * Shifts elements in an array down (towards index 0) towards
-     * the starting index specified. This method assumes that
-     * the calling function manages the rear field.
+     * Shifts elements in an array down (towards index 0) to the starting index specified. The element at the starting
+     * index will be overwritten.
      *
-     * @param start Index of where shift starts/stops and element
-     *              overwritten.
+     * @param start Index of element to be overwritten and where shifting moves down to.
      */
     private void shiftLeft(int start) {
-        for (int i = start; i < rear - 1; ++i) {
+        for (int i = start; i < rear - 1; i++) {
             bag[i] = bag[i + 1];
         }
         bag[rear - 1] = null;
     }
 
     /**
-     * Shifts elements in an array up (towards index rear) away
-     * from the starting index specified. This method assumes that
-     * the calling function manages the rear field and any
-     * need of expandCapacity().
+     * Shifts elements in an array up (towards index rear) away from the starting index specified. The array location
+     * at the specified starting index will be open. This method assumes there is room in the array to facilitate the
+     * shifting.
      *
-     * @param start Index of where shifting starts/stops and where
-     *              space is opened.
+     * @param start Index of where the array has a new open location and where shifting moves up from.
      */
     private void shiftRight(int start) {
-        for (int i = rear; i > start; --i) {
+        for (int i = rear; i > start; i--) {
             bag[i] = bag[i - 1];
         }
         bag[start] = null;
     }
 
     /**
-     * Find the index of a specified target element. If the element
-     * does not exist, return NOT_FOUND
+     * Find and return the index of a given target element within the collection. If no such element exists within the
+     * collection, a sentinel value of -1 (NOT_FOUND constant) is returned.
      *
-     * @param target Element to be found
-     * @return Index of the element if found, NOT_FOUND otherwise
+     * @param target Element to find the index of.
+     * @return Index of the target element within the collection, or -1 (NOT_FOUND constant) if no such element exists.
      */
-    private int sentinelIndexOf(T target) {
+    private int find(T target) {
         int searchIndex = 0;
         for (T bagElement : this) {
             if (bagElement.equals(target)) {
@@ -85,31 +78,20 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
         }
         return NOT_FOUND;
     }
-    //    private int sentinelIndexOf(T target) {
-    //        int searchIndex = 0;
-    //        Iterator<T> it = this.iterator();
-    //        while (it.hasNext()) {
-    //            if (it.next().equals(target)) {
-    //                return searchIndex;
-    //            }
-    //            searchIndex++;
-    //        }
-    //        return NOT_FOUND;
-    //    }
 
     @Override
     public boolean add(T element) {
-        add(rear, element);
-        return true;
+        return add(rear, element);
     }
 
     @Override
     public boolean add(int index, T element) {
-        if (index > size()) {
-            throw new IndexOutOfBoundsException(String.format("Bag has no index %d to add to.", index));
+        // Index == size() is valid as that just appends
+        if (index < 0 || index > size()) {
+            throw new IndexOutOfBoundsException(index);
         }
         if (size() == bag.length) {
-            expandCapacity();
+            bag = Arrays.copyOf(bag, bag.length * 2);
         }
         shiftRight(index);
         bag[index] = element;
@@ -119,8 +101,8 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
 
     @Override
     public T set(int index, T element) {
-        if (index >= size()) {
-            throw new IndexOutOfBoundsException(String.format("Bag has no element at index %d.", index));
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException(index);
         }
         T toReturn = bag[index];
         bag[index] = element;
@@ -129,16 +111,16 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
 
     @Override
     public T get(int index) {
-        if (index >= size()) {
-            throw new IndexOutOfBoundsException(String.format("Bag has no element at index %d.", index));
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException(index);
         }
         return bag[index];
     }
 
     @Override
     public T remove(int index) {
-        if (index >= size()) {
-            throw new IndexOutOfBoundsException(String.format("Bag has no element at index %d.", index));
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException(index);
         }
         T returnElement = bag[index];
         shiftLeft(index);
@@ -149,7 +131,7 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
     @Override
     public boolean remove(T element) {
         if (isEmpty()) {
-            throw new NoSuchElementException("Removing from an empty bag.");
+            throw new NoSuchElementException("Empty bag");
         }
         // If indexOf throws an exception, this method propagates it
         int removeIndex = indexOf(element);
@@ -159,16 +141,15 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
 
     @Override
     public int indexOf(T target) {
-        int index = sentinelIndexOf(target);
-        if (index == NOT_FOUND) {
-            throw new NoSuchElementException("Element not contained in bag.");
+        if (!contains(target)) {
+            throw new NoSuchElementException(Objects.toString(target));
         }
-        return index;
+        return find(target);
     }
 
     @Override
     public boolean contains(T target) {
-        return sentinelIndexOf(target) != NOT_FOUND;
+        return find(target) != NOT_FOUND;
     }
 
     @Override
@@ -181,17 +162,6 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
         }
         return count;
     }
-    //    @Override
-    //    public int getCount(T target) {
-    //        int count = 0;
-    //        Iterator<T> it = this.iterator();
-    //        while (it.hasNext()) {
-    //            if (it.next().equals(target)) {
-    //                count++;
-    //            }
-    //        }
-    //        return count;
-    //    }
 
     @Override
     public boolean isEmpty() {
@@ -208,6 +178,7 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
         return new ArrayIterator<>(bag, size());
     }
 
+    @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
         for (T bagElement : this) {
@@ -216,13 +187,25 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
         }
         return builder.toString();
     }
-    //    public String toString() {
-    //        Iterator<T> it = this.iterator();
-    //        StringBuilder builder = new StringBuilder();
-    //        while (it.hasNext()) {
-    //            builder.append(it.next());
-    //            builder.append(", ");
-    //        }
-    //        return builder.toString();
-    //    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ArrayIndexedBag<?> that = (ArrayIndexedBag<?>) o;
+        return Arrays.equals(this.bag, 0, this.rear, that.bag, 0, that.rear);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(rear);
+        for (int i = 0; i < size(); i++) {
+            result = 31 * result + Objects.hashCode(bag[i]);
+        }
+        return result;
+    }
 }
