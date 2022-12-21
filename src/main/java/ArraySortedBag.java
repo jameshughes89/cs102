@@ -61,6 +61,24 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
         bag[start] = null;
     }
 
+    /**
+     * Find and return the index of a given target element within the collection. If no such element exists within the
+     * collection, a sentinel value of -1 (NOT_FOUND constant) is returned.
+     *
+     * @param target Element to find the index of.
+     * @return Index of the target element within the collection, or -1 (NOT_FOUND constant) if no such element exists.
+     */
+    private int find(T target) {
+        int searchIndex = 0;
+        for (T bagElement : this) {
+            if (bagElement.equals(target)) {
+                return searchIndex;
+            }
+            searchIndex++;
+        }
+        return NOT_FOUND;
+    }
+
     @Override
     public boolean add(T element) {
         return false;
@@ -71,32 +89,6 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
     public boolean remove(T element) {
         return false;
     }
-
-    @Override
-    public boolean contains(T target) {
-        return false;
-    }
-
-    @Override
-    public int count(T target) {
-        return 0;
-    }
-
-    @Override
-    public boolean isEmpty() {
-        return false;
-    }
-
-    @Override
-    public int size() {
-        return 0;
-    }
-
-    @Override
-    public Iterator<T> iterator() {
-        return null;
-    }
-
 
     @Override
     public T removeFirst() {
@@ -116,6 +108,38 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
     @Override
     public T last() {
         return null;
+    }
+
+
+    @Override
+    public boolean contains(T target) {
+        return find(target) != NOT_FOUND;
+    }
+
+    @Override
+    public int count(T target) {
+        int count = 0;
+        for (T bagElement : this) {
+            if (bagElement.equals(target)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return size() == 0;
+    }
+
+    @Override
+    public int size() {
+        return rear;
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new ArrayIterator<>(bag, size());
     }
 
     @Override
