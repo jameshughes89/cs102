@@ -209,6 +209,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
 
 
     @Override
+    @SuppressWarnings("unchecked")
     public boolean equals(Object o) {
         if (this == o) {
             return true;
