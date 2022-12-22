@@ -71,7 +71,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
     private int find(T target) {
         int searchIndex = 0;
         for (T bagElement : this) {
-            if (bagElement.equals(target)) {
+            if (bagElement.compareTo(target) == 0) {
                 return searchIndex;
             }
             searchIndex++;
@@ -117,7 +117,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
             throw new NoSuchElementException("Empty bag");
         }
         int index = find(element);
-        if (index == NOT_FOUND){
+        if (index == NOT_FOUND) {
             throw new NoSuchElementException(Objects.toString(element));
         }
         shiftLeft(index);
@@ -159,7 +159,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
         if (isEmpty()) {
             throw new NoSuchElementException("Empty bag");
         }
-        return bag[rear-1];
+        return bag[rear - 1];
     }
 
     @Override
@@ -171,7 +171,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
     public int count(T target) {
         int count = 0;
         for (T bagElement : this) {
-            if (bagElement.equals(target)) {
+            if (bagElement.compareTo(target) == 0) {
                 count++;
             }
         }
