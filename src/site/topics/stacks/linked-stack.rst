@@ -70,8 +70,8 @@ Implementation
 .. literalinclude:: /../main/java/LinkedStack.java
     :language: java
     :linenos:
-    :lineno-start: 1
-    :lines: 1-20
+    :lineno-start: 10
+    :lines: 10-21
 
 
 * Like the ``ArrayStack``, the ``LinkedStack`` will implement the ``Stack`` interface
@@ -84,8 +84,8 @@ Implementation
 .. literalinclude:: /../main/java/LinkedStack.java
     :language: java
     :linenos:
-    :lineno-start: 22
-    :lines: 22-29
+    :lineno-start: 23
+    :lines: 23-30
 
 
 * In ``push``, notice how this is just *adding to the front of a linked structure*
@@ -98,8 +98,8 @@ Implementation
 .. literalinclude:: /../main/java/LinkedStack.java
     :language: java
     :linenos:
-    :lineno-start: 31
-    :lines: 31-48
+    :lineno-start: 32
+    :lines: 32-49
 
 
 * Like the ``ArrayStack``, popping or peeking from an empty stack throws an exception
@@ -112,8 +112,8 @@ Implementation
 .. literalinclude:: /../main/java/LinkedStack.java
     :language: java
     :linenos:
-    :lineno-start: 50
-    :lines: 50-58
+    :lineno-start: 51
+    :lines: 51-59
 
 
 * The ``LinkedStack`` is empty if its ``size() == 0``
@@ -127,8 +127,8 @@ Implementation
 .. literalinclude:: /../main/java/LinkedStack.java
     :language: java
     :linenos:
-    :lineno-start: 60
-    :lines: 60-70
+    :lineno-start: 61
+    :lines: 61-71
 
 
 * This is matching the output format that the ``ArrayStack``\'s ``toString`` had
@@ -140,8 +140,8 @@ Implementation
 .. literalinclude:: /../main/java/LinkedStack.java
     :language: java
     :linenos:
-    :lineno-start: 72
-    :lines: 72-105
+    :lineno-start: 73
+    :lines: 73-106
 
 
 Nested Node Class
@@ -200,8 +200,8 @@ Nesting in LinkedStack
 .. literalinclude:: /../main/java/LinkedStack.java
     :language: java
     :linenos:
-    :lineno-start: 107
-    :lines: 107-142
+    :lineno-start: 108
+    :lines: 108-143
 
 
 
@@ -229,4 +229,4 @@ Playing Code
 .. literalinclude:: /../main/java/PlayingLinkedStack.java
     :language: java
     :linenos:
-    :emphasize-lines: 4
+    :emphasize-lines: 6

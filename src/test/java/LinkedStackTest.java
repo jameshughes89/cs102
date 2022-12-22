@@ -3,6 +3,8 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
+import java.util.NoSuchElementException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class LinkedStackTest {
@@ -32,13 +34,13 @@ class LinkedStackTest {
         }
 
         @Test
-        void pop_empty_throwsEmptyCollectionException() {
-            assertThrows(EmptyCollectionException.class, () -> classUnderTest.pop());
+        void pop_empty_throwsNoSuchElementException() {
+            assertThrows(NoSuchElementException.class, () -> classUnderTest.pop());
         }
 
         @Test
-        void peek_empty_throwsEmptyCollectionException() {
-            assertThrows(EmptyCollectionException.class, () -> classUnderTest.peek());
+        void peek_empty_throwsNoSuchElementException() {
+            assertThrows(NoSuchElementException.class, () -> classUnderTest.peek());
         }
 
         @Test

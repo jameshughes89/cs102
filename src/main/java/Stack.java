@@ -1,3 +1,5 @@
+import java.util.NoSuchElementException;
+
 /**
  * A stack is a linear data structure that has all the action happen from one end referred to as the top; all additions
  * (pushes) and removals (pops) happen from the same end, the top. Adding and removing from anywhere else in the stack
@@ -23,7 +25,7 @@ public interface Stack<T> {
      * subsequent element exists, the top will be null and the stack will be empty.
      *
      * @return The element at the top of the stack.
-     * @throws EmptyCollectionException If removing from an empty stack.
+     * @throws NoSuchElementException If removing from an empty stack.
      */
     T pop();
 
@@ -32,7 +34,7 @@ public interface Stack<T> {
      * the stack unchanged.
      *
      * @return The element at the top of the stack.
-     * @throws EmptyCollectionException If calling peek on an empty stack.
+     * @throws NoSuchElementException If calling peek on an empty stack.
      */
     T peek();
 

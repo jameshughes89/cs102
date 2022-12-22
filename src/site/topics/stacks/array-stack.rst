@@ -111,8 +111,8 @@ Implementation
 .. literalinclude:: /../main/java/ArrayStack.java
     :language: java
     :linenos:
-    :lineno-start: 10
-    :lines: 10-14
+    :lineno-start: 11
+    :lines: 11-15
     :emphasize-lines: 1
 
 
@@ -143,8 +143,8 @@ Constructors
 .. literalinclude:: /../main/java/ArrayStack.java
     :language: java
     :linenos:
-    :lineno-start: 16
-    :lines: 16-34
+    :lineno-start: 17
+    :lines: 17-35
     :emphasize-lines: 5, 18
 
 
@@ -181,8 +181,8 @@ Constructors
 .. literalinclude:: /../main/java/ArrayStack.java
     :language: java
     :linenos:
-    :lineno-start: 36
-    :lines: 36-56
+    :lineno-start: 37
+    :lines: 37-57
     :emphasize-lines: 1, 3, 4, 5, 15
 
 
@@ -210,8 +210,8 @@ Constructors
 .. literalinclude:: /../main/java/ArrayStack.java
     :language: java
     :linenos:
-    :lineno-start: 58
-    :lines: 58-75
+    :lineno-start: 59
+    :lines: 59-76
     :emphasize-lines: 3, 4, 5, 14, 15, 16
 
 
@@ -253,8 +253,8 @@ Exceptional Situations
 .. literalinclude:: /../main/java/ArrayStack.java
     :language: java
     :linenos:
-    :lineno-start: 77
-    :lines: 77-85
+    :lineno-start: 78
+    :lines: 78-86
     :emphasize-lines: 3
 
 
@@ -270,8 +270,8 @@ Exceptional Situations
 .. literalinclude:: /../main/java/ArrayStack.java
     :language: java
     :linenos:
-    :lineno-start: 87
-    :lines: 87-95
+    :lineno-start: 88
+    :lines: 88-96
     :emphasize-lines: 6
 
 
@@ -286,8 +286,8 @@ Exceptional Situations
 .. literalinclude:: /../main/java/ArrayStack.java
     :language: java
     :linenos:
-    :lineno-start: 97
-    :lines: 97-116
+    :lineno-start: 98
+    :lines: 98-117
     :emphasize-lines: 10
 
 
@@ -310,10 +310,10 @@ For Next Time
 
     * :download:`Stack </../main/java/Stack.java>`
     * :download:`ArrayStack </../main/java/ArrayStack.java>`
-    * :download:`ArrayStack </../main/java/PlayingArrayStack.java>`
+    * :download:`ArrayStackTest </../test/java/ArrayStackTest.java>`
+    * :download:`ArrayStack playing code </../main/java/PlayingArrayStack.java>`
 
-* :doc:`Check out the aside on testing <unit-tests>`
-* Download and run the :download:`ArrayStackTest </../test/java/ArrayStackTest.java>` tests
+
 * Finish reading Chapter 3
 
     * 16 pages

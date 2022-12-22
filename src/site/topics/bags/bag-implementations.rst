@@ -327,9 +327,9 @@ ArraySortedBag
     * The method ``compareTo`` is implemented for the type
 
 * If we call ``x.compareTo(y)``
-    * Return a negative integer if ``y < x``
-    * Return zero if ``y == x``
-    * Return a positive integer if ``y > x``
+    * Return a negative integer if ``x < y``
+    * Return zero if ``x == y``
+    * Return a positive integer if ``x > y``
 
 * When we have something that is extending ``Comparable<T>``, that means we can compare ``this`` to some type ``T``
     * ``this`` can be compared to things of type ``T``, but not the other way around
