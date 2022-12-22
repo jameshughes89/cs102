@@ -207,6 +207,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
         return builder.toString();
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -216,7 +217,15 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
             return false;
         }
         ArraySortedBag<?> that = (ArraySortedBag<?>) o;
-        return Arrays.equals(this.bag, 0, this.rear, that.bag, 0, that.rear);
+        if (this.size() != that.size()) {
+            return false;
+        }
+        for (int i = 0; i < this.size(); i++) {
+            if (this.bag[i].compareTo((T) that.bag[i]) != 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override
