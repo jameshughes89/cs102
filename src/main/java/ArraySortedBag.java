@@ -73,6 +73,8 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
         for (T bagElement : this) {
             if (bagElement.compareTo(target) == 0) {
                 return searchIndex;
+            } else if (bagElement.compareTo(target) > 0) {
+                return NOT_FOUND;
             }
             searchIndex++;
         }
@@ -173,6 +175,8 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
         for (T bagElement : this) {
             if (bagElement.compareTo(target) == 0) {
                 count++;
+            } else if (bagElement.compareTo(target) > 0) {
+                return count;
             }
         }
         return count;
