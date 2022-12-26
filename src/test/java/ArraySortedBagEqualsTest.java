@@ -9,18 +9,22 @@ class ArraySortedBagEqualsTest {
         ArraySortedBag<Integer> emptyA = new ArraySortedBag<>();
         ArraySortedBag<Integer> emptyB = new ArraySortedBag<>();
         ArraySortedBag<Integer> emptyC = new ArraySortedBag<>(1000);
+        ArrayIndexedBag<Integer> emptyIndexedBag = new ArrayIndexedBag<>();
 
         ArraySortedBag<Integer> singletonA = new ArraySortedBag<>();
         ArraySortedBag<Integer> singletonB = new ArraySortedBag<>();
         ArraySortedBag<Integer> singletonC = new ArraySortedBag<>(1000);
+        ArrayIndexedBag<Integer> singletonIndexedBag = new ArrayIndexedBag<>();
         singletonA.add(10);
         singletonB.add(10);
         singletonC.add(10);
+        singletonIndexedBag.add(10);
 
         ArraySortedBag<Integer> manyA = new ArraySortedBag<>();
         ArraySortedBag<Integer> manyB = new ArraySortedBag<>();
         ArraySortedBag<Integer> manyC = new ArraySortedBag<>(1000);
-        ArraySortedBag<Integer> manyDifferentOrder = new ArraySortedBag<>();
+        ArrayIndexedBag<Integer> ManyIndexedBag = new ArrayIndexedBag<>();
+        ArrayIndexedBag<Integer> ManyIndexedBagDifferentOrder = new ArrayIndexedBag<>();
         manyA.add(10);
         manyA.add(20);
         manyA.add(30);
@@ -30,9 +34,12 @@ class ArraySortedBagEqualsTest {
         manyC.add(10);
         manyC.add(20);
         manyC.add(30);
-        manyDifferentOrder.add(30);
-        manyDifferentOrder.add(10);
-        manyDifferentOrder.add(20);
+        ManyIndexedBag.add(10);
+        ManyIndexedBag.add(20);
+        ManyIndexedBag.add(30);
+        ManyIndexedBagDifferentOrder.add(30);
+        ManyIndexedBagDifferentOrder.add(10);
+        ManyIndexedBagDifferentOrder.add(20);
 
         ArraySortedBag<Integer> unequalDifferentValues = new ArraySortedBag<>();
         unequalDifferentValues.add(110);
@@ -49,9 +56,9 @@ class ArraySortedBagEqualsTest {
         unequalSomeEqual.add(40);
 
         new EqualsTester().addEqualityGroup(ArraySortedBag.class)
-                .addEqualityGroup(emptyA, emptyB, emptyC)
-                .addEqualityGroup(singletonA, singletonB, singletonC)
-                .addEqualityGroup(manyA, manyB, manyC, manyDifferentOrder)
+                .addEqualityGroup(emptyA, emptyB, emptyC, emptyIndexedBag)
+                .addEqualityGroup(singletonA, singletonB, singletonC, singletonIndexedBag)
+                .addEqualityGroup(manyA, manyB, manyC, ManyIndexedBag, ManyIndexedBagDifferentOrder)
                 .addEqualityGroup(unequalDifferentValues)
                 .addEqualityGroup(unequalDifferentSizes)
                 .addEqualityGroup(unequalSomeEqual)

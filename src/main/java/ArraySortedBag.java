@@ -236,7 +236,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
     public int hashCode() {
         int result = Objects.hash(rear);
         for (int i = 0; i < size(); i++) {
-            result = 31 * result + Objects.hashCode(bag[i]);
+            result += Objects.hashCode(bag[i]);
         }
         return result;
     }
