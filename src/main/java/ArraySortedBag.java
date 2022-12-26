@@ -214,15 +214,18 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
         if (this == o) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (o == null) {
             return false;
         }
-        ArraySortedBag<?> that = (ArraySortedBag<?>) o;
+        if (!(o instanceof Bag)) {
+            return false;
+        }
+        Bag<T> that = (Bag<T>) o;
         if (this.size() != that.size()) {
             return false;
         }
         for (int i = 0; i < this.size(); i++) {
-            if (this.bag[i].compareTo((T) that.bag[i]) != 0) {
+            if (this.count(this.bag[i]) != that.count(this.bag[i])) {
                 return false;
             }
         }
