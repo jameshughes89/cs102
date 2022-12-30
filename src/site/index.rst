@@ -116,6 +116,7 @@ The Math, Stats, and CS Society has a time and location for
     :maxdepth: 1
     :numbered:
 
+    labs/hello-world/hello-world
 
 
 .. toctree::
