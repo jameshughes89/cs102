@@ -30,8 +30,9 @@ Creating a Project
             :width: 500 px
             :align: center
 
-            New project screen with appropriate settings selected. This figures shows the project named "Lab1" being
-            created and saved to the desktop, but it is recommended to save the project to a more fitting location.
+            New project screen with appropriate settings selected. This figures shows the project named "csci162-labs"
+            being created and saved to the desktop, but it is recommended to save the project to a more fitting
+            location.
 
 
     * After selecting "Create", something like the following figure should be displayed
@@ -40,7 +41,7 @@ Creating a Project
             :width: 600 px
             :align: center
 
-            IntelliJ displaying the contents of a new project called "Lab1".
+            IntelliJ displaying the contents of a new project called "csci162-labs".
 
 
 #. Add a Java class to the project
@@ -50,7 +51,6 @@ Creating a Project
     * Give the class a name, something like *Lab1*
 
         * By convention, **always start your class names with an uppercase letter**
-        * It is not required that the class name and the project name match
 
 
 #. Add a ``main`` method to the class and have it run ``Hello, world!``
@@ -69,9 +69,7 @@ Creating a Project
     * Select *Run -> Run*
 
         * One may have to select the class you want to run
-
-
-    * Alternatively, select the green play triangle next to the main method by the line numbers
+        * Alternatively, select the green play triangle next to the main method by the line numbers
 
         .. figure:: hello_world_project.png
             :width: 600 px
