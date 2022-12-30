@@ -52,6 +52,12 @@ Creating a Project
 
         * By convention, **always start your class names with an uppercase letter**
 
+    .. figure:: new_class.png
+        :width: 350 px
+        :align: center
+
+        Window to name the new class being created.
+
 
 #. Add a ``main`` method to the class and have it run ``Hello, world!``
 
