@@ -17,40 +17,69 @@ Creating a Project
 #. Open IntelliJ
 
 #. Create a new project
-    * You may see a start page
-    * Or you may need to go *File -> New -> Project*
-    * Don't use the templates
-    * You should see something like this
 
-    .. image:: empty_project.png
-       :width: 500 px
-       :align: center
+    * A start page may be shown with an option to create a new project
+    * Or an existing project may be shown
+
+        * If this is the case, select *File -> New -> Project*
+
+
+    * After selecting new project, something like the following figure should be displayed
+
+        .. figure:: new_project.png
+            :width: 500 px
+            :align: center
+
+            New project screen with appropriate settings selected. This figures shows the project named "Lab1" being
+            created and saved to the desktop, but it is recommended to save the project to a more fitting location.
+
+
+    * After selecting "Create", something like the following figure should be displayed
+
+        .. figure:: empty_project.png
+            :width: 600 px
+            :align: center
+
+            IntelliJ displaying the contents of a new project called "Lab1".
 
 
 #. Add a Java class to the project
-    * Right click *src* in the project explorer
-    * *New -> Java Class*
-    * Give your class a name, something like *Lab1*
+
+    * Right click *src* in the project explorer on left hand side of the window
+    * Select *New -> Java Class*
+    * Give the class a name, something like *Lab1*
 
         * By convention, **always start your class names with an uppercase letter**
+        * It is not required that the class name and the project name match
 
 
-#. Add a ``main`` method to your class and have it do ``Hello, world!``
+#. Add a ``main`` method to the class and have it run ``Hello, world!``
 
-    .. code-block:: java
+    * Below is an example of hello world that can be copied and pasted into the class
 
-        public static void main(String[] args) {
-            System.out.println("Hello, world!");
-        }
+        .. code-block:: java
+
+            public static void main(String[] args) {
+                System.out.println("Hello, world!");
+            }
 
 
-#. Run your program
-    * *Run -> Run*
-    * You may have to select the class you want to run
+#. Run the program
 
-    .. image:: hello_world_project.png
-       :width: 500 px
-       :align: center
+    * Select *Run -> Run*
+
+        * One may have to select the class you want to run
+
+
+    * Alternatively, select the green play triangle next to the main method by the line numbers
+
+        .. figure:: hello_world_project.png
+            :width: 600 px
+            :align: center
+
+            IntelliJ after the hello world program was executed. Note the ``Hello, World!`` output near the bottom of
+            the window as this was the result of the program.
+
 
 
 Simple Problems
