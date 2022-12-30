@@ -116,18 +116,6 @@ The Math, Stats, and CS Society has a time and location for
     :maxdepth: 1
     :numbered:
 
-    labs/hello-world/hello-world
-    labs/objects-collections/objects-collections
-    labs/unit-tests/unit-tests
-    labs/stacks/stacks
-    labs/linked-structures/linked-structures
-    labs/queues/queues
-    labs/sorted-bags/sorted-bags
-    labs/recursion/recursion
-    labs/binary-trees/binary-trees
-    labs/heaps/heaps
-    labs/sorting/sorting-basic
-    labs/sorting/sorting-recursive
 
 
 .. toctree::
