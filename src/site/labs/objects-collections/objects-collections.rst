@@ -2,27 +2,29 @@
 Objects and Collections
 ***********************
 
-* Feel free to use your laptop if you have it
-* I strongly encourage you to work with others in the lab
+* Feel free to use your laptop
+* You are strongly encourage to work with others
 
-    * When you get stuck, do me a favour and ask those sitting around you for help
-    * I want people to get used to working together in the labs
-    * Peer teaching and peer learning is super effective
+    * When you get stuck, ask those sitting around you for help
+    * Get used to working together in the labs
+    * Peer teaching and peer learning has been empirically shown to be very effective
 
 
-Playing with Objects
-====================
+Creating Objects
+================
 
-We will make a program that will keep track of a collection of courses offered. To do this we will write two classes ---
+The goal is to make a program that will keep track of a suite of courses. To do this, two classes will be written ---
 one for keeping track of the information about a single course, and another for keeping track of multiple courses.
 
 
 Course Class
 ------------
 
-A ``Course`` is a simple object that keeps track of data for us.
+A ``Course`` is a simple object to keeps track of data.
+:doc:`Refer to the objects review topic </topics/objects-review/objects-review>` for guidance on creating this class.
 
-#. Create a class called ``Course`` that has three private fields: ``programCode``, ``courseCode``, and ``courseTitle``.
+
+#. Create a class called ``Course`` that has three private fields: ``programCode``, ``courseCode``, and ``courseTitle``
 
     * For example, this course would have the following values for the fields
 
@@ -30,65 +32,85 @@ A ``Course`` is a simple object that keeps track of data for us.
         * ``courseCode`` --- ``"162"``
         * ``courseTitle`` --- ``"Programming and Data Structures"``
 
-#. Write a single constructor to take and assign values to the fields.
 
-#. Write getters and setters for each field.
+#. Write a single constructor to take and assign values to the fields
+#. Write accessors methods for the three fields
 
-#. Write a ``toString`` method that returns ``programCode``, followed by a space, followed by the ``courseCode``.
+    * For example, ``getCourseCode``
 
-    * For example, ``"CSCI 162"``
 
-#. Write ``equals`` that checks if two ``Course`` objects are equivalent.
+#. Write a ``toString`` method that returns a string representation of the object
 
-    * We will say that two courses are equal if their ``programCode`` and ``courseCode`` are equal
-    * Remember to be careful with ``==``
+    * The string should be of the form ``"Course(programCode, courseCode, courseTitle)"``
 
-#. Test the ``Course`` class by making a instances of them and calling the methods to see if they work as you expect.
+
+#. Write an ``equals`` method that checks if two ``Course`` objects are equivalent
+
+    * Two ``Course`` objects are considered equal if all their fields match
+    * Remember, do not check string equality with ``==``
+
+
+#. Write a ``hashCode`` method
+#. Test the ``Course`` class by making instances of them and calling the methods to see if they as expected
+
 
 
 Course List Class
 -----------------
 
-A ``CourseList`` will be a collection of ``Course`` objects that we can add and remove from.
+A ``CourseList`` will be a collection of ``Course`` objects.
+:doc:`Refer to the data structures review topic </topics/objects-review/data-structures-review>` for guidance on
+creating this class. It is recommended to go through the topic and refactor the relevant code to fit the requirements of
+this lab. 
 
-#. Make a ``CourseList`` class that has two private fields (``list`` & ``size``) and a constant for a default capacity.
+
+#. Make a ``CourseList`` class that has two private fields (``list`` & ``size``) and a constant for a default capacity
 
     * ``list`` will be an array that holds references to ``Course`` objects
-    * ``size`` will be the number of ``Courses`` currently in ``list``
+    * ``size`` will be the number of ``Course`` objects currently in ``list``
 
         * Remember, the capacity of the array and ``size`` are not the same thing
 
     * ``DEFAULT_CAPACITY`` is a constant that will be used for creating the ``list`` array if no capacity is provided
 
-#. Write two constructors.
 
-    * One that takes no parameter and makes ``list`` based on ``DEFAULT_CAPACITY``
-    * The other takes a parameter ``initialCapacity`` for the capacity of ``list``
-    * Try to use *constructor chaining*
+#. Write two constructors
 
-#. Write an ``add`` method that takes a ``Course`` object and adds it to the collection.
+    * One takes no parameter and makes ``list`` based on ``DEFAULT_CAPACITY``
+    * The other takes a parameter ``initialCapacity`` for the starting capacity of ``list``
+    * :doc:`Try to use constructor chaining </topics/objects-review/chaining>`
 
-    * You will need to also make a private ``expandCapacity`` method for ``add`` to work properly
 
-#. Write a ``remove`` method that takes a ``Course`` to find and remove a ``Course`` from the collection.
+#. Write an ``add`` method that takes a ``Course`` object and adds it to the collection
 
+    * This will require a mechanism to "expand the capacity" of the array  to work properly
+
+
+#. Write a ``contains`` method that takes a ``Course`` as a parameter and returns ``true`` if it exists in the collection and ``false`` otherwise
+#. Write a ``indexOf`` method that returns the index of a specified ``Course`` object
+
+    * If no such ``Course``  exists, this method should throw an exception
+
+
+#. Write a ``remove`` method that takes a ``Course`` to remove from the collection as a parameter
+
+    * If no such ``Course``  exists, this method should throw an exception
     * Make use of the ``Course`` object's ``equals`` method
 
-#. Write a ``get`` method that returns the ``Course`` object from the specified index in the ``CourseList``.
 
-#. Write a ``indexOf`` method that returns the index of a specified ``Course`` object.
+#. Write a ``get`` method that returns the ``Course`` object at the specified index in the ``CourseList``
 
-#. Write a ``size`` method to return the number of ``Course`` objects in the collection.
+    * If the provided index is out of bounds, this method should throw an exception
 
-#. Write a reasonable ``toString`` for the class.
 
-#. Test the ``CourseList`` class by calling the methods.
+#. Write a ``size`` method to return the number of ``Course`` objects in the collection
+#. Write a ``toString`` for the class
+#. Test the ``CourseList`` class by creating an instance of it and using the methods
+
 
 
 Kattis Problems
 ===============
-
-Recommended Kattis Problems (don't worry, you don’t need to do all of them or anything):
 
 #. https://open.kattis.com/problems/quadrant
 #. https://open.kattis.com/problems/judgingmoose
