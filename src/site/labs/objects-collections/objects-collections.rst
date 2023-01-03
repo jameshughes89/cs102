@@ -10,11 +10,10 @@ Objects and Collections
     * Peer teaching and peer learning has been empirically shown to be very effective
 
 
+Creating Objects
+================
 
-Playing with Objects
-====================
-
-We will make a program that will keep track of a collection of courses offered. To do this we will write two classes ---
+The goal is to make a program that will keep track of a suite of courses. To do this, two classes will be written ---
 one for keeping track of the information about a single course, and another for keeping track of multiple courses.
 
 
