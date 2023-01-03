@@ -20,8 +20,8 @@ one for keeping track of the information about a single course, and another for 
 Course Class
 ------------
 
-A ``Course`` is a simple object to keeps track of data. Refer to topic
-:doc:`Java vs. Python topic </topics/objects-review/objects-review>` for guidance on creating this class.
+A ``Course`` is a simple object to keeps track of data.
+:doc:`Refer to the objects review topic </topics/objects-review/objects-review>` for guidance on creating this class.
 
 
 #. Create a class called ``Course`` that has three private fields: ``programCode``, ``courseCode``, and ``courseTitle``
@@ -58,7 +58,10 @@ A ``Course`` is a simple object to keeps track of data. Refer to topic
 Course List Class
 -----------------
 
-A ``CourseList`` will be a collection of ``Course`` objects that we can add and remove from.
+A ``CourseList`` will be a collection of ``Course`` objects.
+:doc:`Refer to the data structures review topic </topics/objects-review/data-structures-review>` for guidance on
+creating this class.
+
 
 #. Make a ``CourseList`` class that has two private fields (``list`` & ``size``) and a constant for a default capacity.
 
