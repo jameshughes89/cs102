@@ -1,6 +1,14 @@
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import java.util.Objects;
 
+/**
+ * Implementation of a SortedBag with an array as the container. The array container will automatically "grow" to
+ * accommodate adding beyond the initial capacity.
+ *
+ * @param <T> Type of elements that are to be in the SortedBag.
+ */
 public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBag<T> {
 
     private static final int DEFAULT_CAPACITY = 100;
@@ -8,10 +16,18 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
     private T[] bag;
     private int rear;
 
+    /**
+     * Create an empty ArraySortedBag of the default capacity.
+     */
     public ArraySortedBag() {
         this(DEFAULT_CAPACITY);
     }
 
+    /**
+     * Create an empty ArraySortedBag with the specified capacity.
+     *
+     * @param initialCapacity Starting capacity of the fixed length array.
+     */
     @SuppressWarnings("unchecked")
     public ArraySortedBag(int initialCapacity) {
         bag = (T[]) new Comparable[initialCapacity];
@@ -19,61 +35,46 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
     }
 
     /**
-     * Doubles the size of the bag array and copy the
-     * contents over.
-     */
-    @SuppressWarnings("unchecked")
-    private void expandCapacity() {
-        T[] newBag = (T[]) new Comparable[bag.length * 2];
-        for (int i = 0; i < bag.length; ++i) {
-            newBag[i] = bag[i];
-        }
-        bag = newBag;
-    }
-
-    /**
-     * Shifts elements in an array down (towards index 0) towards
-     * the starting index specified. This method assumes that
-     * the calling function manages the rear field.
+     * Shifts elements in an array down (towards index 0) to the starting index specified. The element at the starting
+     * index will be overwritten.
      *
-     * @param start Index of where shift starts/stops and element
-     *              overwritten.
+     * @param start Index of element to be overwritten and where shifting moves down to.
      */
     private void shiftLeft(int start) {
-        for (int i = start; i < rear - 1; ++i) {
+        for (int i = start; i < rear - 1; i++) {
             bag[i] = bag[i + 1];
         }
         bag[rear - 1] = null;
     }
 
     /**
-     * Shifts elements in an array up (towards index rear) away
-     * from the starting index specified. This method assumes that
-     * the calling function manages the rear field and any
-     * need of expandCapacity().
+     * Shifts elements in an array up (towards index rear) away from the starting index specified. The array location
+     * at the specified starting index will be open. This method assumes there is room in the array to facilitate the
+     * shifting.
      *
-     * @param start Index of where shifting starts/stops and where
-     *              space is opened.
+     * @param start Index of where the array has a new open location and where shifting moves up from.
      */
     private void shiftRight(int start) {
-        for (int i = rear; i > start; --i) {
+        for (int i = rear; i > start; i--) {
             bag[i] = bag[i - 1];
         }
         bag[start] = null;
     }
 
     /**
-     * Find the index of a specified target element. If the element
-     * does not exist, return NOT_FOUND
+     * Find and return the index of a given target element within the collection. If no such element exists within the
+     * collection, a sentinel value of -1 (NOT_FOUND constant) is returned.
      *
-     * @param target Element to be found
-     * @return Index of the element if found, NOT_FOUND otherwise
+     * @param target Element to find the index of.
+     * @return Index of the target element within the collection, or -1 (NOT_FOUND constant) if no such element exists.
      */
-    private int sentinelIndexOf(T target) {
+    private int find(T target) {
         int searchIndex = 0;
         for (T bagElement : this) {
-            if (bagElement.equals(target)) {
+            if (bagElement.compareTo(target) == 0) {
                 return searchIndex;
+            } else if (bagElement.compareTo(target) > 0) {
+                return NOT_FOUND;
             }
             searchIndex++;
         }
@@ -81,12 +82,11 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
     }
 
     /**
-     * Linear search through the bag to find the index
-     * of where the element should be inserted into the
-     * sorted bag.
+     * Linear search through the bag to find the index of where the element should be inserted. If equal elements
+     * exist within the collection, the returned index will be after the existing equal elements.
      *
-     * @param element Item to be inserted
-     * @return Index of where the element should be inserted
+     * @param element Item to be inserted.
+     * @return Index where the element should be inserted.
      */
     private int findInsertIndex(T element) {
         int searchIndex = 0;
@@ -99,19 +99,11 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
         // Element must belong at rear
         return rear;
     }
-    //    private int findInsertIndex(T element) {
-    //        int searchIndex = 0;
-    //        Iterator<T> it = this.iterator();
-    //        while (it.hasNext() && it.next().compareTo(element) < 0) {
-    //            searchIndex++;
-    //        }
-    //        return searchIndex;
-    //    }
 
     @Override
     public boolean add(T element) {
         if (size() == bag.length) {
-            expandCapacity();
+            bag = Arrays.copyOf(bag, bag.length * 2);
         }
         int insertIndex = findInsertIndex(element);
         shiftRight(insertIndex);
@@ -120,10 +112,25 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
         return true;
     }
 
+
+    @Override
+    public boolean remove(T element) {
+        if (isEmpty()) {
+            throw new NoSuchElementException("Empty bag");
+        }
+        int index = find(element);
+        if (index == NOT_FOUND) {
+            throw new NoSuchElementException(Objects.toString(element));
+        }
+        shiftLeft(index);
+        rear--;
+        return true;
+    }
+
     @Override
     public T removeFirst() {
         if (isEmpty()) {
-            throw new NoSuchElementException("Removing first from an empty bag.");
+            throw new NoSuchElementException("Empty bag");
         }
         T returnElement = bag[0];
         shiftLeft(0);
@@ -134,33 +141,17 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
     @Override
     public T removeLast() {
         if (isEmpty()) {
-            throw new NoSuchElementException("Removing last from an empty bag.");
+            throw new NoSuchElementException("Empty bag");
         }
         T returnElement = bag[rear - 1];
-        bag[rear - 1] = null;
         rear--;
         return returnElement;
     }
 
     @Override
-    public boolean remove(T element) {
-        if (isEmpty()) {
-            throw new NoSuchElementException("Removing from an empty bag.");
-        }
-        int removeIndex = sentinelIndexOf(element);
-        if (removeIndex == NOT_FOUND) {
-            throw new NoSuchElementException("Element not contained in bag.");
-        }
-        T returnElement = bag[removeIndex];
-        shiftLeft(removeIndex);
-        rear--;
-        return true;
-    }
-
-    @Override
     public T first() {
         if (isEmpty()) {
-            throw new NoSuchElementException("First from an empty bag.");
+            throw new NoSuchElementException("Empty bag");
         }
         return bag[0];
     }
@@ -168,41 +159,32 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
     @Override
     public T last() {
         if (isEmpty()) {
-            throw new NoSuchElementException("Last from an empty bag.");
+            throw new NoSuchElementException("Empty bag");
         }
         return bag[rear - 1];
     }
 
     @Override
     public boolean contains(T target) {
-        return sentinelIndexOf(target) != NOT_FOUND;
+        return find(target) != NOT_FOUND;
     }
 
     @Override
     public int count(T target) {
         int count = 0;
         for (T bagElement : this) {
-            if (bagElement.equals(target)) {
+            if (bagElement.compareTo(target) == 0) {
                 count++;
+            } else if (bagElement.compareTo(target) > 0) {
+                return count;
             }
         }
         return count;
     }
-    //    @Override
-    //    public int getCount(T target) {
-    //        int count = 0;
-    //        Iterator<T> it = this.iterator();
-    //        while (it.hasNext()) {
-    //            if (it.next().equals(target)) {
-    //                count++;
-    //            }
-    //        }
-    //        return count;
-    //    }
 
     @Override
     public boolean isEmpty() {
-        return rear == 0;
+        return size() == 0;
     }
 
     @Override
@@ -212,9 +194,10 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
 
     @Override
     public Iterator<T> iterator() {
-        return new ArrayIterator<>(bag, rear);
+        return new ArrayIterator<>(bag, size());
     }
 
+    @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
         for (T bagElement : this) {
@@ -223,13 +206,38 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
         }
         return builder.toString();
     }
-    //    public String toString() {
-    //        Iterator<T> it = this.iterator();
-    //        StringBuilder builder = new StringBuilder();
-    //        while (it.hasNext()) {
-    //            builder.append(it.next());
-    //            builder.append(", ");
-    //        }
-    //        return builder.toString();
-    //    }
+
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null) {
+            return false;
+        }
+        if (!(o instanceof Bag)) {
+            return false;
+        }
+        Bag<T> that = (Bag<T>) o;
+        if (this.size() != that.size()) {
+            return false;
+        }
+        for (int i = 0; i < this.size(); i++) {
+            if (this.count(this.bag[i]) != that.count(this.bag[i])) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(rear);
+        for (int i = 0; i < size(); i++) {
+            result += Objects.hashCode(bag[i]);
+        }
+        return result;
+    }
 }

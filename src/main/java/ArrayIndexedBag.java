@@ -189,22 +189,34 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public boolean equals(Object o) {
         if (this == o) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (o == null) {
             return false;
         }
-        ArrayIndexedBag<?> that = (ArrayIndexedBag<?>) o;
-        return Arrays.equals(this.bag, 0, this.rear, that.bag, 0, that.rear);
+        if (!(o instanceof Bag)) {
+            return false;
+        }
+        Bag<T> that = (Bag<T>) o;
+        if (this.size() != that.size()) {
+            return false;
+        }
+        for (int i = 0; i < this.size(); i++) {
+            if (this.count(this.bag[i]) != that.count(this.bag[i])) {
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override
     public int hashCode() {
         int result = Objects.hash(rear);
         for (int i = 0; i < size(); i++) {
-            result = 31 * result + Objects.hashCode(bag[i]);
+            result += Objects.hashCode(bag[i]);
         }
         return result;
     }
