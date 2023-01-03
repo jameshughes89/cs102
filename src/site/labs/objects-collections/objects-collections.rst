@@ -60,7 +60,8 @@ Course List Class
 
 A ``CourseList`` will be a collection of ``Course`` objects.
 :doc:`Refer to the data structures review topic </topics/objects-review/data-structures-review>` for guidance on
-creating this class.
+creating this class. It is recommended to go through the topic and refactor the relevant code to fit the requirements of
+this lab. 
 
 
 #. Make a ``CourseList`` class that has two private fields (``list`` & ``size``) and a constant for a default capacity
