@@ -20,9 +20,11 @@ one for keeping track of the information about a single course, and another for 
 Course Class
 ------------
 
-A ``Course`` is a simple object that keeps track of data for us.
+A ``Course`` is a simple object to keeps track of data. Refer to topic
+:doc:`Java vs. Python topic </topics/objects-review/objects-review>` for guidance on creating this class.
 
-#. Create a class called ``Course`` that has three private fields: ``programCode``, ``courseCode``, and ``courseTitle``.
+
+#. Create a class called ``Course`` that has three private fields: ``programCode``, ``courseCode``, and ``courseTitle``
 
     * For example, this course would have the following values for the fields
 
@@ -30,20 +32,27 @@ A ``Course`` is a simple object that keeps track of data for us.
         * ``courseCode`` --- ``"162"``
         * ``courseTitle`` --- ``"Programming and Data Structures"``
 
-#. Write a single constructor to take and assign values to the fields.
 
-#. Write getters and setters for each field.
+#. Write a single constructor to take and assign values to the fields
+#. Write accessors methods for the three fields
 
-#. Write a ``toString`` method that returns ``programCode``, followed by a space, followed by the ``courseCode``.
+    * For example, ``getCourseCode``
 
-    * For example, ``"CSCI 162"``
 
-#. Write ``equals`` that checks if two ``Course`` objects are equivalent.
+#. Write a ``toString`` method that returns a string representation of the object
 
-    * We will say that two courses are equal if their ``programCode`` and ``courseCode`` are equal
-    * Remember to be careful with ``==``
+    * The string should be of the form ``"Course(programCode, courseCode, courseTitle)"``
 
-#. Test the ``Course`` class by making a instances of them and calling the methods to see if they work as you expect.
+
+#. Write an ``equals`` method that checks if two ``Course`` objects are equivalent
+
+    * Two ``Course`` objects are considered equal if all their fields match
+    * Remember, do not check string equality with ``==``
+
+
+#. Write a ``hashCode`` method
+#. Test the ``Course`` class by making instances of them and calling the methods to see if they as expected
+
 
 
 Course List Class
