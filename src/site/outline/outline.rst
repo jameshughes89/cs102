@@ -199,10 +199,10 @@ the final exam.
 Labs
 ====
 
-The purpose of the weekly labs is to give students hands-on experience. Labs will have required assigned work and will
-revolve around `Kattis <https://open.kattis.com/>`_.
+The purpose of the weekly labs is to give students hands-on experience. Labs will have assigned work and will make use
+of `Kattis <https://open.kattis.com/>`_.
 
-Labs begin on the 1st week of class. Lab attendance is mandatory and It is your responsibility to ensure your attendance
+Labs begin on the 1st week of class. Lab attendance is mandatory and it is your responsibility to ensure your attendance
 is recorded.
 
 You may only attend the lab session for which you are registered. Students must bring their student identification to
