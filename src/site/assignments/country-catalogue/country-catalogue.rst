@@ -71,32 +71,51 @@ Read the assignment description in its entirety before starting.
 Part 1 --- Country
 ==================
 
-You will be creating a class called ``Country`` that will hold some basic data. The data being stored will be the
-country ``name`` (string), ``population`` (int), ``area`` (double), and ``continent`` (string). This class will be used by the
-``CountryCatalogue`` class discussed in Part 2.
-
-#. Write a constructor for the ``Country`` class that takes four (4) parameters that will be stored as class fields
-    * String ``name``
-    * int ``population``
-    * double ``area``
-    * String ``continent``
-
-#. Write getter methods for each class field
-
-#. Write a setter method for the country's ``population``
-    * This will be the only setter we need as the other fields do not typically change all too often for countries
-
-#. Write a ``toString`` method that returns a string containing the country ``name``, ``continent``, ``population``, and ``area``, all seperated by commas and a space
-    * Note that you may see some of the area vales represented in scientific notation --- this is OK
-        * Something like 1.234E8
-
-    ``"Canada, North America, 34207000, 9976140.00"``
+The ``Country`` class will store data related to the country it represents. The data stored will be the  country
+``name``, ``population``, ``area``, and ``continent``. The ``CountryCatalogue`` class described in part 2 will store
+instances of the ``Country`` class.
 
 
-#. Write some simple testing code to ensure the object is working as you expect
-    * Try creating instances
-    * Getting their fields, setting the population, etc.
-    * This testing code is **not** to be submitted
+#. Write a constructor for the ``Country`` class that takes four (4) parameters to be stored as class fields
+
+    * ``name`` --- type ``String``
+    * ``continent`` --- type ``String``
+    * ``population`` -- type ``long``
+    * ``area`` --- type ``double``
+
+    .. note::
+
+        Notice that the type for ``population`` is a ``long``. One may be tempted to simply use an ``int``, but the
+        ``int`` type has a limitation.
+
+        In Java, ``int`` values are stored in four bytes (4B)/32 bits (32b), which means the number of unique values the
+        ``int`` can represent is :math:`2^{32}`, which is :math:`4,294,967,296`. More specifically, ``int`` values can
+        store values between :math:`-2,147,483,648` and :math:`+2,147,483,647`. Since the population of continents can
+        exceed two billion, the ``int`` is not going to work.
+
+        The simplest solution to this problem is to make use of the ``long`` type. ``long`` values are just like ``int``
+        values, but are stored in eight bytes (8B)/64 bits (64b). This means a ``long`` can represent :math:`2^{64}`
+        (:math:`1.84^{19}`) unique values.
+
+
+#. Write accessor/getter methods for each class field
+#. Write a method to calculate and return the population density (``population/area``)
+#. Write a ``toString`` method to return a string following the pattern ``ClassName(field=value, field=value, ... )``
+
+    * For example --- ``Country(name=Canada, continent=North America, population=34207000, area=9976140.00)``
+    * Mind the format of the string --- the area field has two decimal places
+
+        * `Consider using the format method from the String class <https://www.google.com/search?q=java+string+format>`_
+
+
+#. Write an ``equals`` and ``hashCode`` method
+
+    * Two ``Country`` objects will be considered equal if all fields match
+    * `Be mindful of how the double values are compared <https://www.google.com/search?q=java+double+compare>`_
+
+
+#. Run the unit tests to ensure the ``Country`` class works properly
+
 
 
 Part 2 --- Country Catalogue
