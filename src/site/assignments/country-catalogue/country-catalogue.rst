@@ -9,8 +9,9 @@ Assignment #1: Playing with Objects is Still Fun
 Task
 ====
 
-You will be creating a simple collection to keep track of ``Country`` objects. This will require you to write classes,
-use the classes, and write some various methods outlined below.
+The goal is to create a collection of ``Country`` objects. The collection, called a ``CountryCatalogue``, will provide
+functionality to store (add/remove) the ``Country`` objects in addition to making inquiries about the data in the
+collection.
 
 Effectively, the idea is to recreate your assignment 4 from CSCI 161, but in Java. Be aware that the assignment is not
 identical and the requirements outlined here will be what is required.
