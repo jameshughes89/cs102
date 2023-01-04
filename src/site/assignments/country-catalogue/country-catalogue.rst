@@ -27,9 +27,11 @@ You will
     * Filter data in the catalogue
 
 
+* Test the implementation with the provided test classes
 * Use the classes to build a ``CountryCatalogue``
 * Read data from a file
 * Write data to a file
+
 
 
 Provided Files
@@ -37,21 +39,25 @@ Provided Files
 
 You are provided with
 
-* A nearly empty *Country.java* file where you will write your ``Country`` class
-* A nearly empty *CountryCatalogue.java* file where you will write your ``CountryCatalogue`` class
-* An *Asn1.java* file with a ``main`` method and some testing code
-* Data files
-    * A *data.txt* file containing some country details
-    * A *continent.txt* file containing country and continent information
+* A nearly empty *Country.java* file to be completed
+* A nearly empty *CountryCatalogue.java* file to be completed
+* A completed *Asn1.java* file with a ``main`` method and some testing code
+* A csv file called *country_data.csv* containing information about countries to be added to a ``CountryCatalogue``
+* A completed *CountryTest.java* file containing unit tests for the ``Country`` class
+* A completed *CountryCatalogueTest.java* file containing unit tests for the ``CountryCatalogue`` class
 
-* :download:`All of this can be downloaded from here<Assignment1.zip>`
+
+* :download:`All of this can be downloaded from here <Assignment1.zip>`
+
     * This is a compressed IntelliJ project
     * Just unzip, put it where you want on your computer, and you should be able to open this project through IntelliJ
 
+
 .. warning::
 
-    When you open the project, IntelliJ may notify you about a missing JDK. If this is the case, simply select the
-    download link in the notification.
+    When opening the project, IntelliJ may mention a missing JDK. If this is the case, simply select the download link
+    in the notification to download and install the missing JDK.
+
 
 
 Part 0 --- Read the Assignment
