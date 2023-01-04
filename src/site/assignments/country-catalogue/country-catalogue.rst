@@ -100,10 +100,10 @@ instances of the ``Country`` class.
 
 #. Write accessor/getter methods for each class field
 #. Write a method to calculate and return the population density (``population/area``)
-#. Write a ``toString`` to follow the pattern ``ClassName(field=value, field=value, ...)``
+#. Write a ``toString`` method to return a string following the pattern ``ClassName(field=value, field=value, ... )``
 
-    * For example, representing the country Canada as a string would be ``Country(name=Canada, continent=North America, population=34207000, area=9976140.00)``
-    * Mind the format of the string --- the population field has no decimal values and the area has two
+    * For example --- ``Country(name=Canada, continent=North America, population=34207000, area=9976140.00)``
+    * Mind the format of the string --- the area field has two decimal places
 
         * `Consider using the format method from the String class <https://www.google.com/search?q=java+string+format>`_
 
