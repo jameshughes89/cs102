@@ -199,14 +199,17 @@ Below is a list of both *quantitative* and *qualitative* things we will look for
 What to Submit to Moodle
 ========================
 
-Submit your work on Moodle.
+* Make sure your **NAME**, **STFX EMAIL**, and **STUDENT NUMBER** appear in a comment at the top of the classes
+* Submit your *.java* files to Moodle
 
-* Your ``.java`` files. Please do not compress them.
+    * *Country.java* and *CountryCatalogue.java*
+    * Do **not** submit the *.class* files
+    * Do **not** compress the files
 
-* Make sure your **NAME** and **STUDENT NUMBER** appear in a comment at the top of the program.
 
-**VERIFY THAT YOUR SUBMISSION TO MOODLE WORKED!**
-**IF YOU SUBMIT INCORRECTLY, YOU WILL GET A 0**
+.. warning::
+
+    Verify that your submission to Moodle worked. If you submit incorrectly, you will get a 0.
 
 
 FAQ:
