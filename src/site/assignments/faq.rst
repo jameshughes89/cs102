@@ -30,7 +30,8 @@ General Assignment Frequently Asked Questions (FAQ)
     * Sometimes bugs are simple and easy to find, and others are sneaky
     * Take your time with debugging and tracking down the problem
     * I recommend going through the code; what does the code you wrote actually say?
-    * Consider using ``print`` to see what the values of your variables are at different points of your code
+    * Consider printing out values to see what the values of your variables are at different points of your code
+    * Try to take advantage of the debugger 
     * If you are still stuck after an hour or so of trying to get the broken part working, come to office hours
 
 
