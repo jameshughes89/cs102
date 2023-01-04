@@ -216,7 +216,7 @@ What to Submit to Moodle
 ========================
 
 * Make sure your **NAME**, **STFX EMAIL**, and **STUDENT NUMBER** appear in a comment at the top of the classes
-* Submit your *.java* files to Moodle
+* Submit your completed *.java* files to Moodle
 
     * *Country.java* and *CountryCatalogue.java*
     * Do **not** submit the *.class* files
