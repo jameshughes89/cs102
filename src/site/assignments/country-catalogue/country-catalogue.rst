@@ -53,9 +53,10 @@ Read the assignment description in its entirety before starting.
 Part 1 --- Country
 ==================
 
-You will be creating a class called ``Country`` that will hold some basic data. The data being stored will be the
-country ``name`` (string), ``population`` (int), ``area`` (double), and ``continent`` (string). This class will be used by the
-``CountryCatalogue`` class discussed in Part 2.
+The ``Country`` class will store data related to the country it represents. The data stored will be the  country
+``name``, ``population``, ``area``, and ``continent``. The ``CountryCatalogue`` class described in part 2 will store
+instances of the ``Country`` class.
+
 
 #. Write a constructor for the ``Country`` class that takes four (4) parameters that will be stored as class fields
     * String ``name``
