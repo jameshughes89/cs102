@@ -18,9 +18,18 @@ identical and the requirements outlined here will be what is required.
 
 You will
 
-* Write a ``Country`` class with a few simple methods
-* Write a ``CountryCatalogue`` class with methods making use of instances of a ``Country``
-* Testing your implementation
+* Create a ``Country`` class to store details about a country
+* Create a ``CountryCatalogue`` class
+
+    * Provide a way to add and remove ``Country`` objects
+    * Search through the catalogue
+    * Ask questions about the data in the catalogue
+    * Filter data in the catalogue
+
+
+* Use the classes to build a ``CountryCatalogue``
+* Read data from a file
+* Write data to a file
 
 
 Provided Files
