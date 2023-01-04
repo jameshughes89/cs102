@@ -58,11 +58,26 @@ The ``Country`` class will store data related to the country it represents. The 
 instances of the ``Country`` class.
 
 
-#. Write a constructor for the ``Country`` class that takes four (4) parameters that will be stored as class fields
-    * String ``name``
-    * int ``population``
-    * double ``area``
-    * String ``continent``
+#. Write a constructor for the ``Country`` class that takes four (4) parameters to be stored as class fields
+
+    * ``name`` --- ``String``
+    * ``continent`` --- ``String``
+    * ``population`` -- ``double``
+    * ``area`` --- ``double``
+
+    .. note::
+
+        Notice that the type for ``population`` is a ``double``. Although it is reasonable to expect that the number of
+        people living in a given country is an integer and does not require decimals, the ``int`` type has a limitation.
+
+        In Java, ``int``\s are stored in four bytes (4B)/32 bits (32b), which means the number of unique values the
+        ``int`` can represent is :math:`2^{32}`, which is :math:`4,294,967,296`. More specifically, ``int``\s can store
+        values between :math:`-2,147,483,648 -- 2,147,483,647`. Since the population of continents can exceed 2 billion,
+        the ``int`` is not going to work.
+
+        There are several solutions to this problem, but perhaps the simplest is to just make the value a ``double``
+        since ``double``\s are stored in eight bytes (8B)/64 bits (64b) and can represent many more values.
+
 
 #. Write getter methods for each class field
 
