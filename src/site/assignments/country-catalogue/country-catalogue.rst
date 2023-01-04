@@ -182,27 +182,42 @@ required to perform some file I/O.
 Part 4 --- Testing
 ==================
 
-#. Run the main method and check if the output is what you would expect
-    * I am not going to provide you with the correct output
-    * You should be able to determine this on your own
+You may have already verified the correctness of your ``Country`` and ``CountryCatalogue`` classes by running their test
+classes. If not, do it!
+
+If you have, for good measure, re-run all the tests provided to you. If they all pass, you should be pretty confident
+that you have everything working correctly.
+
+There are no tests provided for the ``Asn1`` class, but that's nothing to worry about. You can get a sense that it is
+working correctly by running the ``main`` method and checking that everything worked as expected.
+
 
 
 Some Hints
 ==========
 
-* Work on one method at a time.
-* Get each method *working perfectly* before you go on to the next one.
-* *Test* each method as you write it.
-    * This is a really nice thing about programming; you can call your methods and see what result gets returned. Does it seem correct?
-    * Mentally test before you even write --- what does this method do? What problem is it solving?
-* If you need help, **ask**! Drop by my office hours.
+* Work on one function at a time
+* Get each function working perfectly before you go on to the next one
+* Test each function as you write it
+
+    * This is a really nice thing about programming; you can call your functions and see what result gets returned
+    * Mentally test before you even write --- what does this function do? What problem is it solving?
+
+
+* If you need help, ask
+
+    * Drop by office hours
+
 
 
 Some Marking Details
 ====================
 
 .. warning::
-    Just because your program produces the correct output, that does not necessarily mean that you will get perfect, or even that your program is correct.
+
+    Just because your program produces the correct output, that does not necessarily mean that you will get perfect, or
+    even that your program is correct.
+
 
 Below is a list of both *quantitative* and *qualitative* things we will look for:
 
@@ -214,17 +229,23 @@ Below is a list of both *quantitative* and *qualitative* things we will look for
 * Did you do just weird things that make no sense?
 
 
+
 What to Submit to Moodle
 ========================
 
-Submit your work on Moodle.
+* Make sure your **NAME**, **STFX EMAIL**, and **STUDENT NUMBER** appear in a comment at the top of the classes
+* Submit your completed *.java* files to Moodle
 
-* Your ``.java`` files. Please do not compress them.
+    * *Country.java* and *CountryCatalogue.java*
+    * Do **not** submit the *Asn1.java* file
+    * Do **not** submit the *.csv* files
+    * Do **not** submit the *.class* files
+    * Do **not** compress the files
 
-* Make sure your **NAME** and **STUDENT NUMBER** appear in a comment at the top of the program.
 
-**VERIFY THAT YOUR SUBMISSION TO MOODLE WORKED!**
-**IF YOU SUBMIT INCORRECTLY, YOU WILL GET A 0**
+.. warning::
+
+    Verify that your submission to Moodle worked. If you submit incorrectly, you will get a 0.
 
 
 Assignment FAQ
