@@ -70,7 +70,7 @@ Variables and Types
     #. We end our statements in Java with a semicolon (``;``)
 
 
-.. warning::
+.. note::
 
     For the sake of brevity, from now on the ``class`` stuff and ``public static void main(String[] args)`` boilerplate
     code will **not** be included in the code examples unless necessary.
