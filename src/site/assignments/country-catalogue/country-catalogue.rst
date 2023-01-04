@@ -219,6 +219,8 @@ What to Submit to Moodle
 * Submit your completed *.java* files to Moodle
 
     * *Country.java* and *CountryCatalogue.java*
+    * Do **not** submit the *Asn1.java* file
+    * Do **not** submit the *.csv* files
     * Do **not** submit the *.class* files
     * Do **not** compress the files
 
