@@ -164,9 +164,15 @@ required to perform some file I/O.
 Part 4 --- Testing
 ==================
 
-#. Run the main method and check if the output is what you would expect
-    * I am not going to provide you with the correct output
-    * You should be able to determine this on your own
+You may have already verified the correctness of your ``Country`` and ``CountryCatalogue`` classes by running their test
+classes. If not, do it!
+
+If you have, for good measure, re-run all the tests provided to you. If they all pass, you should be pretty confident
+that you have everything working correctly.
+
+There are no tests provided for the ``Asn1`` class, but that's nothing to worry about. You can get a sense that it is
+working correctly by running the ``main`` method and checking that everything worked as expected.
+
 
 
 Some Hints
