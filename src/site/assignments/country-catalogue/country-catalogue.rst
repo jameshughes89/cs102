@@ -2,8 +2,8 @@
 Assignment #1: Playing with Objects is Still Fun
 ************************************************
 
-* **Worth**: 10%
-* **DUE**: February 14th 11:55pm; submitted on MOODLE.
+* **Worth**: 5%
+* **DUE**: TBD 11:55pm; submitted on MOODLE.
 
 
 Task
