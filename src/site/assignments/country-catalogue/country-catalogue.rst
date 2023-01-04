@@ -172,12 +172,18 @@ Part 4 --- Testing
 Some Hints
 ==========
 
-* Work on one method at a time.
-* Get each method *working perfectly* before you go on to the next one.
-* *Test* each method as you write it.
-    * This is a really nice thing about programming; you can call your methods and see what result gets returned. Does it seem correct?
-    * Mentally test before you even write --- what does this method do? What problem is it solving?
-* If you need help, **ask**! Drop by my office hours.
+* Work on one function at a time
+* Get each function working perfectly before you go on to the next one
+* Test each function as you write it
+
+    * This is a really nice thing about programming; you can call your functions and see what result gets returned
+    * Mentally test before you even write --- what does this function do? What problem is it solving?
+
+
+* If you need help, ask
+
+    * Drop by office hours
+
 
 
 Some Marking Details
