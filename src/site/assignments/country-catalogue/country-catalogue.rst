@@ -80,21 +80,22 @@ instances of the ``Country`` class.
 
     * ``name`` --- type ``String``
     * ``continent`` --- type ``String``
-    * ``population`` -- type ``double``
+    * ``population`` -- type ``long``
     * ``area`` --- type ``double``
 
     .. note::
 
-        Notice that the type for ``population`` is a ``double``. Although it is reasonable to expect that the number of
-        people living in a given country is an integer and does not require decimals, the ``int`` type has a limitation.
+        Notice that the type for ``population`` is a ``long``. One may be tempted to simply use an ``int``, but the
+        ``int`` type has a limitation.
 
         In Java, ``int`` values are stored in four bytes (4B)/32 bits (32b), which means the number of unique values the
         ``int`` can represent is :math:`2^{32}`, which is :math:`4,294,967,296`. More specifically, ``int`` values can
         store values between :math:`-2,147,483,648` and :math:`+2,147,483,647`. Since the population of continents can
-        exceed 2 billion, the ``int`` is not going to work.
+        exceed two billion, the ``int`` is not going to work.
 
-        There are several solutions to this problem, but perhaps the simplest is to just make the value a ``double``
-        since ``double`` values are stored in eight bytes (8B)/64 bits (64b) and can represent many more values.
+        The simplest solution to this problem is to make use of the ``long`` type. ``long`` values are just like ``int``
+        values, but are stored in eight bytes (8B)/64 bits (64b). This means a ``long`` can represent :math:`2^{64}`
+        (:math:`1.84^{19}`) unique values.
 
 
 #. Write accessor/getter methods for each class field
