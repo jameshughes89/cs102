@@ -2,24 +2,37 @@
 Assignment #1: Playing with Objects is Still Fun
 ************************************************
 
-* **Worth**: 10%
-* **DUE**: February 14th 11:55pm; submitted on MOODLE.
+* **Worth**: 5%
+* **DUE**: TBD 11:55pm; submitted on MOODLE.
+
 
 
 Task
 ====
 
-You will be creating a simple collection to keep track of ``Country`` objects. This will require you to write classes,
-use the classes, and write some various methods outlined below.
+The goal is to create a collection of ``Country`` objects. The collection, called a ``CountryCatalogue``, will provide
+functionality to store (add/remove) the ``Country`` objects in addition to making inquiries about the data in the
+collection.
 
 Effectively, the idea is to recreate your assignment 4 from CSCI 161, but in Java. Be aware that the assignment is not
 identical and the requirements outlined here will be what is required.
 
 You will
 
-* Write a ``Country`` class with a few simple methods
-* Write a ``CountryCatalogue`` class with methods making use of instances of a ``Country``
-* Testing your implementation
+* Create a ``Country`` class to store details about a country
+* Create a ``CountryCatalogue`` class
+
+    * Provide a way to add and remove ``Country`` objects
+    * Search through the catalogue
+    * Ask questions about the data in the catalogue
+    * Filter data in the catalogue
+
+
+* Test the implementation with the provided test classes
+* Use the classes to build a ``CountryCatalogue``
+* Read data from a file
+* Write data to a file
+
 
 
 Provided Files
@@ -27,27 +40,32 @@ Provided Files
 
 You are provided with
 
-* A nearly empty *Country.java* file where you will write your ``Country`` class
-* A nearly empty *CountryCatalogue.java* file where you will write your ``CountryCatalogue`` class
-* An *Asn1.java* file with a ``main`` method and some testing code
-* Data files
-    * A *data.txt* file containing some country details
-    * A *continent.txt* file containing country and continent information
+* A nearly empty *Country.java* file to be completed
+* A nearly empty *CountryCatalogue.java* file to be completed
+* A completed *Asn1.java* file with a ``main`` method and some testing code
+* A csv file called *country_data.csv* containing information about countries to be added to a ``CountryCatalogue``
+* A completed *CountryTest.java* file containing unit tests for the ``Country`` class
+* A completed *CountryCatalogueTest.java* file containing unit tests for the ``CountryCatalogue`` class
 
-* :download:`All of this can be downloaded from here<Assignment1.zip>`
+
+* :download:`All of this can be downloaded from here <Assignment1.zip>`
+
     * This is a compressed IntelliJ project
     * Just unzip, put it where you want on your computer, and you should be able to open this project through IntelliJ
 
+
 .. warning::
 
-    When you open the project, IntelliJ may notify you about a missing JDK. If this is the case, simply select the
-    download link in the notification.
+    When opening the project, IntelliJ may mention a missing JDK. If this is the case, simply select the download link
+    in the notification to download and install the missing JDK.
+
 
 
 Part 0 --- Read the Assignment
 ==============================
 
 Read the assignment description in its entirety before starting.
+
 
 
 Part 1 --- Country
