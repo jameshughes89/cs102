@@ -72,29 +72,31 @@ instances of the ``Country`` class.
 
         In Java, ``int``\s are stored in four bytes (4B)/32 bits (32b), which means the number of unique values the
         ``int`` can represent is :math:`2^{32}`, which is :math:`4,294,967,296`. More specifically, ``int``\s can store
-        values between :math:`-2,147,483,648 -- 2,147,483,647`. Since the population of continents can exceed 2 billion,
+        values between :math:`-2,147,483,648 - 2,147,483,647`. Since the population of continents can exceed 2 billion,
         the ``int`` is not going to work.
 
         There are several solutions to this problem, but perhaps the simplest is to just make the value a ``double``
         since ``double``\s are stored in eight bytes (8B)/64 bits (64b) and can represent many more values.
 
 
-#. Write getter methods for each class field
+#. Write accessor/getter methods for each class field
+#. Write a method to calculate and return the population density (``population/area``)
+#. Write a ``toString`` to follow the pattern ``ClassName(field=value, field=value, ...)``
 
-#. Write a setter method for the country's ``population``
-    * This will be the only setter we need as the other fields do not typically change all too often for countries
+    * For example, representing the country Canada as a string would be ``Country(name=Canada, continent=North America, population=34207000, area=9976140.00)``
+    * Mind the format of the string --- the population field has no decimal values and the area has two
 
-#. Write a ``toString`` method that returns a string containing the country ``name``, ``continent``, ``population``, and ``area``, all seperated by commas and a space
-    * Note that you may see some of the area vales represented in scientific notation --- this is OK
-        * Something like 1.234E8
-
-    ``"Canada, North America, 34207000, 9976140.00"``
+        * `Consider using the format method from the String class <https://www.google.com/search?q=java+string+format>`_
 
 
-#. Write some simple testing code to ensure the object is working as you expect
-    * Try creating instances
-    * Getting their fields, setting the population, etc.
-    * This testing code is **not** to be submitted
+#. Write an ``equals`` and ``hashCode`` method
+
+    * Two ``Country`` objects will be considered equal if all fields match
+    * `Be mindful of how the double values are compared <https://www.google.com/search?q=java+double+compare>`_
+
+
+#. Run the unit tests to ensure the ``Country`` class works properly
+
 
 
 Part 2 --- Country Catalogue
