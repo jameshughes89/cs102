@@ -1,6 +1,6 @@
-************************************************
-Assignment #1: Playing with Objects is Still Fun
-************************************************
+*********************************
+Playing with Objects is Still Fun
+*********************************
 
 * **Worth**: 5%
 * **DUE**: TBD 11:55pm; submitted on MOODLE.
