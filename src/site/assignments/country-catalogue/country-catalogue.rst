@@ -174,11 +174,17 @@ There will also two static constant
         * For example, if ``A`` is removed from ``C, A, R, L``, the result should be ``C, R, L``
 
 
+#. Write a ``contains`` method that searches for a ``Country`` object within the ``CountryCatalogue``
+
+    * This method takes the ``Country`` to search for as a parameter
+    * This method returns a boolean indicating if the specified ``Country`` object is within the ``CountryCatalogue
 
 
-#. Write a ``find`` method to perform a linear search for a ``Country`` based on the country name passed to the method as a parameter
-    * This method will return the ``Country`` object
-    * If the specified country does not exist, return ``null``
+#. Write an ``indexOf`` method that finds the index of a ``Country`` object within the ``CountryCatalogue``
+
+    * This method takes the ``Country`` to search for as a parameter
+    * This method returns the index of the specified ``Country`` object within the ``CountryCatalogue``
+    * This method throws a ``NoSuchElementException`` if no matching ``Country`` object exists
 
 
 #. Create a method called ``setPopulation`` that takes a name of a country and a new population value for that country as parameters
