@@ -264,6 +264,9 @@ There will also two static constant
     * These are provided since writing ``equals`` for collections and testing them can be tricky
 
 
+#. Run the unit tests to ensure the ``Country`` class works properly
+
+
 
 Part 3 --- File IO and Using Classes
 ====================================
