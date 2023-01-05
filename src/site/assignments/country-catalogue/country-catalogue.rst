@@ -131,7 +131,7 @@ Although the description of this class is provided with an order and each part i
 complete the methods in any order they see fit. Additionally, feel free to write and use additional private methods as
 needed.
 
-The ``CountryCatalogue`` class will be two fields
+The ``CountryCatalogue`` class will need two fields
 
     * ``size`` --- an ``int`` to keep track of the number of ``Country`` objects in the catalogue
     * ``catalogue`` --- an array of ``Country`` objects
