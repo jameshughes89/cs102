@@ -243,6 +243,20 @@ There will also two static constant
 
 #. Write an ``isEmpty`` method that returns a ``boolean`` indicating if the ``CountryCatalogue`` is empty or not
 #. Write a ``size`` method that returns the number of ``Country`` objects within the ``CountryCatalogue``
+#. Write a ``toString`` method that returns a ``String`` representation of the ``CountryCatalogue``
+
+    * The ``String`` should be an aggregate of the ``String`` representations of the  ``Country`` objects within the ``CountryCatalogue``
+    * Each ``Country`` object's ``String`` representation should be on its own line
+    * For example
+
+        .. code-block:: text
+
+            Country(name=Nigeria, continent=Africa, population=186987563, area=912134.45)
+            Country(name=Mexico, continent=North America, population=128632004, area=1969230.76)
+            Country(name=Egypt, continent=Africa, population=93383574, area=1000000.00)
+            Country(name=France, continent=Europe, population=64668129, area=541656.76)
+            Country(name=Italy, continent=Europe, population=59801004, area=300000.00)
+
 
 
 
