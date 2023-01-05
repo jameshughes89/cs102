@@ -149,10 +149,10 @@ There will also two static constant
 
 
 
+#. Write two constructors for the ``CountryCatalogue`` class
 
-
-
-The ``CountryCatalogue`` class will be a collection of ``Country`` objects.
+    * One creates the ``CountryCatalogue`` with the ``catalogue`` array being the default size
+    * One takes a parameter to create a ``CountryCatalogue`` with the ``catalogue`` array being the specified size
 
 
 
