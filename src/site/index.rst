@@ -122,6 +122,7 @@ The Math, Stats, and CS Society has a time and location for
 .. toctree::
     :caption: Assignments
     :maxdepth: 1
+    :numbered:
 
     assignments/country-catalogue/country-catalogue
 
