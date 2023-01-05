@@ -184,6 +184,13 @@ There will also be a static constant
 Part 3 --- File IO and Using Classes
 ====================================
 
+A complete ``main`` method has been provided to you within the ``Asn1`` class. Take your time to read over the code
+carefully and make sense of what it is doing. You are not required to make any changes to this code, but you are
+required to understand it.
+
+The first portion of ``main`` loads data from a file, parses it, and then uses the data to create ``Country`` objects to
+add to a ``CountryCatalogue``.
+
 
 
 This part is about populating the country catalogue based on information contained within text files. You will be
