@@ -259,18 +259,9 @@ There will also two static constant
 
 
 
+#. Uncomment out the provided ``equals`` and ``hashCode`` methods
 
-#. Write the ``toString`` method to return a ``String`` with each ``Country`` object's details on a separate line
-    * The ``Country`` class' ``toString`` will be useful for getting the object's details
-    * Note that you may see some of the area vales represented in scientific notation --- this is OK
-        * Something like 1.234E8
-    * Below is an example
-
-            ``China, Asia, 1339190000, 9596960.0``
-
-            ``United States of America, North America, 309975000, 9629091.0``
-
-            ``Brazil, South America, 193364000, 8511965.0``
+    * These are provided since writing ``equals`` for collections and testing them can be tricky
 
 
 
