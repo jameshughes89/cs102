@@ -157,6 +157,13 @@ There will also two static constant
 
 
 
+#. Write an ``add`` method to add a ``Country`` object to the ``CountryCatalogue``
+
+    * This method takes the ``Country`` object to be added as a parameter
+    * This method returns a boolean indicating if the add was successful
+    * This method must still work if the ``catalogue`` array is full
+
+
 #. Create a constructor that will setup and create an empty catalogue of countries
     * This constructor should set the ``size`` and ``catalogue`` fields appropriately
 
