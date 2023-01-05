@@ -159,14 +159,14 @@ There will also two static constant
 #. Write an ``add`` method to add a ``Country`` object to the ``CountryCatalogue``
 
     * This method takes the ``Country`` object to be added as a parameter
-    * This method returns a boolean indicating if the add was successful
+    * This method returns a ``boolean`` indicating if the add was successful
     * This method must still work if the ``catalogue`` array is full
 
 
 #. Write a ``remove`` method that removes a ``Country`` object from the ``CountryCatalogue``
 
     * This method takes the ``Country`` object to be removed as a parameter
-    * This method returns a boolean indicating if the remove was successful
+    * This method returns a ``boolean`` indicating if the remove was successful
     * This method throws a ``NoSuchElementException`` if no matching ``Country`` object exists
     * If more than one matching ``Country`` object exists, only remove the first occurrence
     * If a ``Country`` object is removed, the order of the remaining ``Country`` objects must remain unchanged
@@ -178,7 +178,7 @@ There will also two static constant
 #. Write a ``contains`` method that searches for a ``Country`` object within the ``CountryCatalogue``
 
     * This method takes the ``Country`` to search for as a parameter
-    * This method returns a boolean indicating if the specified ``Country`` object is within the ``CountryCatalogue
+    * This method returns a ``boolean`` indicating if the specified ``Country`` object is within the ``CountryCatalogue
 
 
 #. Write an ``indexOf`` method that finds the index of a ``Country`` object within the ``CountryCatalogue``
@@ -239,6 +239,10 @@ There will also two static constant
         * A map is like a dictionary from Python
         * `How does one use a hash map? <https://www.google.com/search?q=java+hashmap&oq=java+hashmap>`_
 
+
+
+#. Write an ``isEmpty`` method that returns a ``boolean`` indicating if the ``CountryCatalogue`` is empty or not
+#. Write a ``size`` method that returns the number of ``Country`` objects within the ``CountryCatalogue``
 
 
 
