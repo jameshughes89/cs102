@@ -116,6 +116,8 @@ instances of the ``Country`` class.
 
 #. Run the unit tests to ensure the ``Country`` class works properly
 
+    * It may be necessary to add JUnit to the class path, as described in the :doc:`testing topic </topics/testing/unit-tests>`
+
 
 
 Part 2 --- Country Catalogue
@@ -200,6 +202,9 @@ required to perform some file I/O.
 
 Part 4 --- Testing
 ==================
+
+You might need to add JUnit to the classpath for the project, as described in the
+:doc:`testing topic </topics/testing/unit-tests>`.
 
 You may have already verified the correctness of your ``Country`` and ``CountryCatalogue`` classes by running their test
 classes. If not, do it!
