@@ -18,6 +18,25 @@ Unit Testing Collections
     * Interconnected methods --- Adding and removing data from a collection are inextricably connected
 
 
+* Additionally, their expected behaviour may be different depending on their state
+* Consider the ``pop`` method for a ``Stack``
+
+    * What should happen when ``pop`` is called on an empty ``Stack``?
+
+        * Throw an exception
+
+
+    * What should happen when ``pop`` is called on a ``Stack`` with one element in it?
+
+        * Return the top and result in an empty stack
+
+
+    * What should happen when ``pop`` is called on a ``Stack`` in a more general case?
+
+        * Return the top and result in a changed stack
+
+
+
 Empty Stack Tests
 =================
 
