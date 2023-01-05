@@ -168,6 +168,7 @@ There will also two static constant
     * This method takes the ``Country`` object to be removed as a parameter
     * This method returns a boolean indicating if the remove was successful
     * This method throws a ``NoSuchElementException`` if no matching ``Country`` object exists
+    * If more than one matching ``Country`` object exists, only remove the first occurence 
     * If a ``Country`` object is removed, the order of the remaining ``Country`` objects must remain unchanged
 
         * For example, if ``A`` is removed from ``C, A, R, L``, the result should be ``C, R, L``
