@@ -70,7 +70,7 @@ Variables and Types
     #. We end our statements in Java with a semicolon (``;``)
 
 
-.. warning::
+.. note::
 
     For the sake of brevity, from now on the ``class`` stuff and ``public static void main(String[] args)`` boilerplate
     code will **not** be included in the code examples unless necessary.
@@ -183,7 +183,7 @@ Reusing Variables
 * The Python and Java code is nearly the same
 * The difference with Java is the need to explicitly declare the variable the first time they are used
 
-.. warning::
+.. note::
 
     Although it is fine to reuse variables, it is often not overly helpful. The above example really only makes sense
     given that they are arbitrary values stored in variables with nondescript names.
@@ -557,7 +557,7 @@ Instance Methods
                 :linenos:
 
                 public void someMethod(int addMe) {
-                    some_instance_variable += add_me
+                    someInstanceVariable += add_me;
                 }
 
 
@@ -976,7 +976,7 @@ Java Conventions
 For Next Time
 =============
 
-.. warning::
+.. note::
 
     If at any point you are thinking "Uh oh, how on earth am I going to remember all these differences?",
     `you're doing programming wrong <https://www.google.com/search?q=how+to+use+for+loops+in+java>`_.
