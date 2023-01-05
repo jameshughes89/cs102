@@ -191,7 +191,12 @@ required to understand it.
 The first portion of ``main`` loads data from a file, parses it, and then uses the data to create ``Country`` objects to
 add to a ``CountryCatalogue``.
 
+The next portion simply alters the contents of the ``CountryCatalogue`` object and the third part queries the
+``CountryCatalogue`` for some details.
 
+
+
+The next section queries the
 
 This part is about populating the country catalogue based on information contained within text files. You will be
 required to perform some file I/O.
