@@ -168,21 +168,13 @@ There will also two static constant
     * This method takes the ``Country`` object to be removed as a parameter
     * This method returns a boolean indicating if the remove was successful
     * This method throws a ``NoSuchElementException`` if no matching ``Country`` object exists
-    * If more than one matching ``Country`` object exists, only remove the first occurence 
+    * If more than one matching ``Country`` object exists, only remove the first occurence
     * If a ``Country`` object is removed, the order of the remaining ``Country`` objects must remain unchanged
 
         * For example, if ``A`` is removed from ``C, A, R, L``, the result should be ``C, R, L``
 
 
 
-#. Write a private method called ``expandCapacity`` that will double the size of the ``Country`` array used for holding reference to the countries
-    * Always double the size of the array
-
-#. Create a ``remove`` method that removes a ``Country`` object from the ``catalogue`` based on the parameterized country name
-    * Remember to keep track of the size
-    * Be careful about how you are comparing strings
-    * If the country is not in the ``catalogue``, everything should be left alone
-    * If more than one ``Country`` object with the same name exists in the ``catalogue``, only remove the first one
 
 #. Write a ``find`` method to perform a linear search for a ``Country`` based on the country name passed to the method as a parameter
     * This method will return the ``Country`` object
