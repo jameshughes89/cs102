@@ -168,6 +168,10 @@ There will also two static constant
     * This method takes the ``Country`` object to be removed as a parameter
     * This method returns a boolean indicating if the remove was successful
     * This method throws a ``NoSuchElementException`` if no matching ``Country`` object exists
+    * If a ``Country`` object is removed, the order of the remaining ``Country`` objects must remain unchanged
+
+        * For example, if ``B`` is removed from ``A, B, C, D``, the result should be ``A, C, D``
+
 
 
 #. Write a private method called ``expandCapacity`` that will double the size of the ``Country`` array used for holding reference to the countries
