@@ -168,7 +168,7 @@ There will also two static constant
     * This method takes the ``Country`` object to be removed as a parameter
     * This method returns a boolean indicating if the remove was successful
     * This method throws a ``NoSuchElementException`` if no matching ``Country`` object exists
-    * If more than one matching ``Country`` object exists, only remove the first occurence
+    * If more than one matching ``Country`` object exists, only remove the first occurrence
     * If a ``Country`` object is removed, the order of the remaining ``Country`` objects must remain unchanged
 
         * For example, if ``A`` is removed from ``C, A, R, L``, the result should be ``C, R, L``
@@ -194,7 +194,20 @@ There will also two static constant
     * This method throws a ``IIndexOutOfBoundsException`` if an inadmissible index is provided
 
 
-#. Create a method called ``setPopulation`` that takes a name of a country and a new population value for that country as parameters
+#. Write a ``smallestPopulationDensity`` method that returns the ``Country`` in the ``CountryCatalogue`` with the smallest population density
+
+    * This method returns a reference to the ``Country`` object with the smallest population density
+    * If more than one ``Country`` object has the same smallest population density, return the first occurrence
+    * This method throws a ``NoSuchElementException`` if the ``CountryCatalogue`` is empty
+
+
+#. Write a ``largestPopulationDensity`` method that returns the ``Country`` in the ``CountryCatalogue`` with the largest population density
+
+    * This method returns a reference to the ``Country`` object with the largest population density
+    * If more than one ``Country`` object has the same largest population density, return the first occurrence
+    * This method throws a ``NoSuchElementException`` if the ``CountryCatalogue`` is empty
+
+
 
 #. Have a method called ``numberCountriesOnContinent`` that takes a continent name as a parameter and returns the number of ``Country`` objects on that continent
 
