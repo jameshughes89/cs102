@@ -181,8 +181,10 @@ There will also be a static constant
 
 
 
-Part 3 --- Load Files
-=====================
+Part 3 --- File IO and Using Classes
+====================================
+
+
 
 This part is about populating the country catalogue based on information contained within text files. You will be
 required to perform some file I/O.
