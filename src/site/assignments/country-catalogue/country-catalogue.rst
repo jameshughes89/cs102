@@ -156,7 +156,6 @@ There will also two static constant
     * One takes a parameter to create a ``CountryCatalogue`` with the ``catalogue`` array being the specified size
 
 
-
 #. Write an ``add`` method to add a ``Country`` object to the ``CountryCatalogue``
 
     * This method takes the ``Country`` object to be added as a parameter
@@ -164,12 +163,12 @@ There will also two static constant
     * This method must still work if the ``catalogue`` array is full
 
 
-#. Create a constructor that will setup and create an empty catalogue of countries
-    * This constructor should set the ``size`` and ``catalogue`` fields appropriately
+#. Write a ``remove`` method that removes a ``Country`` object from the ``CountryCatalogue``
 
-#. Write an ``add`` method that will take all the information needed to create a new ``Country`` object (name, population, area, continent) as parameters and add it to the ``catalogue``
-    * It is possible that our ``catalogue`` array runs out of space, so we may need to ``expandCapacity``
-    * Be sure to properly keep track of the number of countries in the catalogue
+    * This method takes the ``Country`` object to be removed as a parameter
+    * This method returns a boolean indicating if the remove was successful
+    * This method throws a ``NoSuchElementException`` if no matching ``Country`` object exists
+
 
 #. Write a private method called ``expandCapacity`` that will double the size of the ``Country`` array used for holding reference to the countries
     * Always double the size of the array
