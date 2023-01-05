@@ -123,63 +123,148 @@ instances of the ``Country`` class.
 Part 2 --- Country Catalogue
 ============================
 
-The ``CountryCatalogue`` class will be a collection of ``Country`` objects.
+The ``CountryCatalogue`` class holds references to ``Country`` objects. Additionally, the ``CountryCatalogue`` provides
+functionality to add and remove ``Country`` objects to itself and ask questions about the data. The ``CountryCatalogue``
+is effectively a *list* keeping track of the ``Country`` objects with additional functionality.
 
-There will be two fields
+Although the description of this class is provided with an order and each part is numbered, one should feel free to
+complete the methods in any order they see fit. Additionally, feel free to write and use additional private methods as
+needed.
 
-    * ``size``, an int to keep track of the number of countries in the catalogue
-    * ``catalogue``, an array of ``Country`` objects
+The ``CountryCatalogue`` class will need two fields
 
-There will also be a static constant
-
-    * An integer for this class called ``DEFAULT_CAPACITY`` that should be set to 10
-        * This will be used as a starting size for the ``catalogue`` array
-
-#. Create a constructor that will setup and create an empty catalogue of countries
-    * This constructor should set the ``size`` and ``catalogue`` fields appropriately
-
-#. Write an ``add`` method that will take all the information needed to create a new ``Country`` object (name, population, area, continent) as parameters and add it to the ``catalogue``
-    * It is possible that our ``catalogue`` array runs out of space, so we may need to ``expandCapacity``
-    * Be sure to properly keep track of the number of countries in the catalogue
-
-#. Write a private method called ``expandCapacity`` that will double the size of the ``Country`` array used for holding reference to the countries
-    * Always double the size of the array
-
-#. Create a ``remove`` method that removes a ``Country`` object from the ``catalogue`` based on the parameterized country name
-    * Remember to keep track of the size
-    * Be careful about how you are comparing strings
-    * If the country is not in the ``catalogue``, everything should be left alone
-    * If more than one ``Country`` object with the same name exists in the ``catalogue``, only remove the first one
-
-#. Write a ``find`` method to perform a linear search for a ``Country`` based on the country name passed to the method as a parameter
-    * This method will return the ``Country`` object
-    * If the specified country does not exist, return ``null``
+    * ``size`` --- an ``int`` to keep track of the number of ``Country`` objects in the catalogue
+    * ``catalogue`` --- an array of ``Country`` objects
 
 
-#. Create a method called ``setPopulation`` that takes a name of a country and a new population value for that country as parameters
+The class will also have two static constants
 
-#. Have a method called ``numberCountriesOnContinent`` that takes a continent name as a parameter and returns the number of ``Country`` objects on that continent
+    * An ``int`` called ``NOT_FOUND`` that is set to ``-1``
 
-#. Write a method called ``filterCountriesByContinent`` that takes a continent name as a parameter and returns a new ``CountryCatalogue`` instance containing only the countries on the specified continent
+        * This constant serves as a nice way to indicate, with a sentinel value, that something was not found
 
-#. A method called ``findCountryLargestPopulation`` that returns the ``Country`` with the largest population in the ``catalogue``
 
-#. Have a method called ``findMostPopulousContinent`` that returns the name of the continent with the largest total population based on the countries in the ``catalogue``
-    * I strongly recommend making use of a *hash map* to keep track of continent populations
-    * A map is the same idea as a dictionary from Python
-    * `How does one use a hash map? <https://www.google.com/search?q=java+hashmap&oq=java+hashmap>`_
+    * An ``int`` for this class called ``DEFAULT_CAPACITY`` that should be set to ``10``
 
-#. Write the ``toString`` method to return a ``String`` with each ``Country`` object's details on a separate line
-    * The ``Country`` class' ``toString`` will be useful for getting the object's details
-    * Note that you may see some of the area vales represented in scientific notation --- this is OK
-        * Something like 1.234E8
-    * Below is an example
+        * This will be used as a starting size for the ``catalogue`` array if none is specified upon creation
 
-            ``China, Asia, 1339190000, 9596960.0``
 
-            ``United States of America, North America, 309975000, 9629091.0``
 
-            ``Brazil, South America, 193364000, 8511965.0``
+#. Write two constructors for the ``CountryCatalogue`` class
+
+    * One creates the ``CountryCatalogue`` with the ``catalogue`` array being the default size
+    * One takes a parameter to create a ``CountryCatalogue`` with the ``catalogue`` array being the size specified by the parameter
+
+
+#. Write an ``add`` method to add a ``Country`` object to the ``CountryCatalogue``
+
+    * This method takes the ``Country`` object to be added as a parameter
+    * This method returns a ``boolean`` indicating if the add was successful
+    * This method must still work if the ``catalogue`` array is full
+
+
+#. Write a ``remove`` method that removes a ``Country`` object from the ``CountryCatalogue``
+
+    * This method takes the ``Country`` object to be removed as a parameter
+    * This method returns a ``boolean`` indicating if the remove was successful
+    * This method throws a ``NoSuchElementException`` if no matching ``Country`` object exists
+    * If more than one matching ``Country`` object exists, only remove the first occurrence
+    * If a ``Country`` object is removed, the order of the remaining ``Country`` objects must remain unchanged
+
+        * For example, if ``A`` is removed from ``C, A, R, L``, the result should be ``C, R, L``
+
+
+
+#. Write a ``contains`` method that searches for a ``Country`` object within the ``CountryCatalogue``
+
+    * This method takes the ``Country`` to search for as a parameter
+    * This method returns a ``boolean`` indicating if the specified ``Country`` object is within the ``CountryCatalogue``
+
+
+#. Write an ``indexOf`` method that finds the index of a ``Country`` object within the ``CountryCatalogue``
+
+    * This method takes the ``Country`` to search for as a parameter
+    * This method returns the index of the specified ``Country`` object within the ``CountryCatalogue``
+    * This method throws a ``NoSuchElementException`` if no matching ``Country`` object exists
+
+
+#. Write a ``get`` method that returns the ``Country`` object at a specified index within the ``CountryCatalogue``
+
+    * This method takes an index as a parameter
+    * This method returns a reference to the ``Country`` object at the specified index in the ``catalogue`` array
+    * This method throws a ``IndexOutOfBoundsException`` if an inadmissible index is provided
+
+
+#. Write a ``smallestPopulationDensity`` method that returns the ``Country`` in the ``CountryCatalogue`` with the smallest population density
+
+    * This method returns a reference to the ``Country`` object with the smallest population density
+    * If more than one ``Country`` object has the same smallest population density, return the first occurrence
+    * This method throws a ``NoSuchElementException`` if the ``CountryCatalogue`` is empty
+
+
+#. Write a ``largestPopulationDensity`` method that returns the ``Country`` in the ``CountryCatalogue`` with the largest population density
+
+    * This method returns a reference to the ``Country`` object with the largest population density
+    * If more than one ``Country`` object has the same largest population density, return the first occurrence
+    * This method throws a ``NoSuchElementException`` if the ``CountryCatalogue`` is empty
+
+
+#. Write a ``filterByPopulationDensity`` method that returns a new ``CountryCatalogue`` containing ``Country`` objects within the specified range
+
+    * This method takes two parameters indicating the low and high limits for filtering
+
+        * The lower limit is *inclusive* --- ``Country`` objects with population densities greater than or equal to this limit are included
+        * The upper limit is *exclusive* --- ``Country`` objects with population densities strictly less than this limit are included
+
+
+    * This method returns a new ``CountryCatalogue`` containing ``Country`` objects from the current ``CountryCatalogue`` that fall within the specified range
+    * This method returns an empty ``CountryCatalogue`` if no ``Country`` objects exist within the specified range
+
+        * This includes the case that the current ``CountryCatalogue`` is empty
+
+
+
+#. Write a ``mostPopulousContinent`` method that returns the name of the continent with the largest population
+
+    * This method returns a ``String`` of the name of the continent with the largest population
+    * This method throws a ``NoSuchElementException`` if the ``CountryCatalogue`` is empty
+    * This method only considers ``Country`` objects contained within the ``CountryCatalogue``
+    * This method should work with an arbitrary number of possible continents
+
+        * In other words, do not hard code the names of the continents on Earth
+
+
+    * It is recommended to make use of a *hash map* for this method
+
+        * A map is like a dictionary from Python
+        * `How does one use a hash map? <https://www.google.com/search?q=java+hashmap&oq=java+hashmap>`_
+
+
+
+#. Write an ``isEmpty`` method that returns a ``boolean`` indicating if the ``CountryCatalogue`` is empty or not
+#. Write a ``size`` method that returns the number of ``Country`` objects within the ``CountryCatalogue``
+#. Write a ``toString`` method that returns a ``String`` representation of the ``CountryCatalogue``
+
+    * The ``String`` should be an aggregate of the ``String`` representations of the  ``Country`` objects within the ``CountryCatalogue``
+    * Each ``Country`` object's ``String`` representation should be on its own line
+    * For example
+
+    .. code-block:: text
+
+        Country(name=Nigeria, continent=Africa, population=186987563, area=912134.45)
+        Country(name=Mexico, continent=North America, population=128632004, area=1969230.76)
+        Country(name=Egypt, continent=Africa, population=93383574, area=1000000.00)
+        Country(name=France, continent=Europe, population=64668129, area=541656.76)
+        Country(name=Italy, continent=Europe, population=59801004, area=300000.00)
+
+
+
+#. Uncomment out the provided ``equals`` and ``hashCode`` methods
+
+    * These are provided since writing ``equals`` for collections and testing them can be tricky
+
+
+#. Run the unit tests to ensure the ``Country`` class works properly
 
 
 
