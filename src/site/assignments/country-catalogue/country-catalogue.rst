@@ -183,21 +183,41 @@ There will also be a static constant
 
 
 
-Part 3 --- Load Files
-=====================
+Part 3 --- File IO and Using Classes
+====================================
 
-This part is about populating the country catalogue based on information contained within text files. You will be
-required to perform some file I/O.
+A complete ``main`` method has been provided to you within the ``Asn1`` class. Take your time to read over the code
+carefully and make sense of what it is doing. You are not required to make any changes to this code, but you are
+required to understand it and how it works.
 
-#. Create a static method within the ``Asn1`` class called ``loadCountries``
-    * This method will take two strings as parameters for the file names of the text files to be read
-    * There will be a third parameter for a ``CountryCatalogue`` instance that will contain ``Country`` objects created based on the text files
-    * Based on the contents of the continent file, keep track of the country/continent relationships
-        * I strongly recommend making use of a *hash map* to keep track of the country name/continent name relationships
-        * A map is the same idea as a dictionary from Python
-        * `How does one use a hash map? <https://www.google.com/search?q=java+hashmap&oq=java+hashmap>`_
-    * Based on the file containing the country details, along with the country name/continent name relationships, populate the ``CountryCatalogue`` with appropriate ``Country`` objects
-    * **Note:** To keep things simpler, the method will have ``throws IOException`` so you do not need to worry about the ``try`` and ``catch`` blocks for the file I/O
+The first portion of ``main`` loads data from a file, parses it, and then uses the data to create ``Country`` objects to
+add to a ``CountryCatalogue``.
+
+The next portion simply alters the contents of the ``CountryCatalogue`` object and the third part queries the
+``CountryCatalogue`` for some details.
+
+The last portion of ``main`` creates a new ``CountryCatalogue`` by filtering the existing ``CountryCatalogue``. The
+details of the ``Country`` objects within the new filtered ``CountryCatalogue`` are added to a string that is then
+ultimately saved to a csv file.
+
+There are no unit tests for ``main``. To test it, simply run it and check if it works as expected.
+
+.. note::
+
+    In CSCI 161, most file IO was done by reading/writing a single line at a time from/to the file. It is entirely
+    possible to read/write one line at a time in Java, but here, when reading from a file, notice that the whole
+    contents of the file is read as a single string and then parsed. Similarly, when writing to a file, the whole string
+    is created before it is written to the file as a single string.
+
+
+.. note::
+
+    The functions ``Files.readString`` and ``Files.writeString`` used for file IO may throw ``IOExceptions``. Notice,
+    however, that these calls are not wrapped with ``try``/``catch``. This is because ``main`` includes
+    ``throws IOException`` in its signature, as described in the
+    :ref:`Java vs. Python topic's IO Section <label-java_vs_python-input_output>`.
+
+
 
 
 Part 4 --- Testing
