@@ -194,12 +194,11 @@ add to a ``CountryCatalogue``.
 The next portion simply alters the contents of the ``CountryCatalogue`` object and the third part queries the
 ``CountryCatalogue`` for some details.
 
+The last portion of ``main`` creates a new ``CountryCatalogue`` by filtering the existing ``CountryCatalogue``. The
+details of the ``Country`` objects within the new ``CountryCatalogue`` are added to a string that is then ultimately
+saved to a csv file.
 
 
-The next section queries the
-
-This part is about populating the country catalogue based on information contained within text files. You will be
-required to perform some file I/O.
 
 #. Create a static method within the ``Asn1`` class called ``loadCountries``
     * This method will take two strings as parameters for the file names of the text files to be read
