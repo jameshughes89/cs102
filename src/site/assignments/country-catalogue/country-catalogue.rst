@@ -195,10 +195,10 @@ The next portion simply alters the contents of the ``CountryCatalogue`` object a
 ``CountryCatalogue`` for some details.
 
 The last portion of ``main`` creates a new ``CountryCatalogue`` by filtering the existing ``CountryCatalogue``. The
-details of the ``Country`` objects within the new ``CountryCatalogue`` are added to a string that is then ultimately
-saved to a csv file.
+details of the ``Country`` objects within the new filtered ``CountryCatalogue`` are added to a string that is then
+ultimately saved to a csv file.
 
-There are no unit tests for ``main``. To test it, simply run it and check if it works as expected. 
+There are no unit tests for ``main``. To test it, simply run it and check if it works as expected.
 
 
 .. note::
