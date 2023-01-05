@@ -128,7 +128,8 @@ functionality to add and remove ``Country`` objects to itself and ask questions 
 ``CountryCatalogue`` is effectively a *list* keeping track of the ``Country`` objects with additional functionality.
 
 Although the description of this class is provided with an order and each part is numbered, one should feel free to
-complete the methods in any order they see fit.
+complete the methods in any order they see fit. Additionally, feel free to write and use additional private methods as
+needed.
 
 The ``CountryCatalogue`` class will be two fields:
 
