@@ -200,7 +200,6 @@ ultimately saved to a csv file.
 
 There are no unit tests for ``main``. To test it, simply run it and check if it works as expected.
 
-
 .. note::
 
     In CSCI 161, most file IO was done by reading/writing a single line at a time from/to the file. It is entirely
