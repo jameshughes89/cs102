@@ -174,6 +174,7 @@ There will also two static constant
         * For example, if ``A`` is removed from ``C, A, R, L``, the result should be ``C, R, L``
 
 
+
 #. Write a ``contains`` method that searches for a ``Country`` object within the ``CountryCatalogue``
 
     * This method takes the ``Country`` to search for as a parameter
@@ -220,18 +221,26 @@ There will also two static constant
     * This method returns an empty ``CountryCatalogue`` if no ``Country`` objects exist within the specified range
 
         * This includes the case that the current ``CountryCatalogue`` is empty
-        
 
-#. Have a method called ``numberCountriesOnContinent`` that takes a continent name as a parameter and returns the number of ``Country`` objects on that continent
 
-#. Write a method called ``filterCountriesByContinent`` that takes a continent name as a parameter and returns a new ``CountryCatalogue`` instance containing only the countries on the specified continent
 
-#. A method called ``findCountryLargestPopulation`` that returns the ``Country`` with the largest population in the ``catalogue``
+#. Write a ``mostPopulousContinent`` method that returns the name of the continent with the largest population
 
-#. Have a method called ``findMostPopulousContinent`` that returns the name of the continent with the largest total population based on the countries in the ``catalogue``
-    * I strongly recommend making use of a *hash map* to keep track of continent populations
-    * A map is the same idea as a dictionary from Python
-    * `How does one use a hash map? <https://www.google.com/search?q=java+hashmap&oq=java+hashmap>`_
+    * This method returns a ``String`` of the name of the continent with the largest population
+    * This method throws a ``NoSuchElementException`` if the ``CountryCatalogue`` is empty
+    * This method only considers ``Country`` objects contained within the ``CountryCatalogue``
+    * This method should work with an arbitrary number of possible continents
+
+        * In other words, do not hard code the names of the continents on Earth
+
+
+    * It is recommended to make use of a *hash map* for this method
+
+        * A map is like a dictionary from Python
+        * `How does one use a hash map? <https://www.google.com/search?q=java+hashmap&oq=java+hashmap>`_
+
+
+
 
 #. Write the ``toString`` method to return a ``String`` with each ``Country`` object's details on a separate line
     * The ``Country`` class' ``toString`` will be useful for getting the object's details
