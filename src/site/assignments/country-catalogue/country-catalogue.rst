@@ -123,21 +123,21 @@ instances of the ``Country`` class.
 Part 2 --- Country Catalogue
 ============================
 
-The ``CountryCatalogue`` class holds reference to ``Country`` objects. Additionally, the ``CountryCatalogue`` provides
-functionality to add and remove ``Country`` objects to itself and ask questions about the collection of data. The
-``CountryCatalogue`` is effectively a *list* keeping track of the ``Country`` objects with additional functionality.
+The ``CountryCatalogue`` class holds references to ``Country`` objects. Additionally, the ``CountryCatalogue`` provides
+functionality to add and remove ``Country`` objects to itself and ask questions about the data. The ``CountryCatalogue``
+is effectively a *list* keeping track of the ``Country`` objects with additional functionality.
 
 Although the description of this class is provided with an order and each part is numbered, one should feel free to
 complete the methods in any order they see fit. Additionally, feel free to write and use additional private methods as
 needed.
 
-The ``CountryCatalogue`` class will be two fields:
+The ``CountryCatalogue`` class will be two fields
 
     * ``size`` --- an ``int`` to keep track of the number of ``Country`` objects in the catalogue
     * ``catalogue`` --- an array of ``Country`` objects
 
 
-There will also two static constant
+The class will also have two static constants
 
     * An ``int`` called ``NOT_FOUND`` that is set to ``-1``
 
@@ -153,7 +153,7 @@ There will also two static constant
 #. Write two constructors for the ``CountryCatalogue`` class
 
     * One creates the ``CountryCatalogue`` with the ``catalogue`` array being the default size
-    * One takes a parameter to create a ``CountryCatalogue`` with the ``catalogue`` array being the specified size
+    * One takes a parameter to create a ``CountryCatalogue`` with the ``catalogue`` array being the size specified by the parameter
 
 
 #. Write an ``add`` method to add a ``Country`` object to the ``CountryCatalogue``
@@ -178,7 +178,7 @@ There will also two static constant
 #. Write a ``contains`` method that searches for a ``Country`` object within the ``CountryCatalogue``
 
     * This method takes the ``Country`` to search for as a parameter
-    * This method returns a ``boolean`` indicating if the specified ``Country`` object is within the ``CountryCatalogue
+    * This method returns a ``boolean`` indicating if the specified ``Country`` object is within the ``CountryCatalogue``
 
 
 #. Write an ``indexOf`` method that finds the index of a ``Country`` object within the ``CountryCatalogue``
@@ -192,7 +192,7 @@ There will also two static constant
 
     * This method takes an index as a parameter
     * This method returns a reference to the ``Country`` object at the specified index in the ``catalogue`` array
-    * This method throws a ``IIndexOutOfBoundsException`` if an inadmissible index is provided
+    * This method throws a ``IndexOutOfBoundsException`` if an inadmissible index is provided
 
 
 #. Write a ``smallestPopulationDensity`` method that returns the ``Country`` in the ``CountryCatalogue`` with the smallest population density
@@ -249,13 +249,13 @@ There will also two static constant
     * Each ``Country`` object's ``String`` representation should be on its own line
     * For example
 
-        .. code-block:: text
+    .. code-block:: text
 
-            Country(name=Nigeria, continent=Africa, population=186987563, area=912134.45)
-            Country(name=Mexico, continent=North America, population=128632004, area=1969230.76)
-            Country(name=Egypt, continent=Africa, population=93383574, area=1000000.00)
-            Country(name=France, continent=Europe, population=64668129, area=541656.76)
-            Country(name=Italy, continent=Europe, population=59801004, area=300000.00)
+        Country(name=Nigeria, continent=Africa, population=186987563, area=912134.45)
+        Country(name=Mexico, continent=North America, population=128632004, area=1969230.76)
+        Country(name=Egypt, continent=Africa, population=93383574, area=1000000.00)
+        Country(name=France, continent=Europe, population=64668129, area=541656.76)
+        Country(name=Italy, continent=Europe, population=59801004, area=300000.00)
 
 
 
