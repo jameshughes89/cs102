@@ -130,6 +130,22 @@ functionality to add and remove ``Country`` objects to itself and ask questions 
 Although the description of this class is provided with an order and each part is numbered, one should feel free to
 complete the methods in any order they see fit.
 
+The ``CountryCatalogue`` class will be two fields:
+
+    * ``size`` --- an ``int`` to keep track of the number of ``Country`` objects in the catalogue
+    * ``catalogue`` --- an array of ``Country`` objects
+
+
+There will also two static constant
+
+    * An ``int`` called ``NOT_FOUND`` that is set to ``-1``
+
+        * This constant serves as a nice way to indicate, with a sentinel value, that something was not found
+
+
+    * An ``int`` for this class called ``DEFAULT_CAPACITY`` that should be set to ``10``
+
+        * This will be used as a starting size for the ``catalogue`` array if none is specified upon creation
 
 
 
@@ -138,15 +154,7 @@ complete the methods in any order they see fit.
 
 The ``CountryCatalogue`` class will be a collection of ``Country`` objects.
 
-There will be two fields
 
-    * ``size``, an int to keep track of the number of countries in the catalogue
-    * ``catalogue``, an array of ``Country`` objects
-
-There will also be a static constant
-
-    * An integer for this class called ``DEFAULT_CAPACITY`` that should be set to 10
-        * This will be used as a starting size for the ``catalogue`` array
 
 #. Create a constructor that will setup and create an empty catalogue of countries
     * This constructor should set the ``size`` and ``catalogue`` fields appropriately
