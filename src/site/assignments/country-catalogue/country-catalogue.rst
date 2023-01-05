@@ -170,7 +170,7 @@ There will also two static constant
     * This method throws a ``NoSuchElementException`` if no matching ``Country`` object exists
     * If a ``Country`` object is removed, the order of the remaining ``Country`` objects must remain unchanged
 
-        * For example, if ``B`` is removed from ``A, B, C, D``, the result should be ``A, C, D``
+        * For example, if ``A`` is removed from ``C, A, R, L``, the result should be ``C, R, L``
 
 
 
