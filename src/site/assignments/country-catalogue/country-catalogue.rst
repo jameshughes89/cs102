@@ -198,6 +198,8 @@ The last portion of ``main`` creates a new ``CountryCatalogue`` by filtering the
 details of the ``Country`` objects within the new ``CountryCatalogue`` are added to a string that is then ultimately
 saved to a csv file.
 
+There are no unit tests for ``main``. To test it, simply run it and check if it works as expected. 
+
 
 .. note::
 
@@ -213,6 +215,9 @@ saved to a csv file.
     however, that these calls are not wrapped with ``try``/``catch``. This is because ``main`` includes
     ``throws IOException`` in its signature, as described in the
     :ref:`Java vs. Python topic's IO Section <label-java_vs_python-input_output>`.
+
+
+
 
 Part 4 --- Testing
 ==================
