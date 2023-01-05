@@ -123,6 +123,19 @@ instances of the ``Country`` class.
 Part 2 --- Country Catalogue
 ============================
 
+The ``CountryCatalogue`` class holds reference to ``Country`` objects. Additionally, the ``CountryCatalogue`` provides
+functionality to add and remove ``Country`` objects to itself and ask questions about the collection of data. The
+``CountryCatalogue`` is effectively a *list* keeping track of the ``Country`` objects with additional functionality.
+
+Although the description of this class is provided with an order and each part is numbered, one should feel free to
+complete the methods in any order they see fit.
+
+
+
+
+
+
+
 The ``CountryCatalogue`` class will be a collection of ``Country`` objects.
 
 There will be two fields
