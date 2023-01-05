@@ -207,6 +207,15 @@ saved to a csv file.
     is created before it is written to the file as a single string.
 
 
+.. note::
+
+    The functions ``Files.readString`` and ``Files.writeString`` used for file IO may throw ``IOExceptions``. Notice,
+    however, that these calls are not wrapped with ``try``/``catch``. This is because ``main`` includes
+    ``throws IOException`` in its signature, as described in the
+    :ref:`Java vs. Python topic's IO Section <label-java_vs_python-input_output>`.
+
+
+
 #. Create a static method within the ``Asn1`` class called ``loadCountries``
     * This method will take two strings as parameters for the file names of the text files to be read
     * There will be a third parameter for a ``CountryCatalogue`` instance that will contain ``Country`` objects created based on the text files
