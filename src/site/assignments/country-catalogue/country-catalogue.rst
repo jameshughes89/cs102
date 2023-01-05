@@ -187,6 +187,13 @@ There will also two static constant
     * This method throws a ``NoSuchElementException`` if no matching ``Country`` object exists
 
 
+#. Write a ``get`` method that returns the ``Country`` object at a specified index within the ``CountryCatalogue``
+
+    * This method takes an index as a parameter
+    * This method returns a reference to the ``Country`` object at the specified index
+    * This method throws a ``IIndexOutOfBoundsException`` if an inadmissible index is provided 
+
+
 #. Create a method called ``setPopulation`` that takes a name of a country and a new population value for that country as parameters
 
 #. Have a method called ``numberCountriesOnContinent`` that takes a continent name as a parameter and returns the number of ``Country`` objects on that continent
