@@ -208,6 +208,19 @@ There will also two static constant
     * This method throws a ``NoSuchElementException`` if the ``CountryCatalogue`` is empty
 
 
+#. Write a ``filterByPopulationDensity`` method that returns a new ``CountryCatalogue`` containing ``Country`` objects within the specified range
+
+    * This method takes two parameters indicating the low and high limits for filtering
+
+        * The lower limit is *inclusive* --- ``Country`` objects with population densities greater than or equal to this limit are included
+        * The upper limit is *exclusive* --- ``Country`` objects with population densities strictly less than this limit are included
+
+
+    * This method returns a new ``CountryCatalogue`` containing ``Country`` objects from the current ``CountryCatalogue`` that fall within the specified range
+    * This method returns an empty ``CountryCatalogue`` if no ``Country`` objects exist within the specified range
+
+        * This includes the case that the current ``CountryCatalogue`` is empty
+        
 
 #. Have a method called ``numberCountriesOnContinent`` that takes a continent name as a parameter and returns the number of ``Country`` objects on that continent
 
