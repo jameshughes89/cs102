@@ -179,7 +179,7 @@ Can we Write Code Now?
 * Other than the boilerplate code in the Java example, they're nearly the same
 
     * ``System.out.println("Hello, world!")`` is doing the job of ``print``
-    * Mind the fact that our strings have double quotes " as single quotes is for a single character
+    * Mind the fact that our strings have double quotes (``"``) as single quotes is for a single character
 
         * ``"Hello"`` vs. ``'h'``
 
@@ -223,7 +223,7 @@ Can we Write Code Now?
 
         * We don't need to make an instance of the class to use the method
 
-    * A good example of this in Java is the `Math class <https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html>`_.
+    * A good example of this in Java is the `Math class <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Math.html>`_
     * More on this later, but here is an example of calling a method on a class vs. an instance of the class
 
 
