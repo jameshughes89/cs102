@@ -59,7 +59,7 @@ Empty Stack Tests
     :linenos:
 
     @Test
-    void push_successfulAdd_returnsTrue() {
+    void push_empty_returnsTrue() {
         ArrayStack<Integer> classUnderTest = new ArrayStack<>();
         assertTrue(classUnderTest.push(11));
     }
@@ -137,7 +137,7 @@ Common Setup Code
     }
 
     @Test
-    void push_successfulAdd_returnsTrue() {
+    void push_empty_returnsTrue() {
         assertTrue(classUnderTest.push(11));
     }
 
