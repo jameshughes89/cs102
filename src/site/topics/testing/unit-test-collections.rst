@@ -108,6 +108,52 @@ Empty Stack Tests
     it is a common convention ---  use the name ``classUnderTest`` for the object being used to test the class.
 
 
+
+Common Setup Code
+-----------------
+
+* Notice that each of the above example tests starts with the creation of an ``ArrayStack``
+
+    * ``ArrayStack<Integer> classUnderTest = new ArrayStack<>();``
+
+
+* To help simplify each of the individual tests, this setup code can be removed and added to its own method
+* This method will be annotated with ``@BeforeEach``
+* To make use of this, however, the variable ``classUnderTest`` will be made a field for the ``ArrayStackTest`` class
+* The below code shows an example of the setup method with the two ``push`` unit tests updated to not include the creation of the ``ArrayStack``
+
+    * The two ``push`` tests are shown for brevity
+    * This would work similarly for each of the previously discussed empty tests
+
+
+.. code-block:: java
+    :linenos:
+
+    private ArrayStack<Integer> classUnderTest;
+
+    @BeforeEach
+    void createStack() {
+        classUnderTest = new ArrayStack<>();
+    }
+
+    @Test
+    void push_successfulAdd_returnsTrue() {
+        assertTrue(classUnderTest.push(11));
+    }
+
+    @Test
+    void push_empty_newTop() {
+        classUnderTest.push(11);
+        assertEquals(11, classUnderTest.peek());
+    }
+
+    .
+    .
+    .
+
+
+
+
 Singleton Case Stack Tests
 ==========================
 
