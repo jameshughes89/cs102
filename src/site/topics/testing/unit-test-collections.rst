@@ -159,13 +159,9 @@ Singleton Case Stack Tests
 ==========================
 
 * Below are example unit tests for all methods within the ``ArrayStack`` class when it has a single element within it
-* There are two things to note with these tests
+* Notice the inclusion of the new class field called ``preState``
 
-    * A new class field called ``preState`` is included
-    * Each of the tests have, once again, the same setup code
-
-        * ``classUnderTest.push(10);``
-
+* This ``preState`` ...
 
 
 .. code-block:: java
@@ -269,6 +265,17 @@ Singleton Case Stack Tests
     This highlights the complexities caused by the *interconnectedness* of the collection's methods --- one cannot test
     that ``push`` results in a new top without using ``peek``, and one cannot test ``peek`` without having already
     called ``push``.
+
+
+
+Nested Classes
+--------------
+
+* Notice that, once again, each of these tests have the same setup code
+
+    * ``classUnderTest.push(10);``
+
+
 
 
 
