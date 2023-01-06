@@ -158,6 +158,15 @@ Common Setup Code
 Singleton Case Stack Tests
 ==========================
 
+* Below are example unit tests for all methods within the ``ArrayStack`` class when it has a single element within it
+* There are two things to note with these tests
+
+    * A new class field called ``preState`` is included
+    * Each of the tests have, once again, the same setup code
+
+        * ``classUnderTest.push(10);``
+
+
 
 .. code-block:: java
     :linenos:
