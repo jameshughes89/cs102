@@ -105,15 +105,16 @@ Empty Stack Tests
 .. note::
 
     In the above tests, the name of the reference variable to the ``ArrayStack`` being tested is ``classUnderTest``.
-    it is a common convention ---  use the name ``classUnderTest`` for the object being used to test the class.
+    This is a common convention ---  use the name ``classUnderTest`` for the object being used to test the class.
 
 
 
 Common Setup Code
 -----------------
 
-* Notice that each of the above example tests starts with the creation of an ``ArrayStack``
+* Notice that each of the above example tests starts with the exact same code
 
+    * The creation of an ``ArrayStack``
     * ``ArrayStack<Integer> classUnderTest = new ArrayStack<>();``
 
 
@@ -122,7 +123,7 @@ Common Setup Code
 * To make use of this, however, the variable ``classUnderTest`` will be made a field for the ``ArrayStackTest`` class
 * The below code shows an example of the setup method with the two ``push`` unit tests updated to not include the creation of the ``ArrayStack``
 
-    * The two ``push`` tests are shown for brevity
+    * For brevity, only the two ``push`` tests are shown
     * This would work similarly for each of the previously discussed empty tests
 
 
