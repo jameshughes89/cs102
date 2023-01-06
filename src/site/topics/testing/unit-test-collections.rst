@@ -160,9 +160,12 @@ Singleton Case Stack Tests
 
 * Below are example unit tests for all methods within the ``ArrayStack`` class when it has a single element within it
 * Notice the inclusion of the new class field called ``preState``
+* This ``preState`` will effectively be a duplicate of ``classUnderTest`` that can be used to check that a method had no side effect
+* Consider ``peek_singleton_unchanged`` for an example
 
-* This ``preState`` ...
-
+    * Calling ``peek`` should not have any side effect; it should not mutate the object in any way
+    * To verify this, one can assert equality between ``preState`` and ``classUnderTest`` after calling ``peek`` on ``classUnderTest``
+    
 
 .. code-block:: java
     :linenos:
