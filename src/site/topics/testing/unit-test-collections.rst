@@ -288,6 +288,12 @@ Nested Classes
 * Further, this strategy helps group the tests together nicely
 * Below is an example of using the nested classes
 
+* The ``createStack()`` setup code will be run before the empty tests *and* singleton tests
+* But the ``addSingleton()`` setup code only runs before the singleton tests, but *after* ``createStack()`` is run
+
+    * This way the ``ArrayStack`` instances exist before the pushing takes place inside ``addSingleton()``
+
+
 
 .. code-block:: java
     :linenos:
