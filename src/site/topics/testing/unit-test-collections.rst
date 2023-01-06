@@ -41,6 +41,53 @@ Empty Stack Tests
 =================
 
 
+.. code-block:: java
+    :linenos:
+
+    @Test
+    void push_successfulAdd_returnsTrue() {
+        ArrayStack<Integer> classUnderTest = new ArrayStack<>();
+        assertTrue(classUnderTest.push(11));
+    }
+
+    @Test
+    void push_empty_newTop() {
+        ArrayStack<Integer> classUnderTest = new ArrayStack<>();
+        classUnderTest.push(11);
+        assertEquals(11, classUnderTest.peek());
+    }
+
+    @Test
+    void pop_empty_throwsNoSuchElementException() {
+        ArrayStack<Integer> classUnderTest = new ArrayStack<>();
+        assertThrows(NoSuchElementException.class, () -> classUnderTest.pop());
+    }
+
+    @Test
+    void peek_empty_throwsNoSuchElementException() {
+        ArrayStack<Integer> classUnderTest = new ArrayStack<>();
+        assertThrows(NoSuchElementException.class, () -> classUnderTest.peek());
+    }
+
+    @Test
+    void isEmpty_empty_returnsTrue() {
+        ArrayStack<Integer> classUnderTest = new ArrayStack<>();
+        assertTrue(classUnderTest.isEmpty());
+    }
+
+    @Test
+    void size_empty_returnsZero() {
+        ArrayStack<Integer> classUnderTest = new ArrayStack<>();
+        assertEquals(0, classUnderTest.size());
+    }
+
+    @Test
+    void toString_empty_returnsEmptyString() {
+        ArrayStack<Integer> classUnderTest = new ArrayStack<>();
+        assertEquals("", classUnderTest.toString());
+    }
+
+
 Singleton Case Stack Tests
 ==========================
 
