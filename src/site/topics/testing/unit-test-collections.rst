@@ -159,6 +159,82 @@ Singleton Case Stack Tests
 ==========================
 
 
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 2,7,47,49
+
+    private ArrayStack<Integer> classUnderTest;
+    private ArrayStack<Integer> preState;
+
+    @BeforeEach
+    void createStack() {
+        classUnderTest = new ArrayStack<>();
+        preState = new ArrayStack<>();
+    }
+
+    // Empty tests excluded here
+
+    @Test
+    void push_singleton_returnsTrue() {
+        classUnderTest.push(10);
+        assertTrue(classUnderTest.push(11));
+    }
+
+    @Test
+    void push_singleton_newTop() {
+        classUnderTest.push(10);
+        classUnderTest.push(11);
+        assertEquals(11, classUnderTest.peek());
+    }
+
+    @Test
+    void pop_singleton_returnsTop() {
+        classUnderTest.push(10);
+        assertEquals(10, classUnderTest.pop());
+    }
+
+    @Test
+    void pop_singleton_emptyStack() {
+        classUnderTest.push(10);
+        classUnderTest.pop();
+        assertEquals(new ArrayStack<>(), classUnderTest);
+    }
+
+    @Test
+    void peek_singleton_returnsTop() {
+        classUnderTest.push(10);
+        assertEquals(10, classUnderTest.peek());
+    }
+
+    @Test
+    void peek_singleton_unchanged() {
+        classUnderTest.push(10);
+        preState.push(10);
+        classUnderTest.peek();
+        assertEquals(preState, classUnderTest);
+    }
+
+    @Test
+    void isEmpty_singleton_returnsFalse() {
+        classUnderTest.push(10);
+        assertFalse(classUnderTest.isEmpty());
+    }
+
+    @Test
+    void size_singleton_returnsOne() {
+        classUnderTest.push(10);
+        assertEquals(1, classUnderTest.size());
+    }
+
+    @Test
+    void toString_singleton_returnsCorrectString() {
+        classUnderTest.push(10);
+        assertEquals("10, ", classUnderTest.toString());
+    }
+
+
+
+
 General Case Stack Tests
 ========================
 
