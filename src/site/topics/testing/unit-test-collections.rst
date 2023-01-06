@@ -284,7 +284,7 @@ Nested Classes
     * This would break the empty tests since the stack will have something added before each test is run
 
 
-* With *nested classes*, there is a way to add another ``@BeforeEach`` setup code that applies to the singleton tests and not the empty
+* With *nested classes*, there is a way to add another ``@BeforeEach`` setup code that applies to the singleton tests and not the empty tests
 * Further, this strategy helps group the tests together nicely
 * Below is an example of using the nested classes
 
