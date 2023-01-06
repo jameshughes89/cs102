@@ -20,7 +20,7 @@ The main focus of this course is:
 
 
 Data Structures
-===============Unit Testing Collections Topic --- Make a new topic for testing collections
+===============
 
 * A data structure is, simple, some *structure* used to store, organize, and manage data
 
