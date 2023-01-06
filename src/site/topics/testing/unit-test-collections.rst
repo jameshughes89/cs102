@@ -233,6 +233,35 @@ Singleton Case Stack Tests
     }
 
 
+.. note::
+
+    When considering ``peek_singleton_returnsTop``, it may become clear that ``push_empty_newTop`` and
+    ``push_singleton_newTop`` are redundant tests since the ``peek_singleton_returnsTop`` will test ``peek`` after a
+    ``push`` has happened anyways, effectively checking that a ``push`` results in the expected top. When looking at the
+    code in the tests, it's clear that the tests are effectively identical. Thus, it is not really necessary to include
+    any of the ``push`` causing a new top test.
+
+        .. code-block:: java
+            :linenos:
+
+            @Test
+            void push_empty_newTop() {
+                classUnderTest.push(11);
+                assertEquals(11, classUnderTest.peek());
+            }
+
+            @Test
+            void peek_singleton_returnsTop() {
+                classUnderTest.push(10);
+                assertEquals(10, classUnderTest.peek());
+            }
+
+
+    This highlights the complexities caused by the *interconnectedness* of the collection's methods --- one cannot test
+    that ``push`` results in a new top without using ``peek``, and one cannot test ``peek`` without having already
+    called ``push``.
+
+
 
 
 General Case Stack Tests
