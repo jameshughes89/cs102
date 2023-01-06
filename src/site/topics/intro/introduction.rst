@@ -20,7 +20,7 @@ The main focus of this course is:
 
 
 Data Structures
-===============
+===============Unit Testing Collections Topic --- Make a new topic for testing collections
 
 * A data structure is, simple, some *structure* used to store, organize, and manage data
 
@@ -179,7 +179,7 @@ Can we Write Code Now?
 * Other than the boilerplate code in the Java example, they're nearly the same
 
     * ``System.out.println("Hello, world!")`` is doing the job of ``print``
-    * Mind the fact that our strings have double quotes " as single quotes is for a single character
+    * Mind the fact that our strings have double quotes (``"``) as single quotes is for a single character
 
         * ``"Hello"`` vs. ``'h'``
 
