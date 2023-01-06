@@ -102,6 +102,12 @@ Empty Stack Tests
     }
 
 
+.. note::
+
+    In the above tests, the name of the reference variable to the ``ArrayStack`` being tested is ``classUnderTest``.
+    it is a common convention ---  use the name ``classUnderTest`` for the object being used to test the class.
+
+
 Singleton Case Stack Tests
 ==========================
 
