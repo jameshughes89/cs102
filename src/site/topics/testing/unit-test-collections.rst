@@ -40,6 +40,20 @@ Unit Testing Collections
 Empty Stack Tests
 =================
 
+* To simplify the process of writing unit tests for the ``ArrayStack``,  start with one of the states
+* Perhaps the simplest state to test under is when the ``ArrayStack`` is empty
+* Below are example unit tests for all methods within the ``ArrayStack`` class when it is empty
+* Consider, for example, the two ``push`` related tests
+
+    * There is a test that it returns what is expected
+    * There is also a test to check that it had the proper side effect
+
+
+* This is an example of the added complexity of testing a method with a side effect
+
+    * One cannot simply test the output given the input
+    * There is also a necessity to test the side effects
+
 
 .. code-block:: java
     :linenos:
