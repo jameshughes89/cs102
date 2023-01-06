@@ -165,7 +165,7 @@ Singleton Case Stack Tests
 
     * Calling ``peek`` should not have any side effect; it should not mutate the object in any way
     * To verify this, one can assert equality between ``preState`` and ``classUnderTest`` after calling ``peek`` on ``classUnderTest``
-    
+
 
 .. code-block:: java
     :linenos:
@@ -277,6 +277,76 @@ Nested Classes
 * Notice that, once again, each of these tests have the same setup code
 
     * ``classUnderTest.push(10);``
+
+
+* Unfortunately, unlike with the empty tests, one cannot simply add this to the existing ``@BeforeEach`` set up code
+
+    * This would break the empty tests since the stack will have something added before each test is run
+
+
+* With *nested classes*, there is a way to add another ``@BeforeEach`` setup code that applies to the singleton tests and not the empty
+* Further, this strategy helps group the tests together nicely
+* Below is an example of using the nested classes
+
+
+.. code-block:: java
+    :linenos:
+
+    private ArrayStack<Integer> classUnderTest;
+    private ArrayStack<Integer> preState;
+
+    @BeforeEach
+    void createStack() {
+        classUnderTest = new ArrayStack<>();
+        preState = new ArrayStack<>();
+    }
+
+    @Nested
+    class WhenNewEmpty {
+
+        @Test
+        void push_empty_returnsTrue() {
+            assertTrue(classUnderTest.push(11));
+        }
+
+        @Test
+        void pop_empty_throwsNoSuchElementException() {
+            assertThrows(NoSuchElementException.class, () -> classUnderTest.pop());
+        }
+
+        // Remaining empty tests excluded here
+
+        @Nested
+        class WhenSingleton {
+
+            @BeforeEach
+            void addSingleton() {
+                classUnderTest.push(10);
+                preState.push(10);
+            }
+
+            @Test
+            void push_empty_returnsTrue() {
+                assertTrue(classUnderTest.push(11));
+            }
+
+            @Test
+            void pop_singleton_returnsTop() {
+                assertEquals(10, classUnderTest.pop());
+            }
+
+            @Test
+            void pop_singleton_emptyStack() {
+                classUnderTest.pop();
+                assertEquals(new ArrayStack<>(), classUnderTest);
+            }
+
+            // Remaining empty tests excluded here
+
+        }
+    }
+
+
 
 
 
