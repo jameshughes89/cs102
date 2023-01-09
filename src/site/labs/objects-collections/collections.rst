@@ -1,6 +1,6 @@
-***********************
-Objects and Collections
-***********************
+***********
+Collections
+***********
 
 * Feel free to use your laptop
 * You are strongly encourage to work with others
