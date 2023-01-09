@@ -14,45 +14,8 @@ Creating Objects
 ================
 
 The goal is to make a program that will keep track of a suite of courses. To do this, two classes will be written ---
-one for keeping track of the information about a single course, and another for keeping track of multiple courses.
-
-
-Course Class
-------------
-
-A ``Course`` is a simple object to keeps track of data.
-:doc:`Refer to the objects review topic </topics/objects-review/objects-review>` for guidance on creating this class.
-
-
-#. Create a class called ``Course`` that has three private fields: ``programCode``, ``courseCode``, and ``courseTitle``
-
-    * For example, this course would have the following values for the fields
-
-        * ``programCode`` --- ``"CSCI"``
-        * ``courseCode`` --- ``"162"``
-        * ``courseTitle`` --- ``"Programming and Data Structures"``
-
-
-#. Write a single constructor to take and assign values to the fields
-#. Write accessors methods for the three fields
-
-    * For example, ``getCourseCode``
-
-
-#. Write a ``toString`` method that returns a string representation of the object
-
-    * The string should be of the form ``"Course(programCode, courseCode, courseTitle)"``
-
-
-#. Write an ``equals`` method that checks if two ``Course`` objects are equivalent
-
-    * Two ``Course`` objects are considered equal if all their fields match
-    * Remember, do not check string equality with ``==``
-
-
-#. Write a ``hashCode`` method
-#. Test the ``Course`` class by making instances of them and calling the methods to see if they as expected
-
+one for keeping track of the information about a single course, and another for keeping track of multiple courses. In
+this lab, the ``CourseList`` class will be created as the ``Course`` class was written in the previous lab.
 
 
 Course List Class
@@ -106,6 +69,8 @@ this lab.
 #. Write a ``size`` method to return the number of ``Course`` objects in the collection
 #. Write a ``toString`` for the class
 #. Test the ``CourseList`` class by creating an instance of it and using the methods
+
+        * Be sure to check all methods
 
 
 
