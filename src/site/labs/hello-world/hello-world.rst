@@ -130,10 +130,10 @@ Kattis
 .. warning::
 
     In Java, the name of the class and the name of the file must be the same. Thus, for Kattis to compile the Java
-    submissions, the names must match. The below figure shows the default file name Kattis provided as "hello.java"
-    (which is not following proper convention of starting all classes with an uppercase letter) and the class name used
-    in this lab --- ``Lab1``. The solution here is to either rename the file by selecting "hello.java" or rename the
-    class.
+    submissions, the names must match. For example, the below figure shows the default file name Kattis provided as
+    "hello.java" (which is not following proper convention of starting all classes with an uppercase letter) and the
+    class name used in this lab --- ``Lab1``. The solution here is to either rename the file by selecting "hello.java"
+    or rename the class.
 
     .. figure:: kattis_name.png
         :width: 600 px
