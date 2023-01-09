@@ -167,6 +167,14 @@ Singleton Case Stack Tests
     * To verify this, one can assert equality between ``preState`` and ``classUnderTest`` after calling ``peek`` on ``classUnderTest``
 
 
+.. note::
+
+    Although ``preState`` is only actually used on one of the tests so far, it is convenient to always have an
+    equivalent object to ``classUnderTest`` within the test class. For this reason, ``preState`` is made a class field
+    and is always setup the same way as ``classUnderTest``.
+
+
+
 .. code-block:: java
     :linenos:
     :emphasize-lines: 2,7,47,49
@@ -185,12 +193,14 @@ Singleton Case Stack Tests
     @Test
     void push_singleton_returnsTrue() {
         classUnderTest.push(10);
+        preState.push(10);
         assertTrue(classUnderTest.push(11));
     }
 
     @Test
     void push_singleton_newTop() {
         classUnderTest.push(10);
+        preState.push(10);
         classUnderTest.push(11);
         assertEquals(11, classUnderTest.peek());
     }
@@ -204,6 +214,7 @@ Singleton Case Stack Tests
     @Test
     void pop_singleton_emptyStack() {
         classUnderTest.push(10);
+        preState.push(10);
         classUnderTest.pop();
         assertEquals(new ArrayStack<>(), classUnderTest);
     }
@@ -211,6 +222,7 @@ Singleton Case Stack Tests
     @Test
     void peek_singleton_returnsTop() {
         classUnderTest.push(10);
+        preState.push(10);
         assertEquals(10, classUnderTest.peek());
     }
 
@@ -225,18 +237,21 @@ Singleton Case Stack Tests
     @Test
     void isEmpty_singleton_returnsFalse() {
         classUnderTest.push(10);
+        preState.push(10);
         assertFalse(classUnderTest.isEmpty());
     }
 
     @Test
     void size_singleton_returnsOne() {
         classUnderTest.push(10);
+        preState.push(10);
         assertEquals(1, classUnderTest.size());
     }
 
     @Test
     void toString_singleton_returnsCorrectString() {
         classUnderTest.push(10);
+        preState.push(10);
         assertEquals("10, ", classUnderTest.toString());
     }
 
@@ -353,11 +368,6 @@ Nested Test Classes
     }
 
 
-.. note::
-
-    Although ``preState`` is only used on one of the tests so far, it is convenient to always have an equivalent object
-    to ``classUnderTest`` within the test class. For this reason, ``preState`` is made a class field and is always setup
-    the same way as ``classUnderTest``.     
 
 
 
