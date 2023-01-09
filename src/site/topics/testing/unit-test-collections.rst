@@ -271,8 +271,8 @@ Singleton Case Stack Tests
 
 
 
-Nested Classes
---------------
+Nested Test Classes
+-------------------
 
 * Notice that, once again, each of these tests have the same setup code
 
@@ -284,9 +284,9 @@ Nested Classes
     * This would break the empty tests since the stack will have something added before each test is run
 
 
-* With *nested classes*, there is a way to add another ``@BeforeEach`` setup code that applies to the singleton tests and not the empty tests
+* With *nested test classes*, there is a way to add another ``@BeforeEach`` setup code that applies to the singleton tests and not the empty tests
 * Further, this strategy helps group the tests together nicely
-* Below is an example of using the nested classes
+* Below is an example of using the nested test classes
 
 * The ``createStack()`` setup code will be run before the empty tests *and* singleton tests
 * But the ``addSingleton()`` setup code only runs before the singleton tests, but *after* ``createStack()`` is run
