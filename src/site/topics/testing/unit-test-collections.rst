@@ -353,6 +353,11 @@ Nested Test Classes
     }
 
 
+.. note::
+
+    Although ``preState`` is only used on one of the tests so far, it is convenient to always have an equivalent object
+    to ``classUnderTest`` within the test class. For this reason, ``preState`` is made a class field and is always setup
+    the same way as ``classUnderTest``.     
 
 
 
