@@ -557,7 +557,7 @@ Instance Methods
                 :linenos:
 
                 public void someMethod(int addMe) {
-                    someInstanceVariable += add_me;
+                    someInstanceVariable += addMe;
                 }
 
 
