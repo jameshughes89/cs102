@@ -478,7 +478,7 @@ General Case Stack Tests
                 }
 
                 @Test
-                void toString_singleton_returnsCorrectString() {
+                void toString_many_returnsCorrectString() {
                     assertEquals("40, 30, 20, 10, ", classUnderTest.toString());
                 }
             }
