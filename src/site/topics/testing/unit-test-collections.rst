@@ -378,6 +378,107 @@ General Case Stack Tests
     * Common setup code with a ``BeforeEach``
 
 
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 2,7,47,49
+
+
+    private ArrayStack<Integer> classUnderTest;
+    private ArrayStack<Integer> preState;
+
+    @BeforeEach
+    void createStack() {
+        classUnderTest = new ArrayStack<>();
+        preState = new ArrayStack<>();
+    }
+
+    @Nested
+    class WhenNewEmpty {
+
+        @Test
+        void push_successfulAdd_returnsTrue() {
+            assertTrue(classUnderTest.push(11));
+        }
+
+        // Remaining empty tests excluded here
+
+
+        @Nested
+        class WhenSingleton {
+
+            @BeforeEach
+            void addSingleton() {
+                classUnderTest.push(10);
+                preState.push(10);
+            }
+
+            @Test
+            void push_successfullyAdds_returnsTrue() {
+                assertTrue(classUnderTest.push(11));
+            }
+
+            // Remaining empty tests excluded here
+
+
+            @Nested
+            @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+            class WhenMany {
+
+                @BeforeEach
+                void addMany() {
+                    classUnderTest.push(20);
+                    classUnderTest.push(30);
+                    classUnderTest.push(40);
+                    preState.push(20);
+                    preState.push(30);
+                    preState.push(40);
+                }
+
+                @Test
+                void push_successfullyAdds_returnsTrue() {
+                    assertTrue(classUnderTest.push(11));
+                }
+
+                @Test
+                void pop_many_returnsTop() {
+                    assertEquals(40, classUnderTest.pop());
+                }
+
+                @Test
+                void pop_many_newTop() {
+                    classUnderTest.pop();
+                    assertEquals(30, classUnderTest.peek());
+                }
+
+                @Test
+                void peek_many_returnsTop() {
+                    assertEquals(40, classUnderTest.peek());
+                }
+
+                @Test
+                void peek_many_unchanged() {
+                    classUnderTest.peek();
+                    assertEquals(preState, classUnderTest);
+                }
+
+                @Test
+                void isEmpty_many_returnsFalse() {
+                    assertFalse(classUnderTest.isEmpty());
+                }
+
+                @Test
+                void size_many_returnsCorrectSize() {
+                    assertEquals(4, classUnderTest.size());
+                }
+
+                @Test
+                void toString_singleton_returnsCorrectString() {
+                    assertEquals("40, 30, 20, 10, ", classUnderTest.toString());
+                }
+            }
+        }
+    }
+
 
 
 For Next Time
