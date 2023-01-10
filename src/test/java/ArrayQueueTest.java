@@ -22,7 +22,7 @@ public class ArrayQueueTest {
     class WhenNewEmpty {
 
         @Test
-        void enqueue_successfullyAdds_returnsTrue() {
+        void enqueue_empty_returnsTrue() {
             assertTrue(classUnderTest.enqueue(11));
         }
 
@@ -62,7 +62,7 @@ public class ArrayQueueTest {
             }
 
             @Test
-            void enqueue_successfullyAdds_returnsTrue() {
+            void enqueue_singleton_returnsTrue() {
                 assertTrue(classUnderTest.enqueue(11));
             }
 
@@ -119,7 +119,7 @@ public class ArrayQueueTest {
 
 
                 @Test
-                void enqueue_successfullyAdds_returnsTrue() {
+                void enqueue_many_returnsTrue() {
                     assertTrue(classUnderTest.enqueue(11));
                 }
 
@@ -156,7 +156,7 @@ public class ArrayQueueTest {
                 }
 
                 @Test
-                void toString_singleton_returnsCorrectString() {
+                void toString_many_returnsCorrectString() {
                     assertEquals("10, 20, 30, 40, ", classUnderTest.toString());
                 }
             }
