@@ -158,6 +158,221 @@ Common Setup Code
 Singleton Case Stack Tests
 ==========================
 
+* Below are example unit tests for all methods within the ``ArrayStack`` class when it has a single element within it
+* Notice the inclusion of the new class field called ``preState``
+* This ``preState`` will effectively be a duplicate of ``classUnderTest`` that can be used to check that a method had no side effect
+* Consider ``peek_singleton_unchanged`` for an example
+
+    * Calling ``peek`` should not have any side effect; it should not mutate the object in any way
+    * To verify this, one can assert equality between ``preState`` and ``classUnderTest`` after calling ``peek`` on ``classUnderTest``
+
+
+.. note::
+
+    Although ``preState`` is only actually used on one of the tests so far, it is convenient to always have an
+    equivalent object to ``classUnderTest`` within the test class. For this reason, ``preState`` is made a class field
+    and is always setup the same way as ``classUnderTest``.
+
+
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 2,7,47,49
+
+    private ArrayStack<Integer> classUnderTest;
+    private ArrayStack<Integer> preState;
+
+    @BeforeEach
+    void createStack() {
+        classUnderTest = new ArrayStack<>();
+        preState = new ArrayStack<>();
+    }
+
+    // Empty tests excluded here
+
+    @Test
+    void push_singleton_returnsTrue() {
+        classUnderTest.push(10);
+        preState.push(10);
+        assertTrue(classUnderTest.push(11));
+    }
+
+    @Test
+    void push_singleton_newTop() {
+        classUnderTest.push(10);
+        preState.push(10);
+        classUnderTest.push(11);
+        assertEquals(11, classUnderTest.peek());
+    }
+
+    @Test
+    void pop_singleton_returnsTop() {
+        classUnderTest.push(10);
+        assertEquals(10, classUnderTest.pop());
+    }
+
+    @Test
+    void pop_singleton_emptyStack() {
+        classUnderTest.push(10);
+        preState.push(10);
+        classUnderTest.pop();
+        assertEquals(new ArrayStack<>(), classUnderTest);
+    }
+
+    @Test
+    void peek_singleton_returnsTop() {
+        classUnderTest.push(10);
+        preState.push(10);
+        assertEquals(10, classUnderTest.peek());
+    }
+
+    @Test
+    void peek_singleton_unchanged() {
+        classUnderTest.push(10);
+        preState.push(10);
+        classUnderTest.peek();
+        assertEquals(preState, classUnderTest);
+    }
+
+    @Test
+    void isEmpty_singleton_returnsFalse() {
+        classUnderTest.push(10);
+        preState.push(10);
+        assertFalse(classUnderTest.isEmpty());
+    }
+
+    @Test
+    void size_singleton_returnsOne() {
+        classUnderTest.push(10);
+        preState.push(10);
+        assertEquals(1, classUnderTest.size());
+    }
+
+    @Test
+    void toString_singleton_returnsCorrectString() {
+        classUnderTest.push(10);
+        preState.push(10);
+        assertEquals("10, ", classUnderTest.toString());
+    }
+
+
+.. note::
+
+    When considering ``peek_singleton_returnsTop``, it may become clear that ``push_empty_newTop`` and
+    ``push_singleton_newTop`` are redundant tests since the ``peek_singleton_returnsTop`` will test ``peek`` after a
+    ``push`` has happened anyways, effectively checking that a ``push`` results in the expected top. When looking at the
+    code in the tests, it's clear that the tests are effectively identical. Thus, it is not really necessary to include
+    any of the ``push`` causing a new top test.
+
+        .. code-block:: java
+            :linenos:
+
+            @Test
+            void push_empty_newTop() {
+                classUnderTest.push(11);
+                assertEquals(11, classUnderTest.peek());
+            }
+
+            @Test
+            void peek_singleton_returnsTop() {
+                classUnderTest.push(10);
+                assertEquals(10, classUnderTest.peek());
+            }
+
+
+    This highlights the complexities caused by the *interconnectedness* of the collection's methods --- one cannot test
+    that ``push`` results in a new top without using ``peek``, and one cannot test ``peek`` without having already
+    called ``push``.
+
+
+
+Nested Test Classes
+-------------------
+
+* Notice that, once again, each of these tests have the same setup code
+
+    * ``classUnderTest.push(10);``
+
+
+* Unfortunately, unlike with the empty tests, one cannot simply add this to the existing ``@BeforeEach`` set up code
+
+    * This would break the empty tests since the stack will have something added before each test is run
+
+
+* With *nested test classes*, there is a way to add another ``@BeforeEach`` setup code that applies to the singleton tests and not the empty tests
+* Further, this strategy helps group the tests together nicely
+* Below is an example of using the nested test classes
+
+* The ``createStack()`` setup code will be run before the empty tests *and* singleton tests
+* But the ``addSingleton()`` setup code only runs before the singleton tests, but *after* ``createStack()`` is run
+
+    * This way the ``ArrayStack`` instances exist before the pushing takes place inside ``addSingleton()``
+
+
+
+.. code-block:: java
+    :linenos:
+
+    private ArrayStack<Integer> classUnderTest;
+    private ArrayStack<Integer> preState;
+
+    @BeforeEach
+    void createStack() {
+        classUnderTest = new ArrayStack<>();
+        preState = new ArrayStack<>();
+    }
+
+    @Nested
+    class WhenNewEmpty {
+
+        @Test
+        void push_empty_returnsTrue() {
+            assertTrue(classUnderTest.push(11));
+        }
+
+        @Test
+        void pop_empty_throwsNoSuchElementException() {
+            assertThrows(NoSuchElementException.class, () -> classUnderTest.pop());
+        }
+
+        // Remaining empty tests excluded here
+
+        @Nested
+        class WhenSingleton {
+
+            @BeforeEach
+            void addSingleton() {
+                classUnderTest.push(10);
+                preState.push(10);
+            }
+
+            @Test
+            void push_empty_returnsTrue() {
+                assertTrue(classUnderTest.push(11));
+            }
+
+            @Test
+            void pop_singleton_returnsTop() {
+                assertEquals(10, classUnderTest.pop());
+            }
+
+            @Test
+            void pop_singleton_emptyStack() {
+                classUnderTest.pop();
+                assertEquals(new ArrayStack<>(), classUnderTest);
+            }
+
+            // Remaining empty tests excluded here
+
+        }
+    }
+
+
+
+
+
+
+
 
 General Case Stack Tests
 ========================
