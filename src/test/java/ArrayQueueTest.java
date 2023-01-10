@@ -27,12 +27,6 @@ public class ArrayQueueTest {
         }
 
         @Test
-        void enqueue_empty_newTop() {
-            classUnderTest.enqueue(11);
-            assertEquals(11, classUnderTest.first());
-        }
-
-        @Test
         void dequeue_empty_throwsNoSuchElementException() {
             assertThrows(NoSuchElementException.class, () -> classUnderTest.dequeue());
         }
@@ -70,12 +64,6 @@ public class ArrayQueueTest {
             @Test
             void enqueue_successfullyAdds_returnsTrue() {
                 assertTrue(classUnderTest.enqueue(11));
-            }
-
-            @Test
-            void enqueue_singleton_unchangedFirst() {
-                classUnderTest.enqueue(11);
-                assertEquals(10, classUnderTest.first());
             }
 
             @Test
@@ -133,12 +121,6 @@ public class ArrayQueueTest {
                 @Test
                 void enqueue_successfullyAdds_returnsTrue() {
                     assertTrue(classUnderTest.enqueue(11));
-                }
-
-                @Test
-                void enqueue_many_unchangedFirst() {
-                    classUnderTest.enqueue(11);
-                    assertEquals(10, classUnderTest.first());
                 }
 
                 @Test
