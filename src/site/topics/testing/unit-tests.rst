@@ -3,7 +3,7 @@ Unit Tests
 **********
 
 * At the end of the objects review topic the implementation was played with
-* This allowed testing the basic functionality,
+* This allowed testing the basic functionality
 * However, the testing was far from through or systematic
 
 
