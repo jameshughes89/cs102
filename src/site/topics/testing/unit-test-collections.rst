@@ -369,13 +369,14 @@ Nested Test Classes
 
 
 
-
-
-
-
-
 General Case Stack Tests
 ========================
+
+* The tests for the more general case of an ``ArrayStack`` with several elements within it are going to follow the same pattern
+
+    * Nested test class
+    * Common setup code with a ``BeforeEach``
+
 
 
 
