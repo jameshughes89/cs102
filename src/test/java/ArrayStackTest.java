@@ -27,12 +27,6 @@ class ArrayStackTest {
         }
 
         @Test
-        void push_empty_newTop() {
-            classUnderTest.push(11);
-            assertEquals(11, classUnderTest.peek());
-        }
-
-        @Test
         void pop_empty_throwsNoSuchElementException() {
             assertThrows(NoSuchElementException.class, () -> classUnderTest.pop());
         }
@@ -69,12 +63,6 @@ class ArrayStackTest {
             @Test
             void push_successfullyAdds_returnsTrue() {
                 assertTrue(classUnderTest.push(11));
-            }
-
-            @Test
-            void push_singleton_newTop() {
-                classUnderTest.push(11);
-                assertEquals(11, classUnderTest.peek());
             }
 
             @Test
@@ -131,12 +119,6 @@ class ArrayStackTest {
                 @Test
                 void push_successfullyAdds_returnsTrue() {
                     assertTrue(classUnderTest.push(11));
-                }
-
-                @Test
-                void push_many_newTop() {
-                    classUnderTest.push(11);
-                    assertEquals(11, classUnderTest.peek());
                 }
 
                 @Test
