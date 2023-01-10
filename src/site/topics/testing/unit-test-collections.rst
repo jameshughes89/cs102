@@ -378,9 +378,15 @@ General Case Stack Tests
     * Common setup code with a ``BeforeEach``
 
 
+* In the below code, a noteworthy difference is the use of the ``@TestInstance(TestInstance.Lifecycle.PER_CLASS)`` annotation before the nested test class
+
+    * This specifies that a new test instance is created once per test class
+    * For now, do not worry about this detail too much
+
+
 .. code-block:: java
     :linenos:
-    :emphasize-lines: 2,7,47,49
+    :emphasize-lines: 39
 
 
     private ArrayStack<Integer> classUnderTest;
@@ -478,6 +484,12 @@ General Case Stack Tests
             }
         }
     }
+
+
+.. note::
+
+    The above suggested layout is by no means the *correct* way or a standard for testing collections. It is simply a
+    strategy to help manage the complexities of testing collections.
 
 
 
