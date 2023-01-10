@@ -448,7 +448,7 @@ public class ArrayIndexedBagTest {
                 }
 
                 @Test
-                void toString_singleton_returnsCorrectString() {
+                void toString_many_returnsCorrectString() {
                     assertEquals("10, 20, 30, 40, 50, ", classUnderTest.toString());
                 }
             }
