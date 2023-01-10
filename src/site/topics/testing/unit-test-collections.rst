@@ -402,7 +402,7 @@ General Case Stack Tests
     class WhenNewEmpty {
 
         @Test
-        void push_successfulAdd_returnsTrue() {
+        void push_empty_returnsTrue() {
             assertTrue(classUnderTest.push(11));
         }
 
@@ -419,7 +419,7 @@ General Case Stack Tests
             }
 
             @Test
-            void push_successfullyAdds_returnsTrue() {
+            void push_singleton_returnsTrue() {
                 assertTrue(classUnderTest.push(11));
             }
 
@@ -441,7 +441,7 @@ General Case Stack Tests
                 }
 
                 @Test
-                void push_successfullyAdds_returnsTrue() {
+                void push_many_returnsTrue() {
                     assertTrue(classUnderTest.push(11));
                 }
 
