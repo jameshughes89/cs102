@@ -441,7 +441,7 @@ public class ArrayIndexedBagTest {
                 }
 
                 @Test
-                void iterator_singleton_returnsElementsInCorrectOrder() {
+                void iterator_many_returnsElementsInCorrectOrder() {
                     List<Integer> list = new ArrayList<>();
                     classUnderTest.iterator().forEachRemaining(list::add);
                     assertEquals(List.of(10, 20, 30, 40, 50), list);
