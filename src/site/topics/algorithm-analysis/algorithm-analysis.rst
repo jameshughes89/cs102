@@ -19,15 +19,22 @@ Algorithm Analysis
 Time Complexity
 ===============
 
-* We analyze the amount of time the algorithm needs *relative to the input size*
-    * How long does it take to sort 10 items?
-    * How long does it take to sort 10,000 items?
+* The amount of time an algorithm needs *relative to the input size*
 
-* We also consider the number of operations needed for the algorithm, and the time complexity of those operations
+    * How long does it take to sort :math:`10` items?
+    * How long does it take to sort :math:`10,000` items?
+
+
+* Considers the number of operations needed for the algorithm, and the time complexity of those operations
+
     * Addition
     * Comparisons
 
-* When we have a better understanding of our algorithm's time complexity, it can help us choose the right tool for the job
+
+* With an understanding of an algorithm's time complexity, one can make informed decisions when picking the tools for a job
+
+    * For example, which data structures to use in certain scenarios
+
 
 
 Growth Function
