@@ -150,15 +150,15 @@ Growth Function
 Asymptotic Growth & Big-O
 =========================
 
-* We **don't** care about constants
-* We **don't** care about non dominant terms
+* Constants are not too important
+* Non dominant terms are not too important
+* The actual growth function is not that important
+* The *asymptotic complexity* is important
 
-* We **do** care about *asymptotic complexity*
-    * Fancy way of saying *The time the algorithm takes as a function of* :math:`n` *will grow like...*
+    * The time the algorithm takes as a function of* :math:`n` *will grow like...*
 
-* We care about the *order* of the algorithm
-* We specify the order by using *Big-O notation*
-* In our example, :math:`t(n) = 15n^{2} + 45n` is :math:`O(n^{2})` since it grows like :math:`n^{2}`
+* The *order* of the algorithm is specified using *Big-O notation*
+* The above example, :math:`t(n) = 15n^{2} + 45n`, has an order of :math:`O(n^{2})` since it grows like :math:`n^{2}`
 
 
 Example Growth Functions and Their Order
