@@ -233,9 +233,11 @@ Statements
     int y = 1;      // 1 unit of work
     int z = x + y;  // 1 unit of work
 
+
 **Growth Function:** :math:`t(n) = 3`
 
 **Order:** :math:`O(1)`
+
 
 Loops
 -----
@@ -246,7 +248,7 @@ Loops
     :linenos:
 
     int x = 0;                      // 1 unit of work
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0; i < n; i++) {
         x = x + 1;                  // 1 unit of work n times (1*n)
     }
 
@@ -254,14 +256,16 @@ Loops
 
 **Order:** :math:`O(n)`
 
-* We can think of the loop and a number line
-* Every time the loop runs, we put our finger on the next number
+* With a loop, consider a number line
+* A single number in the number line is *visited* each time the loop executes a single iteration
 
-.. image:: linear.png
-   :width: 750 px
-   :align: center
+.. figure:: linear.png
+    :width: 750 px
+    :align: center
 
-* How many things did we put our finger on?
+    Example number line of length :math:`n`. With a loop, every time the loop executes an iteration, a single number in
+    the number line is visited.
+
 
 
 Nested Loops
