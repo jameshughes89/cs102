@@ -431,9 +431,10 @@ Pushing
     }
 
 
-For next time
+For Next Time
 =============
 
 * Read the :doc:`amortized time complexity aside. <amortized>`
 * Read Chapter 2 of your text
+
     * 14 pages
