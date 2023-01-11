@@ -120,6 +120,7 @@ The Math, Stats, and CS Society has a time and location for
     labs/hello-world/hello-world
     labs/objects-collections/objects
     labs/objects-collections/collections
+    labs/unit-tests/unit-tests
 
 
 .. toctree::
