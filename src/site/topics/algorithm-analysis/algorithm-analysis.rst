@@ -40,18 +40,21 @@ Time Complexity
 Growth Function
 ===============
 
-* We want to understand the relationship between the size of the input :math:`n` and the time it takes to run the algorithm :math:`t(n)`
-    * The size of input could be the length of a list to be sorted
+* It is important to understand the relationship between the size of the input :math:`n` and the time it takes to run an algorithm :math:`t(n)`
+
+    * For example, the size of input could be the length of a list to be sorted
     * How does the time to run the algorithm :math:`t(n)` change as :math:`n` changes?
 
-* We call :math:`t(n)` the *growth function*
+
+* This :math:`t(n)` is called the *growth function*
 * Notice how :math:`t(n)` is a function of :math:`n`
-    * This means the amount of time needed depends on :math:`n`
 
-* Here is an arbitrary growth function
-    * At this stage, don't worry about how we got it as we will come back to that
+    * This means the amount of time depends on :math:`n`
 
-    :math:`t(n) = 15n^{2} + 45n`
+
+* Consider this arbitrary growth function --- :math:`t(n) = 15n^{2} + 45n`
+
+    * Details on deriving the growth function is discussed below
 
 
 .. image:: table.png
