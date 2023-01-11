@@ -48,7 +48,7 @@ Testing the ``Course`` Class
 #. Write a unit test for ``toString``
 #. Write a unit test for ``equals``
 
-    ** Do **not** write tests for ``hashCode``
+    * Do **not** write tests for ``hashCode``
 
 
 
@@ -79,6 +79,9 @@ Testing the ``CourseList`` Class
 #. Write unit tests for ``get``
 #. Write unit tests for ``size``
 #. Write unit tests for ``toString``
+#. *Try* to write unit tests for ``equals``
+
+    * Testing equality on collections is very challenging
 
 
 
