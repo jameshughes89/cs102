@@ -52,36 +52,34 @@ Testing the ``Course`` Class
 
 
 
+Testing the ``CourseList`` Class
+--------------------------------
 
-    * empty list has size zero?
-    * non empty list has proper size?
-    * list that has been emptied via removes has size zero?
+.. warning::
 
-#. Write tests for ``add``.
+    Writing unit tests for collections is quite difficult for a variety of reasons. For example, consider that
+    collections can have various different states --- empty, single element, many elements, duplicate elements.
 
-    * Is the added element added?
-    * Can we add beyond a capacity limit?
+    Consider ``remove``:
 
-#. Write tests for ``remove``.
-
-    * Does the element get removed?
-    * What happens if we try to remove something that doesn't exist?
-    * What happens when we call remove once for something that exists more than once in the ``CourseList``?
-
-#. Write tests for ``get``.
-
-    * Does it return the element from the correct index?
-    * What happens if you try to get something from beyond the range?
-    * What happens if you try to get something from a negative index?
+        * What should happen when ``remove`` is called on an empty ``CourseList``?
+        * What should happen when ``remove`` is called on a ``CourseList`` with one element?
+        * What should happen when calling it on a ``CourseList`` with many elements?
+        * What should happen when trying to ``remove`` an element that does not exist in the ``CourseList``?
+        * What should happen when there are multiple equal ``Course`` objects to be removed?
 
 
-#. Write tests for ``indexOf``.
+    Try to test each method as thorough as possible.
 
-    * Try to figure out which tests you should have on your own/with a friend
 
-#. Write tests for the ``Course`` class.
+#. Write unit tests for ``add``
+#. Write unit tests for ``contains``
+#. Write unit tests for ``indexOf``
+#. Write unit tests for ``remove``
+#. Write unit tests for ``get``
+#. Write unit tests for ``size``
+#. Write unit tests for ``toString``
 
-    * Try to figure out which tests you should have on your own/with a friend
 
 
 Kattis Problems
