@@ -10,6 +10,14 @@ Unit Tests
     * Peer teaching and peer learning has been empirically shown to be very effective
 
 
+Before Unit Testing
+===================
+
+This lab focuses on writing unit tests for the ``Course`` and ``CourseList`` classes described in the
+:doc:`Objects Lab </labs/objects-collections/objects>` and
+:doc:`Collections Lab </labs/objects-collections/collections>` respectively. These classes are to be completed before
+writing the unit tests. If these classes are not complete, complete them before continuing.
+
 
 Unit Testing
 ============
