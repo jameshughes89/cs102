@@ -905,7 +905,8 @@ For Loop
 
 
 * In other words, this loop will run 10 times
-    * ``0 -- 9``
+
+    * ``0`` -- ``9``
 
 
 Comparison of For Loop to While Loop
