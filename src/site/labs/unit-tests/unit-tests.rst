@@ -28,28 +28,30 @@ their code to demonstrate correctness in a systematic way. While working on this
 
 
 
-Have a Working Implementation
------------------------------
-
-#. If you have not already, finish the
-:doc:`Objects and Collections Lab </labs/objects-collections/objects-collections>`
-
-
-Writing Tests
--------------
+Testing the ``Course`` Class
+----------------------------
 
 .. note::
 
-    Make your test method names as descriptive as possible while still being brief. Follow some convention for your
-    method names, something like ``method_condition_expected()``. For example
+    Give the test methods descriptive names while still being brief. The recommended convention to follow is
+    ``method_condition_expected()``, for example:
 
-        * ``size_emptyCourse_returnsZero()``
-        * ``indexOf_existingCourse_returnsCorrectIndex()``
+        * ``getFirstName_generalCase_returnsFirstName``
+        * ``size_empty_returnsZero()``
+        * ``indexOf_singleton_returnsCorrectIndex()``
 
 
-#. Create your testing class for ``CourseList`` called ``CourseListTest``.
+#. Create the test class for ``Course`` called ``CourseTest``
+#. Write a unit test for ``getProgramCode``
+#. Write a unit test for ``getCourseCode``
+#. Write a unit test for ``getCourseTitle``
+#. Write a unit test for ``toString``
+#. Write a unit test for ``equals``
 
-#. Write unit tests to test the ``size()`` method.
+    ** Do **not** write tests for ``hashCode``
+
+
+
 
     * empty list has size zero?
     * non empty list has proper size?
