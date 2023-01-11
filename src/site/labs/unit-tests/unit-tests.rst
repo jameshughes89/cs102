@@ -23,7 +23,7 @@ Unit Testing
 ============
 
 It is always important to ensure code correctness. For this reason, unit tests are written as they help programmers test
-their code to demonstrate correctness in a systematic way. It is strongly recommended to
+their code to demonstrate correctness in a systematic way. While working on this lab, it is strongly recommended to
 :doc:`refer to the relevant topic on unit testing </topics/testing/unit-tests>`.
 
 
