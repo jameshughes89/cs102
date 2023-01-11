@@ -20,7 +20,7 @@ Objects
 
     * Properties
 
-        * These are the *data*
+        * These are the data
         * These are called *fields*
         * They're variables, but they belong to an instance of an object
 
@@ -28,7 +28,7 @@ Objects
     * Behaviours
 
         * This is what the object can do
-        * These are called **methods**
+        * These are called *methods*
         * They're functions, but they belong to an object
 
 
