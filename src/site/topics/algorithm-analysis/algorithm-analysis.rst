@@ -369,83 +369,51 @@ Exercises
 Stack Comparisons
 =================
 
-* We saw two implementations of a stack
-* Stacks are pretty efficient in general, but which is better?
+* Two implementations of the stack were implented
+* Stacks are pretty efficient in general, but which is *better*?
     * ``LinkedStack`` vs ``ArrayStack``
 
 
 Popping
 -------
 
-.. code-block:: java
+.. literalinclude:: /../main/java/LinkedStack.java
+    :language: java
     :linenos:
+    :lineno-start: 32
+    :lines: 32-41
 
-    // LinkedStack's pop
-    public T pop() {
-        if (isEmpty()) {
-            throw new NoSuchElementException();
-        }
-        T returnElement = top.getData();
-        top = top.getNext();
-        size--;
-        return returnElement;
-    }
 
-.. code-block:: java
+.. literalinclude:: /../main/java/ArrayStack.java
+    :language: java
     :linenos:
+    :lineno-start: 59
+    :lines: 59-68
 
-    // ArrayStack's pop
-    public T pop() {
-        if (isEmpty()) {
-            throw new NoSuchElementException();
-        }
-        top--;
-        T returnElement = stack[top];
-        stack[top] = null;
-        return returnElement;
-    }
 
 
 Pushing
 -------
 
-.. code-block:: java
+.. literalinclude:: /../main/java/LinkedStack.java
+    :language: java
     :linenos:
+    :lineno-start: 23
+    :lines: 23-30
 
-    // LinkedStack's push
-    public void push(T element) {
-        Node<T> toPush = new Node<T>(element);
-        toPush.setNext(top);
-        top = toPush;
-        size++;
-    }
 
-.. code-block:: java
+.. literalinclude:: /../main/java/ArrayStack.java
+    :language: java
     :linenos:
-    :emphasize-lines: 4, 12, 13, 14
-
-    // ArrayStack's push
-    public void push(T element) {
-        if (top == stack.length) {
-            expandCapacity();
-        }
-        stack[top] = element;
-        top++;
-    }
-
-    private void expandCapacity() {
-        T[] newStack = (T[]) new Object[stack.length * 2];
-        for (int i = 0; i < stack.length; ++i) {
-            newStack[i] = stack[i];
-        }
-        stack = newStack;
-    }
+    :lineno-start: 37
+    :lines: 37-57
+    :emphasize-lines: 4, 17, 18, 19
 
 
 For Next Time
 =============
 
-* Read the :doc:`amortized time complexity aside. <amortized>`
+* Read the :doc:`amortized time complexity aside <amortized>`.
 * Read Chapter 2 of your text
 
     * 14 pages
