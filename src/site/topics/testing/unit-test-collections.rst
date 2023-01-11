@@ -369,13 +369,127 @@ Nested Test Classes
 
 
 
-
-
-
-
-
 General Case Stack Tests
 ========================
+
+* The tests for the more general case of an ``ArrayStack`` with several elements within it are going to follow the same pattern
+
+    * Nested test class
+    * Common setup code with a ``BeforeEach``
+
+
+* In the below code, a noteworthy difference is the use of the ``@TestInstance(TestInstance.Lifecycle.PER_CLASS)`` annotation before the nested test class
+
+    * This specifies that a new test instance is created once per test class
+    * For now, do not worry about this detail too much
+
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 39
+
+
+    private ArrayStack<Integer> classUnderTest;
+    private ArrayStack<Integer> preState;
+
+    @BeforeEach
+    void createStack() {
+        classUnderTest = new ArrayStack<>();
+        preState = new ArrayStack<>();
+    }
+
+    @Nested
+    class WhenNewEmpty {
+
+        @Test
+        void push_empty_returnsTrue() {
+            assertTrue(classUnderTest.push(11));
+        }
+
+        // Remaining empty tests excluded here
+
+
+        @Nested
+        class WhenSingleton {
+
+            @BeforeEach
+            void addSingleton() {
+                classUnderTest.push(10);
+                preState.push(10);
+            }
+
+            @Test
+            void push_singleton_returnsTrue() {
+                assertTrue(classUnderTest.push(11));
+            }
+
+            // Remaining empty tests excluded here
+
+
+            @Nested
+            @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+            class WhenMany {
+
+                @BeforeEach
+                void addMany() {
+                    classUnderTest.push(20);
+                    classUnderTest.push(30);
+                    classUnderTest.push(40);
+                    preState.push(20);
+                    preState.push(30);
+                    preState.push(40);
+                }
+
+                @Test
+                void push_many_returnsTrue() {
+                    assertTrue(classUnderTest.push(11));
+                }
+
+                @Test
+                void pop_many_returnsTop() {
+                    assertEquals(40, classUnderTest.pop());
+                }
+
+                @Test
+                void pop_many_newTop() {
+                    classUnderTest.pop();
+                    assertEquals(30, classUnderTest.peek());
+                }
+
+                @Test
+                void peek_many_returnsTop() {
+                    assertEquals(40, classUnderTest.peek());
+                }
+
+                @Test
+                void peek_many_unchanged() {
+                    classUnderTest.peek();
+                    assertEquals(preState, classUnderTest);
+                }
+
+                @Test
+                void isEmpty_many_returnsFalse() {
+                    assertFalse(classUnderTest.isEmpty());
+                }
+
+                @Test
+                void size_many_returnsCorrectSize() {
+                    assertEquals(4, classUnderTest.size());
+                }
+
+                @Test
+                void toString_many_returnsCorrectString() {
+                    assertEquals("40, 30, 20, 10, ", classUnderTest.toString());
+                }
+            }
+        }
+    }
+
+
+.. note::
+
+    The above suggested layout is by no means the *correct* way or a standard for testing collections. It is simply a
+    strategy to help manage the complexities of testing collections.
 
 
 
