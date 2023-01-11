@@ -369,8 +369,9 @@ Exercises
 Stack Comparisons
 =================
 
-* Two implementations of the stack were implented
+* Two implementations of the stack were implemented
 * Stacks are pretty efficient in general, but which is *better*?
+
     * ``LinkedStack`` vs ``ArrayStack``
 
 
