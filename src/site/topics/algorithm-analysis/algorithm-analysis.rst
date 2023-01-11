@@ -119,15 +119,16 @@ Growth Function
 
     Plot of :math:`t(n)` (y-axis) against :math:`n` (x-axis). Note that :math:`15n^{2}` is covered by
     :math:`15n^{2} + 45n` as their growths are so similar at this scale. Further, at this scale, the portion of the
-    the growth function that is linear (:math:`45n`) appears to be a horizontal line.   
+    the growth function that is linear (:math:`45n`) appears to be a horizontal line.
 
 
-* This plot compares the parts of the function to the function itself
+* This figure compares the individual parts of the growth function to the growth function itself
 * Notice the scale of the axes
-* See how the part that grows linearly, :math:`45n`, appears to be a horizontal line at this scale
 * Also notice how the blue :math:`15n^{2}` line is perfectly covered by the green :math:`15n^{2} + 45n` line
+* See how the part that grows linearly, :math:`45n`, appears to be a horizontal line at this scale
 
-* In other words, the :math:`45n` part of the function is effectively inconsequential when looking at the bigger picture
+    * In other words, the :math:`45n` part of the function is effectively inconsequential in this context
+
 * Given this, and the fact that constants only scale the values, we say that the :math:`n^{2}` is the **dominant** term
 
 .. warning::
