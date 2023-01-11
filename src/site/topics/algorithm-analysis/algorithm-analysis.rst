@@ -4,15 +4,16 @@ Algorithm Analysis
 
 * What does it mean for an algorithm to be *good*?
 * What makes one algorithm for solving a given problem better than another?
-* Your algorithm may be correct, but is it practical?
-
+* Does the algorithm have a practical runtime?
 * These questions can be answered in many ways, but one important measurement is how much resources does your algorithm need?
+
     * How much time to compute?
     * How much memory does it need?
     * How many processors does it need?
     * How does the amount of resources change relative to some input value?
 
-* The above considerations are all important, but we will start by focusing on *Time Complexity*
+
+* The above considerations are all important, but here, the focus is on *Time Complexity*
 
 
 Time Complexity
