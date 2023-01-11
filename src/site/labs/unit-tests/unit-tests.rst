@@ -2,80 +2,91 @@
 Unit Tests
 **********
 
-* Feel free to use your laptop if you have it
-* I strongly encourage you to work with others in the lab
+* Feel free to use your laptop
+* You are strongly encourage to work with others
 
-    * When you get stuck, do me a favour and ask those sitting around you for help
-    * I want people to get used to working together in the labs
-    * Peer teaching and peer learning is super effective
+    * When you get stuck, ask those sitting around you for help
+    * Get used to working together in the labs
+    * Peer teaching and peer learning has been empirically shown to be very effective
+
+
+Before Unit Testing
+===================
+
+This lab focuses on writing unit tests for the ``Course`` and ``CourseList`` classes described in the
+:doc:`Objects Lab </labs/objects-collections/objects>` and
+:doc:`Collections Lab </labs/objects-collections/collections>` respectively. These classes are to be completed before
+writing the unit tests. If these classes are not complete, complete them before continuing.
 
 
 Unit Testing
 ============
 
-We're going to write tests for our ``CourseList`` class from the
-:doc:`Objects and Collections Lab </labs/objects-collections/objects-collections>`.
-:doc:`The Stack topic's aside on testing will be of great help here </topics/stacks/unit-tests>`.
+It is always important to ensure code correctness. For this reason, unit tests are written as they help programmers test
+their code to demonstrate correctness in a systematic way. While working on this lab, it is strongly recommended to
+:doc:`refer to the relevant topic on unit testing </topics/testing/unit-tests>`.
 
 
-Have a Working Implementation
------------------------------
 
-#. If you have not already, finish the
-:doc:`Objects and Collections Lab </labs/objects-collections/objects-collections>`
-
-
-Writing Tests
--------------
+Testing the ``Course`` Class
+----------------------------
 
 .. note::
 
-    Make your test method names as descriptive as possible while still being brief. Follow some convention for your
-    method names, something like ``method_condition_expected()``. For example
+    Give the test methods descriptive names while still being brief. The recommended convention to follow is
+    ``method_condition_expected()``, for example:
 
-        * ``size_emptyCourse_returnsZero()``
-        * ``indexOf_existingCourse_returnsCorrectIndex()``
-
-
-#. Create your testing class for ``CourseList`` called ``CourseListTest``.
-
-#. Write unit tests to test the ``size()`` method.
-
-    * empty list has size zero?
-    * non empty list has proper size?
-    * list that has been emptied via removes has size zero?
-
-#. Write tests for ``add``.
-
-    * Is the added element added?
-    * Can we add beyond a capacity limit?
-
-#. Write tests for ``remove``.
-
-    * Does the element get removed?
-    * What happens if we try to remove something that doesn't exist?
-    * What happens when we call remove once for something that exists more than once in the ``CourseList``?
-
-#. Write tests for ``get``.
-
-    * Does it return the element from the correct index?
-    * What happens if you try to get something from beyond the range?
-    * What happens if you try to get something from a negative index?
+        * ``getFirstName_generalCase_returnsFirstName``
+        * ``size_empty_returnsZero()``
+        * ``indexOf_singleton_returnsCorrectIndex()``
 
 
-#. Write tests for ``indexOf``.
+#. Create the test class for ``Course`` called ``CourseTest``
+#. Write a unit test for ``getProgramCode``
+#. Write a unit test for ``getCourseCode``
+#. Write a unit test for ``getCourseTitle``
+#. Write a unit test for ``toString``
+#. Write a unit test for ``equals``
 
-    * Try to figure out which tests you should have on your own/with a friend
+    * Do **not** write tests for ``hashCode``
 
-#. Write tests for the ``Course`` class.
 
-    * Try to figure out which tests you should have on your own/with a friend
+
+Testing the ``CourseList`` Class
+--------------------------------
+
+.. warning::
+
+    Writing unit tests for collections is quite difficult for a variety of reasons. For example, consider that
+    collections can have various different states --- empty, single element, many elements, duplicate elements.
+
+    Consider ``remove``:
+
+        * What should happen when ``remove`` is called on an empty ``CourseList``?
+        * What should happen when ``remove`` is called on a ``CourseList`` with one element?
+        * What should happen when calling it on a ``CourseList`` with many elements?
+        * What should happen when trying to ``remove`` an element that does not exist in the ``CourseList``?
+        * What should happen when there are multiple equal ``Course`` objects to be removed?
+
+
+    Try to test each method as thorough as possible.
+
+
+#. Write unit tests for ``add``
+#. Write unit tests for ``contains``
+#. Write unit tests for ``indexOf``
+#. Write unit tests for ``remove``
+#. Write unit tests for ``get``
+#. Write unit tests for ``size``
+#. Write unit tests for ``toString``
+#. *Try* to write unit tests for ``equals``
+
+    * Testing equality on collections is very challenging
+
 
 
 Kattis Problems
 ===============
-
-Recommended Kattis Problems (don't worry, you don’t need to do all of them or anything):
 
 #. https://open.kattis.com/problems/quadrant
 #. https://open.kattis.com/problems/judgingmoose
