@@ -22,7 +22,7 @@ class ArrayStackTest {
     class WhenNewEmpty {
 
         @Test
-        void push_many_returnsTrue() {
+        void push_empty_returnsTrue() {
             assertTrue(classUnderTest.push(11));
         }
 
@@ -61,7 +61,7 @@ class ArrayStackTest {
             }
 
             @Test
-            void push_many_returnsTrue() {
+            void push_singleton_returnsTrue() {
                 assertTrue(classUnderTest.push(11));
             }
 
