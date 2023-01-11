@@ -22,9 +22,10 @@ writing the unit tests. If these classes are not complete, complete them before 
 Unit Testing
 ============
 
-We're going to write tests for our ``CourseList`` class from the
-:doc:`Objects and Collections Lab </labs/objects-collections/objects-collections>`.
-:doc:`The Stack topic's aside on testing will be of great help here </topics/stacks/unit-tests>`.
+It is always important to ensure code correctness. For this reason, unit tests are written as they help programmers test
+their code to demonstrate correctness in a systematic way. It is strongly recommended to
+:doc:`refer to the relevant topic on unit testing </topics/testing/unit-tests>`.
+
 
 
 Have a Working Implementation
