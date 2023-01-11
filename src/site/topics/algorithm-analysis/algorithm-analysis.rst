@@ -271,37 +271,44 @@ Loops
 Nested Loops
 ------------
 
-* Can get hairy, but there's no secret trick beyond the rules we've seen so far
+* This can feel tricky, but there is no trick beyond the rules discussed so far
 
 .. code-block:: java
     :linenos:
 
     int x = 0;                          // 1 unit of work
     int y = 0;                          // 1 unit of work
-    for (int i = 0; i < n; ++i) {       // Everything in loop runs n times
+    for (int i = 0; i < n; i+) {       // Everything in loop runs n times
         x = x + 1;                      // 1 unit of work n times (1*n)
-        for (int j = 0; j < n; ++j) {   // Runs n times and everything in this loop runs another n times
+        for (int j = 0; j < n; j++) {   // Runs n times and everything in this loop runs another n times
             y = y - 1;                  // 1 unit of work n times, n times
         }
     }
 
-* It may be more clear to work from the inside out
 
-**Growth Function:** :math:`t(n) = (1n + 1)n + 2 = n^{2} + 1n + 2`
+* It may be easier to work from the inside out
+
+**Growth Function:** :math:`t(n) = (1n + 1)n + 2 = n^{2} + n + 2`
 
 **Order:** :math:`O(n^{2})`
 
-.. image:: quadratic.png
-   :width: 750 px
-   :align: center
+* Consider the below :math:`n \times n` matrix in the context of the above code
 
-* ``y = y - 1;`` runs :math:`n` times (a single row)
-* And the loop that ``y = y - 1`` is within is run :math:`n` times (all rows)
-* How many things did we put our finger on?
+    * ``y = y - 1;`` is represented by a single spot in the matrix (constant time operation)
+    * ``y = y - 1;`` runs :math:`n` times by a loop, which is represented by a single row
+    * The whole loop that contains ``y = y - 1`` is within another loop that is run :math:`n` times, which is represented by all rows
+    * How many things were *visited*?
+
+.. figure:: quadratic.png
+    :width: 750 px
+    :align: center
+
+    Example :math:`n \times n` matrix.
 
 
-Tests
------
+
+Exercises
+---------
 
 .. code-block:: java
     :linenos:
