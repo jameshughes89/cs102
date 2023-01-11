@@ -312,38 +312,40 @@ Exercises
 
 .. code-block:: java
     :linenos:
+    :emphasize-lines: 2
+
+    int x = 0;
+    for (int i = 0; i < n; i = i + 2) {     // note how i is incremented
+        x = x + 1;
+    }
+
+* **HINT:** Keep the number line of length :math:`n` in mind
+
+**Growth Function:** :math:`t(n) = ?`
+
+**Order:** :math:`O(?)`
+
+
+
+.. code-block:: java
+    :linenos:
     :emphasize-lines: 5
 
     int x = 0;
     int y = 0;
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0; i < n; i++) {
         x = x + 1;
-        for (int j = i; j < n; ++j) {
+        for (int j = i; j < n; j++) {       // j starts at i
             y = y - 1;
         }
     }
 
-* **HINT:** I like to connect this to the :math:`n \times n` square to help
+* **HINT:** Keep the :math:`n \times n` matrix in mind
 
-**Growth Function:** :math:`t(n) = ??`
+**Growth Function:** :math:`t(n) = ?`
 
-**Order:** :math:`O(??)`
+**Order:** :math:`O(?)`
 
-
-.. code-block:: java
-    :linenos:
-    :emphasize-lines: 2
-
-    int x = 0;
-    for (int i = 0; i < n; i = i + 2) {     // i = i + 2
-        x = x + 1;
-    }
-
-* **HINT:** I like to connect this to the number line of length :math:`n` to help
-
-**Growth Function:** :math:`t(n) = ??`
-
-**Order:** :math:`O(??)`
 
 
 .. code-block:: java
@@ -351,18 +353,16 @@ Exercises
     :emphasize-lines: 2
 
     int x = 0;
-    for (int i = 1; i < n; i = i * 2) {     // i = i * 2
+    for (int i = 1; i < n; i = i * 2) {     // note how i is updated
         x = x + 1;
     }
 
-* **HINT:** I like to connect this to the number line of length :math:`n` to help
-* **HINT:** How quickly will we run out of number in the number line?
+* **HINT:** Keep the number line of length :math:`n` in mind
+* **HINT:** How quickly will the numbers in the number line *run out*?
 
-**Growth Function:** :math:`t(n) = ??`
+**Growth Function:** :math:`t(n) = ?`
 
-**Order:** :math:`O(??)`
-
-
+**Order:** :math:`O(?)`
 
 
 
