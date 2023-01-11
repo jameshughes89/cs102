@@ -21,8 +21,8 @@ Time Complexity
 
 * The amount of time an algorithm needs *relative to the input size*
 
-    * How long does it take to sort :math:`10` items?
-    * How long does it take to sort :math:`10,000` items?
+    * How long does it take to sort 10 items?
+    * How long does it take to sort 10,000 items?
 
 
 * Considers the number of operations needed for the algorithm, and the time complexity of those operations
@@ -57,9 +57,51 @@ Growth Function
     * Details on deriving the growth function is discussed below
 
 
-.. image:: table.png
-   :width: 500 px
-   :align: center
+.. list-table:: How the growth function and the individual parts of the growth function change as :math:`n` increases.
+    :widths: 50 50 50 50
+    :header-rows: 1
+
+    * - :math:`n`
+      - :math:`15n^{2}`
+      - :math:`45n`
+      - :math:`15n^{2} + 45n`
+    * - 1
+      - 15
+      - 45
+      - 60
+    * - 2
+      - 60
+      - 90
+      - 150
+    * - 5
+      - 375
+      - 225
+      - 600
+    * - 10
+      - 1,500
+      - 450
+      - 1,950
+    * - 100
+      - 150,000
+      - 4,500
+      - 154,500
+    * - 1,000
+      - 15,000,000
+      - 450,000
+      - 15,045,000
+    * - 10,000
+      - 1,500,000,000
+      - 450,000
+      - 1,5000,450,000
+    * - 100,000
+      - 150,000,000,000
+      - 4,500,000
+      - 150,004,500,000
+    * - 1,000,000
+      - 15,000,000,000,000
+      - 45,000,000
+      - 15,000,045,000,000
+
 
 * This table shows how each of the parts of the :math:`t(n)` growth function change as :math:`n` grows
 * Take note as to which part can be blamed for most of the whole :math:`t(n)`
