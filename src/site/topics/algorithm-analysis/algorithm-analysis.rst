@@ -183,25 +183,32 @@ Example Growth Functions and Their Order
       - :math:`O(2^{n})`
 
 
-    .. image:: growth1.png
-       :width: 500 px
-       :align: center
+.. figure:: growth1.png
+    :width: 500 px
+    :align: center
 
-* `We often try to keep the expression in the Big-O notation simple <https://en.wikipedia.org/wiki/Big_O_notation#Orders_of_common_functions>`_
+    Example curves of common time complexities.
 
-+---------------------------------------+------------------------+
-| *Growth Function*                     | *Order*                |
-+=======================================+========================+
-| :math:`t(n) = 5n^{2} + 3n`            | :math:`O(?)`           |
-+---------------------------------------+------------------------+
-| :math:`t(n) = n^{3} + \log_{2}(n) - 4`| :math:`O(?)`           |
-+---------------------------------------+------------------------+
-| :math:`t(n) = 10n \log_{2}(n) + 5`    | :math:`O(?)`           |
-+---------------------------------------+------------------------+
-| :math:`t(n) = 3n^{2} + 3n^{3} + 3`    | :math:`O(?)`           |
-+---------------------------------------+------------------------+
-| :math:`t(n) = 2^{n} + 18n^{100}`      | :math:`O(?)`           |
-+---------------------------------------+------------------------+
+
+* `It is typical to see the order of a growth functions expressed as one of a few common expressions <https://en.wikipedia.org/wiki/Big_O_notation#Orders_of_common_functions>`_
+
+.. list-table:: Example growth functions with their order left blank as an exercise.
+    :widths: 50 50
+    :header-rows: 1
+
+    * - Growth Function
+      - Order
+    * - :math:`t(n) = 5n^{2} + 3n`
+      - :math:`O(?)`
+    * - :math:`t(n) = n^{3} + \log_{2}(n) - 4`
+      - :math:`O(?)`
+    * - :math:`t(n) = 10n \log_{2}(n) + 5`
+      - :math:`O(?)`
+    * - :math:`t(n) = 3n^{2} + 3n^{3} + 3`
+      - :math:`O(?)`
+    * - :math:`t(n) = 2^{n} + 18n^{10}`
+      - :math:`O(?)`
+
 
 
 Deriving Growth Functions
