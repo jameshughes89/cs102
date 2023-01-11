@@ -103,18 +103,24 @@ Growth Function
       - 15,000,045,000,000
 
 
-* This table shows how each of the parts of the :math:`t(n)` growth function change as :math:`n` grows
-* Take note as to which part can be blamed for most of the whole :math:`t(n)`
+* This table shows how each of the parts of the :math:`t(n)` growth function changes as :math:`n` grows
+* Take note as to which part can be *blamed* for most of the total work done within :math:`t(n)`
 
 * When :math:`n` is small, which part of the expression gives a larger value?
-* As :math:`n` **grows**, which becomes bigger?
+* As :math:`n` grows, which becomes bigger?
 * How much do the constants (:math:`15` and :math:`45`) impact the values?
+
     * Do they affect how big the numbers change as :math:`n` increases?
 
 
-.. image:: growth0.png
-   :width: 600 px
-   :align: center
+.. figure:: growth0.png
+    :width: 600 px
+    :align: center
+
+    Plot of :math:`t(n)` (y-axis) against :math:`n` (x-axis). Note that :math:`15n^{2}` is covered by
+    :math:`15n^{2} + 45n` as their growths are so similar at this scale. Further, at this scale, the portion of the
+    the growth function that is linear (:math:`45n`) appears to be a horizontal line.   
+
 
 * This plot compares the parts of the function to the function itself
 * Notice the scale of the axes
