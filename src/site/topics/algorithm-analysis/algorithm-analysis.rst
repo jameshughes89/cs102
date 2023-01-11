@@ -257,14 +257,14 @@ Loops
 **Order:** :math:`O(n)`
 
 * With a loop, consider a number line
-* A single number in the number line is *visited* each time the loop executes a single iteration
+* The :math:`i^{th}` number in the number line is *visited* each time the loop executes a single iteration
+* How many numbers were *visited*?
 
 .. figure:: linear.png
     :width: 750 px
     :align: center
 
-    Example number line of length :math:`n`. With a loop, every time the loop executes an iteration, a single number in
-    the number line is visited.
+    Example number line of length :math:`n`.
 
 
 
