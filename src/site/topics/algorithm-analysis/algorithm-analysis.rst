@@ -214,14 +214,14 @@ Example Growth Functions and Their Order
 Deriving Growth Functions
 ==========================
 
-* We learned how to go from :math:`t(n)` to :math:`O(n)`
-* How do we get :math:`t(n)` in the first place?
-    * Look at the code!
+* Growth functions, :math:`t(n)`, are derived by investigating the code
 
-.. warning::
+.. note::
 
-    For simplicity, we will pretend some constant time (:math:`O(1)`) statements take :math:`1` unit of work when in
-    reality they may take more. This is safe to do since constants are ignored.
+    For simplicity, constant time (:math:`O(1)`) statements will be said to take :math:`1` unit of work. In reality,
+    they may take more, but they will ultimately still take constant time, and constants are ignored.
+
+
 
 Statements
 ----------
