@@ -131,23 +131,20 @@ Growth Function
 
 * Given this, and the fact that constants only scale the values, we say that the :math:`n^{2}` is the **dominant** term
 
+
 .. warning::
 
-    One thing students tend to miss when first learning about computational complexity is that the function tells us
-    how things change relative to :math:`n`. At this stage, we're not worrying about any absolute values.
+    One thing students tend to miss when first learning about computational complexity is that the function describes
+    how things change relative to :math:`n`. At this stage, the discussion is not about any absolute runtime value.
 
-    For example, given this growth function...
+    For example, given this growth function :math:`t(n) = n^{2} + 999n` one may say that the :math:`999n` part of the
+    function is going to dominate for all values :math:`n < 999`, which is true. However, this is not the point of
+    complexity analysis. The point is identifying which part of the function *grows* faster, and in this example,
+    :math:`n^{2}` grows faster.
 
-        .. math::
+    This is **not** to suggest that the observation of when :math:`n < 999` is not important or valuable; this is only
+    to highlight that the focus here is about change and growth.
 
-            t(n) = n^{2} + 999n
-
-    you may say that the :math:`999n` part of the function is going to dominate for all values :math:`n < 999`, which is
-    true. However, this is not the point of complexity analysis. The point is identifying which part of the function
-    **grows** faster, and in this example, :math:`n^{2}` absolutely grows faster.
-
-    This is **not** to suggest that the observation of :math:`n < 999` is not important or valuable; this is only to
-    highlight that it's about change and growth.
 
 
 Asymptotic Growth & Big-O
