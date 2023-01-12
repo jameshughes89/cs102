@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class BinaryNodeTest {
 
     @Test
-    void getDate_dataNotExists_returnsNull() {
+    void getData_dataNotExists_returnsNull() {
         assertNull(new BinaryNode<>().getData());
     }
 
