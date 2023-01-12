@@ -42,15 +42,13 @@ public final class Friend {
     }
 
     //    /**
-    //     * This equals is what is included in the course content.
+    //     * This equals is not included in the course content.
     //     * <p>
-    //     * Sample equals method for comparing two friend objects. In this example, we will simply compare first and
-    //     * last
-    //     * names
+    //     * Sample equals method for comparing two friend objects. In this example, we will simply compare all fields.
     //     * <p>
     //     * This example is deliberately kept very simple and does not actually override the toString properly.
     //     *
-    //     * @return if the two friend objects are equal
+    //     * @return True if the two Friend objects are equal, false otherwise
     //     */
     //    public boolean equals(Friend other) {
     //        return this.firstName.equals(other.firstName) &&
