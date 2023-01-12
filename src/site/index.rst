@@ -143,14 +143,3 @@ The Math, Stats, and CS Society has a time and location for
     :maxdepth: 1
 
     outline/outline
-
-
-.. toctree::
-    :caption: C++ Lessons
-    :maxdepth: 1
-    :numbered:
-
-    cpp/syntax/syntax
-    cpp/pointers/pointers
-    cpp/references/references
-    cpp/arrays/arrays
