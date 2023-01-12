@@ -235,7 +235,7 @@ Stack Interface
 .. code-block:: java
     :linenos:
 
-    public interface Stack <T> {
+    public interface Stack<T> {
 
         // Javadoc comments within Stack.java file
         boolean push(T element);

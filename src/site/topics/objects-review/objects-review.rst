@@ -99,7 +99,7 @@ Contact List Example
 --------------------
 
 * It may be easier to learn these ideas with an example
-* Cconsider the following problem
+* Consider the following problem
 
     * There is a need to keep track of the name and email address of friends
     * There is also a need to manage several friends' names and email addresses
