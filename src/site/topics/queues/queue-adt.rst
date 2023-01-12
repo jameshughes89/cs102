@@ -3,32 +3,40 @@ The Queue ADT
 *************
 
 * Queues are a collection of elements where
-    * Things are added to one end (rear or tail)
-    * Things are removed from the other end (front or head)
 
-* This is *First in First out* (FIFO)
+    * Things are added to the queue at one end (rear/tail)
+    * Things are removed from the queue at the other end (front/head)
+
 
 * Given this, the **F**\ irst thing **I**\ n will be the **F**\ irst thing **O**\ ut
+
     * FIFO
 
-* For example, any ordinary single file line you have ever lined up in
+
+* For an example of a queue, consider any ordinary single file line
+
     * Assuming people were following the rules and not cutting in line
 
-    .. image:: queue.png
-       :width: 300 px
-       :align: center
+.. figure:: queue.png
+    :width: 300 px
+    :align: center
 
-**Adding to a Queue**
+    Example of a queue (lineup) of five people. The queue has two ends --- a front and a rear.
 
-    .. image:: queue_add.png
-       :width: 500 px
-       :align: center
 
-**Removing from a Queue**
+.. figure:: queue_add.png
+    :width: 500 px
+    :align: center
 
-    .. image:: queue_remove.png
-       :width: 500 px
-       :align: center
+    Adding (enqueuing) to the rear of the queue.
+
+
+.. figure:: queue_remove.png
+    :width: 500 px
+    :align: center
+
+    Removing (dequeuing) from the front of a queue.
+
 
 
 Queue Operations
