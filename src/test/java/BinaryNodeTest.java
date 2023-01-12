@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class BinaryNodeTest {
 
@@ -17,5 +17,28 @@ public class BinaryNodeTest {
     @Test
     void getRight_rightNotExists_returnsNull() {
         assertNull(new BinaryNode<>().getRight());
+    }
+
+    @Test
+    void getData_dataExists_returnsData() {
+        BinaryNode<Integer> node = new BinaryNode<>();
+        node.setData(10);
+        assertEquals(10, node.getData());
+    }
+
+    @Test
+    void getLeft_leftExists_returnsLeft() {
+        BinaryNode<Integer> node = new BinaryNode<>();
+        BinaryNode<Integer> leftNode = new BinaryNode<>();
+        node.setLeft(leftNode);
+        assertSame(leftNode, node.getLeft());
+    }
+
+    @Test
+    void getRight_rightExists_returnsRight() {
+        BinaryNode<Integer> node = new BinaryNode<>();
+        BinaryNode<Integer> rightNode = new BinaryNode<>();
+        node.setRight(rightNode);
+        assertSame(rightNode, node.getRight());
     }
 }
