@@ -41,4 +41,19 @@ public class BinaryNodeTest {
         node.setRight(rightNode);
         assertSame(rightNode, node.getRight());
     }
+
+    @Test
+    void getData_dataConstructor_returnsData() {
+        assertEquals(10, new BinaryNode<>(10).getData());
+    }
+
+    @Test
+    void getLeft_dataConstructor_returnsNull() {
+        assertNull(new BinaryNode<>(10).getLeft());
+    }
+
+    @Test
+    void getRight_dataConstructor_returnsNull() {
+        assertNull(new BinaryNode<>(10).getRight());
+    }
 }
