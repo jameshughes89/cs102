@@ -22,7 +22,7 @@ class ArrayStackTest {
     class WhenNewEmpty {
 
         @Test
-        void push_successfulAdd_returnsTrue() {
+        void push_empty_returnsTrue() {
             assertTrue(classUnderTest.push(11));
         }
 
@@ -61,7 +61,7 @@ class ArrayStackTest {
             }
 
             @Test
-            void push_successfullyAdds_returnsTrue() {
+            void push_singleton_returnsTrue() {
                 assertTrue(classUnderTest.push(11));
             }
 
@@ -117,7 +117,7 @@ class ArrayStackTest {
                 }
 
                 @Test
-                void push_successfullyAdds_returnsTrue() {
+                void push_many_returnsTrue() {
                     assertTrue(classUnderTest.push(11));
                 }
 
@@ -154,7 +154,7 @@ class ArrayStackTest {
                 }
 
                 @Test
-                void toString_singleton_returnsCorrectString() {
+                void toString_many_returnsCorrectString() {
                     assertEquals("40, 30, 20, 10, ", classUnderTest.toString());
                 }
             }
