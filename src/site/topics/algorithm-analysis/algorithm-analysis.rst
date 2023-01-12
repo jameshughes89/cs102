@@ -278,7 +278,7 @@ Nested Loops
 
     int x = 0;                          // 1 unit of work
     int y = 0;                          // 1 unit of work
-    for (int i = 0; i < n; i+) {       // Everything in loop runs n times
+    for (int i = 0; i < n; i++) {       // Everything in loop runs n times
         x = x + 1;                      // 1 unit of work n times (1*n)
         for (int j = 0; j < n; j++) {   // Runs n times and everything in this loop runs another n times
             y = y - 1;                  // 1 unit of work n times, n times
