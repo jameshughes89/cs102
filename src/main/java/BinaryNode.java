@@ -10,6 +10,10 @@ public class BinaryNode<T> {
     private BinaryNode<T> left;
     private BinaryNode<T> right;
 
+    public BinaryNode() {
+        this(null);
+    }
+
     public BinaryNode(T data) {
         this.data = data;
         this.left = null;
