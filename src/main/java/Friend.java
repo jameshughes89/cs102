@@ -41,6 +41,7 @@ public final class Friend {
         return String.format("Friend(%s, %s, %s)", firstName, lastName, email);
     }
 
+    
     //    /**
     //     * This equals is not included in the course content.
     //     * <p>
@@ -55,6 +56,7 @@ public final class Friend {
     //                this.lastName.equals(other.lastName) &&
     //                this.email.equals(other.email);
     //    }
+
 
     /**
      * Checks if two Friend objects are equal. Friend objects are considered equal if all their attributes are equal.
