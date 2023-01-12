@@ -78,13 +78,15 @@ Queue Operations
 
 .. warning::
 
-    If you look at `Java's Queue Interface <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Queue.html>`_, you will
-    see that they use ``add``, ``remove``, and ``element`` along with ``offer``, ``poll``, and ``peek``. The first three
-    are the same as our ``enqueue``, ``dequeue``, and ``first`` and the other three are the same, but do not throw
+    When referring to Java's actual
+    `Queue Interface <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Queue.html>`_`, one may
+    notice ``add``, ``remove``, and ``element``, along with ``offer``, ``poll``, and ``peek``. The first three are the
+    same as the defined ``enqueue``, ``dequeue``, and ``first``. The other three are the same, but do not throw
     exceptions.
 
-    We will use the ``enqueue``, ``dequeue``, and ``first`` names as it is what they are `typically called when referring
-    to a Queue ADT <https://en.wikipedia.org/wiki/Queue_(abstract_data_type)>`_.
+    The names ``enqueue``, ``dequeue``, and ``first`` are used here as they are the typical names used when
+    `referring to a Queue ADT <https://en.wikipedia.org/wiki/Queue_(abstract_data_type)>`_.
+
 
 
 Example Uses
