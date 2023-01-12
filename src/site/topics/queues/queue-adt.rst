@@ -79,7 +79,7 @@ Queue Operations
 .. warning::
 
     When referring to Java's actual
-    `Queue Interface <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Queue.html>`_`, one may
+    `Queue Interface <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Queue.html>`_, one may
     notice ``add``, ``remove``, and ``element``, along with ``offer``, ``poll``, and ``peek``. The first three are the
     same as the defined ``enqueue``, ``dequeue``, and ``first``. The other three are the same, but do not throw
     exceptions.
@@ -89,8 +89,8 @@ Queue Operations
 
 
 
-Example Uses
-============
+Example Use
+===========
 
 * Examples
 
