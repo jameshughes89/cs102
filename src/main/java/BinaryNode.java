@@ -1,12 +1,6 @@
 /**
- * A BinaryNode class for a binary linked tree structure. Each
- * BinaryNode contains a reference to data of type T, which
- * may be null, and a reference to the left and right child
- * binary linked BinaryNodes, which may also be null.
- * <p>
- * This class is a static nested class since the BinaryNode
- * class is only needed for the implementation of the
- * LinkedBinarySearchTree.
+ * A BinaryNode class for a linked binary tree structure. Each BinaryNode contains a nullable reference to data of type
+ * T, and a reference to the left and right child BinaryNodes, which may be null references.
  *
  * @param <T> Type of the data being stored in the BinaryNode
  */
