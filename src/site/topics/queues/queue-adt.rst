@@ -159,10 +159,10 @@ Interface
 .. code-block:: java
     :linenos:
 
-    public interface Queue <T> {
+    public interface Queue<T> {
 
         // Javadoc comments within Queue.java file
-        void enqueue(T element);
+        boolean enqueue(T element);
         T dequeue();
         T first();
         boolean isEmpty();
@@ -172,9 +172,10 @@ Interface
 * Just like the ``Stack`` interface, any implementation of a queue will implement the ``Queue`` interface
 
 
-For next time
+For Next Time
 =============
 
-* Download the :download:`Queue.java</../main/java/Queue.java>` interface.
+* Download the :download:`Queue.java</../main/java/Queue.java>` interface
 * Read Chapter 5 Sections 1 -- 5
+
     * 14 pages
