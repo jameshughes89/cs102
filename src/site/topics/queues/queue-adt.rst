@@ -42,20 +42,39 @@ The Queue ADT
 Queue Operations
 ================
 
-* Like other collections, we need ways to
-    * Add something to the collection
-    * Remove something from the collection
+* Like other collections, there should be a way to
+
+    * Add something to the queue
+    * Remove something from the queue
     * Look at something, but do not remove it
 
-* Within the context of a queue, we have
-    * **Enqueue**
-        * Add something to the rear/tail
-    * **Dequeue**
-        * Remove something from the front/head
-    * **First**
-        * Look at the thing at the front/head of the queue, but do not remove it
 
-* We will also want our ``isEmpty``, ``size``, and ``toString``
+* Within the context of a queue, these operations are called
+
+    * Enqueue
+
+        * Add an element to the collection
+        * The element added will be the new rear of the queue
+
+
+    * Dequeue
+
+        * Remove an element from the collection
+        * The removed element will be from the front of the queue
+        * The element after the removed element will be the new front, if it exists
+        * The element removed is returned
+
+
+    * First
+
+        * Return the element at the front of the queue, but leave it in the queue
+        * Calling first does not alter the queue
+
+
+.. note::
+
+    It is against this definition of a queue to access anything from anywhere other than the *front* of the queue.
+
 
 .. warning::
 
