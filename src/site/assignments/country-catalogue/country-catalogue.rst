@@ -119,6 +119,12 @@ instances of the ``Country`` class.
     * It may be necessary to add JUnit to the class path, as described in the :doc:`testing topic </topics/testing/unit-tests>`
 
 
+.. warning::
+
+    Be sure to use JUnit 5. If you use JUnit 4, the tests will not work. Further, if you select JUnit 4 by accident,
+    changing the project to use JUnit 5 can be difficult.
+
+
 
 Part 2 --- Country Catalogue
 ============================
