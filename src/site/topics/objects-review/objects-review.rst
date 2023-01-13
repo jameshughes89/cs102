@@ -165,9 +165,9 @@ In Java, the class' declaration of fields, constructor, and assigning values to 
 
 .. literalinclude:: /../main/java/Friend.java
     :language: java
-    :linenos:
-    :lineno-start: 3
-    :lines: 3-26
+    :start-at: /***
+    :end-before: getFirstName
+    :lineno-match:
     :emphasize-lines: 8, 9, 10, 21, 22, 23
 
 
@@ -232,9 +232,9 @@ Accessors
 
 .. literalinclude:: /../main/java/Friend.java
     :language: java
-    :linenos:
-    :lineno-start: 28
-    :lines: 28-38
+    :start-at: getFirstName
+    :end-before: toString
+    :lineno-match:
 
 
 * In Python, accessors were not used as one could simply access the field directly
@@ -290,9 +290,9 @@ Accessors
 
 .. literalinclude:: /../main/java/Friend.java
     :language: java
-    :linenos:
-    :lineno-start: 40
-    :lines: 40-42
+    :start-at: toString
+    :end-at: }
+    :lineno-match:
 
 
 * In the above example, ``String.format`` was used, but string concatenation could have been used
