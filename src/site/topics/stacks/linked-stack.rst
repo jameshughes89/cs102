@@ -221,5 +221,5 @@ Playing Code
 
 .. literalinclude:: /../main/java/PlayingLinkedStack.java
     :language: java
-    :linenos:
+    :lineno-match:
     :emphasize-lines: 6

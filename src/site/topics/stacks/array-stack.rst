@@ -318,5 +318,5 @@ Playing Code
 * If everything was done correctly, the following code from ``PlayingArrayStack`` should work
 
 .. literalinclude:: /../main/java/PlayingArrayStack.java
-   :language: java
-   :linenos:
+    :language: java
+    :lineno-match:

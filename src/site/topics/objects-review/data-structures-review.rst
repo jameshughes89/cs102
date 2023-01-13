@@ -397,5 +397,5 @@ Playing Code
 * If everything was done correctly, the following code from ``PlayingObjects`` should work
 
 .. literalinclude:: /../main/java/PlayingObjects.java
-   :language: java
-   :linenos:
+    :language: java
+    :lineno-match:
