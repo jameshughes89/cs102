@@ -345,8 +345,7 @@ Accessors
 
 .. literalinclude:: /../main/java/Friend.java
     :language: java
-    :linenos:
-    :lineno-start: 61
+    :lineno-match:
     :lines: 61-86
 
 
@@ -421,8 +420,7 @@ Accessors
 
 .. literalinclude:: /../main/java/Friend.java
     :language: java
-    :linenos:
-    :lineno-start: 88
+    :lineno-match:
     :lines: 88-91
 
 
