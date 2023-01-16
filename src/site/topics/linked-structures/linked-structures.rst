@@ -299,13 +299,19 @@ Doubly Linked
 For Next Time
 =============
 
+* Read Chapter 4 Sections 1 -- 3
+
+    * 7 pages
+
+
+Playing Code
+------------
+
+* Try writing code to add/remove from the front/middle/end of the linked structure
 * Download and play with
 
     * :download:`Node </../main/java/Node.java>`
     * :download:`Linked structure playing code </../main/java/PlayingLinks.java>`
 
 
-* Try writing code to add/remove from the front/middle/end of the linked structure
-* Read Chapter 4 Sections 1 -- 3
 
-    * 7 pages

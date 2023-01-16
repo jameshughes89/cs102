@@ -396,7 +396,7 @@ For Next Time
 
 
 Playing Code
-============
+------------
 
 * Download and play with
 
@@ -404,6 +404,7 @@ Playing Code
     * :download:`ContactList </../main/java/ContactList.java>` code
     * :download:`ContactList </../test/java/ContactListTest.java>` tests
     * :download:`PlayingObjects </../main/java/PlayingObjects.java>`
+
 
 * If everything was done correctly, the following code from ``PlayingObjects`` should work
 
