@@ -18,29 +18,46 @@ Idea #1
 =======
 
 * Use an array for the container
-* Keep track of the ``front`` by simply having it always be index ``0``
+* Keep track of the front by simply having it always be index ``0``
 * Keep track of the ``rear`` index
-* Size will conveniently be ``rear``
+* Size will conveniently be equal to ``rear``
 
-.. image:: arrayqueue_first_idea0.png
-   :width: 500 px
-   :align: center
 
-* All adding happens at the ``rear`` end
+.. figure:: arrayqueue_first_idea0.png
+    :width: 500 px
+    :align: center
+
+    An example ``ArrayQueue`` containing four elements. This implementation requires that index ``0`` always be the
+    front. Note the value stored in ``rear`` refers to the next available spot in the array. Also notice that the value
+    in ``rear`` corresponds to the number of elements currently in the queue.
+
+
+* All adding (``enqueue``) happens at the ``rear`` end
 * Add the element to index ``rear``
 * Increment ``rear``
 
-.. image:: arrayqueue_first_idea1.png
-   :width: 500 px
-   :align: center
 
-* ``dequeue`` always happens at index ``0``
+.. figure:: arrayqueue_first_idea1.png
+    :width: 500 px
+    :align: center
+
+    The state of the ``ArrayQueue`` after an element was enqueued. Note that the element was added at index ``rear`` and
+    the value of ``rear`` was increased such that it refers to the next available spot in the array.
+
+
+* All removing (``dequeue``) happens at index ``0``
 * Requires that elements are shuffled down ``1`` index
 * Decrement ``rear``
 
-.. image:: arrayqueue_first_idea2.png
-   :width: 500 px
-   :align: center
+
+.. figure:: arrayqueue_first_idea2.png
+    :width: 500 px
+    :align: center
+
+    The state of the ``ArrayQueue`` after an element was dequeued. Note that the element at index ``0`` was removed and
+    all elements moved down one index in the array. Further, the value of ``rear`` was decreased by one.
+
+
 
 Discussion
 ----------
