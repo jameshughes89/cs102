@@ -4,7 +4,10 @@ Aside --- Amortized Time Complexity
 
 .. warning::
 
-    This explanation of amortized time complexity analysis is brief and high-level as it is outside the scope of this course.
+    This explanation of amortized time complexity analysis is brief and high-level as it is outside the scope of this
+    course. It is only included here for those interested as some may find that the additional context helps with their
+    understanding.
+
 
 * There's actually a bit of a *gotcha* in the push example for an ``ArrayStack``
 
