@@ -205,15 +205,16 @@ How
 For Next Time
 =============
 
-* Download and play with the :download:`LinkedQueue </../main/java/LinkedQueue.java>` code
-* Download and run the :download:`LinkedQueueTest </../test/java/LinkedQueueTest.java>` tests
 * Read Chapter 5 Section 6
 
     * 6 pages
 
 
 Playing Code
-============
+------------
+
+* Download and play with the :download:`LinkedQueue </../main/java/LinkedQueue.java>` code
+* Download and run the :download:`LinkedQueueTest </../test/java/LinkedQueueTest.java>` tests
 
 * If everything was done correctly, the following code from ``PlayingArrayStack`` should work
 
