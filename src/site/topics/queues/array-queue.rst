@@ -70,16 +70,19 @@ Discussion
 * Knowing that this is an array implementation, will something like an ``expandCapacity`` be required?
 * What is the computational complexity of an ``enqueue`` with this idea?
 
-    * :math:`O(1)`
+    * Amortized :math:`O(1)`
 
 
 * What is the computational complexity of a ``dequeue`` with this idea?
 
-    * :math:`O(n)` as it requires all :math:`n` elements be shuffle down one index in the array 
+    * :math:`O(n)` as it requires all :math:`n` elements be shuffle down one index in the array
+
 
 
 Idea #2
 =======
+
+* The problem with idea #1 is
 
 * Use an array for the container
 * Keep track of the ``front`` index
