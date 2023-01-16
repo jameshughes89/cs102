@@ -133,12 +133,26 @@ Discussion
 ----------
 
 * Will this implementation work?
+
     * Is it *correct*
-* Will we ever need to call ``expandCapacity``?
-* What is the computational complexity of this ``enqueue``?
-* What is the computational complexity of this ``dequeue``?
-* How often will we call ``expandCapacity`` relative to idea #1?
-* What drawback do you see?
+
+
+* Knowing that this is an array implementation, will something like an ``expandCapacity`` be required?
+* What is the computational complexity of an ``enqueue`` with this idea?
+
+    * Amortized :math:`O(1)`
+
+
+* What is the computational complexity of a ``dequeue`` with this idea?
+
+    * :math:`O(1)`
+
+
+* The drawback of idea #2 is the wasted space caused by ``dequeue``
+
+    * All indices before ``front`` are wasted
+    * ``expandCapacity`` would need to be called after :math:`n + 1` enqueues despite the number of elements actually in the queue
+
 
 
 Idea #3
