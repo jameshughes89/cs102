@@ -78,11 +78,13 @@ Discussion
     * :math:`O(n)` as it requires all :math:`n` elements be shuffle down one index in the array
 
 
+* The drawback of idea #1 is a :math:`O(n)` ``dequeue``
+
+    * The ``LinkedQueue`` implementation has an :math:`O(1)` ``dequeue``
+
 
 Idea #2
 =======
-
-* The problem with idea #1 is
 
 * Use an array for the container
 * Keep track of the ``front`` index
