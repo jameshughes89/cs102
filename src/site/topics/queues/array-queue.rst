@@ -2,15 +2,16 @@
 ArrayQueue
 **********
 
-* We need to think of:
+* Things needed for the implementation
+
     * A container
     * A way to keep track of the front/head
     * A way to keep track of the rear/tail
     * A way to keep track of the size
 
-* We used a linked structure last time
-* Let's now use an array...
-* But how...
+
+* A linked structure was used as a container for a ``Queue``
+* Now an array will be used to implement the ``Queue``
 
 
 Idea #1
