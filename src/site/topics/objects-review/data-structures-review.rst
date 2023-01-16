@@ -401,8 +401,8 @@ Playing Code
 * Download and play with
 
     * :download:`Friend </../main/java/Friend.java>`
-    * :download:`ContactList </../main/java/ContactList.java>` code
-    * :download:`ContactList </../test/java/ContactListTest.java>` tests
+    * :download:`ContactList </../main/java/ContactList.java>`
+    * :download:`ContactList </../test/java/ContactListTest.java>`
     * :download:`PlayingObjects </../main/java/PlayingObjects.java>`
 
 
