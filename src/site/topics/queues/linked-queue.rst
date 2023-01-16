@@ -213,10 +213,14 @@ For Next Time
 Playing Code
 ------------
 
-* Download and play with the :download:`LinkedQueue </../main/java/LinkedQueue.java>` code
-* Download and run the :download:`LinkedQueueTest </../test/java/LinkedQueueTest.java>` tests
+* Download and play with
 
-* If everything was done correctly, the following code from ``PlayingArrayStack`` should work
+    * :download:`LinkedQueue </../main/java/LinkedQueue.java>`
+    * :download:`LinkedQueueTest </../test/java/LinkedQueueTest.java>`
+    * :download:`LinkedQueue playing code </../main/java/PlayingLinkedQueue.java>`
+
+
+* If everything was done correctly, the following code from ``PlayingLinkedQueue`` should work
 
 .. literalinclude:: /../main/java/PlayingLinkedQueue.java
    :language: java
