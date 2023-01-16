@@ -115,6 +115,7 @@ Idea #2
 
 
 * All removing (``dequeue``) happens at index ``front``
+* Remove the element at index ``front``
 * Increment ``front``
 
 
