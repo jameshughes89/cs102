@@ -11,30 +11,17 @@ Aside --- Amortized Time Complexity
 
 * There's actually a bit of a *gotcha* in the push example for an ``ArrayStack``
 
-.. code-block:: java
+.. literalinclude:: /../main/java/ArrayStack.java
+    :language: java
     :linenos:
-    :emphasize-lines: 4, 12, 13, 14
+    :lineno-start: 37
+    :lines: 37-57
+    :emphasize-lines: 4, 17, 18, 19
 
-    // ArrayStack's push
-    public void push(T element) {
-        if (top == stack.length) {
-            expandCapacity();
-        }
-        stack[top] = element;
-        top++;
-    }
 
-    private void expandCapacity() {
-        T[] newStack = (T[]) new Object[stack.length * 2];
-        for (int i = 0; i < stack.length; ++i) {
-            newStack[i] = stack[i];
-        }
-        stack = newStack;
-    }
-
-* ``expandCapacity`` is an :math:`O(n)` function
-* And since ``push`` calls ``expandCapacity``, we know that ``push`` will at least be :math:`O(n)`
-* **However**, how often is ``expandCapacity`` actually called?
+* Since ``expandCapacity`` is an :math:`O(n)` function
+* And since ``push`` calls ``expandCapacity``, ``push`` will at least be :math:`O(n)`
+* However, how often is ``expandCapacity`` actually called?
 
 
 Amortization
