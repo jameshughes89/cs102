@@ -54,8 +54,8 @@ Idea #1
     :width: 500 px
     :align: center
 
-    The state of idea #1's ``ArrayQueue`` after an element was dequeued. Note that the element at index ``0`` was removed and
-    all elements moved down one index in the array. Further, the value of ``rear`` was decreased by one.
+    The state of idea #1's ``ArrayQueue`` after an element was dequeued. Note that the element at index ``0`` was
+    removed and all elements moved down one index in the array. Further, the value of ``rear`` was decreased by one.
 
 
 
@@ -96,26 +96,37 @@ Idea #2
     :width: 500 px
     :align: center
 
-    An example ``ArrayQueue`` containing four elements. This implementation requires that index ``0`` always be the
-    front. Note the value stored in ``rear`` refers to the next available spot in the array. Also notice that the value
-    in ``rear`` corresponds to the number of elements currently in the queue.
+    An example of idea #2's ``ArrayQueue`` containing four elements. This implementation keeps track of the ``front``
+    and ``rear`` indices. Note the value stored in ``rear`` refers to the next available spot in the array. Also notice
+    that the difference between ``rear`` and ``front`` corresponds to the number of elements currently in the queue.
 
 
 * All adding (``enqueue``) happens at the ``rear`` end
 * Add the element to index ``rear``
 * Increment ``rear``
 
-.. image:: arrayqueue_second_idea1.png
-   :width: 500 px
-   :align: center
 
-* ``dequeue`` always happens at index ``front``
+.. figure:: arrayqueue_second_idea1.png
+    :width: 500 px
+    :align: center
+
+    The state of idea #1's ``ArrayQueue`` after an element was enqueued. Note that the element was added at index
+    ``rear`` and the value of ``rear`` was increased such that it refers to the next available spot in the array.
+
+
+* All removing (``dequeue``) happens at index ``front``
 * Increment ``front``
 
 
-.. image:: arrayqueue_second_idea2.png
-   :width: 500 px
-   :align: center
+.. figure:: arrayqueue_second_idea2.png
+    :width: 500 px
+    :align: center
+
+    The state of idea #2's ``ArrayQueue`` after an element was dequeued. Note that the element at index ``front`` was
+    removed and the value of ``front`` increased by one. Note that, with the exception of the removed element, no other
+    elements were required to be moved within the array.
+
+
 
 Discussion
 ----------
