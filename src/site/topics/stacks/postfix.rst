@@ -56,4 +56,4 @@ Evaluate
     states that the stack would have are shown; multiple sequential operand pushes are not shown.
 
 
-* Notice that, once again, the idea of a stack can be used to solve a problem despite not knowing its implementation 
+* Notice that, once again, the idea of a stack can be used to solve a problem despite not knowing its implementation
