@@ -311,6 +311,7 @@ Playing Code
 * Download and play with
 
     * :download:`Node </../main/java/Node.java>`
+    * :download:`NodeTest </../test/java/NodeTest.java>`
     * :download:`Linked structure playing code </../main/java/PlayingLinks.java>`
 
 
