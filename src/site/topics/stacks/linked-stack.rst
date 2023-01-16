@@ -220,7 +220,7 @@ Playing Code
 
     * :download:`LinkedStack </../main/java/LinkedStack.java>`
     * :download:`LinkedStackTest </../test/java/LinkedStackTest.java>`
-    * :download:`ArrayStack playing code </../main/java/PlayingLinkedStack.java>`
+    * :download:`LinkedStack playing code </../main/java/PlayingLinkedStack.java>`
 
 
 * One could use the same code from ``PlayingArrayStack`` to play with the ``LinkedStack``
