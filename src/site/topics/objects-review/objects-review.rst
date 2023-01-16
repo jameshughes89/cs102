@@ -396,8 +396,8 @@ Accessors
 
     The above example makes use of the third option to be safe around ``null``. This is important because, based on the
     way the class is written, it is possible to have the fields reference ``null``. Consider creating a ``Friend``
-    object with the following --- new Friend(null, "Smith", "bsmith@gmail.com"). This would make the field ``firstName``
-    reference ``null``, meaning a call to ``this.firstName.equals(other.firstName)`` would result in a null pointer
+    object with the following --- ``new Friend(null, "Smith", "bsmith@gmail.com")``. This would make the field
+    ``firstName`` reference ``null``, meaning a call to ``this.firstName.equals(other.firstName)`` would result in a null pointer
     exception.
 
 
