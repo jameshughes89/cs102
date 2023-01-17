@@ -43,7 +43,7 @@ Implementing an ``ArrayStack``
 Reversing a String
 ------------------
 
-#. Write a static method that takes a string and returns a new string that is the reverse of the original
+#. Write a function called ``reverseString`` that takes a string and returns the reverse of the original
 
     * This function must use a stack for the reversing of the string
     * Below is a skeletal method and some simple testing code
