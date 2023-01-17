@@ -501,6 +501,7 @@ Creating an Instance of a Friend
     * Use the ``toString`` method
     * Use the ``equals`` method
 
+
 .. code-block:: java
     :linenos:
 
