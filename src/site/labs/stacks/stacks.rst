@@ -13,50 +13,27 @@ Stacks
 Playing with Stacks
 ===================
 
-We're going to implement an ``ArrayStack`` based on what we learned in class and use it to solve a simple problem.
+The goal is to implement an ``ArrayStack`` based on the the details discussed in the
+:doc:`Stack Interface Topic </topics/stacks/array-stack>` and the :doc:`ArrayStack Topic </topics/stacks/array-stack>`.
 
 
-Implementing a Stack
---------------------
+Implementing an ``ArrayStack``
+------------------------------
 
-#. Create a project and make a class where you will put your main method.
-
-#. Download the :download:`Stack interface <../../../main/java/Stack.java>` and add it to your project.
-
-#. Create a new class for our ``ArrayStack`` implementation.
-
-#. :doc:`Complete your ArrayStack based on the course notes. </topics/stacks/array-stack>`
+#. Download the :download:`Stack interface <../../../main/java/Stack.java>` and add it to the ``src`` folder
+#. Create an ``ArrayStack`` class for the implementation
+#. Complete the ``ArrayStack`` class based on the :doc:`ArrayStack Topic's description </topics/stacks/array-stack>`
 
     .. note::
 
-        I realize you can simply download the :download:`ArrayStack <../../../main/java/ArrayStack.java>` code and
-        copy/paste, but this defeats the purpose. I want you to slowly and deliberately implement each function and take
-        the time to understand the details.
+        Obviously one can simply download the :download:`ArrayStack <../../../main/java/ArrayStack.java>` code and
+        copy/paste it into the ``ArrayStack`` class, but this defeats the purpose of the lab. Instead, slowly and
+        deliberately implement each function and take the time to understand the details.
 
 
-#. Test your ``ArrayStack`` with the following.
+#. Add the :download:`ArrayStackTest </../test/java/ArrayStackTest.java>` unit tests to the project
+#. Run the ``ArrayStackTest`` unit tests and ensure all tests pass
 
-    .. code-block:: java
-
-            public static void main(String[] args) {
-                Stack<Integer> myStack = new ArrayStack<>();
-
-                System.out.println(myStack);
-
-                for (int i = 0; i < 10; ++i) {
-                    myStack.push(i);
-                }
-
-                System.out.println(myStack);
-
-                while (!myStack.isEmpty()) {
-                    System.out.println(myStack.pop());
-                }
-                System.out.println(myStack);
-            }
-
-
-#. Now create an instance of a stack for characters and rewrite the test code above to test its functionality.
 
 
 Reversing a String
