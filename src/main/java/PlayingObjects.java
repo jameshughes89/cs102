@@ -18,5 +18,7 @@ public class PlayingObjects {
         System.out.println("Print after clear");
         myFriends.clear();
         System.out.println(myFriends);
+
+        StringBuilder stringBuilder = new StringBuilder();
     }
 }

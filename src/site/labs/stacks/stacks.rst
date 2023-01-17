@@ -43,11 +43,10 @@ Implementing an ``ArrayStack``
 Reversing a String
 ------------------
 
-#. Write a method that takes a string and returns a new string that is the reverse of the original.
+#. Write a static method that takes a string and returns a new string that is the reverse of the original
 
-    * This function **must** use a stack for the reversing of the string
-    * I have provided you with a skeletal method and some simple testing code below
-
+    * This function must use a stack for the reversing of the string
+    * Below is a skeletal method and some simple testing code
 
     .. code-block:: java
 
@@ -61,18 +60,17 @@ Reversing a String
 
         public static String reverseString(String originalString) {
             Stack<Character> characterStack = new ArrayStack<>();
-            String newString = "";
+            StringBuilder stringBuilder = new StringBuilder();
 
             // Add Code Here
 
-            return newString;
+            return stringBuilder.toString();
         }
+
 
 
 Kattis Problems
 ===============
-
-Recommended Kattis Problems (don't worry, you don’t need to do all of them or anything):
 
 #. https://open.kattis.com/problems/quadrant
 #. https://open.kattis.com/problems/judgingmoose
