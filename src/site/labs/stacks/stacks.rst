@@ -31,7 +31,11 @@ Implementing an ``ArrayStack``
         deliberately implement each function and take the time to understand the details.
 
 
-#. Add the :download:`ArrayStackTest </../test/java/ArrayStackTest.java>` unit tests to the project
+#. Add the :download:`ArrayStackTest </../test/java/ArrayStackTest.java>` unit tests to the project in a ``test`` folder
+
+    * :doc:`Refer to the relevant topic on unit testing for a refresher </topics/testing/unit-tests>`
+
+
 #. Run the ``ArrayStackTest`` unit tests and ensure all tests pass
 
 
