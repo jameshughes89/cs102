@@ -33,7 +33,8 @@ Implementing an ``ArrayStack``
 
 #. Add the :download:`ArrayStackTest </../test/java/ArrayStackTest.java>` unit tests to the project in a ``test`` folder
 
-    * :doc:`Refer to the relevant topic on unit testing for a refresher </topics/testing/unit-tests>`
+    * :doc:`Refer to the relevant topic on unit testing </topics/testing/unit-tests>`
+    * :doc:`Refer to the relevant topic on unit testing collections </topics/testing/unit-test-collections>`
 
 
 #. Run the ``ArrayStackTest`` unit tests and ensure all tests pass
