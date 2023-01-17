@@ -483,8 +483,8 @@ Creating an Instance of a Friend
     * ``Friend bFriend = new Friend("Jane", "Doe", "jdoe@gmail.com");``
 
 
-* ``aFriend`` would have a ``firstName`` of Bob
-* ``bFriend`` has a ``firstName`` of Jane
+* ``aFriend`` would be a reference to a ``Friend`` object with a ``firstName`` of Bob
+* ``bFriend`` would be a reference to a ``Friend`` object with  a ``firstName`` of Jane
 
 * They both have the ``firstName`` field, but the actual value associated with it differs
 
