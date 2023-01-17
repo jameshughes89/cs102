@@ -66,7 +66,9 @@ JUnit
     * A simple way to do it is to write ``@Test`` in the new class and press Alt + Enter
 
 
-#. Select *Add 'JUnit5....*
+#. Select *Add 'JUnit5...*
+
+    * Do **not** select *Junit 4...* as that will cause issues with the tests
 
     .. figure:: alt_enter.png
         :width: 600 px
