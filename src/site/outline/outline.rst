@@ -100,7 +100,7 @@ Student Evaluation (Tentative Dates)
 
     * - Deliverable
       - Percentage
-      - Date/Due Date
+      - Due Date
     * - Assignment 1
       - 5%
       - Late January-ish
