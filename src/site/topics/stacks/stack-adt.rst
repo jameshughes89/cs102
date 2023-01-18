@@ -333,7 +333,12 @@ For Next Time
 =============
 
 * Checkout the :doc:`Postfix expression evaluation stack example. <postfix>`
-* Checkout the :download:`Stack.java</../main/java/Stack.java>` interface.
 * Read Chapter 3 Sections 2 -- 6
 
     * 13 pages
+
+
+Playing Code
+------------
+
+* Download and play with the :download:`Stack.java</../main/java/Stack.java>` interface
