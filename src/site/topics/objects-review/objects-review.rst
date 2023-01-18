@@ -474,9 +474,11 @@ Creating an Instance of a Friend
 
 
 
-* If the following line of code was run, two instances of a ``Friend`` would exist
+* If the following two lines of code were run, two instances of a ``Friend`` would exist
 
+    * ``Friend aFriend = new Friend("Bob", "Smith", "bsmith@gmail.com");``
     * ``Friend bFriend = new Friend("Jane", "Doe", "jdoe@gmail.com");``
+
 
 * ``aFriend`` would have a ``firstName`` of Bob
 * ``bFriend`` has a ``firstName`` of Jane
@@ -495,6 +497,7 @@ Creating an Instance of a Friend
     * Get ``aFriend``\'s first name
     * Use the ``toString`` method
     * Use the ``equals`` method
+
 
 .. code-block:: java
     :linenos:
