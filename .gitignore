@@ -29,9 +29,8 @@ workspace.xml
 # Build script
 build.sh
 
-# Test java and python files
-src/main/java/CompSci162.java
-src/main/java/SearchingMethods.java
+# Test java and python files/packages
+src/main/java/playground
 src/main/python/PythonExamples.py
 
 # venv
