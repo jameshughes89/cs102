@@ -343,7 +343,7 @@ Accessors
 .. literalinclude:: /../main/java/Friend.java
     :language: java
     :lineno-match:
-    :lines: 61-86
+    :lines: 44-68
 
 
 * There is a lot going on in this method
@@ -390,9 +390,11 @@ Accessors
     ``null``.
     `Have a look at the relevant javadocs <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Objects.html#equals(java.lang.Object,java.lang.Object)>`__
 
-    The below example makes use of the third option to be safe around ``null``, but realistically, based on the way the
-    ``Friend`` class is written, it is not possible for an instance of a ``Friend`` object to be created with ``null``
-    fields. In other words, the second option would be fine, but using the third option would still be more defensive.
+    The above example makes use of the third option to be safe around ``null``. This is important because, based on the
+    way the class is written, it is possible to have the fields reference ``null``. Consider creating a ``Friend``
+    object with the following --- ``new Friend(null, "Smith", "bsmith@gmail.com")``. This would make the field
+    ``firstName`` reference ``null``, meaning a call to ``this.firstName.equals(other.firstName)`` would result in a null pointer
+    exception.
 
 
 ``hashCode``
@@ -418,7 +420,7 @@ Accessors
 .. literalinclude:: /../main/java/Friend.java
     :language: java
     :lineno-match:
-    :lines: 88-91
+    :lines: 70-73
 
 
 
@@ -565,7 +567,7 @@ For Next Time
 
 
 Playing Code
-============
+------------
 
 * Download and play with
 
