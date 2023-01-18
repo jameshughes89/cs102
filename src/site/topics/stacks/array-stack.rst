@@ -110,8 +110,7 @@ Implementation
 
 .. literalinclude:: /../main/java/ArrayStack.java
     :language: java
-    :linenos:
-    :lineno-start: 11
+    :lineno-match:
     :lines: 11-15
     :emphasize-lines: 1
 
@@ -142,8 +141,7 @@ Constructors
 
 .. literalinclude:: /../main/java/ArrayStack.java
     :language: java
-    :linenos:
-    :lineno-start: 17
+    :lineno-match:
     :lines: 17-35
     :emphasize-lines: 5, 18
 
@@ -180,8 +178,7 @@ Constructors
 
 .. literalinclude:: /../main/java/ArrayStack.java
     :language: java
-    :linenos:
-    :lineno-start: 37
+    :lineno-match:
     :lines: 37-57
     :emphasize-lines: 1, 3, 4, 5, 15
 
@@ -209,8 +206,7 @@ Constructors
 
 .. literalinclude:: /../main/java/ArrayStack.java
     :language: java
-    :linenos:
-    :lineno-start: 59
+    :lineno-match:
     :lines: 59-76
     :emphasize-lines: 3, 4, 5, 14, 15, 16
 
@@ -252,8 +248,7 @@ Exceptional Situations
 
 .. literalinclude:: /../main/java/ArrayStack.java
     :language: java
-    :linenos:
-    :lineno-start: 78
+    :lineno-match:
     :lines: 78-86
     :emphasize-lines: 3
 
@@ -269,8 +264,7 @@ Exceptional Situations
 
 .. literalinclude:: /../main/java/ArrayStack.java
     :language: java
-    :linenos:
-    :lineno-start: 88
+    :lineno-match:
     :lines: 88-96
     :emphasize-lines: 6
 
@@ -285,8 +279,7 @@ Exceptional Situations
 
 .. literalinclude:: /../main/java/ArrayStack.java
     :language: java
-    :linenos:
-    :lineno-start: 98
+    :lineno-match:
     :lines: 98-117
     :emphasize-lines: 10
 
@@ -306,6 +299,14 @@ Exceptional Situations
 For Next Time
 =============
 
+* Finish reading Chapter 3
+
+    * 16 pages
+
+
+Playing Code
+------------
+
 * Download and play with
 
     * :download:`Stack </../main/java/Stack.java>`
@@ -314,16 +315,8 @@ For Next Time
     * :download:`ArrayStack playing code </../main/java/PlayingArrayStack.java>`
 
 
-* Finish reading Chapter 3
-
-    * 16 pages
-
-
-Playing Code
-============
-
 * If everything was done correctly, the following code from ``PlayingArrayStack`` should work
 
 .. literalinclude:: /../main/java/PlayingArrayStack.java
-   :language: java
-   :linenos:
+    :language: java
+    :lineno-match:

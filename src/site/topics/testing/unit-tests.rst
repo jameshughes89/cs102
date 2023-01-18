@@ -90,8 +90,7 @@ Testing the Friend Class
 
 .. literalinclude:: /../test/java/FriendTest.java
     :language: java
-    :linenos:
-    :lineno-start: 9
+    :lineno-match:
     :lines: 9-13
 
 
@@ -109,8 +108,7 @@ Testing the Friend Class
 
 .. literalinclude:: /../test/java/FriendTest.java
     :language: java
-    :linenos:
-    :lineno-start: 27
+    :lineno-match:
     :lines: 27-39
 
 
@@ -136,14 +134,21 @@ Testing the Friend Class
 
         .. literalinclude:: /../test/java/FriendTest.java
             :language: java
-            :linenos:
-            :lineno-start: 47
+            :lineno-match:
             :lines: 47-54
 
 
 
 For Next Time
 =============
+
+* Read Chapter 1 of the text
+
+    * 15 pages
+
+
+Playing Code
+------------
 
 * Download and play with
 
