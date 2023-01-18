@@ -33,8 +33,7 @@ Setting Fields and Writing the Constructor
 
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
-    :linenos:
-    :lineno-start: 1
+    :lineno-match:
     :lines: 1-33
 
 
@@ -127,8 +126,7 @@ Setting Fields and Writing the Constructor
 
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
-    :linenos:
-    :lineno-start: 35
+    :lineno-match:
     :lines: 35-67
     :emphasize-lines: 9, 10, 11
 
@@ -155,8 +153,7 @@ Setting Fields and Writing the Constructor
 
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
-    :linenos:
-    :lineno-start: 69
+    :lineno-match:
     :lines: 69-95
 
 
@@ -185,8 +182,7 @@ Setting Fields and Writing the Constructor
 
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
-    :linenos:
-    :lineno-start: 97
+    :lineno-match:
     :lines: 97-110
 
 
@@ -212,8 +208,7 @@ Setting Fields and Writing the Constructor
 
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
-    :linenos:
-    :lineno-start: 112
+    :lineno-match:
     :lines: 112-125
 
 * If the index is out of bounds, an exception is thrown
@@ -230,8 +225,7 @@ Setting Fields and Writing the Constructor
 
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
-    :linenos:
-    :lineno-start: 127
+    :lineno-match:
     :lines: 127-151
 
 
@@ -270,8 +264,7 @@ Setting Fields and Writing the Constructor
 
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
-    :linenos:
-    :lineno-start: 153
+    :lineno-match:
     :lines: 153-159
 
 
@@ -286,8 +279,7 @@ Setting Fields and Writing the Constructor
 
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
-    :linenos:
-    :lineno-start: 161
+    :lineno-match:
     :lines: 161-167
 
 
@@ -322,8 +314,7 @@ Setting Fields and Writing the Constructor
 
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
-    :linenos:
-    :lineno-start: 169
+    :lineno-match:
     :lines: 169-183
     :emphasize-lines: 11
 
@@ -341,8 +332,7 @@ Setting Fields and Writing the Constructor
 
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
-    :linenos:
-    :lineno-start: 185
+    :lineno-match:
     :lines: 185-202
 
 * Here, ``Arrays.equals`` is used to check the equality on the array
@@ -353,8 +343,7 @@ Setting Fields and Writing the Constructor
 
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
-    :linenos:
-    :lineno-start: 204
+    :lineno-match:
     :lines: 204-211
 
 
@@ -409,5 +398,5 @@ Playing Code
 * If everything was done correctly, the following code from ``PlayingObjects`` should work
 
 .. literalinclude:: /../main/java/PlayingObjects.java
-   :language: java
-   :linenos:
+    :language: java
+    :lineno-match:
