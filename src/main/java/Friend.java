@@ -41,23 +41,6 @@ public final class Friend {
         return String.format("Friend(%s, %s, %s)", firstName, lastName, email);
     }
 
-    
-    //    /**
-    //     * This equals is not included in the course content.
-    //     * <p>
-    //     * Sample equals method for comparing two friend objects. In this example, we will simply compare all fields.
-    //     * <p>
-    //     * This example is deliberately kept very simple and does not actually override the toString properly.
-    //     *
-    //     * @return True if the two Friend objects are equal, false otherwise
-    //     */
-    //    public boolean equals(Friend other) {
-    //        return this.firstName.equals(other.firstName) &&
-    //                this.lastName.equals(other.lastName) &&
-    //                this.email.equals(other.email);
-    //    }
-
-
     /**
      * Checks if two Friend objects are equal. Friend objects are considered equal if all their attributes are equal.
      *
@@ -80,8 +63,7 @@ public final class Friend {
         }
         // Cast o as a friend
         Friend other = (Friend) o;
-        return Objects.equals(this.firstName, other.firstName) &&
-                Objects.equals(this.lastName, other.lastName) &&
+        return Objects.equals(this.firstName, other.firstName) && Objects.equals(this.lastName, other.lastName) &&
                 Objects.equals(this.email, other.email);
     }
 
