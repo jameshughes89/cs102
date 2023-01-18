@@ -299,6 +299,14 @@ Exceptional Situations
 For Next Time
 =============
 
+* Finish reading Chapter 3
+
+    * 16 pages
+
+
+Playing Code
+------------
+
 * Download and play with
 
     * :download:`Stack </../main/java/Stack.java>`
@@ -306,14 +314,6 @@ For Next Time
     * :download:`ArrayStackTest </../test/java/ArrayStackTest.java>`
     * :download:`ArrayStack playing code </../main/java/PlayingArrayStack.java>`
 
-
-* Finish reading Chapter 3
-
-    * 16 pages
-
-
-Playing Code
-============
 
 * If everything was done correctly, the following code from ``PlayingArrayStack`` should work
 

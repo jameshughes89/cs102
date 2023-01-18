@@ -201,15 +201,20 @@ Nesting in LinkedStack
 For Next Time
 =============
 
-* Download and play with the :download:`LinkedStack </../main/java/LinkedStack.java>` code
-* Download and run the :download:`LinkedStackTest </../test/java/LinkedStackTest.java>` tests
 * Read Chapter 4 Section 6
 
     * 13 pages
 
 
 Playing Code
-============
+------------
+
+* Download and play with
+
+    * :download:`LinkedStack </../main/java/LinkedStack.java>`
+    * :download:`LinkedStackTest </../test/java/LinkedStackTest.java>`
+    * :download:`LinkedStack playing code </../main/java/PlayingLinkedStack.java>`
+
 
 * One could use the same code from ``PlayingArrayStack`` to play with the ``LinkedStack``
 * Only need to make one change

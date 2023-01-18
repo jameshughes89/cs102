@@ -142,6 +142,14 @@ Testing the Friend Class
 For Next Time
 =============
 
+* Read Chapter 1 of the text
+
+    * 15 pages
+
+
+Playing Code
+------------
+
 * Download and play with
 
     * :download:`Friend </../main/java/Friend.java>`
