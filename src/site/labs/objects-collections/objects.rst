@@ -35,7 +35,7 @@ A ``Course`` is a simple object to keeps track of data.
 
 
 #. Write a single constructor to take and assign values to the fields
-#. Write accessors methods for the three fields
+#. Write accessor methods for the three fields
 
     * For example, ``getCourseCode``
 

@@ -2,53 +2,85 @@
 ArrayQueue
 **********
 
-* We need to think of:
+* Things needed for the implementation
+
     * A container
     * A way to keep track of the front/head
     * A way to keep track of the rear/tail
     * A way to keep track of the size
 
-* We used a linked structure last time
-* Let's now use an array...
-* But how...
+
+* A linked structure was used as a container for a ``Queue``
+* Now an array will be used to implement the ``Queue``
 
 
 Idea #1
 =======
 
 * Use an array for the container
-* Keep track of the ``front`` by simply having it always be index ``0``
+* Keep track of the front by simply having it always be index ``0``
 * Keep track of the ``rear`` index
-* Size will conveniently be ``rear``
+* Size will conveniently be equal to ``rear``
 
-.. image:: arrayqueue_first_idea0.png
-   :width: 500 px
-   :align: center
 
-* All adding happens at the ``rear`` end
+.. figure:: arrayqueue_first_idea0.png
+    :width: 500 px
+    :align: center
+
+    An example of idea #1's ``ArrayQueue`` containing four elements. This implementation requires that index ``0``
+    always be the front. Note the value stored in ``rear`` refers to the next available spot in the array. Also notice
+    that the value in ``rear`` corresponds to the number of elements currently in the queue.
+
+
+* All adding (``enqueue``) happens at the ``rear`` end
 * Add the element to index ``rear``
 * Increment ``rear``
 
-.. image:: arrayqueue_first_idea1.png
-   :width: 500 px
-   :align: center
 
-* ``dequeue`` always happens at index ``0``
+.. figure:: arrayqueue_first_idea1.png
+    :width: 500 px
+    :align: center
+
+    The state of idea #1's ``ArrayQueue`` after an element was enqueued. Note that the element was added at index
+    ``rear`` and the value of ``rear`` was increased such that it refers to the next available spot in the array.
+
+
+* All removing (``dequeue``) happens at index ``0``
 * Requires that elements are shuffled down ``1`` index
 * Decrement ``rear``
 
-.. image:: arrayqueue_first_idea2.png
-   :width: 500 px
-   :align: center
+
+.. figure:: arrayqueue_first_idea2.png
+    :width: 500 px
+    :align: center
+
+    The state of idea #1's ``ArrayQueue`` after an element was dequeued. Note that the element at index ``0`` was
+    removed and all elements moved down one index in the array. Further, the value of ``rear`` was decreased by one.
+
+
 
 Discussion
 ----------
 
 * Will this implementation work?
+
     * Is it *correct*
-* Knowing that this is an array implementation, will we ever need to call ``expandCapacity``?
-* What is the computational complexity of this ``enqueue``?
-* What is the computational complexity of this ``dequeue``?
+
+
+* Knowing that this is an array implementation, will something like an ``expandCapacity`` be required?
+* What is the computational complexity of an ``enqueue`` with this idea?
+
+    * Amortized :math:`O(1)`
+
+
+* What is the computational complexity of a ``dequeue`` with this idea?
+
+    * :math:`O(n)` as it requires all :math:`n` elements be shuffle down one index in the array
+
+
+* The drawback of idea #1 is a :math:`O(n)` ``dequeue``
+
+    * The ``LinkedQueue`` implementation has an :math:`O(1)` ``dequeue``
 
 
 Idea #2
@@ -59,36 +91,68 @@ Idea #2
 * Keep track of the ``rear`` index
 * Size will conveniently be ``rear - front``
 
-.. image:: arrayqueue_second_idea0.png
-   :width: 500 px
-   :align: center
 
-* All adding happens at the ``rear`` end
+.. figure:: arrayqueue_second_idea0.png
+    :width: 500 px
+    :align: center
+
+    An example of idea #2's ``ArrayQueue`` containing four elements. This implementation keeps track of the ``front``
+    and ``rear`` indices. Note the value stored in ``rear`` refers to the next available spot in the array. Also notice
+    that the difference between ``rear`` and ``front`` corresponds to the number of elements currently in the queue.
+
+
+* All adding (``enqueue``) happens at the ``rear`` end
 * Add the element to index ``rear``
 * Increment ``rear``
 
-.. image:: arrayqueue_second_idea1.png
-   :width: 500 px
-   :align: center
 
-* ``dequeue`` always happens at index ``front``
+.. figure:: arrayqueue_second_idea1.png
+    :width: 500 px
+    :align: center
+
+    The state of idea #1's ``ArrayQueue`` after an element was enqueued. Note that the element was added at index
+    ``rear`` and the value of ``rear`` was increased such that it refers to the next available spot in the array.
+
+
+* All removing (``dequeue``) happens at index ``front``
+* Remove the element at index ``front``
 * Increment ``front``
 
 
-.. image:: arrayqueue_second_idea2.png
-   :width: 500 px
-   :align: center
+.. figure:: arrayqueue_second_idea2.png
+    :width: 500 px
+    :align: center
+
+    The state of idea #2's ``ArrayQueue`` after an element was dequeued. Note that the element at index ``front`` was
+    removed and the value of ``front`` increased by one. Note that, with the exception of the removed element, no other
+    elements were required to be moved within the array.
+
+
 
 Discussion
 ----------
 
 * Will this implementation work?
+
     * Is it *correct*
-* Will we ever need to call ``expandCapacity``?
-* What is the computational complexity of this ``enqueue``?
-* What is the computational complexity of this ``dequeue``?
-* How often will we call ``expandCapacity`` relative to idea #1?
-* What drawback do you see?
+
+
+* Knowing that this is an array implementation, will something like an ``expandCapacity`` be required?
+* What is the computational complexity of an ``enqueue`` with this idea?
+
+    * Amortized :math:`O(1)`
+
+
+* What is the computational complexity of a ``dequeue`` with this idea?
+
+    * :math:`O(1)`
+
+
+* The drawback of idea #2 is the wasted space caused by ``dequeue``
+
+    * All indices before ``front`` are wasted
+    * ``expandCapacity`` would need to be called after :math:`n + 1` enqueues despite the number of elements actually in the queue
+
 
 
 Idea #3
