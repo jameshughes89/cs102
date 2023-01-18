@@ -66,7 +66,9 @@ JUnit
     * A simple way to do it is to write ``@Test`` in the new class and press Alt + Enter
 
 
-#. Select *Add 'JUnit5....*
+#. Select *Add 'JUnit5...*
+
+    * Do **not** select *Junit 4...* as that will cause issues with the tests
 
     .. figure:: alt_enter.png
         :width: 600 px
@@ -90,8 +92,7 @@ Testing the Friend Class
 
 .. literalinclude:: /../test/java/FriendTest.java
     :language: java
-    :linenos:
-    :lineno-start: 9
+    :lineno-match:
     :lines: 9-13
 
 
@@ -109,8 +110,7 @@ Testing the Friend Class
 
 .. literalinclude:: /../test/java/FriendTest.java
     :language: java
-    :linenos:
-    :lineno-start: 27
+    :lineno-match:
     :lines: 27-39
 
 
@@ -131,19 +131,26 @@ Testing the Friend Class
 
     The above tests for equality are sufficient for the purposes of this course, but they could be improved. Within the
     provided ``FriendTest`` class is a test method that makes use of ``EqualsVerifier``, which helps with testing
-    equality on objects. Although this improved equality test is provided, the simpler equality tests are sufficient
-    here. Do note that ``EqualsVerifier`` is an external dependency that is not included with Java or IntelliJ. 
+    equality on objects. Although this improved equality test is provided, the simpler equality tests are fine here. Do
+    note that ``EqualsVerifier`` is an external dependency that is not included with Java or IntelliJ.
 
         .. literalinclude:: /../test/java/FriendTest.java
             :language: java
-            :linenos:
-            :lineno-start: 47
+            :lineno-match:
             :lines: 47-54
 
 
 
 For Next Time
 =============
+
+* Read Chapter 1 of the text
+
+    * 15 pages
+
+
+Playing Code
+------------
 
 * Download and play with
 
