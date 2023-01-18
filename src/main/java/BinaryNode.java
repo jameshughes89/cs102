@@ -1,8 +1,8 @@
 /**
- * A BinaryNode class for a linked binary tree structure. Each BinaryNode contains a nullable reference to data of type
- * T, and a reference to the left and right child BinaryNodes, which may be null references.
+ * A node class for a linked binary tree structure. Each node contains a nullable reference to data of type T, and a
+ * reference to the left and right child nodes, which may be null references.
  *
- * @param <T> Type of the data being stored in the BinaryNode
+ * @param <T> Type of the data being stored in the node.
  */
 public class BinaryNode<T> {
 
