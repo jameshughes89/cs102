@@ -131,8 +131,8 @@ Testing the Friend Class
 
     The above tests for equality are sufficient for the purposes of this course, but they could be improved. Within the
     provided ``FriendTest`` class is a test method that makes use of ``EqualsVerifier``, which helps with testing
-    equality on objects. Although this improved equality test is provided, the simpler equality tests are sufficient
-    here. Do note that ``EqualsVerifier`` is an external dependency that is not included with Java or IntelliJ. 
+    equality on objects. Although this improved equality test is provided, the simpler equality tests are fine here. Do
+    note that ``EqualsVerifier`` is an external dependency that is not included with Java or IntelliJ.
 
         .. literalinclude:: /../test/java/FriendTest.java
             :language: java
