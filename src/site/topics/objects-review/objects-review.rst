@@ -165,8 +165,7 @@ In Java, the class' declaration of fields, constructor, and assigning values to 
 
 .. literalinclude:: /../main/java/Friend.java
     :language: java
-    :linenos:
-    :lineno-start: 3
+    :lineno-match:
     :lines: 3-26
     :emphasize-lines: 8, 9, 10, 21, 22, 23
 
@@ -232,8 +231,7 @@ Accessors
 
 .. literalinclude:: /../main/java/Friend.java
     :language: java
-    :linenos:
-    :lineno-start: 28
+    :lineno-match:
     :lines: 28-38
 
 
@@ -290,8 +288,7 @@ Accessors
 
 .. literalinclude:: /../main/java/Friend.java
     :language: java
-    :linenos:
-    :lineno-start: 40
+    :lineno-match:
     :lines: 40-42
 
 
@@ -345,8 +342,7 @@ Accessors
 
 .. literalinclude:: /../main/java/Friend.java
     :language: java
-    :linenos:
-    :lineno-start: 61
+    :lineno-match:
     :lines: 61-86
 
 
@@ -423,8 +419,7 @@ Accessors
 
 .. literalinclude:: /../main/java/Friend.java
     :language: java
-    :linenos:
-    :lineno-start: 88
+    :lineno-match:
     :lines: 88-91
 
 
