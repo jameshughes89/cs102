@@ -69,8 +69,7 @@ Implementation
 
 .. literalinclude:: /../main/java/LinkedStack.java
     :language: java
-    :linenos:
-    :lineno-start: 10
+    :lineno-match:
     :lines: 10-21
 
 
@@ -83,8 +82,7 @@ Implementation
 
 .. literalinclude:: /../main/java/LinkedStack.java
     :language: java
-    :linenos:
-    :lineno-start: 23
+    :lineno-match:
     :lines: 23-30
 
 
@@ -97,8 +95,7 @@ Implementation
 
 .. literalinclude:: /../main/java/LinkedStack.java
     :language: java
-    :linenos:
-    :lineno-start: 32
+    :lineno-match:
     :lines: 32-49
 
 
@@ -111,8 +108,7 @@ Implementation
 
 .. literalinclude:: /../main/java/LinkedStack.java
     :language: java
-    :linenos:
-    :lineno-start: 51
+    :lineno-match:
     :lines: 51-59
 
 
@@ -126,8 +122,7 @@ Implementation
 
 .. literalinclude:: /../main/java/LinkedStack.java
     :language: java
-    :linenos:
-    :lineno-start: 61
+    :lineno-match:
     :lines: 61-71
 
 
@@ -139,8 +134,7 @@ Implementation
 
 .. literalinclude:: /../main/java/LinkedStack.java
     :language: java
-    :linenos:
-    :lineno-start: 73
+    :lineno-match:
     :lines: 73-106
 
 
@@ -199,8 +193,7 @@ Nesting in LinkedStack
 
 .. literalinclude:: /../main/java/LinkedStack.java
     :language: java
-    :linenos:
-    :lineno-start: 108
+    :lineno-match:
     :lines: 108-143
 
 
@@ -208,15 +201,20 @@ Nesting in LinkedStack
 For Next Time
 =============
 
-* Download and play with the :download:`LinkedStack </../main/java/LinkedStack.java>` code
-* Download and run the :download:`LinkedStackTest </../test/java/LinkedStackTest.java>` tests
 * Read Chapter 4 Section 6
 
     * 13 pages
 
 
 Playing Code
-============
+------------
+
+* Download and play with
+
+    * :download:`LinkedStack </../main/java/LinkedStack.java>`
+    * :download:`LinkedStackTest </../test/java/LinkedStackTest.java>`
+    * :download:`LinkedStack playing code </../main/java/PlayingLinkedStack.java>`
+
 
 * One could use the same code from ``PlayingArrayStack`` to play with the ``LinkedStack``
 * Only need to make one change
@@ -228,5 +226,5 @@ Playing Code
 
 .. literalinclude:: /../main/java/PlayingLinkedStack.java
     :language: java
-    :linenos:
+    :lineno-match:
     :emphasize-lines: 6
