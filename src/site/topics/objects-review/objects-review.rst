@@ -343,7 +343,7 @@ Accessors
 .. literalinclude:: /../main/java/Friend.java
     :language: java
     :lineno-match:
-    :lines: 61-86
+    :lines: 44-68
 
 
 * There is a lot going on in this method
@@ -420,7 +420,7 @@ Accessors
 .. literalinclude:: /../main/java/Friend.java
     :language: java
     :lineno-match:
-    :lines: 88-91
+    :lines: 70-73
 
 
 
