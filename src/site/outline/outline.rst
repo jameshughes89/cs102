@@ -94,23 +94,35 @@ Below is a list of topics in no particular order that may or may not be covered 
 Student Evaluation (Tentative Dates)
 ====================================
 
-+------------------------+------------+---------------------+
-|                        | Worth      | Due                 |
-+========================+============+=====================+
-| Assignment 1           | 5%         | Late January-ish    |
-+------------------------+------------+---------------------+
-| Assignment 2           | 5%         | Mid February-ish    |
-+------------------------+------------+---------------------+
-| Assignment 3           | 5%         | Mid March-ish       |
-+------------------------+------------+---------------------+
-| Assignment 4           | 5%         | Early April-ish     |
-+------------------------+------------+---------------------+
-| Test 1                 | 20%        | Late January-ish    |
-+------------------------+------------+---------------------+
-| Test 2                 | 20%        | Late February-ish   |
-+------------------------+------------+---------------------+
-| Final Exam             | 40%        | TBA                 |
-+------------------------+------------+---------------------+
+.. list-table:: Final Grade Breakdown
+    :widths: 50 50 50
+    :header-rows: 1
+
+    * - Deliverable
+      - Percentage
+      - Due Date
+    * - Assignment 1
+      - 5%
+      - Late January-ish
+    * - Assignment 2
+      - 5%
+      - Mid February-ish
+    * - Assignment 3
+      - 5%
+      - Mid March-ish
+    * - Assignment 4
+      - 5%
+      - Early April-ish
+    * - Test 1
+      - 20%
+      - **February 1st, in class**
+    * - Test 2
+      - 20%
+      - Late February-ish
+    * - Final Exam
+      - 40%
+      - TBD
+
 
 
 Assignments

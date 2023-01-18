@@ -99,6 +99,12 @@ instances of the ``Country`` class.
 
 #. Write accessor/getter methods for each class field
 #. Write a method to calculate and return the population density (``population/area``)
+
+    * With floating point numbers (doubles included), division by zero results in a special value --- ``Infinity``
+    * If this method is called on a ``Country`` object with an ``area``of zero, it should return ``Infinity``
+    * In other words, this method should not perform any special check for ``area`` being zero
+
+
 #. Write a ``toString`` method to return a string following the pattern ``ClassName(field=value, field=value, ... )``
 
     * For example --- ``Country(name=Canada, continent=North America, population=34207000, area=9976140.00)``
@@ -116,6 +122,11 @@ instances of the ``Country`` class.
 #. Run the unit tests to ensure the ``Country`` class works properly
 
     * It may be necessary to add JUnit to the class path, as described in the :doc:`testing topic </topics/testing/unit-tests>`
+
+    .. warning::
+
+        Be sure to use JUnit 5. If you use JUnit 4, the tests will not work. Further, if you select JUnit 4 by accident,
+        changing the project to use JUnit 5 can be difficult.
 
 
 
