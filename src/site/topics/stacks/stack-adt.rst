@@ -123,7 +123,7 @@ Maze Solving
         :width: 250 px
         :align: center
 
-        A 6x6 maze. The green and red cells represent the start and end locations respectively. Black cells represent
+        A 6x7 maze. The green and red cells represent the start and end locations respectively. Black cells represent
         walls and light blue represent open spaces.
 
 
@@ -328,11 +328,16 @@ There has to be a Better Way!
                     Stack<Friend> myFriendStack = new ArrayStack<>();
 
 
+.. warning::
+
+    It is not possible to use primitive types (``int``, ``double``, ``boolean``, etc.) in generics. Instead, use the
+    object version of the primitive type (``Integer``, ``Double``, ``Boolean``, etc).
+
 
 For Next Time
 =============
 
-* Checkout the :doc:`Postfix expression evaluation stack example. <postfix>`
+* Checkout the :doc:`Postfix expression evaluation stack example <postfix>`
 * Read Chapter 3 Sections 2 -- 6
 
     * 13 pages
