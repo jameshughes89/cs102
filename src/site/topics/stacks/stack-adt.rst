@@ -328,6 +328,11 @@ There has to be a Better Way!
                     Stack<Friend> myFriendStack = new ArrayStack<>();
 
 
+.. warning::
+
+    It is not possible to use primitive types (``int``, ``double``, ``boolean``, etc.) in genetics. The workaround is to
+    use the object version of the primitive type (``Integer``, ``Double``, ``Boolean``, etc).
+
 
 For Next Time
 =============
