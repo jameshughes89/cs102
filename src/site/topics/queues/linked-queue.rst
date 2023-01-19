@@ -146,7 +146,7 @@ Enqueuing into a Nonempty Queue
         * ``front = front.getNext()`` will set ``front`` to ``null`` since ``front.getNext()`` in this situation would return ``null``
 
     * The trouble is with ``rear`` --- typically ``rear`` is left alone with a ``dequeue``
-    * However, if the ``dequeue`` resulted in an empty queue, it would be left referencing the ``Node`` that was just removed
+    * However, if the ``dequeue`` resulted in an empty queue, ``rear`` would be left referencing the ``Node`` that was just removed
     * The solution is to simply set it to ``null`` if the stack is empty after the dequeue
 
 
