@@ -152,10 +152,11 @@ Enqueuing into a Nonempty Queue
 
 .. note::
 
-    With the current implementation of the ``LinkedQueue``, missing this edge case would not actually cause a problem
-    with the functionality of the queue. However, it is still useful to remove any *dangling* edge cases.
+    With the provided implementation of the ``LinkedQueue``, missing this edge case in the ``dequeue`` would not
+    actually cause a problem since the ``enqueue`` also checks for the empty case. However, it is still strongly
+    recommended to remove any *dangling* edge cases.
 
-    Remember, it's not only about having correct code, but correct and well written code.
+    Remember, it's not only about having correct code, but correct, understandable, and well written code.
 
 
 * What is the computational complexity of a ``dequeue``?
