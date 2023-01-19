@@ -154,7 +154,11 @@ Enqueuing into a Nonempty Queue
 
     Although not true in general, with the provided implementation of the ``LinkedQueue``, missing this edge case in the
     ``dequeue`` would not actually cause a problem since the ``enqueue`` was written such that it also checks for the
-    empty case. However, it is still strongly recommended to remove any *dangling* edge cases.
+    empty case.
+
+    However, ignoring this edge case in the ``dequeue`` because it is caught in the ``enqueue`` only further couples the
+    methods together. It is better to have independent functional units be correct. Further, removing *dangling* edge
+    cases is good practice.
 
     Remember, it's not only about having correct code, but correct, understandable, and well written code.
 
