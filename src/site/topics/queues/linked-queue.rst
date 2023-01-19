@@ -152,9 +152,9 @@ Enqueuing into a Nonempty Queue
 
 .. note::
 
-    With the provided implementation of the ``LinkedQueue``, missing this edge case in the ``dequeue`` would not
-    actually cause a problem since the ``enqueue`` also checks for the empty case. However, it is still strongly
-    recommended to remove any *dangling* edge cases.
+    Although not true in general, with the provided implementation of the ``LinkedQueue``, missing this edge case in the
+    ``dequeue`` would not actually cause a problem since the ``enqueue`` was written such that it also checks for the
+    empty case. However, it is still strongly recommended to remove any *dangling* edge cases.
 
     Remember, it's not only about having correct code, but correct, understandable, and well written code.
 
