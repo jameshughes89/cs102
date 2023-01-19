@@ -2,71 +2,52 @@
 Stacks
 ******
 
-* Feel free to use your laptop if you have it
-* I strongly encourage you to work with others in the lab
+* Feel free to use your laptop
+* You are strongly encourage to work with others
 
-    * When you get stuck, do me a favour and ask those sitting around you for help
-    * I want people to get used to working together in the labs
-    * Peer teaching and peer learning is super effective
+    * When you get stuck, ask those sitting around you for help
+    * Get used to working together in the labs
+    * Peer teaching and peer learning has been empirically shown to be very effective
 
 
 Playing with Stacks
 ===================
 
-We're going to implement an ``ArrayStack`` based on what we learned in class and use it to solve a simple problem.
+The goal is to implement an ``ArrayStack`` based on the the details discussed in the
+:doc:`Stack Interface Topic </topics/stacks/array-stack>` and the :doc:`ArrayStack Topic </topics/stacks/array-stack>`.
 
 
-Implementing a Stack
---------------------
+Implementing an ``ArrayStack``
+------------------------------
 
-#. Create a project and make a class where you will put your main method.
-
-#. Download the :download:`Stack interface <../../../main/java/Stack.java>` and add it to your project.
-
-#. Create a new class for our ``ArrayStack`` implementation.
-
-#. :doc:`Complete your ArrayStack based on the course notes. </topics/stacks/array-stack>`
+#. Download the :download:`Stack interface <../../../main/java/Stack.java>` and add it to the ``src`` folder
+#. Create an ``ArrayStack`` class for the implementation
+#. Complete the ``ArrayStack`` class based on the :doc:`ArrayStack Topic's description </topics/stacks/array-stack>`
 
     .. note::
 
-        I realize you can simply download the :download:`ArrayStack <../../../main/java/ArrayStack.java>` code and
-        copy/paste, but this defeats the purpose. I want you to slowly and deliberately implement each function and take
-        the time to understand the details.
+        Obviously one can simply download the :download:`ArrayStack <../../../main/java/ArrayStack.java>` code and
+        copy/paste it into the ``ArrayStack`` class, but this defeats the purpose of the lab. Instead, slowly and
+        deliberately implement each function and take the time to understand the details.
 
 
-#. Test your ``ArrayStack`` with the following.
+#. Add the :download:`ArrayStackTest </../test/java/ArrayStackTest.java>` unit tests to the project in a ``test`` folder
 
-    .. code-block:: java
-
-            public static void main(String[] args) {
-                Stack<Integer> myStack = new ArrayStack<>();
-
-                System.out.println(myStack);
-
-                for (int i = 0; i < 10; ++i) {
-                    myStack.push(i);
-                }
-
-                System.out.println(myStack);
-
-                while (!myStack.isEmpty()) {
-                    System.out.println(myStack.pop());
-                }
-                System.out.println(myStack);
-            }
+    * :doc:`Refer to the relevant topic on unit testing </topics/testing/unit-tests>`
+    * :doc:`Refer to the relevant topic on unit testing collections </topics/testing/unit-test-collections>`
 
 
-#. Now create an instance of a stack for characters and rewrite the test code above to test its functionality.
+#. Run the ``ArrayStackTest`` unit tests and ensure all tests pass
+
 
 
 Reversing a String
 ------------------
 
-#. Write a method that takes a string and returns a new string that is the reverse of the original.
+#. Write a function called ``reverseString`` that takes a string and returns the reverse of the original
 
-    * This function **must** use a stack for the reversing of the string
-    * I have provided you with a skeletal method and some simple testing code below
-
+    * This function must use a stack for the reversing of the string
+    * Below is a skeletal method and some simple testing code
 
     .. code-block:: java
 
@@ -80,18 +61,17 @@ Reversing a String
 
         public static String reverseString(String originalString) {
             Stack<Character> characterStack = new ArrayStack<>();
-            String newString = "";
+            StringBuilder stringBuilder = new StringBuilder();
 
             // Add Code Here
 
-            return newString;
+            return stringBuilder.toString();
         }
+
 
 
 Kattis Problems
 ===============
-
-Recommended Kattis Problems (don't worry, you don’t need to do all of them or anything):
 
 #. https://open.kattis.com/problems/quadrant
 #. https://open.kattis.com/problems/judgingmoose
