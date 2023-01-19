@@ -59,7 +59,7 @@ public class ContactList {
         Friend[] newFriends = new Friend[friends.length * 2];
 
         // Copy over the contents of the friends array to the new bigger friends array
-        for (int i = 0; i < friends.length; ++i) {
+        for (int i = 0; i < friends.length; i++) {
             newFriends[i] = friends[i];
         }
         // Have friends now reference the new friends
@@ -85,7 +85,7 @@ public class ContactList {
      */
     private int find(Friend friend) {
         // Linear search for the friend we are trying to find
-        for (int i = 0; i < size(); ++i) {
+        for (int i = 0; i < size(); i++) {
             if (Objects.equals(friend, friends[i])) {
                 return i;
             }
