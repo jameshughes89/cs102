@@ -61,7 +61,7 @@ Implementation
     :lines: 10-23
 
 
-* Like the ``Stack`` implementations, the ``LinkedQueue`` implements the ``Queue interface
+* Like the ``Stack`` implementations, the ``LinkedQueue`` implements the ``Queue`` interface
 * The constructor creates an empty queue
 * Both ``front`` and ``rear`` reference ``null`` since there are no ``Node`` objects containing any elements
 
