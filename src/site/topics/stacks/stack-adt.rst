@@ -123,7 +123,7 @@ Maze Solving
         :width: 250 px
         :align: center
 
-        A 6x6 maze. The green and red cells represent the start and end locations respectively. Black cells represent
+        A 6x7 maze. The green and red cells represent the start and end locations respectively. Black cells represent
         walls and light blue represent open spaces.
 
 
