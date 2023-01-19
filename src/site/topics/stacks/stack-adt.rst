@@ -332,7 +332,7 @@ There has to be a Better Way!
 For Next Time
 =============
 
-* Checkout the :doc:`Postfix expression evaluation stack example. <postfix>`
+* Checkout the :doc:`Postfix expression evaluation stack example <postfix>`
 * Read Chapter 3 Sections 2 -- 6
 
     * 13 pages
