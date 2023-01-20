@@ -156,12 +156,6 @@ Enqueuing into a Nonempty Queue
     ``dequeue`` would not actually cause a problem since the ``enqueue`` was written such that it also checks for the
     empty case.
 
-    However, ignoring this edge case in the ``dequeue`` because it is caught in the ``enqueue`` only further couples the
-    methods together. It is better to have independent functional units be correct. Further, removing *dangling* edge
-    cases is good practice.
-
-    Remember, it's not only about having correct code, but correct, understandable, and well written code.
-
 
 * What is the computational complexity of a ``dequeue``?
 
