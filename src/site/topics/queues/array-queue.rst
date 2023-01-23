@@ -458,77 +458,31 @@ Testing
     exercise the specific implementation we have in order to ensure the interface is implemented correctly.
 
 
-For next time
+For Next Time
 =============
 
-* Download and play with the :download:`ArrayQueue </../main/java/ArrayQueue.java>` code
-* Download and run the :download:`ArrayQueueTest </../test/java/ArrayQueueTest.java>` tests
 * Read Chapter 5 Section 7
     * 7 pages
 
 
 Playing Code
-============
+------------
 
-.. code-block:: java
+* Download and play with
 
-        // Create a ArrayQueue
-        Queue<Integer> myQueue = new ArrayQueue<>(5);
+    * :download:`ArrayQueue </../main/java/ArrayQueue.java>` code
+    * :download:`ArrayQueueTest </../test/java/ArrayQueueTest.java>` tests
+    * :download:`ArrayQueue playing code </../main/java/PlayingArrayQueue.java>`
 
-        // Check queue is empty
-        System.out.println(myQueue.size());
-        System.out.println(myQueue.isEmpty());
-        System.out.println(myQueue);
 
-        // Test enqueue
-        myQueue.enqueue(0);
-        myQueue.enqueue(1);
-        myQueue.enqueue(2);
-        myQueue.enqueue(3);
-        myQueue.enqueue(4);
-        System.out.println(myQueue.size());
-        System.out.println(myQueue.isEmpty());
-        System.out.println(myQueue);
+* One could use the same code from ``PlayingLinkedQueue`` to play with the ``ArrayQueue``
+* Only need to make one change
 
-        // Test enqueue more to check expandCapacity
-        myQueue.enqueue(10);
-        myQueue.enqueue(11);
-        myQueue.enqueue(12);
-        myQueue.enqueue(13);
-        myQueue.enqueue(14);
-        System.out.println(myQueue.size());
-        System.out.println(myQueue.isEmpty());
-        System.out.println(myQueue);
+    * ``LinkedQueue`` -> ``ArrayQueue``
 
-        // Test first
-        System.out.println(myQueue.first());
-        System.out.println(myQueue.size());
-        System.out.println(myQueue.isEmpty());
-        System.out.println(myQueue);
 
-        // Test dequeue
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.size());
-        System.out.println(myQueue.isEmpty());
-        System.out.println(myQueue);
+* If everything was done correctly, the following code from ``PlayingArrayQueue`` should work
 
-        // Test first and dequeue throwing exception
-        try {
-            myQueue.first();
-        } catch (NoSuchElementException e) {
-            e.printStackTrace();
-        }
-        try {
-            myQueue.dequeue();
-        } catch (NoSuchElementException e) {
-            e.printStackTrace();
-        }
+.. literalinclude:: /../main/java/PlayingLinkedQueue.java
+   :language: java
+   :linenos:
