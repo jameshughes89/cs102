@@ -158,10 +158,11 @@ Discussion
 Idea #3
 =======
 
-* An array for the container
+* Use an array for the container
 * Keep track of the ``front`` index
 * Keep track of the ``rear`` index
-* If there is space at the front of the array, loop the indices back to ``0`` once we hit the end
+* If there are empty indices before the ``front``, loop the ``rear`` back to ``0`` when the end of the array is hit
+
 
 "Circular Array"
 ----------------
