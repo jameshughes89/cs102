@@ -278,32 +278,32 @@ Modulo --- ``%``
 Discussion
 ----------
 
-* With this special expression for updating the ``rear``, do we need it for updating the ``front``?
-* With this idea, will we ever run out of room in our array?
+* Does the strategy for updating ``front`` need to also be changed?
+* Will this "circular" array ever run out of room?
+
 
 .. warning::
 
     Sometimes, *good enough is good enough*.
 
-    In this ``ArrayQueue`` implementation scenario, idea #3 is quite clearly the superior option and is not overly
-    difficult to implement. However, as you continue in computer science and work on more complex problems, sometimes
-    ease of implementation and maintainability become very important.
+    With this ``ArrayQueue`` implementation scenario, idea #3 is quite clearly the superior option and is not overly
+    difficult to implement. However, as one continues in computer science and works on more complex problems, sometimes
+    ease of implementation and maintainability becomes very important.
 
-    Better algorithms always exist, and a subpar implementation may do the trick, especially when your problem space is
+    Better algorithms always exist, but a subpar implementation may do the trick, especially when the problem space is
     small enough that performance doesn't matter.
 
-    Computational complexity is very important, but sometimes in practice we may lose the forrest through the trees. If
-    you can change your algorithm from :math:`O(n^{2})` to :math:`O(n)`, then you should probably do it. But then again,
-    if the updated algorithm will take you a day and you only need to run the algorithm once on a small problem, perhaps
-    :math:`O(n^{2})` is good enough.
+    Computational complexity is very important, but sometimes in practice one may lose the forrest through the trees. If
+    an algorithm can be changed from :math:`O(n^{2})` to :math:`O(n)`, then do it. But then again, if the updated
+    algorithm will take a day to implement and it only needs to be run once on a small problem, perhaps :math:`O(n^{2})`
+    is good enough.
 
-    Even worse, if you're trying to save a few *FLOPS* here and there, great, but if that's distracting you from other
-    more important issues, perhaps you should move on.
+    Even worse, trying to save a few *FLOPS* here and there is great and all, but if that's distracting someone from
+    other more important issues, perhaps they should move on.
 
     Donald Knuth, a very famous computer scientists, says:
 
         *Programmers waste enormous amounts of time thinking about, or worrying about, the speed of noncritical parts of their programs, and these attempts at efficiency actually have a strong negative impact when debugging and maintenance are considered. We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil. Yet we should not pass up our opportunities in that critical 3%.*
-
 
 
 
