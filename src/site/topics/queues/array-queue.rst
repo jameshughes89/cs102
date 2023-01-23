@@ -164,58 +164,65 @@ Idea #3
 * If there are empty indices before the ``front``, loop the ``rear`` back to ``0`` when the end of the array is hit
 
 
-"Circular Array"
+"Circular" Array
 ----------------
 
-* We can *pretend* our array is a circle
-    * It's still a linear array, but that's OK
+* Pretend the array is a circle
+* For example, given an array with a capacity of ``n``
+* The indices' order would be
 
-* For example, pretend we have an array with a capacity of ``n``
-* The indices order would be
+    ``..., 0, 1, 2, 3, ..., n-2, n-1, 0, 1, 2, 3, ..., n-2, n-1, 0, 1, 2, 3, ...``
 
-    ``0, 1, 2, 3, 4, ..., n-2, n-1, 0, 1, 2, 3, 4, ..., n-2, n-1, 0, 1, 2, 3, 4, ...``
 
-* The index that comes before ``n-1`` is ``n-2``
 * The index that comes after ``n-1`` is ``0``
 * The index that comes before ``0`` is ``n-1``
-* The index that comes after ``0`` is ``1``
 
-* Take this "circular array" with 7 things in it
+.. figure:: arrayqueue_circle0.png
+    :width: 500 px
+    :align: center
 
-.. image:: arrayqueue_circle0.png
-   :width: 500 px
-   :align: center
-
-* If we ``dequeue`` 5 times, we end up with this
-
-.. image:: arrayqueue_circle1.png
-   :width: 500 px
-   :align: center
-
-* And after 8 more ``enqueues`` we have this
-
-.. image:: arrayqueue_circle2.png
-   :width: 500 px
-   :align: center
+    Example "circular" array with a capacity of 13. This figure shows the array containing seven elements stored in
+    indices ``0`` -- ``6``. Within the context of the ``ArrayQueue``, ``front`` would be index ``0`` and ``rear`` would
+    be ``7``.
 
 
-* With this idea, we can think of our idea #3 implementation as this
 
-.. image:: arrayqueue_third_idea0.png
-   :width: 500 px
-   :align: center
+.. figure:: arrayqueue_circle1.png
+    :width: 500 px
+    :align: center
+
+    Example "circular" array with a capacity of 13 containing two elements stored in indices ``5`` and ``6``. This would
+    be the state of the ``ArrayQueue`` shown in the proceeding figure after ``dequeue`` is called five times.
+
+
+.. figure:: arrayqueue_circle2.png
+    :width: 500 px
+    :align: center
+
+    Example "circular" array with a capacity of 13 containing 10 elements stored in indices ``5`` -- ``12``, ``0`` and
+    ``1``. This would be the state of the ``ArrayQueue`` shown in the proceeding figure after ``enqueue`` is called
+    eight times. Notice that ``rear`` looped back to the beginning of the array.
+
+
+.. figure:: arrayqueue_third_idea0.png
+    :width: 500 px
+    :align: center
+
+
+
 
 * After a bunch of ``enqueues`` and ``dequeues`` it will loop around like this
 
-.. image:: arrayqueue_third_idea1.png
-   :width: 500 px
-   :align: center
+.. figure:: arrayqueue_third_idea1.png
+    :width: 500 px
+    :align: center
 
 * Here is the same scenario, but with the array shown as a linear array
 
-.. image:: arrayqueue_third_idea2.png
-   :width: 500 px
-   :align: center
+.. figure:: arrayqueue_third_idea2.png
+    :width: 500 px
+    :align: center
+
 
 
 Modulo
