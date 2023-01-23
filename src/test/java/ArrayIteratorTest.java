@@ -36,6 +36,20 @@ public class ArrayIteratorTest {
                 assertEquals(10, iterator.next());
             }
 
+            @Test
+            void hasNext_postNext_returnsFalse() {
+                ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10, null, null, null, null}, 1);
+                iterator.next();
+                assertFalse(iterator.hasNext());
+            }
+
+            @Test
+            void next_postNext_throwsNoSuchElementException() {
+                ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10, null, null, null, null}, 1);
+                iterator.next();
+                assertThrows(NoSuchElementException.class, () -> iterator.next());
+            }
+
             @Nested
             class WhenMany {
 
@@ -46,12 +60,35 @@ public class ArrayIteratorTest {
                 }
 
                 @Test
-                void next_many_returnsElement() {
+                void next_calledManyTimes_returnsElements() {
                     ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10, 11, 12, 13, null}, 4);
-                    assertEquals(10, iterator.next());
+                    assertAll(() -> assertEquals(10, iterator.next()),
+                            () -> assertEquals(11, iterator.next()),
+                            () -> assertEquals(12, iterator.next()),
+                            () -> assertEquals(13, iterator.next()));
+
+                }
+
+                @Test
+                void hasNext_postNextCalledManyTimes_returnsFalse() {
+                    ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10, 11, 12, 13, null}, 4);
+                    iterator.next();
+                    iterator.next();
+                    iterator.next();
+                    iterator.next();
+                    assertFalse(iterator.hasNext());
+                }
+
+                @Test
+                void next_postNextCalledManyTimes_throwsNoSuchElementException() {
+                    ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10, 11, 12, 13, null}, 4);
+                    iterator.next();
+                    iterator.next();
+                    iterator.next();
+                    iterator.next();
+                    assertThrows(NoSuchElementException.class, () -> iterator.next());
                 }
             }
         }
-
     }
 }
