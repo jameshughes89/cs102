@@ -13,7 +13,7 @@ public class ArrayQueueTest {
     private ArrayQueue<Integer> preState;
 
     @BeforeEach
-    void createStack() {
+    void createQueue() {
         classUnderTest = new ArrayQueue<>();
         preState = new ArrayQueue<>();
     }
