@@ -349,38 +349,22 @@ Implementing a Queue --- Array Container
 enqueue
 -------
 
-.. code-block:: java
-    :linenos:
+.. literalinclude:: /../main/java/ArrayQueue.java
+    :language: java
+    :lineno-match:
+    :lines: 38-47
     :emphasize-lines: 4, 7
 
-    @Override
-    public void enqueue(T element) {
-        if (size == queue.length) {
-            expandCapacity();
-        }
-        queue[rear] = element;
-        rear = (rear + 1) % queue.length;
-        size++;
-    }
 
 * Note the call to ``expandCapacity``
 * Also note the use of the ``%`` operator for updating ``rear``
 
 
-.. code-block:: java
-    :linenos:
-    :emphasize-lines: 4, 5, 7, 8
+.. literalinclude:: /../main/java/ArrayQueue.java
+    :language: java
+    :lineno-match:
+    :lines: 49-64
 
-    private void expandCapacity() {
-        T[] newQueue = (T[]) new Object[queue.length * 2];
-        for (int i = 0; i < queue.length; ++i) {
-            newQueue[i] = queue[front];
-            front = (front + 1) % queue.length;
-        }
-        front = 0;
-        rear = size;
-        queue = newQueue;
-    }
 
 * ``expandCapacity`` is different from before
 * First, we're copying into index ``i`` from index ``front``
@@ -396,23 +380,21 @@ enqueue
     Take your time with this one and make sure you understand the nuance here.
 
 
+.. literalinclude:: /../main/java/ArrayQueue.java
+    :language: java
+    :lineno-match:
+    :lines: 95-104
+
+
 dequeue
 -------
 
-.. code-block:: java
-    :linenos:
+.. literalinclude:: /../main/java/ArrayQueue.java
+    :language: java
+    :lineno-match:
+    :lines: 66-75
     :emphasize-lines: 7
 
-    @Override
-    public T dequeue() {
-        if (isEmpty()) {
-            throw new NoSuchElementException("Dequeueing from an empty queue.");
-        }
-        T returnElement = queue[front];
-        front = (front + 1) % queue.length;
-        size--;
-        return returnElement;
-    }
 
 * Since we're wrapping, we must remember that ``front`` may wrap around too
 
@@ -421,6 +403,7 @@ For Next Time
 =============
 
 * Read Chapter 5 Section 7
+
     * 7 pages
 
 
