@@ -341,13 +341,12 @@ Discussion Again
 Implementing a Queue --- Array Container
 ========================================
 
-
-* All code is available for download from links at the bottom of the page
+* All the code is available for download at the bottom of the page
 * Here, only a subset of methods are shown
 
 
-enqueue
--------
+``enqueue``
+-----------
 
 .. literalinclude:: /../main/java/ArrayQueue.java
     :language: java
@@ -356,28 +355,7 @@ enqueue
     :emphasize-lines: 4, 7
 
 
-* Note the call to ``expandCapacity``
-* Also note the use of the ``%`` operator for updating ``rear``
-
-
-.. literalinclude:: /../main/java/ArrayQueue.java
-    :language: java
-    :lineno-match:
-    :lines: 49-64
-
-
-* ``expandCapacity`` is different from before
-* First, we're copying into index ``i`` from index ``front``
-    * Previously for the stack, we used ``newStack[i] = stack[i]``
-* Then we update ``front`` with the use of ``%``
-
-* After all the copying, the ``front`` for the ``newQueue`` is set to ``0``
-* ``rear`` is set to the size
-    * When ``front`` is ``0``, ``rear`` must be equal to ``size``
-
-.. warning::
-
-    Take your time with this one and make sure you understand the nuance here.
+* Note the call to ``expandCapacity`` and ``nextIndex``
 
 
 .. literalinclude:: /../main/java/ArrayQueue.java
@@ -386,8 +364,40 @@ enqueue
     :lines: 95-104
 
 
-dequeue
--------
+* ``nextIndex`` is a simple private helper method to return the next index for a "circular" array
+
+
+.. literalinclude:: /../main/java/ArrayQueue.java
+    :language: java
+    :lineno-match:
+    :lines: 49-64
+
+
+* The ``expandCapacity`` used here is different from earlier versions
+* First, notice that the copying is from index ``front`` to ``i``
+
+    * Previously, for the ``ArrayStack``, ``newStack[i] = stack[i]``
+
+
+* Each time the loop updates both ``i`` and ``front``
+
+    * ``front`` is updated with ``nextIndex``
+
+
+* After all the copying is complete, the ``front`` for the ``newQueue`` is set to ``0``
+* ``rear`` is set to the size
+
+    * When ``front`` is ``0``, ``rear`` must be equal to ``size``
+
+
+.. warning::
+
+    Take time to understand this one as there is some nuance here.
+
+
+
+``dequeue``
+-----------
 
 .. literalinclude:: /../main/java/ArrayQueue.java
     :language: java
@@ -396,7 +406,7 @@ dequeue
     :emphasize-lines: 7
 
 
-* Since ``front`` may wrap around too, the private method ``nextIndex`` is used here too
+* Since ``front`` may wrap around to index ``0``, the private method ``nextIndex`` is used
 
 
 
