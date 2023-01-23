@@ -396,7 +396,8 @@ dequeue
     :emphasize-lines: 7
 
 
-* Since we're wrapping, we must remember that ``front`` may wrap around too
+* Since ``front`` may wrap around too, the private method ``nextIndex`` is used here too
+
 
 
 For Next Time
