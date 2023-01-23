@@ -310,49 +310,63 @@ Discussion
 Expand Capacity
 ---------------
 
-.. image:: arrayqueue_expand_capacity0.png
-   :width: 500 px
-   :align: center
+.. figure:: arrayqueue_expand_capacity0.png
+    :width: 500 px
+    :align: center
 
-* Suppose we ``enqueue`` one more element
+    Example ``ArrayQueue`` with an array of capacity four containing three elements. The value of ``rear`` is ``1`` as
+    it is the next available spot in the array.
 
-.. image:: arrayqueue_expand_capacity1.png
-   :width: 500 px
-   :align: center
 
-* Now the queue is full
-    * ``size == queue.length``
+.. figure:: arrayqueue_expand_capacity1.png
+    :width: 500 px
+    :align: center
 
-* If we ``enqueue`` again, we'll need to call ``expandCapacity``
-* **However** we can't just double the size of the array and copy the contents over like we did before
-    * :doc:`See the aside on expandCapacity. <expand-capacity>`
+    Example ``ArrayQueue`` after a single element was added. The value of ``rear`` is ``2`` as it would be the next
+    available spot in the array, however, the array is at capacity --- ``size == queue.length``.
 
-.. Skip arrayqueue_expand_capacity2 since it is just a copy of 1
-.. image:: arrayqueue_expand_capacity3.png
-   :width: 500 px
-   :align: center
 
-* Instead, we could copy the contents into contiguous indices starting at index ``front``
+* With an ``ArrayQueue`` at capacity, some ``expandCapacity`` method would need to be called
+* Unlike before, however, the size of the array cannot simply just be doubled with the contents copied
 
-.. image:: arrayqueue_expand_capacity4.png
-   :width: 500 px
-   :align: center
+    * :doc:`See the aside on expandCapacity <expand-capacity>`
 
-* Or, we could even copy the contents into contiguous indices starting at the beginning (index ``0``) of the new array
 
-.. image:: arrayqueue_expand_capacity5.png
-   :width: 500 px
-   :align: center
+.. figure:: arrayqueue_expand_capacity3.png
+    :width: 500 px
+    :align: center
 
-* Doing another ``enqueue`` will add the element at index ``rear``
-* Update ``rear`` with ``rear = (rear + 1) % queue.length;``
+    Example ``ArrayQueue`` after a naive ``expandCapacity``. In this scenario, there is a "hole" in the middle of the
+    elements as the ``front`` is index ``2`` and the elements wrapped back to the beginning of the array.
+
+
+* Instead, copy the contents into contiguous indices starting at index ``front``
+
+.. figure:: arrayqueue_expand_capacity4.png
+    :width: 500 px
+    :align: center
+
+    Example ``ArrayQueue`` with an improved ``expandCapacity``. The elements are copied starting at index ``front``.
+
+
+* Another alternative is to copy the contents into contiguous indices starting at the beginning (index ``0``) of the new array
+
+.. figure:: arrayqueue_expand_capacity5.png
+    :width: 500 px
+    :align: center
+
+    Example ``ArrayQueue`` with another improved ``expandCapacity``. These elements are copied by starting at index
+    ``front`` in the old array and copying them starting at index ``0`` in the new array.
+
 
 
 Discussion Again
 ----------------
 
 * Will this implementation work?
+
     * Is it *correct*
+
 * What is the computational complexity of this ``enqueue``?
 * What is the computational complexity of this ``dequeue``?
 * How often will this call ``expandCapacity`` relative to idea #1 and #2?
@@ -361,194 +375,102 @@ Discussion Again
 Implementing a Queue --- Array Container
 ========================================
 
-
-* All code is available for download from links at the bottom of the page
+* All the code is available for download at the bottom of the page
 * Here, only a subset of methods are shown
 
 
-enqueue
--------
+``enqueue``
+-----------
 
-.. code-block:: java
-    :linenos:
+.. literalinclude:: /../main/java/ArrayQueue.java
+    :language: java
+    :lineno-match:
+    :lines: 38-47
     :emphasize-lines: 4, 7
 
-    @Override
-    public void enqueue(T element) {
-        if (size == queue.length) {
-            expandCapacity();
-        }
-        queue[rear] = element;
-        rear = (rear + 1) % queue.length;
-        size++;
-    }
 
-* Note the call to ``expandCapacity``
-* Also note the use of the ``%`` operator for updating ``rear``
+* Note the call to ``expandCapacity`` and ``nextIndex``
 
 
-.. code-block:: java
-    :linenos:
-    :emphasize-lines: 4, 5, 7, 8
+.. literalinclude:: /../main/java/ArrayQueue.java
+    :language: java
+    :lineno-match:
+    :lines: 95-104
 
-    private void expandCapacity() {
-        T[] newQueue = (T[]) new Object[queue.length * 2];
-        for (int i = 0; i < queue.length; ++i) {
-            newQueue[i] = queue[front];
-            front = (front + 1) % queue.length;
-        }
-        front = 0;
-        rear = size;
-        queue = newQueue;
-    }
 
-* ``expandCapacity`` is different from before
-* First, we're copying into index ``i`` from index ``front``
-    * Previously for the stack, we used ``newStack[i] = stack[i]``
-* Then we update ``front`` with the use of ``%``
+* ``nextIndex`` is a simple private helper method to return the next index for a "circular" array
 
-* After all the copying, the ``front`` for the ``newQueue`` is set to ``0``
+
+.. literalinclude:: /../main/java/ArrayQueue.java
+    :language: java
+    :lineno-match:
+    :lines: 49-64
+
+
+* The ``expandCapacity`` used here is different from earlier versions
+* First, notice that the copying is from index ``front`` to ``i``
+
+    * Previously, for the ``ArrayStack``, ``newStack[i] = stack[i]``
+
+
+* Each time the loop updates both ``i`` and ``front``
+
+    * ``front`` is updated with ``nextIndex``
+
+
+* After all the copying is complete, the ``front`` for the ``newQueue`` is set to ``0``
 * ``rear`` is set to the size
+
     * When ``front`` is ``0``, ``rear`` must be equal to ``size``
 
+
 .. warning::
 
-    Take your time with this one and make sure you understand the nuance here.
+    Take time to understand this one as there is some nuance here.
 
 
-dequeue
--------
 
-.. code-block:: java
-    :linenos:
+``dequeue``
+-----------
+
+.. literalinclude:: /../main/java/ArrayQueue.java
+    :language: java
+    :lineno-match:
+    :lines: 66-75
     :emphasize-lines: 7
 
-    @Override
-    public T dequeue() {
-        if (isEmpty()) {
-            throw new NoSuchElementException("Dequeueing from an empty queue.");
-        }
-        T returnElement = queue[front];
-        front = (front + 1) % queue.length;
-        size--;
-        return returnElement;
-    }
 
-* Since we're wrapping, we must remember that ``front`` may wrap around too
+* Since ``front`` may wrap around to index ``0``, the private method ``nextIndex`` is used
 
 
-Testing
-=======
 
-* The testing code is available for download at the bottom of the page
-* Here, a noteworthy test is presented
-
-.. code-block:: java
-    :linenos:
-
-    @Test
-    @DisplayName("Enqueuing 6 elements expands capacity while maintaining queues FIFO ordering.")
-    void enqueuingBeyondCapacityCallsExpandCapacityToMakeRoomWhileMaintainingQueueOrdering() {
-        Queue<Integer> queue = new ArrayQueue<>(5);
-        queue.enqueue(99);
-        queue.dequeue();
-        for (int i = 0; i < 6; ++i) {
-            queue.enqueue(i);
-        }
-        for (int i = 0; i < 6; ++i) {
-            assertEquals(i, queue.dequeue());
-        }
-    }
-
-* What we're really testing is the ``Queue`` *interface*
-* But, in order to do this, we have to make sure the implementation properly implements the interface
-* We need to check that we can use enqueue and dequeue and have ``expandCapacity`` called without messing up the ordering of the queue
-* The ``enqueue`` and ``dequeue`` on lines 5 & 6 are to have ``front == rear == 1``
-    * Just not at ``0``
-
-* Six ``enqueues`` will require that ``expandCapacity`` is called, but now ``front == rear == 1`` again
-* If the ``expandCapacity`` was broken, it would be possible that we overwrite the first element in the queue
-
-* After ``expandCapacity`` is called, ``front`` is ``0`` and ``rear`` is ``6``, but I don't actually care what the indicies are
-* All I care about is that I can ``dequeue`` the ``6`` elements and get them in FIFO order
-
-.. warning::
-
-    Remember, we're testing the **interface**, not the implementation; however, we ultimately need to write tests that
-    exercise the specific implementation we have in order to ensure the interface is implemented correctly.
-
-
-For next time
+For Next Time
 =============
 
-* Download and play with the :download:`ArrayQueue </../main/java/ArrayQueue.java>` code
-* Download and run the :download:`ArrayQueueTest </../test/java/ArrayQueueTest.java>` tests
+* :doc:`See the aside on expandCapacity <expand-capacity>`
 * Read Chapter 5 Section 7
+
     * 7 pages
 
 
 Playing Code
-============
+------------
 
-.. code-block:: java
+* Download and play with
 
-        // Create a ArrayQueue
-        Queue<Integer> myQueue = new ArrayQueue<>(5);
+    * :download:`ArrayQueue </../main/java/ArrayQueue.java>` code
+    * :download:`ArrayQueueTest </../test/java/ArrayQueueTest.java>` tests
+    * :download:`ArrayQueue playing code </../main/java/PlayingArrayQueue.java>`
 
-        // Check queue is empty
-        System.out.println(myQueue.size());
-        System.out.println(myQueue.isEmpty());
-        System.out.println(myQueue);
 
-        // Test enqueue
-        myQueue.enqueue(0);
-        myQueue.enqueue(1);
-        myQueue.enqueue(2);
-        myQueue.enqueue(3);
-        myQueue.enqueue(4);
-        System.out.println(myQueue.size());
-        System.out.println(myQueue.isEmpty());
-        System.out.println(myQueue);
+* One could use the same code from ``PlayingLinkedQueue`` to play with the ``ArrayQueue``
+* Only need to make one change
 
-        // Test enqueue more to check expandCapacity
-        myQueue.enqueue(10);
-        myQueue.enqueue(11);
-        myQueue.enqueue(12);
-        myQueue.enqueue(13);
-        myQueue.enqueue(14);
-        System.out.println(myQueue.size());
-        System.out.println(myQueue.isEmpty());
-        System.out.println(myQueue);
+    * ``LinkedQueue`` -> ``ArrayQueue``
 
-        // Test first
-        System.out.println(myQueue.first());
-        System.out.println(myQueue.size());
-        System.out.println(myQueue.isEmpty());
-        System.out.println(myQueue);
 
-        // Test dequeue
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.size());
-        System.out.println(myQueue.isEmpty());
-        System.out.println(myQueue);
+* If everything was done correctly, the following code from ``PlayingArrayQueue`` should work
 
-        // Test first and dequeue throwing exception
-        try {
-            myQueue.first();
-        } catch (NoSuchElementException e) {
-            e.printStackTrace();
-        }
-        try {
-            myQueue.dequeue();
-        } catch (NoSuchElementException e) {
-            e.printStackTrace();
-        }
+.. literalinclude:: /../main/java/PlayingLinkedQueue.java
+   :language: java
+   :linenos:
