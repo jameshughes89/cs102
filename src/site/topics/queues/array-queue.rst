@@ -290,49 +290,63 @@ Discussion
 Expand Capacity
 ---------------
 
-.. image:: arrayqueue_expand_capacity0.png
-   :width: 500 px
-   :align: center
+.. figure:: arrayqueue_expand_capacity0.png
+    :width: 500 px
+    :align: center
 
-* Suppose we ``enqueue`` one more element
+    Example ``ArrayQueue`` with an array of capacity four containing three elements. The value of ``rear`` is ``1`` as
+    it is the next available spot in the array.
 
-.. image:: arrayqueue_expand_capacity1.png
-   :width: 500 px
-   :align: center
 
-* Now the queue is full
-    * ``size == queue.length``
+.. figure:: arrayqueue_expand_capacity1.png
+    :width: 500 px
+    :align: center
 
-* If we ``enqueue`` again, we'll need to call ``expandCapacity``
-* **However** we can't just double the size of the array and copy the contents over like we did before
-    * :doc:`See the aside on expandCapacity. <expand-capacity>`
+    Example ``ArrayQueue`` after a single element was added. The value of ``rear`` is ``2`` as it would be the next
+    available spot in the array, however, the array is at capacity --- ``size == queue.length``.
 
-.. Skip arrayqueue_expand_capacity2 since it is just a copy of 1
-.. image:: arrayqueue_expand_capacity3.png
-   :width: 500 px
-   :align: center
 
-* Instead, we could copy the contents into contiguous indices starting at index ``front``
+* With an ``ArrayQueue`` at capacity, some ``expandCapacity`` method would need to be called
+* Unlike before, however, the size of the array cannot simply just be doubled with the contents copied
 
-.. image:: arrayqueue_expand_capacity4.png
-   :width: 500 px
-   :align: center
+    * :doc:`See the aside on expandCapacity <expand-capacity>`
 
-* Or, we could even copy the contents into contiguous indices starting at the beginning (index ``0``) of the new array
 
-.. image:: arrayqueue_expand_capacity5.png
-   :width: 500 px
-   :align: center
+.. figure:: arrayqueue_expand_capacity3.png
+    :width: 500 px
+    :align: center
 
-* Doing another ``enqueue`` will add the element at index ``rear``
-* Update ``rear`` with ``rear = (rear + 1) % queue.length;``
+    Example ``ArrayQueue`` after a naive ``expandCapacity``. In this scenario, there is a "hole" in the middle of the
+    elements as the ``front`` is index ``2`` and the elements wrapped back to the beginning of the array.
+
+
+* Instead, copy the contents into contiguous indices starting at index ``front``
+
+.. figure:: arrayqueue_expand_capacity4.png
+    :width: 500 px
+    :align: center
+
+    Example ``ArrayQueue`` with an improved ``expandCapacity``. The elements are copied starting at index ``front``.
+
+
+* Another alternative is to copy the contents into contiguous indices starting at the beginning (index ``0``) of the new array
+
+.. figure:: arrayqueue_expand_capacity5.png
+    :width: 500 px
+    :align: center
+
+    Example ``ArrayQueue`` with another improved ``expandCapacity``. These elements are copied by starting at index
+    ``front`` in the old array and copying them starting at index ``0`` in the new array.
+
 
 
 Discussion Again
 ----------------
 
 * Will this implementation work?
+
     * Is it *correct*
+
 * What is the computational complexity of this ``enqueue``?
 * What is the computational complexity of this ``dequeue``?
 * How often will this call ``expandCapacity`` relative to idea #1 and #2?
@@ -413,6 +427,7 @@ Implementing a Queue --- Array Container
 For Next Time
 =============
 
+* :doc:`See the aside on expandCapacity <expand-capacity>`
 * Read Chapter 5 Section 7
 
     * 7 pages
