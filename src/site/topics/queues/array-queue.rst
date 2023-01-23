@@ -260,9 +260,9 @@ Modulo --- ``%``
 
 * If ``enqueue`` is called, the new element is added to index ``9`` and ``rear`` is updated
 * However, ``rear`` cannot simply be incremented to ``10`` since there is no index ``10`` in an array of capacity ``10``
-* Instead, ``rear`` should be updated to ``0`` in this case
-* This *could* be achieved with an ``if`` statement --- ``if (rear == queue.length) rear = 0``
+* Instead, in this case, ``rear`` should be updated to ``0``
 
+* This *could* be achieved with an ``if`` statement --- ``if (rear == queue.length) rear = 0``
 * But notice that when ``rear == queue.length``, ``rear % queue.length`` is ``0``
 * But also notice that when ``rear`` is another number, like ``4``, ``rear % queue.length`` would be ``4``
 * With this information, the following expression for incrementing the ``rear`` should make sense
