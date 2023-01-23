@@ -64,7 +64,7 @@ Discussion
 
 * Will this implementation work?
 
-    * Is it *correct*
+    * Is it *correct*?
 
 
 * Knowing that this is an array implementation, will something like an ``expandCapacity`` be required?
@@ -134,7 +134,7 @@ Discussion
 
 * Will this implementation work?
 
-    * Is it *correct*
+    * Is it *correct*?
 
 
 * Knowing that this is an array implementation, will something like an ``expandCapacity`` be required?
@@ -365,7 +365,7 @@ Discussion Again
 
 * Will this implementation work?
 
-    * Is it *correct*
+    * Is it *correct*?
 
 * What is the computational complexity of this ``enqueue``?
 * What is the computational complexity of this ``dequeue``?
