@@ -162,14 +162,14 @@ Idea #3
 * Keep track of the ``front`` index
 * Keep track of the ``rear`` index
 * Keep track of the ``size``
-* If there are empty indices before the ``front``, loop the ``rear`` back to ``0`` when the end of the array is hit
+* If there are empty indices before the ``front``, wrap the ``rear`` back to ``0`` when the end of the array is hit
 
 
 .. figure:: arrayqueue_third_idea1.png
     :width: 500 px
     :align: center
 
-    An example of idea #3's ``ArrayQueue`` containing four elements. Note that the ``rear`` index has looped back to the
+    An example of idea #3's ``ArrayQueue`` containing four elements. Note that the ``rear`` index has wrapped back to the
     beginning of the "circular" array.
 
 
@@ -222,7 +222,7 @@ Idea #3
 
     Example "circular" array with a capacity of 13 containing 10 elements stored in indices ``5`` -- ``12``, ``0`` and
     ``1``. This would be the state of the ``ArrayQueue`` shown in the proceeding figure after ``enqueue`` is called
-    eight times. Notice that ``rear`` looped back to the beginning of the array.
+    eight times. Notice that ``rear`` wrapped back to the beginning of the array.
 
 
 
@@ -249,7 +249,7 @@ Modulo --- ``%``
         * Therefore, ``7 % 8`` is ``7``
 
 
-* Knowing the remainder provides a way to loop back to the beginning of an array
+* Knowing the remainder provides a way to wrap back to the beginning of an array
 
 ``rear = (rear + 1) % queue.length``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
