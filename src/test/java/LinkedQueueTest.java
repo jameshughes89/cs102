@@ -13,7 +13,7 @@ class LinkedQueueTest {
     private LinkedQueue<Integer> preState;
 
     @BeforeEach
-    void createStack() {
+    void createQueue() {
         classUnderTest = new LinkedQueue<>();
         preState = new LinkedQueue<>();
     }
