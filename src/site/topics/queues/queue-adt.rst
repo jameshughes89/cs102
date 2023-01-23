@@ -175,7 +175,12 @@ Interface
 For Next Time
 =============
 
-* Download the :download:`Queue.java</../main/java/Queue.java>` interface
 * Read Chapter 5 Sections 1 -- 5
 
     * 14 pages
+
+
+Playing Code
+------------
+
+* Download and play with the :download:`Queue.java</../main/java/Queue.java>` interface

@@ -2,270 +2,225 @@
 LinkedQueue
 ***********
 
-* Now that we have an idea of what the Queue is, we need to think of how to implement it
-    * Remember, the *what* and the *how* are separated
+* Given the definition of a Queue, how can it be implemented?
 
-* We need to think of:
+    * Remember, the *what* and the *how* are separate
+
+
+* Things needed for the implementation
+
     * A container
     * A way to keep track of the front/head
     * A way to keep track of the rear/tail
     * A way to keep track of the size
 
 
-Implementing a Queue --- Linked Container
-=========================================
 
-.. image:: linked_queue0.png
-   :width: 500 px
-   :align: center
+Implementing a Queue with a Linked Structure
+============================================
 
-* Enqueuing happens at the rear
-* Notice that the rear reference is updated to the newly added (enqueued) thing
+.. figure:: linked_queue0.png
+    :width: 500 px
+    :align: center
 
-.. image:: linked_queue1.png
-   :width: 500 px
-   :align: center
+    An example ``LinkedQueue`` containing four elements. Note that ``front`` and ``rear`` reference ``Node`` objects
+    that have reference to the actual data stored in the queue.
 
-* Dequeuing happens at the front
-* Again, notice how the front reference must be updated to the successor node of the thing being removed (dequeued)
 
-.. image:: linked_queue2.png
-   :width: 500 px
-   :align: center
+.. figure:: linked_queue1.png
+    :width: 500 px
+    :align: center
+
+    The state of the ``LinkedQueue`` after an element was enqueued to the rear of the queue. Note that ``rear`` changed
+    to reference a new ``Node`` containing the newly pushed element. The ``front`` was left unchanged after the enqueue.
+
+
+.. figure:: linked_queue2.png
+    :width: 500 px
+    :align: center
+
+    The state of the ``LinkedQueue`` after an element was dequeued from the front of the queue. Note that ``front``
+    changed to reference the ``Node`` that was after the ``Node`` that contained the element at the front of the queue
+    (the ``Node`` that was removed). The ``rear`` was left unchanged after the dequeue.
+
 
 
 Edge Cases
 ----------
 
-* What if the queue is empty?
-* What if the queue only has one element in it?
+* What would the ``LinkedQueue`` look like if the queue is empty?
+* What if it only had one element?
 
 
-Enqueue
--------
+Implementation
+==============
 
-.. code-block:: java
-    :linenos:
+.. literalinclude:: /../main/java/LinkedQueue.java
+    :language: java
+    :lineno-match:
+    :lines: 10-23
 
-    @Override
-    public void enqueue(T element) {
-        Node<T> toEnqueue = new Node<>(element);
 
-        if (isEmpty()) {
-            front = toEnqueue;
-        } else {
-           rear.setNext(toEnqueue);
-        }
-        rear = toEnqueue;
-        size++;
-    }
+* Like the ``Stack`` implementations, the ``LinkedQueue`` implements the ``Queue`` interface
+* The constructor creates an empty queue
+* Both ``front`` and ``rear`` reference ``null`` since there are no ``Node`` objects containing any elements
 
-* Take your time looking at the ``enqueue`` method
-* The easier things to notice are
-    * Create a new node with the element being added
-        * ``Node<T> toEnqueue = new Node<>(element);``
-    * Once everything is done, set the rear to be the new enqueued node
-        * ``rear = toEnqueue;``
-    * Update the size
-        * ``size++;``
 
-* The ``if`` statement may be a little harder to chew on
-* The trick to understanding it is to take your time, look at the code, and think carefully
+
+``enqueue``
+-----------
+
+.. literalinclude:: /../main/java/LinkedQueue.java
+    :language: java
+    :lineno-match:
+    :lines: 25-40
+
+
+* The above ``enqueue`` method has some nuance to it
 
 
 Enqueuing into an Empty Queue
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* **If** the queue is empty, both ``front`` and ``rear`` reference ``null``
-* When this is the case, the thing being enqueued will end up being the only element in the queue
-    * Thus, both ``front`` and ``rear`` need to reference the new node
-    * The new node will be both the first and last thing in the queue
+* This is an *edge case*
+* If the queue is empty, both ``front`` and ``rear`` reference ``null``
+
+* When this is the case, the element being enqueued will end up being the only element in the queue
+
+    * Thus, both ``front`` and ``rear`` need to reference the new ``Node`` containing the enqueued element
+    * The new ``Node`` will be both the first and last thing in the queue
+
 
 * When looking at the code, this would result in
-    1. Making a new node with the element being enqueued
-    2. Setting ``front`` to reference the new node
-    3. Setting ``rear`` to reference the new node
-    4. Updating the count
+
+    #. Create a new ``Node`` with the element to be enqueued
+    #. Set ``front`` to reference the newly added ``Node``
+    #. Update ``rear`` to reference the newly added ``Node``
+    #. Update ``size``
+
 
 
 Enqueuing into a Nonempty Queue
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* **If** the queue is not empty there is at least one element in it
-    * It may be the case that both ``front`` and ``rear`` reference the same node (if there is only 1 thing in the queue)
+* This is the general case
+
+    * Notice how this is just adding to the *rear of a linked structure*
+
+
+* If the queue is not empty, both ``front`` and ``rear`` reference a ``Node``
+
+    * It is possible for ``front`` and ``rear`` to reference the same ``Node``
+    * This happens where there is only one element in the queue
+
 
 * When looking at the code, this would result in
-    1. Making a new node with the element being enqueued
-    2. Setting the ``rear``'s next to be the new node
-    3. Setting the ``rear`` to reference the new node
-    4. Updating the count
+
+    #. Create a new ``Node`` with the element to be enqueued
+    #. Add the new ``Node`` after the current ``rear`` ``Node``
+    #. Update ``rear`` to reference the newly added ``Node``
+    #. Update ``size``
+
 
 * What is the computational complexity of an ``enqueue``?
 
-Dequeue & First
----------------
 
-.. code-block:: java
-    :linenos:
 
-    @Override
-    public T dequeue() {
-        if (isEmpty()) {
-            throw new NoSuchElementException("Dequeueing from an empty queue.");
-        }
-        T returnElement = front.getData();
-        front = front.getNext();
-        size--;
-        if (isEmpty()) {
-            rear = null;
-        }
-        return returnElement;
-    }
+``dequeue`` & ``first``
+-----------------------
 
-    @Override
-    public T first() {
-        if (isEmpty()) {
-            throw new NoSuchElementException("First from an empty queue.");
-        }
-        return front.getData();
-    }
+.. literalinclude:: /../main/java/LinkedQueue.java
+    :language: java
+    :lineno-match:
+    :lines: 42-63
+
+
 
 * Like ``LinkedStack`` and ``ArrayStack``, trying to access something from the empty queue throws an exception
+* ``dequeue`` does a *remove/delete from the front of a linked structure*
 
-* Notice in ``dequeue`` that, if it's not empty, we just *remove/delete from the front of a linked structure*
-    * This was the same as ``pop`` in the ``LinkedStack``
+* Notice the edge case of a ``dequeue`` resulting in an empty queue
 
-* In addition to being empty, the only other edge case we need to watch out for is if the ``dequeue`` makes the queue empty
-* If this happens, we must set ``front`` to ``null``
-    * This is actually taken care of already since ``front``'s next would be ``null``, and saying ``front = front.getNext()`` makes ``front`` ``null``
+    * The update to the ``front`` will not be a problem
 
-* We should also set ``rear`` to ``null``
-* This helps with garbage collection and keeping the state of the queue *correct*
-* If we don't do this, ``rear`` will continue to point to a node that should not be in the queue anymore
-    * Our current implementation will handle this scenario fine as an enqueue on an empty queue sets both ``front`` and ``rear`` to ``null``
-    * But imagine also having a messed up count and ``enqueuing`` after this without setting ``rear`` to ``null``
-    * If we ``enqueue`` in this case, we might end up saying ``rear.setNext(toEnqueue)``
-    * What would that mean?
-    * What would that look like?
+        * ``front = front.getNext()`` will set ``front`` to ``null`` since ``front.getNext()`` in this situation would return ``null``
+
+    * The trouble is with ``rear`` --- typically ``rear`` is left alone with a ``dequeue``
+    * However, if the ``dequeue`` resulted in an empty queue, ``rear`` would be left referencing the ``Node`` that was just removed
+    * The solution is to simply set it to ``null`` if the stack is empty after the dequeue
+
+
+.. note::
+
+    Although not true in general, with the provided implementation of the ``LinkedQueue``, missing this edge case in the
+    ``dequeue`` would not actually cause a problem since the ``enqueue`` was written such that it also checks for the
+    empty case.
 
 
 * What is the computational complexity of a ``dequeue``?
 
-Variations
-==========
-
-* We can define any variation we could want
 
 
-Priority Queue
---------------
+Queue Variation ---  Priority Queue
+===================================
 
-* A queue is great and all, but there are variations in real life we are probably aware of
-* One that comes to my mind is a *priority queue*
 * Think of triage at a hospital
-* Sure, it's kinda' first-come-first-serve
-* But if you are there for a cut thumb and someone comes in with an arrow sticking out of their knee, they will likely be helped first
-* In other words, it's first-come-first-serve, but those with a priority value deemed more important will be jump the line
+* It somewhat operates on a first-come-first-served basis
+* But if someone is there for a cut thumb and someone else comes in with an arrow sticking out of their knee, they will be helped first
+* In other words, it's first-come-first-served, but those with a priority value deemed more important will jump the line
 
 
 What
-^^^^
+----
 
-* Think about how we could describe the *what* of a priority queue
 * Everything would be the same except ``dequeue``
-* We would need to get the element with the most important priority of all those in the queue
+* It would need to get the element with the most important priority of all those in the queue
+
     * If there is a tie, then use first-come-first-serve to break the tie
 
 
 How
-^^^
+---
 
-* Now think about how this could be implemented
-* We have a decision to make
+* There is an implementation decision to be made
 
-* We can make it that every ``enqueue`` inserts something into the queue such that the queue is ordered based on priority and time of arrival
-    * If we do a linear search to find the right place to insert, this would be :math:`O(n)`
-* Then our ``dequeue`` would be a simple :math:`O(1)` operation since it's just removing the front of the queue
+#. On ``enqueue``, insert the element into the queue such that the queue is always ordered based on priority and time of arrival
 
-* Or, we could make it that every ``enqueue`` just adds the thing to the end of the queue
-    * :math:`O(1)`
-* Then our ``dequeue`` would need to do the search through the queue to find the thing with the most important priority
-    * If we use a linear search, then this is :math:`O(n)`
+    * This requires a linear search to find the right place to insert
+    * This would make ``enqueue`` :math:`O(n)`
+    * This makes ``dequeue`` :math:`O(1)` since it simply removes from the front of the queue
+
+
+#. On ``dequeue``, search for and remove the element with the most important priority
+
+    * This requires a linear search to find the element to remove
+    * This would make ``dequeue`` :math:`O(n)`
+    * This makes ``enqueue`` :math:`O(1)` since it simply adds to the rear of the queue
+
 
 * Which implementation is better?
 
 
-For next time
+For Next Time
 =============
 
-* Download and play with the :download:`LinkedQueue </../main/java/LinkedQueue.java>` code
-* Download and run the :download:`LinkedQueueTest </../test/java/LinkedQueueTest.java>` tests
 * Read Chapter 5 Section 6
+
     * 6 pages
 
 
 Playing Code
-============
+------------
 
-.. code-block:: java
+* Download and play with
 
-        // Create a LinkedQueue
-        Queue<Integer> myQueue = new LinkedQueue<>();
+    * :download:`LinkedQueue </../main/java/LinkedQueue.java>`
+    * :download:`LinkedQueueTest </../test/java/LinkedQueueTest.java>`
+    * :download:`LinkedQueue playing code </../main/java/PlayingLinkedQueue.java>`
 
-        // Check queue is empty
-        System.out.println(myQueue.size());
-        System.out.println(myQueue.isEmpty());
-        System.out.println(myQueue);
 
-        // Test enqueue
-        myQueue.enqueue(0);
-        myQueue.enqueue(1);
-        myQueue.enqueue(2);
-        myQueue.enqueue(3);
-        myQueue.enqueue(4);
-        System.out.println(myQueue.size());
-        System.out.println(myQueue.isEmpty());
-        System.out.println(myQueue);
+* If everything was done correctly, the following code from ``PlayingLinkedQueue`` should work
 
-        // Test enqueue more
-        myQueue.enqueue(10);
-        myQueue.enqueue(11);
-        myQueue.enqueue(12);
-        myQueue.enqueue(13);
-        myQueue.enqueue(14);
-        System.out.println(myQueue.size());
-        System.out.println(myQueue.isEmpty());
-        System.out.println(myQueue);
-
-        // Test first
-        System.out.println(myQueue.first());
-        System.out.println(myQueue.size());
-        System.out.println(myQueue.isEmpty());
-        System.out.println(myQueue);
-
-        // Test dequeue
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.size());
-        System.out.println(myQueue.isEmpty());
-        System.out.println(myQueue);
-
-        // Test first and dequeue throwing exception
-        try {
-            myQueue.first();
-        } catch (NoSuchElementException e) {
-            e.printStackTrace();
-        }
-        try {
-            myQueue.dequeue();
-        } catch (NoSuchElementException e) {
-            e.printStackTrace();
-        }
+.. literalinclude:: /../main/java/PlayingLinkedQueue.java
+   :language: java
+   :linenos:
