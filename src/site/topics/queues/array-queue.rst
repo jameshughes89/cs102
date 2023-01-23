@@ -158,132 +158,152 @@ Discussion
 Idea #3
 =======
 
-* An array for the container
+* Use an array for the container
 * Keep track of the ``front`` index
 * Keep track of the ``rear`` index
-* If there is space at the front of the array, loop the indices back to ``0`` once we hit the end
+* Keep track of the ``size``
+* If there are empty indices before the ``front``, loop the ``rear`` back to ``0`` when the end of the array is hit
 
-"Circular Array"
+
+.. figure:: arrayqueue_third_idea1.png
+    :width: 500 px
+    :align: center
+
+    An example of idea #3's ``ArrayQueue`` containing four elements. Note that the ``rear`` index has looped back to the
+    beginning of the "circular" array.
+
+
+.. figure:: arrayqueue_third_idea2.png
+    :width: 500 px
+    :align: center
+
+    An example of idea #3's ``ArrayQueue`` containing four elements. This figure contains the same ``ArrayQueue`` shown
+    in the previous figure but with the "circular" array shown as a typical linear array.
+
+
+
+"Circular" Array
 ----------------
 
-* We can *pretend* our array is a circle
-    * It's still a linear array, but that's OK
+* *Pretend* the array is a circle
 
-* For example, pretend we have an array with a capacity of ``n``
-* The indices order would be
+    * The array is still, in reality, a linear array
 
-    ``0, 1, 2, 3, 4, ..., n-2, n-1, 0, 1, 2, 3, 4, ..., n-2, n-1, 0, 1, 2, 3, 4, ...``
 
-* The index that comes before ``n-1`` is ``n-2``
+* For example, given an array with a capacity of ``n``
+* The indices' order would be
+
+    ``..., 0, 1, 2, 3, ..., n-2, n-1, 0, 1, 2, 3, ..., n-2, n-1, 0, 1, 2, 3, ...``
+
+
 * The index that comes after ``n-1`` is ``0``
 * The index that comes before ``0`` is ``n-1``
-* The index that comes after ``0`` is ``1``
 
-* Take this "circular array" with 7 things in it
+.. figure:: arrayqueue_circle0.png
+    :width: 500 px
+    :align: center
 
-.. image:: arrayqueue_circle0.png
-   :width: 500 px
-   :align: center
-
-* If we ``dequeue`` 5 times, we end up with this
-
-.. image:: arrayqueue_circle1.png
-   :width: 500 px
-   :align: center
-
-* And after 8 more ``enqueues`` we have this
-
-.. image:: arrayqueue_circle2.png
-   :width: 500 px
-   :align: center
+    Example "circular" array with a capacity of 13. This figure shows the array containing seven elements stored in
+    indices ``0`` -- ``6``. Within the context of the ``ArrayQueue``, ``front`` would be index ``0`` and ``rear`` would
+    be ``7``.
 
 
-* With this idea, we can think of our idea #3 implementation as this
+.. figure:: arrayqueue_circle1.png
+    :width: 500 px
+    :align: center
 
-.. image:: arrayqueue_third_idea0.png
-   :width: 500 px
-   :align: center
-
-* After a bunch of ``enqueues`` and ``dequeues`` it will loop around like this
-
-.. image:: arrayqueue_third_idea1.png
-   :width: 500 px
-   :align: center
-
-* Here is the same scenario, but with the array shown as a linear array
-
-.. image:: arrayqueue_third_idea2.png
-   :width: 500 px
-   :align: center
+    Example "circular" array with a capacity of 13 containing two elements stored in indices ``5`` and ``6``. This would
+    be the state of the ``ArrayQueue`` shown in the proceeding figure after ``dequeue`` is called five times.
 
 
-Modulo
-------
+.. figure:: arrayqueue_circle2.png
+    :width: 500 px
+    :align: center
 
-* We've already seen the modulo operator: ``%``
-* With this ``%`` operator, we can get the remainder of a division
+    Example "circular" array with a capacity of 13 containing 10 elements stored in indices ``5`` -- ``12``, ``0`` and
+    ``1``. This would be the state of the ``ArrayQueue`` shown in the proceeding figure after ``enqueue`` is called
+    eight times. Notice that ``rear`` looped back to the beginning of the array.
+
+
+
+Modulo --- ``%``
+----------------
+
+* The modulo (``%``) operator provides a way to get the remainder of a division
+
     * ``4 % 2``
-        * :math:`4/2 = 0` remainder :math:`0`
-        * Therefore, ``4 % 2`` is :math:`0`
+
+        * ``4/2 == 0`` remainder ``0``
+        * Therefore, ``4 % 2`` is ``0``
+
+
     * ``5 % 4``
-        * :math:`5/4 = 1` remainder :math:`1`
-        * Therefore, ``5 % 4`` is :math:`1`
+
+        * ``5/4 == 1`` remainder ``1``
+        * Therefore, ``5 % 4`` is ``1``
+
+
     * ``7 % 8``
-        * :math:`7/8 = 0` remainder :math:`7`
-        * Therefore, ``7 % 8`` is :math:`7`
 
-* The modulo operator is handy for checking if a number is even or odd
-    * ``x % 2`` will be 0 when the number is evenly divisible by 2 and will be 1 if there is a remainder (not evenly divisible)
+        * ``7/8 == 0`` remainder ``7``
+        * Therefore, ``7 % 8`` is ``7``
 
-* We can make use of this ``%`` operator to help us loop back around to the beginning of our linear array
 
-* We'll try to derive this ourselves
-* Assume we have an array with a capacity ``10``
-* Our ``rear`` is currently ``9``
-* If we do an ``enqueue`` we simply add the element to index ``9`` and increment ``rear`` such that it's now ``10``
-* **However** this causes a problem because there is no index ``10``; we want ``rear`` to become ``0`` instead
+* Knowing the remainder provides a way to loop back to the beginning of an array
 
-* We *could* do this with an ``if`` statement and just check ``if (rear == queue.length) rear = 0``
-* But notice that when ``rear == queue.length``, that would mean that ``rear % queue.length`` is ``0``
-* But also notice that, if ``rear`` was another number, like ``4``, then ``rear % queue.length`` would be ``4``
+``rear = (rear + 1) % queue.length``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+* Assume an array with a capacity ``10``
+* Also assume ``rear`` is currently ``9``
+* ``rear`` should always be the index of the next available spot in the array
+
+* If ``enqueue`` is called, the new element is added to index ``9`` and ``rear`` is updated
+* However, ``rear`` cannot simply be incremented to ``10`` since there is no index ``10`` in an array of capacity ``10``
+* Instead, in this case, ``rear`` should be updated to ``0``
+
+* This *could* be achieved with an ``if`` statement --- ``if (rear == queue.length) rear = 0``
+* But notice that when ``rear == queue.length``, ``rear % queue.length`` is ``0``
+* But also notice that when ``rear`` is another number, like ``4``, ``rear % queue.length`` would be ``4``
 * With this information, the following expression for incrementing the ``rear`` should make sense
 
-    ``rear = (rear + 1) % queue.length;``
+    ``rear = (rear + 1) % queue.length``
 
-* If ``rear`` is ``9`` and we use this expression, ``rear`` will end up being ``(9 + 1) % 10 == 10 % 10 == 0``
-* If ``rear`` is any other number ``< 10``, the number is not divisible by ``10`` and the ``%`` will effectively make no difference
+
+* If ``rear`` is ``9`` and this idea is used, ``rear`` will end up being ``(9 + 1) % 10 == 10 % 10 == 0``
+* If ``rear`` is any other number ``< 10``, the number is not divisible by ``10`` and the ``%`` will make no difference
+
 
 
 Discussion
 ----------
 
-* With this special expression for updating the ``rear``, do we need it for updating the ``front``?
-* With this idea, will we ever run out of room in our array?
+* Does the strategy for updating ``front`` need to also be changed?
+* Will this "circular" array ever run out of room?
+
 
 .. warning::
 
     Sometimes, *good enough is good enough*.
 
-    In this ``ArrayQueue`` implementation scenario, idea #3 is quite clearly the superior option and is not overly
-    difficult to implement. However, as you continue in computer science and work on more complex problems, sometimes
-    ease of implementation and maintainability become very important.
+    With this ``ArrayQueue`` implementation scenario, idea #3 is quite clearly the superior option and is not overly
+    difficult to implement. However, as one continues in computer science and works on more complex problems, sometimes
+    ease of implementation and maintainability becomes very important.
 
-    Better algorithms always exist, and a subpar implementation may do the trick, especially when your problem space is
+    Better algorithms always exist, but a subpar implementation may do the trick, especially when the problem space is
     small enough that performance doesn't matter.
 
-    Computational complexity is very important, but sometimes in practice we may lose the forrest through the trees. If
-    you can change your algorithm from :math:`O(n^{2})` to :math:`O(n)`, then you should probably do it. But then again,
-    if the updated algorithm will take you a day and you only need to run the algorithm once on a small problem, perhaps
-    :math:`O(n^{2})` is good enough.
+    Computational complexity is very important, but sometimes in practice one may lose the forrest through the trees. If
+    an algorithm can be changed from :math:`O(n^{2})` to :math:`O(n)`, then do it. But then again, if the updated
+    algorithm will take a day to implement and it only needs to be run once on a small problem, perhaps :math:`O(n^{2})`
+    is good enough.
 
-    Even worse, if you're trying to save a few *FLOPS* here and there, great, but if that's distracting you from other
-    more important issues, perhaps you should move on.
+    Even worse, trying to save a few *FLOPS* here and there is great and all, but if that's distracting someone from
+    other more important issues, perhaps they should move on.
 
-    Donald Knuth, a very famous computer scientists, says:
+    Donald Knuth, a very famous computer scientist, says:
 
         *Programmers waste enormous amounts of time thinking about, or worrying about, the speed of noncritical parts of their programs, and these attempts at efficiency actually have a strong negative impact when debugging and maintenance are considered. We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil. Yet we should not pass up our opportunities in that critical 3%.*
-
 
 
 
