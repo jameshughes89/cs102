@@ -1,4 +1,7 @@
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -7,9 +10,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ArrayIteratorTest {
 
-    // Note:
-    //      Size is the number of "meaningful" elements in the array
-    //      Capacity is the number of available indices in the array
+
+    private ArrayIterator<Integer> classUnderTest;
+    private ArrayIterator<Integer> preState;
+
+    @BeforeEach
+    void createIterator() {
+        classUnderTest = new ArrayIterator<>(new Integer[10], 0);
+        preState = new ArrayIterator<>(new Integer[10], 0);
+    }
 
     @Test
     void hasNext_capacityZeroArray_returnsFalse() {
@@ -17,6 +26,11 @@ public class ArrayIteratorTest {
         Iterator<Integer> it = new ArrayIterator<>(a, 0);
         assertFalse(it.hasNext());
     }
+
+
+    // Note:
+    //      Size is the number of "meaningful" elements in the array
+    //      Capacity is the number of available indices in the array
 
     @Test
     void hasNext_fullCapacityOneArray_returnsTrue() {
@@ -150,5 +164,26 @@ public class ArrayIteratorTest {
             it.next();
         }
         assertThrows(NoSuchElementException.class, () -> it.next());
+    }
+
+    @Nested
+    class WhenNewEmpty {
+
+        @Nested
+        class WhenSingleton {
+
+            @BeforeEach
+            void addSingleton() {
+                @Nested
+                @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+                class WhenMany {
+
+                    @BeforeEach
+                    void addMany() {
+
+                    }
+                }
+            }
+        }
     }
 }
