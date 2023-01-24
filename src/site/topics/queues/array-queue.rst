@@ -444,6 +444,21 @@ Implementing a Queue --- Array Container
 
 
 
+``equals``
+----------
+
+.. literalinclude:: /../main/java/ArrayQueue.java
+    :language: java
+    :lineno-match:
+    :lines: 118-141
+    :emphasize-lines: 13,14,20,21
+
+
+* It does not matter *where* in the array the contents are
+* It also does not matter what the capacities of the arrays are
+* All that matters is that the elements, starting at ``front`` and wrapping when necessary, are equivalent
+
+
 For Next Time
 =============
 
