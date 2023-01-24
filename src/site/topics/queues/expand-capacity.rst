@@ -1,6 +1,6 @@
-************************
-Aside --- expandCapacity
-************************
+****************************
+Aside --- ``expandCapacity``
+****************************
 
 ArrayStack
 ==========
@@ -9,9 +9,8 @@ ArrayStack
     :width: 500 px
     :align: center
 
-    An example ``ArrayStack`` containing four elements. The elements are always stored in contiguously with the
-    discussed implementation as the bottom was always index ``0`` and there was no way to introduce "holes" between
-    index ``0`` and ``top``.
+    An example ``ArrayStack`` containing four elements. The elements are always stored contiguously  as the bottom is
+    always index ``0`` and there was no way to introduce "holes" between index ``0`` and ``top``.
 
 
 * With the ``ArrayStack``, the adding and removing only happened from one end of the array
@@ -19,7 +18,7 @@ ArrayStack
     * The array will always be contiguous from the bottom of the stack (index ``0``) to the ``top``
 
 
-* If ``expandCapacity`` was ever needed, all elements would be copied to the new array such that each element would be in the same index
+* If ``expandCapacity`` was ever needed, all elements would be copied to the new array such that each element would be in the same index as the old array
 
     * The element at index ``0`` in the old array would be in index ``0`` of the new array
     * The element at index ``1`` in the old array would be in index ``1`` of the new array
