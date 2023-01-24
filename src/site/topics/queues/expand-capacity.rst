@@ -5,9 +5,14 @@ Aside --- expandCapacity
 ArrayStack
 ==========
 
-.. image:: /topics/stacks/arraystack0.png
-   :width: 500 px
-   :align: center
+.. figure:: /topics/stacks/arraystack0.png
+    :width: 500 px
+    :align: center
+
+    An example ``ArrayStack`` containing four elements. The elements are always stored in contiguously with the
+    discussed implementation as the bottom was always index ``0`` and there was no way to introduce "holes" between
+    index ``0`` and ``top``.
+
 
 * With the ``ArrayStack``, the adding and removing only happened from one end of the array
     * The array will always be contiguous from the bottom of the stack (index ``0``) to the top
