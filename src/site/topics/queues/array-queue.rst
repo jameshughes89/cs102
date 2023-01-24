@@ -424,11 +424,6 @@ Implementing a Queue --- Array Container
     * When ``front`` is ``0``, ``rear`` must be equal to ``size``
 
 
-.. warning::
-
-    Take time to understand this one as there is some nuance here.
-
-
 
 ``dequeue``
 -----------
