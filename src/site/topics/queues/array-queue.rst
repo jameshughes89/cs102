@@ -456,7 +456,9 @@ Implementing a Queue --- Array Container
 
 * It does not matter *where* in the array the contents are
 * It also does not matter what the capacities of the arrays are
-* All that matters is that the elements, starting at ``front`` and wrapping when necessary, are equivalent
+* All that matters is that the elements in the two arrays are equivalent
+
+    * Starting at their respective ``front`` indices and wrapping when necessary
 
 
 For Next Time
