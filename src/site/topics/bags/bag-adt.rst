@@ -143,14 +143,16 @@ Indexed Bags
 Functionality
 =============
 
-* We will keep our functionality of the bag simple
-    * Add stuff
-    * Remove stuff
-    * Check if something is in the bag
-    * Count the number of times something exists in the bag
-    * See if it's empty
+* The bag interface will be kept simple
+
+    * Add an element
+    * Remove a specific element
+    * Check if an element is contained in the bag
+    * Count the number of occurrences of an element in the bag
+    * Check if it's empty
     * Get the size
     * Get an iterator for the bag
+
         * Iterators are handy tools for looping and consistency
         * More on iterators later
 
@@ -158,102 +160,96 @@ Functionality
 .. code-block:: java
     :linenos:
 
-    import java.util.Iterator;
+    public interface Bag<T> extends Iterable<T> {
 
-    public interface Bag<T> {
-
-        void add(T element);
-
-        T remove(T element);
-
+        boolean add(T element);
+        boolean remove(T element);
         boolean contains(T target);
-
-        int getCount(T target);
-
+        int count(T target);
         boolean isEmpty();
-
         int size();
-
         Iterator<T> iterator();
     }
+
 
 
 Sorted Bag Functionality
 ------------------------
 
-* We want our sorted bags to be bags and have all the functionality as the bag
-    * Add stuff
-    * Remove stuff
-    * Check if something is in the bag
-    * Count the number of times something exists in the bag
-    * See if it's empty
-    * Get the size
-    * Get an iterator for the bag
+* A sorted bag will do everything a bag can
+* However, there will be some specific requirements for the sorted bag
 
-* However, there will be some functionality specific to the sorted bag that we will want
-    * We have to make sure our ``add`` adds stuff to the proper location in the bag
+    * Add happens such that the sorted property is preserved
     * Remove the first element
     * Remove the last element
-    * Check the first element (but leave it in the bag)
-    * Check the last element (but leave it in the bag)
+    * Get the first element (but leave it in the bag)
+    * Get the last element (but leave it in the bag)
 
 
 .. code-block:: java
     :linenos:
     :emphasize-lines: 1
 
-    public interface SortedBag<T> extends Bag<T> {
+    public interface SortedBag<T extends Comparable<? super T>> extends Bag<T> {
 
-        // Special add to keep proper order
-        void add(T element);
-
+        @Override
+        boolean add(T element);
         T removeFirst();
-
         T removeLast();
-
         T first();
-
         T last();
     }
 
-* You will notice that, despite wanting all the functionality of the bag, we do not write them in our interface
-* You will also notice that the first line says ``public interface SortedBag<T> extends Bag<T>``
+* Notice that, despite wanting all the ``Bag`` methods, they are not included in the ``SortedBag`` interface
+* This is because the ``SortedBag`` *extends* the ``Bag`` interface
 
-* The ``extends`` keyword means that we will *inherit* all the functionality from the class we are extending
+    * ``public interface SortedBag<T extends Comparable<? super T>> extends Bag<T>``
+
+
+* The ``extends`` keyword means that this interface/class will *inherit* all the methods from the class being extended
+
     * ``Bag`` is being extended in this case
+    * Similarly, the type ``T`` is extending ``Comparable`` --- ``T extends Comparable<? super T>``
 
-* This means that, although we did not write the functions from the ``Bag`` interface in the ``SortedBag`` ourselves, they are still part of what makes up a ``SortedBag``
-    * If you try to implement a ``SortedBag`` without implementing all the functionality from the ``Bag`` interface, it won't work
+        * This will be discussed in more detail later
 
-* The idea of inheritance will be discussed further later
+
+* Although not explicitly included in the ``SortedBag`` interface, the methods from ``Bag`` are still part of what defines a ``SortedBag``
+
+    * A ``SortedBag`` cannot be implemented without implementing all the methods from the ``Bag`` interface
+
+
+* The idea of inheritance will be discussed in more detail later
+
 
 
 Indexed Bag
 -----------
 
-* Similar to the sorted bag, the indexed bag will make use of inheritance to get all the functionality for bags
-* We will also add specific functionality for our indexed bag
-    * Stuff to be able to specify indices in the data structure
+* Similar to the ``SortedBag`` interface, the ``IndexedBag`` interface will make use of inheritance by extending the ``Bag`` interface
+* In addition to the ``Bag`` methods, ``IndexedBag`` specific methods are included
+
+    * Add an element to a specific index
+    * Remove an element from a specific index
+    * Change (set) the element at a specific index
+    * Get an element at a specific index
+    * Find the index of a specified element
+
 
 .. code-block:: java
     :linenos:
 
     public interface IndexedBag<T> extends Bag<T> {
 
-        void add(T element);
-
-        void add(int index, T element);
-
-        void set(int index, T element);
-
+        @Override
+        boolean add(T element);
+        boolean add(int index, T element);
+        T set(int index, T element);
         T get(int index);
-
-        // Mind the difference in function signature
-        // from the inherited remove
-        T remove(int index);
-
+        T remove(int index);    // Different signature from the inherited remove
         int indexOf(T element);
     }
+
 
 
 For Next Time
