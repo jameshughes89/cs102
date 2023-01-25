@@ -8,7 +8,7 @@ public class ArrayIterator<T> implements Iterator<T> {
     private int index;
 
     public ArrayIterator(T[] elements, int size) {
-        if (size >= elements.length) {
+        if (size > elements.length) {
             throw new IllegalArgumentException("size exceeds array length.");
         }
         this.elements = elements;
