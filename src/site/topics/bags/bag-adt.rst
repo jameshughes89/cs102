@@ -21,7 +21,7 @@ Bags
     A representation of an arbitrary bag containing seven elements.
 
 
-* By default, bags shouldn't really be thought of as having an ordering
+* The high-level idea of a bag shouldn't really be thought of as having an ordering
 
     * The underlying implementation may be with some linear container
     * But the idea is that the information in the bag has no meaningful order
@@ -56,8 +56,8 @@ Bags
         * ...
 
 
-Sorted Bags
------------
+Sorted Bag
+----------
 
 * If the elements must be sorted, then how they are added and removed must be done carefully
 
