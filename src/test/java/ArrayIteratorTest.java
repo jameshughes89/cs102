@@ -107,24 +107,25 @@ public class ArrayIteratorTest {
     class WhenMany {
 
         @Test
-        void hasNext_many_returnsTrue() {
-            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10, 11, 12, 13, null}, 4);
+        void hasNext_capacityMany_returnsTrue() {
+            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10, 11, 12, 13, 14}, 5);
             assertTrue(iterator.hasNext());
         }
 
         @Test
-        void next_calledManyTimes_returnsElements() {
-            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10, 11, 12, 13, null}, 4);
+        void next_calledManyCapacityMany_returnsElements() {
+            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10, 11, 12, 13, 14}, 5);
             assertAll(() -> assertEquals(10, iterator.next()),
                     () -> assertEquals(11, iterator.next()),
                     () -> assertEquals(12, iterator.next()),
-                    () -> assertEquals(13, iterator.next()));
-
+                    () -> assertEquals(13, iterator.next()),
+                    () -> assertEquals(14, iterator.next()));
         }
 
         @Test
-        void hasNext_postNextCalledManyTimes_returnsFalse() {
-            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10, 11, 12, 13, null}, 4);
+        void hasNext_postNextCalledManyCapacityMany_returnsFalse() {
+            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10, 11, 12, 13, 14}, 5);
+            iterator.next();
             iterator.next();
             iterator.next();
             iterator.next();
@@ -133,8 +134,9 @@ public class ArrayIteratorTest {
         }
 
         @Test
-        void next_postNextCalledManyTimes_throwsNoSuchElementException() {
-            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10, 11, 12, 13, null}, 4);
+        void next_postNextCalledManyCapacityMany_throwsNoSuchElementException() {
+            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10, 11, 12, 13, 14}, 5);
+            iterator.next();
             iterator.next();
             iterator.next();
             iterator.next();
