@@ -346,4 +346,4 @@ For Next Time
 Playing Code
 ------------
 
-* Download and play with the :download:`Stack.java</../main/java/Stack.java>` interface
+* Download and play with the :download:`Stack</../main/java/Stack.java>` interface
