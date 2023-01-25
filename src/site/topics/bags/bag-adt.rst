@@ -36,23 +36,24 @@ Bags
 
 
 * But given the more general definition of the bag, how exactly these should be done is not obvious
-* Adding to a Bag
 
-    * How should elements be added?
-    * Where should they go?
+    * Adding to a Bag
 
-
-* Removing from a Bag
-
-    * How should elements be removed?
-    * Where should they be removed from?
+        * How should elements be added?
+        * Where should they go?
 
 
-* Other potential functionality?
+    * Removing from a Bag
 
-    * Access a specific element?
-    * Check if a given element exists?
-    * ...
+        * How should elements be removed?
+        * Where should they be removed from?
+
+
+    * Other potential functionality?
+
+        * Access a specific element?
+        * Check if a given element exists?
+        * ...
 
 
 Sorted Bags
