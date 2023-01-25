@@ -51,6 +51,12 @@ public class ArrayIteratorTest {
     class WhenSingleton {
 
         @Test
+        void constructor_capacityZero_throwsIllegalArgumentException() {
+            assertThrows(IllegalArgumentException.class, () -> new ArrayIterator<>(new Integer[]{}, 1));
+        }
+
+
+        @Test
         void hasNext_capacityOne_returnsTrue() {
             ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10}, 1);
             assertTrue(iterator.hasNext());
@@ -105,6 +111,16 @@ public class ArrayIteratorTest {
 
     @Nested
     class WhenMany {
+
+        @Test
+        void constructor_capacityZero_throwsIllegalArgumentException() {
+            assertThrows(IllegalArgumentException.class, () -> new ArrayIterator<>(new Integer[]{}, 5));
+        }
+
+        @Test
+        void constructor_capacityOne_throwsIllegalArgumentException() {
+            assertThrows(IllegalArgumentException.class, () -> new ArrayIterator<>(new Integer[]{10}, 5));
+        }
 
         @Test
         void hasNext_capacityMany_returnsTrue() {
