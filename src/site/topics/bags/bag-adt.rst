@@ -35,6 +35,7 @@ Bags
     * Check if it's empty
 
 
+* But given the more general definition of the bag, how exactly these should be done is not obvious
 * Adding to a Bag
 
     * How should elements be added?
