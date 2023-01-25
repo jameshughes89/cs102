@@ -1,6 +1,6 @@
-*******
-Bag ADT
-*******
+***********
+The Bag ADT
+***********
 
 * Like stacks and queues, bags are another data structure
 * However, bags are more general than stacks and queues
