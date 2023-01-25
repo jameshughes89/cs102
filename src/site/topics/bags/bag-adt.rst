@@ -100,25 +100,44 @@ Indexed Bags
 ------------
 
 * Indexed bags are bags where the elements are referenced by a numeric position
-    * Numeric position is called the index
-    * This is like arrays or the Python lists you're used to
-* Like the sorted bag, this specific kind of bag will have an ordering
 
-* Element position is important
-* User determines the ordering of the elements
-* Every time something is added or removed, the indices of the elements will need to be updated
+    * The numeric position is called the index
+    * Like arrays or Python lists
 
-.. image:: bag_indexed_bag0.png
-   :width: 500 px
-   :align: center
 
-* We can add to any arbitrary index, assuming it is valid
+* This specific kind of bag will have an ordering
 
-.. image:: bag_indexed_bag1.png
-   :width: 500 px
-   :align: center
+    * Element position is important
+    * The elements are not *sorted* based on some property of the elements
+    * User determines the ordering of the elements
 
-* We also will have removes from arbitrary locations
+
+* Every time an element is added or removed, the indices may need to change
+
+
+.. figure:: bag_indexed_bag0.png
+    :width: 500 px
+    :align: center
+
+    Example indexed bag with seven elements. The three elements are to be added to the specified locations within the
+    bag. One element is to be added to the front, another to the middle, and the last to the end.
+
+
+.. figure:: bag_indexed_bag1.png
+    :width: 500 px
+    :align: center
+
+    Example of the indexed bag after three elements were added to the front, middle, and end of the bag. Note that the
+    elements' indices changed as a result of the adds.
+
+
+* Elements can be added to any arbitrary index, assuming it is valid
+
+    * The specified index would be the index it should exist at *after* adding
+
+
+* Like adding, elements can be removed from any valid index
+
 
 
 Functionality
