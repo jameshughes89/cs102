@@ -59,28 +59,41 @@ Bags
 Sorted Bags
 -----------
 
-* If we want a specific kind of bag that keeps our elements sorted based on some ordering, adding will need to be done carefully
+* If the elements must be sorted, then how they are added and removed must be done carefully
+
     * Unlike the general bag, this specific kind of bag will have an ordering
 
+
 * The ordering of the elements will depend on some characteristic of the contents of the bag
+
     * Numbers in ascending order
     * Strings in alphabetical order
 
+
 * The elements themselves are what determine the ordering
 
-.. image:: bag_sorted_bag0.png
-   :width: 500 px
-   :align: center
+.. figure:: bag_sorted_bag0.png
+    :width: 500 px
+    :align: center
 
-* There really is only one way to add elements to this sorted bag
-    * The elements **must** go where it belongs
-* We cannot specify where we add it because that may break our sorted ordering
+    Example sorted bag of seven integers. The integer 58 is to be added to the collection.
 
-.. image:: bag_sorted_bag1.png
-   :width: 500 px
-   :align: center
 
-* Should there be rules restricting removing from the bag?
+* There is only one way to add the element to the sorted bag
+
+    * The element must be added such that the sorted property of the bag is preserved
+
+
+.. figure:: bag_sorted_bag1.png
+    :width: 500 px
+    :align: center
+
+    Example of inserting the integer ``58`` into the only valid spot in the sorted bag. Notice that the integer ``67``
+    is the first element within the sorted bag that is larger than the element being added.
+
+
+* Should there be restrictions on how elements are removed?
+
 
 
 Indexed Bags
