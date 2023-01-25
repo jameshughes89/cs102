@@ -97,7 +97,7 @@ Implementation
         * The ``ArrayStack`` **is a** ``Stack``
         * Anything expecting a ``Stack`` will be happy getting an ``ArrayStack`` since **it is a stack**
 
-    * Note in the below example where it specifies that the ``ArrayStack<T> implements Stack<T>``
+    * Note in the below example where it specifies ``ArrayStack<T> implements Stack<T>``
 
 
 * The fields are
