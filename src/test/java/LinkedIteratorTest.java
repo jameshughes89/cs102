@@ -11,8 +11,8 @@ public class LinkedIteratorTest {
     private <T> Node<T> makeLinkedStructure(T t1, T... ts) {
         Node<T> head = new Node<>(t1);
         Node<T> current = head;
-        for (int i = 0; i < ts.length; ++i) {
-            Node<T> node = new Node<>(ts[i]);
+        for (T t : ts) {
+            Node<T> node = new Node<>(t);
             current.setNext(node);
             current = node;
         }
