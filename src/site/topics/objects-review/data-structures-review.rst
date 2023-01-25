@@ -391,7 +391,7 @@ Playing Code
 
     * :download:`Friend </../main/java/Friend.java>`
     * :download:`ContactList </../main/java/ContactList.java>`
-    * :download:`ContactList </../test/java/ContactListTest.java>`
+    * :download:`ContactListTest </../test/java/ContactListTest.java>`
     * :download:`PlayingObjects </../main/java/PlayingObjects.java>`
 
 

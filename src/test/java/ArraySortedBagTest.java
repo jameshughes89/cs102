@@ -18,7 +18,7 @@ public class ArraySortedBagTest {
     private ArraySortedBag<Integer> classUnderTest;
 
     @BeforeEach
-    void createStack() {
+    void createSortedBag() {
         classUnderTest = new ArraySortedBag<>();
     }
 
