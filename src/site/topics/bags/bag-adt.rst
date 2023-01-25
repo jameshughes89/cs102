@@ -12,31 +12,46 @@ The Bag ADT
 
 
 Bags
-=====
+====
 
-.. image:: bag_general1.png
+.. figure:: bag_general1.png
     :width: 500 px
     :align: center
 
-* By default, our bag shouldn't really be thought of as having an ordering
-    * It's implementation may be with some sort of linear collection, but the idea is that the information in the bag has no order
+    A representation of an arbitrary bag containing seven elements.
 
-* What things do we want to do with our new data structure?
-    * Add things
-    * Remove things
+
+* By default, bags shouldn't really be thought of as having an ordering
+
+    * The underlying implementation may be with some linear container
+    * But the idea is that the information in the bag has no meaningful order
+
+
+* Like the other collections, there needs to be a way to
+
+    * Add
+    * Remove
     * Get the size
     * Check if it's empty
 
+
 * Adding to a Bag
-    * How should we add things?
+
+    * How should elements be added?
     * Where should they go?
 
+
 * Removing from a Bag
-    * How should we remove things?
+
+    * How should elements be removed?
     * Where should they be removed from?
 
-* Other things me may want to do?
-    * Take a minute and think about potential ideas
+
+* Other potential functionality?
+
+    * Access a specific element?
+    * Check if a given element exists?
+    * ...
 
 
 Sorted Bags
