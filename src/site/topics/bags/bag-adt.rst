@@ -2,9 +2,14 @@
 The Bag ADT
 ***********
 
-* Like stacks and queues, bags are another data structure
+* Like stacks and queues, a bag is a data structure
 * However, bags are more general than stacks and queues
-    * We have more flexibility on where we add and remove elements
+
+* Bags have more flexibility on how they are used
+
+    * Where and how elements are added, removed, and accessed
+
+
 
 Bags
 =====
