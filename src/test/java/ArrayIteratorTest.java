@@ -76,14 +76,14 @@ public class ArrayIteratorTest {
 
         @Test
         void hasNext_postNextCapacityOne_returnsFalse() {
-            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10, null, null, null, null}, 1);
+            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10}, 1);
             iterator.next();
             assertFalse(iterator.hasNext());
         }
 
         @Test
         void hasNext_postNextCapacityMany_returnsFalse() {
-            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10}, 1);
+            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10, null, null, null, null}, 1);
             iterator.next();
             assertFalse(iterator.hasNext());
         }
