@@ -256,13 +256,19 @@ Indexed Bag
     }
 
 
-For next time
+For Next Time
 =============
 
+* Read Chapter 6 Section 1 -- 5 on Lists
+
+    * 23 pages
+
+
+Playing Code
+------------
+
 * Download the various bag interfaces:
+
     * :download:`Bag </../main/java/Bag.java>`
     * :download:`SortedBag </../main/java/SortedBag.java>`
     * :download:`IndexedBag </../main/java/IndexedBag.java>`
-
-* Read Chapter 6 Section 1 -- 5 on Lists
-    * 23 pages
