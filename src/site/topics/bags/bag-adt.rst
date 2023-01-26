@@ -56,6 +56,15 @@ Bags
         * ...
 
 
+* Notice that the general idea of the bag is quite high-level and the answer to the above questions really *depends*
+* To help determine how these operations should work, more specialized bags can be defined
+* Although there are several possibilities for specialized bags, the ones covered here are
+
+    * Sorted Bags
+    * Indexed Bags
+
+
+
 Sorted Bag
 ----------
 
