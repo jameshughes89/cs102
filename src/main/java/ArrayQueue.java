@@ -59,7 +59,7 @@ public class ArrayQueue<T> implements Queue<T> {
             front = nextIndex(front);
         }
         front = 0;
-        rear = size;
+        rear = size();
         queue = newQueue;
     }
 
@@ -107,7 +107,7 @@ public class ArrayQueue<T> implements Queue<T> {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         int currentIndex = front;
-        for (int i = 0; i < size; ++i) {
+        for (int i = 0; i < size(); ++i) {
             builder.append(queue[currentIndex]);
             builder.append(", ");
             currentIndex = nextIndex(currentIndex);
@@ -124,13 +124,13 @@ public class ArrayQueue<T> implements Queue<T> {
             return false;
         }
         ArrayQueue<?> that = (ArrayQueue<?>) o;
-        if (this.size != that.size) {
+        if (this.size() != that.size()) {
             return false;
         }
         int thisCurrentIndex = this.front;
         int thatCurrentIndex = that.front;
-        // Since this and that are the same size, this.size can be used safely in the for loop
-        for (int i = 0; i < this.size; i++) {
+        // Since this and that are the same size, this.size() can be used safely in the for loop
+        for (int i = 0; i < this.size(); i++) {
             if (!Objects.equals(this.queue[thisCurrentIndex], that.queue[thatCurrentIndex])) {
                 return false;
             }
@@ -144,7 +144,7 @@ public class ArrayQueue<T> implements Queue<T> {
     public int hashCode() {
         int result = Objects.hashCode(size);
         int currentIndex = front;
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size(); i++) {
             result = result * 97 + Objects.hashCode(queue[currentIndex]);
             currentIndex = nextIndex(currentIndex);
         }
