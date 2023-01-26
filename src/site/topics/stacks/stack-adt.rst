@@ -179,7 +179,7 @@ Example
         :width: 250 px
         :align: center
 
-        Animation of a depth first search through a 6x6 maze. The green and red cells represent the start and end
+        Animation of a depth first search through a 6x7 maze. The green and red cells represent the start and end
         locations respectively. Black cells represent walls and light blue represent open spaces. Purple represents the
         current location in the maze (top of the stack), grey represent spaces in a pathway being explored (currently
         within the stack, but not the top), and orange represents spaces that were part of a dead end path (popped from
