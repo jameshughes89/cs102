@@ -93,7 +93,7 @@ public class LinkedQueue<T> implements Queue<T> {
             return false;
         }
         LinkedQueue<?> that = (LinkedQueue<?>) o;
-        if (this.size != that.size) {
+        if (this.size() != that.size()) {
             return false;
         }
         Node<?> thisCurrent = this.front;
