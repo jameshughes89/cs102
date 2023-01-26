@@ -255,22 +255,22 @@ Generics
 
 * Imagine someone wanted to have a stack of type ``Integer``
 
-    * ``public boolean push(Integer element);``
-    * ``public Integer pop();``
+    * ``boolean push(Integer element);``
+    * ``Integer pop();``
     * ...
 
 
 * Then, maybe someone else wants to make a stack of ``String`` objects
 
-    * ``public boolean push(String element);``
-    * ``public String pop();``
+    * ``boolean push(String element);``
+    * ``String pop();``
     * ...
 
 
 * Then maybe a stack of ``Friend`` objects
 
-    * ``public boolean push(Friend element);``
-    * ``public Friend pop();``
+    * ``boolean push(Friend element);``
+    * ``Friend pop();``
     * ...
 
 
