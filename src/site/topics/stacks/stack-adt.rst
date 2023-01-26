@@ -150,8 +150,8 @@ Maze Solving
     * Checking if the new top has any available unvisited paths
 
 
-Pseudocode for Traversing a Maze
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Algorithm for Traversing a Maze
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: text
     :linenos:
