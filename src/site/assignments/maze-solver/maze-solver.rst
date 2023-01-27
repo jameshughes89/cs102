@@ -129,14 +129,19 @@ go as deep as we can down a path until we find the end, or we find a dead end an
 
 The general idea is this
 
-    * Look at the top cell of the stack
-    * If it's the end, we're done
-    * If it's not, find an unvisited valid neighbour and push it on the stack
-    * If there are no valid neighbours, we're at a dead end --- we must backtrack
-    * Repeat
+    * Start with the maze's starting ``Cell`` and push it on the stack
+
+        * Look at the top cell of the stack
+        * If it's the end, we're done
+        * If it's not, find an unvisited valid neighbour and push it on the stack
+
+            * When looking for a valid neighbour, consider looking in a clockwise manner starting at 12 o'clock
 
 
-Naturally, you will want to start with the maze's starting ``Cell``.
+        * If there are no valid neighbours, we're at a dead end --- we must backtrack
+        * Repeat
+
+
 
 When the method finishes, it must return a ``Set`` of ``Cell`` objects (``Set<Cell>``) containing the ``Cell``
 objects in the solution.
