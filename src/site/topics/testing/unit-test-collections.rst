@@ -348,7 +348,7 @@ Nested Test Classes
             }
 
             @Test
-            void push_empty_returnsTrue() {
+            void push_singleton_returnsTrue() {
                 assertTrue(classUnderTest.push(11));
             }
 
