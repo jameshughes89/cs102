@@ -2,24 +2,28 @@
 Inheritance
 ***********
 
-* Inheritance is a way to derive a new class from an existing one
-* This allows us to *inherit* functionality from the original class
+* Inheritance is a way to derive a class from an existing one
+* This allows the ability to *inherit* functionality from the base class
 
-.. image:: vehicle.png
-   :width: 500 px
-   :align: center
+.. figure:: vehicle.png
+    :width: 500 px
+    :align: center
 
-* Notice how the top element is the most general of all things included
-* As you move down the tree, the things get more and more specific
-* But as you move down, the things are still a type of the element at the top
-    * In our bag examples, a ``SortedBag`` *is a* ``Bag``
+    Example class hierarchy of elements based on the most general (top) to the least general/most specific (bottom).
+    Moving down the tree, elements become more and more specific. However, when moving down the tree, each element is
+    still a type of the elements above it.
 
-.. image:: bag.png
-   :width: 500 px
-   :align: center
 
-* This hierarchical thinking exists in real life too
-    * But we should be careful not to translate what makes sense in real life to our code
+.. figure:: bag.png
+    :width: 500 px
+    :align: center
+
+    Example class hierarchy for the ``Bag`` class and its subtypes --- ```SortedBag`` and ``IndexedBag``.
+
+
+* This hierarchical thinking exists in everyday life
+
+    * However, one should be careful not to translate what makes sense in reality to code
 
 
 
