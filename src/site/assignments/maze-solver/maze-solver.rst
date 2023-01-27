@@ -2,24 +2,31 @@
 Assignment #2: Maze Solver --- A Path is a Path
 ***********************************************
 
-* **Worth**: 10%
-* **DUE**: March 7th 11:55pm; submitted on MOODLE.
+* **Worth**: 5%
+* **DUE**: TBD 11:55pm; submitted on MOODLE.
 
 
 Task
 ====
 
-Your goal is to solve a maze with a *depth first search* implemented with a stack.
+The goal is to solve a maze with a *depth first search* implemented with a stack.
 
 You will:
 
-* Write a ``DfsMazeSolver`` class that implements the ``MazeSolver`` interface
+* Create a ``DfsMazeSolver`` class that implements the ``MazeSolver`` interface
+
     * Within this class, you will write the ``solve`` method.
-* You will use the ``DfsMazeSolver``, along with some of the other provided classes, in the ``main`` to:
+
+
+* Use the ``DfsMazeSolver``, along with some of the other provided classes, in the ``main`` to:
+
     * Create the maze
     * Solve the maze
-    * Print out the solution
-* You will also be testing your implementation with the provided test classes
+    * Display the solution
+
+
+* Test the implementation with the provided test classes
+
 
 
 Provided Files
