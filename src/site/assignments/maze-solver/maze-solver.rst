@@ -119,8 +119,8 @@ Part 2 --- Run Unit Tests
 Part 3 --- Complete ``DfsMazeSolver``
 =====================================
 
-It is in the ``DfsMazeSolver`` object's ``solve`` method where the magic happens. This assignment requires a
-*Depth First Search* (DFS).
+It is in the ``DfsMazeSolver`` object's ``solve`` method where the magic happens. This assignment requires an
+implementation of a *Depth First Search* (DFS).
 
 Given the stack's LIFO property, it's great for keeping track of where we are and how we got there. If we ever want to
 backtrack, we simply pop things off the stack until we rewind to where we want --- think undo, or the back button on a
