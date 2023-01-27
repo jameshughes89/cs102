@@ -151,12 +151,10 @@ objects in the solution.
 Suggestions
 -----------
 
-Two suggestions:
+* Make use of a ``HashSet`` for keeping track of visited ``Cell`` objects
+* Consider writing private helper methods in the ``DfsMazeSolver`` class
 
-    * Make use of a ``HashSet`` for keeping track of visited ``Cell`` objects
-    * Consider writing private helper methods in the ``DfsMazeSolver`` class
-
-        * Note that only public methods are typically tested; private methods are not tested
+    * Note that only public methods are typically tested; private methods are not tested
 
 
 
