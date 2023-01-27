@@ -181,9 +181,12 @@ path and concatenate it with the file name of the maze you want to open.
 Part 5 --- Testing
 ==================
 
-You may have already verified the correctness of your ``DfsMazeSolver`` with the ``DfsMazeSolverTest`` class, but if
-not, you really should. For good measure, re-run all the tests provided to you. If they all pass, you should be pretty
-confident that you have everything working correctly.
+You may have already verified the correctness of your ``DfsMazeSolver`` with the ``DfsMazeSolverTest`` class. If not, do
+it!
+
+If you have, for good measure, re-run all the tests provided to you. If they all pass, you should be pretty confident
+that you have everything working correctly.
+
 
 There is no test provided for the ``Asn2`` class, but that's nothing to worry about. You can get a sense that it is
 working correctly by
@@ -199,27 +202,36 @@ Exceptions
 ----------
 
 * There are two exceptions included that are not provided by Java by default
+
     * ``LocationNotInMazeException``
     * ``MazeEndpointsException``
 
+
 * These are used/thrown by the ``Maze`` class under certain circumstances
+
     * When a given cell coordinate is not in the maze
-    * When there are issues with the start and/or end cells
+    * When there are issues with the start and/or end cells of a maze
 
 
 Final Class and Fields
 ----------------------
 
 * You will notice that the ``Maze`` and ``Cell`` classes are set to ``final``
+
     * e.g. ``public final class Cell``
     * All it means is that this class cannot be inherited from
     * We have yet to discuss inheritance, so do worry too much about this
 
+
 * The ``Maze`` and ``Cell`` objects' fields are set to ``final``
+
     * This means we do not allow any fields to change
-        * You will notice no setters in these classes
+
+        * You will also notice no setters in these classes
+
+
     * We can have Java explicitly make sure they stay unchanged
-    * Before, we only really saw static constants set to final
+
 
 
 Missing Constructors
@@ -227,13 +239,16 @@ Missing Constructors
 
 * In the ``MazeRenderer`` and ``DfsMazeSolver``, you will notice there are no constructors
 * This may seem strange, but if you do not write a constructor, Java is still happy to create an instance of the object
+
     * e.g. ``MazeRenderer renderer = new MazeRenderer();``
 
-* This is because Java automatically adds a default constructor with no parameters if it does not exist in the class
 
+* This is because Java automatically adds a default constructor with no parameters if it does not exist in the class
 * Not writing in constructors is reasonable in our case since
+
     * These classes have no fields
     * Do not need any special setup code
+
 
 
 Private Constructor
@@ -245,19 +260,26 @@ Private Constructor
 
 * The trick is, *you* don't, the *class* does
 
-* Ideally, we want our constructors to be simple and single purposed
+* Ideally, constructors should be simple and serve a single purposed
+
     * Like setting fields
+
+
 * But if we start having constructors read files, parse large strings, etc., we're starting to break this principle
 
 * The alternative is to create static *factory* methods
+
     * e.g. ``public static Maze fromFile(String mazeFile)``
 
-* The factory method does the heavy lifting, and then creates and returns a new ``Maze`` instance
 
+* The factory method does the heavy lifting, and then creates and returns a new ``Maze`` instance
 * Long story short, you will **not** be making a ``Maze`` like this
+
     * ``Maze myMaze = newMaze(x, y, z);``
 
-* Instead, you will make your maze my getting the class to do it like this
+
+* Instead, you will make your maze by getting the class to do it like this
+
     * ``Maze myMaze = Maze.fromFile(someFile);``
 
 
@@ -267,19 +289,26 @@ Fancier Tests
 * Within some test classes, like ``CellTest`` and ``MazeTest``, you will notice ``ParameterizedTest``
 * This makes it such that we can have a single test run multiple times checking slight variations
 * It's probably easier to get a sense of what this means by having a look at one of these methods
+
     * e.g ``void isVisitable_visitable_returnsTrue(char symbol)``
+
 
 
 Some Hints
 ==========
 
-* Work on one method at a time.
-* Use the unit tests.
-* Get each method *working perfectly* before you go on to the next one.
-* *Test* each method as you write it.
-    * This is a really nice thing about programming; you can call your methods and see what result gets returned. Does it seem correct?
-    * Mentally test before you even write --- what does this method do? What problem is it solving?
-* If you need help, **ask**! Drop by my office hours.
+* Work on one function at a time
+* Get each function working perfectly before you go on to the next one
+* Test each function as you write it
+
+    * This is a really nice thing about programming; you can call your functions and see what result gets returned
+    * Mentally test before you even write --- what does this function do? What problem is it solving?
+
+
+* If you need help, ask
+
+    * Drop by office hours
+
 
 
 Some Marking Details
