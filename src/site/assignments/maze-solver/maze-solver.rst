@@ -34,30 +34,33 @@ Provided Files
 
 You are provided with:
 
+* A package containing maze specific classes
+
+    * A ``Cell`` class with ``CellTest`` unit tests
+    * A ``Maze`` class with ``MazeTest`` unit tests
+    * A ``MazeRenderer`` class with ``MazeRendererTest`` unit tests
+    * Two exceptions --- ``LocationNotInMazeException`` and ``MazeEndpointsException``
+    * A ``MazeSolver`` interface
+
+
 * A ``Stack`` interface
 * An ``ArrayStack`` class with ``ArrayStackTest`` unit tests
-* A ``Cell`` class with ``CellTest`` unit tests
-* A ``Maze`` class with ``MazeTest`` unit tests
-* A ``MazeRenderer`` class with ``MazeRendererTest`` unit tests
-* Two exceptions: ``LocationNotInMazeException`` and ``MazeEndpointsException``
-* A ``MazeSolver`` interface
-* A nearly empty ``DfsMazeSolver`` with a complete ``DfsMazeSolverTest``
+* A nearly empty ``DfsMazeSolver`` with a complete ``DfsMazeSolverTest`` test class
 * An ``Asn2`` class with an empty ``main``
 * Three maze files
 
-* :download:`All of this can be downloaded from here<Assignment2.zip>`
+
+* :download:`All of this can be downloaded from here <Assignment1.zip>`
+
     * This is a compressed IntelliJ project
     * Just unzip, put it where you want on your computer, and you should be able to open this project through IntelliJ
 
-.. warning::
-
-    When you open the project, IntelliJ may notify you about a missing JDK. If this is the case, simply select the
-    download link in the notification.
 
 .. warning::
 
-    Java may say that it cannot find JUnit. If this happens, you need to add JUnit to the project. Simply follow the
-    first few steps of :doc:`Topic 6's aside on testing </topics/stacks/unit-tests>`.
+    When opening the project, IntelliJ may mention a missing JDK. If this is the case, simply select the download link
+    in the notification to download and install the missing JDK.
+
 
 
 Part 0 --- Read the Assignment
