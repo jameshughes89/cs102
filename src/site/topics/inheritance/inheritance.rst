@@ -137,39 +137,42 @@ Abstract Class
 Polymorphism
 ============
 
-* Polymorphism is the idea that behavior can change depending on the type of the object
-* We've already made use of this idea without having gone into any details
+* Polymorphism is the idea that behavior can change depending on the type of the *object*
+* Consider the below ``Stack`` examples
 
     ``Stack<Integer> myStack = new ArrayStack<>();``
 
     ``Stack<Integer> myStack = new LinkedStack<>();``
 
-* Our reference variables here is for something of type ``Stack``
-* Yet, it can reference an object of type ``ArrayStack`` or ``LinkedStack``
-* This is because, ``ArrayStack`` *is a* ``Stack`` and ``LinkedStack`` *is a* ``Stack``
 
-* You **cannot** however do this
+
+* The reference variables is for something of type ``Stack``
+* Yet, it can reference an object of type ``ArrayStack`` or ``LinkedStack``
+* This is because ``ArrayStack`` *is a* ``Stack`` and ``LinkedStack`` *is a* ``Stack``
+
+* However, it is not possible to do this
+
     ``ArrayStack<Integer> myStack = new LinkedStack<>();``
+
 
 * This is because a ``LinkedStack`` is **not** an ``ArrayStack``
 
-.. warning::
 
-    If we did something like this:
+.. note::
 
-        .. code-block:: java
-            :linenos:
+    .. code-block:: java
+        :linenos:
 
-            Stack<Integer> myStack = new LinkedStack<>();
-            Object o = myStack;
+        Stack<Integer> myStack = new LinkedStack<>();
+        Object o = myStack;
 
     The data both ``myStack`` and ``o`` reference has the type ``LinkedStack``. It is the reference variable that's type
-    changed (and can change to any supertype); the type of the object itself does not change.
+    changed (and can change to any supertype). However, the type of the object itself does not change.
 
 .. warning::
 
-    We should be careful with the *is a* metaphor as it can be abused and cause trouble. *Is a* is fine if we're
-    referring to the types, not the things they represent.
+    One should be careful with the *is a* metaphor as it can be abused and cause trouble. *Is a* is fine if referring to
+    the types, not the things they represent.
 
 
 Binding
