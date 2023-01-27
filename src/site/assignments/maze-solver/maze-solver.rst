@@ -119,13 +119,13 @@ Part 2 --- Run Unit Tests
 Part 3 --- Complete ``DfsMazeSolver``
 =====================================
 
-It is in the ``DfsMazeSolver``\'s ``solve`` method where the magic happens. We're going to be doing a
+It is in the ``DfsMazeSolver`` object's ``solve`` method where the magic happens. This assignment requires a
 *Depth First Search* (DFS).
 
-Knowing the stack's LIFO property, it's great for keeping track of where we are and how we got there. If we ever want to
+Given the stack's LIFO property, it's great for keeping track of where we are and how we got there. If we ever want to
 backtrack, we simply pop things off the stack until we rewind to where we want --- think undo, or the back button on a
 browser. In other words, we will be making use of an ``Stack`` of ``Cell`` objects (``Stack<Cell>``) for our DFS --- we
-go as deep as we can down a path until we find the end, or we find a dead end need to backtrack.
+go as deep as we can down a path until we find the end, or we find a dead end and need to backtrack.
 
 The general idea is this
 
@@ -135,20 +135,24 @@ The general idea is this
     * If there are no valid neighbours, we're at a dead end --- we must backtrack
     * Repeat
 
+
 Naturally, you will want to start with the maze's starting ``Cell``.
 
 When the method finishes, it must return a ``Set`` of ``Cell`` objects (``Set<Cell>``) containing the ``Cell``
 objects in the solution.
 
 
+
 Suggestions
 -----------
 
-Two minor suggestions that you by no means need to take
+Two suggestions:
 
     * Make use of a ``HashSet`` for keeping track of visited ``Cell`` objects
     * Consider writing private helper methods in the ``DfsMazeSolver`` class
-        * We only test public methods; private methods are not tested
+
+        * Note that only public methods are typically tested; private methods are not tested
+
 
 
 Part 4 --- Putting it Together
