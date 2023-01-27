@@ -15,7 +15,7 @@ You will:
 
 * Create a ``DfsMazeSolver`` class that implements the ``MazeSolver`` interface
 
-    * Within this class, you will write the ``solve`` method.
+    * Within this class, you will write the ``solve`` method
 
 
 * Use the ``DfsMazeSolver``, along with some of the other provided classes, in the ``main`` to:
@@ -50,7 +50,7 @@ You are provided with:
 * Three maze files
 
 
-* :download:`All of this can be downloaded from here <Assignment1.zip>`
+* :download:`All of this can be downloaded from here <Assignment2.zip>`
 
     * This is a compressed IntelliJ project
     * Just unzip, put it where you want on your computer, and you should be able to open this project through IntelliJ
