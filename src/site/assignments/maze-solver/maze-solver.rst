@@ -315,8 +315,10 @@ Some Marking Details
 ====================
 
 .. warning::
+
     Just because your program produces the correct output, that does not necessarily mean that you will get perfect, or
     even that your program is correct.
+
 
 Below is a list of both *quantitative* and *qualitative* things we will look for:
 
@@ -328,17 +330,25 @@ Below is a list of both *quantitative* and *qualitative* things we will look for
 * Did you do just weird things that make no sense?
 
 
+
 What to Submit to Moodle
 ========================
 
-Submit your work on Moodle.
+* Make sure your **NAME**, **STFX EMAIL**, and **STUDENT NUMBER** appear in a comment at the top of the classes
+* Submit your completed *.java* files to Moodle
 
-* Your ``.java`` files. Please do not compress them.
+    * *DfsMazeSolver.java* and *Asn2.java*
+    * Do **not** submit the *test* classes
+    * Do **not** submit the *.csv* files
+    * Do **not** submit the *.class* files
+    * Do **not** compress the files
 
-* Make sure your **NAME** and **STUDENT NUMBER** appear in a comment at the top of the program.
 
-**VERIFY THAT YOUR SUBMISSION TO MOODLE WORKED!**
-**IF YOU SUBMIT INCORRECTLY, YOU WILL GET A 0**
+
+.. warning::
+
+    Verify that your submission to Moodle worked. If you submit incorrectly, you will get a 0.
+
 
 
 Assignment FAQ
