@@ -208,6 +208,7 @@ Singleton Case Stack Tests
     @Test
     void pop_singleton_returnsTop() {
         classUnderTest.push(10);
+        preState.push(10);
         assertEquals(10, classUnderTest.pop());
     }
 
