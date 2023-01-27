@@ -73,12 +73,14 @@ Object
 Collections Example
 ===================
 
-.. image:: collections_inheritance.png
-   :width: 750 px
-   :align: center
-   :target: https://en.wikipedia.org/wiki/Java_collections_framework
+.. figure:: collections_inheritance.png
+    :width: 750 px
+    :align: center
+    :target: https://en.wikipedia.org/wiki/Java_collections_framework
 
-* This is a visualization of part of Java's collections' class hierarchy
+    Visualization of part of Java's collections' class hierarchy.
+
+
 
 Abstract Class
 --------------
