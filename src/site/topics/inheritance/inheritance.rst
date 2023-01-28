@@ -219,10 +219,10 @@ For Next Time
 * :doc:`Read the aside on inheriting from concrete classes <careful>`
 * Have a *quick* look at the JDK specification link (you won't understand everything, but that's OK)
 
-    * `AbstractCollection <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/AbstractCollection.html>`_
-    * `Queue <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Queue.html>`_
-    * `AbstractQueue <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/AbstractQueue.html>`_
-    * `PriorityQueue <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/PriorityQueue.html>`_
+    * `AbstractCollection <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/AbstractCollection.html>`_
+    * `Queue <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Queue.html>`_
+    * `AbstractQueue <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/AbstractQueue.html>`_
+    * `PriorityQueue <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/PriorityQueue.html>`_
 
 
 * Read Chapter 3 Section 3
