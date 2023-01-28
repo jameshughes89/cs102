@@ -20,14 +20,14 @@ a linked version.
 #. Download the :download:`SortedBag interface<../../../main/java/SortedBag.java>` and add it to the project
 #. Create a ``LinkedSortedBag`` class
 #. Complete the ``LinkedSortedBag`` class by fully implementing the ``SortedBag`` interface
+#. Create a ``LinkedSortedBagTest`` class to test the ``LinkedSortedBag``
 
-#. Download and modify the :download:`ArraySortedBagTest<../../../test/java/ArraySortedBagTest.java>` to create a `LinkedSortedBagTest` to verify everything is working correctly.
+    * Make use of the existing :download:`ArraySortedBagTest<../../../test/java/ArrayQueueTest.java>` class as a reference
+
 
 
 Kattis Problems
 ===============
-
-Recommended Kattis Problems (don't worry, you don’t need to do all of them or anything):
 
 #. https://open.kattis.com/problems/quadrant
 #. https://open.kattis.com/problems/judgingmoose
