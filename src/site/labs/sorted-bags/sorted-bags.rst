@@ -2,29 +2,24 @@
 Sorted Bags
 ***********
 
-* Feel free to use your laptop if you have it
-* I strongly encourage you to work with others in the lab
+* Feel free to use your laptop
+* You are strongly encourage to work with others
 
-    * When you get stuck, do me a favour and ask those sitting around you for help
-    * I want people to get used to working together in the labs
-    * Peer teaching and peer learning is super effective
+    * When you get stuck, ask those sitting around you for help
+    * Get used to working together in the labs
+    * Peer teaching and peer learning has been empirically shown to be very effective
 
 
 Making a Linked Sorted Bag
 ==========================
 
-We discussed the :download:`ArraySortedBag implementation<../../../main/java/ArraySortedBag.java>`, now you will build a
-linked version.
+An :download:`ArraySortedBag implementation<../../../main/java/ArraySortedBag.java>` was already implemented, now create
+a linked version.
 
-#. Create a project and make a class where you will put your main method.
-
-#. Download the :download:`Bag interface<../../../main/java/Bag.java>` and add it to your project.
-
-#. Download the :download:`SortedBag interface<../../../main/java/SortedBag.java>` and add it to your project.
-
-#. Create a ``LinkedSortedBag`` class.
-
-#. Complete the ``LinkedSortedBag`` class by fully implementing the ``SortedBag`` interface.
+#. Download the :download:`Bag interface<../../../main/java/Bag.java>` and add it to the project
+#. Download the :download:`SortedBag interface<../../../main/java/SortedBag.java>` and add it to the project
+#. Create a ``LinkedSortedBag`` class
+#. Complete the ``LinkedSortedBag`` class by fully implementing the ``SortedBag`` interface
 
 #. Download and modify the :download:`ArraySortedBagTest<../../../test/java/ArraySortedBagTest.java>` to create a `LinkedSortedBagTest` to verify everything is working correctly.
 
