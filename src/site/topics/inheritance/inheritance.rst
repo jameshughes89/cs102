@@ -169,10 +169,12 @@ Polymorphism
     The data both ``myStack`` and ``o`` reference has the type ``LinkedStack``. It is the reference variable that's type
     changed (and can change to any supertype). However, the type of the object itself does not change.
 
+
 .. warning::
 
     One should be careful with the *is a* metaphor as it can be abused and cause trouble. *Is a* is fine if referring to
     the types, not the things they represent.
+
 
 
 Binding
@@ -195,16 +197,19 @@ Binding
 
 
 * Given the above code, which version of ``toString`` would be called?
+
     * ``ArrayStack``?
     * ``LinkedStack``?
 
+
 * Connecting a call of a method to the actual implementation of the method is called *binding*
-* Sometimes we know what will get called at compile-time --- static binding
-* Sometimes we will not know until runtime --- dynamic binding
+* Sometimes this is known at compile time --- *static binding*
+* Other times, like in the above example, this is not known until runtime --- *dynamic binding*
 
-* If you want to know what the type of the object is, you can ask it
+
+* It is possible to get the type of the object at runtime
+
     ``myStack.getClass()``
-
 
 
 
