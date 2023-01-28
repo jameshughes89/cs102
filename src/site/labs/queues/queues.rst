@@ -2,40 +2,37 @@
 Queues
 ******
 
-* Feel free to use your laptop if you have it
-* I strongly encourage you to work with others in the lab
+* Feel free to use your laptop
+* You are strongly encourage to work with others
 
-    * When you get stuck, do me a favour and ask those sitting around you for help
-    * I want people to get used to working together in the labs
-    * Peer teaching and peer learning is super effective
+    * When you get stuck, ask those sitting around you for help
+    * Get used to working together in the labs
+    * Peer teaching and peer learning has been empirically shown to be very effective
+
 
 
 Making a Rudimentary Array Queue
 ================================
 
-Despite not being a great implementation, we're going to build a ``RudimentaryArrayQueue`` that always keeps the front
+Despite not being a great implementation, the goal is to build a ``RudimentaryArrayQueue`` that always keeps the front
 of the queue at index ``0``. This is idea #1 from the :doc:`ArrayQueue topic</topics/queues/array-queue>`.
 
-#. Create a project and make a class where you will put your main method.
-
-#. Download the :download:`Queue interface<../../../main/java/Queue.java>` and add it to your project.
-
-#. Create a ``RudimentaryArrayQueue`` class.
-
-#. Complete the ``RudimentaryArrayQueue`` class by fully implementing the ``Queue`` interface.
+#. Download the :download:`Queue interface<../../../main/java/Queue.java>` and add it to the project
+#. Create a ``RudimentaryArrayQueue`` class
+#. Complete the ``RudimentaryArrayQueue`` class by fully implementing the ``Queue`` interface
 
     * There will be a lot of overlap with the :download:`ArrayQueue<../../../main/java/ArrayQueue.java>` class
-    * You will need a way to move the elements down the array after a ``dequeue`` to remove the gap at index ``0`` --- perhaps a private method
+    * Consider creating a private helper method for moving elements down the array after a ``dequeue``
 
-#. Download and modify the :download:`ArrayQueueTest<../../../test/java/ArrayQueueTest.java>` to create a `RudimentaryArrayQueueTest` to verify everything is working correctly.
 
-    * Remember, even though we have a linear time ``dequeue`` and we saw an improved implementation, the ``RudimentaryArrayQueue`` is still, by definition, a queue
+#. Create a ``RudimentaryArrayQueueTest`` class to test the ``RudimentaryArrayQueue``
+
+    * Make use of the existing :download:`ArrayQueueTest<../../../test/java/ArrayQueueTest.java>` class as a reference
+
 
 
 Kattis Problems
 ===============
-
-Recommended Kattis Problems (don't worry, you don’t need to do all of them or anything):
 
 #. https://open.kattis.com/problems/quadrant
 #. https://open.kattis.com/problems/judgingmoose
