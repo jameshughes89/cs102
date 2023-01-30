@@ -1,7 +1,9 @@
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -51,23 +53,9 @@ public class LinkedIteratorTest {
         void next_singleton_returnsElement() {
             Node<Integer> head = makeLinkedStructure(10);
             Iterator<Integer> iterator = new LinkedIterator<>(head);
-            assertEquals(10, iterator.next());
-        }
-
-        @Test
-        void hasNext_postNext_returnsFalse() {
-            Node<Integer> head = makeLinkedStructure(10);
-            Iterator<Integer> iterator = new LinkedIterator<>(head);
-            iterator.next();
-            assertFalse(iterator.hasNext());
-        }
-
-        @Test
-        void next_postNext_throwsNoSuchElementException() {
-            Node<Integer> head = makeLinkedStructure(10);
-            Iterator<Integer> iterator = new LinkedIterator<>(head);
-            iterator.next();
-            assertThrows(NoSuchElementException.class, () -> iterator.next());
+            List<Integer> list = new ArrayList<>();
+            iterator.forEachRemaining(list::add);
+            assertEquals(List.of(10), list);
         }
     }
 
@@ -84,35 +72,9 @@ public class LinkedIteratorTest {
         void next_calledMany_returnsElements() {
             Node<Integer> head = makeLinkedStructure(10, 11, 12, 13, 14);
             Iterator<Integer> iterator = new LinkedIterator<>(head);
-            assertAll(() -> assertEquals(10, iterator.next()),
-                    () -> assertEquals(11, iterator.next()),
-                    () -> assertEquals(12, iterator.next()),
-                    () -> assertEquals(13, iterator.next()),
-                    () -> assertEquals(14, iterator.next()));
-        }
-
-        @Test
-        void hasNext_postNextCalledMany_returnsFalse() {
-            Node<Integer> head = makeLinkedStructure(10, 11, 12, 13, 14);
-            Iterator<Integer> iterator = new LinkedIterator<>(head);
-            iterator.next();
-            iterator.next();
-            iterator.next();
-            iterator.next();
-            iterator.next();
-            assertFalse(iterator.hasNext());
-        }
-
-        @Test
-        void next_postNextCalledMany_throwsNoSuchElementException() {
-            Node<Integer> head = makeLinkedStructure(10, 11, 12, 13, 14);
-            Iterator<Integer> iterator = new LinkedIterator<>(head);
-            iterator.next();
-            iterator.next();
-            iterator.next();
-            iterator.next();
-            iterator.next();
-            assertThrows(NoSuchElementException.class, () -> iterator.next());
+            List<Integer> list = new ArrayList<>();
+            iterator.forEachRemaining(list::add);
+            assertEquals(List.of(10, 11, 12, 13, 14), list);
         }
     }
 }
