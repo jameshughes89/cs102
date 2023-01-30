@@ -1,133 +1,66 @@
-import java.util.Iterator;
+import java.util.NoSuchElementException;
 
-public interface BinarySearchTree<T extends Comparable<? super T>> extends Iterable<T> {
+/**
+ * A binary search tree is a binary tree with the property that all elements to the left are less than the element in
+ * the root node and all elements to the right are greater than or equal to the element in the root node.
+ *
+ * @param <T> Type of elements that are to be in the binary search tree.
+ */
+public interface BinarySearchTree<T extends Comparable<? super T>> extends BinaryTree<T> {
 
     /**
-     * Add an element to the tree such that the binary search tree property
-     * is maintained. Elements considered equal are added to the right.
+     * Add an element to the binary search tree such that the binary search tree property is maintained. Equal
+     * elements are added to the right.
      *
-     * @param element Element to be added to the tree in the proper location
+     * @param element Element to be added to the binary search tree.
+     * @return True if the element was added successfully, false otherwise.
      */
-    void add(T element);
+    @Override
+    boolean add(T element);
 
     /**
-     * Remove and return a specified element from the binary search tree such that
-     * the binary search tree property is maintained. If multiple matching elements
-     * exist, only one is returned. If no such element exists a
-     * NoSuchElementException is thrown.
+     * Removes a single instance of the specified element from the binary search tree such that the binary search
+     * tree property is maintained.
      *
-     * @param element Element to be removed from the
-     * @return Element being removed
+     * @param element Element to be removed from the binary search tree.
+     * @return True if the element was removed successfully, false otherwise.
+     * @throws NoSuchElementException If the provided element does not exist within the binary search tree.
      */
-    T remove(T element);
+    @Override
+    boolean remove(T element);
+
 
     /**
-     * Remove and return the minimum element contained in the binary search tree.
-     * What is considered as the minimum is defined by the type's ordering. If
-     * multiple matching elements exist, only one is returned. If no such element
-     * exists a NoSuchElementException is thrown.
+     * Removes and returns the minimum element from the binary search tree such that the binary search tree property is
+     * maintained.
      *
-     * @return Minimum/smallest element in the binary search tree
+     * @return The minimum element currently in the binary search tree.
+     * @throws NoSuchElementException If the binary search tree is empty.
      */
     T removeMin();
 
     /**
-     * Remove and return the maximum element contained in the binary search tree.
-     * What is considered as the maximum is defined by the type's ordering. If
-     * multiple matching elements exist, only one is returned. If no such element
-     * exists a NoSuchElementException is thrown.
+     * Removes and returns the maximum element from the binary search tree such that the binary search tree property is
+     * maintained.
      *
-     * @return Maximum/largest element in the binary search tree
+     * @return The maximum element currently in the binary search tree.
+     * @throws NoSuchElementException If the binary search tree is empty.
      */
     T removeMax();
 
     /**
-     * Return the minimum element contained in the binary search tree. What is
-     * considered as the minimum is defined by the type's ordering. After this
-     * method is called, the element remains in the tree. If no such element
-     * exists a NoSuchElementException is thrown.
+     * Returns the minimum element from the binary search tree.
      *
-     * @return Minimum/smallest element in the binary search tree
+     * @return The minimum element currently in the binary search tree.
+     * @throws NoSuchElementException If the binary search tree is empty.
      */
     T min();
 
     /**
-     * Return the maximum element contained in the binary search tree. What is
-     * considered as the maximum is defined by the type's ordering. After this
-     * method is called, the element remains in the tree. If no such element
-     * exists a NoSuchElementException is thrown.
+     * Returns the maximum element from the binary search tree.
      *
-     * @return Maximum/largest element in the binary search tree
+     * @return The maximum element currently in the binary search tree.
+     * @throws NoSuchElementException If the binary search tree is empty.
      */
     T max();
-
-    /**
-     * Returns true if element is contained within the tree, false otherwise.
-     *
-     * @param element Element to search for
-     * @return True if element is in tree, false otherwise
-     */
-    boolean contains(T element);
-
-    /**
-     * Returns the number of occurrences of a specified element in the
-     * binary search tree.
-     *
-     * @param element Element to be counted
-     * @return Number of times the element occurred in the binary search tree.
-     */
-    int getCount(T element);
-
-    /**
-     * Checks if the tree is empty.
-     *
-     * @return True if the tree is empty, false otherwise.
-     */
-    boolean isEmpty();
-
-    /**
-     * Returns the number of elements in the tree.
-     *
-     * @return Count of the number of elements in the tree
-     */
-    int size();
-
-    /**
-     * Iterator over all elements in the binary tree.
-     *
-     * @return Iterator for the binary tree
-     */
-    Iterator<T> iterator();
-
-    /**
-     * Iterator over all elements in the tree in a 'pre-order'
-     * ordering.
-     *
-     * @return Pre-order iterator for tree
-     */
-    Iterator<T> preOrderIterator();
-
-    /**
-     * Iterator over all elements in the tree in a 'In-order'
-     * ordering.
-     *
-     * @return In-order iterator for tree
-     */
-    Iterator<T> inOrderIterator();
-
-    /**
-     * Iterator over all elements in the tree in a 'post-order'
-     * ordering.
-     *
-     * @return Post-order iterator for tree
-     */
-    Iterator<T> postOrderIterator();
-
-    /**
-     * Iterator over all elements in the tree in a 'pre-order'
-     * ordering.
-     *
-     * @return Level-order iterator for tree
-     */
-    Iterator<T> levelOrderIterator();
 }

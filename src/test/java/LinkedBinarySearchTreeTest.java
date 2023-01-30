@@ -8,6 +8,48 @@ import static org.junit.jupiter.api.Assertions.*;
 public class LinkedBinarySearchTreeTest {
 
     @Test
+    void add_empty_returnsTrue() {
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
+        assertTrue(bst.add(11));
+    }
+
+    @Test
+    void add_singleton_returnsTrue() {
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
+        bst.add(10);
+        assertTrue(bst.add(11));
+    }
+
+    @Test
+    void add_many_returnsTrue() {
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
+        bst.add(10);
+        bst.add(20);
+        bst.add(30);
+        bst.add(40);
+        bst.add(50);
+        assertTrue(bst.add(11));
+    }
+
+    @Test
+    void remove_singleton_returnsTrue() {
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
+        bst.add(10);
+        assertTrue(bst.remove(10));
+    }
+
+    @Test
+    void remove_many_returnsTrue() {
+        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
+        bst.add(10);
+        bst.add(20);
+        bst.add(30);
+        bst.add(40);
+        bst.add(50);
+        assertTrue(bst.remove(10));
+    }
+
+    @Test
     void isEmptyOnNewTreeReturnsTrue() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         assertTrue(bst.isEmpty());
@@ -85,29 +127,29 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void getCountOnEmptyTreeReturnsZero() {
+    void countOnEmptyTreeReturnsZero() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        assertEquals(0, bst.getCount(99));
+        assertEquals(0, bst.count(99));
     }
 
     @Test
-    void getCountOnTreeWhenCountingNonExistingElementsReturnsZero() {
+    void countOnTreeWhenCountingNonExistingElementsReturnsZero() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
-        assertEquals(0, bst.getCount(101));
+        assertEquals(0, bst.count(101));
     }
 
     @Test
-    void getCountOnTreeWhenCountingSingleEqualElementsReturnsOne() {
+    void countOnTreeWhenCountingSingleEqualElementsReturnsOne() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         bst.add(55);
         bst.add(101);
-        assertEquals(1, bst.getCount(99));
+        assertEquals(1, bst.count(99));
     }
 
     @Test
-    void getCountOnTreeWhenCountingMultipleEqualElementsReturnsOne() {
+    void countOnTreeWhenCountingMultipleEqualElementsReturnsOne() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         bst.add(55);
@@ -116,7 +158,7 @@ public class LinkedBinarySearchTreeTest {
         bst.add(99);
         bst.add(99);
         bst.add(99);
-        assertEquals(5, bst.getCount(99));
+        assertEquals(5, bst.count(99));
     }
 
     @Test
@@ -301,7 +343,7 @@ public class LinkedBinarySearchTreeTest {
         bst.add(22);
         bst.add(22);
         bst.removeMin();
-        assertEquals(2, bst.getCount(22));
+        assertEquals(2, bst.count(22));
     }
 
     @Test
@@ -402,7 +444,7 @@ public class LinkedBinarySearchTreeTest {
         bst.add(33);
         bst.add(99);
         bst.removeMax();
-        assertEquals(2, bst.getCount(99));
+        assertEquals(2, bst.count(99));
     }
 
     @Test
@@ -448,59 +490,6 @@ public class LinkedBinarySearchTreeTest {
         assertThrows(NoSuchElementException.class, () -> bst.remove(101));
     }
 
-    @Test
-    void removeOnTreeWhenElementIsRootReturnsCorrectElement() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        bst.add(50);
-        bst.add(25);
-        bst.add(75);
-        bst.add(37);
-        bst.add(12);
-        bst.add(62);
-        bst.add(87);
-        assertEquals(50, bst.remove(50));
-    }
-
-    @Test
-    void removeOnTreeWhenElementIsInternalNodeReturnsCorrectElement() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        bst.add(50);
-        bst.add(25);
-        bst.add(75);
-        bst.add(37);
-        bst.add(12);
-        bst.add(62);
-        bst.add(87);
-        assertEquals(25, bst.remove(25));
-    }
-
-    @Test
-    void removeOnTreeWhenElementIsLeafNodeReturnsCorrectElement() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        bst.add(50);
-        bst.add(25);
-        bst.add(75);
-        bst.add(37);
-        bst.add(12);
-        bst.add(62);
-        bst.add(87);
-        assertEquals(25, bst.remove(25));
-    }
-
-    @Test
-    void removeOnTreeWhenMultipleEqualElementsExistReturnsCorrectElement() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        bst.add(50);
-        bst.add(25);
-        bst.add(75);
-        bst.add(37);
-        bst.add(12);
-        bst.add(62);
-        bst.add(87);
-        bst.add(37);
-        bst.add(37);
-        assertEquals(37, bst.remove(37));
-    }
 
     @Test
     void removeOnTreeWithSingleEqualElementRemovesElementFromBinarySearchTree() {
@@ -529,7 +518,7 @@ public class LinkedBinarySearchTreeTest {
         bst.add(37);
         bst.add(87);
         bst.remove(37);
-        assertEquals(2, bst.getCount(37));
+        assertEquals(2, bst.count(37));
     }
 
     @Test
@@ -546,24 +535,6 @@ public class LinkedBinarySearchTreeTest {
         assertEquals(6, bst.size());
     }
 
-    @Test
-    void multipleRemoveCallsOnTreeReturnsElements() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        bst.add(50);
-        bst.add(25);
-        bst.add(75);
-        bst.add(37);
-        bst.add(12);
-        bst.add(62);
-        bst.add(87);
-        assertEquals(50, bst.remove(50));
-        assertEquals(25, bst.remove(25));
-        assertEquals(75, bst.remove(75));
-        assertEquals(37, bst.remove(37));
-        assertEquals(12, bst.remove(12));
-        assertEquals(62, bst.remove(62));
-        assertEquals(87, bst.remove(87));
-    }
 
     @Test
     void addSingleElementToTreeResultsInItBeingTheOnlyElement() {
@@ -572,6 +543,7 @@ public class LinkedBinarySearchTreeTest {
         Iterator<Integer> it = bst.iterator();
         assertEquals(99, it.next());
     }
+
 
     @Test
     void addManyElementsToTreeResultsInElementsBeingPlacedInCorrectPlace() {
