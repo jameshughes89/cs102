@@ -49,23 +49,22 @@ Array Implementation Idea
 
 
 ArrayIndexedBag
----------------
+===============
 
-* In addition to the functionality of the ``Bag``, we want to add a few more methods for our ``IndexedBag`` implementation
+* In addition to the functionality of the ``Bag``, an ``IndexedBag`` must also be able to
 
-    * ``void add(T element)`` --- add to the end of the bag
-    * ``void add(int index, T element)``
-    * ``T remove(int index)`` --- remove from a specific index
-    * ``void set(int index, T element)``
+    * ``boolean add(int index, T element)``
+    * ``T remove(int index)``
+    * ``T set(int index, T element)``
     * ``T get(int index)``
     * ``int indexOf(T element)``
 
-* Let's start exploring the implementation
 
-.. warning::
 
-    Only areas of note are presented here and some methods are skipped. See the
-    :download:`ArrayIndexedBag </../main/java/ArrayIndexedBag.java>` implementation to view the full implementation.
+.. note::
+
+    For brevity, only a subset of methods are included below. See the
+    :download:`ArrayIndexedBag </../main/java/ArrayIndexedBag.java>` class for the full implementation.
 
 
 .. code-block:: Java
@@ -108,7 +107,7 @@ There are a couple things to note so far:
 
 
 Private Methods
-^^^^^^^^^^^^^^^
+---------------
 
 * We will make a few private helper methods
 
@@ -171,7 +170,7 @@ Private Methods
 
 
 Iterator Method
-^^^^^^^^^^^^^^^
+---------------
 
 .. warning::
 
@@ -193,7 +192,7 @@ Iterator Method
 * We will look at what the ``ArrayIterator`` class looks like in the next topic
 
 Add Methods
-^^^^^^^^^^^
+-----------
 
 .. code-block:: Java
     :linenos:
@@ -225,7 +224,7 @@ Add Methods
 * Since we can add to an arbitrary index, we may need to make room in our array with the method ``shiftRight``
 
 Index Of, Contains, Remove
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------
 
 .. code-block:: Java
     :linenos:
@@ -294,7 +293,7 @@ Index Of, Contains, Remove
 
 
 ArraySortedBag
---------------
+==============
 
 * In addition to the functionality of the ``Bag``, we want to add a few more methods for our ``SortedBag`` implementation
     * ``void add(T element)`` --- add to the proper spot in the sorted bag to preserve the sorted order
@@ -361,7 +360,7 @@ ArraySortedBag
 
 
 Adding Method
-^^^^^^^^^^^^^
+-------------
 
 .. code-block:: Java
     :linenos:
@@ -404,7 +403,7 @@ Adding Method
 
 
 Testing
--------
+=======
 
 * Although not discussed in depth here, check out the testing methods for these implementations to get a sense of what functionality is being tested and how
     * :download:`ArrayIndexedBagTest </../test/java/ArrayIndexedBagTest.java>`
@@ -422,14 +421,26 @@ Linked Implementation
 * :doc:`Reviewing the different types of insertions and removals from a linked structure will help </topics/linked-structures/linked-structures>`
 
 
-For next time
+For Next Time
 =============
 
-.. warning::
+.. note::
 
-    Note that there are better implementations of these data structures. We will see one later in the course.
+    Note that there are better implementations of these data structures. One will be discussed later in the course.
 
-* Download and play with the :download:`ArrayIndexedBag </../main/java/ArrayIndexedBag.java>` and  :download:`ArraySortedBag </../main/java/ArraySortedBag.java>` code
-* Download and play with the :download:`ArrayIndexedBagTest </../test/java/ArrayIndexedBagTest.java>` and :download:`ArraySortedBagTest </../test/java/ArraySortedBagTest.java>` code
+
 * Read Chapter 6 Sections 6 & 7
+
     * 17 pages
+
+
+Playing Code
+------------
+
+* Download and play with
+
+    * :download:`ArrayIndexedBag </../main/java/ArrayIndexedBag.java>`
+    * :download:`ArraySortedBag </../main/java/ArraySortedBag.java>`
+    * :download:`ArrayIndexedBagTest </../test/java/ArrayIndexedBagTest.java>`
+    * :download:`ArraySortedBagTest </../test/java/ArraySortedBagTest.java>`
+
