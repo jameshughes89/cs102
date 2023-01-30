@@ -19,6 +19,16 @@ public interface SortedBag<T extends Comparable<? super T>> extends Bag<T> {
     boolean add(T element);
 
     /**
+     * Removes a single instance of the specified element from the bag such that the sorted bag remains sorted.
+     *
+     * @param element Element to be removed from the bag.
+     * @return True if the element was removed successfully, false otherwise.
+     * @throws NoSuchElementException If the provided element does not exist within the bag.
+     */
+    @Override
+    boolean remove(T element);
+
+    /**
      * Removes the first (lowest) element from the sorted bag. The remove is done in such a way that the order of the
      * elements within the sorted bag is preserved. Returns the element that was removed from the sorted bag.
      *
