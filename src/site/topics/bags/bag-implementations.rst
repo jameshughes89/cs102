@@ -2,12 +2,15 @@
 Bag Implementations
 *******************
 
-* :doc:`We already know what we want to do with our bags <bag-adt>`
-* We also extended the ``Bag`` to make more specialized bags
+* Given the definition of a ``Bag``
+* And given the definitions of the specialized bags
+
     * ``IndexedBag``
     * ``SortedBag``
 
-* Let's implement them now
+
+* How can they be implemented?
+
 
 
 Array Implementation Idea
