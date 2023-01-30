@@ -137,6 +137,10 @@ Polymorphism
 ============
 
 * Polymorphism is the idea that behavior can change depending on the type of the *object*
+
+    * Though, the idea of polymorphism is broader than just inheritance
+
+
 * Consider the below ``Stack`` examples
 
     ``Stack<Integer> myStack = new ArrayStack<>();``
