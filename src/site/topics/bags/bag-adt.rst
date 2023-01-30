@@ -1,102 +1,167 @@
-*******
-Bag ADT
-*******
+***********
+The Bag ADT
+***********
 
-* Like stacks and queues, bags are another data structure
+* Like stacks and queues, a bag is a data structure
 * However, bags are more general than stacks and queues
-    * We have more flexibility on where we add and remove elements
+
+* Bags have more flexibility on how they are used
+
+    * Where and how elements are added, removed, and accessed
+
+
 
 Bags
-=====
+====
 
-.. image:: bag_general1.png
+.. figure:: bag_general1.png
     :width: 500 px
     :align: center
 
-* By default, our bag shouldn't really be thought of as having an ordering
-    * It's implementation may be with some sort of linear collection, but the idea is that the information in the bag has no order
+    A representation of an arbitrary bag containing seven elements.
 
-* What things do we want to do with our new data structure?
-    * Add things
-    * Remove things
+
+* The high-level idea of a bag shouldn't really be thought of as having an ordering
+
+    * The underlying implementation may be with some linear container
+    * But the idea is that the information in the bag has no meaningful order
+
+
+* Like the other collections, there needs to be a way to
+
+    * Add
+    * Remove
     * Get the size
     * Check if it's empty
 
-* Adding to a Bag
-    * How should we add things?
-    * Where should they go?
 
-* Removing from a Bag
-    * How should we remove things?
-    * Where should they be removed from?
+* But given the more general definition of the bag, how exactly these should be done is not obvious
 
-* Other things me may want to do?
-    * Take a minute and think about potential ideas
+    * Adding to a Bag
+
+        * How should elements be added?
+        * Where should they go?
 
 
-Sorted Bags
------------
+    * Removing from a Bag
 
-* If we want a specific kind of bag that keeps our elements sorted based on some ordering, adding will need to be done carefully
+        * How should elements be removed?
+        * Where should they be removed from?
+
+
+    * Other potential functionality?
+
+        * Access a specific element?
+        * Check if a given element exists?
+        * ...
+
+
+* Notice that the general idea of the bag is quite high-level and the answer to the above questions really *depends*
+* To help determine how these operations should work, more specialized bags can be defined
+* Although there are several possibilities for specialized bags, the ones covered here are
+
+    * Sorted Bags
+    * Indexed Bags
+
+
+
+Sorted Bag
+----------
+
+* If the elements must be sorted, then how they are added and removed must be done carefully
+
     * Unlike the general bag, this specific kind of bag will have an ordering
 
+
 * The ordering of the elements will depend on some characteristic of the contents of the bag
+
     * Numbers in ascending order
     * Strings in alphabetical order
 
+
 * The elements themselves are what determine the ordering
 
-.. image:: bag_sorted_bag0.png
-   :width: 500 px
-   :align: center
+.. figure:: bag_sorted_bag0.png
+    :width: 500 px
+    :align: center
 
-* There really is only one way to add elements to this sorted bag
-    * The elements **must** go where it belongs
-* We cannot specify where we add it because that may break our sorted ordering
+    Example sorted bag of seven integers. The integer 58 is to be added to the collection.
 
-.. image:: bag_sorted_bag1.png
-   :width: 500 px
-   :align: center
 
-* Should there be rules restricting removing from the bag?
+* There is only one way to add the element to the sorted bag
+
+    * The element must be added such that the sorted property of the bag is preserved
+
+
+.. figure:: bag_sorted_bag1.png
+    :width: 500 px
+    :align: center
+
+    Example of inserting the integer ``58`` into the only valid spot in the sorted bag. Notice that the integer ``67``
+    is the first element within the sorted bag that is larger than the element being added.
+
+
+* Should there be restrictions on how elements are removed?
+
 
 
 Indexed Bags
 ------------
 
 * Indexed bags are bags where the elements are referenced by a numeric position
-    * Numeric position is called the index
-    * This is like arrays or the Python lists you're used to
-* Like the sorted bag, this specific kind of bag will have an ordering
 
-* Element position is important
-* User determines the ordering of the elements
-* Every time something is added or removed, the indices of the elements will need to be updated
+    * The numeric position is called the index
+    * Like arrays or Python lists
 
-.. image:: bag_indexed_bag0.png
-   :width: 500 px
-   :align: center
 
-* We can add to any arbitrary index, assuming it is valid
+* This specific kind of bag will have an ordering
 
-.. image:: bag_indexed_bag1.png
-   :width: 500 px
-   :align: center
+    * Element position is important
+    * The elements are not *sorted* based on some property of the elements
+    * User determines the ordering of the elements
 
-* We also will have removes from arbitrary locations
+
+* Every time an element is added or removed, the indices may need to change
+
+
+.. figure:: bag_indexed_bag0.png
+    :width: 500 px
+    :align: center
+
+    Example indexed bag with seven elements. The three elements are to be added to the specified locations within the
+    bag. One element is to be added to the front, another to the middle, and the last to the end.
+
+
+.. figure:: bag_indexed_bag1.png
+    :width: 500 px
+    :align: center
+
+    Example of the indexed bag after three elements were added to the front, middle, and end of the bag. Note that the
+    elements' indices changed as a result of the adds.
+
+
+* Elements can be added to any arbitrary index, assuming it is valid
+
+    * The specified index would be the index it should exist at *after* adding
+
+
+* Like adding, elements can be removed from any valid index
+
 
 
 Functionality
 =============
 
-* We will keep our functionality of the bag simple
-    * Add stuff
-    * Remove stuff
-    * Check if something is in the bag
-    * Count the number of times something exists in the bag
-    * See if it's empty
+* The bag interface will be kept simple
+
+    * Add an element
+    * Remove a specific element
+    * Check if an element is contained in the bag
+    * Count the number of occurrences of an element in the bag
+    * Check if it's empty
     * Get the size
     * Get an iterator for the bag
+
         * Iterators are handy tools for looping and consistency
         * More on iterators later
 
@@ -104,111 +169,111 @@ Functionality
 .. code-block:: java
     :linenos:
 
-    import java.util.Iterator;
+    public interface Bag<T> extends Iterable<T> {
 
-    public interface Bag<T> {
-
-        void add(T element);
-
-        T remove(T element);
-
+        boolean add(T element);
+        boolean remove(T element);
         boolean contains(T target);
-
-        int getCount(T target);
-
+        int count(T target);
         boolean isEmpty();
-
         int size();
-
         Iterator<T> iterator();
     }
+
 
 
 Sorted Bag Functionality
 ------------------------
 
-* We want our sorted bags to be bags and have all the functionality as the bag
-    * Add stuff
-    * Remove stuff
-    * Check if something is in the bag
-    * Count the number of times something exists in the bag
-    * See if it's empty
-    * Get the size
-    * Get an iterator for the bag
+* A sorted bag will do everything a bag can
+* However, there will be some specific requirements for the sorted bag
 
-* However, there will be some functionality specific to the sorted bag that we will want
-    * We have to make sure our ``add`` adds stuff to the proper location in the bag
+    * Add happens such that the sorted property is preserved
     * Remove the first element
     * Remove the last element
-    * Check the first element (but leave it in the bag)
-    * Check the last element (but leave it in the bag)
+    * Get the first element (but leave it in the bag)
+    * Get the last element (but leave it in the bag)
 
 
 .. code-block:: java
     :linenos:
     :emphasize-lines: 1
 
-    public interface SortedBag<T> extends Bag<T> {
+    public interface SortedBag<T extends Comparable<? super T>> extends Bag<T> {
 
-        // Special add to keep proper order
-        void add(T element);
-
+        @Override
+        boolean add(T element);
         T removeFirst();
-
         T removeLast();
-
         T first();
-
         T last();
     }
 
-* You will notice that, despite wanting all the functionality of the bag, we do not write them in our interface
-* You will also notice that the first line says ``public interface SortedBag<T> extends Bag<T>``
+* Notice that, despite wanting all the ``Bag`` methods, they are not included in the ``SortedBag`` interface
+* This is because the ``SortedBag`` *extends* the ``Bag`` interface
 
-* The ``extends`` keyword means that we will *inherit* all the functionality from the class we are extending
+    * ``public interface SortedBag<T extends Comparable<? super T>> extends Bag<T>``
+
+
+* The ``extends`` keyword means that this interface/class will *inherit* all the methods from the class being extended
+
     * ``Bag`` is being extended in this case
+    * Similarly, the type ``T`` is extending ``Comparable`` --- ``T extends Comparable<? super T>``
 
-* This means that, although we did not write the functions from the ``Bag`` interface in the ``SortedBag`` ourselves, they are still part of what makes up a ``SortedBag``
-    * If you try to implement a ``SortedBag`` without implementing all the functionality from the ``Bag`` interface, it won't work
+        * This will be discussed in more detail later
 
-* The idea of inheritance will be discussed further later
+
+* Although not explicitly included in the ``SortedBag`` interface, the methods from ``Bag`` are still part of what defines a ``SortedBag``
+
+    * A ``SortedBag`` cannot be implemented without implementing all the methods from the ``Bag`` interface
+
+
+* The idea of inheritance will be discussed in more detail later
+
 
 
 Indexed Bag
 -----------
 
-* Similar to the sorted bag, the indexed bag will make use of inheritance to get all the functionality for bags
-* We will also add specific functionality for our indexed bag
-    * Stuff to be able to specify indices in the data structure
+* Similar to the ``SortedBag`` interface, the ``IndexedBag`` interface will make use of inheritance by extending the ``Bag`` interface
+* In addition to the ``Bag`` methods, ``IndexedBag`` specific methods are included
+
+    * Add an element to a specific index
+    * Remove an element from a specific index
+    * Change (set) the element at a specific index
+    * Get an element at a specific index
+    * Find the index of a specified element
+
 
 .. code-block:: java
     :linenos:
 
     public interface IndexedBag<T> extends Bag<T> {
 
-        void add(T element);
-
-        void add(int index, T element);
-
-        void set(int index, T element);
-
+        @Override
+        boolean add(T element);
+        boolean add(int index, T element);
+        T set(int index, T element);
         T get(int index);
-
-        // Mind the difference in function signature
-        // from the inherited remove
-        T remove(int index);
-
+        T remove(int index);    // Different signature from the inherited remove
         int indexOf(T element);
     }
 
 
-For next time
+
+For Next Time
 =============
 
+* Read Chapter 6 Section 1 -- 5 on Lists
+
+    * 23 pages
+
+
+Playing Code
+------------
+
 * Download the various bag interfaces:
+
     * :download:`Bag </../main/java/Bag.java>`
     * :download:`SortedBag </../main/java/SortedBag.java>`
     * :download:`IndexedBag </../main/java/IndexedBag.java>`
-
-* Read Chapter 6 Section 1 -- 5 on Lists
-    * 23 pages

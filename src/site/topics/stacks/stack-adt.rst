@@ -150,8 +150,8 @@ Maze Solving
     * Checking if the new top has any available unvisited paths
 
 
-Pseudocode for Traversing a Maze
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Algorithm for Traversing a Maze
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: text
     :linenos:
@@ -179,7 +179,7 @@ Example
         :width: 250 px
         :align: center
 
-        Animation of a depth first search through a 6x6 maze. The green and red cells represent the start and end
+        Animation of a depth first search through a 6x7 maze. The green and red cells represent the start and end
         locations respectively. Black cells represent walls and light blue represent open spaces. Purple represents the
         current location in the maze (top of the stack), grey represent spaces in a pathway being explored (currently
         within the stack, but not the top), and orange represents spaces that were part of a dead end path (popped from
@@ -255,22 +255,22 @@ Generics
 
 * Imagine someone wanted to have a stack of type ``Integer``
 
-    * ``public boolean push(Integer element);``
-    * ``public Integer pop();``
+    * ``boolean push(Integer element);``
+    * ``Integer pop();``
     * ...
 
 
 * Then, maybe someone else wants to make a stack of ``String`` objects
 
-    * ``public boolean push(String element);``
-    * ``public String pop();``
+    * ``boolean push(String element);``
+    * ``String pop();``
     * ...
 
 
 * Then maybe a stack of ``Friend`` objects
 
-    * ``public boolean push(Friend element);``
-    * ``public Friend pop();``
+    * ``boolean push(Friend element);``
+    * ``Friend pop();``
     * ...
 
 
@@ -346,4 +346,4 @@ For Next Time
 Playing Code
 ------------
 
-* Download and play with the :download:`Stack.java</../main/java/Stack.java>` interface
+* Download and play with the :download:`Stack</../main/java/Stack.java>` interface
