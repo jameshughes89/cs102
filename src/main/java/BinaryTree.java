@@ -37,6 +37,14 @@ public interface BinaryTree<T> extends Iterable<T> {
     boolean contains(T element);
 
     /**
+     * Returns the number of occurrences of an element contained within the binary tree.
+     *
+     * @param target Element to be counted.
+     * @return Number of times the element can be found in the bag.
+     */
+    int count(T target);
+
+    /**
      * Returns true if the binary tree contains no elements.
      *
      * @return True if the binary tree is empty, false otherwise.
