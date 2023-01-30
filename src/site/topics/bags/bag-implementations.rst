@@ -60,7 +60,6 @@ ArrayIndexedBag
     * ``int indexOf(T element)``
 
 
-
 .. note::
 
     For brevity, only a subset of methods are included below. See the
@@ -74,7 +73,7 @@ ArrayIndexedBag
     :emphasize-lines: 2
 
 
-* Note the import of ``Iterator``
+* Note the import of ``Iterator`` and the implementation of ``Iterator<T>``
 
     * Iterators are used for *iterating* over a collection
     * More on this later
@@ -87,27 +86,13 @@ Private Methods
 .. literalinclude:: /../main/java/ArrayIndexedBag.java
     :language: java
     :lineno-match:
-    :lines: 37-80
+    :lines: 37-62
 
 
-* We've also added a ``shiftLeft`` and ``shiftRight``
-    * These move elements up or down the array to make or eliminate extra room for adding and removing elements
+* ``shiftLeft`` and ``shiftRight``
 
-* ``sentinelIndexOf``, which will tell us the index of a specified element, but return ``NOT_FOUND`` (``-1``) if it's not found
-    * This method will be helpful for a few other methods in our class
-* This seems very similar to ``indexOf``, except, like our other collections, we want our ``indexOf`` to throw an exception if something is not found
-    * If we suddenly switch this method to not throw an exception, this may be very confusing
-    * Nuances will be discussed further later
+    * These move elements up or down the array to make or eliminate room for adding and removing elements
 
-* We also make use of an ``Iterator`` here
-* Remember how looping through an array, we would almost always use a ``for`` loop with indices
-* Also how looping through a linked structure, we would use a ``while`` loop checking something like ``cur != null``
-* Iterators provide us with a way to iterate over *something* the same way, regardless with what the underlying *thing* is
-    * In our case, the *something* is a collection
-    * The underlying *thing* is out array
-* Here we're using two methods from the iterator
-    * ``hasNext()``, which returns a boolean telling us if there is anything left in the collection
-    * ``next()``, which returns the next element in the collection
 
 
 Iterator Method
@@ -115,11 +100,13 @@ Iterator Method
 
 .. warning::
 
-    Iterators are the focus of the next topic, so they are only presented briefly here.
+    Iterators are the focus of another topic, so they are only briefly presented here.
 
 
-* We made use of this method in other methods by calling ``this.iterator()``
-* Which calls the method ``iterator`` from this class
+* Iterators are used to provide a common way to iterator over a collection, regardless of the underlying contained
+
+    * Array vs. linked structure
+
 
 .. literalinclude:: /../main/java/ArrayIndexedBag.java
     :language: java
@@ -128,7 +115,8 @@ Iterator Method
 
 
 * All this method does is create an instance of an ``ArrayIterator`` and return it
-* We will look at what the ``ArrayIterator`` class looks like in the next topic
+* What the ``ArrayIterator`` class looks like is discussed later in the course
+
 
 Add Methods
 -----------
@@ -139,47 +127,25 @@ Add Methods
     :lines: 82-100
 
 
+* Note that ``add(T element)`` simply delegates to ``add(int index, T element)`` for ease and code/logic reuse
+* Unlike the methods for adding to a ``Stack`` or ``Queue``, this method may throw an exception
 
-* note expand capacity is different here*********
-
-
-* There is nothing overly sophisticated taking place in these add methods
-    * ``add(T element)`` even delegates to ``add(int index, T element)`` for ease and code/logic reuse
-
-* Unlike our methods for adding things to a ``Stack`` or ``Queue``, this method may throw an exception since we can specify an invalid index
-* Like the ``Stack`` and ``Queue``, we may need to call ``expandCapacity``
-* Since we can add to an arbitrary index, we may need to make room in our array with the method ``shiftRight``
-
-Index Of, Contains, Remove
---------------------------
-
-.. literalinclude:: /../main/java/ArrayIndexedBag.java
-    :language: java
-    :lineno-match:
-    :lines: 142-153
+    * The exception is thrown if the specified index is out of bounds
 
 
-* Our ``indexOf`` and ``contains`` methods makes use of the ``sentinelIndexOf`` method
-* The difference between ``IndexOf`` and ``sentinelIndexOf`` is that one may throw an exception, while the other may return a sentinel value
-* At first this may seem silly
-    * Why not cut ``sentinelIndexOf`` and just use ``indexOf``, and instead of checking for ``NOT_FOUND``, just catch the exception?
+* Like the ``Stack`` and ``Queue``, the array may run out of space
+* Unlike before, an ``expandCapacity`` method is not included
+* Instead, the ``copyOf`` function from the ``Arrays`` class is used
+
+    * It creates a new array with the specified capacity containing a copy of the elements in the original array
 
 
-.. code-block:: Java
-    :linenos:
+* The ``shiftRight`` private method is used to make room for the element to be added
 
-        @Override
-        public boolean contains(T target) {
-            try {
-                indexOf(target);
-                return true;
-            } catch (NoSuchElementException e) {
-                return false;
-            }
-        }
 
-* However, remember that we keep exceptions and regular functionality separate
-* If we use this option where we catch the exception, we are now letting these worlds collide
+
+Remove
+------
 
 .. literalinclude:: /../main/java/ArrayIndexedBag.java
     :language: java
@@ -188,7 +154,7 @@ Index Of, Contains, Remove
 
 
 * The ``remove(T element)`` method delegates to the ``remove(int index)`` for ease and code/logic reuse
-* You will also see that we do not use ``sentinelIndexOf`` since we do want the call to ``remove(T element)`` to propagate an exception if the element does not exist
+
 
 
 ArraySortedBag
