@@ -2,7 +2,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * A bag is a linear data structure. Bags have no defined ordering. Elements can be added and removed from a Bag.
+ * A bag is a linear data structure. Bags have no defined ordering. Elements can be added and removed from a bag.
  *
  * @param <T> Type of elements that are to be in the bag.
  */
