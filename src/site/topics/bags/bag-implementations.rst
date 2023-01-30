@@ -160,17 +160,20 @@ Remove
 ArraySortedBag
 ==============
 
-* In addition to the functionality of the ``Bag``, we want to add a few more methods for our ``SortedBag`` implementation
-    * ``void add(T element)`` --- add to the proper spot in the sorted bag to preserve the sorted order
+* In addition to the functionality of the ``Bag``, a ``SortedBag`` must also be able to
+
     * ``T removeFirst()``
     * ``T removeLast()``
     * ``T first()``
     * ``T last()``
 
-.. warning::
 
-    Like the indexed bag, some methods are skipped. See the
-    :download:`ArraySortedBag </../main/java/ArraySortedBag.java>` implementation to view the full implementation.
+* Further, the overloaded ``add`` and ``remove`` methods must preserve the ordering of the elements
+
+.. note::
+
+    For brevity, only a subset of methods are included below. See the
+    :download:`ArrayIndexedBag </../main/java/ArraySortedBag.java>` class for the full implementation.
 
 
 .. literalinclude:: /../main/java/ArraySortedBag.java
@@ -180,33 +183,41 @@ ArraySortedBag
     :emphasize-lines: 12
 
 
-
-* This looks nearly the same as the ``ArrayIndexedBag`` implementation, but we see one major difference
-
-    ``<T extends Comparable<? super T>>``
-
+* Notice ``<T extends Comparable<? super T>>``
 * There is a little bit to unpack here
 
-* First, when something extends `Comparable <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Comparable.html>`_, it means that the type has some defined ordering
+* First, when something extends `Comparable <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Comparable.html>`_, it means that the type has some defined ordering
+
     * The method ``compareTo`` is implemented for the type
 
-* If we call ``x.compareTo(y)``
+
+* If ``x.compareTo(y)`` is called
+
     * Return a negative integer if ``x < y``
     * Return zero if ``x == y``
     * Return a positive integer if ``x > y``
 
-* When we have something that is extending ``Comparable<T>``, that means we can compare ``this`` to some type ``T``
+
+* When something extends ``Comparable<T>``, that means ``this`` can be compared to some type ``T``
+
     * ``this`` can be compared to things of type ``T``, but not the other way around
 
-* By saying ``T extends Comparable<T>``, this means that the type ``T`` we want in our ``ArraySortedBag`` can be compared to things of type ``T`` to provide some defined ordering
-    * Which is needed, if we want to sort things
 
-* Finally, with ``Comparable<? super T>``, we are saying that ``T`` or one of its superclasses must extend ``Comparable``
+* ``T extends Comparable<T>`` means that the type ``T`` can be compared to things of type ``T`` to provide some defined ordering
+
+    * Which is needed, if the elements are to be sorted
+
+
+* Finally, ``Comparable<? super T>`` means that ``T``, or one of its superclasses, must extend ``Comparable``
+
     * ``?`` is a *wildcard*
-    * If our type ``T`` does not extend ``Comparable`` and have a ``compareTo`` method written, that may be fine as long as one of its superclasses does
+    * It is fine if ``T`` does not extend ``Comparable`` as long as one of its superclasses does
 
-* Putting this all together, ``<T extends Comparable<? super T>>`` means that our type ``T`` must have a defined ordering for itself either through a direct implementation of ``compareTo`` or through inheriting from a superclass
 
+* Thus, ``<T extends Comparable<? super T>>`` means that ``T`` must have a defined ordering for itself through either
+
+    * A direct implementation of ``compareTo``
+    * Inheritance
 
 
 Adding Method
