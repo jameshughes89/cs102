@@ -2,7 +2,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * A bag is a linear data structure. Bags have no defined ordering. Elements can be added and removed from a Bag.
+ * A bag is a linear data structure. Bags have no defined ordering. Elements can be added and removed from a bag.
  *
  * @param <T> Type of elements that are to be in the bag.
  */
@@ -28,18 +28,18 @@ public interface Bag<T> extends Iterable<T> {
     /**
      * Returns true if the bag contains the specified element.
      *
-     * @param target Element whose presence in the bag is to be tested.
+     * @param element Element whose presence in the bag is to be tested.
      * @return True if the element is contained within the bag, false otherwise.
      */
-    boolean contains(T target);
+    boolean contains(T element);
 
     /**
      * Returns the number of occurrences of an element contained within the bag.
      *
-     * @param target Element to be counted.
+     * @param element Element to be counted.
      * @return Number of times the element can be found in the bag.
      */
-    int count(T target);
+    int count(T element);
 
     /**
      * Returns true if the bag contains no elements.
