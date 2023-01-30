@@ -17,9 +17,10 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     }
 
     @Override
-    public void add(T element) {
+    public boolean add(T element) {
         root = add(element, root);
         size++;
+        return true;
     }
 
     /**
@@ -43,7 +44,7 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     }
 
     @Override
-    public T remove(T element) {
+    public boolean remove(T element) {
         T returnElement = null;
         if (isEmpty()) {
             throw new NoSuchElementException();
@@ -56,7 +57,7 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
             returnElement = remove(element, root, root.getRight());
         }
         size--;
-        return returnElement;
+        return true;
     }
 
     /**
@@ -273,11 +274,11 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     }
 
     @Override
-    public int getCount(T element) {
+    public int count(T element) {
         if (isEmpty()) {
             return 0;
         }
-        return getCount(element, root);
+        return count(element, root);
     }
 
     /**
@@ -288,16 +289,16 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
      * @param current Current node being investigated
      * @return Number of times the element exists in the (sub)tree.
      */
-    private int getCount(T element, Node<T> current) {
+    private int count(T element, Node<T> current) {
         if (current == null) {
             return 0;
         }
         if (current.getData().equals(element)) {
-            return 1 + getCount(element, current.getRight());
+            return 1 + count(element, current.getRight());
         } else if (current.getData().compareTo(element) > 0) {
-            return getCount(element, current.getLeft());
+            return count(element, current.getLeft());
         } else {
-            return getCount(element, current.getRight());
+            return count(element, current.getRight());
         }
     }
 
