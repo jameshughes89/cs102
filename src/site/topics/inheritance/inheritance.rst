@@ -98,7 +98,7 @@ Abstract Class
     * May include concrete methods that will be the same among multiple subclasses
 
 
-* `Take Java's AbstractQueue class <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/AbstractQueue.html>`_ and its subclass, `PriorityQueue <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/PriorityQueue.html>`_
+* `Take Java's AbstractQueue class <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/AbstractQueue.html>`_ and its subclass, `PriorityQueue <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/PriorityQueue.html>`_
 
 * The ``AbstractQueue`` has several important concrete methods implemented within the abstract class
 
