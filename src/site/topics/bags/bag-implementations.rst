@@ -84,46 +84,12 @@ ArrayIndexedBag
 Private Methods
 ---------------
 
-* We will make a few private helper methods
+.. literalinclude:: /../main/java/ArrayIndexedBag.java
+    :language: java
+    :lineno-match:
+    :lines: 37-80
 
-.. code-block:: Java
-    :linenos:
 
-        private void expandCapacity() {
-            T[] newBag = (T[]) new Object[bag.length * 2];
-            for (int i = 0; i < bag.length; ++i) {
-                newBag[i] = bag[i];
-            }
-            bag = newBag;
-        }
-
-        private void shiftLeft(int start) {
-            for (int i = start; i < rear - 1; ++i) {
-                bag[i] = bag[i + 1];
-            }
-            bag[rear - 1] = null;
-        }
-
-        private void shiftRight(int start) {
-            for (int i = rear; i > start; --i) {
-                bag[i] = bag[i - 1];
-            }
-            bag[start] = null;
-        }
-
-        private int sentinelIndexOf(T target) {
-            int searchIndex = 0;
-            Iterator<T> it = this.iterator();
-            while (it.hasNext()) {
-                if (it.next().equals(target)) {
-                    return searchIndex;
-                }
-                searchIndex++;
-            }
-            return NOT_FOUND;
-        }
-
-* We are well familiar with ``expandCapacity``
 * We've also added a ``shiftLeft`` and ``shiftRight``
     * These move elements up or down the array to make or eliminate extra room for adding and removing elements
 
@@ -155,13 +121,11 @@ Iterator Method
 * We made use of this method in other methods by calling ``this.iterator()``
 * Which calls the method ``iterator`` from this class
 
-.. code-block:: Java
-    :linenos:
+.. literalinclude:: /../main/java/ArrayIndexedBag.java
+    :language: java
+    :lineno-match:
+    :lines: 176-179
 
-    @Override
-    public Iterator<T> iterator() {
-        return new ArrayIterator<>(bag, size());
-    }
 
 * All this method does is create an instance of an ``ArrayIterator`` and return it
 * We will look at what the ``ArrayIterator`` class looks like in the next topic
@@ -169,26 +133,14 @@ Iterator Method
 Add Methods
 -----------
 
-.. code-block:: Java
-    :linenos:
+.. literalinclude:: /../main/java/ArrayIndexedBag.java
+    :language: java
+    :lineno-match:
+    :lines: 82-100
 
-        @Override
-        public void add(int index, T element) {
-            if (index > size()) {
-                throw new IndexOutOfBoundsException(String.format("Bag has no index %d to add to.", index));
-            }
-            if (size() == bag.length) {
-                expandCapacity();
-            }
-            shiftRight(index);
-            bag[index] = element;
-            rear++;
-        }
 
-        @Override
-        public void add(T element) {
-            add(rear, element);
-        }
+
+* note expand capacity is different here*********
 
 
 * There is nothing overly sophisticated taking place in these add methods
@@ -201,27 +153,17 @@ Add Methods
 Index Of, Contains, Remove
 --------------------------
 
-.. code-block:: Java
-    :linenos:
+.. literalinclude:: /../main/java/ArrayIndexedBag.java
+    :language: java
+    :lineno-match:
+    :lines: 142-153
 
-        @Override
-        public int indexOf(T target) {
-            int index = sentinelIndexOf(target);
-            if (index == NOT_FOUND) {
-                throw new NoSuchElementException("Element not contained in bag.");
-            }
-            return index;
-        }
-
-        @Override
-        public boolean contains(T target) {
-            return sentinelIndexOf(target) != NOT_FOUND;
-        }
 
 * Our ``indexOf`` and ``contains`` methods makes use of the ``sentinelIndexOf`` method
 * The difference between ``IndexOf`` and ``sentinelIndexOf`` is that one may throw an exception, while the other may return a sentinel value
 * At first this may seem silly
     * Why not cut ``sentinelIndexOf`` and just use ``indexOf``, and instead of checking for ``NOT_FOUND``, just catch the exception?
+
 
 .. code-block:: Java
     :linenos:
@@ -239,29 +181,11 @@ Index Of, Contains, Remove
 * However, remember that we keep exceptions and regular functionality separate
 * If we use this option where we catch the exception, we are now letting these worlds collide
 
-.. code-block:: Java
-    :linenos:
+.. literalinclude:: /../main/java/ArrayIndexedBag.java
+    :language: java
+    :lineno-match:
+    :lines: 120-140
 
-        @Override
-        public T remove(T element) {
-            if (isEmpty()) {
-                throw new NoSuchElementException("Removing from an empty bag.");
-            }
-            // If indexOf throws an exception, this method propagates it
-            int removeIndex = indexOf(element);
-            return remove(removeIndex);
-        }
-
-        @Override
-        public T remove(int index) {
-            if (index >= size()) {
-                throw new IndexOutOfBoundsException(String.format("Bag has no element at index %d.", index));
-            }
-            T returnElement = bag[index];
-            shiftLeft(index);
-            rear--;
-            return returnElement;
-        }
 
 * The ``remove(T element)`` method delegates to the ``remove(int index)`` for ease and code/logic reuse
 * You will also see that we do not use ``sentinelIndexOf`` since we do want the call to ``remove(T element)`` to propagate an exception if the element does not exist
@@ -282,29 +206,14 @@ ArraySortedBag
     Like the indexed bag, some methods are skipped. See the
     :download:`ArraySortedBag </../main/java/ArraySortedBag.java>` implementation to view the full implementation.
 
-.. code-block:: Java
-    :linenos:
-    :emphasize-lines: 4
 
-    import java.util.Iterator;
-    import java.util.NoSuchElementException;
+.. literalinclude:: /../main/java/ArraySortedBag.java
+    :language: java
+    :lineno-match:
+    :lines: 1-25
+    :emphasize-lines: 12
 
-    public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBag<T> {
 
-        private static final int DEFAULT_CAPACITY = 100;
-        private static final int NOT_FOUND = -1;
-        private T[] bag;
-        private int rear;
-
-        public ArraySortedBag() {
-            this(DEFAULT_CAPACITY);
-        }
-
-        @SuppressWarnings("unchecked")
-        public ArraySortedBag(int initialCapacity) {
-            bag = (T[]) new Comparable[initialCapacity];
-            rear = 0;
-        }
 
 * This looks nearly the same as the ``ArrayIndexedBag`` implementation, but we see one major difference
 
@@ -337,28 +246,12 @@ ArraySortedBag
 Adding Method
 -------------
 
-.. code-block:: Java
-    :linenos:
+.. literalinclude:: /../main/java/ArraySortedBag.java
+    :language: java
+    :lineno-match:
+    :lines: 84-113
 
-        private int findInsertIndex(T element) {
-            int searchIndex = 0;
-            Iterator<T> it = this.iterator();
-            while ((it.hasNext() && it.next().compareTo(element) > 0) {
-                searchIndex++;
-            }
-            return searchIndex;
-        }
 
-        @Override
-        public void add(T element) {
-            if (size() == bag.length) {
-                expandCapacity();
-            }
-            int insertIndex = findInsertIndex(element);
-            shiftRight(insertIndex);
-            bag[insertIndex] = element;
-            rear++;
-        }
 
 * The ``add`` method makes use of the private method ``findInsertIndex``
 * When analyzing this method, notice that we are using an iterator
@@ -382,7 +275,7 @@ Testing
 
 * Although not discussed in depth here, check out the testing methods for these implementations to get a sense of what functionality is being tested and how
     * :download:`ArrayIndexedBagTest </../test/java/ArrayIndexedBagTest.java>`
-    * :download:`ArraySortedBagTest </../test/java/ArraySortedBagTest.java>` code
+    * :download:`ArraySortedBagTest </../test/java/ArraySortedBagTest.java>`
 
 
 Linked Implementation
