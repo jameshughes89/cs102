@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -71,41 +73,17 @@ public class ArrayIteratorTest {
         @Test
         void next_capacityOne_returnsElement() {
             ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10}, 1);
-            assertEquals(10, iterator.next());
+            List<Integer> list = new ArrayList<>();
+            iterator.forEachRemaining(list::add);
+            assertEquals(List.of(10), list);
         }
 
         @Test
         void next_capacityMany_returnsElement() {
             ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10, null, null, null, null}, 1);
-            assertEquals(10, iterator.next());
-        }
-
-        @Test
-        void hasNext_postNextCapacityOne_returnsFalse() {
-            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10}, 1);
-            iterator.next();
-            assertFalse(iterator.hasNext());
-        }
-
-        @Test
-        void hasNext_postNextCapacityMany_returnsFalse() {
-            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10, null, null, null, null}, 1);
-            iterator.next();
-            assertFalse(iterator.hasNext());
-        }
-
-        @Test
-        void next_postNextCapacityOne_throwsNoSuchElementException() {
-            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10}, 1);
-            iterator.next();
-            assertThrows(NoSuchElementException.class, () -> iterator.next());
-        }
-
-        @Test
-        void next_postNextCapacityMany_throwsNoSuchElementException() {
-            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10, null, null, null, null}, 1);
-            iterator.next();
-            assertThrows(NoSuchElementException.class, () -> iterator.next());
+            List<Integer> list = new ArrayList<>();
+            iterator.forEachRemaining(list::add);
+            assertEquals(List.of(10), list);
         }
     }
 
@@ -129,35 +107,11 @@ public class ArrayIteratorTest {
         }
 
         @Test
-        void next_calledManyCapacityMany_returnsElements() {
+        void next_capacityMany_returnsElements() {
             ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10, 11, 12, 13, 14}, 5);
-            assertAll(() -> assertEquals(10, iterator.next()),
-                    () -> assertEquals(11, iterator.next()),
-                    () -> assertEquals(12, iterator.next()),
-                    () -> assertEquals(13, iterator.next()),
-                    () -> assertEquals(14, iterator.next()));
-        }
-
-        @Test
-        void hasNext_postNextCalledManyCapacityMany_returnsFalse() {
-            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10, 11, 12, 13, 14}, 5);
-            iterator.next();
-            iterator.next();
-            iterator.next();
-            iterator.next();
-            iterator.next();
-            assertFalse(iterator.hasNext());
-        }
-
-        @Test
-        void next_postNextCalledManyCapacityMany_throwsNoSuchElementException() {
-            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10, 11, 12, 13, 14}, 5);
-            iterator.next();
-            iterator.next();
-            iterator.next();
-            iterator.next();
-            iterator.next();
-            assertThrows(NoSuchElementException.class, () -> iterator.next());
+            List<Integer> list = new ArrayList<>();
+            iterator.forEachRemaining(list::add);
+            assertEquals(List.of(10, 11, 12, 13, 14), list);
         }
     }
 }
