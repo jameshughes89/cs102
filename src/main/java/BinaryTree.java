@@ -1,4 +1,5 @@
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 
 /**
@@ -11,85 +12,77 @@ import java.util.Iterator;
 public interface BinaryTree<T> extends Iterable<T> {
 
     /**
-     * Adds a specified element to the binary tree
+     * Add an element to the binary tree.
      *
-     * @param element Element to be added
+     * @param element Element to be added to the binary tree.
+     * @return True if the element was added successfully, false otherwise.
      */
-    void add(T element);
+    boolean add(T element);
 
     /**
-     * Removes a specified element from the binary tree
+     * Removes a single instance of the specified element from the binary tree.
      *
-     * @param element Element to be removed
-     * @return reference to the element being removed
+     * @param element Element to be removed from the binary tree.
+     * @return True if the element was removed successfully, false otherwise.
+     * @throws NoSuchElementException If the provided element does not exist within the binary tree.
      */
-    T remove(T element);
+    boolean remove(T element);
 
     /**
-     * Returns a reference to the element contained in the root of the tree.
+     * Returns true if the binary tree contains the specified element.
      *
-     * @return Reference to the root's element
-     */
-    T getRootElement();
-
-    /**
-     * Returns true if element is contained within the tree, false otherwise.
-     *
-     * @param element Element to search for
-     * @return True if element is in tree, false otherwise
+     * @param element Element whose presence in the binary tree is to be tested.
+     * @return True if the element is contained within the binary tree, false otherwise.
      */
     boolean contains(T element);
 
     /**
-     * Checks if the tree is empty.
+     * Returns true if the binary tree contains no elements.
      *
-     * @return True if the tree is empty, false otherwise.
+     * @return True if the binary tree is empty, false otherwise.
      */
     boolean isEmpty();
 
     /**
-     * Returns the number of elements in the tree.
+     * Returns the number of elements in the binary tree. This method does not handle the case of size exceeding
+     * Integer.MAX_VALUE.
      *
-     * @return Count of the number of elements in the tree
+     * @return The number of elements in the binary tree.
      */
     int size();
 
     /**
-     * Iterator over all elements in the binary tree.
+     * Returns an iterator over the elements in the binary tree.
      *
-     * @return Iterator for the binary tree
+     * @return An iterator over the elements in the binary tree.
      */
     Iterator<T> iterator();
 
     /**
-     * Iterator over all elements in the tree in a 'pre-order'
-     * ordering.
+     * Returns a pre-order iterator over the elements in the binary tree.
      *
-     * @return Pre-order iterator for tree
+     * @return A pre-order iterator over the elements in the binary tree.
      */
     Iterator<T> preOrderIterator();
 
     /**
-     * Iterator over all elements in the tree in a 'In-order'
-     * ordering.
+     * Returns an in-order iterator over the elements in the binary tree.
      *
-     * @return In-order iterator for tree
+     * @return An in-order iterator over the elements in the binary tree.
      */
     Iterator<T> inOrderIterator();
 
     /**
-     * Iterator over all elements in the tree in a 'post-order'
-     * ordering.
+     * Returns a post-order iterator over the elements in the binary tree.
      *
-     * @return Post-order iterator for tree
+     * @return A post-order iterator over the elements in the binary tree.
      */
     Iterator<T> postOrderIterator();
 
     /**
-     * Iterator over all elements in the tree in a 'pre-order'
-     * ordering.
+     * Returns a level-order iterator over the elements in the binary tree.
      *
-     * @return Level-order iterator for tree
+     * @return A level-order iterator over the elements in the binary tree.
      */
     Iterator<T> levelOrderIterator();
 
