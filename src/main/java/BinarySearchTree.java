@@ -6,7 +6,7 @@ import java.util.NoSuchElementException;
  *
  * @param <T> Type of elements that are to be in the binary search tree.
  */
-public interface BinarySearchTree<T extends Comparable<? super T>> extends BinaryTree<T>, Iterable<T> {
+public interface BinarySearchTree<T extends Comparable<? super T>> extends BinaryTree<T> {
 
     /**
      * Add an element to the binary search tree such that the binary search tree property is maintained. Equal
