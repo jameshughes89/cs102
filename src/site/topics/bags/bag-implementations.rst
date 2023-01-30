@@ -67,43 +67,18 @@ ArrayIndexedBag
     :download:`ArrayIndexedBag </../main/java/ArrayIndexedBag.java>` class for the full implementation.
 
 
-.. code-block:: Java
-    :linenos:
-    :emphasize-lines: 1, 7
-
-    import java.util.Iterator;
-    import java.util.NoSuchElementException;
-
-    public class ArrayIndexedBag<T> implements IndexedBag<T> {
-
-        private static final int DEFAULT_CAPACITY = 100;
-        private static final int NOT_FOUND = -1;
-        private T[] bag;
-        private int rear;
-
-        public ArrayIndexedBag() {
-            this(DEFAULT_CAPACITY);
-        }
-
-        @SuppressWarnings("unchecked")
-        public ArrayIndexedBag(int initialCapacity) {
-            bag = (T[]) new Object[initialCapacity];
-            rear = 0;
-        }
+.. literalinclude:: /../main/java/ArrayIndexedBag.java
+    :language: java
+    :lineno-match:
+    :lines: 1-35
+    :emphasize-lines: 2
 
 
-There are a couple things to note so far:
+* Note the import of ``Iterator``
 
-1. We are importing something called ``Iterator``
     * Iterators are used for *iterating* over a collection
     * More on this later
 
-2. The use of the constant ``NOT_FOUND`` that is set to ``-1``
-    * We will use ``-1`` as a *sentinel* value to mean that something was not found
-        * A value that, in the context of how it's used, has a special meaning
-    * Unfortunately, if you are looking at this code for the first time, ``-1`` may be very unclear
-    * By using a constant with the name ``NOT_FOUND`` in place of ``-1``, it's meaning is far less unclear
-    * This will make more sense below when we see how it's used
 
 
 Private Methods
