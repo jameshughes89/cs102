@@ -2,54 +2,51 @@
 Linked Structures
 *****************
 
-* Feel free to use your laptop if you have it
-* I strongly encourage you to work with others in the lab
+* Feel free to use your laptop
+* You are strongly encourage to work with others
 
-    * When you get stuck, do me a favour and ask those sitting around you for help
-    * I want people to get used to working together in the labs
-    * Peer teaching and peer learning is super effective
+    * When you get stuck, ask those sitting around you for help
+    * Get used to working together in the labs
+    * Peer teaching and peer learning has been empirically shown to be very effective
 
 
-Making a Linked Structure
-=========================
 
-Start by building a linked structure. The idea is to simply have a series of ``Node`` objects.
+Linked Structure
+================
+
+The goal is to create a linked structure with a series of ``Node`` objects.
 
 
 Node Class
 ----------
 
-#. Create a project and make a class where you will put your main method.
+#. Create a generic ``Node`` class
+#. Download and run the :download:`NodeTest </../test/java/NodeTest.java>` class to ensure the ``Node`` class is implemented correctly
 
-#. Create a generic ``Node`` class. If you download the one from the course website, be sure to understand it.
+    * This test class must be added to the project's test folder
 
-#. Do a simple test to see if it works by making an instance in your main method and using the node's methods.
-
-    .. code-block:: java
-
-        Node<Integer> myNode = new Node<>(5);
-        // Use the node class' methods here
 
 
 Create the Linked Structure
 ---------------------------
 
-#. Write a static method in the same class as your ``main`` called ``makeLinkedStructure`` that will
+#. Write a static method in the same class as the ``main`` called ``makeLinkedStructure`` that will
 
-    a. Create a linked structure containing the numbers 0 -- 9.
+    * Create a linked structure containing the numbers 0 -- 9
 
         * One number referenced in each node
 
-    b. Return a reference to the head of the linked structure.
+
+    * Return a reference to the head of the linked structure
 
     .. code-block:: java
 
         public static Node<Integer> makeLinkedStructure() {
-            // Stuff
+            // ...
         }
 
 
-#. Verify it works by adding this to your ``main`` method.
+#. Verify it works as expected by adding this to the ``main`` method and running it
 
     .. code-block:: java
 
@@ -62,29 +59,31 @@ Create the Linked Structure
         }
 
 
+
 Manipulating the Linked Structure
 =================================
 
-Start adding and removing things to the linked structure.
+Start manipulating the linked structure by adding and removing elements.
 
 
 Adding to the Front of the Structure
 ------------------------------------
 
-#. Write a static method in the same class as your ``main`` called ``addToFront`` that will
+#. Write a static method in the same class as the ``main`` called ``addToFront`` that will
 
-    a. Take a reference to the head of a linked structure and an integer to add.
-    b. Insert a new node containing reference to a new integer passed to the method as a parameter.
-    c. Return a reference to the new head of the linked structure.
+    * Take a reference to the head of a linked structure and an integer to add
+    * Create a new ``Node`` containing a reference to the integer passed to the method as an argument
+    * Insert the newly created ``Node`` to the front of the linked structure
+    * Return a reference to the new head of the linked structure
 
     .. code-block:: java
 
         public static <T> Node<T> addToFront(Node<T> head, T toAdd) {
-            // Stuff
+            // ...
         }
 
 
-#. Verify it works by adding this to your ``main`` method.
+#. Verify it works as expected by adding this to the ``main`` method and running it
 
     .. code-block:: java
 
@@ -96,23 +95,24 @@ Adding to the Front of the Structure
         }
 
 
+
 Removing from the Front of the Structure
 ----------------------------------------
 
-#. Write a static method in the same class as your ``main`` called ``removeFromFront`` that will
+#. Write a static method in the same class as the ``main`` called ``removeFromFront`` that will
 
-    a. Take a reference to the head of a linked structure.
-    b. Remove the first node from the structure.
-    c. Return a reference to the new head of the linked structure.
+    * Take a reference to the head of a linked structure
+    * Remove the first ``Node`` from the structure
+    * Return a reference to the new head of the linked structure
 
     .. code-block:: java
 
         public static <T> Node<T> removeFromFront(Node<T> head) {
-            // Stuff
+            // ...
         }
 
 
-#. Verify it works by adding this to your ``main`` method.
+#. Verify it works as expected by adding this to the ``main`` method and running it
 
     .. code-block:: java
 
@@ -124,26 +124,26 @@ Removing from the Front of the Structure
         }
 
 
+
 Adding to the Middle of the Structure
 -------------------------------------
 
-#. Write a static method in the same class as your ``main`` called ``addToMiddle`` that will
+#. Write a static method in the same class as the ``main`` called ``addToMiddle`` that will
 
-    a. Take a reference to the head of a linked structure, an integer to add, and a number we want to insert our new number after.
-
-        * For example, if we call ``addToMiddle(head, 99, 5)``, we will add a node containing a reference to ``99`` after the node containing a reference to the number ``5`` (if it exists)
-
-    b. Insert a new node containing reference to a new integer passed to the method as a parameter after the specified value.
-    c. Return a reference to the head of the linked structure.
+    * Take a reference to the head of a linked structure, an integer to add, and a number the new integer should be added after
+    * Create a new ``Node`` containing a reference to the integer passed to the method as an argument
+    * Insert the new ``Node`` *after* the ``Node`` containing the specified integer to be added after
+    * Return a reference to the head of the linked structure
+    * For example, calling ``addToMiddle(head, 99, 5)``, will add a ``Node`` containing a reference to ``99`` after the node containing a reference to the number ``5``
 
     .. code-block:: java
 
         public static <T> Node<T> addToMiddle(Node<T> head, T toAdd, T addAfter) {
-            // Stuff
+            // ...
         }
 
 
-#. Verify it works by adding this to your ``main`` method.
+#. Verify it works as expected by adding this to the ``main`` method and running it
 
     .. code-block:: java
 
@@ -154,28 +154,29 @@ Adding to the Middle of the Structure
             currentNode = currentNode.getNext();
         }
 
+
 .. note::
 
-    What do you think should happen if we specify a value for ``addAfter`` that is not contained in the linked
-    structure?
+    What should happen if the specified value for ``addAfter`` is not contained in the linked structure?
 
 
 Removing from the Middle of the Structure
 -----------------------------------------
 
 #. Write a static method in the same class as your ``main`` called ``removeFromMiddle`` that will
-    a. Take a reference to the head of a linked structure and a value we want to remove from our linked structure.
-    b. Remove the node containing a reference to the specified value from the structure.
-    c. Return a reference to the head of the linked structure.
+
+    * Take a reference to the head of a linked structure and a value to be removed from the linked structure
+    * Remove the ``Node`` containing a reference to the specified value to be removed from the structure
+    * Return a reference to the head of the linked structure
 
     .. code-block:: java
 
         public static <T> Node<T> removeFromMiddle(Node<T> head, T toRemove) {
-            // Stuff
+            // ...
         }
 
 
-#. Verify it works by adding this to your ``main`` method
+#. Verify it works as expected by adding this to the ``main`` method and running it
 
     .. code-block:: java
 
@@ -189,14 +190,13 @@ Removing from the Middle of the Structure
 
 .. note::
 
-    What do you think should happen if we specify a value for ``toRemove`` that is not contained within the linked
-    structure?
+    What should happen if the specified value for ``toRemove`` is not contained in the linked structure?
+
+
 
 
 Kattis Problems
 ===============
-
-Recommended Kattis Problems (don't worry, you don’t need to do all of them or anything):
 
 #. https://open.kattis.com/problems/quadrant
 #. https://open.kattis.com/problems/judgingmoose
