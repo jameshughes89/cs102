@@ -2,7 +2,10 @@ import java.util.NoSuchElementException;
 
 /**
  * A binary search tree is a binary tree with the property that all elements to the left are less than the element in
- * the root node and all elements to the right are greater than or equal to the element in the root node.
+ * the root node and all elements to the right are greater than or equal to the element in the root node. The binary
+ * search tree has an order defined by the characteristics of the type of elements within the binary search tree; the
+ * elements themselves determine the ordering. All modifications to the binary search tree contents are done in such a
+ * way that binary search tree property is maintained.
  *
  * @param <T> Type of elements that are to be in the binary search tree.
  */
