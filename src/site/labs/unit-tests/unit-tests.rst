@@ -69,7 +69,7 @@ Testing the ``CourseList`` Class
         * What should happen when there are multiple equal ``Course`` objects to be removed?
 
 
-    Try to test each method as thorough as possible.
+    Try to test each method as thoroughly as possible.
 
 
 #. Write unit tests for ``add``

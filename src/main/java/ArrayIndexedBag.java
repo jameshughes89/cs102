@@ -65,13 +65,13 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
      * Find and return the index of a given target element within the collection. If no such element exists within the
      * collection, a sentinel value of -1 (NOT_FOUND constant) is returned.
      *
-     * @param target Element to find the index of.
+     * @param element Element to find the index of.
      * @return Index of the target element within the collection, or -1 (NOT_FOUND constant) if no such element exists.
      */
-    private int find(T target) {
+    private int find(T element) {
         int searchIndex = 0;
         for (T bagElement : this) {
-            if (bagElement.equals(target)) {
+            if (bagElement.equals(element)) {
                 return searchIndex;
             }
             searchIndex++;
@@ -140,23 +140,23 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
     }
 
     @Override
-    public int indexOf(T target) {
-        if (!contains(target)) {
-            throw new NoSuchElementException(Objects.toString(target));
+    public int indexOf(T element) {
+        if (!contains(element)) {
+            throw new NoSuchElementException(Objects.toString(element));
         }
-        return find(target);
+        return find(element);
     }
 
     @Override
-    public boolean contains(T target) {
-        return find(target) != NOT_FOUND;
+    public boolean contains(T element) {
+        return find(element) != NOT_FOUND;
     }
 
     @Override
-    public int count(T target) {
+    public int count(T element) {
         int count = 0;
         for (T bagElement : this) {
-            if (bagElement.equals(target)) {
+            if (bagElement.equals(element)) {
                 count++;
             }
         }
