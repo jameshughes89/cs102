@@ -36,7 +36,7 @@ Array Implementation Idea
     * The simpler version though since the front is always index 0
 
 
-* The functionality we want out of our ``Bag``, regardless of what implementation it is
+* The functionality of a ``Bag``, regardless of what specific version it is
 
     * ``boolean add(T element)``
     * ``boolean remove(T element)``
@@ -52,6 +52,7 @@ ArrayIndexedBag
 ---------------
 
 * In addition to the functionality of the ``Bag``, we want to add a few more methods for our ``IndexedBag`` implementation
+
     * ``void add(T element)`` --- add to the end of the bag
     * ``void add(int index, T element)``
     * ``T remove(int index)`` --- remove from a specific index
