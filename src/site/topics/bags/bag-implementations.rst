@@ -42,7 +42,7 @@ Array Implementation Idea
     * ``boolean remove(T element)``
     * ``boolean contains(T element)``
     * ``int count(T element)``
-    * ``boolean isEmpty()`
+    * ``boolean isEmpty()``
     * ``int size()``
     * ``Iterator<T> iterator()``
 
