@@ -102,7 +102,7 @@ Abstract Class
 
 * The ``AbstractQueue`` has several important concrete methods implemented within the abstract class
 
-    * It also inherits a bunch from superclasses too)
+    * It also inherits a bunch from superclasses too
 
 
 * ``add``
