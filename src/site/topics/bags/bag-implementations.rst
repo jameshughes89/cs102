@@ -227,43 +227,52 @@ Adding Method
     :language: java
     :lineno-match:
     :lines: 84-113
+    :emphasize-lines: 10
 
 
 
-* The ``add`` method makes use of the private method ``findInsertIndex``
-* When analyzing this method, notice that we are using an iterator
-    * Ultimately, this method is doing a linear search
-* We are also making use of the ``compareTo`` method
-* Remember
-    * The elements themselves should determine the ordering
-    * We do not know what the type ``T``, so how can we compare them?
-        * Sure, if they're numbers we can use ``<``, ``>``, ``==``, and so on
-        * What if we are sorting strings? Or Colours?
+* The ``add`` method makes use of a private method ``findInsertIndex``
+* ``findInsertIndex`` makes use of the class' iterator method to iterate over the collection
 
-* Since I know that type ``T`` has a ``compareTo`` implemented, we will make use of it so I can guarantee I always get the proper ordering, regardless of the type
-
-* Given this, the loop will execute while:
-    * There are more elements in the collection
-    * and the thing we want to insert is belongs after the current element in the collection
+    * It is simply used to perform a linear search
 
 
-Testing
-=======
+* It also makes use of the ``compareTo`` method
+* Remember, the elements themselves determine the ordering
 
-* Although not discussed in depth here, check out the testing methods for these implementations to get a sense of what functionality is being tested and how
-    * :download:`ArrayIndexedBagTest </../test/java/ArrayIndexedBagTest.java>`
-    * :download:`ArraySortedBagTest </../test/java/ArraySortedBagTest.java>`
+    * One does not know what the type ``T`` is, so how can they be compared?
+
+        * *If* they're numbers, ``<``, ``>``, ``==``, would work
+        * But what if sorting strings? Colours?
+
+
+* Since ``T`` must have a ``compareTo`` implemented, it can be used to guarantee a proper ordering, regardless of the type
+
+    * ``T`` must have a ``compareTo`` since it must extend ``Comparable<? super T>``
+
+
+
+* Given this, the loop executes until it finds the index where the element to be inserted is less than the current element in the collection
+
+    * Or, in other words, it loops while
+
+        * There are more elements in the collection
+        * The thing to be inserted belongs after the current element in the collection
+
 
 
 Linked Implementation
 =====================
 
-.. image:: linked_bag.png
-   :width: 500 px
-   :align: center
+.. figure:: linked_bag.png
+    :width: 500 px
+    :align: center
 
-* There is nothing stopping us from building a linked implementation of the bag
-* :doc:`Reviewing the different types of insertions and removals from a linked structure will help </topics/linked-structures/linked-structures>`
+    A representation of how a ``Bag`` could be implemented with a linked structure.
+
+
+* Although not discussed here, a linked implementation of the bags could also be written
+* :doc:`Reviewing the different types of insertions and removals from a linked structure would help </topics/linked-structures/linked-structures>`
 
 
 For Next Time
