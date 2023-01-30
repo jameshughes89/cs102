@@ -63,13 +63,4 @@ public interface BinarySearchTree<T extends Comparable<? super T>> extends Binar
      * @throws NoSuchElementException If the binary search tree is empty.
      */
     T max();
-
-    /**
-     * Returns the number of occurrences of a specified element in the
-     * binary search tree.
-     *
-     * @param element Element to be counted
-     * @return Number of times the element occurred in the binary search tree.
-     */
-    int getCount(T element);
 }
