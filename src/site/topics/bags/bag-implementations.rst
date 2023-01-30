@@ -16,25 +16,36 @@ Bag Implementations
 Array Implementation Idea
 =========================
 
-.. image:: array_bag.png
-   :width: 500 px
-   :align: center
+.. figure:: array_bag.png
+    :width: 500 px
+    :align: center
+
+    A representation of how a ``Bag`` could be implemented with an array.
+
 
 * The idea will be similar to the ``Stack`` and ``Queue`` array based implementations
-* Unlike a ``Queue``, we will keep the front always at index 0
-    * Any ideas why?
+* Unlike a ``Queue``, the front will always be at index 0
 
-* We will need to use ``expandCapacity`` again since our arrays are fixed size
-    * The simpler version though, since, again, front is always index 0
+    * With bags, adding and removing can happen anywhere
+    * Adding to the middle would require a linear time operation to make room
+    * Removing from the middle would require a linear time operation to eliminate the gap
 
-* The functionality we want out of our ``Bag``, regardless of what implementation it is:
-    * ``void add(T element)``
-    * ``T remove(T element)``
+
+* An ``expandCapacity`` will be required
+
+    * The simpler version though since the front is always index 0
+
+
+* The functionality we want out of our ``Bag``, regardless of what implementation it is
+
+    * ``boolean add(T element)``
+    * ``boolean remove(T element)``
     * ``boolean contains(T element)``
-    * ``int getCount(T element)``
-    * ``boolean isEmpty()``
+    * ``int count(T element)``
+    * ``boolean isEmpty()`
     * ``int size()``
     * ``Iterator<T> iterator()``
+
 
 
 ArrayIndexedBag
