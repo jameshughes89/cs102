@@ -60,7 +60,6 @@ Object
     * ``toString``
     * ``equals``
     * ``hashCode``
-    * Although,
 
 
 * However, they are typically overridden with class specific functionality if they are to be used
