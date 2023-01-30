@@ -4,8 +4,8 @@ import java.util.NoSuchElementException;
 
 /**
  * A binary tree is a nonlinear data structure. Each node in a binary tree has no more than two children, which are
- * referred to as the left and right children. The relative position of the nodes matter (left vs. right).
- * Additionally, each node has at most one parent node. Only the root node has no parent node.
+ * referred to as the left and right children. The relative position of the nodes matter (left vs. right). Additionally,
+ * each node has at most one parent node. Only the root node has no parent node.
  *
  * @param <T> Type of elements that are to be in the binary tree.
  */
