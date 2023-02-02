@@ -1,8 +1,10 @@
+import java.util.Objects;
+
 public class SearchingMethods {
 
     public static <T> int iterativeLinearSearch(T needle, T[] haystack) {
-        for (int i = 0; i < haystack.length; ++i) {
-            if (haystack[i].equals(needle)) {
+        for (int i = 0; i < haystack.length; i++) {
+            if (Objects.equals(haystack[i], needle)) {
                 return i;
             }
         }
