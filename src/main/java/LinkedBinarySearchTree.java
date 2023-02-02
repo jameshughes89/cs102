@@ -237,15 +237,15 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
      *
      * @param element Element being searched for.
      * @param current Current node being investigated.
-     * @return True if the element is found, false otherwise
+     * @return Node containing the element searched for, or null if not found
      */
     private Node<T> binarySearch(T element, Node<T> current) {
         if (current == null) {
             return null;
-        } else if (current.getData().equals(element)) {
+        } else if (Objects.equals(current.getData(), element)) {
             return current;
         } else {
-            if (current.getData().compareTo(element) > 0) {
+            if (Objects.compare(current.getData(), element, T::compareTo) > 0) {
                 return binarySearch(element, current.getLeft());
             } else {
                 return binarySearch(element, current.getRight());
@@ -263,19 +263,19 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
 
     /**
      * Helper method for recursive count of elements in binary search tree.
-     * Remember, equal elements are added to the right subtree.
      *
-     * @param element Element to be counted
-     * @param current Current node being investigated
+     * @param element Element to be counted.
+     * @param current Current node being investigated.
      * @return Number of times the element exists in the (sub)tree.
      */
     private int count(T element, Node<T> current) {
         if (current == null) {
             return 0;
         }
-        if (current.getData().equals(element)) {
+        if (Objects.equals(current.getData(), element)) {
+            // With this implementation, equal elements are always to the right
             return 1 + count(element, current.getRight());
-        } else if (current.getData().compareTo(element) > 0) {
+        } else if (Objects.compare(current.getData(), element, T::compareTo) > 0) {
             return count(element, current.getLeft());
         } else {
             return count(element, current.getRight());
