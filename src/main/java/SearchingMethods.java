@@ -30,7 +30,7 @@ public class SearchingMethods {
         int midpoint = (highIndex - lowIndex) / 2;
 
         while (lowIndex < highIndex) {
-            if (Objects.compare(haystack[midpoint], needle, T::compareTo) == 0) {
+            if (haystack[midpoint].compareTo(needle) == 0) {
                 return midpoint;
             } else if (Objects.compare(haystack[midpoint], needle, T::compareTo) > 0) {
                 highIndex = midpoint - 1;
@@ -48,7 +48,7 @@ public class SearchingMethods {
             return NOT_FOUND;
         }
         int midpoint = lowIndex + (highIndex - lowIndex) / 2;
-        if (Objects.compare(haystack[midpoint], needle, T::compareTo) == 0) {
+        if (haystack[midpoint].compareTo(needle) == 0) {
             return midpoint;
         } else if (Objects.compare(haystack[midpoint], needle, T::compareTo) > 0) {
             return recursiveBinarySearch(needle, haystack, lowIndex, midpoint - 1);
