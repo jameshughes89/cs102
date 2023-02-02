@@ -2,7 +2,7 @@
 LinkedQueue
 ***********
 
-* Given the definition of a Queue, how can it be implemented?
+* Given the definition of a queue, how can it be implemented?
 
     * Remember, the *what* and the *how* are separate
 

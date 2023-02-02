@@ -1,154 +1,117 @@
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ArrayIteratorTest {
 
-    // Note:
-    //      Size is the number of "meaningful" elements in the array
-    //      Capacity is the number of available indices in the array
+    @Nested
+    class WhenEmpty {
 
-    @Test
-    void hasNext_capacityZeroArray_returnsFalse() {
-        Integer[] a = {};
-        Iterator<Integer> it = new ArrayIterator<>(a, 0);
-        assertFalse(it.hasNext());
-    }
-
-    @Test
-    void hasNext_fullCapacityOneArray_returnsTrue() {
-        Integer[] a = {10};
-        Iterator<Integer> it = new ArrayIterator<>(a, 1);
-        assertTrue(it.hasNext());
-    }
-
-    @Test
-    void hasNext_sizeZeroCapacityTenArray_returnsFalse() {
-        Integer[] a = {null, null, null, null, null, null, null, null, null, null};
-        Iterator<Integer> it = new ArrayIterator<>(a, 0);
-        assertFalse(it.hasNext());
-    }
-
-    @Test
-    void hasNext_sizeOneCapacityTenArray_returnsTrue() {
-        Integer[] a = {10, null, null, null, null, null, null, null, null, null};
-        Iterator<Integer> it = new ArrayIterator<>(a, 1);
-        assertTrue(it.hasNext());
-    }
-
-    @Test
-    void hasNext_sizeFiveCapacityTenArray_returnsTrue() {
-        Integer[] a = {10, 11, 12, 13, 14, null, null, null, null, null};
-        Iterator<Integer> it = new ArrayIterator<>(a, 5);
-        assertTrue(it.hasNext());
-    }
-
-    @Test
-    void hasNext_sizeOneCapacityTenArrayAfterHasNext_doesNotChangeState() {
-        Integer[] a = {10, null, null, null, null, null, null, null, null, null};
-        Iterator<Integer> it = new ArrayIterator<>(a, 1);
-        it.hasNext();
-        assertTrue(it.hasNext());
-        assertEquals(10, it.next());
-    }
-
-    @Test
-    void hasNext_sizeFiveCapacityTenArrayAfterHasNext_doesNotChangeState() {
-        Integer[] a = {10, 11, 12, 13, 14, null, null, null, null, null};
-        Iterator<Integer> it = new ArrayIterator<>(a, 5);
-        it.hasNext();
-        assertTrue(it.hasNext());
-        assertEquals(10, it.next());
-    }
-
-    @Test
-    void hasNext_endOfSizeOneCapacityTenArray_returnsFalse() {
-        Integer[] a = {10, null, null, null, null, null, null, null, null, null};
-        Iterator<Integer> it = new ArrayIterator<>(a, 1);
-        it.next();
-        assertFalse(it.hasNext());
-    }
-
-    @Test
-    void hasNext_endOfSizeFiveCapacityTenArray_returnsFalse() {
-        Integer[] a = {10, 11, 12, 13, 14, null, null, null, null, null};
-        Iterator<Integer> it = new ArrayIterator<>(a, 5);
-        for (int i = 0; i < 5; ++i) {
-            it.next();
+        @Test
+        void hasNext_capacityZero_returnsFalse() {
+            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{}, 0);
+            assertFalse(iterator.hasNext());
         }
-        assertFalse(it.hasNext());
-    }
 
-    @Test
-    void hasNext_endOfFullCapacityTenArray_returnsFalse() {
-        Integer[] a = {10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
-        Iterator<Integer> it = new ArrayIterator<>(a, 10);
-        for (int i = 0; i < 10; ++i) {
-            it.next();
+        @Test
+        void hasNext_capacityOne_returnsFalse() {
+            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{null}, 0);
+            assertFalse(iterator.hasNext());
         }
-        assertFalse(it.hasNext());
-    }
 
-    @Test
-    void next_capacityZeroArray_throwsException() {
-        Integer[] a = {};
-        Iterator<Integer> it = new ArrayIterator<>(a, 0);
-        assertThrows(NoSuchElementException.class, () -> it.next());
-    }
-
-    @Test
-    void nest_endOfFullCapacityOneArray_throwsException() {
-        Integer[] a = {10};
-        Iterator<Integer> it = new ArrayIterator<>(a, 1);
-        it.next();
-        assertThrows(NoSuchElementException.class, () -> it.next());
-    }
-
-    @Test
-    void next_sizeZeroCapacityTenArray_throwsException() {
-        Integer[] a = {null, null, null, null, null, null, null, null, null, null};
-        Iterator<Integer> it = new ArrayIterator<>(a, 0);
-        assertThrows(NoSuchElementException.class, () -> it.next());
-    }
-
-    @Test
-    void next_sizeOneCapacityTenArray_returnsElement() {
-        Integer[] a = {10, null, null, null, null, null, null, null, null, null};
-        Iterator<Integer> it = new ArrayIterator<>(a, 1);
-        assertEquals(10, it.next());
-    }
-
-    @Test
-    void next_sizeFiveCapacityTenArray_returnsElementsInCorrectOrder() {
-        Integer[] a = {10, 11, 12, 13, 14, null, null, null, null, null};
-        Iterator<Integer> it = new ArrayIterator<>(a, 5);
-        assertEquals(10, it.next());
-        assertEquals(11, it.next());
-        assertEquals(12, it.next());
-        assertEquals(13, it.next());
-        assertEquals(14, it.next());
-    }
-
-    @Test
-    void next_endOfSizeFiveCapacityTenArray_throwsException() {
-        Integer[] a = {10, 11, 12, 13, 14, null, null, null, null, null};
-        Iterator<Integer> it = new ArrayIterator<>(a, 5);
-        for (int i = 0; i < 5; ++i) {
-            it.next();
+        @Test
+        void hasNext_capacityMany_returnsFalse() {
+            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{null, null, null, null, null}, 0);
+            assertFalse(iterator.hasNext());
         }
-        assertThrows(NoSuchElementException.class, () -> it.next());
+
+        @Test
+        void next_capacityZero_throwsNoSuchElementException() {
+            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{}, 0);
+            assertThrows(NoSuchElementException.class, () -> iterator.next());
+        }
+
+        @Test
+        void next_capacityOne_throwsNoSuchElementException() {
+            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{null}, 0);
+            assertThrows(NoSuchElementException.class, () -> iterator.next());
+        }
+
+        @Test
+        void next_capacityMany_throwsNoSuchElementException() {
+            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{null, null, null, null, null}, 0);
+            assertThrows(NoSuchElementException.class, () -> iterator.next());
+        }
     }
 
-    @Test
-    void next_endOfFullCapacityTenArray_throwsException() {
-        Integer[] a = {10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
-        Iterator<Integer> it = new ArrayIterator<>(a, 10);
-        for (int i = 0; i < 10; ++i) {
-            it.next();
+    @Nested
+    class WhenSingleton {
+
+        @Test
+        void constructor_capacityZero_throwsIllegalArgumentException() {
+            assertThrows(IllegalArgumentException.class, () -> new ArrayIterator<>(new Integer[]{}, 1));
         }
-        assertThrows(NoSuchElementException.class, () -> it.next());
+
+
+        @Test
+        void hasNext_capacityOne_returnsTrue() {
+            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10}, 1);
+            assertTrue(iterator.hasNext());
+        }
+
+        @Test
+        void hasNext_capacityMany_returnsTrue() {
+            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10, null, null, null, null}, 1);
+            assertTrue(iterator.hasNext());
+        }
+
+        @Test
+        void next_capacityOne_returnsElement() {
+            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10}, 1);
+            List<Integer> list = new ArrayList<>();
+            iterator.forEachRemaining(list::add);
+            assertEquals(List.of(10), list);
+        }
+
+        @Test
+        void next_capacityMany_returnsElement() {
+            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10, null, null, null, null}, 1);
+            List<Integer> list = new ArrayList<>();
+            iterator.forEachRemaining(list::add);
+            assertEquals(List.of(10), list);
+        }
+    }
+
+    @Nested
+    class WhenMany {
+
+        @Test
+        void constructor_capacityZero_throwsIllegalArgumentException() {
+            assertThrows(IllegalArgumentException.class, () -> new ArrayIterator<>(new Integer[]{}, 5));
+        }
+
+        @Test
+        void constructor_capacityOne_throwsIllegalArgumentException() {
+            assertThrows(IllegalArgumentException.class, () -> new ArrayIterator<>(new Integer[]{10}, 5));
+        }
+
+        @Test
+        void hasNext_capacityMany_returnsTrue() {
+            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10, 11, 12, 13, 14}, 5);
+            assertTrue(iterator.hasNext());
+        }
+
+        @Test
+        void next_capacityMany_returnsElements() {
+            ArrayIterator<Integer> iterator = new ArrayIterator<>(new Integer[]{10, 11, 12, 13, 14}, 5);
+            List<Integer> list = new ArrayList<>();
+            iterator.forEachRemaining(list::add);
+            assertEquals(List.of(10, 11, 12, 13, 14), list);
+        }
     }
 }
