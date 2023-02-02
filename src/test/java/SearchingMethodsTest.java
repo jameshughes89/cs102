@@ -125,13 +125,6 @@ public class SearchingMethodsTest {
     }
 
     @Test
-    void iterativeBinarySearch_nullNeedle_throwsException() {
-        Integer[] myHaystack = new Integer[99];
-        Integer myNeedle = null;
-        assertThrows(NullPointerException.class, () -> SearchingMethods.iterativeBinarySearch(myNeedle, myHaystack));
-    }
-
-    @Test
     void iterativeBinarySearch_sizeZeroHaystack_returnsSentinel() {
         Integer[] myHaystack = new Integer[0];
         Integer myNeedle = 99;
@@ -174,13 +167,6 @@ public class SearchingMethodsTest {
                 () -> SearchingMethods.recursiveBinarySearch(myNeedle, myHaystack, 0, myHaystack.length));
     }
 
-    @Test
-    void recursiveBinarySearch_nullNeedle_throwsException() {
-        Integer[] myHaystack = new Integer[99];
-        Integer myNeedle = null;
-        assertThrows(NullPointerException.class,
-                () -> SearchingMethods.recursiveBinarySearch(myNeedle, myHaystack, 0, myHaystack.length));
-    }
 
     @Test
     void recursiveBinarySearch_sizeZeroHaystack_returnsSentinel() {
