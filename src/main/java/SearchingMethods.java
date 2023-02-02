@@ -15,7 +15,7 @@ public class SearchingMethods {
         // Not Found
         if (currentIndex == haystack.length) {
             return -1;
-        } else if (haystack[currentIndex].equals(needle)) {
+        } else if (Objects.equals(haystack[currentIndex], needle)) {
             return currentIndex;
         } else {
             return recursiveLinearSearch(needle, haystack, currentIndex + 1);

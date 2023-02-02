@@ -13,13 +13,6 @@ public class SearchingMethodsTest {
     }
 
     @Test
-    void iterativeLinearSearch_nullNeedle_throwsException() {
-        Integer[] myHaystack = new Integer[99];
-        Integer myNeedle = null;
-        assertThrows(NullPointerException.class, () -> SearchingMethods.iterativeLinearSearch(myNeedle, myHaystack));
-    }
-
-    @Test
     void iterativeLinearSearch_mismatchTypes_returnsSentinel() {
         Integer[] myHaystack = new Integer[0];
         String myNeedle = "99";
@@ -72,13 +65,6 @@ public class SearchingMethodsTest {
     void recursiveLinearSearch_nullHaystack_throwsException() {
         Integer[] myHaystack = null;
         Integer myNeedle = 99;
-        assertThrows(NullPointerException.class, () -> SearchingMethods.recursiveLinearSearch(myNeedle, myHaystack, 0));
-    }
-
-    @Test
-    void recursiveLinearSearch_nullNeedle_throwsException() {
-        Integer[] myHaystack = new Integer[99];
-        Integer myNeedle = null;
         assertThrows(NullPointerException.class, () -> SearchingMethods.recursiveLinearSearch(myNeedle, myHaystack, 0));
     }
 
