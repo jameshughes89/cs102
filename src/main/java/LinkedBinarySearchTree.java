@@ -293,11 +293,10 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     }
 
     /**
-     * Recursive pre order traversal of a binary tree. Elements are added
-     * to a bag in the required order.
+     * Recursive pre-order traversal of a binary tree. Elements are added to a bag in the required order.
      *
-     * @param current  current node in the tree being referenced
-     * @param sequence Bag containing elements in pre order order
+     * @param current  current node in the tree being referenced.
+     * @param sequence Bag containing elements with a pre-order ordering.
      */
     private void preOrder(Node<T> current, IndexedBag<T> sequence) {
         if (current != null) {
@@ -308,11 +307,10 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     }
 
     /**
-     * Recursive in order traversal of a binary tree. Elements are added
-     * to a bag in the required order.
+     * Recursive in-order traversal of a binary tree. Elements are added to a bag in the required order.
      *
-     * @param current  current node in the tree being referenced
-     * @param sequence Bag containing elements in in order order
+     * @param current  current node in the tree being referenced.
+     * @param sequence Bag containing elements with an in-order ordering.
      */
     private void inOrder(Node<T> current, IndexedBag<T> sequence) {
         if (current != null) {
@@ -323,11 +321,10 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     }
 
     /**
-     * Recursive post order traversal of a binary tree. Elements are added
-     * to a bag in the required order.
+     * Recursive post-order traversal of a binary tree. Elements are added to a bag in the required order.
      *
-     * @param current  current node in the tree being referenced
-     * @param sequence Bag containing elements in post order order
+     * @param current  current node in the tree being referenced.
+     * @param sequence Bag containing elements with a post-order ordering.
      */
     private void postOrder(Node<T> current, IndexedBag<T> sequence) {
         if (current != null) {
@@ -338,11 +335,10 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     }
 
     /**
-     * Level order traversal of a binary tree. Elements are added
-     * to a bag in the required order.
+     * Level-order traversal of a binary tree. Elements are added to a bag in the required order.
      *
-     * @param start    Root node of a binary tree
-     * @param sequence Bag containing elements in level order order
+     * @param start    Root node of a binary tree.
+     * @param sequence Bag containing elements with a level-order ordering.
      */
     private void levelOrder(Node<T> start, IndexedBag<T> sequence) {
         Queue<Node<T>> levelOrderQueue = new ArrayQueue<>();
@@ -396,10 +392,9 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     }
 
     /**
-     * Returns a string containing the elements in the binary search tree in
-     * an in order order.
+     * Returns a string containing the elements in the binary search tree with an in-order ordering.
      *
-     * @return String of the elements in in order order
+     * @return String of the elements with an in-order ordering.
      */
     @Override
     public String toString() {
@@ -412,50 +407,47 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     }
 
     /**
-     * A Node class for a binary linked tree structure. Each node
-     * contains a reference to data of type T, which may be
-     * null, and a reference to the left and right child
-     * binary linked nodes, which may also be null.
-     * <p>
-     * This class is a static nested class since the node
-     * class is only needed for the implementation of the
-     * LinkedBinarySearchTree.
+     * A node class for a linked binary tree structure. Each node contains a nullable reference to data of type T, and a
+     * reference to the left and right child nodes, which may be null references.
      *
-     * @param <T> Type of the data being stored in the node
+     * @param <T> Type of the data being stored in the node.
      */
     private static class Node<T> {
-
         private T data;
         private Node<T> left;
         private Node<T> right;
 
-        private Node(T data) {
+        public Node() {
+            this(null);
+        }
+
+        public Node(T data) {
             this.data = data;
             this.left = null;
             this.right = null;
         }
 
-        private T getData() {
+        public T getData() {
             return data;
         }
 
-        private void setData(T data) {
+        public void setData(T data) {
             this.data = data;
         }
 
-        private Node<T> getLeft() {
+        public Node<T> getLeft() {
             return left;
         }
 
-        private void setLeft(Node<T> left) {
+        public void setLeft(Node<T> left) {
             this.left = left;
         }
 
-        private Node<T> getRight() {
+        public Node<T> getRight() {
             return right;
         }
 
-        private void setRight(Node<T> right) {
+        public void setRight(Node<T> right) {
             this.right = right;
         }
     }
