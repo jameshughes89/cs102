@@ -48,7 +48,7 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
         T returnElement = null;
         if (isEmpty()) {
             throw new NoSuchElementException("Empty Tree");
-        } else if (Objects.equals(root.getData(), element)) {
+        } else if (Objects.compare(root.getData(), element, T::compareTo) == 0) {
             returnElement = root.getData();
             root = findReplacementNode(root);
         } else if (Objects.compare(root.getData(), element, T::compareTo) > 0) {
@@ -71,7 +71,7 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     private T remove(T element, Node<T> parent, Node<T> current) {
         if (current == null) {
             throw new NoSuchElementException("Empty Tree");
-        } else if (Objects.equals(current.getData(), element)) {
+        } else if (Objects.compare(current.getData(), element, T::compareTo) == 0) {
             if (Objects.compare(parent.getData(), current.getData(), T::compareTo) > 0) {
                 parent.setLeft(findReplacementNode(current));
             } else {
@@ -242,7 +242,7 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     private Node<T> binarySearch(T element, Node<T> current) {
         if (current == null) {
             return null;
-        } else if (Objects.equals(current.getData(), element)) {
+        } else if (Objects.compare(current.getData(), element, T::compareTo) == 0) {
             return current;
         } else {
             if (Objects.compare(current.getData(), element, T::compareTo) > 0) {
@@ -272,7 +272,7 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
         if (current == null) {
             return 0;
         }
-        if (Objects.equals(current.getData(), element)) {
+        if (Objects.compare(current.getData(), element, T::compareTo) == 0) {
             // With this implementation, equal elements are always to the right
             return 1 + count(element, current.getRight());
         } else if (Objects.compare(current.getData(), element, T::compareTo) > 0) {
