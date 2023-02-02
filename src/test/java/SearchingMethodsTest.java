@@ -86,90 +86,70 @@ public class SearchingMethodsTest {
         assertEquals(4, SearchingMethods.recursiveLinearSearch(DUPLICATE_NEEDLE, UNSORTED_ARRAY, 0));
     }
 
-
     @Test
     void iterativeBinarySearch_nullHaystack_throwsNullPointerException() {
-        Integer[] myHaystack = null;
-        Integer myNeedle = 99;
-        assertThrows(NullPointerException.class, () -> SearchingMethods.iterativeBinarySearch(myNeedle, myHaystack));
+        assertThrows(NullPointerException.class, () -> SearchingMethods.iterativeBinarySearch(99, null));
+    }
+
+    @Test
+    void iterativeBinarySearch_nullNeedle_throwsNullPointerException() {
+        assertThrows(NullPointerException.class, () -> SearchingMethods.iterativeBinarySearch(null, SORTED_ARRAY));
     }
 
     @Test
     void iterativeBinarySearch_sizeZeroHaystack_returnsSentinel() {
-        Integer[] myHaystack = new Integer[0];
-        Integer myNeedle = 99;
-        assertEquals(-1, SearchingMethods.iterativeBinarySearch(myNeedle, myHaystack));
+        assertEquals(NOT_FOUND, SearchingMethods.iterativeBinarySearch(99, new Integer[0]));
     }
 
     @Test
     void iterativeBinarySearch_needleNotWithinHaystack_returnsSentinel() {
-        Integer[] myHaystack = {0, 4, 8, 12, 18, 25, 31, 33, 36, 35, 37, 40, 40, 40, 49, 55, 61, 62, 63, 74, 81, 89, 90, 98};
-        Integer myNeedle = 99;
-        assertEquals(-1, SearchingMethods.iterativeBinarySearch(myNeedle, myHaystack));
+        assertEquals(NOT_FOUND, SearchingMethods.iterativeBinarySearch(NOT_WITHIN_HAYSTACK, SORTED_ARRAY));
+    }
+
+    @ParameterizedTest
+    @CsvSource({"0,0", "37,10", "98,23"})
+    void iterativeBinarySearch_needleAtZeroIndex_returnsCorrectIndex(Integer needle, int index) {
+        assertEquals(index, SearchingMethods.iterativeBinarySearch(needle, SORTED_ARRAY));
     }
 
     @Test
-    void iterativeBinarySearch_needleAtZeroIndex_returnsCorrectIndex() {
-        Integer[] myHaystack = {0, 4, 8, 12, 18, 25, 31, 33, 36, 35, 37, 40, 40, 40, 49, 55, 61, 62, 63, 74, 81, 89, 90, 98};
-        Integer myNeedle = 0;
-        assertEquals(0, SearchingMethods.iterativeBinarySearch(myNeedle, myHaystack));
+    void iterativeBinarySearch_multipleEqualNeedles_returnsFirstOccurrenceIndex() {
+        assertEquals(12, SearchingMethods.iterativeBinarySearch(DUPLICATE_NEEDLE, SORTED_ARRAY));
     }
 
-    @Test
-    void iterativeBinarySearch_needleAtEndOfHaystack_returnsCorrectIndex() {
-        Integer[] myHaystack = {0, 4, 8, 12, 18, 25, 31, 33, 36, 35, 37, 40, 40, 40, 49, 55, 61, 62, 63, 74, 81, 89, 90, 98};
-        Integer myNeedle = 98;
-        assertEquals(23, SearchingMethods.iterativeBinarySearch(myNeedle, myHaystack));
-    }
-
-    @Test
-    void iterativeBinarySearch_needleAtMiddleOfHaystack_returnsCorrectIndex() {
-        Integer[] myHaystack = {0, 4, 8, 12, 18, 25, 31, 33, 36, 35, 37, 40, 40, 40, 49, 55, 61, 62, 63, 74, 81, 89, 90, 98};
-        Integer myNeedle = 55;
-        assertEquals(15, SearchingMethods.iterativeBinarySearch(myNeedle, myHaystack));
-    }
 
     @Test
     void recursiveBinarySearch_nullHaystack_throwsNullPointerException() {
-        Integer[] myHaystack = null;
-        Integer myNeedle = 99;
-        assertThrows(NullPointerException.class,
-                () -> SearchingMethods.recursiveBinarySearch(myNeedle, myHaystack, 0, myHaystack.length));
+        SearchingMethods.recursiveBinarySearch(99, null, 0, 0);
+        assertThrows(NullPointerException.class, () -> SearchingMethods.recursiveBinarySearch(99, null, 0, 1));
     }
 
+    @Test
+    void recursiveBinarySearch_nullNeedle_throwsNullPointerException() {
+        assertThrows(NullPointerException.class,
+                () -> SearchingMethods.recursiveBinarySearch(null, SORTED_ARRAY, 0, 1));
+    }
 
     @Test
     void recursiveBinarySearch_sizeZeroHaystack_returnsSentinel() {
-        Integer[] myHaystack = new Integer[0];
-        Integer myNeedle = 99;
-        assertEquals(-1, SearchingMethods.recursiveBinarySearch(myNeedle, myHaystack, 0, myHaystack.length));
+        assertEquals(NOT_FOUND, SearchingMethods.recursiveBinarySearch(99, new Integer[0], 0, 0));
     }
 
     @Test
     void recursiveBinarySearch_needleNotWithinHaystack_returnsSentinel() {
-        Integer[] myHaystack = {0, 4, 8, 12, 18, 25, 31, 33, 36, 35, 37, 40, 40, 40, 49, 55, 61, 62, 63, 74, 81, 89, 90, 98};
-        Integer myNeedle = 99;
-        assertEquals(-1, SearchingMethods.recursiveBinarySearch(myNeedle, myHaystack, 0, myHaystack.length));
+        assertEquals(NOT_FOUND,
+                SearchingMethods.recursiveBinarySearch(NOT_WITHIN_HAYSTACK, SORTED_ARRAY, 0, SORTED_ARRAY.length));
+    }
+
+    @ParameterizedTest
+    @CsvSource({"0,0", "37,10", "98,23"})
+    void recursiveBinarySearch_needleAtZeroIndex_returnsCorrectIndex(Integer needle, int index) {
+        assertEquals(index, SearchingMethods.recursiveBinarySearch(needle, SORTED_ARRAY, 0, SORTED_ARRAY.length));
     }
 
     @Test
-    void recursiveBinarySearch_needleAtZeroIndex_returnsCorrectIndex() {
-        Integer[] myHaystack = {0, 4, 8, 12, 18, 25, 31, 33, 36, 35, 37, 40, 40, 40, 49, 55, 61, 62, 63, 74, 81, 89, 90, 98};
-        Integer myNeedle = 0;
-        assertEquals(0, SearchingMethods.recursiveBinarySearch(myNeedle, myHaystack, 0, myHaystack.length));
-    }
-
-    @Test
-    void recursiveBinarySearch_needleAtEndOfHaystack_returnsCorrectIndex() {
-        Integer[] myHaystack = {0, 4, 8, 12, 18, 25, 31, 33, 36, 35, 37, 40, 40, 40, 49, 55, 61, 62, 63, 74, 81, 89, 90, 98};
-        Integer myNeedle = 98;
-        assertEquals(23, SearchingMethods.recursiveBinarySearch(myNeedle, myHaystack, 0, myHaystack.length));
-    }
-
-    @Test
-    void recursiveBinarySearch_needleAtMiddleOfHaystack_returnsCorrectIndex() {
-        Integer[] myHaystack = {0, 4, 8, 12, 18, 25, 31, 33, 36, 35, 37, 40, 40, 40, 49, 55, 61, 62, 63, 74, 81, 89, 90, 98};
-        Integer myNeedle = 55;
-        assertEquals(15, SearchingMethods.recursiveBinarySearch(myNeedle, myHaystack, 0, myHaystack.length));
+    void recursiveBinarySearch_multipleEqualNeedles_returnsFirstOccurrenceIndex() {
+        assertEquals(12,
+                SearchingMethods.recursiveBinarySearch(DUPLICATE_NEEDLE, SORTED_ARRAY, 0, SORTED_ARRAY.length));
     }
 }
