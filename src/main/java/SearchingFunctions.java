@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class SearchingMethods {
+public class SearchingFunctions {
 
     private static final int NOT_FOUND = -1;
 
