@@ -28,7 +28,7 @@ Implementing an ``ArrayStack``
 
         Obviously one can simply download the :download:`ArrayStack <../../../main/java/ArrayStack.java>` code and
         copy/paste it into the ``ArrayStack`` class, but this defeats the purpose of the lab. Instead, slowly and
-        deliberately implement each function and take the time to understand the details.
+        deliberately implement each method and take the time to understand the details.
 
 
 #. Add the :download:`ArrayStackTest </../test/java/ArrayStackTest.java>` unit tests to the project in a ``test`` folder
