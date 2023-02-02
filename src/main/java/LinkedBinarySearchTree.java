@@ -1,5 +1,6 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import java.util.Objects;
 
 public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements BinarySearchTree<T> {
 
@@ -24,18 +25,17 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     }
 
     /**
-     * Helper add method for enabling recursive add. This method
-     * ensures that elements are added in the proper order for
+     * Helper add method for enabling recursive add. This method ensures that elements are added in the proper order for
      * a Binary Search Tree.
      *
-     * @param element Element to be added to the tree
-     * @param current Current root of subtree
-     * @return Node being assigned as left/right child
+     * @param element Element to be added to the tree.
+     * @param current Current root of subtree.
+     * @return Node being assigned as left/right child.
      */
     private Node<T> add(T element, Node<T> current) {
         if (current == null) {
             return new Node<>(element);
-        } else if (current.getData().compareTo(element) > 0) {
+        } else if (Objects.compare(current.getData(), element, T::compareTo) > 0) {
             current.setLeft(add(element, current.getLeft()));
         } else {
             current.setRight(add(element, current.getRight()));
@@ -47,11 +47,11 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     public boolean remove(T element) {
         T returnElement = null;
         if (isEmpty()) {
-            throw new NoSuchElementException();
-        } else if (root.getData().equals(element)) {
+            throw new NoSuchElementException("Empty Tree");
+        } else if (Objects.equals(root.getData(), element)) {
             returnElement = root.getData();
             root = findReplacementNode(root);
-        } else if (root.getData().compareTo(element) > 0) {
+        } else if (Objects.compare(root.getData(), element, T::compareTo) > 0) {
             returnElement = remove(element, root, root.getLeft());
         } else {
             returnElement = remove(element, root, root.getRight());
@@ -63,43 +63,39 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     /**
      * Helper method for recursive remove.
      *
-     * @param element Element being searched for for removal
-     * @param parent  The parent of the node being investigated
-     * @param child   The node being investigated
-     * @return The element being removed
+     * @param element Element to me removed.
+     * @param parent  The parent of the current node.
+     * @param current The current node.
+     * @return The element being removed.
      */
-    private T remove(T element, Node<T> parent, Node<T> child) {
-        if (child == null) {
-            throw new NoSuchElementException();
-        } else if (child.getData().equals(element)) {
-            if (parent.getData().compareTo(element) > 0) {
-                parent.setLeft(findReplacementNode(child));
+    private T remove(T element, Node<T> parent, Node<T> current) {
+        if (current == null) {
+            throw new NoSuchElementException("Empty Tree");
+        } else if (Objects.equals(current.getData(), element)) {
+            if (Objects.compare(parent.getData(), current.getData(), T::compareTo) > 0) {
+                parent.setLeft(findReplacementNode(current));
             } else {
-                parent.setRight(findReplacementNode(child));
+                parent.setRight(findReplacementNode(current));
             }
-            return child.getData();
-        } else if (child.getData().compareTo(element) > 0) {
-            return remove(element, child, child.getLeft());
+            return current.getData();
+        } else if (Objects.compare(current.getData(), element, T::compareTo) > 0) {
+            return remove(element, current, current.getLeft());
         } else {
-            return remove(element, child, child.getRight());
+            return remove(element, current, current.getRight());
         }
     }
 
     /**
      * Helper method for finding which node should be used to replace a node being removed.
      * There are a few conditions:
-     * <p>
      * 1. Both left and right children are null. Here, simply remove the node.
-     * <p>
      * 2. Left child is not null but right child is null. Replace the toRemove node with the left child.
-     * <p>
      * 3. Left child is null but right child is not null. Replace the toRemove node with the right child
-     * <p>
-     * 4. Both left and right children are not null. Replace the toRemove node with the in order successor,
-     * which would be the right subtree's left most node.
+     * 4. Both left and right children are not null. Replace the toRemove node with the in order successor, which would
+     * be the right subtree's left most node.
      *
-     * @param toRemove The node being replaced
-     * @return The node replacing the node being removed
+     * @param toRemove The node being replaced.
+     * @return The node replacing the node being removed.
      */
     private Node<T> findReplacementNode(Node<T> toRemove) {
         Node<T> replacementNode = null;
@@ -111,26 +107,22 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
             replacementNode = toRemove.getRight();
         } else {
             Node<T> parent = toRemove;
-            Node<T> child = toRemove.getRight();
-            // Find the in order successor (right child's left
-            // most node (minimum node))
-            while (child.getLeft() != null) {
-                parent = child;
-                child = child.getLeft();
+            Node<T> current = toRemove.getRight();
+            // Find the in order successor --- toRemove's right child's left most node (minimum node)
+            while (current.getLeft() != null) {
+                parent = current;
+                current = current.getLeft();
             }
-            // Set replacement node's left to
-            // the node being removed's (subtree root's) left
-            child.setLeft(toRemove.getLeft());
-            // If the immediate in order successor is NOT the
-            // node being replaced's right child, the parent
-            // node's new left becomes the child node's right
-            // and the child node's right is replaced with
-            // the node being replaced's right
-            if (toRemove.getRight() != child) {
-                parent.setLeft(child.getRight());
-                child.setRight(toRemove.getRight());
+            replacementNode = current;
+            // Set replacementNode's left to toRemove's left
+            replacementNode.setLeft(toRemove.getLeft());
+            // Update replacementNode's right if necessary --- if the in order successor of toRemove is its immediate
+            // right, no update is needed. Otherwise, the replacementNode's parent's left is set to the
+            // replacementNode's right and the replacementNode's right is set to toRemove's right.
+            if (toRemove.getRight() != replacementNode) {
+                parent.setLeft(replacementNode.getRight());
+                replacementNode.setRight(toRemove.getRight());
             }
-            replacementNode = child;
         }
         return replacementNode;
     }
