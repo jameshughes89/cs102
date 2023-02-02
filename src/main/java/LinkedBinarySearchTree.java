@@ -131,7 +131,7 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     public T removeMin() {
         T returnElement = null;
         if (isEmpty()) {
-            throw new NoSuchElementException();
+            throw new NoSuchElementException("Empty Tree");
         } else if (root.getLeft() == null) {
             returnElement = root.getData();
             root = root.getRight();
@@ -143,51 +143,46 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     }
 
     /**
-     * Helper method for a recursive removeMin. Note, it is possible
-     * to not include the leftChild parameter since current.getLeft
-     * will always be equal to leftChild, however it is included for
-     * making the implementation more clear.
+     * Helper method for a recursive removeMin.
      *
-     * @param current   Current node
-     * @param leftChild Current node's left child
-     * @return Minimum element in the binary search tree
+     * @param parent  The parent of the current node.
+     * @param current The current node.
+     * @return Minimum element in the binary search tree.
      */
-    private T removeMin(Node<T> current, Node<T> leftChild) {
-        if (leftChild.getLeft() == null) {
-            current.setLeft(leftChild.getRight());
-            return leftChild.getData();
+    private T removeMin(Node<T> parent, Node<T> current) {
+        if (current.getLeft() == null) {
+            parent.setLeft(current.getRight());
+            return current.getData();
         } else {
-            return removeMin(current.getLeft(), leftChild.getLeft());
+            return removeMin(current, current.getLeft());
         }
     }
 
     /**
-     * An iterative implementation of finding the maximum element in
-     * a binary serach tree. This method could be a recursive one
-     * like removeMin, however the iterative one is included to see
-     * multiple implementations.
+     * An iterative implementation of finding the maximum element in a binary search tree. This method could be
+     * recursive like removeMin; however, the iterative one is included for demonstrative purposes.
      *
-     * @return The maximum element in the binary search tree
+     * @return The maximum element in the binary search tree.
      */
     @Override
     public T removeMax() {
         T returnElement = null;
         if (isEmpty()) {
-            throw new NoSuchElementException();
+            throw new NoSuchElementException("Empty Tree");
         }
         if (root.getRight() == null) {
             returnElement = root.getData();
             root = root.getLeft();
         } else {
             Node<T> parent = root;
-            Node<T> rightChild = root.getRight();
-            // Iterate right until we find the right most node
-            while (rightChild.getRight() != null) {
-                parent = rightChild;
-                rightChild = rightChild.getRight();
+            Node<T> current = root.getRight();
+            // Iterate right until right most node is found
+            while (current.getRight() != null) {
+                parent = current;
+                current = current.getRight();
             }
-            returnElement = rightChild.getData();
-            parent.setRight(rightChild.getLeft());
+            returnElement = current.getData();
+            parent.setRight(current.getLeft());
         }
         size--;
         return returnElement;
@@ -196,14 +191,13 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     @Override
     public T min() {
         if (isEmpty()) {
-            throw new NoSuchElementException();
+            throw new NoSuchElementException("Empty Tree");
         }
         return min(root);
     }
 
     /**
-     * Helper method for enabling a recursive search for the minimum element
-     * in the binary search tree.
+     * Helper method for enabling a recursive search for the minimum element in the binary search tree.
      *
      * @param current Current node being looked at
      * @return The minimum element in the tree
@@ -219,23 +213,17 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     @Override
     public T max() {
         if (isEmpty()) {
-            throw new NoSuchElementException();
+            throw new NoSuchElementException("Empty Tree");
         }
-        return max(root);
-    }
-
-    /**
-     * Helper method for enabling a recursive search for the maximum element
-     * in the binary search tree.
-     *
-     * @param current Current node being looked at
-     * @return The maximum element in the tree
-     */
-    private T max(Node<T> current) {
-        if (current.getRight() == null) {
-            return current.getData();
+        if (root.getRight() == null) {
+            return root.getData();
         } else {
-            return max(current.getRight());
+            Node<T> current = root.getRight();
+            // Iterate right until right most node is found
+            while (current.getRight() != null) {
+                current = current.getRight();
+            }
+            return current.getData();
         }
     }
 
@@ -247,8 +235,8 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     /**
      * Helper method enabling a recursive binary search for a given element.
      *
-     * @param element Element being searched for
-     * @param current Current binary search tree node being investigated
+     * @param element Element being searched for.
+     * @param current Current node being investigated.
      * @return True if the element is found, false otherwise
      */
     private Node<T> binarySearch(T element, Node<T> current) {
