@@ -120,7 +120,7 @@ public class LinkedQueue<T> implements Queue<T> {
     }
 
     /**
-     * A Node class for a singly linked structure. Each node contains a nullable reference to data of type T, and a
+     * A node class for a singly linked structure. Each node contains a nullable reference to data of type T, and a
      * reference to the next/subsequent/successor singly linked node, which may be a null reference.
      *
      * @param <T> Type of the data being stored in the node.
