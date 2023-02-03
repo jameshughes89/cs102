@@ -236,7 +236,7 @@ Recursive
 For next time
 =============
 
-* Download and play with the :download:`SearchingMethods </../main/java/SearchingMethods.java>` class
-* Download and run the :download:`SearchingMethodsTest </../test/java/SearchingMethodsTest.java>` tests
+* Download and play with the :download:`SearchingFunctions </../main/java/SearchingFunctions.java>` class
+* Download and run the :download:`SearchingFunctionsTest </../test/java/SearchingFunctionsTest.java>` tests
 * Read Chapter 9 Section 1
     * 7 pages

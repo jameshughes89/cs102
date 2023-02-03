@@ -4,18 +4,21 @@ import java.util.NoSuchElementException;
 public class ArrayIterator<T> implements Iterator<T> {
 
     private final int size;
-    private int currentIndex;
-    private final T[] items;
+    private final T[] elements;
+    private int index;
 
-    public ArrayIterator(T[] items, int size) {
-        this.items = items;
+    public ArrayIterator(T[] elements, int size) {
+        if (size > elements.length) {
+            throw new IllegalArgumentException("size exceeds array length.");
+        }
+        this.elements = elements;
         this.size = size;
-        this.currentIndex = 0;
+        this.index = 0;
     }
 
     @Override
     public boolean hasNext() {
-        return currentIndex < size;
+        return index < size;
     }
 
     @Override
@@ -23,8 +26,8 @@ public class ArrayIterator<T> implements Iterator<T> {
         if (!hasNext()) {
             throw new NoSuchElementException();
         }
-        T returnElement = items[currentIndex];
-        currentIndex++;
+        T returnElement = elements[index];
+        index++;
         return returnElement;
     }
 }
