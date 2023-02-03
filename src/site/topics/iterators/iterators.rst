@@ -301,6 +301,31 @@ For Each
         }
 
 
+.. note::
+
+    The enhanced for loop is just syntactic sugar for what was already shown above. For example, the enhanced for loop
+    example
+
+        .. code-block:: Java
+            :linenos:
+
+            for (Integer x: myBag) {
+                process(x);
+            }
+
+
+    means the same thing as
+
+        .. code-block:: Java
+            :linenos:
+
+            Iterator<Integer> iterator = myBag.iterator();
+            while (iterator.hasNext()) {
+                process(iterator.next());
+            }
+
+
+
 
 For next time
 =============
