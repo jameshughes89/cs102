@@ -34,7 +34,8 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     private Node<T> add(T element, Node<T> current) {
         if (current == null) {
             return new Node<>(element);
-        } else if (current.getData().compareTo(element) > 0) {
+        }
+        if (current.getData().compareTo(element) > 0) {
             current.setLeft(add(element, current.getLeft()));
         } else {
             current.setRight(add(element, current.getRight()));
@@ -47,10 +48,12 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
         T returnElement = null;
         if (isEmpty()) {
             throw new NoSuchElementException("Empty Tree");
-        } else if (root.getData().compareTo(element) == 0) {
+        }
+        int comparison = root.getData().compareTo(element);
+        if (comparison == 0) {
             returnElement = root.getData();
             root = findReplacementNode(root);
-        } else if (root.getData().compareTo(element) > 0) {
+        } else if (comparison > 0) {
             returnElement = remove(element, root, root.getLeft());
         } else {
             returnElement = remove(element, root, root.getRight());
@@ -70,14 +73,16 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     private T remove(T element, Node<T> parent, Node<T> current) {
         if (current == null) {
             throw new NoSuchElementException("Empty Tree");
-        } else if (current.getData().compareTo(element) == 0) {
+        }
+        int comparison = current.getData().compareTo(element);
+        if (comparison == 0) {
             if (parent.getData().compareTo(current.getData()) > 0) {
                 parent.setLeft(findReplacementNode(current));
             } else {
                 parent.setRight(findReplacementNode(current));
             }
             return current.getData();
-        } else if (current.getData().compareTo(element) > 0) {
+        } else if (comparison > 0) {
             return remove(element, current, current.getLeft());
         } else {
             return remove(element, current, current.getRight());
@@ -241,10 +246,12 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     private Node<T> binarySearch(T element, Node<T> current) {
         if (current == null) {
             return null;
-        } else if (current.getData().compareTo(element) == 0) {
+        }
+        int comparison = current.getData().compareTo(element);
+        if (comparison == 0) {
             return current;
         } else {
-            if (current.getData().compareTo(element) > 0) {
+            if (comparison > 0) {
                 return binarySearch(element, current.getLeft());
             } else {
                 return binarySearch(element, current.getRight());
@@ -271,10 +278,11 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
         if (current == null) {
             return 0;
         }
-        if (current.getData().compareTo(element) == 0) {
+        int comparison = current.getData().compareTo(element);
+        if (comparison == 0) {
             // With this implementation, equal elements are always to the right
             return 1 + count(element, current.getRight());
-        } else if (current.getData().compareTo(element) > 0) {
+        } else if (comparison > 0) {
             return count(element, current.getLeft());
         } else {
             return count(element, current.getRight());
