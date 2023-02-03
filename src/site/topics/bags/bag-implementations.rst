@@ -208,16 +208,16 @@ ArraySortedBag
     * Which is needed, if the elements are to be sorted
 
 
-* Finally, ``Comparable<? super T>`` means that ``T``, or one of its superclasses, must extend ``Comparable``
+* Finally, ``<T extends Comparable<? super T>>`` means that ``T`` can be compared to something of type ``T`` or a superclass of ``T``
 
     * ``?`` is a *wildcard*
-    * It is fine if ``T`` does not extend ``Comparable`` as long as one of its superclasses does
 
 
-* Thus, ``<T extends Comparable<? super T>>`` means that ``T`` must have a defined ordering for itself through either
+* Thus, this means that ``T`` must have a defined ordering for itself through either
 
     * A direct implementation of ``compareTo``
     * Inheritance
+
 
 
 Adding Method
