@@ -251,9 +251,12 @@ Iterable
 ========
 
 * The ``Iterator`` interface is used for creating an iterator object to iterate over something
-* If we are making a class that we want to be able to iterate over, we will have that class ``implement Iterable<T>``
-    * For example, asking our collection for an iterator
+* If making a class that is to be iterated over, then that class will ``implement Iterable<T>``
+
+    * For example, asking the collection for an iterator
+
         * ``myBag.iterator()``
+
 
 * When looking at the `Iterable interface <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Iterable.html>`_, you will find one abstract method --- ``iterator()``
 * If we correctly implement the ``Iterable`` interface, we can guarantee that our class is in fact iterable
@@ -262,8 +265,7 @@ Iterable
 For Each
 --------
 
-* For things that are iterable, we can make use of the *enhanced* for loop --- for each loop
-
+* For things that are iterable, *enhanced* for loop can be used --- for each loop
 * In general, it looks like this
 
 .. code-block:: Java
@@ -283,8 +285,8 @@ For Each
         process(x);
     }
 
-* Revisiting the ``toString()`` example from above, we can alter it further
 
+* Revisiting the ``toString()`` example from above with an enhanced for loop
 
 .. code-block:: Java
     :linenos:
