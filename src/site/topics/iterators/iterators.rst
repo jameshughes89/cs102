@@ -20,8 +20,7 @@ Iterators
 
 * However, not everything one may want to iterate over is an array
 * Trying to use a ``for`` loop for iterating over a linked structure doesn't work as nicely
-
-    * Instead, this is typically done with a ``while`` loop
+* Instead, a ``while`` loop is typically used
 
 
 .. code-block:: Java
@@ -37,7 +36,7 @@ Iterators
 =========
 
 * Java provides a common uniform way to iterate over *things*
-* Iterators are objects that allow *iterating* over a collection, one element at a time
+* Iterators are objects that allow *iterating* over something one element at a time
 
     * Get each element in an array
     * Get each element from a ``Bag``
@@ -51,7 +50,7 @@ Iterators
 
 
 Iterator Interface
-------------------
+==================
 
 * Iterator objects are typically very simple
 * To define an iterator for a class, define the class such that it ``implements Iterator<T>``
@@ -78,7 +77,7 @@ Iterator Interface
 
 
 Array Iterator
-^^^^^^^^^^^^^^
+--------------
 
 * Although it is not required to know what the underlying container is when using the iterator
 * It is required to define an iterator for the underlying container
@@ -120,7 +119,7 @@ Array Iterator
 .. literalinclude:: /../main/java/ArrayIterator.java
     :language: java
     :lineno-match:
-    :lines: 24-32
+    :lines: 24-33
 
 
 * ``next`` returns the next element and updates ``index``
@@ -152,7 +151,7 @@ Array Iterator
 
 
 Linked Iterator
-^^^^^^^^^^^^^^^
+---------------
 
 
 .. literalinclude:: /../main/java/LinkedIterator.java
@@ -178,7 +177,7 @@ Linked Iterator
 
 
 Collection Iterators
-====================
+--------------------
 
 * Consider a ``SortedBag``
 * If using an ``ArraySortedBag`` implementation, the ``iterator`` method would need to return an ``ArrayIterator``
@@ -218,11 +217,11 @@ Collection Iterators
         }
 
 
-* In the end, the actual underlying container has no impact on the way one iterates
+* In the end, the actual underlying container has no impact on the code used to iterate
 
 
 toString
---------
+^^^^^^^^
 
 * Consider the following ``toString`` for some collection
 
@@ -247,8 +246,8 @@ toString
 
 
 
-Iterable
-========
+Iterable Interface
+==================
 
 * The ``Iterator`` interface is used for creating an iterator object to iterate over something
 * If making a class that is to be iterated over, then that class will ``implement Iterable<T>``
@@ -258,8 +257,8 @@ Iterable
         * ``myBag.iterator()``
 
 
-* When looking at the `Iterable interface <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Iterable.html>`_, you will find one abstract method --- ``iterator()``
-* If we correctly implement the ``Iterable`` interface, we can guarantee that our class is in fact iterable
+* Within the `Iterable interface <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html>`_ there is one abstract method --- ``iterator()``
+* If this interface is implemented correctly, the collection is guaranteed to be iterable
 
 
 For Each
@@ -328,6 +327,7 @@ For Each
 For Next Time
 =============
 
+* Consider how the ``Stack`` and ``Queue`` could be made iterable 
 * Read Chapter 7
 
     * 12 pages
