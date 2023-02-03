@@ -130,6 +130,7 @@ The Math, Stats, and CS Society has a time and location for
     :numbered:
 
     assignments/country-catalogue/country-catalogue
+    assignments/maze-solver/maze-solver
 
 
 .. toctree::

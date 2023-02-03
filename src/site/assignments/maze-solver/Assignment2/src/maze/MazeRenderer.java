@@ -1,3 +1,5 @@
+package maze;
+
 import java.util.Set;
 
 public class MazeRenderer {
