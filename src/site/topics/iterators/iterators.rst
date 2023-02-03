@@ -20,7 +20,8 @@ Iterators
 
 * However, not everything one may want to iterate over is an array
 * Trying to use a ``for`` loop for iterating over a linked structure doesn't work as nicely
-* Instead, this is typically done with a ``while`` loop
+
+    * Instead, this is typically done with a ``while`` loop
 
 
 .. code-block:: Java
@@ -35,13 +36,18 @@ Iterators
 Iterators
 =========
 
-* Iterators are objects that allow us to *iterate* over a collection, one element at a time
-    * Get each element in an array
-    * Get all the elements from a bag
+* Java provides a common uniform way to iterate over *things*
+* Iterators are objects that allow *iterating* over a collection, one element at a time
 
-* There are two important interfaces:
+    * Get each element in an array
+    * Get each element from a ``Bag``
+
+
+* There are two important relevant interfaces:
+
     * ``Iterator`` --- used when creating an iterator object
-    * ``Iterable`` --- used when creating something we may want to iterate over
+    * ``Iterable`` --- used when creating something one may want to iterate over
+
 
 
 Iterator Interface
