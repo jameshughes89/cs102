@@ -118,9 +118,9 @@ Rectangles and Squares
 
 
 * This *seems* great
-* Inherit the ``getLength``, ``getWidth``, and ``getArea``
-* Override the ``toString`` for our special needs
-* Can even hijack the superclass' constructors with ``super()`` in a similar way to using ``this()``
+* Inherit ``getLength``, ``getWidth``, and ``getArea``
+* Override ``toString`` for specific requirements
+* Hijack the superclass' constructors with ``super()`` in a similar way to using ``this()``
 
 
 Liskov's Substitution Principle
@@ -133,23 +133,22 @@ Liskov's Substitution Principle
 .. code-block:: java
     :linenos:
 
-    public void pumpItUp(Rectangle rect) {
+    public void doubleArea(Rectangle rect) {
         rect.setWidth(2.0 * rect.getWidth());
     }
 
 
-* ``pumpItUp`` is a method that will double the area of a rectangle
-
+* ``doubleArea`` is a method that will double the area of a ``Rectangle``
 * Think of what will happen when running this
 
 .. code-block:: java
     :linenos:
 
     Square mySquare = new Square(10);
-    pumpItUp(mySquare);
+    doubleArea(mySquare);
 
 
-* Since ``Square`` inherits from ```Rectangle``,  ``setWidth`` exists
+* Since ``Square`` inherits from ``Rectangle``,  ``setWidth`` exists
 * But this code will cause the ``Square`` to have an unequal length and width
 
     * Thus, the ``Square`` is no longer a square
@@ -179,17 +178,19 @@ Liskov's Substitution Principle
     :linenos:
 
     Square mySquare = new Square(10);
-    pumpItUp(mySquare);
+    doubleArea(mySquare);
 
 
-* This will then cause the ``Square`` to not double in size, but quadruple, which is a problem
-* This means it is not possible to substitute the ``Rectangle`` for a ``Square`` for ``pumpItUp``
-* However, this can be fixed by changing the ``pumpItUp`` method
+* Now the length and width are equal
+* But this will cause the ``Square`` to not double in size, but quadruple, which is a problem
+* This means it is not possible to substitute the ``Rectangle`` for a ``Square`` for ``doubleArea``
+* However, this can be fixed by changing the ``doubleArea`` method
+
 
 .. code-block:: java
     :linenos:
 
-    public void pumpItUp(Rectangle rect) {
+    public void doubleArea(Rectangle rect) {
         if (rect instanceof Square) {
             rect.setWidth(Math.sqrt(2.0) * rect.getWidth());
         } else {
@@ -200,22 +201,22 @@ Liskov's Substitution Principle
 
 * Now this *solves* it
 * Except, `Hyrum's Law <https://www.hyrumslaw.com/>`_ says that all observable behaviours, intentional or not, will be depended on by somebody
-* So, someone out there depends on the fact that ``pumpItUp`` is quadrupling the ``Square``, even though it honestly shouldn't be
-* Maybe this can be fixed by adding another method and changing ``pumpItUp`` back for the person depending on the problematic functionality
+* So, someone out there depends on the fact that ``doubleArea`` is quadrupling the ``Square``, even though it honestly shouldn't be
+* Maybe this can be fixed by adding another method and changing ``doubleArea`` back for the person depending on the problematic functionality
 
 
 .. code-block:: java
     :linenos:
 
-    public void pumpItUp(Rectangle rect) {
+    public void doubleArea(Rectangle rect) {
         rect.setWidth(2.0 * rect.getWidth());
     }
 
-    public void myPumpItUp(Rectangle rect) {
+    public void myDoubleArea(Rectangle rect) {
         if (rect instanceof Square) {
             rect.setWidth(Math.sqrt(2.0) * rect.getWidth());
         } else {
-            pumpItUp(rect);
+            doubleArea(rect);
         }
     }
 
