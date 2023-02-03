@@ -293,8 +293,8 @@ For Each
 
         public String toString() {
             StringBuilder builder = new StringBuilder();
-            for (T bagElement : this) {     // 'this' is the iterable thing
-                builder.append(bagElement);
+            for (T element : this) {     // 'this' is the iterable thing
+                builder.append(element);
                 builder.append(", ");
             }
             return builder.toString();
@@ -303,8 +303,7 @@ For Each
 
 .. note::
 
-    The enhanced for loop is just syntactic sugar for what was already shown above. For example, the enhanced for loop
-    example
+    The enhanced for loop is just syntactic sugar for what was already shown above. The enhanced for loop example
 
         .. code-block:: Java
             :linenos:
@@ -326,11 +325,21 @@ For Each
 
 
 
-
-For next time
+For Next Time
 =============
 
-* Download the :download:`ArrayIterator </../main/java/ArrayIterator.java>` and its :download:`tests </../test/java/ArrayIteratorTest.java>`.
-* Download the :download:`LinkedIterator </../main/java/LinkedIterator.java>` and its :download:`tests </../test/java/LinkedIteratorTest.java>`.
 * Read Chapter 7
+
     * 12 pages
+
+
+Playing Code
+------------
+
+* Download and play with
+
+    * :download:`ArrayIterator </../main/java/ArrayIterator.java>`
+    * :download:`tests </../test/java/ArrayIteratorTest.java>`
+    * :download:`LinkedIterator </../main/java/LinkedIterator.java>`
+    * :download:`tests </../test/java/LinkedIteratorTest.java>`
+
