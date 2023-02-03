@@ -416,37 +416,37 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
         private Node<T> left;
         private Node<T> right;
 
-        public Node() {
+        private Node() {
             this(null);
         }
 
-        public Node(T data) {
+        private Node(T data) {
             this.data = data;
             this.left = null;
             this.right = null;
         }
 
-        public T getData() {
+        private T getData() {
             return data;
         }
 
-        public void setData(T data) {
+        private void setData(T data) {
             this.data = data;
         }
 
-        public Node<T> getLeft() {
+        private Node<T> getLeft() {
             return left;
         }
 
-        public void setLeft(Node<T> left) {
+        private void setLeft(Node<T> left) {
             this.left = left;
         }
 
-        public Node<T> getRight() {
+        private Node<T> getRight() {
             return right;
         }
 
-        public void setRight(Node<T> right) {
+        private void setRight(Node<T> right) {
             this.right = right;
         }
     }
