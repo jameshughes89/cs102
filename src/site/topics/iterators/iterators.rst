@@ -152,56 +152,29 @@ Array Iterator
 
 
 Linked Iterator
----------------
+^^^^^^^^^^^^^^^
 
-* Similarly, if we want to make an iterator for a collection that has a linked structure for the underlying container, then we make a :download:`LinkedIterator </../main/java/LinkedIterator.java>`
 
-.. code-block:: Java
-    :linenos:
+.. literalinclude:: /../main/java/LinkedIterator.java
+    :language: java
+    :lineno-match:
 
-    import java.util.Iterator;
-    import java.util.NoSuchElementException;
 
-    public class LinkedIterator<T> implements Iterator<T> {
-
-        Node<T> current;
-
-        public LinkedIterator(Node<T> head) {
-            current = head;
-        }
-
-        @Override
-        public boolean hasNext() {
-            return current != null;
-        }
-
-* For the `LinkedIterator`, all we need is a reference to the current node
-* If the current is not null, then there is a next element to be returned
-
-.. code-block:: Java
-    :linenos:
-
-        @Override
-        public T next() {
-            if (!hasNext()) {
-                throw new NoSuchElementException();
-            }
-            T returnElement = current.getData();
-            current = current.getNext();
-            return returnElement;
-        }
-    }
-
-* If there is no next, throw an exception
-* Otherwise, move the node reference to the next node and return the data
+* For the ``LinkedIterator``, all that is needed is a reference to the current node
+* The constructor sets the current node to reference the head of the linked structure
+* ``hasNext`` just checks if ``current`` references ``null``
+* ``next`` returns the next element and sets the iterator up to return the subsequent element when needed
 
 * Just like the ``ArrayIterator``
+
     * The iterator only goes in one direction
-    * Once we get an element with ``next()``, we can't go back unless we start with a new iterator
+    * Once an element is retrieved with ``next()``, it is not possible to retrieve it again unless creating a new iterator
+
 
 .. warning::
 
-    If you made your ``Node`` class an internal class, then you will need to make your ``LinkedIterator`` internal too.
+    If the ``Node`` class is an internal class, then the ``LinkedIterator`` will need to be internal too.
+
 
 
 Collection Iterators
