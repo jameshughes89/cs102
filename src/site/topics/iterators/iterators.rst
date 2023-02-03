@@ -180,64 +180,71 @@ Linked Iterator
 Collection Iterators
 ====================
 
-* If we create a ``SortedBag`` with an array, our ``ArraySortedBag``'s ``iterator`` method would need to return an ``ArrayIterator``
+* Consider a ``SortedBag``
+* If using an ``ArraySortedBag`` implementation, the ``iterator`` method would need to return an ``ArrayIterator``
+
+
+    .. code-block:: Java
+        :linenos:
+
+            @Override
+            public Iterator<T> iterator() {
+                return new ArrayIterator<>(bag, size());
+            }
+
+
+* Similarly, the ``iterator`` method for a ``LinkedSortedBag`` would need to return a ``LinkedIterator``
+
+    .. code-block:: Java
+        :linenos:
+
+            @Override
+            public Iterator<T> iterator() {
+                return new LinkedIterator<>(head);
+            }
+
+
+* Since both versions of the ``SortedBag`` return an ``Iterator``
+* And since the iterator provides a common way to iterate over the container
+* It is possible to iterate over an array and linked structure the exact same way
 
 .. code-block:: Java
     :linenos:
 
-        @Override
-        public Iterator<T> iterator() {
-            return new ArrayIterator<>(bag, rear);
+        Iterator<Integer> iterator = myBag.iterator();
+
+        while (iterator.hasNext()) {
+            process(iterator.next());
         }
 
 
-* Similarly, a ``LinkedSortedBag`` would need to return a ``LinkedIterator``
-
-.. code-block:: Java
-    :linenos:
-
-        @Override
-        public Iterator<T> iterator() {
-            return new LinkedIterator<>(head);
-        }
-
-
-* Since both versions of the ``SortedBag`` return an ``Iterator``, and to use an ``Iterator`` I don't really care if it's an array or linked one, I can use it like this
-
-.. code-block:: Java
-    :linenos:
-
-        Iterator<Integer> it = myBag.iterator();
-
-        while (it.hasNext()) {
-            process(it.next());
-        }
-
-
-* In the end, what the implementation of ``SortedBag`` I have does not impact my ability to get an iterator and use it
+* In the end, the actual underlying container has no impact on the way one iterates
 
 
 toString
 --------
 
-* Here is an example of using an iterator for the ``toString`` within a ``SortedBag`` implementation
+* Consider the following ``toString`` for some collection
 
 .. code-block:: Java
     :linenos:
 
         public String toString() {
             StringBuilder builder = new StringBuilder();
-            Iterator<T> it = this.iterator();
-            while(it.hasNext()) {
-                builder.append(it.next());
+            Iterator<T> iterator = this.iterator();
+            while(iterator.hasNext()) {
+                builder.append(iterator.next());
                 builder.append(", ");
             }
             return builder.toString();
         }
 
-* Just by looking at this, you can't tell me if this is an ``ArrayIterator`` or a ``LinkedIterator``
+
+* By looking at the above code, it is not possible to know if this is for an array or linked implementation
+
     * This is a fantastic example of *abstraction*
-    * I can now iterate over something (what) without needing to worry about the implementation details (how)
+    * It is possible to iterate over something (what) without needing to worry about the implementation details (how)
+
 
 
 Iterable
