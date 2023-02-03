@@ -77,83 +77,78 @@ Iterator Interface
     }
 
 
-
 Array Iterator
---------------
+^^^^^^^^^^^^^^
 
-* I do not need to know what kind of underlying container there is for the data to use the iterator
-* However, if I am making my own collection, I will need to create an iterator for that collection and the underlying container
+* Although it is not required to know what the underlying container is when using the iterator
+* It is required to define an iterator for the underlying container
+* For example, if defining a collection that makes use of an array, an ``ArrayIterator`` will need to be defined
 
-* If the collection we are making is using an array, such as the ``ArrayStack``, we will make an iterator for an array
-    * :download:`ArrayIterator </../main/java/ArrayIterator.java>`
 
-.. code-block:: Java
-    :linenos:
+.. literalinclude:: /../main/java/ArrayIterator.java
+    :language: java
+    :lineno-match:
+    :lines: 1-8
 
-    import java.util.Iterator;
-    import java.util.NoSuchElementException;
-
-    public class ArrayIterator<T> implements Iterator<T> {
-
-        private final int size;
-        private int currentIndex;
-        private final T[] items;
 
 * The fields only include
-    * Size (how many things are in the collection)
-    * The current index, which corresponds to which index the ``next`` element to be returned is in
-    * A reference to the array holding the data
 
-.. code-block:: Java
-    :linenos:
+    * ``size`` --- number of elements in the collection
+    * ``elements`` --- the array of elements to iterate over
+    * ``index`` --- the current index the iterator is at
 
-        public ArrayIterator(T[] items, int size) {
-            this.items = items;
-            this.size = size;
-            this.currentIndex = 0;
-        }
 
-        @Override
-        public boolean hasNext() {
-            return currentIndex < size;
-        }
+.. literalinclude:: /../main/java/ArrayIterator.java
+    :language: java
+    :lineno-match:
+    :lines: 10-17
 
-* The easiest way to know if there is anything left in the collection to iterate over is to see if the current index is less than the number of things in the collection
 
-.. code-block:: Java
-    :linenos:
+* Constructor sets the iterator up to start at the beginning of the array
 
-        @Override
-        public T next() {
-            if (!hasNext()) {
-                throw new NoSuchElementException();
-            }
-            T returnElement = items[currentIndex];
-            currentIndex++;
-            return returnElement;
-        }
-    }
 
-* The way this is written, if we try to access the ``next`` thing when there are no more things, then we will throw an exception
-* Otherwise, update the ``currentIndex`` and return the element
+.. literalinclude:: /../main/java/ArrayIterator.java
+    :language: java
+    :lineno-match:
+    :lines: 19-22
 
-* Important things to note here:
+
+* ``hasNext`` returns a ``boolean`` indicating if there is an element to retrieve
+* Simply check if the current index (``index``) is less than the number of elements in the array (``size``)
+
+
+.. literalinclude:: /../main/java/ArrayIterator.java
+    :language: java
+    :lineno-match:
+    :lines: 24-32
+
+
+* ``next`` returns the next element and updates ``index``
+
+    * It returns the element and sets the iterator up to return the subsequent element when needed
+
+
+* The way this is written, if ``next`` is called when there are no more elements to retrieve, an exception is thrown
+
+
+* Notice that
+
     * This iterator can only go in one direction
-    * Once the iterator object gets to the end of the collection, it does **not** reset
-    * If we want to iterate over the collection again, we create a new iterator
+    * Once the iterator object hits the end of the collection, it does **not** reset
+    * To start iterating again, a new iterator would need to be created
 
 
 .. note::
 
-    Although in this example our iterator goes in our defined direction, there is nothing stopping us from creating an
-    iterator that goes in the reverse order.
+    There is nothing preventing someone from writing an iterator class that returns the element in some other order. For
+    example, reverse order.
 
 
-.. note::
+.. warning::
 
-    Generally, we need to be careful about modifying the collection when using an iterator. For example, with the array
-    iterator, the iterator has reference to the array that is being used and referenced in the thing that we want to
-    iterate over. If we were to modify something with our iterator, it would impact the thing we are iterating over.
+    Consider that the ``ArrayIterator`` has reference to the underlying array contained. Generally, iterators should not
+    modify the collections they are iterating over. Side effects like this are a recipe for disaster.
+
 
 
 Linked Iterator
