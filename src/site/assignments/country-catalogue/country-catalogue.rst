@@ -101,7 +101,7 @@ instances of the ``Country`` class.
 #. Write a method to calculate and return the population density (``population/area``)
 
     * With floating point numbers (doubles included), division by zero results in a special value --- ``Infinity``
-    * If this method is called on a ``Country`` object with an ``area``of zero, it should return ``Infinity``
+    * If this method is called on a ``Country`` object with an ``area`` of zero, it should return ``Infinity``
     * In other words, this method should not perform any special check for ``area`` being zero
 
 
