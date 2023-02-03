@@ -27,9 +27,9 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
      * Helper add method for enabling recursive add. This method ensures that elements are added in the proper order for
      * a Binary Search Tree.
      *
-     * @param element Element to be added to the tree.
-     * @param current Current root of subtree.
-     * @return Node being assigned as left/right child.
+     * @param element Element to be added to the tree
+     * @param current Current root of subtree
+     * @return Node being assigned as left/right child
      */
     private Node<T> add(T element, Node<T> current) {
         if (current == null) {
@@ -62,10 +62,10 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     /**
      * Helper method for recursive remove.
      *
-     * @param element Element to me removed.
-     * @param parent  The parent of the current node.
-     * @param current The current node.
-     * @return The element being removed.
+     * @param element Element to me removed
+     * @param parent  The parent of the current node
+     * @param current The current node
+     * @return The element being removed
      */
     private T remove(T element, Node<T> parent, Node<T> current) {
         if (current == null) {
@@ -89,12 +89,12 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
      * There are a few conditions:
      * 1. Both left and right children are null. Here, simply remove the node.
      * 2. Left child is not null but right child is null. Replace the toRemove node with the left child.
-     * 3. Left child is null but right child is not null. Replace the toRemove node with the right child
+     * 3. Left child is null but right child is not null. Replace the toRemove node with the right child.
      * 4. Both left and right children are not null. Replace the toRemove node with the in order successor, which would
      * be the right subtree's left most node.
      *
-     * @param toRemove The node being replaced.
-     * @return The node replacing the node being removed.
+     * @param toRemove The node being replaced
+     * @return The node replacing the node being removed
      */
     private Node<T> findReplacementNode(Node<T> toRemove) {
         Node<T> replacementNode = null;
@@ -144,9 +144,9 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     /**
      * Helper method for a recursive removeMin.
      *
-     * @param parent  The parent of the current node.
-     * @param current The current node.
-     * @return Minimum element in the binary search tree.
+     * @param parent  The parent of the current node
+     * @param current The current node
+     * @return Minimum element in the binary search tree
      */
     private T removeMin(Node<T> parent, Node<T> current) {
         if (current.getLeft() == null) {
@@ -161,7 +161,7 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
      * An iterative implementation of finding the maximum element in a binary search tree. This method could be
      * recursive like removeMin; however, the iterative one is included for demonstrative purposes.
      *
-     * @return The maximum element in the binary search tree.
+     * @return The maximum element in the binary search tree
      */
     @Override
     public T removeMax() {
@@ -234,8 +234,8 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     /**
      * Helper method enabling a recursive binary search for a given element.
      *
-     * @param element Element being searched for.
-     * @param current Current node being investigated.
+     * @param element Element being searched for
+     * @param current Current node being investigated
      * @return Node containing the element searched for, or null if not found
      */
     private Node<T> binarySearch(T element, Node<T> current) {
@@ -263,9 +263,9 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     /**
      * Helper method for recursive count of elements in binary search tree.
      *
-     * @param element Element to be counted.
-     * @param current Current node being investigated.
-     * @return Number of times the element exists in the (sub)tree.
+     * @param element Element to be counted
+     * @param current Current node being investigated
+     * @return Number of times the element exists in the (sub)tree
      */
     private int count(T element, Node<T> current) {
         if (current == null) {
@@ -294,8 +294,8 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     /**
      * Recursive pre-order traversal of a binary tree. Elements are added to a bag in the required order.
      *
-     * @param current  current node in the tree being referenced.
-     * @param sequence Bag containing elements with a pre-order ordering.
+     * @param current  current node in the tree being referenced
+     * @param sequence Bag containing elements with a pre-order ordering
      */
     private void preOrder(Node<T> current, IndexedBag<T> sequence) {
         if (current != null) {
@@ -308,8 +308,8 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     /**
      * Recursive in-order traversal of a binary tree. Elements are added to a bag in the required order.
      *
-     * @param current  current node in the tree being referenced.
-     * @param sequence Bag containing elements with an in-order ordering.
+     * @param current  current node in the tree being referenced
+     * @param sequence Bag containing elements with an in-order ordering
      */
     private void inOrder(Node<T> current, IndexedBag<T> sequence) {
         if (current != null) {
@@ -322,8 +322,8 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     /**
      * Recursive post-order traversal of a binary tree. Elements are added to a bag in the required order.
      *
-     * @param current  current node in the tree being referenced.
-     * @param sequence Bag containing elements with a post-order ordering.
+     * @param current  current node in the tree being referenced
+     * @param sequence Bag containing elements with a post-order ordering
      */
     private void postOrder(Node<T> current, IndexedBag<T> sequence) {
         if (current != null) {
@@ -336,8 +336,8 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     /**
      * Level-order traversal of a binary tree. Elements are added to a bag in the required order.
      *
-     * @param start    Root node of a binary tree.
-     * @param sequence Bag containing elements with a level-order ordering.
+     * @param start    Root node of a binary tree
+     * @param sequence Bag containing elements with a level-order ordering
      */
     private void levelOrder(Node<T> start, IndexedBag<T> sequence) {
         Queue<Node<T>> levelOrderQueue = new ArrayQueue<>();
@@ -393,7 +393,7 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     /**
      * Returns a string containing the elements in the binary search tree with an in-order ordering.
      *
-     * @return String of the elements with an in-order ordering.
+     * @return String of the elements with an in-order ordering
      */
     @Override
     public String toString() {
@@ -409,7 +409,7 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
      * A node class for a linked binary tree structure. Each node contains a nullable reference to data of type T, and a
      * reference to the left and right child nodes, which may be null references.
      *
-     * @param <T> Type of the data being stored in the node.
+     * @param <T> Type of the data being stored in the node
      */
     private static class Node<T> {
         private T data;
