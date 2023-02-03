@@ -1,17 +1,19 @@
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-
 class ArrayStackTest {
 
-    private Stack<Integer> classUnderTest;
-    private Stack<Integer> preState;
+    private ArrayStack<Integer> classUnderTest;
+    private ArrayStack<Integer> preState;
 
     @BeforeEach
-    void newStack() {
+    void createStack() {
         classUnderTest = new ArrayStack<>();
         preState = new ArrayStack<>();
     }
@@ -20,93 +22,84 @@ class ArrayStackTest {
     class WhenNewEmpty {
 
         @Test
-        @DisplayName("New or empty Stack isEmpty returns true.")
+        void push_empty_returnsTrue() {
+            assertTrue(classUnderTest.push(11));
+        }
+
+        @Test
+        void pop_empty_throwsNoSuchElementException() {
+            assertThrows(NoSuchElementException.class, () -> classUnderTest.pop());
+        }
+
+        @Test
+        void peek_empty_throwsNoSuchElementException() {
+            assertThrows(NoSuchElementException.class, () -> classUnderTest.peek());
+        }
+
+        @Test
         void isEmpty_empty_returnsTrue() {
             assertTrue(classUnderTest.isEmpty());
         }
 
         @Test
-        @DisplayName("Empty Stack size returns 0.")
         void size_empty_returnsZero() {
             assertEquals(0, classUnderTest.size());
         }
 
         @Test
-        @DisplayName("Empty Stack peek throws NoSuchElementException.")
-        void peek_empty_throwException() {
-            assertThrows(NoSuchElementException.class, () -> classUnderTest.peek());
-        }
-
-        @Test
-        @DisplayName("Empty Stack pop throws NoSuchElementException.")
-        void pop_empty_throwException() {
-            assertThrows(NoSuchElementException.class, () -> classUnderTest.pop());
-        }
-
-        @Test
-        @DisplayName("Empty Stack toString returns '<-- Top'.")
-        void toString_empty_stringTop() {
-            assertEquals("<-- Top", classUnderTest.toString());
+        void toString_empty_returnsEmptyString() {
+            assertEquals("", classUnderTest.toString());
         }
 
         @Nested
         class WhenSingleton {
 
             @BeforeEach
-            void addSingleInteger() {
-                classUnderTest.push(11);
-                preState.push(11);
+            void addSingleton() {
+                classUnderTest.push(10);
+                preState.push(10);
             }
 
             @Test
-            @DisplayName("Singleton Stack is not empty.")
-            void isEmpty_singleton_returnsFalse() {
-                assertFalse(classUnderTest.isEmpty());
+            void push_singleton_returnsTrue() {
+                assertTrue(classUnderTest.push(11));
             }
 
             @Test
-            @DisplayName("Singleton Stack size is one.")
-            void size_singleton_returnsOne() {
-                assertEquals(1, classUnderTest.size());
-            }
-
-            @Test
-            @DisplayName("Push on singleton Stack adds element to top.")
-            void push_singleton_isTop() {
-                classUnderTest.push(22);
-                assertEquals(22, classUnderTest.peek());
-            }
-
-            @Test
-            @DisplayName("Pop on singleton Stack returns top.")
             void pop_singleton_returnsTop() {
-                assertEquals(11, classUnderTest.pop());
+                assertEquals(10, classUnderTest.pop());
             }
 
             @Test
-            @DisplayName("Pop on singleton Stack results in an empty stack.")
             void pop_singleton_emptyStack() {
                 classUnderTest.pop();
                 assertEquals(new ArrayStack<>(), classUnderTest);
             }
 
             @Test
-            @DisplayName("Peek on singleton Stack returns top.")
             void peek_singleton_returnsTop() {
-                assertEquals(11, classUnderTest.peek());
+                assertEquals(10, classUnderTest.peek());
             }
 
             @Test
-            @DisplayName("Peek on singleton Stack results in unchanged stack.")
             void peek_singleton_unchanged() {
                 classUnderTest.peek();
                 assertEquals(preState, classUnderTest);
             }
 
             @Test
-            @DisplayName("Singleton Stack toString returns correct string.")
-            void toString_singleton_correctString() {
-                assertEquals("11, <-- Top", classUnderTest.toString());
+            void isEmpty_singleton_returnsFalse() {
+                assertFalse(classUnderTest.isEmpty());
+            }
+
+            @Test
+            void size_singleton_returnsOne() {
+                assertEquals(1, classUnderTest.size());
+            }
+
+            @Test
+            void toString_singleton_returnsCorrectString() {
+                assertEquals("10, ", classUnderTest.toString());
             }
 
             @Nested
@@ -114,64 +107,55 @@ class ArrayStackTest {
             class WhenMany {
 
                 @BeforeEach
-                void addMoreIntegers() {
-                    classUnderTest.push(22);
-                    classUnderTest.push(33);
-                    classUnderTest.push(44);
-                    preState.push(22);
-                    preState.push(33);
-                    preState.push(44);
+                void addMany() {
+                    classUnderTest.push(20);
+                    classUnderTest.push(30);
+                    classUnderTest.push(40);
+                    preState.push(20);
+                    preState.push(30);
+                    preState.push(40);
                 }
 
                 @Test
-                @DisplayName("Many Stack is not empty.")
-                void isEmpty_many_returnsFalse() {
-                    assertFalse(classUnderTest.isEmpty());
+                void push_many_returnsTrue() {
+                    assertTrue(classUnderTest.push(11));
                 }
 
                 @Test
-                @DisplayName("Many Stack size is correct size.")
-                void size_many_returnsFour() {
-                    assertEquals(4, classUnderTest.size());
-                }
-
-                @Test
-                @DisplayName("Push on many Stack adds element to top.")
-                void push_many_isTop() {
-                    classUnderTest.push(55);
-                    assertEquals(55, classUnderTest.peek());
-                }
-
-                @Test
-                @DisplayName("Pop on many Stack returns top element.")
                 void pop_many_returnsTop() {
-                    assertEquals(44, classUnderTest.pop());
+                    assertEquals(40, classUnderTest.pop());
                 }
 
                 @Test
-                @DisplayName("Pop on many Stack removes top element.")
-                void pop_many_removesTop() {
+                void pop_many_newTop() {
                     classUnderTest.pop();
-                    assertNotEquals(44, classUnderTest.peek());
+                    assertEquals(30, classUnderTest.peek());
                 }
 
                 @Test
-                @DisplayName("Peek on many Stack returns top element.")
                 void peek_many_returnsTop() {
-                    assertEquals(44, classUnderTest.peek());
+                    assertEquals(40, classUnderTest.peek());
                 }
 
                 @Test
-                @DisplayName("Peek on many Stack leaves Stack unchanged.")
                 void peek_many_unchanged() {
                     classUnderTest.peek();
                     assertEquals(preState, classUnderTest);
                 }
 
                 @Test
-                @DisplayName("Many Stack toString returns correct string.")
-                void toString_many_correctString() {
-                    assertEquals("11, 22, 33, 44, <-- Top", classUnderTest.toString());
+                void isEmpty_many_returnsFalse() {
+                    assertFalse(classUnderTest.isEmpty());
+                }
+
+                @Test
+                void size_many_returnsCorrectSize() {
+                    assertEquals(4, classUnderTest.size());
+                }
+
+                @Test
+                void toString_many_returnsCorrectString() {
+                    assertEquals("40, 30, 20, 10, ", classUnderTest.toString());
                 }
             }
         }
@@ -181,9 +165,7 @@ class ArrayStackTest {
     class WhenLarge {
 
         @Test
-        @DisplayName("Pushing beyond capacity automatically calls expandCapacity.")
         void push_large_successfullyExpandsCapacity() {
-            // Default capacity is 100
             for (int i = 0; i < 1000; i++) {
                 classUnderTest.push(i);
             }

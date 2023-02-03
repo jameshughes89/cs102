@@ -106,7 +106,7 @@ Student Evaluation (Tentative Dates)
       - January 30th 11:55pm
     * - Assignment 2
       - 5%
-      - Mid February-ish
+      - February 27th 11:55pm
     * - Assignment 3
       - 5%
       - Mid March-ish

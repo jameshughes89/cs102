@@ -1,3 +1,5 @@
+package maze;
+
 public class MazeEndpointsException extends RuntimeException {
 
     public MazeEndpointsException() {
