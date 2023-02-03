@@ -1,6 +1,6 @@
-***********************************************
-Assignment #2: Maze Solver --- A Path is a Path
-***********************************************
+********************************
+Maze Solver --- A Path is a Path
+********************************
 
 * **Worth**: 5%
 * **DUE**: February 27th 11:55pm; submitted on MOODLE.
