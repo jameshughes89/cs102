@@ -56,25 +56,6 @@ Office Hours
     * Friday, 10am -- 11am
 
 
-* **(TAs)** TBD
-
-    * **TBD** (tbd at stfx.ca):
-
-        * TBD
-
-
-Learning Centre
-===============
-
-`We have a learning centre that provides help. <https://www2.mystfx.ca/mscs/learning-centre>`_
-
-
-MSCS Tutorial Nights
-====================
-
-The Math, Stats, and CS Society has a time and location for
-`free tutorial sessions. <https://www.mystfx.ca/computer-science/csci-tutorials>`_
-
 
 .. toctree::
     :caption: Course Notes
