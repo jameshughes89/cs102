@@ -2,284 +2,269 @@
 Iterators
 *********
 
-* Often we need to access every element in some *thing*
-    * like an array, ``Stack``, ``Queue``, or ``Bag``
-* We call this *iterating* over the things
+* It is often necessary to access every element in some *thing*
 
-* We've done this countless times already with something like an array
+    * Like an array, ``Stack``, ``Queue``, or ``Bag``
+
+
+* This is called *iterating* over the *things*
+* This has already been done countless times with arrays
 
 .. code-block:: Java
     :linenos:
 
-    for(int i = 0; i < someArray.length; ++i) {
+    for (int i = 0; i < someArray.length; i++) {
         process(someArray[i]);
     }
 
 
-* However, not everything we may want to iterate over is an array, and trying to use the for loop with a linked structure won't work quite as nicely
-    * Typically you'd see a ``while`` loop
+* However, not everything one may want to iterate over is an array
+* Trying to use a ``for`` loop for iterating over a linked structure doesn't work as nicely
+* Instead, a ``while`` loop is typically used
+
 
 .. code-block:: Java
     :linenos:
 
-    while(currentNode.getNext() != null) {
+    while (currentNode != null) {
         process(currentNode.getData());
         currentNode = currentNode.getNext();
     }
-
-* The good news is, Java provides us with a common, uniform way to iterate over something
-* It is also independent of the implementation of the thing we want to iterate over
 
 
 Iterators
 =========
 
-* Iterators are objects that allow us to *iterate* over a collection, one element at a time
-    * Get each element in an array
-    * Get all the elements from a bag
+* Java provides a common uniform way to iterate over *things*
+* Iterators are objects that allow *iterating* over something one element at a time
 
-* There are two important interfaces:
+    * Get each element in an array
+    * Get each element from a ``Bag``
+
+
+* There are two important relevant interfaces:
+
     * ``Iterator`` --- used when creating an iterator object
-    * ``Iterable`` --- used when creating something we may want to iterate over
+    * ``Iterable`` --- used when creating something one may want to iterate over
+
 
 
 Iterator Interface
-------------------
+==================
 
 * Iterator objects are typically very simple
-* To define our own iterator, we will make a class that ``implements Iterator<T>``
-    * Uses the `Iterator interface <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Iterator.html>`_
+* To define an iterator for a class, define the class such that it ``implements Iterator<T>``
 
-* There are two abstract methods included in the interface which we will focus on:
+    * Uses the `Iterator interface <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html>`_
+
+
+* There are two abstract methods included in the interface to focus on
+
     * ``T next()`` --- retrieve the next element
-    * ``boolean hasNext()`` --- tells us if there exists another element
-
-* In the end, if we use an iterator, we do not care what the underlying container is for the data since, no matter what it is, we get each element with ``next`` and check if there are more elements with ``hasNext``
+    * ``boolean hasNext()`` --- checks if another element exists
 
 
-* For instance, here is an example of using an iterator to iterate over an arbitrary iterable thing of type ``T``
+* With these, it becomes possible to iterate over elements without needing to worry about the underlying container
 
 .. code-block:: Java
     :linenos:
 
-    Iterator<T> it = arbitraryIterableThing.iterator();
+    Iterator<T> iterator = arbitraryIterableThing.iterator();
 
-    while (it.hasNext()) {
-        process(it.next());
+    while (iterator.hasNext()) {
+        process(iterator.next());
     }
 
 
 Array Iterator
 --------------
 
-* I do not need to know what kind of underlying container there is for the data to use the iterator
-* However, if I am making my own collection, I will need to create an iterator for that collection and the underlying container
+* Although it is not required to know what the underlying container is when using the iterator
+* It is required to define an iterator for the underlying container
+* For example, if defining a collection that makes use of an array, an ``ArrayIterator`` will need to be defined
 
-* If the collection we are making is using an array, such as the ``ArrayStack``, we will make an iterator for an array
-    * :download:`ArrayIterator </../main/java/ArrayIterator.java>`
 
-.. code-block:: Java
-    :linenos:
+.. literalinclude:: /../main/java/ArrayIterator.java
+    :language: java
+    :lineno-match:
+    :lines: 1-8
 
-    import java.util.Iterator;
-    import java.util.NoSuchElementException;
-
-    public class ArrayIterator<T> implements Iterator<T> {
-
-        private final int size;
-        private int currentIndex;
-        private final T[] items;
 
 * The fields only include
-    * Size (how many things are in the collection)
-    * The current index, which corresponds to which index the ``next`` element to be returned is in
-    * A reference to the array holding the data
 
-.. code-block:: Java
-    :linenos:
+    * ``size`` --- number of elements in the collection
+    * ``elements`` --- the array of elements to iterate over
+    * ``index`` --- the current index the iterator is at
 
-        public ArrayIterator(T[] items, int size) {
-            this.items = items;
-            this.size = size;
-            this.currentIndex = 0;
-        }
 
-        @Override
-        public boolean hasNext() {
-            return currentIndex < size;
-        }
+.. literalinclude:: /../main/java/ArrayIterator.java
+    :language: java
+    :lineno-match:
+    :lines: 10-17
 
-* The easiest way to know if there is anything left in the collection to iterate over is to see if the current index is less than the number of things in the collection
 
-.. code-block:: Java
-    :linenos:
+* Constructor sets the iterator up to start at the beginning of the array
 
-        @Override
-        public T next() {
-            if (!hasNext()) {
-                throw new NoSuchElementException();
-            }
-            T returnElement = items[currentIndex];
-            currentIndex++;
-            return returnElement;
-        }
-    }
 
-* The way this is written, if we try to access the ``next`` thing when there are no more things, then we will throw an exception
-* Otherwise, update the ``currentIndex`` and return the element
+.. literalinclude:: /../main/java/ArrayIterator.java
+    :language: java
+    :lineno-match:
+    :lines: 19-22
 
-* Important things to note here:
+
+* ``hasNext`` returns a ``boolean`` indicating if there is an element to retrieve
+* Simply check if the current index (``index``) is less than the number of elements in the array (``size``)
+
+
+.. literalinclude:: /../main/java/ArrayIterator.java
+    :language: java
+    :lineno-match:
+    :lines: 24-33
+
+
+* ``next`` returns the next element and updates ``index``
+
+    * It returns the element and sets the iterator up to return the subsequent element when needed
+
+
+* The way this is written, if ``next`` is called when there are no more elements to retrieve, an exception is thrown
+
+
+* Notice that
+
     * This iterator can only go in one direction
-    * Once the iterator object gets to the end of the collection, it does **not** reset
-    * If we want to iterate over the collection again, we create a new iterator
+    * Once the iterator object hits the end of the collection, it does **not** reset
+    * To start iterating again, a new iterator would need to be created
 
 
 .. note::
 
-    Although in this example our iterator goes in our defined direction, there is nothing stopping us from creating an
-    iterator that goes in the reverse order.
+    There is nothing preventing someone from writing an iterator class that returns the element in some other order. For
+    example, reverse order.
 
 
-.. note::
+.. warning::
 
-    Generally, we need to be careful about modifying the collection when using an iterator. For example, with the array
-    iterator, the iterator has reference to the array that is being used and referenced in the thing that we want to
-    iterate over. If we were to modify something with our iterator, it would impact the thing we are iterating over.
+    Consider that the ``ArrayIterator`` has reference to the underlying array contained. Generally, iterators should not
+    modify the collections they are iterating over. Side effects like this are a recipe for disaster.
+
 
 
 Linked Iterator
 ---------------
 
-* Similarly, if we want to make an iterator for a collection that has a linked structure for the underlying container, then we make a :download:`LinkedIterator </../main/java/LinkedIterator.java>`
 
-.. code-block:: Java
-    :linenos:
+.. literalinclude:: /../main/java/LinkedIterator.java
+    :language: java
+    :lineno-match:
 
-    import java.util.Iterator;
-    import java.util.NoSuchElementException;
 
-    public class LinkedIterator<T> implements Iterator<T> {
-
-        Node<T> current;
-
-        public LinkedIterator(Node<T> head) {
-            current = head;
-        }
-
-        @Override
-        public boolean hasNext() {
-            return current != null;
-        }
-
-* For the `LinkedIterator`, all we need is a reference to the current node
-* If the current is not null, then there is a next element to be returned
-
-.. code-block:: Java
-    :linenos:
-
-        @Override
-        public T next() {
-            if (!hasNext()) {
-                throw new NoSuchElementException();
-            }
-            T returnElement = current.getData();
-            current = current.getNext();
-            return returnElement;
-        }
-    }
-
-* If there is no next, throw an exception
-* Otherwise, move the node reference to the next node and return the data
+* For the ``LinkedIterator``, all that is needed is a reference to the current node
+* The constructor sets the current node to reference the head of the linked structure
+* ``hasNext`` just checks if ``current`` references ``null``
+* ``next`` returns the next element and sets the iterator up to return the subsequent element when needed
 
 * Just like the ``ArrayIterator``
+
     * The iterator only goes in one direction
-    * Once we get an element with ``next()``, we can't go back unless we start with a new iterator
+    * Once an element is retrieved with ``next()``, it is not possible to retrieve it again unless creating a new iterator
+
 
 .. warning::
 
-    If you made your ``Node`` class an internal class, then you will need to make your ``LinkedIterator`` internal too.
+    If the ``Node`` class is an internal class, then the ``LinkedIterator`` will need to be internal too.
+
 
 
 Collection Iterators
-====================
+--------------------
 
-* If we create a ``SortedBag`` with an array, our ``ArraySortedBag``'s ``iterator`` method would need to return an ``ArrayIterator``
+* Consider a ``SortedBag``
+* If using an ``ArraySortedBag`` implementation, the ``iterator`` method would need to return an ``ArrayIterator``
+
+
+    .. code-block:: Java
+        :linenos:
+
+            @Override
+            public Iterator<T> iterator() {
+                return new ArrayIterator<>(bag, size());
+            }
+
+
+* Similarly, the ``iterator`` method for a ``LinkedSortedBag`` would need to return a ``LinkedIterator``
+
+    .. code-block:: Java
+        :linenos:
+
+            @Override
+            public Iterator<T> iterator() {
+                return new LinkedIterator<>(head);
+            }
+
+
+* Since both versions of the ``SortedBag`` return an ``Iterator``
+* And since the iterator provides a common way to iterate over the container
+* It is possible to iterate over an array and linked structure the exact same way
 
 .. code-block:: Java
     :linenos:
 
-        @Override
-        public Iterator<T> iterator() {
-            return new ArrayIterator<>(bag, rear);
+        Iterator<Integer> iterator = myBag.iterator();
+
+        while (iterator.hasNext()) {
+            process(iterator.next());
         }
 
 
-* Similarly, a ``LinkedSortedBag`` would need to return a ``LinkedIterator``
-
-.. code-block:: Java
-    :linenos:
-
-        @Override
-        public Iterator<T> iterator() {
-            return new LinkedIterator<>(head);
-        }
-
-
-* Since both versions of the ``SortedBag`` return an ``Iterator``, and to use an ``Iterator`` I don't really care if it's an array or linked one, I can use it like this
-
-.. code-block:: Java
-    :linenos:
-
-        Iterator<Integer> it = myBag.iterator();
-
-        while (it.hasNext()) {
-            process(it.next());
-        }
-
-
-* In the end, what the implementation of ``SortedBag`` I have does not impact my ability to get an iterator and use it
+* In the end, the actual underlying container has no impact on the code used to iterate
 
 
 toString
---------
+^^^^^^^^
 
-* Here is an example of using an iterator for the ``toString`` within a ``SortedBag`` implementation
+* Consider the following ``toString`` for some collection
 
 .. code-block:: Java
     :linenos:
 
         public String toString() {
             StringBuilder builder = new StringBuilder();
-            Iterator<T> it = this.iterator();
-            while(it.hasNext()) {
-                builder.append(it.next());
+            Iterator<T> iterator = this.iterator();
+            while(iterator.hasNext()) {
+                builder.append(iterator.next());
                 builder.append(", ");
             }
             return builder.toString();
         }
 
-* Just by looking at this, you can't tell me if this is an ``ArrayIterator`` or a ``LinkedIterator``
+
+* By looking at the above code, it is not possible to know if this is for an array or linked implementation
+
     * This is a fantastic example of *abstraction*
-    * I can now iterate over something (what) without needing to worry about the implementation details (how)
+    * It is possible to iterate over something (what) without needing to worry about the implementation details (how)
 
 
-Iterable
-========
+
+Iterable Interface
+==================
 
 * The ``Iterator`` interface is used for creating an iterator object to iterate over something
-* If we are making a class that we want to be able to iterate over, we will have that class ``implement Iterable<T>``
-    * For example, asking our collection for an iterator
+* If making a class that is to be iterated over, then that class will ``implement Iterable<T>``
+
+    * For example, asking the collection for an iterator
+
         * ``myBag.iterator()``
 
-* When looking at the `Iterable interface <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Iterable.html>`_, you will find one abstract method --- ``iterator()``
-* If we correctly implement the ``Iterable`` interface, we can guarantee that our class is in fact iterable
+
+* Within the `Iterable interface <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html>`_ there is one abstract method --- ``iterator()``
+* If this interface is implemented correctly, the collection is guaranteed to be iterable
 
 
 For Each
 --------
 
-* For things that are iterable, we can make use of the *enhanced* for loop --- for each loop
-
+* For things that are iterable, *enhanced* for loop can be used --- for each loop
 * In general, it looks like this
 
 .. code-block:: Java
@@ -299,27 +284,62 @@ For Each
         process(x);
     }
 
-* Revisiting the ``toString()`` example from above, we can alter it further
 
+* Revisiting the ``toString()`` example from above with an enhanced for loop
 
 .. code-block:: Java
     :linenos:
 
         public String toString() {
             StringBuilder builder = new StringBuilder();
-            for (T bagElement : this) {     // 'this' is the iterable thing
-                builder.append(bagElement);
+            for (T element : this) {     // 'this' is the iterable thing
+                builder.append(element);
                 builder.append(", ");
             }
             return builder.toString();
         }
 
 
+.. note::
 
-For next time
+    The enhanced for loop is just syntactic sugar for what was already shown above. The enhanced for loop example
+
+        .. code-block:: Java
+            :linenos:
+
+            for (Integer x: myBag) {
+                process(x);
+            }
+
+
+    means the same thing as
+
+        .. code-block:: Java
+            :linenos:
+
+            Iterator<Integer> iterator = myBag.iterator();
+            while (iterator.hasNext()) {
+                process(iterator.next());
+            }
+
+
+
+For Next Time
 =============
 
-* Download the :download:`ArrayIterator </../main/java/ArrayIterator.java>` and its :download:`tests </../test/java/ArrayIteratorTest.java>`.
-* Download the :download:`LinkedIterator </../main/java/LinkedIterator.java>` and its :download:`tests </../test/java/LinkedIteratorTest.java>`.
+* Consider how the ``Stack`` and ``Queue`` could be made iterable 
 * Read Chapter 7
+
     * 12 pages
+
+
+Playing Code
+------------
+
+* Download and play with
+
+    * :download:`ArrayIterator </../main/java/ArrayIterator.java>`
+    * :download:`tests </../test/java/ArrayIteratorTest.java>`
+    * :download:`LinkedIterator </../main/java/LinkedIterator.java>`
+    * :download:`tests </../test/java/LinkedIteratorTest.java>`
+

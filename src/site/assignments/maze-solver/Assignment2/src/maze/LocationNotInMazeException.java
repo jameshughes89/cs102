@@ -1,3 +1,5 @@
+package maze;
+
 public class LocationNotInMazeException extends RuntimeException {
 
     public LocationNotInMazeException() {

@@ -111,6 +111,7 @@ Office Hours
     :numbered:
 
     assignments/country-catalogue/country-catalogue
+    assignments/maze-solver/maze-solver
 
 
 .. toctree::

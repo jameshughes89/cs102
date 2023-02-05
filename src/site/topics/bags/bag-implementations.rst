@@ -2,419 +2,299 @@
 Bag Implementations
 *******************
 
-* :doc:`We already know what we want to do with our bags <bag-adt>`
-* We also extended the ``Bag`` to make more specialized bags
+* Given the definition of a ``Bag``
+* And given the definitions of the specialized bags
+
     * ``IndexedBag``
     * ``SortedBag``
 
-* Let's implement them now
+
+* How can they be implemented?
+
 
 
 Array Implementation Idea
 =========================
 
-.. image:: array_bag.png
-   :width: 500 px
-   :align: center
+.. figure:: array_bag.png
+    :width: 500 px
+    :align: center
+
+    A representation of how a ``Bag`` could be implemented with an array.
+
 
 * The idea will be similar to the ``Stack`` and ``Queue`` array based implementations
-* Unlike a ``Queue``, we will keep the front always at index 0
-    * Any ideas why?
+* Unlike a ``Queue``, the front will always be at index 0
 
-* We will need to use ``expandCapacity`` again since our arrays are fixed size
-    * The simpler version though, since, again, front is always index 0
+    * With bags, adding and removing can happen anywhere
+    * Adding to the middle would require a linear time operation to make room
+    * Removing from the middle would require a linear time operation to eliminate the gap
 
-* The functionality we want out of our ``Bag``, regardless of what implementation it is:
-    * ``void add(T element)``
-    * ``T remove(T element)``
+
+* An ``expandCapacity`` will be required
+
+    * The simpler version though since the front is always index 0
+
+
+* The functionality of a ``Bag``, regardless of what specific version it is
+
+    * ``boolean add(T element)``
+    * ``boolean remove(T element)``
     * ``boolean contains(T element)``
-    * ``int getCount(T element)``
+    * ``int count(T element)``
     * ``boolean isEmpty()``
     * ``int size()``
     * ``Iterator<T> iterator()``
 
 
-ArrayIndexedBag
----------------
 
-* In addition to the functionality of the ``Bag``, we want to add a few more methods for our ``IndexedBag`` implementation
-    * ``void add(T element)`` --- add to the end of the bag
-    * ``void add(int index, T element)``
-    * ``T remove(int index)`` --- remove from a specific index
-    * ``void set(int index, T element)``
+ArrayIndexedBag
+===============
+
+* In addition to the functionality of the ``Bag``, an ``IndexedBag`` must also be able to
+
+    * ``boolean add(int index, T element)``
+    * ``T remove(int index)``
+    * ``T set(int index, T element)``
     * ``T get(int index)``
     * ``int indexOf(T element)``
 
-* Let's start exploring the implementation
 
-.. warning::
+.. note::
 
-    Only areas of note are presented here and some methods are skipped. See the
-    :download:`ArrayIndexedBag </../main/java/ArrayIndexedBag.java>` implementation to view the full implementation.
-
-
-.. code-block:: Java
-    :linenos:
-    :emphasize-lines: 1, 7
-
-    import java.util.Iterator;
-    import java.util.NoSuchElementException;
-
-    public class ArrayIndexedBag<T> implements IndexedBag<T> {
-
-        private static final int DEFAULT_CAPACITY = 100;
-        private static final int NOT_FOUND = -1;
-        private T[] bag;
-        private int rear;
-
-        public ArrayIndexedBag() {
-            this(DEFAULT_CAPACITY);
-        }
-
-        @SuppressWarnings("unchecked")
-        public ArrayIndexedBag(int initialCapacity) {
-            bag = (T[]) new Object[initialCapacity];
-            rear = 0;
-        }
+    For brevity, only a subset of methods are included below. See the
+    :download:`ArrayIndexedBag </../main/java/ArrayIndexedBag.java>` class for the full implementation.
 
 
-There are a couple things to note so far:
+.. literalinclude:: /../main/java/ArrayIndexedBag.java
+    :language: java
+    :lineno-match:
+    :lines: 1-35
+    :emphasize-lines: 2
 
-1. We are importing something called ``Iterator``
+
+* Note the import of ``Iterator`` and the implementation of ``Iterator<T>``
+
     * Iterators are used for *iterating* over a collection
     * More on this later
 
-2. The use of the constant ``NOT_FOUND`` that is set to ``-1``
-    * We will use ``-1`` as a *sentinel* value to mean that something was not found
-        * A value that, in the context of how it's used, has a special meaning
-    * Unfortunately, if you are looking at this code for the first time, ``-1`` may be very unclear
-    * By using a constant with the name ``NOT_FOUND`` in place of ``-1``, it's meaning is far less unclear
-    * This will make more sense below when we see how it's used
 
 
 Private Methods
-^^^^^^^^^^^^^^^
+---------------
 
-* We will make a few private helper methods
+.. literalinclude:: /../main/java/ArrayIndexedBag.java
+    :language: java
+    :lineno-match:
+    :lines: 37-62
 
-.. code-block:: Java
-    :linenos:
 
-        private void expandCapacity() {
-            T[] newBag = (T[]) new Object[bag.length * 2];
-            for (int i = 0; i < bag.length; ++i) {
-                newBag[i] = bag[i];
-            }
-            bag = newBag;
-        }
+* ``shiftLeft`` and ``shiftRight``
 
-        private void shiftLeft(int start) {
-            for (int i = start; i < rear - 1; ++i) {
-                bag[i] = bag[i + 1];
-            }
-            bag[rear - 1] = null;
-        }
+    * These move elements up or down the array to make or eliminate room for adding and removing elements
 
-        private void shiftRight(int start) {
-            for (int i = rear; i > start; --i) {
-                bag[i] = bag[i - 1];
-            }
-            bag[start] = null;
-        }
-
-        private int sentinelIndexOf(T target) {
-            int searchIndex = 0;
-            Iterator<T> it = this.iterator();
-            while (it.hasNext()) {
-                if (it.next().equals(target)) {
-                    return searchIndex;
-                }
-                searchIndex++;
-            }
-            return NOT_FOUND;
-        }
-
-* We are well familiar with ``expandCapacity``
-* We've also added a ``shiftLeft`` and ``shiftRight``
-    * These move elements up or down the array to make or eliminate extra room for adding and removing elements
-
-* ``sentinelIndexOf``, which will tell us the index of a specified element, but return ``NOT_FOUND`` (``-1``) if it's not found
-    * This method will be helpful for a few other methods in our class
-* This seems very similar to ``indexOf``, except, like our other collections, we want our ``indexOf`` to throw an exception if something is not found
-    * If we suddenly switch this method to not throw an exception, this may be very confusing
-    * Nuances will be discussed further later
-
-* We also make use of an ``Iterator`` here
-* Remember how looping through an array, we would almost always use a ``for`` loop with indices
-* Also how looping through a linked structure, we would use a ``while`` loop checking something like ``cur != null``
-* Iterators provide us with a way to iterate over *something* the same way, regardless with what the underlying *thing* is
-    * In our case, the *something* is a collection
-    * The underlying *thing* is out array
-* Here we're using two methods from the iterator
-    * ``hasNext()``, which returns a boolean telling us if there is anything left in the collection
-    * ``next()``, which returns the next element in the collection
 
 
 Iterator Method
-^^^^^^^^^^^^^^^
+---------------
 
 .. warning::
 
-    Iterators are the focus of the next topic, so they are only presented briefly here.
+    Iterators are the focus of another topic, so they are only briefly presented here.
 
 
-* We made use of this method in other methods by calling ``this.iterator()``
-* Which calls the method ``iterator`` from this class
+* Iterators are used to provide a common way to iterator over a collection, regardless of the underlying contained
 
-.. code-block:: Java
-    :linenos:
+    * Array vs. linked structure
 
-    @Override
-    public Iterator<T> iterator() {
-        return new ArrayIterator<>(bag, size());
-    }
+
+.. literalinclude:: /../main/java/ArrayIndexedBag.java
+    :language: java
+    :lineno-match:
+    :lines: 176-179
+
 
 * All this method does is create an instance of an ``ArrayIterator`` and return it
-* We will look at what the ``ArrayIterator`` class looks like in the next topic
+* What the ``ArrayIterator`` class looks like is discussed later in the course
+
 
 Add Methods
-^^^^^^^^^^^
+-----------
 
-.. code-block:: Java
-    :linenos:
-
-        @Override
-        public void add(int index, T element) {
-            if (index > size()) {
-                throw new IndexOutOfBoundsException(String.format("Bag has no index %d to add to.", index));
-            }
-            if (size() == bag.length) {
-                expandCapacity();
-            }
-            shiftRight(index);
-            bag[index] = element;
-            rear++;
-        }
-
-        @Override
-        public void add(T element) {
-            add(rear, element);
-        }
+.. literalinclude:: /../main/java/ArrayIndexedBag.java
+    :language: java
+    :lineno-match:
+    :lines: 82-100
 
 
-* There is nothing overly sophisticated taking place in these add methods
-    * ``add(T element)`` even delegates to ``add(int index, T element)`` for ease and code/logic reuse
+* Note that ``add(T element)`` simply delegates to ``add(int index, T element)`` for ease and code/logic reuse
+* Unlike the methods for adding to a ``Stack`` or ``Queue``, this method may throw an exception
 
-* Unlike our methods for adding things to a ``Stack`` or ``Queue``, this method may throw an exception since we can specify an invalid index
-* Like the ``Stack`` and ``Queue``, we may need to call ``expandCapacity``
-* Since we can add to an arbitrary index, we may need to make room in our array with the method ``shiftRight``
+    * The exception is thrown if the specified index is out of bounds
 
-Index Of, Contains, Remove
-^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: Java
-    :linenos:
+* Like the ``Stack`` and ``Queue``, the array may run out of space
+* Unlike before, an ``expandCapacity`` method is not included
+* Instead, the ``copyOf`` function from the ``Arrays`` class is used
 
-        @Override
-        public int indexOf(T target) {
-            int index = sentinelIndexOf(target);
-            if (index == NOT_FOUND) {
-                throw new NoSuchElementException("Element not contained in bag.");
-            }
-            return index;
-        }
+    * It creates a new array with the specified capacity containing a copy of the elements in the original array
 
-        @Override
-        public boolean contains(T target) {
-            return sentinelIndexOf(target) != NOT_FOUND;
-        }
 
-* Our ``indexOf`` and ``contains`` methods makes use of the ``sentinelIndexOf`` method
-* The difference between ``IndexOf`` and ``sentinelIndexOf`` is that one may throw an exception, while the other may return a sentinel value
-* At first this may seem silly
-    * Why not cut ``sentinelIndexOf`` and just use ``indexOf``, and instead of checking for ``NOT_FOUND``, just catch the exception?
+* The ``shiftRight`` private method is used to make room for the element to be added
 
-.. code-block:: Java
-    :linenos:
 
-        @Override
-        public boolean contains(T target) {
-            try {
-                indexOf(target);
-                return true;
-            } catch (NoSuchElementException e) {
-                return false;
-            }
-        }
 
-* However, remember that we keep exceptions and regular functionality separate
-* If we use this option where we catch the exception, we are now letting these worlds collide
+Remove
+------
 
-.. code-block:: Java
-    :linenos:
+.. literalinclude:: /../main/java/ArrayIndexedBag.java
+    :language: java
+    :lineno-match:
+    :lines: 120-140
 
-        @Override
-        public T remove(T element) {
-            if (isEmpty()) {
-                throw new NoSuchElementException("Removing from an empty bag.");
-            }
-            // If indexOf throws an exception, this method propagates it
-            int removeIndex = indexOf(element);
-            return remove(removeIndex);
-        }
-
-        @Override
-        public T remove(int index) {
-            if (index >= size()) {
-                throw new IndexOutOfBoundsException(String.format("Bag has no element at index %d.", index));
-            }
-            T returnElement = bag[index];
-            shiftLeft(index);
-            rear--;
-            return returnElement;
-        }
 
 * The ``remove(T element)`` method delegates to the ``remove(int index)`` for ease and code/logic reuse
-* You will also see that we do not use ``sentinelIndexOf`` since we do want the call to ``remove(T element)`` to propagate an exception if the element does not exist
+
 
 
 ArraySortedBag
---------------
+==============
 
-* In addition to the functionality of the ``Bag``, we want to add a few more methods for our ``SortedBag`` implementation
-    * ``void add(T element)`` --- add to the proper spot in the sorted bag to preserve the sorted order
+* In addition to the functionality of the ``Bag``, a ``SortedBag`` must also be able to
+
     * ``T removeFirst()``
     * ``T removeLast()``
     * ``T first()``
     * ``T last()``
 
-.. warning::
 
-    Like the indexed bag, some methods are skipped. See the
-    :download:`ArraySortedBag </../main/java/ArraySortedBag.java>` implementation to view the full implementation.
+* Further, the overloaded ``add`` and ``remove`` methods must preserve the ordering of the elements
 
-.. code-block:: Java
-    :linenos:
-    :emphasize-lines: 4
+.. note::
 
-    import java.util.Iterator;
-    import java.util.NoSuchElementException;
+    For brevity, only a subset of methods are included below. See the
+    :download:`ArrayIndexedBag </../main/java/ArraySortedBag.java>` class for the full implementation.
 
-    public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBag<T> {
 
-        private static final int DEFAULT_CAPACITY = 100;
-        private static final int NOT_FOUND = -1;
-        private T[] bag;
-        private int rear;
+.. literalinclude:: /../main/java/ArraySortedBag.java
+    :language: java
+    :lineno-match:
+    :lines: 1-25
+    :emphasize-lines: 12
 
-        public ArraySortedBag() {
-            this(DEFAULT_CAPACITY);
-        }
 
-        @SuppressWarnings("unchecked")
-        public ArraySortedBag(int initialCapacity) {
-            bag = (T[]) new Comparable[initialCapacity];
-            rear = 0;
-        }
-
-* This looks nearly the same as the ``ArrayIndexedBag`` implementation, but we see one major difference
-
-    ``<T extends Comparable<? super T>>``
-
+* Notice ``<T extends Comparable<? super T>>``
 * There is a little bit to unpack here
 
-* First, when something extends `Comparable <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Comparable.html>`_, it means that the type has some defined ordering
+* First, when something extends `Comparable <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Comparable.html>`_, it means that the type has some defined ordering
+
     * The method ``compareTo`` is implemented for the type
 
-* If we call ``x.compareTo(y)``
+
+* If ``x.compareTo(y)`` is called
+
     * Return a negative integer if ``x < y``
     * Return zero if ``x == y``
     * Return a positive integer if ``x > y``
 
-* When we have something that is extending ``Comparable<T>``, that means we can compare ``this`` to some type ``T``
+
+* When something extends ``Comparable<T>``, that means ``this`` can be compared to some type ``T``
+
     * ``this`` can be compared to things of type ``T``, but not the other way around
 
-* By saying ``T extends Comparable<T>``, this means that the type ``T`` we want in our ``ArraySortedBag`` can be compared to things of type ``T`` to provide some defined ordering
-    * Which is needed, if we want to sort things
 
-* Finally, with ``Comparable<? super T>``, we are saying that ``T`` or one of its superclasses must extend ``Comparable``
+* ``T extends Comparable<T>`` means that the type ``T`` can be compared to things of type ``T`` to provide some defined ordering
+
+    * Which is needed, if the elements are to be sorted
+
+
+* Finally, ``<T extends Comparable<? super T>>`` means that ``T`` can be compared to something of type ``T`` or a superclass of ``T``
+
     * ``?`` is a *wildcard*
-    * If our type ``T`` does not extend ``Comparable`` and have a ``compareTo`` method written, that may be fine as long as one of its superclasses does
 
-* Putting this all together, ``<T extends Comparable<? super T>>`` means that our type ``T`` must have a defined ordering for itself either through a direct implementation of ``compareTo`` or through inheriting from a superclass
+
+* Thus, this means that ``T`` must have a defined ordering for itself through either
+
+    * A direct implementation of ``compareTo``
+    * Inheritance
 
 
 
 Adding Method
-^^^^^^^^^^^^^
+-------------
 
-.. code-block:: Java
-    :linenos:
-
-        private int findInsertIndex(T element) {
-            int searchIndex = 0;
-            Iterator<T> it = this.iterator();
-            while ((it.hasNext() && it.next().compareTo(element) > 0) {
-                searchIndex++;
-            }
-            return searchIndex;
-        }
-
-        @Override
-        public void add(T element) {
-            if (size() == bag.length) {
-                expandCapacity();
-            }
-            int insertIndex = findInsertIndex(element);
-            shiftRight(insertIndex);
-            bag[insertIndex] = element;
-            rear++;
-        }
-
-* The ``add`` method makes use of the private method ``findInsertIndex``
-* When analyzing this method, notice that we are using an iterator
-    * Ultimately, this method is doing a linear search
-* We are also making use of the ``compareTo`` method
-* Remember
-    * The elements themselves should determine the ordering
-    * We do not know what the type ``T``, so how can we compare them?
-        * Sure, if they're numbers we can use ``<``, ``>``, ``==``, and so on
-        * What if we are sorting strings? Or Colours?
-
-* Since I know that type ``T`` has a ``compareTo`` implemented, we will make use of it so I can guarantee I always get the proper ordering, regardless of the type
-
-* Given this, the loop will execute while:
-    * There are more elements in the collection
-    * and the thing we want to insert is belongs after the current element in the collection
+.. literalinclude:: /../main/java/ArraySortedBag.java
+    :language: java
+    :lineno-match:
+    :lines: 84-113
+    :emphasize-lines: 10
 
 
-Testing
--------
 
-* Although not discussed in depth here, check out the testing methods for these implementations to get a sense of what functionality is being tested and how
-    * :download:`ArrayIndexedBagTest </../test/java/ArrayIndexedBagTest.java>`
-    * :download:`ArraySortedBagTest </../test/java/ArraySortedBagTest.java>` code
+* The ``add`` method makes use of a private method ``findInsertIndex``
+* ``findInsertIndex`` makes use of the class' iterator method to iterate over the collection
+
+    * It is simply used to perform a linear search
+
+
+* It also makes use of the ``compareTo`` method
+* Remember, the elements themselves determine the ordering
+
+    * One does not know what the type ``T`` is, so how can they be compared?
+
+        * *If* they're numbers, ``<``, ``>``, ``==``, would work
+        * But what if sorting strings? Colours?
+
+
+* Since ``T`` must have a ``compareTo`` implemented, it can be used to guarantee a proper ordering, regardless of the type
+
+    * ``T`` must have a ``compareTo`` since it must extend ``Comparable<? super T>``
+
+
+
+* Given this, the loop executes until it finds the index where the element to be inserted is less than the current element in the collection
+
+    * Or, in other words, it loops while
+
+        * There are more elements in the collection
+        * The thing to be inserted belongs after the current element in the collection
+
 
 
 Linked Implementation
 =====================
 
-.. image:: linked_bag.png
-   :width: 500 px
-   :align: center
+.. figure:: linked_bag.png
+    :width: 500 px
+    :align: center
 
-* There is nothing stopping us from building a linked implementation of the bag
-* :doc:`Reviewing the different types of insertions and removals from a linked structure will help </topics/linked-structures/linked-structures>`
+    A representation of how a ``Bag`` could be implemented with a linked structure.
 
 
-For next time
+* Although not discussed here, a linked implementation of the bags could also be written
+* :doc:`Reviewing the different types of insertions and removals from a linked structure would help </topics/linked-structures/linked-structures>`
+
+
+For Next Time
 =============
 
-.. warning::
+.. note::
 
-    Note that there are better implementations of these data structures. We will see one later in the course.
+    Note that there are better implementations of these data structures. One will be discussed later in the course.
 
-* Download and play with the :download:`ArrayIndexedBag </../main/java/ArrayIndexedBag.java>` and  :download:`ArraySortedBag </../main/java/ArraySortedBag.java>` code
-* Download and play with the :download:`ArrayIndexedBagTest </../test/java/ArrayIndexedBagTest.java>` and :download:`ArraySortedBagTest </../test/java/ArraySortedBagTest.java>` code
+
 * Read Chapter 6 Sections 6 & 7
+
     * 17 pages
+
+
+Playing Code
+------------
+
+* Download and play with
+
+    * :download:`ArrayIndexedBag </../main/java/ArrayIndexedBag.java>`
+    * :download:`ArraySortedBag </../main/java/ArraySortedBag.java>`
+    * :download:`ArrayIndexedBagTest </../test/java/ArrayIndexedBagTest.java>`
+    * :download:`ArraySortedBagTest </../test/java/ArraySortedBagTest.java>`
+
