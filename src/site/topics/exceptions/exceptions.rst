@@ -70,9 +70,14 @@ Throwing an Exception
 
 
 * Either way, as the writers of the ``ArraySortedBag``, it is not possible to know how the user of the ``ArraySortedBag`` should address the situation
+* All that can be done is to throw the exception to inform the user of the ``ArraySortedBag`` that something exceptional happened
 
 
-* Also notice the strings provided the the exceptions' constructors
+
+Messages
+--------
+
+* Notice the strings provided the the exceptions' constructors
 
     * ``"Empty bag"``
     * ``Objects.toString(element)``
@@ -84,6 +89,7 @@ Throwing an Exception
 
 
 * Consider how an ``ArrayIndexOutOfBoundsException`` provides details on the index used that caused the exception
+
 
 
 Catching Exceptions
