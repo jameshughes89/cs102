@@ -54,11 +54,6 @@ public class LinkedBinarySearchTreeTest {
         assertTrue(bst.remove(10));
     }
 
-    @Test
-    void isEmptyOnNewTreeReturnsTrue() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        assertTrue(bst.isEmpty());
-    }
 
     @Test
     void isEmptyOnNewTreeNonDefaultConstructorReturnsFalse() {
@@ -71,12 +66,6 @@ public class LinkedBinarySearchTreeTest {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         assertFalse(bst.isEmpty());
-    }
-
-    @Test
-    void sizeOfEmptyTreeReturnsZero() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        assertEquals(0, bst.size());
     }
 
     @Test
@@ -817,6 +806,16 @@ public class LinkedBinarySearchTreeTest {
         @Test
         void count_empty_returnsZero() {
             assertEquals(0, classUnderTest.count(11));
+        }
+
+        @Test
+        void isEmpty_empty_returnsTrue() {
+            assertTrue(classUnderTest.isEmpty());
+        }
+
+        @Test
+        void size_empty_returnsZero() {
+            assertEquals(0, classUnderTest.size());
         }
 
     }
