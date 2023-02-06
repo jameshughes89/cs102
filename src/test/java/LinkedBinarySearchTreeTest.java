@@ -483,12 +483,6 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void removeOnEmptyTreeThrowsException() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        assertThrows(NoSuchElementException.class, () -> bst.remove(99));
-    }
-
-    @Test
     void removeNonExistingElementOnTreeThrowsException() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
@@ -824,6 +818,10 @@ public class LinkedBinarySearchTreeTest {
             assertTrue(classUnderTest.add(11));
         }
 
+        @Test
+        void remove_empty_throwsNoSuchElementException() {
+            assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(11));
+        }
 
     }
 }
