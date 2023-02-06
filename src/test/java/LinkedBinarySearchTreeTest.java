@@ -1,3 +1,5 @@
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import java.util.Iterator;
@@ -6,6 +8,15 @@ import java.util.NoSuchElementException;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class LinkedBinarySearchTreeTest {
+
+    LinkedBinarySearchTree<Integer> classUnderTest;
+    LinkedBinarySearchTree<Integer> preState;
+
+    @BeforeEach
+    void createLinkedBinarySearchTree() {
+        classUnderTest = new LinkedBinarySearchTree<>();
+        preState = new LinkedBinarySearchTree<>();
+    }
 
     @Test
     void add_empty_returnsTrue() {
@@ -490,7 +501,6 @@ public class LinkedBinarySearchTreeTest {
         assertThrows(NoSuchElementException.class, () -> bst.remove(101));
     }
 
-
     @Test
     void removeOnTreeWithSingleEqualElementRemovesElementFromBinarySearchTree() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
@@ -535,7 +545,6 @@ public class LinkedBinarySearchTreeTest {
         assertEquals(6, bst.size());
     }
 
-
     @Test
     void addSingleElementToTreeResultsInItBeingTheOnlyElement() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
@@ -543,7 +552,6 @@ public class LinkedBinarySearchTreeTest {
         Iterator<Integer> it = bst.iterator();
         assertEquals(99, it.next());
     }
-
 
     @Test
     void addManyElementsToTreeResultsInElementsBeingPlacedInCorrectPlace() {
@@ -812,5 +820,11 @@ public class LinkedBinarySearchTreeTest {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         Iterator<Integer> it = bst.levelOrderIterator();
         assertThrows(NoSuchElementException.class, () -> it.next());
+    }
+
+    @Nested
+    class WhenNewEmpty {
+
+
     }
 }
