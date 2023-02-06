@@ -41,7 +41,7 @@ Throwing an Exception
 
     * ``remove`` may throw an exception when removing from an empty bag, or if the element does not exist within the bag
     * Both cases throw a ``NoSuchElementException``
-    * The only difference is the message
+    * The only difference is the string provided to the constructor of the exception --- the  *message*
 
 
 .. literalinclude:: /../main/java/ArraySortedBag.java
