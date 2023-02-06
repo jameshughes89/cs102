@@ -41,16 +41,12 @@ Throwing an Exception
 * ``peek`` may throw an exception if we try to ``peek`` from an empty stack
     * Note, although a method can only throw one exception at a time, it may have multiple throw statements with various types of exceptions
 
-.. code-block:: java
-    :linenos:
-    :emphasize-lines: 3
 
-    public T peek() {
-        if (isEmpty()) {
-            throw new NoSuchElementException("Popping from an empty stack.");
-        }
-        return top.getData();
-    }
+.. literalinclude:: /../main/java/ArrayStack.java
+    :language: java
+    :lineno-match:
+    :lines: 70-76
+
 
 * In this ``peek`` example, the exception being thrown, ``NoSuchElementException``,  is a subclass of ``RuntimeException``
     * It is an unchecked exception, so we don't explicitly need to add ``throws`` to our method signature
