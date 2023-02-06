@@ -167,12 +167,6 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void minOnEmptyTreeThrowsException() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        assertThrows(NoSuchElementException.class, () -> bst.min());
-    }
-
-    @Test
     void minOnTreeWhenMinIsRootReturnsCorrectMin() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
@@ -221,12 +215,6 @@ public class LinkedBinarySearchTreeTest {
         bst.add(22);
         bst.min();
         assertTrue(bst.contains(bst.min()));
-    }
-
-    @Test
-    void maxOnEmptyTreeThrowsException() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        assertThrows(NoSuchElementException.class, () -> bst.max());
     }
 
     @Test
@@ -820,6 +808,16 @@ public class LinkedBinarySearchTreeTest {
         @Test
         void removeMax_empty_throwsNoSuchElementException() {
             assertThrows(NoSuchElementException.class, () -> classUnderTest.removeMax());
+        }
+
+        @Test
+        void min_empty_throwsNoSuchElementException() {
+            assertThrows(NoSuchElementException.class, () -> classUnderTest.min());
+        }
+
+        @Test
+        void max_empty_throwsNoSuchElementException() {
+            assertThrows(NoSuchElementException.class, () -> classUnderTest.max());
         }
 
     }
