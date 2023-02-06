@@ -36,31 +36,55 @@ Errors
 Throwing an Exception
 =====================
 
-* We have seen multiple examples of throwing an exception
-* Below is ``peek`` from our ``LinkedStack`` implementation
-* ``peek`` may throw an exception if we try to ``peek`` from an empty stack
-    * Note, although a method can only throw one exception at a time, it may have multiple throw statements with various types of exceptions
+* Several methods written so far have thrown exceptions
+* Below is the ``remove`` method from the ``ArraySortedBag`` implementation
+
+    * ``remove`` may throw an exception when removing from an empty bag, or if the element does not exist within the bag
+    * Both cases throw a ``NoSuchElementException``
+    * The only difference is the message
 
 
-.. literalinclude:: /../main/java/ArrayStack.java
+.. literalinclude:: /../main/java/ArraySortedBag.java
     :language: java
     :lineno-match:
-    :lines: 70-76
+    :lines: 116-128
 
 
-* In this ``peek`` example, the exception being thrown, ``NoSuchElementException``,  is a subclass of ``RuntimeException``
-    * It is an unchecked exception, so we don't explicitly need to add ``throws`` to our method signature
+.. note::
 
-* The motivation for using an exception here is that if someone tries to ``peek`` at an empty stack and it's empty, what should happen?
+    Although the ``remove`` method is throwing two possible exceptions of the same type, methods can throw exceptions of
+    different types. For example, there could be a case where a certain condition would throw a
+    ``NoSuchElementException`` and another condition when a ``ArrayIndexOutOfBoundsException`` would be thrown.
+
+
+* In the ``remove`` example, the exception being thrown, ``NoSuchElementException``,  is a subclass of ``RuntimeException``
+
+    * It is an unchecked exception, so the method does not need to include a ``throws NoSuchElementException`` in the method signature
+
+
+* The motivation for using an exception here is that if someone tries to ``remove`` from an empty bag, or if the element does not exist within the bag, what should happen?
 * This is going to be situational
-    * Perhaps this means some critical error happened, so the program must stop immediately
-    * Or maybe the program using our stack can just ignore the exception and carry on
-    * Either way, I cannot know today how you may want to address this exception in your code tomorrow
 
-* You will also see the string ``"Popping from an empty stack."`` in the ``peek`` method
-    * This is the exception message
-* This would be like the message you see when you get an ``ArrayIndexOutOfBoundsException`` or ``NullPointerException``
-* When your program crashes due to a runtime exception, you will also see the *stack trace*
+    * Perhaps this means some critical error happened and the program must stop immediately
+    * Or maybe the program using the bag can just ignore the exception and carry on
+
+
+* Either way, as the writers of the ``ArraySortedBag``, it is not possible to know how the user of the ``ArraySortedBag`` should address the situation
+
+
+* Also notice the strings provided the the exceptions' constructors
+
+    * ``"Empty bag"``
+    * ``Objects.toString(element)``
+
+
+* These strings are the *messages* the exceptions provide to give details on the exception
+
+    * Without them, if ``remove`` threw a ``NoSuchElementException``, it would not be possible to know what caused it
+
+
+* Consider how an ``ArrayIndexOutOfBoundsException`` provides details on the index used that caused the exception
+
 
 Catching Exceptions
 ===================
