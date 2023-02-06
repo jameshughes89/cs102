@@ -229,18 +229,18 @@ Catching Different Exception Types
 
 
 Finally
-^^^^^^^
+-------
 
-* There is another special keyword, ``finally`` that comes up when dealing with exceptions
-* The code within the ``finally`` block will always run, regardless of if an exception was thrown or which exception was caught
-* This comes in handy if you have any code that should be run either way
+* Sometimes it is necessary to have some code run regardless of if an exception was thrown or which exception was caught
+* The ``finally`` keyword is used to specify code to be run no matter what happens
+
     * Eg. Closing files
 
 
 
-For next time
+For Next Time
 =============
 
-* Read the :doc:`aside on creating your own exceptions. <create>`
 * Go back and read Chapter 3 Section 5
+
     * 2 pages
