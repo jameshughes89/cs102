@@ -2,15 +2,17 @@
 Exceptions
 **********
 
-
-.. image:: exceptions.png
-   :width: 500 px
-   :align: center
-   :target: https://www.tutorialspoint.com/java/java_exceptions.htm
-
 * Exceptions are great for keeping a logical separation between the regular code and the exceptional situations
 * They make it easy to propagate the exception up the call stack such that the situation can be managed in a desired place
 * They also allow for differentiating between exception types and how to deal with them specifically
+
+.. figure:: exceptions.png
+    :width: 500 px
+    :align: center
+    :target: https://www.tutorialspoint.com/java/java_exceptions.htm
+
+    Java's ``Throwable`` class hierarchy.
+
 
 
 Errors
