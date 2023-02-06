@@ -801,5 +801,10 @@ public class LinkedBinarySearchTreeTest {
             assertThrows(NoSuchElementException.class, () -> classUnderTest.levelOrderIterator().next());
         }
 
+        @Test
+        void toString_empty_returnsEmptyString() {
+            assertEquals("", classUnderTest.toString());
+        }
+
     }
 }
