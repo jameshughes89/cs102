@@ -103,12 +103,6 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void containsOnEmptyTreeReturnsFalse() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        assertFalse(bst.contains(99));
-    }
-
-    @Test
     void containsOnTreeWhenSearchingForNonExistingElementReturnsFalse() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
@@ -818,6 +812,11 @@ public class LinkedBinarySearchTreeTest {
         @Test
         void max_empty_throwsNoSuchElementException() {
             assertThrows(NoSuchElementException.class, () -> classUnderTest.max());
+        }
+
+        @Test
+        void contains_empty_returnsFalse() {
+            assertFalse(classUnderTest.contains(11));
         }
 
     }
