@@ -185,7 +185,8 @@ Rethrow
 Catching Different Exception Types
 ==================================
 
-* If it is possible that the code we are trying may throw different types of exceptions, we can have a catch for each
+* It is possible that the code being called may throw different exception types
+* These can be individually caught and handled accordingly
 * The general idea is as follows
 
 .. code-block:: java
@@ -203,9 +204,10 @@ Catching Different Exception Types
         codeThatWillAlwaysRun();
     }
 
-* If you have multiple ``catch`` statements, we must be careful to mind our exception hierarchy
-* Always order your ``catch`` statements from most specific to most general
-* Take for example ``IOException`` and ``FileNotFoundException``
+
+* With multiple ``catch`` statements, the exception class hierarchy must be considered
+* Always order the ``catch`` statements from most specific to most general
+* For example ``IOException`` and ``FileNotFoundException``
 
 .. code-block:: java
     :linenos:
@@ -219,9 +221,11 @@ Catching Different Exception Types
         ...
     }
 
-* Since ``FileNotFoundException`` is a subclass of ``IOException``, if a ``FileNotFoundException`` is thrown the first ``catch`` statement will catch it
-* In this scenario, it would not be possible to run the code within the second ``catch`` statement
+
+* Since ``FileNotFoundException`` is a subclass of ``IOException``, if a ``FileNotFoundException`` is thrown, the first ``catch`` statement will catch it
+* In this scenario, it would not be possible for the code within the second ``catch`` statement to ever run
 * This is easily fixed by switching the order of the ``catch`` statements
+
 
 
 Finally
