@@ -95,63 +95,76 @@ Messages
 Catching Exceptions
 ===================
 
-* If someone is using our ``LinkedStack`` for their code 2 years from now, I can't know what they should do to manage peeking from an empty stack
-* The users of our class will need to deal with this how they want
+* If someone is using the ``ArraySortedBag`` implementation two years from now, it's not possible to know what they should do to manage the exceptional situations
+* The users of the ``ArraySortedBag`` class will need to deal with them as they see fit
+
+    * What should be done if calling ``remove`` on an empty ``ArraySortedBag``?
+    * What should be done if calling ``remove`` when the element does not exist within the ``ArraySortedBag``?
 
 
 Ignore
 ------
 
-* Maybe this doesn't matter to them and they don't even try to catch the exception
+* Maybe this doesn't matter and they don't even try to catch the exception
+
     * If the exception is thrown, their program will crash, but this doesn't matter to them
+
 
 .. code-block:: java
     :linenos:
 
     // I know this may throw an exception, but whatever
-    Object o = stack.peek();
-    doSomething(o);
+    bag.remove(element);
+
+
 
 * Since the exception is not caught here, the exception would be propagated to the calling method
 * This exception will keep being propagated to the calling methods until it is either
+
     * Caught somewhere
-    * The main method propagates the exception and the program crashes
+    * The ``main`` method propagates the exception and the program crashes
+
 
 
 Stop Immediately
 ----------------
 
 * Maybe they need to stop the execution of the code immediately
+
     * They are running medical equipment that delivers radiation therapy
+
 
 .. code-block:: java
     :linenos:
 
     try {
-        Object o = stack.peek();
-        doSomething(o);
+        bag.remove(element);
     } catch (NoSuchElementException e) {
         someCleanUpMethod();
         System.exit(1);
     }
 
 
+
 Carry On
 --------
 
 * Maybe they can catch it, print out the stack trace, and then carry on and ignore the issue
-    * The program keeps our spaceship running, so it better not crash
+
+    * The program keeps the spaceship running, so it better not crash
+
 
 .. code-block:: java
     :linenos:
 
     try {
-        Object o = stack.peek();
-        doSomething(o);
+        bag.remove(element);
     } catch (NoSuchElementException e) {
         System.out.println("Caught an Exception");
         e.printStackTrace();
     }
+
+
 
 Rethrow
 -------
@@ -162,15 +175,15 @@ Rethrow
     :linenos:
 
     try {
-        Object o = stack.peek();
-        doSomething(o);
+        bag.remove(element);
     } catch (NoSuchElementException e) {
-        throw new MySpecificDoSomethingException(e);
+        throw new MySpecificException(e);
     }
 
 
-In General
-----------
+
+Catching Different Exception Types
+==================================
 
 * If it is possible that the code we are trying may throw different types of exceptions, we can have a catch for each
 * The general idea is as follows
