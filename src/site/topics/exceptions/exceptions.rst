@@ -238,6 +238,28 @@ Finally
 
 
 
+Defining Exceptions
+===================
+
+* Typically, the standard Java exceptions are used when throwing exceptions
+* But sometimes it may be necessary to define a domain specific exception
+* This is done by creating a class that extends an existing throwable/exception type
+
+
+``EmptyCollectionException``
+----------------------------
+
+.. literalinclude:: /../main/java/EmptyCollectionException.java
+    :language: java
+    :lineno-match:
+
+
+* The exception will inherit the form of whatever is extended
+* Since the exception should be unchecked, it will  ``extend`` the ``RuntimeException`` class
+* All this exception needs is to have it's own type ``EmptyCollectionException`` and to be able to add a message and/or cause to the exception
+
+
+
 For Next Time
 =============
 
