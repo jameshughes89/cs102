@@ -125,11 +125,6 @@ public class LinkedBinarySearchTreeTest {
         assertTrue(bst.contains(99));
     }
 
-    @Test
-    void countOnEmptyTreeReturnsZero() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        assertEquals(0, bst.count(99));
-    }
 
     @Test
     void countOnTreeWhenCountingNonExistingElementsReturnsZero() {
@@ -817,6 +812,11 @@ public class LinkedBinarySearchTreeTest {
         @Test
         void contains_empty_returnsFalse() {
             assertFalse(classUnderTest.contains(11));
+        }
+
+        @Test
+        void count_empty_returnsZero() {
+            assertEquals(0, classUnderTest.count(11));
         }
 
     }
