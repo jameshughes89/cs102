@@ -19,12 +19,6 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void add_empty_returnsTrue() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        assertTrue(bst.add(11));
-    }
-
-    @Test
     void add_singleton_returnsTrue() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(10);
@@ -824,6 +818,11 @@ public class LinkedBinarySearchTreeTest {
 
     @Nested
     class WhenNewEmpty {
+
+        @Test
+        void add_empty_returnsTrue() {
+            assertTrue(classUnderTest.add(11));
+        }
 
 
     }
