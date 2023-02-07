@@ -19,8 +19,8 @@ Recursion
 Iterative Definition vs. Recursive Definition
 =============================================
 
-* Iterative definitions of things are fairly natural for us
-* Recursion on the other hand may *feel* a little less natural, but it pops up a lot in our lives and in nature
+* Iterative definitions of things are fairly natural
+* Recursion on the other hand may *feel* a little less natural, but it pops up a lot in everyday life and in nature
 
 
 Groups of People
@@ -29,6 +29,7 @@ Groups of People
 * Like the line of people example above, it may seem like a silly question because it is so intuitive
 
 * A group of people is:
+
     * 2 people
     * OR 3 people
     * OR 4 people
@@ -36,55 +37,79 @@ Groups of People
     * ...
     * ...
 
-* Alternatively, we can use the idea of recursion to define a group of people a different way
-* When we use recursion to define something, we use the definition of itself in it's definition
+* Alternatively, the idea of recursion can be used to define a group of people a different way
+* When defining something recursively, the definition of something is used within its definition
+
     * Define something in terms of itself
 
-* Recursive definition of a **group of people** is:
+
+* A recursive definition of a **group of people** is:
+
     * 2 people
     * OR a **group of people** plus one more person
 
-* Based on this definition, if I ask you if 2 people are a **group of people**, the answer is clearly yes (the first point)
-* But if I ask you if 4 people is a **group of people**, we need to do some digging
-    * In order to tell you if 4 people is a **group of people**, I need to know if 3 people is a **group of people**
-        * If 3 is, then I know 4 is since 4 is 3, a **group of people**, plus one more person
-    * To know if 3 people is a **group of people**, I must know if 2 people is a **group of people**
-    * I know, by definition, that 2 people is, in fact, a **group of people**
-    * Therefore, I know that 3 people is a **group of people**
-    * Thus, 4 people must be a **group of people**
 
-* In the above recursive example, you will notice a **base case** and a **recursive** case
+* Based on this recursive definition, if asked if 2 people are a group of people, the answer is clearly yes
+
+    * It's the first part of the recursive definition of a group of people
+
+
+* But if asked if 4 people is a group of people, some more digging is needed
+
+    * In order to know if 4 people is a group of people, it needs to be known if 3 people is a group of people
+
+        * If 3 is, then it can be concluded that 4 is since 4 is 3, a group of people, plus one more person
+        * This is the second part of the recursive definition of a group of people
+
+
+    * To know if 3 people is a group of people, it needs to be known if 2 people is a group of people
+
+        * If 2 is, then it can be concluded that 3 is since 3 is 2, a group of people, plus one more person
+
+    * By definition, 2 people is, in fact, a group of people
+    * Therefore, 3 people is a group of people
+    * Thus, 4 people is a group of people
+
+
+* In the above recursive example, notice a *base case* and a *recursive case*
+
     * The base case is something with a clear definition
-    * The recursive case is one that defines itself in terms of itself
+    * The recursive case is one that defines something in terms of itself
 
 
 .. warning::
 
-    Although there is no **hard** rule saying that you need a base case, and there are examples of situations where you
-    would not include one, not including a base case is a recipe for disaster. Remember ``uhOh()`` from topic 18?
+    Although there is no hard rule saying that a base case is needed, and there are examples of situations where it
+    would not be included, not including a base case is a recipe for disaster. Remember the ``uhOh()`` example from the
+    *Memory & The Call Stack* topic?
 
-    For our purposes in this course, always include your base case.
+    For the purposes of this course, always include a base case.
+
 
 
 Lists
 -----
 
 * Think of a list from Python, or a linear linked structure
-* We can define this recursively in a rather natural way
+* One can define this recursively in a rather natural way
 
 * A list is:
+
     * **Base Case** --- An empty list
-    * **Recursive Case** --- There is a head of the list, followed by a tail that's a list
+    * **Recursive Case** --- There is a head of the list, followed by a tail --- the remaining portion of the list
+
 
 * Consider the following list
 
     ``[a, b, c, d, e]``
 
+
 * This can be broken down into the head ``a`` and the tail ``[b, c, d, e]``
 
     ``a + [b, c, d, e]``
 
-* Further, we can break the tail list down again and again and again until we hit an empty list
+
+* The tail list can be broken down again and again until the empty list (base case) is hit
 
     ``a + b + [c, d, e]``
 
@@ -93,6 +118,7 @@ Lists
     ``a + b + c + d + [e]``
 
     ``a + b + c + d + e + []``
+
 
 
 Recursion
