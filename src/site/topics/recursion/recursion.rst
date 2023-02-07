@@ -459,58 +459,75 @@ Towers of Hanoi
 ===============
 
 * Given
+
     * Three pegs
     * Several disks that can be added or removed from the pegs
     * All disks vary in size
     * All disks start on one peg with the largest at the bottom and the smallest at the top
 
-* The goal is to move all disks from one peg to another
-* With the following constraints
+
+* The goal is to move all disks from one peg to another with the following constraints
+
     * Only one disk can move at a time
     * A disk may never be placed on top of any smaller disk
     * All disks must be on some peg at all times, with the exception of the one currently being moved
 
-.. image:: hanoi_tower.png
+
+.. figure:: hanoi_tower.png
     :width: 500 px
     :align: center
     :alt: This image is taken from wikipedia: https://en.wikipedia.org/wiki/File:Tower_of_Hanoi.jpeg
 
+    Example Towers of Hanoi puzzle.
+
 
 * `There is a legend that goes with this puzzle <https://en.wikipedia.org/wiki/Tower_of_Hanoi#Origins>`_
 
-    .. image:: hanoi_tower.gif
-        :width: 500 px
-        :align: center
-        :alt: This image is taken from wikipedia: https://en.wikipedia.org/wiki/File:Iterative_algorithm_solving_a_6_disks_Tower_of_Hanoi.gif
+
+.. figure:: hanoi_tower.gif
+    :width: 500 px
+    :align: center
+    :alt: This image is taken from wikipedia: https://en.wikipedia.org/wiki/File:Iterative_algorithm_solving_a_6_disks_Tower_of_Hanoi.gif
+
+    Animation of Towers of Hanoi being solved.
 
 
 * Towers of Hanoi is a classic example of where a recursive function is beautifully succinct
-* The trick is to consider that whenever we are moving a disk, there is a *source* peg, a *destination* peg, and an *extra* peg
-* Additionally, what is considered the source, destination, and extra peg is relative to when and what disk is being moved
+* The trick is to consider that, whenever moving a disk, there is a *source* peg, a *destination* peg, and an *extra* peg
+* Further, what is considered the source, destination, and extra peg is relative to when and what disk is being moved
 
-* Equipped with this information, to move :math:`n` disks from the source to the destination, we simply
-    1. Move the :math:`n - 1` disks from source peg to the extra peg
-    2. Move the :math:`n^{th}` disk to the destination peg
-    3. Move the :math:`n - 1` disks from the extra peg to the destination peg
+* Equipped with this information, to move :math:`n` disks from the source to the destination, simply
+
+    #. Move the :math:`n - 1` disks from source peg to the extra peg
+    #. Move the :math:`n^{th}` disk to the destination peg
+    #. Move the :math:`n - 1` disks from the extra peg to the destination peg
 
 * Steps 1 and 3 may feel like cheating, but notice that they are actually recursive calls
 * Also, what one considers the source, destination, and extra peg will change when moving the :math:`n - 1` disks
-    * Looking at the 1st step, it says move the :math:`n - 1` disks from source peg to the extra peg
-    * Ok, how do we do that?
-        1. Move the :math:`(n - 1) - 1` disks from source peg to the extra peg
-        2. Move the :math:`(n - 1)^{th}` disk from the source to the destination
-        3. Move the :math:`(n - 1) - 1` disks from extra peg to the destination peg
+
+    * Looking at the first step, it says move the :math:`n - 1` disks from source peg to the extra peg
+    * Ok, how is that done?
+
+        #. Move the :math:`(n - 1) - 1` disks from source peg to the extra peg
+        #. Move the :math:`(n - 1)^{th}` disk from the source to the destination
+        #. Move the :math:`(n - 1) - 1` disks from extra peg to the destination peg
+
+
     * But, the extra and destination pegs are different for the :math:`(n - 1)` disks
+
         * The extra peg when moving :math:`n` disks has become the destination peg when moving :math:`(n - 1)`
         * Similarly, the destination peg when moving :math:`n` disks is this recursive step's extra peg
 
+
 .. warning::
 
-    This is a non-trivial problem and algorithm. If you are struggling with these ideas, don't worry too much.
+    This is a non-trivial problem and algorithm. If the ideas are difficult to grasp, don't worry too much.
 
 
-For next time
+
+For Next Time
 =============
 
 * Read Chapter 8
+
     * 28 pages
