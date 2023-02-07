@@ -270,39 +270,53 @@ Some Observations
 Computational Complexity
 ========================
 
-* When analysing iterative code, one of the tricks was to think about how many operations will be needed relative to an input size ``n`` and how much the amount of work done scales as we change ``n``
+* When analysing code, it is important to think about many operations will be needed relative to an input size ``n``
+* Further, it is important to think about how much the amount of work done scales as ``n`` changes
 
 * When looking at ``iterativeFactorial(n)``
-    * We see there are a few constant time operations (do not depend on ``n``)
-    * But we see the loop running constant time work that runs ``n`` times
+
+    * There are a few constant time operations (do not depend on ``n``)
+    * There is a loop doing constant time work that runs ``n`` times
     * Therefore, :math:`O(n)`
 
-* When analyzing recursive functions, the idea is the same --- how many operations will be needed relative to an input size ``n`` and how much the amount of work done scales as we change ``n``
+
+* When analyzing recursive functions, the idea is the same
+
+    * How many operations will be needed relative to an input size ``n``
+    * How much the amount of work done scales as ``n`` changes
+
 
 * When looking at ``recursiveFactorial(n)``
-    * We see there are constant time operations
-    * We also see the recursive call, which means the code inside this function can run repeatedly
+
+    * There are constant time operations
+    * There is a recursive call, which means the code inside this function can run repeatedly
     * The question then is, how many times will ``recursiveFactorial(n)`` get called?
 
-    +---------------------------------------+-----------------------------+
-    | *Times Function Runs*                 | *Function Call*             |
-    +=======================================+=============================+
-    | 1                                     | ``recursiveFactorial(n)``   |
-    +---------------------------------------+-----------------------------+
-    | 2                                     | ``recursiveFactorial(n-1)`` |
-    +---------------------------------------+-----------------------------+
-    | 3                                     | ``recursiveFactorial(n-2)`` |
-    +---------------------------------------+-----------------------------+
-    | ...                                   | ``recursiveFactorial(...)`` |
-    +---------------------------------------+-----------------------------+
-    | n - 1                                 | ``recursiveFactorial(2)``   |
-    +---------------------------------------+-----------------------------+
-    | n                                     | ``recursiveFactorial(1)``   |
-    +---------------------------------------+-----------------------------+
-    | n + 1                                 | ``recursiveFactorial(0)``   |
-    +---------------------------------------+-----------------------------+
+.. list-table:: Number of times ``recursiveFactorial`` is called with input ``n``.
+    :widths: 50 50
+    :header-rows: 1
 
-* Therefore, ``recursiveFactorial(n)`` is also linear --- :math:`O(n)`
+    * - Accumulative times run
+      - Function call
+    * - :math:`1`
+      - ``recursiveFactorial(n)``
+    * - :math:`2`
+      - ``recursiveFactorial(n - 1)``
+    * - :math:`3`
+      - ``recursiveFactorial(n - 2)``
+    * - :math:`2`
+      - ``recursiveFactorial( ... )``
+    * - :math:`n - 1`
+      - ``recursiveFactorial(2)``
+    * - :math:`n`
+      - ``recursiveFactorial(1)``
+    * - :math:`n + 1`
+      - ``recursiveFactorial(0)``
+
+
+* With input ``n``, ``recursiveFactorial`` runs a total of :math:`n + 1` times --- :math:`O(n)`
+
+    * It's linear
 
 
 Fibonacci
