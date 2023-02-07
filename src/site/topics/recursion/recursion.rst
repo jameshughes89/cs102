@@ -304,7 +304,7 @@ Computational Complexity
       - ``recursiveFactorial(n - 1)``
     * - :math:`3`
       - ``recursiveFactorial(n - 2)``
-    * - :math:`2`
+    * - :math:`\dots`
       - ``recursiveFactorial( ... )``
     * - :math:`n - 1`
       - ``recursiveFactorial(2)``
@@ -323,7 +323,7 @@ Fibonacci
 ---------
 
 * Consider the Fibonacci numbers
-* If you are not familiar with this sequence, see if you can figure out how it's created
+* If not familiar with this sequence, try to figure out how it is created
 
     :math:`0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, ...`
 
@@ -348,8 +348,7 @@ Fibonacci
 
 
 * To generate this sequence, start with :math:`0, 1`, then to get the subsequent number, add the proceeding two together
-* Take a moment to think about how you would write an iterative method to generate these numbers
-    * An example is below --- make sure you understand this
+
 
 .. code-block:: java
     :linenos:
@@ -358,22 +357,25 @@ Fibonacci
         if (n == 0) {
             return 0;
         }
-        int prev = 0;
+        int previous = 0;
         int current = 1;
         int next = 0;
-        for (int i = 2; i <= n; ++i) {
-            next = prev + current;
-            prev = current;
+        for (int i = 2; i <= n; i++) {
+            next = current + previous;
+            previous = current;
             current = next;
         }
         return current;
     }
 
 
+
 * What is the computational complexity of ``iterativeFibonacci(n)``?
+
     * :math:`O(n)`
 
-* We can write a nice recursive definition for the Fibonacci numbers:
+
+* The recursive definition of the Fibonacci numbers is quite elegant
 
 .. math::
 
@@ -384,9 +386,6 @@ Fibonacci
         F_{n-1} + F_{n-2} & \text{if $n > 1$} \\
     \end{cases}
 
-
-* Then take a moment and think about how this can be turned into a recursive method
-    * Again, example below, but take the time to understand this
 
 .. code-block:: java
     :linenos:
@@ -401,22 +400,33 @@ Fibonacci
 
 * What is the computational complexity of ``recursiveFibonacci(n)``?
 * This may feel a little less straight forward compared to ``recursiveFactorial(n)``, but the idea is the same
+
     * The function has constant time operations
-    * But we see that there are recursive calls, so, how many times does this function get called?
-
-.. image:: fibonacci.png
-   :width: 500 px
-   :align: center
+    * But there are recursive calls, so, how many times does this function get called?
 
 
-* When analyzing *factorial* (not Fibonacci), we saw that each function call made one or zero recursive calls
+.. figure:: fibonacci.png
+    :width: 500 px
+    :align: center
+
+    Visualization of the recursive function calls when calling ``recursiveFactorial(6)``. Unless it is the base case,
+    each call to ``recursiveFactorial`` produces two more recursive calls to ``recursiveFactorial``. Notice how many
+    times ``recursiveFactorial(2)`` is calculated --- 5.
+
+
+* When analyzing *factorial* (not Fibonacci), it was observed that each function call made one or zero recursive calls
+
     * There was ``1`` recursive call for each of the ``n`` values between ``1`` -- ``n``
     * There was no recursive call in the base case
 
-* When looking at ``recursiveFibonacci(n)``, how many recursive calls are there for each of the ``n`` values?
-    * Two (:math:`2`)
 
-* But each new call will call two more
+* When looking at ``recursiveFibonacci(n)``, how many potential recursive calls are there for each of the ``n`` values?
+
+    * Two
+
+
+* Each new call will call two more, which will call two more, which will call two more...
+
     * :math:`1`
     * :math:`2`
     * :math:`4`
@@ -426,16 +436,23 @@ Fibonacci
     * :math:`64`
     * :math:`\dots`
 
-* You may recognize this pattern as :math:`2^{n}`
-    * Roughly speaking, we are doubling the number of function calls for each of the :math:`n`
 
-* In other words, this recursive implementation is :math:`O*(2^{n})`
-* If given the choice between something that grows linearly, :math:`O(n)`, and something that grows exponentially, :math:`O(n^{n})`, you're going to want to take the linear option
-* Despite the simple elegance of this recursive fibonacci implementation, this would perhaps be a good example of going back and improving the implementation for better performance
+* This patten follows :math:`2^{n}`
 
-* But, why is the recursive version so much worse than the iterative one?
-    * Look at the image for a hint
-    * How many times are we calculating the third Fibonacci number in each version?
+    * Roughly speaking, the number of recursive function calls doubles each step
+
+
+* In other words, this recursive implementation is :math:`O(2^{n})`
+
+* If given the choice between something that grows linearly or something that grows exponentially, take the linear
+* Despite the simple elegance of the recursive fibonacci implementation, this would be a good example of going back and improving the implementation for better performance
+
+* To get a sense of why the recursive version is so much worse than the iterative
+
+    * Look at the above figure for a hint
+    * When calculating ``recursiveFactorial(6)``, ``recursiveFactorial(2)`` is calculated a total of :math:`5` times
+    * The iterative implementation would have only calculated this once
+
 
 
 Towers of Hanoi
