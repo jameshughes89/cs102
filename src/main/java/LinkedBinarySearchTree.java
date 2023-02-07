@@ -1,5 +1,6 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import java.util.Objects;
 
 public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements BinarySearchTree<T> {
 
@@ -411,6 +412,34 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
             builder.append(", ");
         }
         return builder.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        BinaryTree<?> that = (LinkedBinarySearchTree<?>) o;
+        Iterator<T> thisIterator = this.iterator();
+        Iterator<?> thatIterator = that.iterator();
+        while (thisIterator.hasNext()) {
+            if (!Objects.equals(thisIterator.next(), thatIterator.next())) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(size);
+        for (T element : this) {
+            result += Objects.hashCode(element);
+        }
+        return result;
     }
 
     /**
