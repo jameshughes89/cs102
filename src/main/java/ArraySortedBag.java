@@ -224,8 +224,8 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
         if (this.size() != that.size()) {
             return false;
         }
-        for (int i = 0; i < this.size(); i++) {
-            if (this.count(this.bag[i]) != that.count(this.bag[i])) {
+        for (T element : this) {
+            if (this.count(element) != that.count(element)) {
                 return false;
             }
         }
@@ -235,8 +235,8 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
     @Override
     public int hashCode() {
         int result = Objects.hash(rear);
-        for (int i = 0; i < size(); i++) {
-            result += Objects.hashCode(bag[i]);
+        for (T element : this) {
+            result += Objects.hashCode(element);
         }
         return result;
     }
