@@ -177,16 +177,15 @@ Going Up and Down
 Recursive Programming
 =====================
 
-Factorial
----------
 
-* The factorial,  :math:`n!`, of a non-negative integer is the product of all non-negative integers between n and 1 inclusively
+* The factorial, :math:`n!`, of a non-negative integer is the product of all non-negative integers between :math:`n` and :math:`1` inclusively
+
     * It also includes zero, but this is addressed below
 
     :math:`n! = n \times (n - 1) \times (n - 2) \times \dots \times 3 \times 2 \times 1`
 
 
-* We can nicely define this recursively
+* This can nicely be defined recursively
 
 .. math::
 
@@ -197,41 +196,42 @@ Factorial
     \end{cases}
 
 
+
 .. note::
 
-    You will notice that :math:`0! = 1` and may wonder why. This is because:
+    Notice that :math:`0! = 1`. This is because:
 
-    1. It is :math:`1` by definition (because we said so), but this isn't really a satisfying answer.
+    #. It is :math:`1` by definition (because someone said so), but this isn't really a satisfying answer
 
-    2. :math:`1` is the multiplicative identity, and it's used as the result when multiplying no factors.
+    #. :math:`1` is the multiplicative identity, and it is used as the result when multiplying no factors
 
-        * This is just like how adding *nothing* together results in :math:`0` --- the additive identity.
-
-    3. It also aligns with the `gamma function <https://en.wikipedia.org/wiki/Gamma_function>`_
+        * This is just like how adding *nothing* together results in :math:`0` --- the additive identity
 
 
-* If I ask you what :math:`4!` is, we can calculate it by applying the rules; there are no real tricks to it
+    #. It also aligns with the `gamma function <https://en.wikipedia.org/wiki/Gamma_function>`_
 
-    :math:`4! = 4 * 3!`
 
-        :math:`3! = 3 * 2!`
 
-            :math:`2! = 2 * 1!`
+* If asked what :math:`4!` is, it can be calculated by applying the rules; there are no real tricks to it
 
-                :math:`1! = 1 * 0!`
+    :math:`4! = 4 \times 3!`
+
+        :math:`3! = 3 \times 2!`
+
+            :math:`2! = 2 \times 1!`
+
+                :math:`1! = 1 \times 0!`
 
                     :math:`0! = 1`
 
-                :math:`1! = 1 * 0! = 1 * 1 = 1`
+                :math:`1! = 1 \times 0! = 1 \times 1 = 1`
 
-            :math:`2! = 2 * 1! = 2 * 1 = 2`
+            :math:`2! = 2 \times 1! = 2 \times 1 = 2`
 
-        :math:`3! = 3 * 2! = 3 * 2 = 6`
+        :math:`3! = 3 \times 2! = 3 \times 2 = 6`
 
-    :math:`4! = 4 * 3! = 4 * 6 = 24`
+    :math:`4! = 4 \times 3! = 4 \times 6 = 24`
 
-
-**Iterative Factorial**
 
 .. code-block:: java
     :linenos:
@@ -245,8 +245,6 @@ Factorial
     }
 
 
-**Recursive Factorial**
-
 .. code-block:: java
     :linenos:
 
@@ -257,17 +255,25 @@ Factorial
         return n * recursiveFactorial(n - 1);
     }
 
+
 * Both the iterative and recursive functions do the same thing
+
     * But, doesn't the recursive function have a sort of beauty to it?
 
 
 * When considering the call stack, the stack will grow until it hits the base case
-* Then, each frame will return the product to the calling function
+* Then, each call frame will return the product to the calling function
+
     * Regardless of if the calling function is ``recursiveFactorial`` or ``main``
 
-    .. image:: recursive_factorial.png
-       :width: 250 px
-       :align: center
+
+.. figure:: recursive_factorial.png
+    :width: 500 px
+    :align: center
+
+    Example call stack of calling ``recursiveFactorial(4)`` when the program is currently executing the base case ---
+    when ``n`` is ``0``. This is the state of the call stack before any values have been returned by any call frames.
+
 
 
 Observations
