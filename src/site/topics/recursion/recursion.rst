@@ -121,44 +121,57 @@ Lists
 
 
 
-Recursion
-=========
+Repeating Patterns
+==================
 
 * In counting example, it may feel like cheating by saying "1 + however many are after the front"
-    * *however many are after the front* seems like we're skipping a step
 
-* However, with the list example, we also see the we repeatedly apply the same rule over and over again on smaller and smaller lists until we get to the end (the empty list)
+    * "however many are after the front" seems like skipping a step
+
+
+* But, with the list example, it was observed that repeatedly applying the same rule over and over on smaller and smaller lists resulted in hitting an *end*
+
+    * The empty list
+    * The base case
     * This pattern arises a lot with recursion --- repeatedly apply the same rules on slightly different versions of the problem
 
-* As mentioned earlier, we're typically going to have a **base case** and a **recursive case**
-* In fact, we can have multiple base cases and recursive cases
-    * We will see examples of these when discussing trees
+
+* As mentioned earlier, there is typically going to be a *base case* and a *recursive case*
+* In fact, there can be multiple base cases and recursive cases
+
+    * Several examples of this will be seen when discussing trees
 
 
 Going Up and Down
 -----------------
 
 * The set of natural numbers :math:`\mathbb{N}` can be recursively defined as:
+
     * 0 is a natural number
-    * A natural number + 1 is a natural number
+    * A natural number :math:`+ 1` is a natural number
 
-* With this recursive definition, we have a complete definition of :math:`\mathbb{N}`
+* This recursive definition provides a complete definition of :math:`\mathbb{N}`
 
-* We can start at the base case and repeatedly apply the recursive case to generate all natural numbers
+* One can start at the base case and repeatedly apply the recursive case to generate all natural numbers
+
     * This is a great way to mathematically define something infinite
-        * Though, your computers will not be all too happy with running this
 
-* We could also take this definition and use it to answer questions by working down to the base case, and then back up with the answer
-    * Is 4 a natural number?
-    * Is 3 + 1 a natural number?
-    * Is (2 + 1) + 1 a natural number?
-    * Is ((1 + 1) + 1) + 1) a natural number?
-    * Is ((((0 + 1) + 1) + 1) + 1) a natural number?
-    * 0 is a natural number
-    * Therefore 1 (0 + 1) is a natural number
-    * Therefore 2 (1 + 1) is a natural number
-    * Therefore 3 (2 + 1) is a natural number
-    * Therefore 4 (3 + 1) is a natural number
+        * Though, computers will not be all too happy with running this
+
+
+* One could also take this definition and use it to answer questions by working down to the base case, and then back up with the answer
+
+    * Is :math:`4` a natural number?
+    * Is :math:`3 + 1` a natural number?
+    * Is :math:`(2 + 1) + 1` a natural number?
+    * Is :math:`((1 + 1) + 1) + 1)` a natural number?
+    * Is :math:`((((0 + 1) + 1) + 1) + 1)` a natural number?
+    * :math:`0` is a natural number
+    * Therefore :math:`1`, which is :math:`0 + 1`, is a natural number
+    * Therefore :math:`2`, which is :math:`1 + 1`, is a natural number
+    * Therefore :math:`3`, which is :math:`2 + 1`, is a natural number
+    * Therefore :math:`4`, which is :math:`3 + 1`, is a natural number
+
 
 
 Recursive Programming
