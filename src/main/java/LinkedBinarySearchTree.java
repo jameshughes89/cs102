@@ -427,6 +427,9 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
             return false;
         }
         BinaryTree<T> that = (BinaryTree<T>) o;
+        if (this.size() != that.size()) {
+            return false;
+        }
         for (T element : this) {
             if (this.count(element) != that.count(element)) {
                 return false;
