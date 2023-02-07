@@ -415,18 +415,20 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public boolean equals(Object o) {
         if (this == o) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (o == null) {
             return false;
         }
-        BinaryTree<?> that = (LinkedBinarySearchTree<?>) o;
-        Iterator<T> thisIterator = this.iterator();
-        Iterator<?> thatIterator = that.iterator();
-        while (thisIterator.hasNext()) {
-            if (!Objects.equals(thisIterator.next(), thatIterator.next())) {
+        if (!(o instanceof BinaryTree)) {
+            return false;
+        }
+        BinaryTree<T> that = (BinaryTree<T>) o;
+        for (T element : this) {
+            if (this.count(element) != that.count(element)) {
                 return false;
             }
         }
