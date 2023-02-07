@@ -1,3 +1,5 @@
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import java.util.Iterator;
@@ -7,10 +9,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class LinkedBinarySearchTreeTest {
 
-    @Test
-    void add_empty_returnsTrue() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        assertTrue(bst.add(11));
+    LinkedBinarySearchTree<Integer> classUnderTest;
+    LinkedBinarySearchTree<Integer> preState;
+
+    @BeforeEach
+    void createLinkedBinarySearchTree() {
+        classUnderTest = new LinkedBinarySearchTree<>();
+        preState = new LinkedBinarySearchTree<>();
     }
 
     @Test
@@ -49,11 +54,6 @@ public class LinkedBinarySearchTreeTest {
         assertTrue(bst.remove(10));
     }
 
-    @Test
-    void isEmptyOnNewTreeReturnsTrue() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        assertTrue(bst.isEmpty());
-    }
 
     @Test
     void isEmptyOnNewTreeNonDefaultConstructorReturnsFalse() {
@@ -66,12 +66,6 @@ public class LinkedBinarySearchTreeTest {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         assertFalse(bst.isEmpty());
-    }
-
-    @Test
-    void sizeOfEmptyTreeReturnsZero() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        assertEquals(0, bst.size());
     }
 
     @Test
@@ -98,12 +92,6 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void containsOnEmptyTreeReturnsFalse() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        assertFalse(bst.contains(99));
-    }
-
-    @Test
     void containsOnTreeWhenSearchingForNonExistingElementReturnsFalse() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
@@ -126,11 +114,6 @@ public class LinkedBinarySearchTreeTest {
         assertTrue(bst.contains(99));
     }
 
-    @Test
-    void countOnEmptyTreeReturnsZero() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        assertEquals(0, bst.count(99));
-    }
 
     @Test
     void countOnTreeWhenCountingNonExistingElementsReturnsZero() {
@@ -159,12 +142,6 @@ public class LinkedBinarySearchTreeTest {
         bst.add(99);
         bst.add(99);
         assertEquals(5, bst.count(99));
-    }
-
-    @Test
-    void minOnEmptyTreeThrowsException() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        assertThrows(NoSuchElementException.class, () -> bst.min());
     }
 
     @Test
@@ -219,12 +196,6 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void maxOnEmptyTreeThrowsException() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        assertThrows(NoSuchElementException.class, () -> bst.max());
-    }
-
-    @Test
     void maxOnTreeWhenMaxIsRootReturnsCorrectMax() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
@@ -275,11 +246,6 @@ public class LinkedBinarySearchTreeTest {
         assertTrue(bst.contains(bst.max()));
     }
 
-    @Test
-    void removeMinOnEmptyTreeThrowsException() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        assertThrows(NoSuchElementException.class, () -> bst.removeMin());
-    }
 
     @Test
     void removeMinOnTreeWhenMinIsRootReturnsCorrectMin() {
@@ -374,12 +340,6 @@ public class LinkedBinarySearchTreeTest {
         assertEquals(62, bst.removeMin());
         assertEquals(75, bst.removeMin());
         assertEquals(87, bst.removeMin());
-    }
-
-    @Test
-    void removeMaxOnEmptyTreeThrowsException() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        assertThrows(NoSuchElementException.class, () -> bst.removeMax());
     }
 
     @Test
@@ -478,18 +438,11 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void removeOnEmptyTreeThrowsException() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        assertThrows(NoSuchElementException.class, () -> bst.remove(99));
-    }
-
-    @Test
     void removeNonExistingElementOnTreeThrowsException() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
         assertThrows(NoSuchElementException.class, () -> bst.remove(101));
     }
-
 
     @Test
     void removeOnTreeWithSingleEqualElementRemovesElementFromBinarySearchTree() {
@@ -535,7 +488,6 @@ public class LinkedBinarySearchTreeTest {
         assertEquals(6, bst.size());
     }
 
-
     @Test
     void addSingleElementToTreeResultsInItBeingTheOnlyElement() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
@@ -543,7 +495,6 @@ public class LinkedBinarySearchTreeTest {
         Iterator<Integer> it = bst.iterator();
         assertEquals(99, it.next());
     }
-
 
     @Test
     void addManyElementsToTreeResultsInElementsBeingPlacedInCorrectPlace() {
@@ -600,13 +551,6 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void iteratorHasNextOnEmptyTreeReturnsFalse() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        Iterator<Integer> it = bst.iterator();
-        assertFalse(it.hasNext());
-    }
-
-    @Test
     void iteratorHasOneElementForTreeWithOneElement() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
@@ -635,19 +579,6 @@ public class LinkedBinarySearchTreeTest {
         assertThrows(NoSuchElementException.class, () -> it.next());
     }
 
-    @Test
-    void iteratorNextOnEmptyTreeThrowsException() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        Iterator<Integer> it = bst.iterator();
-        assertThrows(NoSuchElementException.class, () -> it.next());
-    }
-
-    @Test
-    void preOrderIteratorHasNextOnEmptyTreeReturnsFalse() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        Iterator<Integer> it = bst.preOrderIterator();
-        assertFalse(it.hasNext());
-    }
 
     @Test
     void preOrderIteratorHasOneElementForTreeWithOneElement() {
@@ -679,20 +610,6 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void preOrderIteratorNextOnEmptyTreeThrowsException() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        Iterator<Integer> it = bst.preOrderIterator();
-        assertThrows(NoSuchElementException.class, () -> it.next());
-    }
-
-    @Test
-    void inOrderIteratorHasNextOnEmptyTreeReturnsFalse() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        Iterator<Integer> it = bst.inOrderIterator();
-        assertFalse(it.hasNext());
-    }
-
-    @Test
     void inOrderIteratorHasOneElementForTreeWithOneElement() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(99);
@@ -721,19 +638,6 @@ public class LinkedBinarySearchTreeTest {
         assertThrows(NoSuchElementException.class, () -> it.next());
     }
 
-    @Test
-    void inOrderIteratorNextOnEmptyTreeThrowsException() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        Iterator<Integer> it = bst.inOrderIterator();
-        assertThrows(NoSuchElementException.class, () -> it.next());
-    }
-
-    @Test
-    void postOrderIteratorHasNextOnEmptyTreeReturnsFalse() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        Iterator<Integer> it = bst.postOrderIterator();
-        assertFalse(it.hasNext());
-    }
 
     @Test
     void postOrderIteratorHasOneElementForTreeWithOneElement() {
@@ -764,19 +668,6 @@ public class LinkedBinarySearchTreeTest {
         assertThrows(NoSuchElementException.class, () -> it.next());
     }
 
-    @Test
-    void postOrderIteratorNextOnEmptyTreeThrowsException() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        Iterator<Integer> it = bst.postOrderIterator();
-        assertThrows(NoSuchElementException.class, () -> it.next());
-    }
-
-    @Test
-    void levelOrderIteratorHasNextOnEmptyTreeReturnsFalse() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        Iterator<Integer> it = bst.levelOrderIterator();
-        assertFalse(it.hasNext());
-    }
 
     @Test
     void levelOrderIteratorHasOneElementForTreeWithOneElement() {
@@ -807,10 +698,113 @@ public class LinkedBinarySearchTreeTest {
         assertThrows(NoSuchElementException.class, () -> it.next());
     }
 
-    @Test
-    void levelOrderIteratorNextOnEmptyTreeThrowsException() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        Iterator<Integer> it = bst.levelOrderIterator();
-        assertThrows(NoSuchElementException.class, () -> it.next());
+    @Nested
+    class WhenNewEmpty {
+
+        @Test
+        void add_empty_returnsTrue() {
+            assertTrue(classUnderTest.add(11));
+        }
+
+        @Test
+        void remove_empty_throwsNoSuchElementException() {
+            assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(11));
+        }
+
+        @Test
+        void removeMin_empty_throwsNoSuchElementException() {
+            assertThrows(NoSuchElementException.class, () -> classUnderTest.removeMin());
+        }
+
+        @Test
+        void removeMax_empty_throwsNoSuchElementException() {
+            assertThrows(NoSuchElementException.class, () -> classUnderTest.removeMax());
+        }
+
+        @Test
+        void min_empty_throwsNoSuchElementException() {
+            assertThrows(NoSuchElementException.class, () -> classUnderTest.min());
+        }
+
+        @Test
+        void max_empty_throwsNoSuchElementException() {
+            assertThrows(NoSuchElementException.class, () -> classUnderTest.max());
+        }
+
+        @Test
+        void contains_empty_returnsFalse() {
+            assertFalse(classUnderTest.contains(11));
+        }
+
+        @Test
+        void count_empty_returnsZero() {
+            assertEquals(0, classUnderTest.count(11));
+        }
+
+        @Test
+        void isEmpty_empty_returnsTrue() {
+            assertTrue(classUnderTest.isEmpty());
+        }
+
+        @Test
+        void size_empty_returnsZero() {
+            assertEquals(0, classUnderTest.size());
+        }
+
+        @Test
+        void iterator_empty_noNext() {
+            assertFalse(classUnderTest.iterator().hasNext());
+        }
+
+        @Test
+        void iterator_empty_nextThrowsNoSuchElementException() {
+            assertThrows(NoSuchElementException.class, () -> classUnderTest.iterator().next());
+        }
+
+        @Test
+        void preOrderIterator_empty_noNext() {
+            assertFalse(classUnderTest.preOrderIterator().hasNext());
+        }
+
+        @Test
+        void preOrderIterator_empty_nextThrowsNoSuchElementException() {
+            assertThrows(NoSuchElementException.class, () -> classUnderTest.preOrderIterator().next());
+        }
+
+        @Test
+        void inOrderIterator_empty_noNext() {
+            assertFalse(classUnderTest.inOrderIterator().hasNext());
+        }
+
+        @Test
+        void inOrderIterator_empty_nextThrowsNoSuchElementException() {
+            assertThrows(NoSuchElementException.class, () -> classUnderTest.inOrderIterator().next());
+        }
+
+        @Test
+        void postOrderIterator_empty_noNext() {
+            assertFalse(classUnderTest.postOrderIterator().hasNext());
+        }
+
+        @Test
+        void postOrderIterator_empty_nextThrowsNoSuchElementException() {
+            assertThrows(NoSuchElementException.class, () -> classUnderTest.postOrderIterator().next());
+        }
+
+        @Test
+        void levelOrderIterator_empty_noNext() {
+            assertFalse(classUnderTest.levelOrderIterator().hasNext());
+        }
+
+        @Test
+        void levelOrderIterator_empty_nextThrowsNoSuchElementException() {
+            assertThrows(NoSuchElementException.class, () -> classUnderTest.levelOrderIterator().next());
+        }
+
+        @Test
+        void toString_empty_returnsEmptyString() {
+            assertEquals("", classUnderTest.toString());
+        }
+
     }
 }
