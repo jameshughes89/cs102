@@ -27,6 +27,28 @@ public class LinkedBinarySearchTreeEqualsTest {
         manyDifferentTopology.add(30);
         manyDifferentTopology.add(10);
 
+        LinkedBinarySearchTree<Integer> duplicateA = new LinkedBinarySearchTree<>();
+        LinkedBinarySearchTree<Integer> duplicateB = new LinkedBinarySearchTree<>();
+        LinkedBinarySearchTree<Integer> duplicateDifferentTopology = new LinkedBinarySearchTree<>();
+        duplicateA.add(10);
+        duplicateA.add(20);
+        duplicateA.add(20);
+        duplicateA.add(30);
+        duplicateA.add(30);
+        duplicateA.add(30);
+        duplicateB.add(10);
+        duplicateB.add(20);
+        duplicateB.add(20);
+        duplicateB.add(30);
+        duplicateB.add(30);
+        duplicateB.add(30);
+        duplicateDifferentTopology.add(20);
+        duplicateDifferentTopology.add(30);
+        duplicateDifferentTopology.add(10);
+        duplicateDifferentTopology.add(30);
+        duplicateDifferentTopology.add(20);
+        duplicateDifferentTopology.add(30);
+
         LinkedBinarySearchTree<Integer> unequalDifferentValues = new LinkedBinarySearchTree<>();
         unequalDifferentValues.add(110);
         unequalDifferentValues.add(120);
@@ -45,6 +67,7 @@ public class LinkedBinarySearchTreeEqualsTest {
                 .addEqualityGroup(emptyA, emptyB)
                 .addEqualityGroup(singletonA, singletonB)
                 .addEqualityGroup(manyA, manyB, manyDifferentTopology)
+                .addEqualityGroup(duplicateA, duplicateB, duplicateDifferentTopology)
                 .addEqualityGroup(unequalDifferentValues)
                 .addEqualityGroup(unequalDifferentSizes)
                 .addEqualityGroup(unequalSomeEqual)
