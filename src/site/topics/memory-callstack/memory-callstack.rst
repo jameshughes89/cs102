@@ -66,8 +66,6 @@ Memory Allocation
 		    * e.g. Instances of objects
 		    * Technically, in Java, this can be broken down further into an area for longer living objects and an area for younger ones
 
-		        * This idea is ignored here for brevity and simplicity
-
 
 .. figure:: memory_abstraction.png
     :width: 500 px
@@ -215,6 +213,12 @@ Garbage Collection
 
 
 * In Java, and most modern languages, when an object is not reachable, it is available for garbage collection
+
+    * However, memory leaks can still happen in languages with garbage collection
+
+        * For example, failing to close a file
+
+
 * If an object is not reachable, it can't be used
 * An object is *not reachable* when there is no accessible reference to it anymore
 
