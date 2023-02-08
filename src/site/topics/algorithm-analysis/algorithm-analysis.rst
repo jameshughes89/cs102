@@ -150,7 +150,7 @@ Growth Function
 Asymptotic Growth & Big-O
 =========================
 
-* Constants are not too important
+* Constants and coefficients are not too important
 * Non dominant terms are not too important
 * The actual growth function is not that important
 * The *asymptotic complexity* is important
