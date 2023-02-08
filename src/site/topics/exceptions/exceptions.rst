@@ -2,7 +2,7 @@
 Exceptions
 **********
 
-* Exceptions are great for keeping a logical separation between the regular code and the exceptional situations
+* Exceptions provides a way to logical separate the regular code and what to do in an exceptional situation
 * They make it easy to propagate the exception up the call stack such that the situation can be managed in a desired place
 * They also allow for differentiating between exception types and how to deal with them specifically
 
