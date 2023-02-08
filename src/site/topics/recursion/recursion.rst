@@ -2,28 +2,25 @@
 Recursion
 *********
 
-|lineA| |lineB| |lineC|
+.. figure:: line_example.png
+    :width: 500 px
+    :align: center
 
-.. |lineA| image:: line_example.png
-    :width: 25%
-
-.. |lineB| image:: line_example.png
-    :width: 25%
-
-.. |lineC| image:: line_example.png
-    :width: 25%
 
 * How many people are in this line?
-    * How would you count them?
 
-* I'd say the answer is, just by looking at the first person, it's exactly ``1 +`` the number of people after the first person
+    * How does one count them?
+
+
+* Just by looking at the first person, it's exactly ``1 +`` the number of people after the first person
+
 
 
 Iterative Definition vs. Recursive Definition
 =============================================
 
-* Iterative definitions of things are fairly natural for us
-* Recursion on the other hand may *feel* a little less natural, but it pops up a lot in our lives and in nature
+* Iterative definitions of things are fairly natural
+* Recursion on the other hand may *feel* a little less natural, but it pops up a lot in everyday life and in nature
 
 
 Groups of People
@@ -32,6 +29,7 @@ Groups of People
 * Like the line of people example above, it may seem like a silly question because it is so intuitive
 
 * A group of people is:
+
     * 2 people
     * OR 3 people
     * OR 4 people
@@ -39,55 +37,79 @@ Groups of People
     * ...
     * ...
 
-* Alternatively, we can use the idea of recursion to define a group of people a different way
-* When we use recursion to define something, we use the definition of itself in it's definition
+* Alternatively, the idea of recursion can be used to define a group of people a different way
+* When defining something recursively, the definition of something is used within its definition
+
     * Define something in terms of itself
 
-* Recursive definition of a **group of people** is:
+
+* A recursive definition of a **group of people** is:
+
     * 2 people
     * OR a **group of people** plus one more person
 
-* Based on this definition, if I ask you if 2 people are a **group of people**, the answer is clearly yes (the first point)
-* But if I ask you if 4 people is a **group of people**, we need to do some digging
-    * In order to tell you if 4 people is a **group of people**, I need to know if 3 people is a **group of people**
-        * If 3 is, then I know 4 is since 4 is 3, a **group of people**, plus one more person
-    * To know if 3 people is a **group of people**, I must know if 2 people is a **group of people**
-    * I know, by definition, that 2 people is, in fact, a **group of people**
-    * Therefore, I know that 3 people is a **group of people**
-    * Thus, 4 people must be a **group of people**
 
-* In the above recursive example, you will notice a **base case** and a **recursive** case
+* Based on this recursive definition, if asked if 2 people are a group of people, the answer is clearly yes
+
+    * It's the first part of the recursive definition of a group of people
+
+
+* But if asked if 4 people is a group of people, some more digging is needed
+
+    * In order to know if 4 people is a group of people, it needs to be known if 3 people is a group of people
+
+        * If 3 is, then it can be concluded that 4 is since 4 is 3, a group of people, plus one more person
+        * This is the second part of the recursive definition of a group of people
+
+
+    * To know if 3 people is a group of people, it needs to be known if 2 people is a group of people
+
+        * If 2 is, then it can be concluded that 3 is since 3 is 2, a group of people, plus one more person
+
+    * By definition, 2 people is, in fact, a group of people
+    * Therefore, 3 people is a group of people
+    * Thus, 4 people is a group of people
+
+
+* In the above recursive example, notice a *base case* and a *recursive case*
+
     * The base case is something with a clear definition
-    * The recursive case is one that defines itself in terms of itself
+    * The recursive case is one that defines something in terms of itself
 
 
 .. warning::
 
-    Although there is no **hard** rule saying that you need a base case, and there are examples of situations where you
-    would not include one, not including a base case is a recipe for disaster. Remember ``uhOh()`` from topic 18?
+    Although there is no hard rule saying that a base case is needed, and there are examples of situations where it
+    would not be included, not including a base case is a recipe for disaster. Remember the ``uhOh()`` example from the
+    *Memory & The Call Stack* topic?
 
-    For our purposes in this course, always include your base case.
+    For the purposes of this course, always include a base case.
+
 
 
 Lists
 -----
 
 * Think of a list from Python, or a linear linked structure
-* We can define this recursively in a rather natural way
+* One can define this recursively in a rather natural way
 
 * A list is:
+
     * **Base Case** --- An empty list
-    * **Recursive Case** --- There is a head of the list, followed by a tail that's a list
+    * **Recursive Case** --- There is a head of the list, followed by a tail --- the remaining portion of the list
+
 
 * Consider the following list
 
     ``[a, b, c, d, e]``
 
+
 * This can be broken down into the head ``a`` and the tail ``[b, c, d, e]``
 
     ``a + [b, c, d, e]``
 
-* Further, we can break the tail list down again and again and again until we hit an empty list
+
+* The tail list can be broken down again and again until the empty list (base case) is hit
 
     ``a + b + [c, d, e]``
 
@@ -98,59 +120,72 @@ Lists
     ``a + b + c + d + e + []``
 
 
-Recursion
-=========
+
+Repeating Patterns
+==================
 
 * In counting example, it may feel like cheating by saying "1 + however many are after the front"
-    * *however many are after the front* seems like we're skipping a step
 
-* However, with the list example, we also see the we repeatedly apply the same rule over and over again on smaller and smaller lists until we get to the end (the empty list)
+    * "however many are after the front" seems like skipping a step
+
+
+* But, with the list example, it was observed that repeatedly applying the same rule over and over on smaller and smaller lists resulted in hitting an *end*
+
+    * The empty list
+    * The base case
     * This pattern arises a lot with recursion --- repeatedly apply the same rules on slightly different versions of the problem
 
-* As mentioned earlier, we're typically going to have a **base case** and a **recursive case**
-* In fact, we can have multiple base cases and recursive cases
-    * We will see examples of these when discussing trees
+
+* As mentioned earlier, there is typically going to be a *base case* and a *recursive case*
+* In fact, there can be multiple base cases and recursive cases
+
+    * Several examples of this will be seen when discussing trees
 
 
 Going Up and Down
 -----------------
 
 * The set of natural numbers :math:`\mathbb{N}` can be recursively defined as:
+
     * 0 is a natural number
-    * A natural number + 1 is a natural number
+    * A natural number :math:`+ 1` is a natural number
 
-* With this recursive definition, we have a complete definition of :math:`\mathbb{N}`
+* This recursive definition provides a complete definition of :math:`\mathbb{N}`
 
-* We can start at the base case and repeatedly apply the recursive case to generate all natural numbers
+* One can start at the base case and repeatedly apply the recursive case to generate all natural numbers
+
     * This is a great way to mathematically define something infinite
-        * Though, your computers will not be all too happy with running this
 
-* We could also take this definition and use it to answer questions by working down to the base case, and then back up with the answer
-    * Is 4 a natural number?
-    * Is 3 + 1 a natural number?
-    * Is (2 + 1) + 1 a natural number?
-    * Is ((1 + 1) + 1) + 1) a natural number?
-    * Is ((((0 + 1) + 1) + 1) + 1) a natural number?
-    * 0 is a natural number
-    * Therefore 1 (0 + 1) is a natural number
-    * Therefore 2 (1 + 1) is a natural number
-    * Therefore 3 (2 + 1) is a natural number
-    * Therefore 4 (3 + 1) is a natural number
+        * Though, computers will not be all too happy with running this
+
+
+* One could also take this definition and use it to answer questions by working down to the base case, and then back up with the answer
+
+    * Is :math:`4` a natural number?
+    * Is :math:`3 + 1` a natural number?
+    * Is :math:`(2 + 1) + 1` a natural number?
+    * Is :math:`((1 + 1) + 1) + 1)` a natural number?
+    * Is :math:`((((0 + 1) + 1) + 1) + 1)` a natural number?
+    * :math:`0` is a natural number
+    * Therefore :math:`1`, which is :math:`0 + 1`, is a natural number
+    * Therefore :math:`2`, which is :math:`1 + 1`, is a natural number
+    * Therefore :math:`3`, which is :math:`2 + 1`, is a natural number
+    * Therefore :math:`4`, which is :math:`3 + 1`, is a natural number
+
 
 
 Recursive Programming
 =====================
 
-Factorial
----------
 
-* The factorial,  :math:`n!`, of a non-negative integer is the product of all non-negative integers between n and 1 inclusively
+* The factorial, :math:`n!`, of a non-negative integer is the product of all non-negative integers between :math:`n` and :math:`1` inclusively
+
     * It also includes zero, but this is addressed below
 
     :math:`n! = n \times (n - 1) \times (n - 2) \times \dots \times 3 \times 2 \times 1`
 
 
-* We can nicely define this recursively
+* This can nicely be defined recursively
 
 .. math::
 
@@ -161,41 +196,42 @@ Factorial
     \end{cases}
 
 
+
 .. note::
 
-    You will notice that :math:`0! = 1` and may wonder why. This is because:
+    Notice that :math:`0! = 1`. This is because:
 
-    1. It is :math:`1` by definition (because we said so), but this isn't really a satisfying answer.
+    #. It is :math:`1` by definition (because someone said so), but this isn't really a satisfying answer
 
-    2. :math:`1` is the multiplicative identity, and it's used as the result when multiplying no factors.
+    #. :math:`1` is the multiplicative identity, and it is used as the result when multiplying no factors
 
-        * This is just like how adding *nothing* together results in :math:`0` --- the additive identity.
-
-    3. It also aligns with the `gamma function <https://en.wikipedia.org/wiki/Gamma_function>`_
+        * This is just like how adding *nothing* together results in :math:`0` --- the additive identity
 
 
-* If I ask you what :math:`4!` is, we can calculate it by applying the rules; there are no real tricks to it
+    #. It also aligns with the `gamma function <https://en.wikipedia.org/wiki/Gamma_function>`_
 
-    :math:`4! = 4 * 3!`
 
-        :math:`3! = 3 * 2!`
 
-            :math:`2! = 2 * 1!`
+* If asked what :math:`4!` is, it can be calculated by applying the rules; there are no real tricks to it
 
-                :math:`1! = 1 * 0!`
+    :math:`4! = 4 \times 3!`
+
+        :math:`3! = 3 \times 2!`
+
+            :math:`2! = 2 \times 1!`
+
+                :math:`1! = 1 \times 0!`
 
                     :math:`0! = 1`
 
-                :math:`1! = 1 * 0! = 1 * 1 = 1`
+                :math:`1! = 1 \times 0! = 1 \times 1 = 1`
 
-            :math:`2! = 2 * 1! = 2 * 1 = 2`
+            :math:`2! = 2 \times 1! = 2 \times 1 = 2`
 
-        :math:`3! = 3 * 2! = 3 * 2 = 6`
+        :math:`3! = 3 \times 2! = 3 \times 2 = 6`
 
-    :math:`4! = 4 * 3! = 4 * 6 = 24`
+    :math:`4! = 4 \times 3! = 4 \times 6 = 24`
 
-
-**Iterative Factorial**
 
 .. code-block:: java
     :linenos:
@@ -209,8 +245,6 @@ Factorial
     }
 
 
-**Recursive Factorial**
-
 .. code-block:: java
     :linenos:
 
@@ -221,17 +255,25 @@ Factorial
         return n * recursiveFactorial(n - 1);
     }
 
+
 * Both the iterative and recursive functions do the same thing
+
     * But, doesn't the recursive function have a sort of beauty to it?
 
 
 * When considering the call stack, the stack will grow until it hits the base case
-* Then, each frame will return the product to the calling function
+* Then, each call frame will return the product to the calling function
+
     * Regardless of if the calling function is ``recursiveFactorial`` or ``main``
 
-    .. image:: recursive_factorial.png
-       :width: 250 px
-       :align: center
+
+.. figure:: recursive_factorial.png
+    :width: 500 px
+    :align: center
+
+    Example call stack of calling ``recursiveFactorial(4)`` when the program is currently executing the base case ---
+    when ``n`` is ``0``. This is the state of the call stack before any values have been returned by any call frames.
+
 
 
 Some Observations
