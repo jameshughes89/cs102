@@ -103,6 +103,7 @@ Office Hours
     labs/objects-collections/collections
     labs/unit-tests/unit-tests
     labs/stacks/stacks
+    labs/linked-structures/linked-structures
 
 
 .. toctree::
