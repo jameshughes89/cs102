@@ -23,6 +23,7 @@ class ArraySortedBagEqualsTest {
         ArraySortedBag<Integer> manyA = new ArraySortedBag<>();
         ArraySortedBag<Integer> manyB = new ArraySortedBag<>();
         ArraySortedBag<Integer> manyC = new ArraySortedBag<>(1000);
+        ArraySortedBag<Integer> manyDifferentOrder = new ArraySortedBag<>();
         ArrayIndexedBag<Integer> manyIndexedBag = new ArrayIndexedBag<>();
         ArrayIndexedBag<Integer> manyIndexedBagDifferentOrder = new ArrayIndexedBag<>();
         manyA.add(10);
@@ -34,12 +35,58 @@ class ArraySortedBagEqualsTest {
         manyC.add(10);
         manyC.add(20);
         manyC.add(30);
+        manyDifferentOrder.add(20);
+        manyDifferentOrder.add(30);
+        manyDifferentOrder.add(10);
         manyIndexedBag.add(10);
         manyIndexedBag.add(20);
         manyIndexedBag.add(30);
         manyIndexedBagDifferentOrder.add(30);
         manyIndexedBagDifferentOrder.add(10);
         manyIndexedBagDifferentOrder.add(20);
+
+        ArraySortedBag<Integer> duplicateA = new ArraySortedBag<>();
+        ArraySortedBag<Integer> duplicateB = new ArraySortedBag<>();
+        ArraySortedBag<Integer> duplicateC = new ArraySortedBag<>(1000);
+        ArraySortedBag<Integer> duplicateDifferentOrder = new ArraySortedBag<>();
+        ArrayIndexedBag<Integer> duplicateIndexedBag = new ArrayIndexedBag<>();
+        ArrayIndexedBag<Integer> duplicateIndexedBagDifferentOrder = new ArrayIndexedBag<>();
+        duplicateA.add(10);
+        duplicateA.add(20);
+        duplicateA.add(20);
+        duplicateA.add(30);
+        duplicateA.add(30);
+        duplicateA.add(30);
+        duplicateB.add(10);
+        duplicateB.add(20);
+        duplicateB.add(20);
+        duplicateB.add(30);
+        duplicateB.add(30);
+        duplicateB.add(30);
+        duplicateC.add(10);
+        duplicateC.add(20);
+        duplicateC.add(20);
+        duplicateC.add(30);
+        duplicateC.add(30);
+        duplicateC.add(30);
+        duplicateDifferentOrder.add(20);
+        duplicateDifferentOrder.add(30);
+        duplicateDifferentOrder.add(10);
+        duplicateDifferentOrder.add(30);
+        duplicateDifferentOrder.add(20);
+        duplicateDifferentOrder.add(30);
+        duplicateIndexedBag.add(10);
+        duplicateIndexedBag.add(20);
+        duplicateIndexedBag.add(20);
+        duplicateIndexedBag.add(30);
+        duplicateIndexedBag.add(30);
+        duplicateIndexedBag.add(30);
+        duplicateIndexedBagDifferentOrder.add(20);
+        duplicateIndexedBagDifferentOrder.add(30);
+        duplicateIndexedBagDifferentOrder.add(10);
+        duplicateIndexedBagDifferentOrder.add(30);
+        duplicateIndexedBagDifferentOrder.add(20);
+        duplicateIndexedBagDifferentOrder.add(30);
 
         ArraySortedBag<Integer> unequalDifferentValues = new ArraySortedBag<>();
         unequalDifferentValues.add(110);
@@ -58,7 +105,13 @@ class ArraySortedBagEqualsTest {
         new EqualsTester().addEqualityGroup(ArraySortedBag.class)
                 .addEqualityGroup(emptyA, emptyB, emptyC, emptyIndexedBag)
                 .addEqualityGroup(singletonA, singletonB, singletonC, singletonIndexedBag)
-                .addEqualityGroup(manyA, manyB, manyC, manyIndexedBag, manyIndexedBagDifferentOrder)
+                .addEqualityGroup(manyA, manyB, manyC, manyDifferentOrder, manyIndexedBag, manyIndexedBagDifferentOrder)
+                .addEqualityGroup(duplicateA,
+                        duplicateB,
+                        duplicateC,
+                        duplicateDifferentOrder,
+                        duplicateIndexedBag,
+                        duplicateIndexedBagDifferentOrder)
                 .addEqualityGroup(unequalDifferentValues)
                 .addEqualityGroup(unequalDifferentSizes)
                 .addEqualityGroup(unequalSomeEqual)
