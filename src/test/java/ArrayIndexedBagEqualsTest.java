@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 class ArrayIndexedBagEqualsTest {
 
     @Test
-    @SuppressWarnings("UnstableApiUsage")
     public void equals_verify_contract() {
         ArrayIndexedBag<Integer> emptyA = new ArrayIndexedBag<>();
         ArrayIndexedBag<Integer> emptyB = new ArrayIndexedBag<>();
@@ -116,5 +115,29 @@ class ArrayIndexedBagEqualsTest {
                 .addEqualityGroup(unequalDifferentSizes)
                 .addEqualityGroup(unequalSomeEqual)
                 .testEquals();
+    }
+
+    private <T> ArrayIndexedBag<T> of(T... ts) {
+        ArrayIndexedBag<T> indexedBag = new ArrayIndexedBag<>();
+        for (T element : ts) {
+            indexedBag.add(element);
+        }
+        return indexedBag;
+    }
+
+    private <T> ArrayIndexedBag<T> ofCapacity(T... ts) {
+        ArrayIndexedBag<T> indexedBag = new ArrayIndexedBag<>(1000);
+        for (T element : ts) {
+            indexedBag.add(element);
+        }
+        return indexedBag;
+    }
+
+    private <T extends Comparable<? super T>> ArraySortedBag<T> ofSorted(T... ts) {
+        ArraySortedBag<T> sortedBag = new ArraySortedBag<>();
+        for (T element : ts) {
+            sortedBag.add(element);
+        }
+        return sortedBag;
     }
 }
