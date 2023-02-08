@@ -30,9 +30,7 @@ class ArrayIndexedBagEqualsTest {
         ArraySortedBag<Integer> duplicateSortedBagDifferentOrder = ofSorted(20, 30, 10, 30, 20, 30);
 
         ArrayIndexedBag<Integer> unequalDifferentValues = of(110, 120, 130);
-
         ArrayIndexedBag<Integer> unequalDifferentSizes = of(10, 20);
-
         ArrayIndexedBag<Integer> unequalSomeEqual = of(20, 30, 40);
 
         new EqualsTester().addEqualityGroup(ArrayIndexedBag.class)
