@@ -204,7 +204,7 @@ Example Growth Functions and Their Order
       - :math:`O(?)`
     * - :math:`t(n) = 10n \log_{2}(n) + 5`
       - :math:`O(?)`
-    * - :math:`t(n) = 3n^{2} + 3n^{3} + 3`
+    * - :math:`t(n) = 3n^{3} + 3n^{2} + 3`
       - :math:`O(?)`
     * - :math:`t(n) = 2^{n} + 18n^{10}`
       - :math:`O(?)`
