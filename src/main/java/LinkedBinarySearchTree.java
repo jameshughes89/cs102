@@ -426,12 +426,14 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
         if (!(o instanceof BinaryTree)) {
             return false;
         }
-        BinaryTree<T> that = (BinaryTree<T>) o;
+        BinaryTree<?> that = (BinaryTree<?>) o;
         if (this.size() != that.size()) {
             return false;
         }
-        for (T element : this) {
-            if (this.count(element) != that.count(element)) {
+        Iterator<T> thisIterator = this.preOrderIterator();
+        Iterator<?> thatIterator = that.preOrderIterator();
+        while (thisIterator.hasNext()) {
+            if (!Objects.equals(thisIterator.next(), thatIterator.next())) {
                 return false;
             }
         }
