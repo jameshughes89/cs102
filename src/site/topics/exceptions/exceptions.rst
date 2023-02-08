@@ -27,9 +27,15 @@ Errors
 
     * They're generally **very** abnormal situations
 
-
 * Typically, these are not to be caught and handled
 * Errors and regarded as *unchecked* for the purpose of compile-time checks
+
+* To understand why these are not caught, consider Java's `OutOfMemoryError <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/OutOfMemoryError.html>`_
+
+    * Gets thrown if the Java Virtual Machine (JVM) cannot allocate enough memory for the creation of a new object
+
+
+* If the JVM runs out of memory, there is nothing the program can do to resolve this situation
 
 
 
