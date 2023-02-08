@@ -324,6 +324,57 @@ For Each
 
 
 
+Equality of Stacks (and Queues)
+===============================
+
+* Consider the ``equals`` methods from :download:`ArrayStack </../main/java/ArrayStack.java>` and :download:`LinkedStack </../main/java/LinkedStack.java>`
+
+.. literalinclude:: /../main/java/ArrayStack.java
+    :language: java
+    :lineno-match:
+    :lines: 98-108
+
+
+.. literalinclude:: /../main/java/LinkedStack.java
+    :language: java
+    :lineno-match:
+    :lines: 73-95
+
+
+* It should be possible to check equality between ``Stack`` objects, regardless of their implementation
+* However, with the current implementation, it's not possible to compare an ``ArrayStack`` and ``LinkedStack``
+
+* A solution to this problem is to make ``Stacks`` implement ``iterable``
+* If this is done, there is a common way to iterate over the ``Stack`` independent of the underlying implementation
+
+
+.. code-block:: Java
+    :linenos:
+
+    @Override
+    public final boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Stack<?> that = (Stack<?>) o;
+        if (this.size() != that.size()) {
+            return false;
+        }
+        Iterator<T> thisIterator = this.iterator();
+        Iterator<?> thatIterator = that.iterator();
+        while (thisIterator.hasNext()) {
+            if (!Objects.equals(thisIterator.next(), thatIterator.next())) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+
 For Next Time
 =============
 

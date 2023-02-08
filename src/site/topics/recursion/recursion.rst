@@ -276,76 +276,96 @@ Recursive Programming
 
 
 
-Observations
-============
+Some Observations
+=================
 
-* Notice how in the call ``recursiveFactorial(4)``, we would have made a call to ``recursiveFactorial(3)``
-* If I ever call this function again, but want to check ``recursiveFactorial(5)``, we would have to call ``recursiveFactorial(4)`` again
-* In other words, to know ``recursiveFactorial(x)``, we will be answering ``recursiveFactorial(x - 1)``, ``recursiveFactorial(x - 2)``, ... ``recursiveFactorial(1)``, and ``recursiveFactorial(0)``
+* Notice how ``recursiveFactorial(4)`` makes a call to  ``recursiveFactorial(3)``
+* If ``recursiveFactorial(5)`` was called, it would need to calculate ``recursiveFactorial(4)`` *again*
+* In other words, to know ``recursiveFactorial(x)``, an answer to ``recursiveFactorial(x - 1)``, ``recursiveFactorial(x - 2)``, ... ``recursiveFactorial(1)``, and ``recursiveFactorial(0)`` must be calculated
 
-* You may have also noticed the relationship between the Stack ADT we discussed and the call stack
+* One many also notice the relationship between the ``Stack`` ADT and the call stack
 
-* Additionally, anything you do with iteration you can do with recursion, and anything you do with recursion you can do with iteration
-* However, just because you *can* doesn't mean you *should*
-    * Based on the design of the computational systems we use, recursion creates additional overhead that slows things down
-        * Creating frames
-        * Pushing/popping from the stack
-    * In many programming languages, the compilers will even optimize certain types of recursive functions by translating them to an iterative version
-    * This does not mean, however, that one should not use recursion as sometimes recursive implementations are elegant and easier for you to write
-        * Simplicity of your code may be tradeoff --- remember, sometimes *good enough is good enough*
-        * If you end up actually needing to improve performance later, then do that later
+* Additionally, anything that can be done with iteration can be done with recursion, and *vice versa*
+* However, just because it *can* doesn't mean it *should*
+
+    * Based on the design of the computational systems used, recursion creates additional overhead that slows things down
+
+        * Creating call frames
+        * Pushing/popping from the call stack
+
+
+    * In some programming languages, like Java, compilers will optimize certain types of recursive functions by translating them to an iterative version
+    * This does not mean, however, that one should not use recursion as sometimes recursive implementations are elegant and easier to write and understand
+
+        * Simplicity of code may be tradeoff --- remember, sometimes *good enough is good enough*
+        * If performance needs improving *later*, do that later
 
 
 .. warning::
 
-    The computers we use are one type of computational system, and although recursion often ends up being slower than
-    iteration on our computational systems, this is due to how they operate. Recursion is not intrinsically a slower
-    process within our universe when compared to iteration.
+    The computers we as humans use are one type of computational system, and although recursion often ends up being
+    slower than iteration on these computational systems, this is due to how the computational systems operate.
+    Recursion is not intrinsically a slower process when compared to iteration.
+
 
 
 Computational Complexity
 ========================
 
-* When analysing iterative code, one of the tricks was to think about how many operations will be needed relative to an input size ``n`` and how much the amount of work done scales as we change ``n``
+* When analysing code, it is important to think about many operations will be needed relative to an input size ``n``
+* Further, it is important to think about how much the amount of work done scales as ``n`` changes
 
 * When looking at ``iterativeFactorial(n)``
-    * We see there are a few constant time operations (do not depend on ``n``)
-    * But we see the loop running constant time work that runs ``n`` times
+
+    * There are a few constant time operations (do not depend on ``n``)
+    * There is a loop doing constant time work that runs ``n`` times
     * Therefore, :math:`O(n)`
 
-* When analyzing recursive functions, the idea is the same --- how many operations will be needed relative to an input size ``n`` and how much the amount of work done scales as we change ``n``
+
+* When analyzing recursive functions, the idea is the same
+
+    * How many operations will be needed relative to an input size ``n``
+    * How much the amount of work done scales as ``n`` changes
+
 
 * When looking at ``recursiveFactorial(n)``
-    * We see there are constant time operations
-    * We also see the recursive call, which means the code inside this function can run repeatedly
+
+    * There are constant time operations
+    * There is a recursive call, which means the code inside this function can run repeatedly
     * The question then is, how many times will ``recursiveFactorial(n)`` get called?
 
-    +---------------------------------------+-----------------------------+
-    | *Times Function Runs*                 | *Function Call*             |
-    +=======================================+=============================+
-    | 1                                     | ``recursiveFactorial(n)``   |
-    +---------------------------------------+-----------------------------+
-    | 2                                     | ``recursiveFactorial(n-1)`` |
-    +---------------------------------------+-----------------------------+
-    | 3                                     | ``recursiveFactorial(n-2)`` |
-    +---------------------------------------+-----------------------------+
-    | ...                                   | ``recursiveFactorial(...)`` |
-    +---------------------------------------+-----------------------------+
-    | n - 1                                 | ``recursiveFactorial(2)``   |
-    +---------------------------------------+-----------------------------+
-    | n                                     | ``recursiveFactorial(1)``   |
-    +---------------------------------------+-----------------------------+
-    | n + 1                                 | ``recursiveFactorial(0)``   |
-    +---------------------------------------+-----------------------------+
+.. list-table:: Number of times ``recursiveFactorial`` is called with input ``n``.
+    :widths: 50 50
+    :header-rows: 1
 
-* Therefore, ``recursiveFactorial(n)`` is also linear --- :math:`O(n)`
+    * - Accumulative times run
+      - Function call
+    * - :math:`1`
+      - ``recursiveFactorial(n)``
+    * - :math:`2`
+      - ``recursiveFactorial(n - 1)``
+    * - :math:`3`
+      - ``recursiveFactorial(n - 2)``
+    * - :math:`\dots`
+      - ``recursiveFactorial( ... )``
+    * - :math:`n - 1`
+      - ``recursiveFactorial(2)``
+    * - :math:`n`
+      - ``recursiveFactorial(1)``
+    * - :math:`n + 1`
+      - ``recursiveFactorial(0)``
+
+
+* With input ``n``, ``recursiveFactorial`` runs a total of :math:`n + 1` times --- :math:`O(n)`
+
+    * It's linear
 
 
 Fibonacci
 ---------
 
 * Consider the Fibonacci numbers
-* If you are not familiar with this sequence, see if you can figure out how it's created
+* If not familiar with this sequence, try to figure out how it is created
 
     :math:`0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, ...`
 
@@ -370,8 +390,7 @@ Fibonacci
 
 
 * To generate this sequence, start with :math:`0, 1`, then to get the subsequent number, add the proceeding two together
-* Take a moment to think about how you would write an iterative method to generate these numbers
-    * An example is below --- make sure you understand this
+
 
 .. code-block:: java
     :linenos:
@@ -380,22 +399,25 @@ Fibonacci
         if (n == 0) {
             return 0;
         }
-        int prev = 0;
+        int previous = 0;
         int current = 1;
         int next = 0;
-        for (int i = 2; i <= n; ++i) {
-            next = prev + current;
-            prev = current;
+        for (int i = 2; i <= n; i++) {
+            next = current + previous;
+            previous = current;
             current = next;
         }
         return current;
     }
 
 
+
 * What is the computational complexity of ``iterativeFibonacci(n)``?
+
     * :math:`O(n)`
 
-* We can write a nice recursive definition for the Fibonacci numbers:
+
+* The recursive definition of the Fibonacci numbers is quite elegant
 
 .. math::
 
@@ -406,9 +428,6 @@ Fibonacci
         F_{n-1} + F_{n-2} & \text{if $n > 1$} \\
     \end{cases}
 
-
-* Then take a moment and think about how this can be turned into a recursive method
-    * Again, example below, but take the time to understand this
 
 .. code-block:: java
     :linenos:
@@ -423,22 +442,33 @@ Fibonacci
 
 * What is the computational complexity of ``recursiveFibonacci(n)``?
 * This may feel a little less straight forward compared to ``recursiveFactorial(n)``, but the idea is the same
+
     * The function has constant time operations
-    * But we see that there are recursive calls, so, how many times does this function get called?
-
-.. image:: fibonacci.png
-   :width: 500 px
-   :align: center
+    * But there are recursive calls, so, how many times does this function get called?
 
 
-* When analyzing *factorial* (not Fibonacci), we saw that each function call made one or zero recursive calls
+.. figure:: fibonacci.png
+    :width: 500 px
+    :align: center
+
+    Visualization of the recursive function calls when calling ``recursiveFibonacci(6)``. Unless it is the base case,
+    each call to ``recursiveFibonacci`` produces two more recursive calls to ``recursiveFibonacci``. Notice how many
+    times ``recursiveFibonacci(2)`` is calculated --- 5.
+
+
+* When analyzing *factorial* (not Fibonacci), it was observed that each function call made one or zero recursive calls
+
     * There was ``1`` recursive call for each of the ``n`` values between ``1`` -- ``n``
     * There was no recursive call in the base case
 
-* When looking at ``recursiveFibonacci(n)``, how many recursive calls are there for each of the ``n`` values?
-    * Two (:math:`2`)
 
-* But each new call will call two more
+* When looking at ``recursiveFibonacci(n)``, how many potential recursive calls are there for each of the ``n`` values?
+
+    * Two
+
+
+* Each new call will call two more, which will call two more, which will call two more...
+
     * :math:`1`
     * :math:`2`
     * :math:`4`
@@ -448,74 +478,98 @@ Fibonacci
     * :math:`64`
     * :math:`\dots`
 
-* You may recognize this pattern as :math:`2^{n}`
-    * Roughly speaking, we are doubling the number of function calls for each of the :math:`n`
 
-* In other words, this recursive implementation is :math:`O*(2^{n})`
-* If given the choice between something that grows linearly, :math:`O(n)`, and something that grows exponentially, :math:`O(n^{n})`, you're going to want to take the linear option
-* Despite the simple elegance of this recursive fibonacci implementation, this would perhaps be a good example of going back and improving the implementation for better performance
+* This patten follows :math:`2^{n}`
 
-* But, why is the recursive version so much worse than the iterative one?
-    * Look at the image for a hint
-    * How many times are we calculating the third Fibonacci number in each version?
+    * Roughly speaking, the number of recursive function calls doubles each step
+
+
+* In other words, this recursive implementation is :math:`O(2^{n})`
+
+* If given the choice between something that grows linearly or something that grows exponentially, take the linear
+* Despite the simple elegance of the recursive fibonacci implementation, this would be a good example of going back and improving the implementation for better performance
+
+* To get a sense of why the recursive version is so much worse than the iterative
+
+    * Look at the above figure for a hint
+    * When calculating ``recursiveFibonacci(6)``, ``recursiveFibonacci(2)`` is calculated a total of :math:`5` times
+    * The iterative implementation would have only calculated this once
+
 
 
 Towers of Hanoi
 ===============
 
 * Given
+
     * Three pegs
     * Several disks that can be added or removed from the pegs
     * All disks vary in size
     * All disks start on one peg with the largest at the bottom and the smallest at the top
 
-* The goal is to move all disks from one peg to another
-* With the following constraints
+
+* The goal is to move all disks from one peg to another with the following constraints
+
     * Only one disk can move at a time
     * A disk may never be placed on top of any smaller disk
     * All disks must be on some peg at all times, with the exception of the one currently being moved
 
-.. image:: hanoi_tower.png
+
+.. figure:: hanoi_tower.png
     :width: 500 px
     :align: center
     :alt: This image is taken from wikipedia: https://en.wikipedia.org/wiki/File:Tower_of_Hanoi.jpeg
 
+    Example Towers of Hanoi puzzle.
+
 
 * `There is a legend that goes with this puzzle <https://en.wikipedia.org/wiki/Tower_of_Hanoi#Origins>`_
 
-    .. image:: hanoi_tower.gif
-        :width: 500 px
-        :align: center
-        :alt: This image is taken from wikipedia: https://en.wikipedia.org/wiki/File:Iterative_algorithm_solving_a_6_disks_Tower_of_Hanoi.gif
+
+.. figure:: hanoi_tower.gif
+    :width: 500 px
+    :align: center
+    :alt: This image is taken from wikipedia: https://en.wikipedia.org/wiki/File:Iterative_algorithm_solving_a_6_disks_Tower_of_Hanoi.gif
+
+    Animation of Towers of Hanoi being solved.
 
 
 * Towers of Hanoi is a classic example of where a recursive function is beautifully succinct
-* The trick is to consider that whenever we are moving a disk, there is a *source* peg, a *destination* peg, and an *extra* peg
-* Additionally, what is considered the source, destination, and extra peg is relative to when and what disk is being moved
+* The trick is to consider that, whenever moving a disk, there is a *source* peg, a *destination* peg, and an *extra* peg
+* Further, what is considered the source, destination, and extra peg is relative to when and what disk is being moved
 
-* Equipped with this information, to move :math:`n` disks from the source to the destination, we simply
-    1. Move the :math:`n - 1` disks from source peg to the extra peg
-    2. Move the :math:`n^{th}` disk to the destination peg
-    3. Move the :math:`n - 1` disks from the extra peg to the destination peg
+* Equipped with this information, to move :math:`n` disks from the source to the destination, simply
+
+    #. Move the :math:`n - 1` disks from source peg to the extra peg
+    #. Move the :math:`n^{th}` disk to the destination peg
+    #. Move the :math:`n - 1` disks from the extra peg to the destination peg
 
 * Steps 1 and 3 may feel like cheating, but notice that they are actually recursive calls
 * Also, what one considers the source, destination, and extra peg will change when moving the :math:`n - 1` disks
-    * Looking at the 1st step, it says move the :math:`n - 1` disks from source peg to the extra peg
-    * Ok, how do we do that?
-        1. Move the :math:`(n - 1) - 1` disks from source peg to the extra peg
-        2. Move the :math:`(n - 1)^{th}` disk from the source to the destination
-        3. Move the :math:`(n - 1) - 1` disks from extra peg to the destination peg
+
+    * Looking at the first step, it says move the :math:`n - 1` disks from source peg to the extra peg
+    * Ok, how is that done?
+
+        #. Move the :math:`(n - 1) - 1` disks from source peg to the extra peg
+        #. Move the :math:`(n - 1)^{th}` disk from the source to the destination
+        #. Move the :math:`(n - 1) - 1` disks from extra peg to the destination peg
+
+
     * But, the extra and destination pegs are different for the :math:`(n - 1)` disks
+
         * The extra peg when moving :math:`n` disks has become the destination peg when moving :math:`(n - 1)`
         * Similarly, the destination peg when moving :math:`n` disks is this recursive step's extra peg
 
+
 .. warning::
 
-    This is a non-trivial problem and algorithm. If you are struggling with these ideas, don't worry too much.
+    This is a non-trivial problem and algorithm. If the ideas are difficult to grasp, don't worry too much.
 
 
-For next time
+
+For Next Time
 =============
 
 * Read Chapter 8
+
     * 28 pages
