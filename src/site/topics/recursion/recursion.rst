@@ -409,9 +409,9 @@ Fibonacci
     :width: 500 px
     :align: center
 
-    Visualization of the recursive function calls when calling ``recursiveFactorial(6)``. Unless it is the base case,
-    each call to ``recursiveFactorial`` produces two more recursive calls to ``recursiveFactorial``. Notice how many
-    times ``recursiveFactorial(2)`` is calculated --- 5.
+    Visualization of the recursive function calls when calling ``recursiveFibonacci(6)``. Unless it is the base case,
+    each call to ``recursiveFibonacci`` produces two more recursive calls to ``recursiveFibonacci``. Notice how many
+    times ``recursiveFibonacci(2)`` is calculated --- 5.
 
 
 * When analyzing *factorial* (not Fibonacci), it was observed that each function call made one or zero recursive calls
@@ -450,7 +450,7 @@ Fibonacci
 * To get a sense of why the recursive version is so much worse than the iterative
 
     * Look at the above figure for a hint
-    * When calculating ``recursiveFactorial(6)``, ``recursiveFactorial(2)`` is calculated a total of :math:`5` times
+    * When calculating ``recursiveFibonacci(6)``, ``recursiveFibonacci(2)`` is calculated a total of :math:`5` times
     * The iterative implementation would have only calculated this once
 
 
