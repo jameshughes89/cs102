@@ -165,7 +165,8 @@ Asymptotic Growth & Big-O
 * The actual growth function is not that important
 * The *asymptotic complexity* is important
 
-    * The time the algorithm takes as a function of* :math:`n` *will grow like...*
+    * The time the algorithm takes, as a function of :math:`n`, *will grow like...*
+
 
 * The *order* of the algorithm is specified using *Big-O notation*
 * The above example, :math:`t(n) = 15n^{2} + 45n`, has an order of :math:`O(n^{2})` since it grows like :math:`n^{2}`
