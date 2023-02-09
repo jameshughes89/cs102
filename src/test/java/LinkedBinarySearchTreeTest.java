@@ -996,6 +996,50 @@ public class LinkedBinarySearchTreeTest {
                     assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(11));
                 }
 
+                @Test
+                void removeMin_many_returnsElement() {
+                    assertEquals(1, classUnderTest.removeMin());
+                }
+
+                @Test
+                void removeMin_many_removesElement() {
+                    classUnderTest.removeMin();
+                    assertFalse(classUnderTest.contains(1));
+                }
+
+                @Test
+                void removeMax_many_returnsElement() {
+                    assertEquals(15, classUnderTest.removeMax());
+                }
+
+                @Test
+                void removeMax_many_removesElement() {
+                    classUnderTest.removeMax();
+                    assertFalse(classUnderTest.contains(15));
+                }
+
+                @Test
+                void min_many_returnsElement() {
+                    assertEquals(1, classUnderTest.min());
+                }
+
+                @Test
+                void min_many_unchanged() {
+                    classUnderTest.min();
+                    assertEquals(preState, classUnderTest);
+                }
+
+                @Test
+                void max_many_returnsElement() {
+                    assertEquals(15, classUnderTest.max());
+                }
+
+                @Test
+                void max_many_unchanged() {
+                    classUnderTest.max();
+                    assertEquals(preState, classUnderTest);
+                }
+
             }
         }
     }
