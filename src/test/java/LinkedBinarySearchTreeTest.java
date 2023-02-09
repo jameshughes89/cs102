@@ -1062,6 +1062,16 @@ public class LinkedBinarySearchTreeTest {
                     assertEquals(0, classUnderTest.count(11));
                 }
 
+                @Test
+                void isEmpty_many_returnsFalse() {
+                    assertFalse(classUnderTest.isEmpty());
+                }
+
+                @Test
+                void size_many_returnsCorrectSize() {
+                    assertEquals(11, classUnderTest.size());
+                }
+
 
             }
         }
