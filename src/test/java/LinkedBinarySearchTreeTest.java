@@ -897,7 +897,17 @@ public class LinkedBinarySearchTreeTest {
 
             @Test
             void count_nonExistingElement_returnsZero() {
-                assertEquals(0, classUnderTest.count(10));
+                assertEquals(0, classUnderTest.count(11));
+            }
+
+            @Test
+            void isEmpty_singleton_returnsFalse() {
+                assertFalse(classUnderTest.isEmpty());
+            }
+
+            @Test
+            void size_singleton_returnsOne() {
+                assertEquals(1, classUnderTest.size());
             }
 
 
