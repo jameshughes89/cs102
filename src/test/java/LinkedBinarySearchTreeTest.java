@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -969,6 +971,29 @@ public class LinkedBinarySearchTreeTest {
                     preState.add(2);
                     preState.add(3);
                     preState.add(1);
+                }
+
+                @Test
+                void add_many_returnsTrue() {
+                    assertTrue(classUnderTest.add(11));
+                }
+
+                @ParameterizedTest
+                @CsvSource({"1, 4, 6, 8, 10"})
+                void remove_existingElement_returnsTrue(Integer element) {
+                    assertTrue(classUnderTest.remove(element));
+                }
+
+                @ParameterizedTest
+                @CsvSource({"1, 4, 6, 8, 10"})
+                void remove_existingElement_removesElement(Integer element) {
+                    classUnderTest.remove(element);
+                    assertFalse(classUnderTest.contains(element));
+                }
+
+                @Test
+                void remove_nonExistentElement_throwsNoSuchElementException() {
+                    assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(11));
                 }
 
             }
