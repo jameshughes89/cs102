@@ -1040,6 +1040,29 @@ public class LinkedBinarySearchTreeTest {
                     assertEquals(preState, classUnderTest);
                 }
 
+                @ParameterizedTest
+                @CsvSource({"1, 4, 6, 8, 10"})
+                void contains_existingElement_returnsTrue(Integer element) {
+                    assertTrue(classUnderTest.contains(element));
+                }
+
+                @Test
+                void contains_nonExistingElement_returnsFalse() {
+                    assertFalse(classUnderTest.contains(11));
+                }
+
+                @ParameterizedTest
+                @CsvSource({"1, 4, 6, 8, 10"})
+                void count_existingElement_returnsOne(Integer element) {
+                    assertEquals(1, classUnderTest.count(element));
+                }
+
+                @Test
+                void count_nonExistingElement_returnsZero() {
+                    assertEquals(0, classUnderTest.count(11));
+                }
+
+
             }
         }
     }
