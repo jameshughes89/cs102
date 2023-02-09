@@ -858,6 +858,28 @@ public class LinkedBinarySearchTreeTest {
                 assertEquals(new LinkedBinarySearchTree<>(), classUnderTest);
             }
 
+            @Test
+            void min_singleton_returnsElement() {
+                assertEquals(10, classUnderTest.min());
+            }
+
+            @Test
+            void min_singleton_unchanged() {
+                classUnderTest.min();
+                assertEquals(preState, classUnderTest);
+            }
+
+            @Test
+            void max_singleton_returnsElement() {
+                assertEquals(10, classUnderTest.max());
+            }
+
+            @Test
+            void max_singleton_unchanged() {
+                classUnderTest.max();
+                assertEquals(preState, classUnderTest);
+            }
+
 
         }
 
