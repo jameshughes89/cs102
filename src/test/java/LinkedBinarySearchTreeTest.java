@@ -832,7 +832,7 @@ public class LinkedBinarySearchTreeTest {
             }
 
             @Test
-            void remove_nonexistentElement_throwsNoSuchElementException() {
+            void remove_nonExistentElement_throwsNoSuchElementException() {
                 assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(11));
             }
 
@@ -878,6 +878,26 @@ public class LinkedBinarySearchTreeTest {
             void max_singleton_unchanged() {
                 classUnderTest.max();
                 assertEquals(preState, classUnderTest);
+            }
+
+            @Test
+            void contains_existingElement_returnsTrue() {
+                assertTrue(classUnderTest.contains(10));
+            }
+
+            @Test
+            void contains_nonExistingElement_returnsFalse() {
+                assertFalse(classUnderTest.contains(11));
+            }
+
+            @Test
+            void count_existingElement_returnsOne() {
+                assertEquals(1, classUnderTest.count(10));
+            }
+
+            @Test
+            void count_nonExistingElement_returnsZero() {
+                assertEquals(0, classUnderTest.count(10));
             }
 
 
