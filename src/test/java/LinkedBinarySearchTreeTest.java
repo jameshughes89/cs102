@@ -787,7 +787,7 @@ public class LinkedBinarySearchTreeTest {
         }
 
         @Nested
-        class Singleton {
+        class WhenSingleton {
 
             @BeforeEach
             void addSingleton() {
@@ -928,6 +928,49 @@ public class LinkedBinarySearchTreeTest {
             @Test
             void toString_empty_returnsEmptyString() {
                 assertEquals("10, ", classUnderTest.toString());
+            }
+
+            @Nested
+            class WhenMany {
+
+                /***
+                 * Creates the linked binary search tree such that it looks like the following:
+                 *
+                 *              10
+                 *            /   \
+                 *           7     15
+                 *         /  \
+                 *        4     8
+                 *      /   \    \
+                 *     2     6   9
+                 *   /  \   /
+                 *  1    3  5
+                 *
+                 */
+                @BeforeEach
+                void addMany() {
+                    classUnderTest.add(15);
+                    classUnderTest.add(7);
+                    classUnderTest.add(8);
+                    classUnderTest.add(9);
+                    classUnderTest.add(4);
+                    classUnderTest.add(6);
+                    classUnderTest.add(5);
+                    classUnderTest.add(2);
+                    classUnderTest.add(3);
+                    classUnderTest.add(1);
+                    preState.add(15);
+                    preState.add(7);
+                    preState.add(8);
+                    preState.add(9);
+                    preState.add(4);
+                    preState.add(6);
+                    preState.add(5);
+                    preState.add(2);
+                    preState.add(3);
+                    preState.add(1);
+                }
+
             }
         }
     }
