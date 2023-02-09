@@ -470,17 +470,27 @@ public class LinkedBinarySearchTreeTest {
             class WhenDuplicate {
 
                 /**
-                 * Elements are such that it checks various counts with various configurations of duplicates. For
-                 * example, duplicate directly to the right and some in the right's left subtree.
+                 * Elements are such that it checks a leaf (1), internal node with two children (4), internal node
+                 * with only a left child (6), internal node with only a right child (8), and the root node (10).
                  *
                  * @return A stream of the elements for testing
                  */
-                static Stream<Arguments> existingFriendsStreamAndIndices() {
-                    return Stream.of(Arguments.of(1, 3),
-                            Arguments.of(2, 5),
-                            Arguments.of(2, 10),
-                            Arguments.of(3, 2),
-                            Arguments.of(3, 7));
+                static Stream<Integer> duplicateElements() {
+                    return Stream.of(3, 5, 10, 2, 7);
+                }
+
+                /**
+                 * Elements are such that it checks various counts with various configurations of duplicates. For
+                 * example, duplicate directly to the right and some in the right's left subtree.
+                 *
+                 * @return A stream of the elements for testing along with their expected counts
+                 */
+                static Stream<Arguments> duplicateElementsAndCounts() {
+                    return Stream.of(Arguments.of(3, 1),
+                            Arguments.of(5, 2),
+                            Arguments.of(10, 2),
+                            Arguments.of(2, 3),
+                            Arguments.of(7, 3));
                 }
 
                 /***
@@ -526,6 +536,21 @@ public class LinkedBinarySearchTreeTest {
                     preState.add(3);
                 }
 
+                @ParameterizedTest
+                @MethodSource("duplicateElementsAndCounts")
+                void remove_existingElement_removesOneOccurrence(Integer element, int count) {
+                    classUnderTest.remove(element);
+                    assertEquals(count - 1, classUnderTest.count(element));
+                }
+
+                // removeMin?
+                // removeMax?
+
+                @ParameterizedTest
+                @MethodSource("duplicateElementsAndCounts")
+                void count_existingElement_returnsCorrectCount(Integer element, int count) {
+                    assertEquals(count, classUnderTest.count(element));
+                }
             }
         }
     }
