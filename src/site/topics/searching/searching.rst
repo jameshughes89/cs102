@@ -29,19 +29,18 @@ Searching
 Linear Search
 =============
 
-* Linear search has been used several times already
 * Start at the beginning of the ``haystack`` and sequentially look at each element until the ``needle`` is found
 
     * If the ``needle`` is found, then conclude that it is there
     * If the end of the ``haystack`` is reached without finding the ``needle``, then conclude that it is not there
 
 
-* Notice that this description of the algorithm doesn't really go into any more details
+* Notice that this description of the algorithm doesn't go into any more details
 
     * It is fairly high-level --- abstract
 
 
-* The computational complexity of this algorithm has already been discussed
+* The computational complexity of this algorithm is linear --- :math:`O(n)`
 
     * Worst case scenario, every element in the ``haystack`` was looked at before making any conclusion --- linear :math:`O(n)`
     * Best case scenario, the ``needle`` is the first element in the ``haystack`` --- constant :math:`O(1)`
@@ -66,25 +65,20 @@ Iterative
 ---------
 
 * Below is a generic implementation of a linear search on an array of type ``T``
-* Other than being a generic method, this should be something you are familiar with
 
-.. code-block:: java
-    :linenos:
+.. literalinclude:: /../main/java/SearchingFunctions.java
+    :language: java
+    :lineno-match:
+    :lines: 7-14
 
-    public static <T> int iterativeLinearSearch(T needle, T[] haystack) {
-        for (int i = 0; i < haystack.length; ++i) {
-            if (haystack[i].equals(needle)) {
-                return i;
-            }
-        }
-        return -1;
-    }
 
-* This iterative implementation is also fairly similar to the high-level description of the algorithm
-    * Start at ``i = 0`` --- the beginning of the array
-    * If the element at index ``i`` is what we're looking for, we've found it and we're done
+* This iterative implementation is fairly similar to the high-level description of the algorithm
+
+    * Start at ``i = 0`` --- the beginning of the ``haystack``
+    * If the element at index ``i`` is the ``needle``, conclude that it's there
     * Otherwise continue and increment ``i``
-    * If we ever look at all indices and do not find it, then we conclude that it's not there and we're done
+    * If the end of the ``haystack`` is reached without finding the ``needle``, then conclude that it is not there
+
 
 
 Recursive
