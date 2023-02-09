@@ -2,11 +2,8 @@
 Searching
 *********
 
-* For the purposes of this course, searching is looking for a specified *thing* in *some collection* to know if it exists within the collection
+* For the purposes of this topic, searching is the process of looking for a specified *thing* in *some collection* to know if it exists within the collection
 * For example, does a given number exist within an array of numbers?
-
-    * This version of the problem will be used here
-
 
 * To write an algorithm to solve this problem, all that's needed is something that says if it's there or not
 
