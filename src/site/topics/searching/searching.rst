@@ -2,20 +2,31 @@
 Searching
 *********
 
-* For our needs, we will say we want to search for a specified *thing* in *something* and know if it exists there or not
-* For example, does a given number exist within an array of numbers
-    * We will use this version of the problem here
+* For the purposes of this course, searching is looking for a specified *thing* in *some collection* to know if it exists within the collection
+* For example, does a given number exist within an array of numbers?
 
-* If we want to write an algorithm to solve this problem, all we really need is something that tells us if it's there or not
+    * This version of the problem will be used here
+
+
+* To write an algorithm to solve this problem, all that's needed is something that says if it's there or not
+
     * That's all that's required
-    * We could write any algorithm that works
+    * Any algorithm that works would suffice
 
-* However, we're going to look at two intuitive ideas that all of you have, more or less, used in one way or another many times in your life
+
+* However, the focus here will be on two intuitive ideas that people commonly use in one way or another throughout their lives
+
     * Linear Search
     * Interpolation Search
-        * We will discuss a specific kind of interpolation search called a *binary search*
 
-* Throughout this topic, the thing we're looking for will be referred to as the *needle* and the collection we're searching will be referred to as the *haystack*
+        * A specific kind of interpolation search called a *binary search* will be discussed
+
+
+* Throughout this topic
+
+    * The thing being searched for will be referred to as the ``needle``
+    * The collection being searched through will be referred to as the ``haystack``
+
 
 
 Linear Search
