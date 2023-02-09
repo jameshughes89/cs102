@@ -6,62 +6,73 @@ class ArraySortedBagEqualsTest {
     @Test
     @SuppressWarnings("UnstableApiUsage")
     public void equals_verify_contract() {
-        ArraySortedBag<Integer> emptyA = new ArraySortedBag<>();
-        ArraySortedBag<Integer> emptyB = new ArraySortedBag<>();
-        ArraySortedBag<Integer> emptyC = new ArraySortedBag<>(1000);
-        ArrayIndexedBag<Integer> emptyIndexedBag = new ArrayIndexedBag<>();
+        ArraySortedBag<Integer> emptyA = of();
+        ArraySortedBag<Integer> emptyB = of();
+        ArraySortedBag<Integer> emptyC = ofCapacity();
+        ArrayIndexedBag<Integer> emptyIndexedBag = ofIndexed();
 
-        ArraySortedBag<Integer> singletonA = new ArraySortedBag<>();
-        ArraySortedBag<Integer> singletonB = new ArraySortedBag<>();
-        ArraySortedBag<Integer> singletonC = new ArraySortedBag<>(1000);
-        ArrayIndexedBag<Integer> singletonIndexedBag = new ArrayIndexedBag<>();
-        singletonA.add(10);
-        singletonB.add(10);
-        singletonC.add(10);
-        singletonIndexedBag.add(10);
+        ArraySortedBag<Integer> singletonA = of(10);
+        ArraySortedBag<Integer> singletonB = of(10);
+        ArraySortedBag<Integer> singletonC = ofCapacity(10);
+        ArrayIndexedBag<Integer> singletonIndexedBag = ofIndexed(10);
 
-        ArraySortedBag<Integer> manyA = new ArraySortedBag<>();
-        ArraySortedBag<Integer> manyB = new ArraySortedBag<>();
-        ArraySortedBag<Integer> manyC = new ArraySortedBag<>(1000);
-        ArrayIndexedBag<Integer> manyIndexedBag = new ArrayIndexedBag<>();
-        ArrayIndexedBag<Integer> manyIndexedBagDifferentOrder = new ArrayIndexedBag<>();
-        manyA.add(10);
-        manyA.add(20);
-        manyA.add(30);
-        manyB.add(10);
-        manyB.add(20);
-        manyB.add(30);
-        manyC.add(10);
-        manyC.add(20);
-        manyC.add(30);
-        manyIndexedBag.add(10);
-        manyIndexedBag.add(20);
-        manyIndexedBag.add(30);
-        manyIndexedBagDifferentOrder.add(30);
-        manyIndexedBagDifferentOrder.add(10);
-        manyIndexedBagDifferentOrder.add(20);
+        ArraySortedBag<Integer> manyA = of(10, 20, 30);
+        ArraySortedBag<Integer> manyB = of(10, 20, 30);
+        ArraySortedBag<Integer> manyC = ofCapacity(10, 20, 30);
+        ArraySortedBag<Integer> manyDifferentOrder = of(20, 30, 10);
+        ArrayIndexedBag<Integer> manyIndexedBag = ofIndexed(10, 20, 30);
+        ArrayIndexedBag<Integer> manyIndexedBagDifferentOrder = ofIndexed(20, 30, 10);
 
-        ArraySortedBag<Integer> unequalDifferentValues = new ArraySortedBag<>();
-        unequalDifferentValues.add(110);
-        unequalDifferentValues.add(120);
-        unequalDifferentValues.add(130);
+        ArraySortedBag<Integer> duplicateA = of(10, 20, 20, 30, 30, 30);
+        ArraySortedBag<Integer> duplicateB = of(10, 20, 20, 30, 30, 30);
+        ArraySortedBag<Integer> duplicateC = ofCapacity(10, 20, 20, 30, 30, 30);
+        ArraySortedBag<Integer> duplicateDifferentOrder = of(20, 30, 10, 30, 20, 30);
+        ArrayIndexedBag<Integer> duplicateIndexedBag = ofIndexed(10, 20, 20, 30, 30, 30);
+        ArrayIndexedBag<Integer> duplicateIndexedBagDifferentOrder = ofIndexed(20, 30, 10, 30, 20, 30);
 
-        ArraySortedBag<Integer> unequalDifferentSizes = new ArraySortedBag<>();
-        unequalDifferentSizes.add(10);
-        unequalDifferentSizes.add(20);
-
-        ArraySortedBag<Integer> unequalSomeEqual = new ArraySortedBag<>();
-        unequalSomeEqual.add(20);
-        unequalSomeEqual.add(30);
-        unequalSomeEqual.add(40);
+        ArraySortedBag<Integer> unequalDifferentValues = of(110, 120, 130);
+        ArraySortedBag<Integer> unequalDifferentSizes = of(10, 20);
+        ArraySortedBag<Integer> unequalSomeEqual = of(20, 30, 40);
 
         new EqualsTester().addEqualityGroup(ArraySortedBag.class)
                 .addEqualityGroup(emptyA, emptyB, emptyC, emptyIndexedBag)
                 .addEqualityGroup(singletonA, singletonB, singletonC, singletonIndexedBag)
-                .addEqualityGroup(manyA, manyB, manyC, manyIndexedBag, manyIndexedBagDifferentOrder)
+                .addEqualityGroup(manyA, manyB, manyC, manyDifferentOrder, manyIndexedBag, manyIndexedBagDifferentOrder)
+                .addEqualityGroup(duplicateA,
+                        duplicateB,
+                        duplicateC,
+                        duplicateDifferentOrder,
+                        duplicateIndexedBag,
+                        duplicateIndexedBagDifferentOrder)
                 .addEqualityGroup(unequalDifferentValues)
                 .addEqualityGroup(unequalDifferentSizes)
                 .addEqualityGroup(unequalSomeEqual)
                 .testEquals();
     }
+
+
+    private <T extends Comparable<? super T>> ArraySortedBag<T> of(T... ts) {
+        ArraySortedBag<T> indexedBag = new ArraySortedBag<>();
+        for (T element : ts) {
+            indexedBag.add(element);
+        }
+        return indexedBag;
+    }
+
+    private <T extends Comparable<? super T>> ArraySortedBag<T> ofCapacity(T... ts) {
+        ArraySortedBag<T> indexedBag = new ArraySortedBag<>(1000);
+        for (T element : ts) {
+            indexedBag.add(element);
+        }
+        return indexedBag;
+    }
+
+    private <T> ArrayIndexedBag<T> ofIndexed(T... ts) {
+        ArrayIndexedBag<T> sortedBag = new ArrayIndexedBag<>();
+        for (T element : ts) {
+            sortedBag.add(element);
+        }
+        return sortedBag;
+    }
+
 }

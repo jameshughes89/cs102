@@ -58,49 +58,59 @@ Growth Function
 
 
 .. list-table:: How the growth function and the individual parts of the growth function change as :math:`n` increases.
-    :widths: 50 50 50 50
+    :widths: 50 50 50 50 50
     :header-rows: 1
 
     * - :math:`n`
       - :math:`15n^{2}`
       - :math:`45n`
       - :math:`15n^{2} + 45n`
+      - :math:`\frac{15n^{2}}{15n^{2} + 45n}`
     * - 1
       - 15
       - 45
       - 60
+      - 0.25
     * - 2
       - 60
       - 90
       - 150
+      - 0.40
     * - 5
       - 375
       - 225
       - 600
+      - 0.625
     * - 10
       - 1,500
       - 450
       - 1,950
+      - 0.769230769
     * - 100
       - 150,000
       - 4,500
       - 154,500
+      - 0.970873786
     * - 1,000
       - 15,000,000
       - 450,000
       - 15,045,000
+      - 0.997008973
     * - 10,000
       - 1,500,000,000
       - 450,000
-      - 1,5000,450,000
+      - 1,500,450,000
+      - 0.99970009
     * - 100,000
       - 150,000,000,000
       - 4,500,000
       - 150,004,500,000
+      - 0.999970001
     * - 1,000,000
       - 15,000,000,000,000
       - 45,000,000
       - 15,000,045,000,000
+      - 0.999997
 
 
 * This table shows how each of the parts of the :math:`t(n)` growth function changes as :math:`n` grows
@@ -150,7 +160,7 @@ Growth Function
 Asymptotic Growth & Big-O
 =========================
 
-* Constants are not too important
+* Constants and coefficients are not too important
 * Non dominant terms are not too important
 * The actual growth function is not that important
 * The *asymptotic complexity* is important
@@ -204,7 +214,7 @@ Example Growth Functions and Their Order
       - :math:`O(?)`
     * - :math:`t(n) = 10n \log_{2}(n) + 5`
       - :math:`O(?)`
-    * - :math:`t(n) = 3n^{2} + 3n^{3} + 3`
+    * - :math:`t(n) = 3n^{3} + 3n^{2} + 3`
       - :math:`O(?)`
     * - :math:`t(n) = 2^{n} + 18n^{10}`
       - :math:`O(?)`
