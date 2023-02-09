@@ -29,27 +29,37 @@ Searching
 Linear Search
 =============
 
-* We have used linear search many times already
-* Start at the beginning of an array and sequentially look at each element until we find a matching element
-    * If we find it, then we conclude that it is there
-    * If we get to the end and do not find it, then we conclude that it is not there
+* Linear search has been used several times already
+* Start at the beginning of the ``haystack`` and sequentially look at each element until the ``needle`` is found
+
+    * If the ``needle`` is found, then conclude that it is there
+    * If the end of the ``haystack`` is reached without finding the ``needle``, then conclude that it is not there
+
 
 * Notice that this description of the algorithm doesn't really go into any more details
+
     * It is fairly high-level --- abstract
 
-* We've also discussed the computational complexity
-    * Worst case scenario, we look at every element in the array before we make a conclusion --- linear :math:`O(n)`
-    * Best case scenario, the thing we are looking for is the first element --- constant :math:`O(1)`
-    * On average, the element will be in the middle --- linear :math:`O(n)` --- remember, we ignore non-dominant terms, and :math:`1/2` is a constant, which is dominated by a linear term
-        * For every time it's the first element, it could be the last element in another search
-        * For every time it's the 2nd element, it could be in the second last position in another search
+
+* The computational complexity of this algorithm has already been discussed
+
+    * Worst case scenario, every element in the ``haystack`` was looked at before making any conclusion --- linear :math:`O(n)`
+    * Best case scenario, the ``needle`` is the first element in the ``haystack`` --- constant :math:`O(1)`
+
+    * On average, the element will be in the middle --- linear :math:`O(n)`
+
+        * For every time ``needle`` is the first element, it could be the last element in another search
+        * For every time the ``needle`` is the second element, it could be in the second last position in another search
         * ...
 
-    .. image:: linear_search.png
-       :width: 500 px
-       :align: center
 
-* In the above example, to know if something is or is not there, we would need to look at all :math:`n` elements
+.. figure:: linear_search.png
+    :width: 600 px
+    :align: center
+
+    Example linear collection of data. With a linear search, to guarantee if some ``needle`` exists within this
+    ``haystack``, each element must be looked at.
+
 
 
 Iterative
