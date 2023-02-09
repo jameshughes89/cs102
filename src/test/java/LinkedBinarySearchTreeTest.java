@@ -2,12 +2,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -935,6 +936,16 @@ public class LinkedBinarySearchTreeTest {
             @Nested
             class WhenMany {
 
+                /**
+                 * Elements are such that it checks a leaf (1), internal node with two children (4), internal node
+                 * with only a left child (6), internal node with only a right child (8), and the root node (10).
+                 *
+                 * @return A stream of the elements for testing
+                 */
+                static Stream<Integer> existingElements() {
+                    return Stream.of(1, 4, 6, 8, 10);
+                }
+
                 /***
                  * Creates the linked binary search tree such that it looks like the following:
                  *
@@ -979,13 +990,13 @@ public class LinkedBinarySearchTreeTest {
                 }
 
                 @ParameterizedTest
-                @CsvSource({"1, 4, 6, 8, 10"})
+                @MethodSource("existingElements")
                 void remove_existingElement_returnsTrue(Integer element) {
                     assertTrue(classUnderTest.remove(element));
                 }
 
                 @ParameterizedTest
-                @CsvSource({"1, 4, 6, 8, 10"})
+                @MethodSource("existingElements")
                 void remove_existingElement_removesElement(Integer element) {
                     classUnderTest.remove(element);
                     assertFalse(classUnderTest.contains(element));
@@ -1041,7 +1052,7 @@ public class LinkedBinarySearchTreeTest {
                 }
 
                 @ParameterizedTest
-                @CsvSource({"1, 4, 6, 8, 10"})
+                @MethodSource("existingElements")
                 void contains_existingElement_returnsTrue(Integer element) {
                     assertTrue(classUnderTest.contains(element));
                 }
@@ -1052,7 +1063,7 @@ public class LinkedBinarySearchTreeTest {
                 }
 
                 @ParameterizedTest
-                @CsvSource({"1, 4, 6, 8, 10"})
+                @MethodSource("existingElements")
                 void count_existingElement_returnsOne(Integer element) {
                     assertEquals(1, classUnderTest.count(element));
                 }
