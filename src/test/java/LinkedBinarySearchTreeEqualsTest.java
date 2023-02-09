@@ -16,16 +16,20 @@ public class LinkedBinarySearchTreeEqualsTest {
 
         LinkedBinarySearchTree<Integer> manyA = new LinkedBinarySearchTree<>();
         LinkedBinarySearchTree<Integer> manyB = new LinkedBinarySearchTree<>();
+        LinkedBinarySearchTree<Integer> manyDifferentTopology = new LinkedBinarySearchTree<>();
         manyA.add(10);
         manyA.add(20);
         manyA.add(30);
         manyB.add(10);
         manyB.add(20);
         manyB.add(30);
+        manyDifferentTopology.add(30);
+        manyDifferentTopology.add(10);
+        manyDifferentTopology.add(20);
 
         LinkedBinarySearchTree<Integer> duplicateA = new LinkedBinarySearchTree<>();
         LinkedBinarySearchTree<Integer> duplicateB = new LinkedBinarySearchTree<>();
-
+        LinkedBinarySearchTree<Integer> duplicateDifferentTopology = new LinkedBinarySearchTree<>();
         duplicateA.add(10);
         duplicateA.add(20);
         duplicateA.add(20);
@@ -38,14 +42,13 @@ public class LinkedBinarySearchTreeEqualsTest {
         duplicateB.add(30);
         duplicateB.add(30);
         duplicateB.add(30);
+        duplicateDifferentTopology.add(20);
+        duplicateDifferentTopology.add(30);
+        duplicateDifferentTopology.add(10);
+        duplicateDifferentTopology.add(30);
+        duplicateDifferentTopology.add(20);
+        duplicateDifferentTopology.add(30);
 
-        LinkedBinarySearchTree<Integer> unequalDifferentTopology = new LinkedBinarySearchTree<>();
-        unequalDifferentTopology.add(20);
-        unequalDifferentTopology.add(30);
-        unequalDifferentTopology.add(10);
-        unequalDifferentTopology.add(30);
-        unequalDifferentTopology.add(20);
-        unequalDifferentTopology.add(30);
 
         LinkedBinarySearchTree<Integer> unequalDifferentValues = new LinkedBinarySearchTree<>();
         unequalDifferentValues.add(110);
@@ -64,9 +67,8 @@ public class LinkedBinarySearchTreeEqualsTest {
         new EqualsTester().addEqualityGroup(LinkedBinarySearchTree.class)
                 .addEqualityGroup(emptyA, emptyB)
                 .addEqualityGroup(singletonA, singletonB)
-                .addEqualityGroup(manyA, manyB)
-                .addEqualityGroup(duplicateA, duplicateB)
-                .addEqualityGroup(unequalDifferentTopology)
+                .addEqualityGroup(manyA, manyB, manyDifferentTopology)
+                .addEqualityGroup(duplicateA, duplicateB, duplicateDifferentTopology)
                 .addEqualityGroup(unequalDifferentValues)
                 .addEqualityGroup(unequalDifferentSizes)
                 .addEqualityGroup(unequalSomeEqual)
