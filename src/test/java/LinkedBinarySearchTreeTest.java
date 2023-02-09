@@ -2,7 +2,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -910,9 +912,45 @@ public class LinkedBinarySearchTreeTest {
                 assertEquals(1, classUnderTest.size());
             }
 
+            @Test
+            void iterator_singleton_returnsElementsInCorrectOrder() {
+                List<Integer> list = new ArrayList<>();
+                classUnderTest.iterator().forEachRemaining(list::add);
+                assertEquals(List.of(10), list);
+            }
 
+            @Test
+            void preOrderIterator_singleton_returnsElementsInCorrectOrder() {
+                List<Integer> list = new ArrayList<>();
+                classUnderTest.preOrderIterator().forEachRemaining(list::add);
+                assertEquals(List.of(10), list);
+            }
+
+            @Test
+            void inOrderIterator_singleton_returnsElementsInCorrectOrder() {
+                List<Integer> list = new ArrayList<>();
+                classUnderTest.inOrderIterator().forEachRemaining(list::add);
+                assertEquals(List.of(10), list);
+            }
+
+            @Test
+            void postOrderIterator_singleton_returnsElementsInCorrectOrder() {
+                List<Integer> list = new ArrayList<>();
+                classUnderTest.postOrderIterator().forEachRemaining(list::add);
+                assertEquals(List.of(10), list);
+            }
+
+            @Test
+            void levelOrderIterator_singleton_returnsElementsInCorrectOrder() {
+                List<Integer> list = new ArrayList<>();
+                classUnderTest.levelOrderIterator().forEachRemaining(list::add);
+                assertEquals(List.of(10), list);
+            }
+
+            @Test
+            void toString_empty_returnsEmptyString() {
+                assertEquals("10, ", classUnderTest.toString());
+            }
         }
-
-
     }
 }
