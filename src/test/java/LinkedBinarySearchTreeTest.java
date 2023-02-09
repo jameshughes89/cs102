@@ -2,6 +2,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.ArrayList;
@@ -463,6 +464,68 @@ public class LinkedBinarySearchTreeTest {
                 void toString_empty_returnsEmptyString() {
                     assertEquals("1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, ", classUnderTest.toString());
                 }
+            }
+
+            @Nested
+            class WhenDuplicate {
+
+                /**
+                 * Elements are such that it checks various counts with various configurations of duplicates. For
+                 * example, duplicate directly to the right and some in the right's left subtree.
+                 *
+                 * @return A stream of the elements for testing
+                 */
+                static Stream<Arguments> existingFriendsStreamAndIndices() {
+                    return Stream.of(Arguments.of(1, 3),
+                            Arguments.of(2, 5),
+                            Arguments.of(2, 10),
+                            Arguments.of(3, 2),
+                            Arguments.of(3, 7));
+                }
+
+                /***
+                 * Creates the linked binary search tree such that it looks like the following:
+                 *
+                 *                  10
+                 *                 /  \
+                 *                5    10
+                 *              /   \
+                 *             2      7
+                 *              \    /  \
+                 *              4    5   7
+                 *             /  \      \
+                 *           2     3      8
+                 *            \          /
+                 *             2        7
+                 */
+                @BeforeEach
+                void addMany() {
+                    classUnderTest.add(10);
+                    classUnderTest.add(5);
+                    classUnderTest.add(7);
+                    classUnderTest.add(7);
+                    classUnderTest.add(8);
+                    classUnderTest.add(7);
+                    classUnderTest.add(5);
+                    classUnderTest.add(2);
+                    classUnderTest.add(4);
+                    classUnderTest.add(2);
+                    classUnderTest.add(2);
+                    classUnderTest.add(3);
+                    preState.add(10);
+                    preState.add(5);
+                    preState.add(7);
+                    preState.add(7);
+                    preState.add(8);
+                    preState.add(7);
+                    preState.add(5);
+                    preState.add(2);
+                    preState.add(4);
+                    preState.add(2);
+                    preState.add(2);
+                    preState.add(3);
+                }
+
             }
         }
     }
