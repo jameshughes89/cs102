@@ -543,9 +543,6 @@ public class LinkedBinarySearchTreeTest {
                     assertEquals(count - 1, classUnderTest.count(element));
                 }
 
-                // removeMin?
-                // removeMax?
-
                 @ParameterizedTest
                 @MethodSource("duplicateElementsAndCounts")
                 void count_existingElement_returnsCorrectCount(Integer element, int count) {
