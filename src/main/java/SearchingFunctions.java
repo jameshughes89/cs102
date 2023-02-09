@@ -14,7 +14,6 @@ public class SearchingFunctions {
     }
 
     public static <T> int recursiveLinearSearch(T needle, T[] haystack, int currentIndex) {
-        // Not Found
         if (currentIndex == haystack.length) {
             return NOT_FOUND;
         } else if (Objects.equals(haystack[currentIndex], needle)) {
