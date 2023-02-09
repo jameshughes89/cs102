@@ -167,8 +167,20 @@ public class ArraySortedBagTest {
             }
 
             @Test
+            void first_singleton_unchanged() {
+                classUnderTest.first();
+                assertEquals(preState, classUnderTest);
+            }
+
+            @Test
             void last_singleton_returnsElement() {
                 assertEquals(10, classUnderTest.last());
+            }
+
+            @Test
+            void last_singleton_unchanged() {
+                classUnderTest.last();
+                assertEquals(preState, classUnderTest);
             }
 
             @Test
@@ -298,8 +310,20 @@ public class ArraySortedBagTest {
                 }
 
                 @Test
+                void first_many_unchanged() {
+                    classUnderTest.first();
+                    assertEquals(preState, classUnderTest);
+                }
+
+                @Test
                 void last_many_returnsElement() {
                     assertEquals(50, classUnderTest.last());
+                }
+
+                @Test
+                void last_many_unchanged() {
+                    classUnderTest.last();
+                    assertEquals(preState, classUnderTest);
                 }
 
                 @ParameterizedTest
