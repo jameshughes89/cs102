@@ -1072,7 +1072,45 @@ public class LinkedBinarySearchTreeTest {
                     assertEquals(11, classUnderTest.size());
                 }
 
+                @Test
+                void iterator_many_returnsElementsInCorrectOrder() {
+                    List<Integer> list = new ArrayList<>();
+                    classUnderTest.iterator().forEachRemaining(list::add);
+                    assertEquals(List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15), list);
+                }
 
+                @Test
+                void preOrderIterator_many_returnsElementsInCorrectOrder() {
+                    List<Integer> list = new ArrayList<>();
+                    classUnderTest.preOrderIterator().forEachRemaining(list::add);
+                    assertEquals(List.of(10, 7, 4, 2, 1, 3, 6, 5, 8, 9, 15), list);
+                }
+
+                @Test
+                void inOrderIterator_many_returnsElementsInCorrectOrder() {
+                    List<Integer> list = new ArrayList<>();
+                    classUnderTest.inOrderIterator().forEachRemaining(list::add);
+                    assertEquals(List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15), list);
+                }
+
+                @Test
+                void postOrderIterator_many_returnsElementsInCorrectOrder() {
+                    List<Integer> list = new ArrayList<>();
+                    classUnderTest.postOrderIterator().forEachRemaining(list::add);
+                    assertEquals(List.of(1, 3, 2, 5, 6, 4, 9, 8, 7, 15, 10), list);
+                }
+
+                @Test
+                void levelOrderIterator_many_returnsElementsInCorrectOrder() {
+                    List<Integer> list = new ArrayList<>();
+                    classUnderTest.levelOrderIterator().forEachRemaining(list::add);
+                    assertEquals(List.of(10, 7, 15, 4, 8, 2, 6, 9, 1, 3, 5), list);
+                }
+
+                @Test
+                void toString_empty_returnsEmptyString() {
+                    assertEquals("1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, ", classUnderTest.toString());
+                }
             }
         }
     }
