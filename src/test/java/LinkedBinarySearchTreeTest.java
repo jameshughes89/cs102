@@ -2,7 +2,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -19,13 +21,6 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void add_singleton_returnsTrue() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        bst.add(10);
-        assertTrue(bst.add(11));
-    }
-
-    @Test
     void add_many_returnsTrue() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(10);
@@ -34,13 +29,6 @@ public class LinkedBinarySearchTreeTest {
         bst.add(40);
         bst.add(50);
         assertTrue(bst.add(11));
-    }
-
-    @Test
-    void remove_singleton_returnsTrue() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        bst.add(10);
-        assertTrue(bst.remove(10));
     }
 
     @Test
@@ -489,14 +477,6 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void addSingleElementToTreeResultsInItBeingTheOnlyElement() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        bst.add(99);
-        Iterator<Integer> it = bst.iterator();
-        assertEquals(99, it.next());
-    }
-
-    @Test
     void addManyElementsToTreeResultsInElementsBeingPlacedInCorrectPlace() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(50);
@@ -806,5 +786,149 @@ public class LinkedBinarySearchTreeTest {
             assertEquals("", classUnderTest.toString());
         }
 
+        @Nested
+        class Singleton {
+
+            @BeforeEach
+            void addSingleton() {
+                classUnderTest.add(10);
+                preState.add(10);
+            }
+
+            @Test
+            void add_singleton_returnsTrue() {
+                assertTrue(classUnderTest.add(11));
+            }
+
+            @Test
+            void remove_existingElement_returnsTrue() {
+                assertTrue(classUnderTest.remove(10));
+            }
+
+            @Test
+            void remove_existingElement_emptyCollection() {
+                classUnderTest.remove(10);
+                assertEquals(new LinkedBinarySearchTree<>(), classUnderTest);
+            }
+
+            @Test
+            void remove_nonExistentElement_throwsNoSuchElementException() {
+                assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(11));
+            }
+
+            @Test
+            void removeMin_singleton_returnsElement() {
+                assertEquals(10, classUnderTest.removeMin());
+            }
+
+            @Test
+            void removeMin_singleton_emptyCollection() {
+                classUnderTest.removeMin();
+                assertEquals(new LinkedBinarySearchTree<>(), classUnderTest);
+            }
+
+            @Test
+            void removeMax_singleton_returnsElement() {
+                assertEquals(10, classUnderTest.removeMax());
+            }
+
+            @Test
+            void removeMax_singleton_emptyCollection() {
+                classUnderTest.removeMax();
+                assertEquals(new LinkedBinarySearchTree<>(), classUnderTest);
+            }
+
+            @Test
+            void min_singleton_returnsElement() {
+                assertEquals(10, classUnderTest.min());
+            }
+
+            @Test
+            void min_singleton_unchanged() {
+                classUnderTest.min();
+                assertEquals(preState, classUnderTest);
+            }
+
+            @Test
+            void max_singleton_returnsElement() {
+                assertEquals(10, classUnderTest.max());
+            }
+
+            @Test
+            void max_singleton_unchanged() {
+                classUnderTest.max();
+                assertEquals(preState, classUnderTest);
+            }
+
+            @Test
+            void contains_existingElement_returnsTrue() {
+                assertTrue(classUnderTest.contains(10));
+            }
+
+            @Test
+            void contains_nonExistingElement_returnsFalse() {
+                assertFalse(classUnderTest.contains(11));
+            }
+
+            @Test
+            void count_existingElement_returnsOne() {
+                assertEquals(1, classUnderTest.count(10));
+            }
+
+            @Test
+            void count_nonExistingElement_returnsZero() {
+                assertEquals(0, classUnderTest.count(11));
+            }
+
+            @Test
+            void isEmpty_singleton_returnsFalse() {
+                assertFalse(classUnderTest.isEmpty());
+            }
+
+            @Test
+            void size_singleton_returnsOne() {
+                assertEquals(1, classUnderTest.size());
+            }
+
+            @Test
+            void iterator_singleton_returnsElementsInCorrectOrder() {
+                List<Integer> list = new ArrayList<>();
+                classUnderTest.iterator().forEachRemaining(list::add);
+                assertEquals(List.of(10), list);
+            }
+
+            @Test
+            void preOrderIterator_singleton_returnsElementsInCorrectOrder() {
+                List<Integer> list = new ArrayList<>();
+                classUnderTest.preOrderIterator().forEachRemaining(list::add);
+                assertEquals(List.of(10), list);
+            }
+
+            @Test
+            void inOrderIterator_singleton_returnsElementsInCorrectOrder() {
+                List<Integer> list = new ArrayList<>();
+                classUnderTest.inOrderIterator().forEachRemaining(list::add);
+                assertEquals(List.of(10), list);
+            }
+
+            @Test
+            void postOrderIterator_singleton_returnsElementsInCorrectOrder() {
+                List<Integer> list = new ArrayList<>();
+                classUnderTest.postOrderIterator().forEachRemaining(list::add);
+                assertEquals(List.of(10), list);
+            }
+
+            @Test
+            void levelOrderIterator_singleton_returnsElementsInCorrectOrder() {
+                List<Integer> list = new ArrayList<>();
+                classUnderTest.levelOrderIterator().forEachRemaining(list::add);
+                assertEquals(List.of(10), list);
+            }
+
+            @Test
+            void toString_empty_returnsEmptyString() {
+                assertEquals("10, ", classUnderTest.toString());
+            }
+        }
     }
 }
