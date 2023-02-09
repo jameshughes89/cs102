@@ -949,15 +949,15 @@ public class LinkedBinarySearchTreeTest {
                 /***
                  * Creates the linked binary search tree such that it looks like the following:
                  *
-                 *              10
-                 *            /   \
-                 *           7     15
-                 *         /  \
-                 *        4     8
-                 *      /   \    \
-                 *     2     6   9
-                 *   /  \   /
-                 *  1    3  5
+                 *                  10
+                 *                /   \
+                 *               7     15
+                 *             /  \
+                 *            4     8
+                 *          /   \    \
+                 *         2     6   9
+                 *       /  \   /
+                 *      1    3  5
                  *
                  */
                 @BeforeEach
