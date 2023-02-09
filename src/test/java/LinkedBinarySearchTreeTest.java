@@ -806,5 +806,61 @@ public class LinkedBinarySearchTreeTest {
             assertEquals("", classUnderTest.toString());
         }
 
+        @Nested
+        class Singleton {
+
+            @BeforeEach
+            void addSingleton() {
+                classUnderTest.add(10);
+                preState.add(10);
+            }
+
+            @Test
+            void add_singleton_returnsTrue() {
+                assertTrue(classUnderTest.add(11));
+            }
+
+            @Test
+            void remove_existingElement_returnsTrue() {
+                assertTrue(classUnderTest.remove(10));
+            }
+
+            @Test
+            void remove_existingElement_emptyCollection() {
+                classUnderTest.remove(10);
+                assertEquals(new LinkedBinarySearchTree<>(), classUnderTest);
+            }
+
+            @Test
+            void remove_nonexistentElement_throwsNoSuchElementException() {
+                assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(11));
+            }
+
+            @Test
+            void removeMin_singleton_returnsElement() {
+                assertEquals(10, classUnderTest.removeMin());
+            }
+
+            @Test
+            void removeMin_singleton_emptyCollection() {
+                classUnderTest.removeMin();
+                assertEquals(new LinkedBinarySearchTree<>(), classUnderTest);
+            }
+
+            @Test
+            void removeMax_singleton_returnsElement() {
+                assertEquals(10, classUnderTest.removeMax());
+            }
+
+            @Test
+            void removeMax_singleton_emptyCollection() {
+                classUnderTest.removeMax();
+                assertEquals(new LinkedBinarySearchTree<>(), classUnderTest);
+            }
+
+
+        }
+
+
     }
 }
