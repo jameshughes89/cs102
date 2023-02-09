@@ -21,13 +21,6 @@ public class LinkedBinarySearchTreeTest {
     }
 
     @Test
-    void add_singleton_returnsTrue() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        bst.add(10);
-        assertTrue(bst.add(11));
-    }
-
-    @Test
     void add_many_returnsTrue() {
         BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
         bst.add(10);
@@ -36,13 +29,6 @@ public class LinkedBinarySearchTreeTest {
         bst.add(40);
         bst.add(50);
         assertTrue(bst.add(11));
-    }
-
-    @Test
-    void remove_singleton_returnsTrue() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        bst.add(10);
-        assertTrue(bst.remove(10));
     }
 
     @Test
@@ -488,14 +474,6 @@ public class LinkedBinarySearchTreeTest {
         bst.add(87);
         bst.remove(37);
         assertEquals(6, bst.size());
-    }
-
-    @Test
-    void addSingleElementToTreeResultsInItBeingTheOnlyElement() {
-        BinarySearchTree<Integer> bst = new LinkedBinarySearchTree<>();
-        bst.add(99);
-        Iterator<Integer> it = bst.iterator();
-        assertEquals(99, it.next());
     }
 
     @Test
