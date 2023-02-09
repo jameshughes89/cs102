@@ -16,10 +16,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ArraySortedBagTest {
     private ArraySortedBag<Integer> classUnderTest;
+    private ArraySortedBag<Integer> preState;
 
     @BeforeEach
     void createSortedBag() {
         classUnderTest = new ArraySortedBag<>();
+        preState = new ArraySortedBag<>();
     }
 
     @Nested
@@ -102,6 +104,7 @@ public class ArraySortedBagTest {
             @BeforeEach
             void addSingleton() {
                 classUnderTest.add(10);
+                preState.add(10);
             }
 
             @Test
@@ -164,8 +167,20 @@ public class ArraySortedBagTest {
             }
 
             @Test
+            void first_singleton_unchanged() {
+                classUnderTest.first();
+                assertEquals(preState, classUnderTest);
+            }
+
+            @Test
             void last_singleton_returnsElement() {
                 assertEquals(10, classUnderTest.last());
+            }
+
+            @Test
+            void last_singleton_unchanged() {
+                classUnderTest.last();
+                assertEquals(preState, classUnderTest);
             }
 
             @Test
@@ -227,6 +242,10 @@ public class ArraySortedBagTest {
                     classUnderTest.add(30);
                     classUnderTest.add(40);
                     classUnderTest.add(50);
+                    preState.add(20);
+                    preState.add(30);
+                    preState.add(40);
+                    preState.add(50);
                 }
 
                 @Test
@@ -291,8 +310,20 @@ public class ArraySortedBagTest {
                 }
 
                 @Test
+                void first_many_unchanged() {
+                    classUnderTest.first();
+                    assertEquals(preState, classUnderTest);
+                }
+
+                @Test
                 void last_many_returnsElement() {
                     assertEquals(50, classUnderTest.last());
+                }
+
+                @Test
+                void last_many_unchanged() {
+                    classUnderTest.last();
+                    assertEquals(preState, classUnderTest);
                 }
 
                 @ParameterizedTest
@@ -351,6 +382,11 @@ public class ArraySortedBagTest {
                     classUnderTest.add(20);
                     classUnderTest.add(10);
                     classUnderTest.add(20);
+                    preState.add(20);
+                    preState.add(10);
+                    preState.add(20);
+                    preState.add(10);
+                    preState.add(20);
                 }
 
                 @Test
