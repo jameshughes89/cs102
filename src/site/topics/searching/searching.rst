@@ -84,40 +84,25 @@ Iterative
 Recursive
 ---------
 
-* Now that we are more familiar with recursion, here is the same high-level abstract idea, but implemented with recursion
+* Below is a recursive implementation of a linear search following the same high-level abstract idea
 
-.. code-block:: java
-    :linenos:
+.. literalinclude:: /../main/java/SearchingFunctions.java
+    :language: java
+    :lineno-match:
+    :lines: 16-24
 
-    public static <T> int recursiveLinearSearch(T needle, T[] haystack, int currentIndex) {
-        // Not Found
-        if (currentIndex == haystack.length) {
-            return -1;
-        } else if (haystack[currentIndex].equals(needle)) {
-            return currentIndex;
-        } else {
-            return recursiveLinearSearch(needle, haystack, currentIndex + 1);
-        }
-    }
 
 * If I wanted to call this method, I would start with ``currentIndex`` as ``0``
+
     * ``recursiveLinearSearch(someNeedle, someHaystack, 0)``
 
-* It is also common to have a *helper* method that makes the first recursive call with the proper values
 
-.. code-block:: java
-    :linenos:
+* This may seem quite different from the iterative implementation, but the high-level idea is the same
 
-    public static <T> int recursiveLinearSearch(T needle, T[] haystack) {
-        return recursiveLinearSearch(someNeedle, someHaystack, 0);
-    }
-
-
-* This may seem quite different from the iterative implementation, but take some time to look at the code and see what's happening
     * Start ``currentIndex`` at ``0``
-    * Are we past the end of the array? If so, we conclude we didn't find it and we're done
-    * If the element at index ``currentIndex`` is what we're looking for, we've found it and we're done
-    * Otherwise, if we're not at the end and we didn't find it, check ``currentIndex + 1``
+    * If the end of the ``haystack`` is reached without finding the ``needle``, then conclude that it is not there
+    * If the element at index ``currentIndex`` is the ``needle``, conclude that it's there
+    * Otherwise continue by calling the recursive function again with ``currentIndex`` incremented
 
 
 Binary Search
