@@ -111,26 +111,44 @@ Recursive
 Binary Search
 =============
 
-* Let's say you're looking for page 554 in a textbook
-* You'd probably open the book somewhere in the middle-ish
-* If the page you end up turning to is page 383, which half of the book should you continue your search on?
-    * Left pages, or right pages?
-* Since 554 is greater than 383, it must be in the set of right pages
-    * We eliminate the 383 pages from the set of left pages from our search since 554 must **not** be there
-* Next, you turn to a page somewhere between pages 383 and the end of the book and see page number 621
-    * Which set of pages do you then continue your search down?
+* Imagine looking for page 554 in a roughly 1000 page textbook
+* It would be reasonable to start by opening the textbook somewhere in the middle-ish
+* If the page landed on was page 402, which half of the book must page 553 be in?
+
+    * Left set of pages, or right set of pages?
+
+
+* Since 554 is greater than 383, it must be in the right set of pages
+
+    * This means, after looking at a single page, the 401 pages in the left set can be ignored
+
+
+* With this information, imagine turning to another page in the right set of pages and landing on page 621
+
+    * Which remaining set of pages must the page 554 be in?
+    * In the left set of pages (403 -- 620), or the right set (622 -- 1000)?
+
 
 * This general idea is the basis of binary search
-    * Technically, this is `interpolation search <https://en.wikipedia.org/wiki/Interpolation_search>`_, but binary search is a special kind of interpolation search
+
+    * Technically, this is `interpolation search <https://en.wikipedia.org/wiki/Interpolation_search>`_
+    * A binary search is a special kind of interpolation search
+
 
 * There is, however, a catch with binary search when compared to a linear search
-    * The haystack we're searching, must be sorted, otherwise we would not be able to conclude which half our needle is
+* The ``haystack`` being searched must be sorted
+* If it was not sorted, it would not be possible to conclude which half the ``needle`` is in after investigating an element
 
-* The complexity analysis of binary search may feel intimidating, but the trick is to not overthink it and take your time
+* The complexity analysis of binary search may feel intimidating, but the trick is to visualize the work being done
 
-.. image:: binary_search.png
-   :width: 500 px
-   :align: center
+.. figure:: binary_search.png
+    :width: 500 px
+    :align: center
+
+    Visualization of how to search for a number within the range 1 -- 15. The initial guess would be the halfway point
+    and each subsequent guess would be the halfway point of the remaining elements. Elements at the bottom would take
+    4 guesses to find. 
+
 
 * When considering *linear search*, if we were looking for the number ``11.5``
 * There are a total of ``15`` things in the haystack, so we would need to exhaustively look at all ``15`` of them
