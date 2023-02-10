@@ -147,29 +147,50 @@ Binary Search
 
     Visualization of how to search for a number within the range 1 -- 15. The initial guess would be the halfway point
     and each subsequent guess would be the halfway point of the remaining elements. Elements at the bottom would take
-    4 guesses to find. 
+    4 guesses to find.
 
 
-* When considering *linear search*, if we were looking for the number ``11.5``
-* There are a total of ``15`` things in the haystack, so we would need to exhaustively look at all ``15`` of them
-    * Here, ``15`` is :math:`n`
+* To analyze the complexity, consider the worst case scenario
 
-* When considering *binary search*, how many things would we need to look at if we wanted to know if ``11.5`` is there or not?
-    * ``4``
+    * Look for an element at the bottom as it would take the most number of guesses to find
+    * Looking for an element that does not exist would also work
 
-* We get away with looking at fewer things because we are ignoring half the remaining elements every time we continue our search
-    * ``11.5`` is greater than ``8``, therefore we can ignore all the elements on the left side
 
-* Any idea what the relationship between the maximum number of checks and the number of elements in our haystack :math:`n`?
-    * :math:`n = 2^{h + 1} - 1`, where `h` is the "height" of the tree, or, the number of steps needed to go from the top to the bottom
+* First, imagine performing a *linear search* where the ``needle`` is ``15``
+* In this case, all :math:`15` elements in the ``haystack`` would need to be investigated before the ``needle`` was found
+
+    * Since it is at the end of the ``haystack``
+
+
+* When considering a *binary search*, how many things would need to be looked at before ``15`` is found?
+
+    * :math:`4`
+    * ``8`` -> ``12`` -> ``14`` -> ``15``
+
+
+* The reason this takes fewer steps is because roughly half of the remaining elements are ignored after each check
+
+    * For example, ``15`` is greater than ``8``, therefore the numbers ``1`` -- ``7`` can be ignored
+    * In other words, with *linear search*, after a single guess, only the element checked can be eliminated
+    * But with *binary search*, the element checked, plus roughly half the remaining elements, can be ignored
+
+
+* There is a relationship between the maximum number of checks and the number of elements :math:`n` in the ``haystack``
+
+    * :math:`n = 2^{h + 1} - 1`, where `h` is the "height" of the "tree", or, the number of steps needed to get from the top to the bottom
     * :math:`h = log_{2}(n + 1) - 1`
 
-* Thus, the computational complexity of binary search is :math:`O(log_{2}(n))` since, as :math:`n` grows, the maximum number of steps we would need to take only grows like :math:`log_{2}(n)`
+
+* Thus, the computational complexity of binary search is :math:`O(log_{2}(n))`
+
+    * As :math:`n` grows, the maximum number of steps that could be taken grows like :math:`log_{2}(n)`
+
 
 .. warning::
 
-    We've gotten ahead of ourselves; the above explanation uses details we have not discussed yet, but will cover in the
-    following topics. In other words, don't be too concerned if you are left scratching your head.
+    The above explanation uses details not discussed in this course yet, but they be covered in subsequent topics. In
+    other words, don't be too concerned if these ideas are not 100% clear yet.
+
 
 
 Iterative
