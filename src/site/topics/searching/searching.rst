@@ -238,40 +238,30 @@ Recursive
 * Below is a recursive implementation of a binary search
 * Notice that, other than being recursive, the underlying high-level algorithm is the same as the iterative implementation
 
-.. code-block:: java
-    :linenos:
+.. literalinclude:: /../main/java/SearchingFunctions.java
+    :language: java
+    :lineno-match:
+    :lines: 46-58
 
-    public static <T extends Comparable<? super T>> int recursiveBinarySearch(T needle, T[] haystack, int lowIndex, int highIndex) {
-        if (lowIndex >= highIndex) {
-            return -1;
-        }
-        int midpoint = lowIndex + (highIndex - lowIndex) / 2;
-        if (haystack[midpoint].equals(needle)) {
-            return midpoint;
-        } else if (haystack[midpoint].compareTo(needle) > 0) {
-            return recursiveBinarySearch(needle, haystack, lowIndex, midpoint - 1);
-        } else {
-            return recursiveBinarySearch(needle, haystack, midpoint + 1, highIndex);
-        }
-    }
 
-* If I wanted to call this method, I would start with ``lowIndex`` as ``0`` and ``highIndex`` as ``someHaystack.length``
+* To call this method to initiate a search, start with ``lowIndex`` as ``0`` and ``highIndex`` as ``someHaystack.length``
+
     * ``recursiveBinarySearch(someNeedle, someHaystack, 0, someHaystack.length)``
 
-* Again, a helper method for the initial call would look something like this
-
-.. code-block:: java
-    :linenos:
-
-    public static <T extends Comparable<? super T>> int recursiveBinarySearch(T needle, T[] haystack) {
-        return recursiveBinarySearch(someNeedle, someHaystack, 0, someHaystack.length);
-    }
 
 
-For next time
+For Next Time
 =============
 
-* Download and play with the :download:`SearchingFunctions </../main/java/SearchingFunctions.java>` class
-* Download and run the :download:`SearchingFunctionsTest </../test/java/SearchingFunctionsTest.java>` tests
 * Read Chapter 9 Section 1
+
     * 7 pages
+
+
+Playing Code
+------------
+
+* Download and play with
+
+    * :download:`SearchingFunctions </../main/java/SearchingFunctions.java>`
+    * :download:`SearchingFunctionsTest </../test/java/SearchingFunctionsTest.java>`
