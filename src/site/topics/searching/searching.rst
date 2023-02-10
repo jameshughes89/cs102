@@ -108,90 +108,125 @@ Recursive
 Binary Search
 =============
 
-* Let's say you're looking for page 554 in a textbook
-* You'd probably open the book somewhere in the middle-ish
-* If the page you end up turning to is page 383, which half of the book should you continue your search on?
-    * Left pages, or right pages?
-* Since 554 is greater than 383, it must be in the set of right pages
-    * We eliminate the 383 pages from the set of left pages from our search since 554 must **not** be there
-* Next, you turn to a page somewhere between pages 383 and the end of the book and see page number 621
-    * Which set of pages do you then continue your search down?
+* Imagine looking for page 554 in a roughly 1000 page textbook
+* It would be reasonable to start by opening the textbook somewhere in the middle-ish
+* If the page landed on was page 402, which half of the book must page 553 be in?
+
+    * Left set of pages, or right set of pages?
+
+
+* Since 554 is greater than 402, it must be in the right set of pages
+
+    * This means, after looking at a single page, the 401 pages in the left set can be ignored
+
+
+* With this information, imagine turning to another page in the right set of pages and landing on page 621
+
+    * Which remaining set of pages must the page 554 be in?
+    * In the left set of pages (403 -- 620), or the right set (622 -- 1000)?
+
 
 * This general idea is the basis of binary search
-    * Technically, this is `interpolation search <https://en.wikipedia.org/wiki/Interpolation_search>`_, but binary search is a special kind of interpolation search
+
+    * Technically, this is `interpolation search <https://en.wikipedia.org/wiki/Interpolation_search>`_
+    * A binary search is a special kind of interpolation search
+
 
 * There is, however, a catch with binary search when compared to a linear search
-    * The haystack we're searching, must be sorted, otherwise we would not be able to conclude which half our needle is
+* The ``haystack`` being searched must be sorted
+* If it was not sorted, it would not be possible to conclude which half the ``needle`` is in after investigating an element
 
-* The complexity analysis of binary search may feel intimidating, but the trick is to not overthink it and take your time
+* The complexity analysis of binary search may feel intimidating, but the trick is to visualize the work being done
 
-.. image:: binary_search.png
-   :width: 500 px
-   :align: center
+.. figure:: binary_search.png
+    :width: 500 px
+    :align: center
 
-* When considering *linear search*, if we were looking for the number ``11.5``
-* There are a total of ``15`` things in the haystack, so we would need to exhaustively look at all ``15`` of them
-    * Here, ``15`` is :math:`n`
+    Visualization of how to search for a number within the range 1 -- 15. The initial guess would be the halfway point
+    and each subsequent guess would be the halfway point of the remaining elements. Elements at the bottom would take
+    4 guesses to find.
 
-* When considering *binary search*, how many things would we need to look at if we wanted to know if ``11.5`` is there or not?
-    * ``4``
 
-* We get away with looking at fewer things because we are ignoring half the remaining elements every time we continue our search
-    * ``11.5`` is greater than ``8``, therefore we can ignore all the elements on the left side
+* To analyze the complexity, consider the worst case scenario
 
-* Any idea what the relationship between the maximum number of checks and the number of elements in our haystack :math:`n`?
-    * :math:`n = 2^{h + 1} - 1`, where `h` is the "height" of the tree, or, the number of steps needed to go from the top to the bottom
+    * Look for an element at the bottom as it would take the most number of guesses to find
+    * Looking for an element that does not exist would also work
+
+
+* First, imagine performing a *linear search* where the ``needle`` is ``15``
+* In this case, all :math:`15` elements in the ``haystack`` would need to be investigated before the ``needle`` was found
+
+    * Since it is at the end of the ``haystack``
+
+
+* When considering a *binary search*, how many things would need to be looked at before ``15`` is found?
+
+    * :math:`4`
+    * ``8`` -> ``12`` -> ``14`` -> ``15``
+
+
+* The reason this takes fewer steps is because roughly half of the remaining elements are ignored after each check
+
+    * For example, ``15`` is greater than ``8``, therefore the numbers ``1`` -- ``7`` can be ignored
+    * In other words, with *linear search*, after a single guess, only the element checked can be eliminated
+    * But with *binary search*, the element checked, plus roughly half the remaining elements, can be ignored
+
+
+* There is a relationship between the maximum number of checks and the number of elements :math:`n` in the ``haystack``
+
+    * :math:`n = 2^{h + 1} - 1`, where `h` is the "height" of the "tree", or, the number of steps needed to get from the top to the bottom
     * :math:`h = log_{2}(n + 1) - 1`
 
-* Thus, the computational complexity of binary search is :math:`O(log_{2}(n))` since, as :math:`n` grows, the maximum number of steps we would need to take only grows like :math:`log_{2}(n)`
+
+* Thus, the computational complexity of binary search is :math:`O(log_{2}(n))`
+
+    * As :math:`n` grows, the maximum number of steps that could be taken grows like :math:`log_{2}(n)`
+
 
 .. warning::
 
-    We've gotten ahead of ourselves; the above explanation uses details we have not discussed yet, but will cover in the
-    following topics. In other words, don't be too concerned if you are left scratching your head.
+    The above explanation uses details not discussed in this course yet, but they be covered in subsequent topics. In
+    other words, don't be too concerned if these ideas are not 100% clear yet.
+
 
 
 Iterative
 ---------
 
-* Below is a generic implementation of an iterative binary search on an array of type ``T``
+* Below is a generic implementation of an iterative binary search
+
     * Take note that ``T`` or one of their superclasses must extend ``Comparable``
     * This is because the elements must be ordered
 
-.. code-block:: java
-    :linenos:
 
-    public static <T extends Comparable<? super T>> int iterativeBinarySearch(T needle, T[] haystack) {
-        int lowIndex = 0;
-        int highIndex = haystack.length;
-        int midpoint = (highIndex - lowIndex) / 2;
+.. literalinclude:: /../main/java/SearchingFunctions.java
+    :language: java
+    :lineno-match:
+    :lines: 27-44
 
-        while (lowIndex < highIndex) {
-            if (haystack[midpoint].equals(needle)) {
-                return midpoint;
-            } else if (haystack[midpoint].compareTo(needle) > 0) {
-                highIndex = midpoint - 1;
-                midpoint = lowIndex + (highIndex - lowIndex) / 2;
-            } else {
-                lowIndex = midpoint + 1;
-                midpoint = lowIndex + (highIndex - lowIndex) / 2;
-            }
-        }
-        return -1;
-    }
-
-* This may look complicated, but again, take your time
 
 * Here is what's happening
-    * While we have not exhausted the search space (``lowIndex < highIndex``)
+
+    * While search space has not been exausted (``lowIndex < highIndex``)
+
         * If ``lowIndex`` is ever greater than or equal to ``highIndex``, there are no more indices the element *could* exist
+
+
     * Look at the middle
-    * If what you are looking at is what you're looking for
+    * If the element in the middle is the ``needle``
+
         * Done
-    * If what you are looking at is less than what you're looking for
+
+
+    * If the element in the middle is less than the ``needle``
+
         * Continue the search on the remaining upper half by looking at the midpoint of the remaining elements
-    * If what you are looking at is greater than than what you're looking for
+
+
+    * If the element in the middle is greater than the ``needle``
+
         * Continue the search on the remaining lower half by looking at the midpoint of the remaining elements
+
 
 
 Recursive
@@ -200,40 +235,30 @@ Recursive
 * Below is a recursive implementation of a binary search
 * Notice that, other than being recursive, the underlying high-level algorithm is the same as the iterative implementation
 
-.. code-block:: java
-    :linenos:
+.. literalinclude:: /../main/java/SearchingFunctions.java
+    :language: java
+    :lineno-match:
+    :lines: 46-58
 
-    public static <T extends Comparable<? super T>> int recursiveBinarySearch(T needle, T[] haystack, int lowIndex, int highIndex) {
-        if (lowIndex >= highIndex) {
-            return -1;
-        }
-        int midpoint = lowIndex + (highIndex - lowIndex) / 2;
-        if (haystack[midpoint].equals(needle)) {
-            return midpoint;
-        } else if (haystack[midpoint].compareTo(needle) > 0) {
-            return recursiveBinarySearch(needle, haystack, lowIndex, midpoint - 1);
-        } else {
-            return recursiveBinarySearch(needle, haystack, midpoint + 1, highIndex);
-        }
-    }
 
-* If I wanted to call this method, I would start with ``lowIndex`` as ``0`` and ``highIndex`` as ``someHaystack.length``
+* To call this method to initiate a search, start with ``lowIndex`` as ``0`` and ``highIndex`` as ``someHaystack.length``
+
     * ``recursiveBinarySearch(someNeedle, someHaystack, 0, someHaystack.length)``
 
-* Again, a helper method for the initial call would look something like this
-
-.. code-block:: java
-    :linenos:
-
-    public static <T extends Comparable<? super T>> int recursiveBinarySearch(T needle, T[] haystack) {
-        return recursiveBinarySearch(someNeedle, someHaystack, 0, someHaystack.length);
-    }
 
 
-For next time
+For Next Time
 =============
 
-* Download and play with the :download:`SearchingFunctions </../main/java/SearchingFunctions.java>` class
-* Download and run the :download:`SearchingFunctionsTest </../test/java/SearchingFunctionsTest.java>` tests
 * Read Chapter 9 Section 1
+
     * 7 pages
+
+
+Playing Code
+------------
+
+* Download and play with
+
+    * :download:`SearchingFunctions </../main/java/SearchingFunctions.java>`
+    * :download:`SearchingFunctionsTest </../test/java/SearchingFunctionsTest.java>`
