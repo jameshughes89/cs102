@@ -118,7 +118,7 @@ Binary Search
     * Left set of pages, or right set of pages?
 
 
-* Since 554 is greater than 383, it must be in the right set of pages
+* Since 554 is greater than 402, it must be in the right set of pages
 
     * This means, after looking at a single page, the 401 pages in the left set can be ignored
 
