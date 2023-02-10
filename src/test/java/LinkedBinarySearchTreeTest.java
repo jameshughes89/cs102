@@ -2,6 +2,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.ArrayList;
@@ -462,6 +463,90 @@ public class LinkedBinarySearchTreeTest {
                 @Test
                 void toString_empty_returnsEmptyString() {
                     assertEquals("1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, ", classUnderTest.toString());
+                }
+            }
+
+            @Nested
+            class WhenDuplicate {
+
+                /**
+                 * Elements are such that it checks a leaf (1), internal node with two children (4), internal node
+                 * with only a left child (6), internal node with only a right child (8), and the root node (10).
+                 *
+                 * @return A stream of the elements for testing
+                 */
+                static Stream<Integer> duplicateElements() {
+                    return Stream.of(3, 5, 10, 2, 7);
+                }
+
+                /**
+                 * Elements are such that it checks various counts with various configurations of duplicates. For
+                 * example, duplicate directly to the right and some in the right's left subtree.
+                 *
+                 * @return A stream of the elements for testing along with their expected counts
+                 */
+                static Stream<Arguments> duplicateElementsAndCounts() {
+                    return Stream.of(Arguments.of(3, 1),
+                            Arguments.of(5, 2),
+                            Arguments.of(10, 2),
+                            Arguments.of(2, 3),
+                            Arguments.of(7, 3));
+                }
+
+                /***
+                 * Creates the linked binary search tree such that it looks like the following:
+                 *
+                 *                  10
+                 *                 /  \
+                 *                5    10
+                 *              /   \
+                 *             2      7
+                 *              \    /  \
+                 *              4    5   7
+                 *             /  \      \
+                 *           2     3      8
+                 *            \          /
+                 *             2        7
+                 */
+                @BeforeEach
+                void addMany() {
+                    classUnderTest.add(10);
+                    classUnderTest.add(5);
+                    classUnderTest.add(7);
+                    classUnderTest.add(7);
+                    classUnderTest.add(8);
+                    classUnderTest.add(7);
+                    classUnderTest.add(5);
+                    classUnderTest.add(2);
+                    classUnderTest.add(4);
+                    classUnderTest.add(2);
+                    classUnderTest.add(2);
+                    classUnderTest.add(3);
+                    preState.add(10);
+                    preState.add(5);
+                    preState.add(7);
+                    preState.add(7);
+                    preState.add(8);
+                    preState.add(7);
+                    preState.add(5);
+                    preState.add(2);
+                    preState.add(4);
+                    preState.add(2);
+                    preState.add(2);
+                    preState.add(3);
+                }
+
+                @ParameterizedTest
+                @MethodSource("duplicateElementsAndCounts")
+                void remove_existingElement_removesOneOccurrence(Integer element, int count) {
+                    classUnderTest.remove(element);
+                    assertEquals(count - 1, classUnderTest.count(element));
+                }
+
+                @ParameterizedTest
+                @MethodSource("duplicateElementsAndCounts")
+                void count_existingElement_returnsCorrectCount(Integer element, int count) {
+                    assertEquals(count, classUnderTest.count(element));
                 }
             }
         }
