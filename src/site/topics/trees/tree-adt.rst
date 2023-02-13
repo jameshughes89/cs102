@@ -80,8 +80,8 @@ Nodes
     :width: 500 px
     :align: center
 
-    Example of an arbitrary tree with nodes labelled as a root, interior, or leaf node. In this example, there are six
-    (6) interior nodes, including the root, and eight (8) leaf nodes.
+    Tree with nodes labelled as a root, interior, or leaf node. In this example, there are six (6) interior nodes,
+    including the root, and eight (8) leaf nodes.
 
 
 
@@ -89,43 +89,55 @@ Relationships
 -------------
 
 * A **parent/predecessor** of a given node is the node directly above in the hierarchy
+
     * Each node can have at most one parent, except for the root, which has no parent
 
+
 * A **child/successor** of a given node is the node directly below in the hierarchy
+
     * Each node can have any number of children
 
+
 * A **sibling** of a given node is a node that has the same parent
-
 * An **ancestor** of a given node is the parent, or the parent's parent, or the parent's parent's parent, or ...
-
 * A **descendant** of a given node is the child, or the child's child, or the child's child's child, or ...
 
 
-.. image:: tree_base.png
-   :width: 500 px
-   :align: center
 
-* Questions
-    * Can a leaf node have any children?
-    * Does the root have a parent?
-    * How many parents does each node have?
+.. figure:: tree_base.png
+    :width: 500 px
+    :align: center
+
+    Example of an arbitrary tree.
+
+
+* Observations
+
+    * A leaf node cannot have any children
+    * The root node of the whole tree has no parent node
+    * With the exception of the root node, each node has exactly one parent
+
 
 
 * A **subtree** of a given node is a child node and all descendants
+
     * A subtree is itself a tree
     * A node may have many subtrees
 
-.. image:: tree_subtrees.png
-   :width: 500 px
-   :align: center
 
-.. image:: tree_subtree_root.png
-   :width: 500 px
-   :align: center
+.. figure:: tree_subtrees.png
+    :width: 500 px
+    :align: center
 
-* Questions
-    * What is the root of the subtree labelled *E*?
-    * How many subtrees does this tree have?
+    Tree with the subtrees of the root node identified.
+
+
+.. figure:: tree_subtree_root.png
+    :width: 500 px
+    :align: center
+
+    Tree with the subtrees of the node labelled "E" identified.
+
 
 
 .. _label-topic21-trees-properties:
