@@ -57,12 +57,7 @@ Nodes
 
 
 * A **leaf node** is a node without an edge to a child node
-
-    * Child node is discussed in the next subsection
-
-
 * An **interior node** is *not* a leaf node
-
 * An **empty tree** is a tree with no nodes or edges
 
     * This is still a tree based on the definition of the tree discussed above
@@ -80,8 +75,8 @@ Nodes
     :width: 500 px
     :align: center
 
-    Tree with nodes labelled as a root, interior, or leaf node. In this example, there are six (6) interior nodes,
-    including the root, and eight (8) leaf nodes.
+    Tree with nodes labelled as a root, interior, or leaf node. In this example, there are six interior nodes, including
+    the root, and eight leaf nodes.
 
 
 
@@ -99,8 +94,8 @@ Relationships
 
 
 * A **sibling** of a given node is a node that has the same parent
-* An **ancestor** of a given node is the parent, or the parent's parent, or the parent's parent's parent, or ...
-* A **descendant** of a given node is the child, or the child's child, or the child's child's child, or ...
+* An **ancestor** of a given node is the parent, or the parent's parent, or ...
+* A **descendant** of a given node is the child, or the child's child, or ...
 
 
 
@@ -166,10 +161,10 @@ Properties
 
 * Observations
 
-    * The path length between the two emphasized nodes is three
-    * The height of this tree is ``3``
-    * A tree with only a root is ``0``
-    * The height of an empty tree is ``-1``
+    * The path length between the two emphasized nodes is three (``3``
+    * The height of this tree is three (``3``)
+    * A tree with only a root is zero (``0``)
+    * The height of an empty tree is negative one (``-1``)
 
 
 
@@ -177,7 +172,7 @@ Properties
    :width: 500 px
    :align: center
 
-    Tree with three levels. This tree has a height of three (3).
+    Tree with three levels. This tree has a height of three (``3``).
 
 
 * The **degree/arity of a given node** is the number of *children* the node has
