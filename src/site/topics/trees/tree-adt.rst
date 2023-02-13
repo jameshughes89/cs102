@@ -42,37 +42,46 @@ Tree Definition
     :width: 500 px
     :align: center
 
-    Example of an arbitrary tree. The root element has four existing subtrees. Each of these subtrees has a root
-    with zero or many descending subtrees.
+    Example of an arbitrary tree with subtrees identified. The root element has four existing subtrees. Each of these
+    subtrees has a root with zero or many descending subtrees.
 
 
 Nodes
 -----
 
 * A **node** is a single entity in the tree
-
 * An **edge** connects nodes
-
 * The **root node** is a special element that is the origin of the tree
+
     * A tree can have one or zero root nodes
 
+
 * A **leaf node** is a node without an edge to a child node
+
     * Child node is discussed in the next subsection
+
 
 * An **interior node** is *not* a leaf node
 
-* An **empty tree** with no nodes or edges
-    * But, with the definition of the tree we're using, this is still a tree
+* An **empty tree** is a tree with no nodes or edges
+
+    * This is still a tree based on the definition of the tree discussed above
     * Think empty stack/queue/bag --- they still exist, but they're just empty
+
+
 
 .. warning::
 
-    You may come across alternative definitions of trees; however, we are using this definition as it is the most
+    It is possible to find alternative definitions of trees; however, the definition included here is used as it is
     common.
 
-.. image:: tree_nodes.png
-   :width: 500 px
-   :align: center
+
+.. figure:: tree_nodes.png
+    :width: 500 px
+    :align: center
+
+    Example of an arbitrary tree with nodes labelled as a root, interior, or leaf node. In this example, there are six
+    (6) interior nodes, including the root, and eight (8) leaf nodes.
 
 
 
