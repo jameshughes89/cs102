@@ -146,25 +146,30 @@ Properties
 ----------
 
 * A **path** is the sequence of nodes and edges leading from one node to another
-
 * The **path length** is the number of *edges* in the path
-
 * The **level** of a given node is the number of *edges* between the root and the node
-    * Or, if you prefer, here is a recursive definition
+
+    * Recursive definition
+
         * The level of the root is ``0``
         * The level of a node that is not the root is the level of its parent ``+ 1``
 
+
 * The **height** of a tree is the number of levels the tree has
 
-.. image:: tree_path.png
-   :width: 500 px
-   :align: center
+.. figure:: tree_path.png
+    :width: 500 px
+    :align: center
 
-* Questions
-    * What is the length of the path between the circled nodes?
-    * What is the height of this tree?
-    * What is the height of a tree with only a root?
-    * What is the height of an empty tree?
+    Tree with two nodes emphasized.
+
+
+* Observations
+
+    * The path length between the two emphasized nodes is three
+    * The height of this tree is ``3``
+    * A tree with only a root is ``0``
+    * The height of an empty tree is ``-1``
 
 
 
@@ -172,21 +177,17 @@ Properties
    :width: 500 px
    :align: center
 
-* The **degree/arity of a given node** is the number of *children* the node has
+    Tree with three levels. This tree has a height of three (3).
 
+
+* The **degree/arity of a given node** is the number of *children* the node has
 * The **degree/arity of a tree** is the maximum degree/arity of the tree's nodes
 
 
-.. image:: tree_levels.png
-   :width: 500 px
-   :align: center
 
-* Question
-    * What is the degree of this tree?
-    * What is the smallest degree of a node in this tree?
-
-For next time
+For Next Time
 =============
 
 * Read Chapter 10 Sections 1 -- 3
+
     * 10 pages
