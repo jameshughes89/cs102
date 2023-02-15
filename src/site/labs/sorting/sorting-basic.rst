@@ -2,21 +2,21 @@
 Sorting
 *******
 
-* Feel free to use your laptop if you have it
-* I strongly encourage you to work with others in the lab
+* Feel free to use your laptop
+* You are strongly encourage to work with others
 
-    * When you get stuck, do me a favour and ask those sitting around you for help
-    * I want people to get used to working together in the labs
-    * Peer teaching and peer learning is super effective
+    * When you get stuck, ask those sitting around you for help
+    * Get used to working together in the labs
+    * Peer teaching and peer learning has been empirically shown to be very effective
+
 
 .. note::
 
-    This lab is making use of integer arrays for sorting, but if you would like, feel free to use ``IndexedBags``. If
-    choose to do this, here's a tip for your method declarations:
+    This lab is making use of integer arrays for sorting, but feel free to use ``IndexedBags``. If an ``IndexedBag`` is
+    used, the method signatures will need to be updated. For example,
 
-    ``public static <T extends Comparable<T>> void bubbleSort(IndexedBag<T> toSort)``
+        ``public static <T extends Comparable<T>> void bubbleSort(IndexedBag<T> toSort)``
 
-    Also remember to use ``.compareTo``.
 
 
 Starting Point
