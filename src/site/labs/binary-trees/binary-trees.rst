@@ -2,17 +2,17 @@
 Binary Trees
 ************
 
-* Feel free to use your laptop if you have it
-* I strongly encourage you to work with others in the lab
+* Feel free to use your laptop
+* You are strongly encourage to work with others
 
-    * When you get stuck, do me a favour and ask those sitting around you for help
-    * I want people to get used to working together in the labs
-    * Peer teaching and peer learning is super effective
+    * When you get stuck, ask those sitting around you for help
+    * Get used to working together in the labs
+    * Peer teaching and peer learning has been empirically shown to be very effective
 
 .. Note::
 
-    We are simply playing with binary nodes in this lab and not a tree class, nor are we creating a tree class. We
-    are, however, still making a tree with these nodes.
+    This lab focuses on manipulating binary node objects, not the development of an actual tree class. However,
+    ultimately a tree structure is being created with the binary nodes.
 
 
 Draw The Tree
