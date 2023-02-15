@@ -123,20 +123,21 @@ Bubble Down
 Implement a Min Heap
 ====================
 
-Now that you have the idea behind the min heap, let's build one.
+#. Create a generic ``ArrayMinHeap`` class
 
-#. Create a generic min heap class.
+    * ``public class ArrayMinHeap<T extends Comparable<? super T>>``
 
-    * You will probably want a ``size`` field and an array to hold the data
 
-#. Implement the following methods:
+#. Include fields to keep track of the size and the array containing the elements
+#. Implement the following methods
 
     * ``add``
     * ``size``
     * ``remove``
     * ``peek``
 
-#. Consider adding the following private methods:
+
+#. Consider adding the following private methods
 
     * ``bubbleUp``
     * ``bubbleDown``
@@ -146,15 +147,16 @@ Now that you have the idea behind the min heap, let's build one.
     * ``rightChildOf``
     * ``swap``
 
-#. Test your heap to see if you have it working properly.
 
-    * You do not need to write full unit tests for the purpose of this lab
+#. Test the heap to see if it is working properly
+
+    * Simply create an instance of the ``MinHeap`` and use the implemented methods to check correctness
+    * For the purpose of the lab, do not worry about writing full unit tests
+
 
 
 Kattis Problems
 ===============
-
-Recommended Kattis Problems (don't worry, you don’t need to do all of them or anything):
 
 #. https://open.kattis.com/problems/quadrant
 #. https://open.kattis.com/problems/judgingmoose
