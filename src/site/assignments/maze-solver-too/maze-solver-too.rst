@@ -37,31 +37,33 @@ You will:
 Provided Files
 ==============
 
-* A **package** called maze containing all the relevant maze code from the previous assignment (using a package helps with organization)
+* A package containing maze specific classes
+
     * A ``Cell`` class with ``CellTest`` unit tests
     * A ``Maze`` class with ``MazeTest`` unit tests
     * A ``MazeRenderer`` class with ``MazeRendererTest`` unit tests
-    * Two exceptions: ``LocationNotInMazeException`` and ``MazeEndpointsException``
+    * Two exceptions --- ``LocationNotInMazeException`` and ``MazeEndpointsException``
     * A ``MazeSolver`` interface
+
+
 * A ``Queue`` and ``PriorityQueue`` interface
 * A nearly empty ``LinkedPriorityQueue`` class with a ``LinkedPriorityQueueTest`` class containing empty tests
 * A nearly empty ``AStarMazeSolver`` with an ``AStarMazeSolverTest`` class containing empty tests
 * An ``Asn3`` class with an empty ``main``
 * Three maze files
 
-* :download:`All of this can be downloaded from here<Assignment3.zip>`
+
+* :download:`All of this can be downloaded from here <Assignment3.zip>`
+
     * This is a compressed IntelliJ project
     * Just unzip, put it where you want on your computer, and you should be able to open this project through IntelliJ
 
-.. warning::
-
-    When you open the project, IntelliJ may notify you about a missing JDK. If this is the case, simply select the
-    download link in the notification.
 
 .. warning::
 
-    Java may say that it cannot find JUnit. If this happens, you need to add JUnit to the project. Simply follow the
-    first few steps of :doc:`Topic 6's aside on testing </topics/stacks/unit-tests>`.
+    When opening the project, IntelliJ may mention a missing JDK. If this is the case, simply select the download link
+    in the notification to download and install the missing JDK.
+
 
 
 Part 0 --- Read the Assignment
