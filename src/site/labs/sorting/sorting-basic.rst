@@ -22,7 +22,7 @@ Sorting
 Starting Point
 ==============
 
-* This lab focuses on the sorting ideas discussed in the :doc:`first Sorting Topic </topics/sorting/sorting-basic>`
+* This lab focuses on the sorting algorithms discussed in the :doc:`first Sorting Topic </topics/sorting/sorting-basic>`
 * The below code can be used for setting up an array to be sorted
 * This code can also be used for timing the different sorting algorithms
 
