@@ -182,8 +182,8 @@ Having complete tests should help with debugging the ``LinkedPriorityQueue`` cla
 Part 4 --- Complete ``AStarMazeSolver``
 =======================================
 
-`Read up on the A* algorithm <https://en.wikipedia.org/wiki/A*_search_algorithm>`_. The linked article is great, and I
-am sure there are many YouTube videos on the subject.
+`Read up on the A* algorithm <https://en.wikipedia.org/wiki/A*_search_algorithm>`_. The linked article is great, and
+there are likely  many YouTube videos on the subject.
 
 One of the key parts of A* is the estimated cost function
 
@@ -195,14 +195,17 @@ One of the key parts of A* is the estimated cost function
     * :math:`f(x)` is the total estimated cost of a path from start to finish going through :math:`x`
 
 
-Notes About Your Implementation
--------------------------------
+Notes About the Implementation
+------------------------------
 
 * :math:`g(x)` will be the number of steps it takes to get to :math:`x` from the start
 * :math:`h(x)` will be the estimated distance to the end from :math:`x` based on the `Manhattan Distance <https://en.wikipedia.org/wiki/Taxicab_geometry>`_
+
     * :math:`\lvert x_{1} - x_{2} \rvert + \lvert y_{1} - y_{2} \rvert`
 
+
 * :math:`f(x)` will be the *priority* of the cell :math:`x`
+
 
 
 Implementing the Class
@@ -213,31 +216,41 @@ Write the ``solve`` method to find an optimal path in the maze using A*.
 The general idea is this
 
     * Dequeue from the priority queue
-    * If it's the end, we're done
+    * If it's the end, done
     * If it's not, calculate all the neighbours' :math:`f(x)` (priority) and add each to the priority queue
     * Repeat
 
 
-* You'll need a way to keep track of the number of steps it took to get to a given cell
+* Something for keeping track of the number of steps it takes to get to a given cell is needed
+
     * Perhaps a ``Map``?
-* You'll need a way to keep track of each cell's predecessor in the path
-    * Which cell did I step from to get to the current cell?
+
+
+* Something for keeping track of each cell's predecessor in the path is needed
+
+    * Which cell was step *from* to get to the current cell?
     * Perhaps a ``Map``?
-* Feel free to use as many private helper methods as you need
+
+
+* Feel free to use as many private helper methods as needed
+
 
 .. warning::
-    Do not get distracted by your assignment 2 solution in ``DfsMazeSolver``. Although there are similarities, the
+
+    Do not get distracted by the depth first search solution in ``DfsMazeSolver``. Although there are similarities, the
     actual algorithms have several noteworthy differences.
+
 
 
 Implementing the Unit Tests
 ---------------------------
 
 The ``AStarMazeSolverTest`` class contains a few constants and empty test methods. The constants are provided to help
-with your tests. Each method has a name that tells you what the test should do. You are to complete all these methods.
-As a starting point, look at the ``DfsMazeSolverTest`` class provided in assignment 2.
+with writing the tests. Each method has a name that explains what the test should do --- complete all these methods. As
+a starting point, look at the ``DfsMazeSolverTest`` class provided in previous assignment.
 
-Having complete tests should help you debug your ``AStarMazeSolver`` class.
+Having complete tests should help with debugging the ``AStarMazeSolver`` class.
+
 
 
 Part 5 --- Putting it Together
