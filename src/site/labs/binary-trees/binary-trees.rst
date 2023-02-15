@@ -18,9 +18,12 @@ Binary Trees
 Draw The Tree
 =============
 
-#. Get a piece of paper.
+#. Start with a scrap piece of paper
 
-#. Draw the tree that the following code generates.
+    * The problems are becoming too complex to solve without visualizing what is happening
+
+
+#. Draw the tree that the following code generates
 
     .. code-block:: java
 
@@ -40,28 +43,28 @@ Draw The Tree
             root.getLeft().getRight().setRight(new BinaryNode<>(5));
         }
 
-#. Keep the paper to scratch other ideas down throughout the lab.
 
 
 Binary Node
 ===========
 
-#. Create a project.
 
-#. Create a ``BinaryNode`` class.
+#. Create a ``BinaryNode`` class
 
-    * This can be taken from the :download:`LinkedBinarySearchTree <../../../main/java/LinkedBinarySearchTree.java>` class since the static inner class is for binary nodes
-    * Just note that you will have to change the class name from ``Node`` to ``BinaryNode``
+    * This can be downloaded from :download:`here <../../../main/java/BinaryNode.java>`
 
-#. Make sure it's all working by running the above provided ``main`` method for generating the tree.
+
+#. Ensure the ``BinaryNode`` class is working by running the above ``main`` method for generating the tree
+
 
 
 In-Order Traversal
 ==================
 
-#. Create a recursive ``inOrderTraversal``.
+#. Create a recursive ``inOrderTraversal``
 
     * :ref:`Review the traversals if you do not remember what an inorder traversal is <label-binary_trees-traversals>`
+
 
     .. code-block:: java
 
@@ -70,10 +73,11 @@ In-Order Traversal
         }
 
 
+
 Number of Nodes
 ===============
 
-#. Write a recursive ``numberOfNodes`` method to count the number of nodes within the tree.
+#. Write a recursive ``numberOfNodes`` method to count the number of nodes within the tree
 
     .. code-block:: java
 
@@ -85,10 +89,9 @@ Number of Nodes
 Depth
 =====
 
-#. Write a recursive ``treeDepth`` method to calculate the depth of the tree.
+#. Write a recursive ``treeDepth`` method to calculate the depth of the tree
 
     * :ref:`Be sure to remember the definition of the height of a tree <label-topic21-trees-properties>`
-    * Check out ``Math.max``
 
     .. code-block:: java
 
@@ -97,19 +100,18 @@ Depth
         }
 
 
+
 Balanced
 ========
 
 .. warning::
 
-    Many will find this method much more challenging than the previous few. Feel free to jump to the Kattis problems
-    if you find yourself getting frustrated.
+    This problem is more challenging than the previous. Feel free to jump to the Kattis problems if stuck.
 
 
-#. Write a recursive ``isBalanced`` method to determine if a given tree is balanced.
+#. Write a recursive ``isBalanced`` method to determine if a given tree is balanced
 
     * :ref:`Be sure to know the definition of a balanced tree <label-binary_search_trees-balanced>`
-
 
     .. code-block:: java
 
@@ -120,8 +122,6 @@ Balanced
 
 Kattis Problems
 ===============
-
-Recommended Kattis Problems (don't worry, you don’t need to do all of them or anything):
 
 #. https://open.kattis.com/problems/quadrant
 #. https://open.kattis.com/problems/judgingmoose
