@@ -119,7 +119,7 @@ Part 3 --- Complete ``LinkedPriorityQueue``
 
 A priority queue is going to help with the implementation of the A* algorithm.
 `Feel free to read up on priority queues <https://en.wikipedia.org/wiki/Priority_queue>`_, but in short, a priority
-queue is a queue with a twist --- whenever dequeuing something, the element with the most important priority is
+queue is a queue with a twist --- whenever dequeuing something, the element with the most *important* priority is
 returned. In other words, the order the elements are removed is based on the priority value, not the standard FIFO of a
 regular queue.
 
@@ -127,8 +127,8 @@ An example of this is triage at an emergency room: someone may have arrived at t
 than the person with a giant crack in their skull, but they will get seen before given the severity of their injury.
 
 
-Notes About Your Implementation
--------------------------------
+Notes About The Implementation
+------------------------------
 
 * The regular ``LinkedQueue`` may provide a good reference
 * Have priority values that are lower be considered "more important" (lower values get dequeued first)
@@ -136,7 +136,7 @@ Notes About Your Implementation
 
     * Enqueue with a linear search for the correct insertion spot (:math:`O(n)`) and then always dequeue from the front (:math:`O(1)`)?
     * Or enqueue always append to the end (:math:`O(1)`) and do a linear search for the most important priority on the dequeue (:math:`O(n)`)?
-    * the former is suggested --- have the enqueue find the correct spot to add the element, and have the dequeue simply remove from the front
+    * The former is suggested --- have the enqueue find the correct spot to add the element, and have the dequeue simply remove from the front
 
 
 * An already complete ``equals`` and ``hashCode`` method for the ``LinkedPriorityQueue`` class is provided
@@ -256,19 +256,20 @@ Having complete tests should help with debugging the ``AStarMazeSolver`` class.
 Part 5 --- Putting it Together
 ==============================
 
-Once you are comfortable that your ``LinkedPriorityQueue`` and ``AStarMazeSolver`` are working correctly, write your
-main method. Expect it to be short (less than 10 lines); if your main is long, you're probably doing something wrong and
-working too hard. You will likely find that your main method is remarkably similar to the one from assignment 2.
+Once comfortable that the ``LinkedPriorityQueue`` and ``AStarMazeSolver`` are working correctly, write a main method.
+Expect it to be short (less than 10 lines); if the main is long, something is wrong and you are working too hard. The
+final main method is remarkably similar to the one from assignment 2.
 
-In order to actually solve a maze, you need
+In order to actually solve a maze, a few objects are needed
 
     * A ``Maze``
     * A ``MazeSolver`` to solve the maze
     * A ``MazeRenderer`` for rendering the maze with the solution so it can be printed out
 
-You will want to run your program on mazes from files. I have provided you with a ``RELATIVE_RESOURCES`` constant in the
-``Asn3`` class. This is the relative path to the directory where the maze files are stored. Simply take this relative
-path and concatenate it with the file name of the maze you want to open.
+
+Run the program on the mazes from files. There is a provided ``RELATIVE_RESOURCES`` constant within the ``Asn3`` class.
+This is the relative path to the directory where the maze files are stored. Simply take this relative path and
+concatenate it with the file name of the maze to be opened.
 
 
 Part 6 --- Testing
