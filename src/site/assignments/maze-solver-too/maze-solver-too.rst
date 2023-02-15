@@ -256,9 +256,9 @@ Having complete tests should help with debugging the ``AStarMazeSolver`` class.
 Part 5 --- Putting it Together
 ==============================
 
-Once comfortable that the ``LinkedPriorityQueue`` and ``AStarMazeSolver`` are working correctly, write a main method.
-Expect it to be short (less than 10 lines); if the main is long, something is wrong and you are working too hard. The
-final main method is remarkably similar to the one from assignment 2.
+Once confident that the ``LinkedPriorityQueue`` and ``AStarMazeSolver`` are working correctly, write a main method.
+Expect it to be short (less than 10 lines); if the main is long, something is wrong. The final main method is remarkably
+similar to the one from the previous assignment.
 
 In order to actually solve a maze, a few objects are needed
 
@@ -275,37 +275,43 @@ concatenate it with the file name of the maze to be opened.
 Part 6 --- Testing
 ==================
 
-You may have already verified the correctness of your ``LinkedPriorityQueue`` and ``AStarMazeSolver`` classes by
+The correctness of the ``LinkedPriorityQueue`` and ``AStarMazeSolver`` classes may have already been verified by
 completing and running their test classes. If not, do it!
 
-If you have, for good measure, re-run all the tests provided to you and the ones you wrote. If they all pass, you should
-be pretty confident that you have everything working correctly.
+If they have already been verified, for good measure, re-run all the tests provided and the ones completed for the
+assignment. If they all pass, one should be pretty confident that you have everything working correctly.
 
-There is no test provided for the ``Asn3`` class, but that's nothing to worry about. You can get a sense that it is
-working correctly by
+There is no test provided for the ``Asn3`` class, but that's nothing to worry about. Get a sense that it is working
+correctly by
 
-    * Running your program on the maze files provided
-    * Create your own maze programs and try running on them too
+    * Running the program on the maze files provided
+    * Create new maze files and try running the program on them too
 
 
 Some Hints
 ==========
 
-* Work on one method at a time.
-* Use the unit tests.
-* Get each method *working perfectly* before you go on to the next one.
-* *Test* each method as you write it.
-    * This is a really nice thing about programming; you can call your methods and see what result gets returned. Does it seem correct?
-    * Mentally test before you even write --- what does this method do? What problem is it solving?
-* If you need help, **ask**! Drop by my office hours.
+* Work on one function at a time
+* Get each function working perfectly before you go on to the next one
+* Test each function as you write it
+
+    * This is a really nice thing about programming; you can call your functions and see what result gets returned
+    * Mentally test before you even write --- what does this function do? What problem is it solving?
+
+
+* If you need help, ask
+
+    * Drop by office hours
 
 
 Some Marking Details
 ====================
 
 .. warning::
+
     Just because your program produces the correct output, that does not necessarily mean that you will get perfect, or
     even that your program is correct.
+
 
 Below is a list of both *quantitative* and *qualitative* things we will look for:
 
@@ -320,14 +326,22 @@ Below is a list of both *quantitative* and *qualitative* things we will look for
 What to Submit to Moodle
 ========================
 
-Submit your work on Moodle.
+* Make sure your **NAME**, **STFX EMAIL**, and **STUDENT NUMBER** appear in a comment at the top of the classes
+* Submit the completed *.java* files to Moodle
 
-* Your ``.java`` files. Please do not compress them.
+    * *LinkedPriorityQueue.java* and *LinkedPriorityQueueTest.java*
+    * *AStarMazeSolver.java* and *AStarMazeSolverTest.java*
+    * *Asn3.java*
+    * Do **not** submit the provided *test* classes
+    * Do **not** submit the maze files
+    * Do **not** submit the *.class* files
+    * Do **not** compress the files
 
-* Make sure your **NAME** and **STUDENT NUMBER** appear in a comment at the top of the program.
 
-**VERIFY THAT YOUR SUBMISSION TO MOODLE WORKED!**
-**IF YOU SUBMIT INCORRECTLY, YOU WILL GET A 0**
+.. warning::
+
+    Verify that your submission to Moodle worked. If you submit incorrectly, you will get a 0.
+
 
 
 Assignment FAQ
