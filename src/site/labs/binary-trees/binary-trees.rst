@@ -12,7 +12,7 @@ Binary Trees
 .. Note::
 
     This lab focuses on manipulating binary node objects, not the development of an actual tree class. However,
-    ultimately a tree structure is being created with the binary nodes.
+    a tree structure is ultimately being created with the binary nodes.
 
 
 Draw The Tree
