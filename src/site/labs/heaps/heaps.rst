@@ -96,9 +96,10 @@ Bubble Up
 Bubble Down
 -----------
 
-* Given the min heap's property of the smallest element being at the root, I may be using this data structure for keeping track of ordered data
+* Given the min heap's property of the smallest element being at the root, it is often used for keeping track of ordered data
 
-    * I can easily access the minimum value from the collection since it is always at :math:`i = 0`
+
+    * The minimum value in a collection is always at index :math:`0`
 
 
 * Unfortunately, if the minimum value is to be *removed*, there will be no value at the root of the tree
@@ -109,7 +110,7 @@ Bubble Down
 * Remove the element at the last index in the heap and place it in the root position :math:`i = 0`
 * Compare the moved value with its left and right children at indices :math:`2i + 1` and :math:`2i + 2`
 
-    * Swap the value with the smaller of the two child's value
+    * Swap the value with the *smaller* of the two children's value
 
 
 * Repeat this process until either
@@ -117,8 +118,6 @@ Bubble Down
     * The value is not greater than either child
     * There are no more children to compare to; the value is at a leaf
 
-
-* It is important to always swap with the smaller of the two children when bubbling down since it ensures the min heap property
 
 
 Implement a Min Heap
