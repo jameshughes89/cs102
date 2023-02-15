@@ -34,7 +34,7 @@ Starting Point
         printArray(toSort);
 
         double startTime = System.nanoTime();
-        bubbleSort(toSort);
+        //bubbleSort(toSort);
         //insertionSort(toSort);
         //selectionSort(toSort);
         double endTime = System.nanoTime();
