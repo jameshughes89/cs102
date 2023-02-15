@@ -2,27 +2,30 @@
 Heaps
 *****
 
-* Feel free to use your laptop if you have it
-* I strongly encourage you to work with others in the lab
+* Feel free to use your laptop
+* You are strongly encourage to work with others
 
-    * When you get stuck, do me a favour and ask those sitting around you for help
-    * I want people to get used to working together in the labs
-    * Peer teaching and peer learning is super effective
+    * When you get stuck, ask those sitting around you for help
+    * Get used to working together in the labs
+    * Peer teaching and peer learning has been empirically shown to be very effective
+
 
 .. note::
 
-    We have not gone over this topic in lecture, but at this stage this should not be a problem.
+    This topic has not been covered in lectures, but at this stage, this should not be a problem.
 
 
 Heaps
 =====
 
-Have you ever wanted to store a binary tree in an array?
+.. figure:: heap_example.png
+    :width: 333 px
+    :align: center
+    :target: https://en.wikipedia.org/wiki/Heap_(data_structure)
 
-.. image:: heap_example.png
-   :width: 333 px
-   :align: center
-   :target: https://en.wikipedia.org/wiki/Heap_(data_structure)
+    A heap is encoded within an array but represents a binary tree structure. This particular heap is an example of a
+    "max heap", which is a heap where each node contains values larger than those of their children.
+
 
 * The root of the tree is always at index :math:`0`
 * Given an element at index :math:`i`
@@ -34,11 +37,12 @@ Have you ever wanted to store a binary tree in an array?
         * :math:`\lfloor x \rfloor` just means to round down if needed
 
 
-* For example, consider the element 17 located at index :math:`3` in the array
+* For example, consider the element $17$ located at index :math:`3` in the array
 
     * Left child would be at :math:`3*2 + 1 = 7`
     * Right child would be at :math:`3*2 + 2 = 8`
     * Parent would be at :math:`\lfloor (3-1)/2 \rfloor = 1`
+
 
 
 Min Heap
@@ -58,11 +62,13 @@ Min Heap
 
     * The image above provides an example of a max heap
 
+
 .. warning::
 
     Although min/max heaps are binary trees, they are **not** binary *search* trees; do not get the idea of min/max
     heaps confused with binary search trees. Where binary search trees have the ordering based on left/right
     orientation, the min/max heaps have their ordering based on up/down direction.
+
 
 
 Bubble Up
