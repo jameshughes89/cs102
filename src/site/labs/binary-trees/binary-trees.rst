@@ -9,6 +9,7 @@ Binary Trees
     * Get used to working together in the labs
     * Peer teaching and peer learning has been empirically shown to be very effective
 
+
 .. Note::
 
     This lab focuses on manipulating binary node objects, not the development of an actual tree class. However,
