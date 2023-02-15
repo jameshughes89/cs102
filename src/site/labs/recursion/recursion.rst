@@ -60,26 +60,6 @@ Factorial
     * The method will return the factorial
 
 
-Sum
-===
-
-#. Write an **iterative** method to sum the numbers between ``1`` and ``n`` inclusively.
-
-    * The method will take a single integer ``n`` as a parameter
-    * The method will return the sum
-
-
-#. Write a **recursive** method to sum the numbers between ``1`` and ``n`` inclusively.
-
-    * The method will take a single integer ``n`` as a parameter
-    * The method will return the sum
-
-
-#. Write a **recursive** method to sum the numbers between ``cur`` and ``n`` inclusively.
-
-    * The method will take two parameters ``cur`` and ``n``
-    * The method will return the sum
-
 
 Linear Search on Arrays
 =======================
