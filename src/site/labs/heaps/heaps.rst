@@ -37,7 +37,7 @@ Heaps
         * :math:`\lfloor x \rfloor` just means to round down if needed
 
 
-* For example, consider the element $17$ located at index :math:`3` in the array
+* For example, consider the element ``17`` located at index :math:`3` in the array
 
     * Left child would be at :math:`3*2 + 1 = 7`
     * Right child would be at :math:`3*2 + 2 = 8`
