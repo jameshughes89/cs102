@@ -61,45 +61,37 @@ Factorial
 
 
 
-Linear Search on Arrays
-=======================
+Linear Search on an Array
+=========================
 
-#. Write a **recursive** method to do a linear search.
+#. Write a **recursive** method to do a linear search
 
-    * This method will take an array of integers ``toSearch``, an integer ``target`` as parameters, and the current index ``cur``
-    * This method will return ``true``/``false``
-    * It is strongly recommended to work with others
-    * Scrap paper is your friend
+    * This method will take an array of integers ``haystack``, an integer ``needle``, and the current index ``current`` as parameters
+    * This method will return a boolean indicating if the ``needle`` was found
 
 
 Building a Linked Structure
 ===========================
 
-#. Write a **recursive** method to build a linked structure containing the numbers ``0`` -- ``(n-1)``.
+#. Write a **recursive** method to build a linked structure containing the numbers ``0`` -- ``(n-1)``
 
     * This method will take an integer ``n``
     * This method will return a reference to the head of the linked structure
-    * The first node must contain ``0``, not ``5``
-    * You will need a ``Node`` class
-    * It is strongly recommended to work with others
-    * Scrap paper is your friend
+    * The first node must contain ``0``
+    * This will require a working ``Node`` class
 
 
-Linear Search on Linked Structure
-=================================
+Linear Search on a Linked Structure
+===================================
 
-#. Write a **recursive** method that performs a linear search on a linked structure.
+#. Write a **recursive** method that performs a linear search on a linked structure
 
-    * The method will take a reference to the current ``Node`` called ``cur`` and the ``target``
-    * This method will return ``true``/``false``
-    * It is strongly recommended to work with others
-    * Scrap paper is your friend
+    * The method will take a reference to the current node called ``current`` and the ``needle``
+    * This method will return a boolean indicating if the ``needle`` was found
 
 
 Kattis Problems
 ===============
-
-Recommended Kattis Problems (don't worry, you don’t need to do all of them or anything):
 
 #. https://open.kattis.com/problems/quadrant
 #. https://open.kattis.com/problems/judgingmoose
