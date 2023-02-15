@@ -2,21 +2,22 @@
 Sorting Recursively
 *******************
 
-* Feel free to use your laptop if you have it
-* I strongly encourage you to work with others in the lab
+* Feel free to use your laptop
+* You are strongly encourage to work with others
 
-    * When you get stuck, do me a favour and ask those sitting around you for help
-    * I want people to get used to working together in the labs
-    * Peer teaching and peer learning is super effective
+    * When you get stuck, ask those sitting around you for help
+    * Get used to working together in the labs
+    * Peer teaching and peer learning has been empirically shown to be very effective
 
 
 Starting Point
 ==============
 
-This lab focuses on the sorts discussed in :doc:`topic 26 </topics/sorting/sorting-recursive>`. Note that, unlike the
-previous lab, here we use an unsorted bag instead of an array.
+* This lab focuses on the sorting algorithms discussed in the :doc:`Sorting Recursively Topic </topics/sorting/sorting-recursive>`
+* Unlike the previous lab, an ``IndexedBag`` is used
 
-The below code can be used for setting up a bag to be sorted and timing the different sorting algorithms.
+* The below code can be used for setting up an array to be sorted
+* This code can also be used for timing the different sorting algorithms
 
 
 .. code-block:: java
@@ -28,7 +29,7 @@ The below code can be used for setting up a bag to be sorted and timing the diff
 
         double startTime = System.nanoTime();
         //quicksort(toSort);
-        mergesort(toSort);
+        //mergesort(toSort);
         double endTime = System.nanoTime();
 
         System.out.println(toSort);
