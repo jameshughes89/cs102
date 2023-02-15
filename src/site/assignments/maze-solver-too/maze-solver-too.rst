@@ -12,7 +12,7 @@ Task
 The goal is to solve a maze, again, but this time with artificial intelligence (AI). The A* (A-star) algorithm will be
 used to find an optimal solution.
 
-You will:
+Objectives:
 
 * Create a ``LinkedPriorityQueue`` class that implements a ``PriorityQueue``
 
@@ -21,10 +21,10 @@ You will:
 
 * Create an ``AStarMazeSolver`` class that implements the ``MazeSolver`` interface
 
-    * Within this class, you will write the ``solve`` method
+    * Within this class, write the ``solve`` method
 
 
-* You will use the ``AStarMazeSolver``, along with some of the other provided classes, in the ``main`` to
+* Use the ``AStarMazeSolver``, along with some of the other provided classes, in the ``main`` to
 
     * Create the maze
     * Solve the maze
@@ -56,7 +56,7 @@ Provided Files
 * :download:`All of this can be downloaded from here <Assignment3.zip>`
 
     * This is a compressed IntelliJ project
-    * Just unzip, put it where you want on your computer, and you should be able to open this project through IntelliJ
+    * Just unzip, put it in the desired location on the computer, and open the project through IntelliJ
 
 
 .. warning::
@@ -103,14 +103,14 @@ Part 2 --- Run Unit Tests
 
     * If not, something has gone wrong
 
-        * Did you change the code?
-        * Did your test folder get changed?
+        * Was the code changed?
+        * Did the test folder get changed?
         * Try re-downloading the project and starting over if they do not pass
 
 
-* You will notice the test classes ``AStarMazeSolverTest`` and ``LinkedPriorityQueueTest`` are provided, but incomplete
+* Notice the test classes ``AStarMazeSolverTest`` and ``LinkedPriorityQueueTest`` are provided, but incomplete
 
-    * They have empty tests left for you to complete in their respective parts discussed below
+    * They have empty tests to be completed in their respective parts discussed below
 
 
 
