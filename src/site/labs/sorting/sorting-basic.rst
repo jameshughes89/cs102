@@ -126,8 +126,6 @@ Comparing Sorts
 Kattis Problems
 ===============
 
-Recommended Kattis Problems (don't worry, you don’t need to do all of them or anything):
-
 #. https://open.kattis.com/problems/quadrant
 #. https://open.kattis.com/problems/judgingmoose
 #. https://open.kattis.com/problems/timeloop
