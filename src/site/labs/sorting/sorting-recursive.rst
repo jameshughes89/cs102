@@ -48,10 +48,10 @@ Starting Point
 Quicksort
 =========
 
-#. Implement the quicksort algorithm.
-#. Make sure it works and test it a few times and see what the runtimes are.
+#. Implement the quicksort algorithm
+#. Make sure it works and run it a few times to see what the runtimes are
 
-    * Change the size of the bag and the max value and see how it impacts runtimes
+    * Change the size of the array and the max value and see how it impacts runtimes
     * For the purposes of this lab, do not worry about writing unit tests
 
 .. code-block:: java
@@ -64,10 +64,10 @@ Quicksort
 Mergesort
 =========
 
-#. Implement the mergesort algorithm.
-#. Make sure it works and test it a few times and see what the runtimes are.
+#. Implement the mergesort algorithm
+#. Make sure it works and run it a few times to see what the runtimes are
 
-    * Change the size of the bag and the max value and see how it impacts runtimes
+    * Change the size of the array and the max value and see how it impacts runtimes
     * For the purposes of this lab, do not worry about writing unit tests
 
 .. code-block:: java
@@ -83,15 +83,14 @@ Comparing Sorts
 #. Run each of the sorts a few times and take note of the runtimes
 
     * Play around with the size of the lists and the max value
-    * Do the times align with what you'd expect based on the computational complexities of each of the algorithms
+    * Compare the runtimes of each algorithm to what was expected based on their computational complexities
 
-#. Compare these runtimes to the sorts completed in the previous lab.
+
+#. Compare these runtimes to the sorting algorithms implemented in the previous lab
 
 
 Kattis Problems
 ===============
-
-Recommended Kattis Problems (don't worry, you don’t need to do all of them or anything):
 
 #. https://open.kattis.com/problems/quadrant
 #. https://open.kattis.com/problems/judgingmoose
