@@ -228,7 +228,7 @@ of the tree would work well in this scenario.
 Complete the ``public String encode(String string)`` method which takes a string and returns a bitstring encoding. The
 encoding is based on the encoding of each character.
 
-Complete the ``public String decode(String bits)`` method for decoding the bit string. This is the inverse operation of
+Complete the ``public String decode(String bits)`` method for decoding the bitstring. This is the inverse operation of
 ``encode``. With the use of a private helper method, decode the string recursively.
 
 
@@ -246,7 +246,7 @@ Part 5 --- Putting it Together
 Once everything is done, write the ``main`` method to compress some strings. Like the previous assignments, this method
 will likely be short.
 
-This method must
+This method must:
 
     * Create a ``HuffmanCode`` instance from a string or a file
     * Encode some string
@@ -254,14 +254,19 @@ This method must
     * Print out the original, encoded, and decoded strings
     * Print out the percentage the message got compressed
 
-To calculate the compression percentage, we will make a few assumptions
+
+To calculate the compression percentage, make a few assumptions:
 
     * Assume that a given character takes up 1 byte (8 bits)
+
         * If the string has 10 characters, then we will assume it takes up 80 bits
-        * In reality, characters may take up more space than 8 bits, but we will ignore this here
+        * In reality, characters may take up more space than 8 bits, but ignore this here
+
+
     * Assume that the 0s and 1s in the encoded message are each 1 bit
-        * If the encoded string has 20 characters, then we assume it takes up 20 bits
-        * In reality, we are storing the 0s and 1s in a string, meaning each is actually a character that takes up 8 bits, but we will ignore this here
+
+        * If the encoded bitstring has 20 characters, then assume it takes up 20 bits
+        * In reality, the 0s and 1s are being stored in a string, meaning each is actually a character that takes up more space, but ignore this here
 
 
 Part 6 --- Testing
