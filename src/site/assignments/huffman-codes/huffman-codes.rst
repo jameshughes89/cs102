@@ -272,16 +272,16 @@ To calculate the compression percentage, make a few assumptions:
 Part 6 --- Testing
 ==================
 
-You may have already verified the correctness of your classes by completing and running their test classes. If not, do
+The correctness of the classes may have already been verified by completing and running their test classes. If not, do
 it!
 
-If you have, for good measure, re-run all the tests provided to you and the ones you wrote. If they all pass, you should
-be pretty confident that you have everything working correctly.
+If they have already been verified, for good measure, re-run all the tests provided and the ones completed for the
+assignment. If they all pass, one should be pretty confident that they have everything working correctly.
 
-There is no test provided for the ``Asn4`` class, but that's nothing to worry about. You can get a sense that it is
-working correctly by
+There is no test provided for the ``Asn4`` class, but that's nothing to worry about. Get a sense that it is working
+correctly by
 
-    * Running your program on different seeds
+    * Running the program on different seeds
     * Encoding and decoding various strings
 
 
