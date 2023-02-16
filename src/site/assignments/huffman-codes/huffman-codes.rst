@@ -106,7 +106,8 @@ A complete ``HuffmanCode`` interface is provided. This interface will be impleme
 
 Both the ``HuffmanLeaf`` and ``HuffmanInternal`` will have a ``weight`` field, but the ``HuffmanLeaf`` will also need to
 keep track of which character it has. Have the constructor for the leaf nodes always convert the character to lower
-case. Additionally, the ``HuffmanInternal`` needs references to its left and right subtrees (``HuffmanNode`` objects).
+case. Additionally, the ``HuffmanInternal`` needs fields for referencing its left and right subtrees (``HuffmanNode``
+objects).
 
 These classes will be immutable; only write getters as the data within the fields will not need to be updated after
 the objects are initialized.
@@ -118,8 +119,8 @@ Implementing the Unit Tests
 ---------------------------
 
 There are skeletal test classes with incomplete test methods for each of the node types. The method names should provide
-a good enough idea of what each method should be testing. Complete the unit tests and ensure the implemented node
-classes are working correctly.
+an idea of what each method should be testing. Complete the unit tests and ensure the implemented node classes are
+working correctly.
 
 
 Part 3 --- Complete ``HuffmanNodeComparator``
