@@ -315,7 +315,7 @@ Interface
 Linked Implementation
 =====================
 
-* Although a binary tree is not being directly implemented, it will be inherited from for specific binary tree implementations
+* No binary tree implementation is being created; it will be inherited from for specific binary tree implementations
 
     * For example, a ``BinarySearchTree``
 
@@ -363,14 +363,15 @@ Binary Tree Node
 Linked Binary Tree
 ------------------
 
-* Although there will be no implementation of a general ``BinaryTree``, general binary tree methods can be discussed
+* Although there will be no implementation of a general ``BinaryTree``, general binary tree related methods can be discussed
 
 
 ``size``
 ^^^^^^^^
 
 * Given some arbitrary binary tree with no ``size`` field, the number of elements can be counted recursively
-* If the current node exists, then the size of the (sub)tree it is the root of will be 1 + the size of the left subtree + the size of the right subtree
+
+    * If the current node exists, then the size of the (sub)tree it is the root of will be 1 + the size of the left subtree + the size of the right subtree
 
 .. code-block:: java
     :linenos:
@@ -400,9 +401,9 @@ Linked Binary Tree
 
 * Given some arbitrary binary tree, a specific element can be searched for recursively
 
-* If the current element is what is being looking for, done
-* Otherwise, check the left subtree
-* If it wasn't found in the left subtree, then check the right subtree
+    * If the current element is what is being looking for, done
+    * Otherwise, check the left subtree
+    * If it wasn't found in the left subtree, then check the right subtree
 
 
 .. code-block:: java
