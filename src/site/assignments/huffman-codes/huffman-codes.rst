@@ -10,7 +10,7 @@ Task
 ====
 
 The goal is to compress data such that they take up less space, but can be uncompressed without losing any information.
-Huffman Coding is used as the compression mechanism. The data will be compressed with an encoding process, and
+Huffman Coding is to be used as the compression mechanism. The data will be compressed with an encoding process, and
 uncompressed with a decoding process.
 
 Objectives:
@@ -49,7 +49,7 @@ Provided Files
 * A text file that may be used to seed the Huffman Code
 
 
-* :download:`All of this can be downloaded from here <Assignment3.zip>`
+* :download:`All of this can be downloaded from here <Assignment4.zip>`
 
     * This is a compressed IntelliJ project
     * Just unzip, put it in the desired location on the computer, and open the project through IntelliJ
