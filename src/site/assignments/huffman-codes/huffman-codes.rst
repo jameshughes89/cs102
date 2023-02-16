@@ -26,7 +26,7 @@ Objectives:
 
 
 * Create a ``HuffmanCode`` class that will encode and decode strings
-* The ``HuffmanCode`` object will be used in the ``main`` to
+* The ``HuffmanCode`` object will be used in the ``main`` to:
 
     * Encode strings
     * Decode strings
@@ -76,7 +76,7 @@ of how it works will greatly help with completing the assignment.
 `The Wikipedia page gives details <https://en.wikipedia.org/wiki/Huffman_coding>`_ but it is suggested to find
 additional resources to learn from. Perhaps YouTube or other online resources will prove helpful.
 
-Things of note related to Huffman Codes to look out for
+Things of note related to Huffman Codes to look out for:
 
     * How data is stored within nodes in a binary tree structure
     * How a priority queue can be used
@@ -88,7 +88,7 @@ Things of note related to Huffman Codes to look out for
 Part 2 --- Complete Huffman Nodes
 =================================
 
-The Huffman nodes are an important piece of the Huffman Codes. There are two types of nodes.
+The Huffman nodes are an important piece of the Huffman Codes. There are two types of nodes:
 
     * Nodes that store a character and it's weight (leaf nodes)
     * Nodes that have a left and right subtree and a weight (internal nodes)
@@ -126,8 +126,10 @@ working correctly.
 Part 3 --- Complete ``HuffmanNodeComparator``
 =============================================
 
-Although we have seen ``comparable`` when implementing the ``ArraySortedBag`` and ``LinkedBinarySearchTree``, here we
-make use of a `Comparator <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Comparable.html>`_ .
+
+
+Although ``comparable`` was used when implementing the ``ArraySortedBag`` and ``LinkedBinarySearchTree``, here a
+`Comparator <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Comparable.html>`_  is to be used.
 A ``Comparator`` is a very similar idea to ``comparable``, but it allows for more flexibility when needing to define
 more complex orderings.
 
@@ -137,36 +139,39 @@ Implementing the Class
 
 Write the ``int compare(HuffmanNode huff1, HuffmanNode huff2)`` method in the provided ``HuffmanNodeComparator`` class.
 
-You must have ``compare`` return a negative integer if ``huff1 < huff2``, zero if ``huff1 == huff2``, and a positive
-number if ``huff1 > huff2``.
+The ``compare`` method must return a negative integer if ``huff1 < huff2``, zero if ``huff1 == huff2``, and a positive
+integer if ``huff1 > huff2``.
 
-Make sure you have a good sense of the order the ``HuffmanNode`` objects must have based on the Huffman Code compression
-strategy
+Make sure to have a good sense of the order the ``HuffmanNode`` objects must have based on the Huffman Code compression
+strategy:
 
     * Nodes with smaller weights come first
     * If a leaf and an internal node have the same weight, the leaf comes first
     * If two leaf nodes have the same weight, the one with the smaller ASCII value comes first
     * If two internal nodes have the same weight, the order does not matter
 
-You can check if a given reference variable is referencing an object of a specific type with the
-``instanceof`` operator. For example, ``huff1 instanceof HuffmanLeaf`` results in ``true`` if ``huff1`` is referencing
-something of type (or subtype) of ``HuffmanLeaf``.
+
+The ``instanceof`` operator can be used to check if a given reference variable is referencing an object of a specific
+type. For example, ``huff1 instanceof HuffmanLeaf`` results in ``true`` if ``huff1`` is referencing something of type
+(or subtype) of ``HuffmanLeaf``.
 
 
 Run the Unit Tests
 ------------------
 
-Since testing ``Comparator`` objects can be quite tedious, I have provided a complete set of unit tests for the class.
-If everything is working properly in your ``HuffmanNodeComparator`` class, the tests should pass.
+Since testing ``Comparator`` objects can be quite tedious, a complete set of unit tests for the class is provided. If
+everything is working properly in the ``HuffmanNodeComparator`` class, the tests should pass.
 
-Make sure to take your time investigating these unit tests. One thing of note is that the primary way the
-``HuffmanNodeComparator`` is tested is by sorting a list based on the order defined by the ``HuffmanNodeComparator``. In
-the method ``compare_unsortedList_sortsList``
+Make sure to take time investigating these unit tests. One thing of note is that the primary way the
+``HuffmanNodeComparator`` is tested is by sorting a list based on the order defined by the ``HuffmanNodeComparator``.
+
+In the method ``compare_unsortedList_sortsList``:
 
     * A list of ``HuffmanNode`` objects in their proper order, referenced by ``sorted``, is created
     * A copy of that list is made and referenced by ``unsorted``
     * The ``unsorted`` list is shuffled (to make it actually unsorted)
     * The ``unsorted`` list is then sorted based on the ordering of the ``HuffmanNodeComparator`` (``classUnderTest``)
+
 
 The idea here is, if the ``HuffmanNodeComparator`` sorts the whole list such that the elements return to their correct
 sorted order as laid out in ``sorted``, then the ``HuffmanNodeComparator`` should be correct.
