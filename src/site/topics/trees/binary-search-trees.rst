@@ -317,50 +317,61 @@ General Remove
 
 * A general remove is a little more complex than the remove min or max
 
-.. image:: binary_search_tree_remove_uh.png
-   :width: 250 px
-   :align: center
+.. figure:: binary_search_tree_remove_uh.png
+    :width: 250 px
+    :align: center
+
+    How would one remove the value 26, which happens to be the tree's root, from this binary search tree?
+
 
 * In the above example, there may not be an immediately obvious or clear way to address the problem
 
 
 **Case 1**
 
-* If the node we are trying to remove is a leaf node, then we simply remove it
-    * In the above example, if we wanted to remove 7 or 34, we just take it out
+* If the node being removed is a leaf node, then simply remove it
+
+    * In the above example, if 7 or 34 is to be removed, just remove it
+
 
 **Case 2**
 
-* If the node we are trying to remove is an interior node, then things get hairy
-* In some cases this may seem simple --- if we remove 15, just replace it with it's child
-* But what happens if we try to remove 26 from the tree?
+* If the node being removed is an interior node, then things get hairy
+* In some cases this may seem simple --- if 15 is removed, just replace it with it's child
+* But what happens if removing 26 from the tree?
 
 * The trick here is to replace the node with its inorder predecessor or successor
-* If we remove 26
-    * We could replace it with 15, the value in the tree that comes right before 26
-    * Or we could replace it with 31, the value in the tree that comes right after 26
+* If 26 is removed
 
-* The reason this will work is, if I am looking for the predecessor
+    * 15, the value in the tree that comes right before 26, could replace it
+    * Or 31, the value in the tree that comes right after 26, could replace it
+
+
+* The reason this will work is, if looking for the predecessor
+
     * All values in the left subtree are smaller than the root and everything in the right subtree
     * The largest value in the left subtree will be greater than or equal to all other values in the left subtree
     * The largest value in the left subtree will be less than all values in the right subtree
     * Therefore, the largest value in the left subtree can replace 26 without destroying the ordering since
+
         * It's greater than or equal to everything in the left subtree
         * And smaller than everything in the right subtree
 
+
 * Below is an example of removing multiple elements from a binary search tree
 
-.. image:: binary_search_tree_remove1.png
-   :width: 500 px
-   :align: center
+.. figure:: binary_search_tree_remove1.png
+    :width: 500 px
+    :align: center
 
-.. image:: binary_search_tree_remove2.png
-   :width: 500 px
-   :align: center
+.. figure:: binary_search_tree_remove2.png
+    :width: 500 px
+    :align: center
 
-.. image:: binary_search_tree_remove3.png
-   :width: 500 px
-   :align: center
+.. figure:: binary_search_tree_remove3.png
+    :width: 500 px
+    :align: center
+
 
 
 Contains
