@@ -276,7 +276,7 @@ The correctness of the classes may have already been verified by completing and 
 it!
 
 If they have already been verified, for good measure, re-run all the tests provided and the ones completed for the
-assignment. If they all pass, one should be pretty confident that they have everything working correctly.
+assignment. If they all pass, one should be pretty confident that everything is working correctly.
 
 There is no test provided for the ``Asn4`` class, but that's nothing to worry about. Get a sense that it is working
 correctly by
@@ -288,21 +288,28 @@ correctly by
 Some Hints
 ==========
 
-* Work on one method at a time.
-* Use the unit tests.
-* Get each method *working perfectly* before you go on to the next one.
-* *Test* each method as you write it.
-    * This is a really nice thing about programming; you can call your methods and see what result gets returned. Does it seem correct?
-    * Mentally test before you even write --- what does this method do? What problem is it solving?
-* If you need help, **ask**! Drop by my office hours.
+* Work on one function at a time
+* Get each function working perfectly before you go on to the next one
+* Test each function as you write it
+
+    * This is a really nice thing about programming; you can call your functions and see what result gets returned
+    * Mentally test before you even write --- what does this function do? What problem is it solving?
+
+
+* If you need help, ask
+
+    * Drop by office hours
+
 
 
 Some Marking Details
 ====================
 
 .. warning::
+
     Just because your program produces the correct output, that does not necessarily mean that you will get perfect, or
     even that your program is correct.
+
 
 Below is a list of both *quantitative* and *qualitative* things we will look for:
 
@@ -317,14 +324,26 @@ Below is a list of both *quantitative* and *qualitative* things we will look for
 What to Submit to Moodle
 ========================
 
-Submit your work on Moodle.
+* Make sure your **NAME**, **STFX EMAIL**, and **STUDENT NUMBER** appear in a comment at the top of the classes
+* Submit the completed *.java* files to Moodle
+
+    * *HuffmanLeaf.java* and *HuffmanLeafTest.java*
+    * *HuffmanInternal.java* and *HuffmanInternalTest.java*
+    * *HuffmanNodeComparator.java*
+    * *HuffmanCode.java* and *HuffmanCodeTest.java*
+    * *Asn4.java*
+    * Do **not** submit the provided *test* classes
+    * Do **not** submit the seed file
+    * Do **not** submit the *.class* files
+    * Do **not** compress the files
+
 
 * Your ``.java`` files. Please do not compress them.
 
-* Make sure your **NAME** and **STUDENT NUMBER** appear in a comment at the top of the program.
 
-**VERIFY THAT YOUR SUBMISSION TO MOODLE WORKED!**
-**IF YOU SUBMIT INCORRECTLY, YOU WILL GET A 0**
+.. warning::
+
+    Verify that your submission to Moodle worked. If you submit incorrectly, you will get a 0.
 
 
 Assignment FAQ
