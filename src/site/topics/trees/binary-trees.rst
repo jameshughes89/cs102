@@ -51,22 +51,31 @@ Binary Tree Definition
 Traversals
 ==========
 
-.. image:: /topics/linked-structures/example1.png
-   :width: 500 px
-   :align: center
+.. figure:: /topics/linked-structures/example1.png
+    :width: 500 px
+    :align: center
 
-* With a simple linear structure, the order in which you traverse the nodes is rather natural
-* Start at one end and go to the other
-* For example, start at the head node and visit each node's next
+    A linear linked structure of singly linked nodes.
 
-* We could define other traversal orders if we wanted to, but that would be atypical
 
-.. image:: binary_tree_example.png
-   :width: 500 px
-   :align: center
+* With a simple linear structure, the order in which the nodes are traversed is rather natural
+
+    * Start at one end and go to the other
+    * For example, start at the head node and visit each node's next until there are no more nodes
+
+
+* Other traversal orders could be defined for linear collections if desired, but that would be atypical
+
+
+.. figure:: binary_tree_example.png
+    :width: 500 px
+    :align: center
+
+    A nonlinear linked structure --- a binary tree.
+
 
 * With a nonlinear data structure like a binary tree, the order to traverse the nodes in is not immediately obvious
-* We have a few common options to choose from
+* There are a few common options to choose from
 
 
 Pre-order
@@ -74,26 +83,30 @@ Pre-order
 
 * A pre-order traversal is a common order to traverse a binary tree
 * The general idea is
+
     * Start at the root
     * *Access the node*, then go to the left child, then the right child
 
+
 * To get more precise in a recursive definition
 
-* **Preorder Traversal**
-    * If the (sub)tree is not empty
-        * Access the root of the (sub)tree
-        * Do a **Preorder Traversal** on the left subtree
-        * Do a **Preorder Traversal** on the right subtree
+.. code-block:: text
+    :linenos:
+
+    Define PreOrderTraversal
+        If the node exists
+            Access the node
+            Call PreOrderTraversal on the left child node
+            Call PreOrderTraversal on the right child node
+
 
 * Notice that the root of the (sub)tree is accessed before (*pre-*) any recursive calls
 
-.. image:: binary_tree_example.png
-   :width: 500 px
-   :align: center
+.. figure:: binary_tree_example.png
+    :width: 500 px
+    :align: center
 
-* With the definition of a pre-order traversal, what order would the nodes be visited?
-
-    ``A, B, D, H, E, C, F, I, G``
+    A pre-order traversal of the binary tree would visit the nodes in the order ``A, B, D, H, E, C, F, I, G``.
 
 
 In-order
@@ -101,26 +114,30 @@ In-order
 
 * An in-order traversal is another common traversal
 * The general idea is
+
     * Start at the root
     * Go to the left child, *Access the node*, then the right child
 
 * To get more precise in a recursive definition
 
-* **Inorder Traversal**
-    * If the (sub)tree is not empty
-        * Do an **Inorder Traversal** on the left subtree
-        * Access the root of the (sub)tree
-        * Do an **Inorder Traversal** on the right subtree
+.. code-block:: text
+    :linenos:
+
+    Define InOrderTraversal
+        If the node exists
+            Call PreOrderTraversal on the left child node
+            Access the node
+            Call PreOrderTraversal on the right child node
+
 
 * Notice that the root of the (sub)tree is accessed *in* between any recursive calls
 
-.. image:: binary_tree_example.png
-   :width: 500 px
-   :align: center
 
-* With the definition of a in-order traversal, what order would the nodes be visited?
+.. figure:: binary_tree_example.png
+    :width: 500 px
+    :align: center
 
-    ``D, H, B, E, A, I, F, C, G``
+    An in-order traversal of the binary tree would visit the nodes in the order ``D, H, B, E, A, I, F, C, G``
 
 
 Post-order
@@ -130,26 +147,30 @@ Post-order
 
 * A post-order traversal is another traversal
 * The general idea is
+
     * Start at the root
     * Go to the left child, then the right child, then *Access the node*,
 
+
 * To get more precise in a recursive definition
 
-* **Postorder Traversal**
-    * If the (sub)tree is not empty
-        * Do an **Postorder Traversal** on the left subtree
-        * Do an **Postorder Traversal** on the right subtree
-        * Access the root of the (sub)tree
+.. code-block:: text
+    :linenos:
+
+    Define PostOrderTraversal
+        If the node exists
+            Call PreOrderTraversal on the left child node
+            Call PreOrderTraversal on the right child node
+            Access the node
+
 
 * Notice that the root of the (sub)tree is accessed after (*post-*) any recursive calls
 
-.. image:: binary_tree_example.png
-   :width: 500 px
-   :align: center
+.. figure:: binary_tree_example.png
+    :width: 500 px
+    :align: center
 
-* With the definition of a post-order traversal, what order would the nodes be visited?
-
-    ``H, D, E, B, I, F, G, C, A``
+    A post-order traversal of the binary tree would visit the nodes in the order ``H, D, E, B, I, F, G, C, A``.
 
 
 Level-order
@@ -160,40 +181,56 @@ Level-order
 * Instead, it traverses the *breadth* of the tree on the way down all branches
 
 * The idea is
+
     * Start at the root
     * Visit the nodes in each level from left to right
+
 
 * With this idea, there is no immediately obvious recursive definition of this traversal
 * An iterative definition of the traversal is perhaps simpler to derive
 
-* **Levelorder Traversal**
-    * If it exists, add the root to a *queue*
-    * While the queue is not empty
-        * Dequeue a node
-        * Access the dequeued node
-        * If it exists, enqueue the left child
-        * If it exists, enqueue the right child
+
+.. code-block:: text
+    :linenos:
+
+    Define LevelOrderTraversal
+        If the root node exists
+            Enqueue the root node to a queue
+
+        While the queue is not empty
+            Dequeue a node
+            Access the dequeued node
+
+            If the left child exists
+                Enqueue the left child to the queue
+
+            If the right child exists
+                Enqueue the right child to the queue
 
 
-.. image:: binary_tree_example.png
-   :width: 500 px
-   :align: center
 
-* With the definition of a level-order traversal, what order would the nodes be visited?
+.. figure:: binary_tree_example.png
+    :width: 500 px
+    :align: center
 
-    ``A, B, C, D, E, F, G, H, I``
+    A level-order traversal of the binary tree would visit the nodes in the order ``A, B, C, D, E, F, G, H, I``.
+
 
 
 Iterative Pre/In/Post-Order
 ---------------------------
 
-* With the iterative level-order traversal, we used a *queue*
-* What do you think would happen if we switched it out for a stack?
+* With the iterative level-order traversal, a *queue* was used
+* What would happen if a *stack* was used?
 
-* With the recursive pre-/in-/post-order traversals, we used the call stack
-    * We didn't need an implementation of a stack data structure, but we could have used one
+* With the recursive pre-/in-/post-order traversals, a stack was used
 
-* How would we change the level-order traversal to do a pre-/in-/post-order traversal?
+    * The *call stack*
+    * No directly instantiated stack data structure was used, but one could have been used
+
+
+* How would the level-order traversal need to be changed to do a pre-/in-/post-order traversal?
+
 
 
 Traversal Analysis
@@ -203,21 +240,23 @@ Traversal Analysis
    :width: 500 px
    :align: center
 
+
 * Consider a binary tree with :math:`n` nodes
-* Without getting too deep into analysis territory, if we want to traverse all :math:`n` nodes, what is the computational complexity of
+* If all :math:`n` nodes are to be visited, what is the computational complexity of
+
     * pre-order traversal?
     * in-order traversal?
     * post-order traversal?
     * level-order traversal?
 
-* Intuitively, they're all :math:`O(n)` since we will need to visit each node once and only once
 
-* If I change the question slightly, consider a binary tree with **height** :math:`h`
+* Intuitively, they're all :math:`O(n)` since all :math:`n` nodes must be visited once and only once
+* If the question was changed slightly, consider a binary tree with **height** :math:`h`
+
     * What is the computational complexity of the traversals?
+    * Consider the relationship between the height of a binary tree and the number of nodes within the tree
+    * :math:`O(2^{h})`
 
-* :math:`O(2^{h})`
-* Why?
-* Consider the relationship between the height of a binary tree and the number of nodes within the tree
 
 
 Interface
