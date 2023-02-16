@@ -66,15 +66,17 @@ A Binary Search Tree is a Binary Tree
 Searching a Binary Search Tree
 ==============================
 
-* The special ordering property allows us to search for items within the binary search tree more efficiently than a regular search through a tree
-* For this section, we will assume we are using a linked implementation of a binary search tree
+* The special ordering property enables a more efficient search through the tree when compared to a search regular binary tree
+* For this section, assume the use of a linked implementation of a binary search tree
+
     * More on this below
+
 
 Naive Search
 ------------
 
-* Since the binary search tree is a binary tree, we could use the search presented in the previous topic
-* Remember that this search strategy has a computational complexity of :math:`O(n)`, where :math:`n` is the number of nodes in the tree
+* Since the binary search tree is a binary tree, the search discussed in the previous topic can be used
+* This search strategy has a computational complexity of :math:`O(n)`, where :math:`n` is the number of nodes in the tree
 
 .. code-block:: java
     :linenos:
@@ -86,7 +88,7 @@ Naive Search
     private boolean contains(Node<T> current, T needle) {
         if (current == null) {
             return false;
-        } else if (current.getData().equals(needle)) {
+        } else if (Objects.equals(current.getData(), needle)) {
             return true;
         } else {
             return contains(current.getLeft(), needle) || contains(current.getRight(), needle);
@@ -97,64 +99,65 @@ Naive Search
 Binary Search
 -------------
 
-.. image:: binary_search_tree_binary_search0.png
-   :width: 250 px
-   :align: center
+.. figure:: binary_search_tree_binary_search0.png
+    :width: 250 px
+    :align: center
+
+    Arbitrary binary search tree.
+
 
 * Consider the above binary search tree
-* Based on the special ordering binary search trees have, can you devise an improved search?
-    * **Hint:** If I am looking for a number greater than 14, which subtree must the element be in if it exists in the tree?
+* Based on the special ordering binary search trees have, can an improved search be devised?
 
-.. code-block:: java
-    :linenos:
+    * **Hint:** If looking for a number greater than 14, which subtree must the element be in if it exists in the tree?
 
-    public boolean contains(T needle) {
-        return binarySearch(root, needle) != null;
-    }
 
-    private boolean binarySearch(Node<T> current, T needle) {
-        if (current == null) {
-            return false;
-        } else if (current.getData().equals(needle)) {
-            return true;
-        } else {
-            if (current.getData().compareTo(needle) > 0) {
-                return binarySearch(current.getLeft(), needle);
-            } else {
-                return binarySearch(current.getRight(), needle);
-            }
-        }
-    }
+.. literalinclude:: /../main/java/LinkedBinarySearchTree.java
+    :language: java
+    :lineno-match:
+    :lines: 235-261
 
 * Notice the similarity between the naive search and the binary search
-* They are nearly the same, except you will notice that, the naive search may search both subtrees
-* However, binary search will only ever travel down one subtree due to the ``if (current.getData().compareTo(needle) > 0)`` statement
+* They are nearly the same, except that the naive search may search both subtrees
+* However, the binary search will only ever travel down one subtree due to the ``if`` statements on the value of ``comparison``
 
-.. image:: binary_search_tree_binary_search1.png
-   :width: 250 px
-   :align: center
+.. figure:: binary_search_tree_binary_search1.png
+    :width: 250 px
+    :align: center
 
-* In the above example, if we search for the number 12, we can conclude that it exist in the tree since
+    Traversal through the tree while searching for the value 12 and 13.
+
+
+* In the above example, if searching for the number 12, it can be concluded that it exist in the tree since
+
     * 12 is less than 14, so it must be in the left subtree of the node containing 14
     * 12 is greater than 8, thus it must be in the right subtree
     * 12 is equal to 12, therefore we conclude that we found it
 
-* If, however, we search for the number 13, we can conclude that it must not exist in the tree since
+
+* If, however, searching for the number 13, it can be concluded that it must not exist in the tree since
+
     * 13 is less than 14, so it must be in the left subtree of the node containing 14
     * 13 is greater than 8, thus it must be in the right subtree
     * 13 is greater than 12, therefore it must be in the right subtree
     * 12 has no right subtree, therefore 13 must **not** be in the tree
 
-.. image:: binary_search_tree_binary_search2.png
-   :width: 250 px
-   :align: center
 
-* In the above example here, if we are searching for the number 22, we can conclude that it must not be in the tree since
+.. figure:: binary_search_tree_binary_search2.png
+    :width: 250 px
+    :align: center
+
+    Traversal through the tree while searching for the value 22.
+
+
+* In the above example here, if searching for the number 22, it can be concluded that it must not be in the tree since
+
     * 22 is greater than 14, so go right
     * 22 is less than 26, go left
     * 22 is greater than 19, so go right
     * 22 is less than 23, so go left
     * 23 has no left subtree, therefore 22 must **not** be in the tree
+
 
 
 Binary Search Tree Operations
