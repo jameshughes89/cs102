@@ -150,7 +150,7 @@ Binary Search
     Traversal through the tree while searching for the value 22.
 
 
-* In the above example here, if searching for the number 22, it can be concluded that it must not be in the tree since
+* In the above example, if searching for the number 22, it can be concluded that it must not be in the tree since
 
     * 22 is greater than 14, so go right
     * 22 is less than 26, go left
