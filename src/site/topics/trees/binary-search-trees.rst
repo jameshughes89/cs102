@@ -163,42 +163,51 @@ Binary Search
 Binary Search Tree Operations
 =============================
 
-* Like most collections we've seen so far, we will want to be able to get the number of elements in it, check if it's empty, and get iterators
-    * By this stage these should be simple
-
-* We'll want to add and remove elements too, but this is where the complexity comes in
+* Getting the size of the collection, checking if it's is empty, and getting iterators should be relatively simple by this stage
+* The adding to and removing from the binary search tree is where the complexity comes in
 
 
 Add
 ---
 
 * Adding is going to be similar to a binary search
-* We do a binary search until there is no child
-    * Assuming we allow duplicates
-    * And elements we want to add that are equal to a given node go to the right subtree
-    * If we ever find an element that is equal, we continue the search in the right subtree
-
+* Do a binary search until there is no child
 * Insert the element where the child does not exist
 * New nodes will be added as a leaf
 
-* **In English, add would look something like this**
-    * If the root of the (sub)tree is empty
-        * Insert new node here with the data
-    * If (sub)tree is not empty
-        * If the element is less than the root of the (sub)tree, call **add** on left subtree
-        * If the element is greater than or equal to the root of the (sub)tree, call **add** on right subtree
+.. code-block:: text
+    :linenos:
 
-* Given the above pseudocode, consider adding 13 to the binary search tree
+    Define add
+        If the node does not exist
+            Insert the new node here with the element to be added
 
-.. image:: binary_search_tree_add0.png
-   :width: 250 px
-   :align: center
+        If the node exists
+            If the element is less than the node
+                Call add on the left child node
+
+            If the element is greater than or equal to the node
+                Call add on the right child node
+
+
+* Starting an existing binary search tree, follow the pseudocode to add the value 13
+
+.. figure:: binary_search_tree_add0.png
+    :width: 250 px
+    :align: center
+
+    Adding the value 13 to a binary search tree.
+
 
 * Starting with an empty tree, follow the pseudocode to add the following 6 elements
 
-.. image:: binary_search_tree_add1.png
-   :width: 666 px
-   :align: center
+.. figure:: binary_search_tree_add1.png
+    :width: 666 px
+    :align: center
+
+    The creation of a binary search tree by starting with an empty tree and adding the elements 26, 15, 38,, 31, 7, and
+    34. Note that when the value 26 is added, it is being added to an empty tree, thus the root node does not exist.
+
 
 
 Min & Remove Min
