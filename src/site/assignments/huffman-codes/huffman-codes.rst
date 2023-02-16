@@ -71,10 +71,10 @@ Read the assignment description in its entirety before starting.
 Part 1 --- Read Up on Huffman Codes
 ===================================
 
-Read up on Huffman Codes. Be sure to dig deeper than just how it is used to compress data. You will want to see how it
-works. `The Wikipedia page gives details <https://en.wikipedia.org/wiki/Huffman_coding>`_ but I did not find it to be
-all that helpful myself. I suggest you do some digging around online or find some YouTube videos that
-explain the details.
+Read up on Huffman Codes. Be sure to dig deeper than just how it is used to compress data. Having a strong understanding
+of how it works will greatly help with completing the assignment.
+`The Wikipedia page gives details <https://en.wikipedia.org/wiki/Huffman_coding>`_ but it is suggested to find
+additional resources to learn from. Perhaps YouTube or other online resources will prove helpful.
 
 Things of note related to Huffman Codes to look out for
 
