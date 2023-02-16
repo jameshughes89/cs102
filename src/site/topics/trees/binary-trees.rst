@@ -262,35 +262,45 @@ Traversal Analysis
 Interface
 =========
 
-* What would we want to do with our binary trees?
+* What would a binary tree need to do?
+
     * Check if an element exists in the tree
-    * Check if the tree is empty
-    * Get the size of the tree (how many elements are in the tree)
+    * Count the number of occurrences of a given element
+    * Check if its empty
+    * Get the size
     * Traverse the tree
-    * Add an element
+    * Add elements
+
         * But where?
-    * Remove an element
-        * Which one? From where?
 
-* With add and remove, what we want/what it means will depend on the type of binary tree
-    * Adding/removing something to a stack and queue was more straightforward
-        * Pushing and popping happened at the top of the stack
-        * Enqueuing and dequeueing happen at opposite ends
+    * Remove elements
 
-* Similar to the bag, we know we want to add and remove stuff from our binary tree, but what exactly add and remove means may differ depending on the specific type of binary tree
+        * Which one, from where?
+
+
+* Adding/removing something to a stack and queue was more straightforward
+
+    * Pushing and popping happened at the top of the stack
+    * Enqueuing and dequeueing happen at opposite ends
+
+
+* For a binary tree, with add and remove, what is wanted/what it means will depend on the type of binary tree
+* Similar to the bag, elements must be able to be added and removed from the binary tree
+* But what what exactly add and remove means may differ depending on the specific type of binary tree
 
 
 .. code-block:: java
     :linenos:
 
     import java.util.Iterator;
+    import java.util.NoSuchElementException;
 
     public interface BinaryTree<T> extends Iterable<T> {
 
-        void add(T element);
-        T remove(T element);
-        T getRootElement();
+        boolean add(T element);
+        boolean remove(T element);
         boolean contains(T element);
+        int count(T target);
         boolean isEmpty();
         int size();
         Iterator<T> iterator();
@@ -298,7 +308,6 @@ Interface
         Iterator<T> inOrderIterator();
         Iterator<T> postOrderIterator();
         Iterator<T> levelOrderIterator();
-        String toString();
     }
 
 
