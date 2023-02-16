@@ -2,53 +2,65 @@
 Binary Search Trees
 *******************
 
-* Now that we have covered binary trees, we can look at more specific types of binary trees
+* With binary trees covered, a more specific type of binary trees can be discussed
+
     * Namely, the binary *search* tree
 
 * Compared to a binary tree, binary *search* trees have specific properties and constraints that must be followed
-* We can take advantage of these properties and constraints for extra improvements in certain functionality
+* These properties and constraints can be taken advantage of for improvements in certain functionality
 
 
 Binary Search Tree Definition
 =============================
 
 * A binary *search* tree is a binary tree where:
+
     * All values in the left subtree are less than the value in the root node
     * All values in the right subtree are greater than or equal to the value in the root node
 
 .. note::
 
-    We could make the left subtree less than or equal to and the right subtree strictly greater than too. All that
-    matters is that only on subtree includes the *equal to* part.
+    One could make the left subtree less than or equal to and the right subtree strictly greater than. All that matters
+    is that only on subtree includes the *equal to* part.
 
-    Alternatively, we could make the right subtree exclusively greater than, but this would disallow duplicates.
+    Alternatively, one could make the right subtree exclusively greater than, but this would disallow duplicates.
 
 
-.. image:: binary_search_tree_no_yes.png
-   :width: 500 px
-   :align: center
+.. figure:: binary_search_tree_no_yes.png
+    :width: 500 px
+    :align: center
 
-* In the above example, the tree on the left is **not** a binary search tree since a value in the left subtree of the subtree with root 15 is greater than it (16)
-* The left tree is an example of a binary search tree
+    Two binary trees. The binary tree on the left is a binary search tree. The binary tree on the right is **not** a
+    binary search tree. This is because the value 16, which is in the left subtree of the subtree with the root 15,
+    violates this property --- 16 is greater than 15, thus 16 must be to the right of 15 if it was a binary search tree.
 
-    .. image:: binary_search_tree_base.png
-       :width: 250 px
-       :align: center
+
+.. figure:: binary_search_tree_base.png
+    :width: 250 px
+    :align: center
+
+    Arbitrary binary search tree.
+
 
 * In the above example, note that the leftmost node is the smallest value in the tree and the rightmost is the largest
+
 
 
 A Binary Search Tree is a Binary Tree
 -------------------------------------
 
 * A binary search tree is a special case of a binary tree
-    * Therefore, it will have all the operations we would want our binary tree to have
 
-* But we will have a few additional operations
+    * Therefore, it will have all the operations a binary tree would have
+
+
+* But a few additional operations will be added
+
     * Add, but based on the important ordering
     * Remove, but must preserve ordering
     * Remove max
     * Remove min
+
 
 
 Searching a Binary Search Tree
