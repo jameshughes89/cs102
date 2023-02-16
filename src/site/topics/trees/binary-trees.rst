@@ -3,34 +3,47 @@ Binary Trees
 ************
 
 * A general **tree** is one where each node can have any number of children
-
 * An **n-ary** tree is one where each node has no more than :math:`n` children
 
 
 Binary Tree Definition
 ======================
 
-.. image:: binary_tree_example.png
-   :width: 500 px
-   :align: center
+.. figure:: binary_tree_example.png
+    :width: 500 px
+    :align: center
+
+    Binary tree containing nine (9) nodes. Each node has no more than two (2) children. The left/right position of child
+    nodes is important for binary trees.
+
 
 * A **binary** tree is one where each node has no more than two (2) children
+
     * 2-ary tree
     * Tree with a degree/arity of 2
 
+
 * If a node has children, they are referred to as the *left* and *right* children
+
     * Which are also referred to as the left and right subtrees
     * In the above example, *B* is the left subtree and *C* is the right subtree of *A*
 
-* In a binary tree, position matters --- it matters if a subtree is the left or right
+
+* In a binary tree, position matters
+
+    * It matters if a subtree is the left or right
+
 
 * A recursive definition of a binary tree is
+
     * An empty tree
     * Or, a tree that has a root whose left and right subtrees are binary trees
+
 
 .. note::
 
    Based on this information, what would a *unary* tree be?
+
 
 
 .. _label-binary_trees-traversals:
