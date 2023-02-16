@@ -183,7 +183,7 @@ Part 4 --- Complete ``AStarMazeSolver``
 =======================================
 
 `Read up on the A* algorithm <https://en.wikipedia.org/wiki/A*_search_algorithm>`_. The linked article is great, and
-there are likely  many YouTube videos on the subject.
+there are likely many YouTube videos on the subject.
 
 One of the key parts of A* is the estimated cost function
 
@@ -279,7 +279,7 @@ The correctness of the ``LinkedPriorityQueue`` and ``AStarMazeSolver`` classes m
 completing and running their test classes. If not, do it!
 
 If they have already been verified, for good measure, re-run all the tests provided and the ones completed for the
-assignment. If they all pass, one should be pretty confident that you have everything working correctly.
+assignment. If they all pass, one should be pretty confident that everything is working correctly.
 
 There is no test provided for the ``Asn3`` class, but that's nothing to worry about. Get a sense that it is working
 correctly by
