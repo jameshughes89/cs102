@@ -126,8 +126,6 @@ working correctly.
 Part 3 --- Complete ``HuffmanNodeComparator``
 =============================================
 
-
-
 Although ``comparable`` was used when implementing the ``ArraySortedBag`` and ``LinkedBinarySearchTree``, here a
 `Comparator <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Comparable.html>`_  is to be used.
 A ``Comparator`` is a very similar idea to ``comparable``, but it allows for more flexibility when needing to define
@@ -185,43 +183,49 @@ compression. Ultimately, this class will be responsible for building the Huffman
 encoding and decoding strings.
 
 
-Notes About Your Implementation
--------------------------------
+Notes About the Implementation
+------------------------------
 
-* You will want to use a ``PriorityQueue``, but instead of implementing one on your own, `this time you will use the one from java.util. <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/PriorityQueue.html>`_
+* A ``PriorityQueue`` should be used, but instead of implementing one, `use the one from java.util <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/PriorityQueue.html>`_
+
     * `Make use of the constructor that takes a comparator <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/PriorityQueue.html#%3Cinit%3E(java.util.Comparator)>`_
-    * Take care to notice the methods as this implementation does not call their add/remove ``enqueue``/``dequeue``
+    * Take care to notice the methods as this implementation does not call the add/remove ``enqueue``/``dequeue``
 
 
-* You will be making use of factory methods for instantiating the objects
+* Make use of factory methods for instantiating the objects
+
     * Refer to the ``Maze`` class from assignments 2 and 3
-    * Make your constructor private
-    * I have provided you with an already "complete" ``fromFile`` factory method
-        * Although, it delegates all the work to the ``fromString`` you are to write, so you may be disappointed
+    * Make the constructor private
+    * An already "complete" ``fromFile`` factory method is provided
+
+        * Although, it delegates all the work to the ``fromString`` method that needs to be implemented
+
 
 * Under the hood, this class is creating and storing a binary tree of ``HuffmanNode`` objects
-* I recommend having a field within the class that stores each character's encoding in a ``Map<Character, String>``
-* Do not be afraid to make use of private helper methods
+* It is recommended to have a field within the class that stores each character's encoding in a ``Map<Character, String>``
+* Do not be afraid to make use of private helper methods as needed
 
 
 Implementing the Class
 ----------------------
 
-Your class should have at least one field --- a reference to the root of the Huffman Tree. As discussed above, it is
-recommended that you also include another field --- a map storing each character's bit string encoding.
+The class should have at least one field --- a reference to the root of the Huffman Tree. As discussed above, it is
+recommended to also include another field --- a map storing each character's bitstring encoding.
 
 Complete the ``public static HuffmanCode fromString(String seed)`` method. This factory method will do all the setup for
-the class and return a reference to a ``HuffmanCode`` object. Expect this method to
+the class and return a reference to a ``HuffmanCode`` object. Expect this method to:
 
     * Count the number of times each character exists in the seed string
     * Initialize the priority queue
     * Build the tree
-    * Populate the character map
+    * Populate the character encoding map
     * Return a new ``HuffmanCode``
 
-I suggest making a private method with recursive traversal through the tree for populating the map
 
-Complete the ``public String encode(String string)`` method which takes a string and returns a bit string encoding. The
+It is recommended to make use of a private helper method to populate the character encoding map. A recursive traversal
+of the tree would work well in this scenario.
+
+Complete the ``public String encode(String string)`` method which takes a string and returns a bitstring encoding. The
 encoding is based on the encoding of each character.
 
 Complete the ``public String decode(String bits)`` method for decoding the bit string. This is the inverse operation of
@@ -231,9 +235,10 @@ Complete the ``public String decode(String bits)`` method for decoding the bit s
 Implementing the Unit Tests
 ---------------------------
 
-There is a skeletal test class with incomplete test methods for the ``HuffmanCode`` class. The method names should give
-you a good enough idea about what each method should be testing. Complete the unit tests and ensure the class you wrote
-is working correctly.
+There is a skeletal test class with incomplete test methods for the ``HuffmanCode`` class. The method names should
+provide an idea of what each method should be testing. Complete the unit tests and ensure the class is working
+correctly.
+
 
 Part 5 --- Putting it Together
 ==============================
