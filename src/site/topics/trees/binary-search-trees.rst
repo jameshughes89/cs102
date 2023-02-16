@@ -366,11 +366,16 @@ General Remove
 Contains
 --------
 
-* Like the other data structures, we will want to be able to check if a given element exists within it
-* Unlike before, where we were doing a linear search through a linear data structure
-* Or an exhaustive depth first search through a regular binary tree
+* Like the other data structures, a way to check if a given element exists within the collection is needed
+* Although an exhaustive depth first search through the tree would work, as discussed for the general binary tree would work
 
-* Here, due to the nature of the binary search tree ordering, we can simply do a binary search
+    * :math:`O(n)`
+
+
+* Here, due to the nature of the binary search tree ordering, a binary search can be used
+
+    * :math:`O(log_{2}(n))`
+
 
 
 Counting the Number of a Given Element
