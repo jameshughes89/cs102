@@ -41,27 +41,25 @@ Provided Files
 ==============
 
 * A complete ``HuffmanNode`` interface
-* A nearly empty ``HuffmanLeaf`` class with a skeletal ``HuffmanLeafTest`` class
-* A nearly empty ``HuffmanInternal`` class with a skeletal ``HuffmanInternalTest`` class
-* A skeletal ``HuffmanNodeComparator`` class with a complete ``HuffmanNodeComparatorTest`` class
-* A skeletal ``HuffmanCode`` class with a skeletal ``HuffmanCodeTest`` class
+* A nearly empty ``HuffmanLeaf`` class with a ``HuffmanLeafTest`` class containing empty tests
+* A nearly empty ``HuffmanInternal`` class with a ``HuffmanInternalTest`` class containing empty tests
+* A nearly empty ``HuffmanNodeComparator`` class with a complete ``HuffmanNodeComparatorTest`` class
+* A nearly empty ``HuffmanCode`` class with a ``HuffmanCodeTest`` class containing empty tests
 * An ``Asn4`` class with an empty ``main``
 * A text file that may be used to seed the Huffman Code
 
 
-* :download:`All of this can be downloaded from here<Assignment4.zip>`
+* :download:`All of this can be downloaded from here <Assignment3.zip>`
+
     * This is a compressed IntelliJ project
-    * Just unzip, put it where you want on your computer, and you should be able to open this project through IntelliJ
+    * Just unzip, put it in the desired location on the computer, and open the project through IntelliJ
+
 
 .. warning::
 
-    When you open the project, IntelliJ may notify you about a missing JDK. If this is the case, simply select the
-    download link in the notification.
+    When opening the project, IntelliJ may mention a missing JDK. If this is the case, simply select the download link
+    in the notification to download and install the missing JDK.
 
-.. warning::
-
-    Java may say that it cannot find JUnit. If this happens, you need to add JUnit to the project. Simply follow the
-    first few steps of :doc:`Topic 6's aside on testing </topics/stacks/unit-tests>`.
 
 
 Part 0 --- Read the Assignment
