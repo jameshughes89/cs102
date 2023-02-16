@@ -381,11 +381,9 @@ Contains
 Counting the Number of a Given Element
 --------------------------------------
 
-* Similar to contains, to count the number of times a given element exists within a binary search tree, we can do a binary search
-* However, instead of returning ``True`` or ``False`` as soon as the element is found, continue the search after finding an element and keep track of the count as we go
+* Similar to contains, to count the number of times a given element exists within a binary search tree, a binary search can be used
+* However, instead of returning ``True`` or ``False`` as soon as the element is found, continue the search after finding an element to continue counting
 
-* One trick here is, continue the search on the left or right subtree, depending on which side we choose to put duplicate values
-    * For example, if we choose to always put a value equal to a given node's data to the right, we continue the search on the right subtree
 
 
 .. _label-binary_search_trees-balanced:
