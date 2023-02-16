@@ -9,22 +9,32 @@
 Task
 ====
 
-Your goal is to compress data such that they take up less space, but can be uncompressed without losing any information.
-You implement Huffman Coding as the compression mechanism. The data will be compressed with an encoding process, and
+The goal is to compress data such that they take up less space, but can be uncompressed without losing any information.
+Huffman Coding is used as the compression mechanism. The data will be compressed with an encoding process, and
 uncompressed with a decoding process.
 
-You will:
+Objectives:
 
-* Write ``HuffmanLeaf`` and ``HuffmanInternal`` classes that implements ``HuffmanNode``
+* Create ``HuffmanLeaf`` and ``HuffmanInternal`` classes that implement ``HuffmanNode``
+
     * These will help with the creation of the Huffman Codes
-* Write a ``HuffmanNodeComparator`` class that implements the ``Comparator`` interface
+
+
+* Create a ``HuffmanNodeComparator`` class that implements the ``Comparator`` interface
+
     * This is what defines the order of the ``HuffmanNode`` objects
-* Write a ``HuffmanCode`` class that will encode and decode strings
-* You will use the ``HuffmanCode`` in the ``main`` to
+
+
+* Create a ``HuffmanCode`` class that will encode and decode strings
+* The ``HuffmanCode`` object will be used in the ``main`` to
+
     * Encode strings
     * Decode strings
     * Measure the compression percentage
-* You will also be testing your implementation with test classes
+
+
+* Test the implementation with test classes
+
 
 
 Provided Files
