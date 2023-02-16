@@ -403,39 +403,56 @@ Degenerate vs. Balanced
 =======================
 
 * A *balanced* tree has the property that for any node in the tree, the height of its left and right subtrees can differ by **at most** 1
+
     * Remember, the height of an empty tree is 0
 
-.. image:: binary_search_tree_balance.png
-   :width: 500 px
-   :align: center
 
-* In the above example, the left tree is balanced since all subtrees in the tree differ in height by no more than 1
-* The right tree is *not* balanced since the root's left subtree has height 0 and the right subtree has height 2
-    * Difference of 2
+.. figure:: binary_search_tree_balance.png
+    :width: 500 px
+    :align: center
+
+    The left tree is balanced as the heights of all subtrees in the tree differ by no more than 1. The tree on the right
+    is **not** balanced since the root's left subtree has a height of 0 and the right subtree has a height of 2 --- a
+    difference greater than 1.
+
 
 * The balanced property is important since it's part of the reason the binary search tree is efficient to search
-
 * Consider adding the numbers ``3, 5, 9, 12, 18, 20`` in that order to an empty binary search tree
 
-.. image:: binary_search_tree_degenerate_animation.gif
-   :width: 250 px
-   :align: center
 
-* This is an example we see an extreme case of imbalance
+.. figure:: binary_search_tree_degenerate_animation.gif
+    :width: 250 px
+    :align: center
+
+    An extreme example of an imbalanced binary search tree. This was caused by adding the elements
+    ``3, 5, 9, 12, 18, 20`` in order. Each element added is larger than all elements in the tree, which causes each
+    newly added element to be added to the right subtrees.
+
+
 * This particular case is called a *degenerate* binary tree
+
     * It's effectively a linear data structure, not a tree
 
-.. image:: binary_search_tree_complexity.png
-   :width: 250 px
-   :align: center
 
-* If we have a balanced binary search tree, every time we decide to go to the left or right subtree, we eliminate roughly half the elements from the search
-    * This is what gives us the :math:`O(log(n))` search
+.. figure:: binary_search_tree_complexity.png
+    :width: 250 px
+    :align: center
 
-* If we have a degenerate tree, where it's basically a linear data structure, we would have to search through all :math:`n` elements,
+
+* Consider a binary search
+* With a balanced binary search tree, going to the left or right subtrees eliminates roughly half the elements
+
+    * This is what gives the :math:`O(log(n))` search
+
+
+* With a degenerate tree, where it's basically a linear data structure, all :math:`n` elements must be searched through
+
+    * Only one element is eliminated from the search every time a node is investigated
     * Thus, the search through a degenerate tree would be :math:`O(n)`
 
-* Fortunately there exist strategies for keeping our trees balanced, but these are outside the scope of this course
+
+* Fortunately there exist strategies for keeping binary search trees balanced, but these are outside the scope of this course
+
     * Two popular examples are *AVL Trees* and *Red-Black Trees*
 
 
@@ -445,5 +462,21 @@ For next time
 * Have a look at the :download:`BinarySearchTree </../main/java/BinarySearchTree.java>` interface
 * Have a look at the :download:`LinkedBinarySearchTree </../main/java/LinkedBinarySearchTree.java>` implementation
 * Check out :download:`LinkedBinarySearchTreeTest </../test/java/LinkedBinarySearchTreeTest.java>`
+
+
+For Next Time
+=============
+
 * Read Chapter 11 Sections 1 -- 3
+
     * 17 pages
+
+
+Playing Code
+------------
+
+* Download and play with
+
+    * :download:`BinarySearchTree </../main/java/BinarySearchTree.java>`
+    * :download:`LinkedBinarySearchTree </../main/java/LinkedBinarySearchTree.java>`
+    * :download:`LinkedBinarySearchTreeTest </../test/java/LinkedBinarySearchTreeTest.java>`
