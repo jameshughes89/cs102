@@ -338,9 +338,6 @@ What to Submit to Moodle
     * Do **not** compress the files
 
 
-* Your ``.java`` files. Please do not compress them.
-
-
 .. warning::
 
     Verify that your submission to Moodle worked. If you submit incorrectly, you will get a 0.
