@@ -104,6 +104,7 @@ Office Hours
     labs/unit-tests/unit-tests
     labs/stacks/stacks
     labs/linked-structures/linked-structures
+    labs/queues/queues
 
 
 .. toctree::
