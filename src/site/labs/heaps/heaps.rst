@@ -2,27 +2,30 @@
 Heaps
 *****
 
-* Feel free to use your laptop if you have it
-* I strongly encourage you to work with others in the lab
+* Feel free to use your laptop
+* You are strongly encourage to work with others
 
-    * When you get stuck, do me a favour and ask those sitting around you for help
-    * I want people to get used to working together in the labs
-    * Peer teaching and peer learning is super effective
+    * When you get stuck, ask those sitting around you for help
+    * Get used to working together in the labs
+    * Peer teaching and peer learning has been empirically shown to be very effective
+
 
 .. note::
 
-    We have not gone over this topic in lecture, but at this stage this should not be a problem.
+    This topic has not been covered in lectures, but at this stage, this should not be a problem.
 
 
 Heaps
 =====
 
-Have you ever wanted to store a binary tree in an array?
+.. figure:: heap_example.png
+    :width: 333 px
+    :align: center
+    :target: https://en.wikipedia.org/wiki/Heap_(data_structure)
 
-.. image:: heap_example.png
-   :width: 333 px
-   :align: center
-   :target: https://en.wikipedia.org/wiki/Heap_(data_structure)
+    A heap is encoded within an array but represents a binary tree structure. This particular heap is an example of a
+    "max heap", which is a heap where each node contains values larger than those of their children.
+
 
 * The root of the tree is always at index :math:`0`
 * Given an element at index :math:`i`
@@ -34,11 +37,12 @@ Have you ever wanted to store a binary tree in an array?
         * :math:`\lfloor x \rfloor` just means to round down if needed
 
 
-* For example, consider the element 17 located at index :math:`3` in the array
+* For example, consider the element ``17`` located at index :math:`3` in the array
 
     * Left child would be at :math:`3*2 + 1 = 7`
     * Right child would be at :math:`3*2 + 2 = 8`
     * Parent would be at :math:`\lfloor (3-1)/2 \rfloor = 1`
+
 
 
 Min Heap
@@ -58,11 +62,13 @@ Min Heap
 
     * The image above provides an example of a max heap
 
+
 .. warning::
 
     Although min/max heaps are binary trees, they are **not** binary *search* trees; do not get the idea of min/max
     heaps confused with binary search trees. Where binary search trees have the ordering based on left/right
     orientation, the min/max heaps have their ordering based on up/down direction.
+
 
 
 Bubble Up
@@ -90,9 +96,10 @@ Bubble Up
 Bubble Down
 -----------
 
-* Given the min heap's property of the smallest element being at the root, I may be using this data structure for keeping track of ordered data
+* Given the min heap's property of the smallest element being at the root, it is often used for keeping track of ordered data
 
-    * I can easily access the minimum value from the collection since it is always at :math:`i = 0`
+
+    * The minimum value in a collection is always at index :math:`0`
 
 
 * Unfortunately, if the minimum value is to be *removed*, there will be no value at the root of the tree
@@ -103,7 +110,7 @@ Bubble Down
 * Remove the element at the last index in the heap and place it in the root position :math:`i = 0`
 * Compare the moved value with its left and right children at indices :math:`2i + 1` and :math:`2i + 2`
 
-    * Swap the value with the smaller of the two child's value
+    * Swap the value with the *smaller* of the two children's value
 
 
 * Repeat this process until either
@@ -112,26 +119,25 @@ Bubble Down
     * There are no more children to compare to; the value is at a leaf
 
 
-* It is important to always swap with the smaller of the two children when bubbling down since it ensures the min heap property
-
 
 Implement a Min Heap
 ====================
 
-Now that you have the idea behind the min heap, let's build one.
+#. Create a generic ``ArrayMinHeap`` class
 
-#. Create a generic min heap class.
+    * ``public class ArrayMinHeap<T extends Comparable<? super T>>``
 
-    * You will probably want a ``size`` field and an array to hold the data
 
-#. Implement the following methods:
+#. Include fields to keep track of the size and the array containing the elements
+#. Implement the following methods
 
     * ``add``
     * ``size``
     * ``remove``
     * ``peek``
 
-#. Consider adding the following private methods:
+
+#. Consider adding the following private methods
 
     * ``bubbleUp``
     * ``bubbleDown``
@@ -141,15 +147,16 @@ Now that you have the idea behind the min heap, let's build one.
     * ``rightChildOf``
     * ``swap``
 
-#. Test your heap to see if you have it working properly.
 
-    * You do not need to write full unit tests for the purpose of this lab
+#. Test the heap to see if it is working properly
+
+    * Simply create an instance of the ``MinHeap`` and use the implemented methods to check correctness
+    * For the purpose of the lab, do not worry about writing full unit tests
+
 
 
 Kattis Problems
 ===============
-
-Recommended Kattis Problems (don't worry, you don’t need to do all of them or anything):
 
 #. https://open.kattis.com/problems/quadrant
 #. https://open.kattis.com/problems/judgingmoose
