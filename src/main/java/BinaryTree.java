@@ -93,6 +93,4 @@ public interface BinaryTree<T> extends Iterable<T> {
      * @return A level-order iterator over the elements in the binary tree.
      */
     Iterator<T> levelOrderIterator();
-
-    String toString();
 }
