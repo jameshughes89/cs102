@@ -21,7 +21,8 @@ Draw The Tree
 
 #. Start with a scrap piece of paper
 
-    * The problems are becoming too complex to solve without visualizing what is happening
+    * The problems being solved are becoming more complex
+    * Visualizing what the code is doing by drawing it out may be very helpful
 
 
 #. Draw the tree that the following code generates
