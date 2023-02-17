@@ -2,21 +2,22 @@
 Sorting Recursively
 *******************
 
-* Feel free to use your laptop if you have it
-* I strongly encourage you to work with others in the lab
+* Feel free to use your laptop
+* You are strongly encourage to work with others
 
-    * When you get stuck, do me a favour and ask those sitting around you for help
-    * I want people to get used to working together in the labs
-    * Peer teaching and peer learning is super effective
+    * When you get stuck, ask those sitting around you for help
+    * Get used to working together in the labs
+    * Peer teaching and peer learning has been empirically shown to be very effective
 
 
 Starting Point
 ==============
 
-This lab focuses on the sorts discussed in :doc:`topic 26 </topics/sorting/sorting-recursive>`. Note that, unlike the
-previous lab, here we use an unsorted bag instead of an array.
+* This lab focuses on the sorting algorithms discussed in the :doc:`Sorting Recursively Topic </topics/sorting/sorting-recursive>`
+* Unlike the previous lab, an ``IndexedBag`` is used
 
-The below code can be used for setting up a bag to be sorted and timing the different sorting algorithms.
+* The below code can be used for setting up an array to be sorted
+* This code can also be used for timing the different sorting algorithms
 
 
 .. code-block:: java
@@ -28,7 +29,7 @@ The below code can be used for setting up a bag to be sorted and timing the diff
 
         double startTime = System.nanoTime();
         //quicksort(toSort);
-        mergesort(toSort);
+        //mergesort(toSort);
         double endTime = System.nanoTime();
 
         System.out.println(toSort);
@@ -47,10 +48,10 @@ The below code can be used for setting up a bag to be sorted and timing the diff
 Quicksort
 =========
 
-#. Implement the quicksort algorithm.
-#. Make sure it works and test it a few times and see what the runtimes are.
+#. Implement the quicksort algorithm
+#. Make sure it works and run it a few times to see what the runtimes are
 
-    * Change the size of the bag and the max value and see how it impacts runtimes
+    * Change the size of the array and the max value and see how it impacts runtimes
     * For the purposes of this lab, do not worry about writing unit tests
 
 .. code-block:: java
@@ -63,10 +64,10 @@ Quicksort
 Mergesort
 =========
 
-#. Implement the mergesort algorithm.
-#. Make sure it works and test it a few times and see what the runtimes are.
+#. Implement the mergesort algorithm
+#. Make sure it works and run it a few times to see what the runtimes are
 
-    * Change the size of the bag and the max value and see how it impacts runtimes
+    * Change the size of the array and the max value and see how it impacts runtimes
     * For the purposes of this lab, do not worry about writing unit tests
 
 .. code-block:: java
@@ -82,15 +83,14 @@ Comparing Sorts
 #. Run each of the sorts a few times and take note of the runtimes
 
     * Play around with the size of the lists and the max value
-    * Do the times align with what you'd expect based on the computational complexities of each of the algorithms
+    * Compare the runtimes of each algorithm to what was expected based on their computational complexities
 
-#. Compare these runtimes to the sorts completed in the previous lab.
+
+#. Compare these runtimes to the sorting algorithms implemented in the previous lab
 
 
 Kattis Problems
 ===============
-
-Recommended Kattis Problems (don't worry, you don’t need to do all of them or anything):
 
 #. https://open.kattis.com/problems/quadrant
 #. https://open.kattis.com/problems/judgingmoose
