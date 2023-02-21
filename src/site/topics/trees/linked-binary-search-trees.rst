@@ -1,6 +1,7 @@
 **************************
 Linked Binary Search Trees
 **************************
+
 * Given the way the binary search tree ideas were presented, a linked implementation may feel like an obvious choice
 
     * Though, there is nothing preventing an array based implementation
@@ -169,7 +170,7 @@ General Remove
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 69-86
+    :lines: 61-86
 
 
 * The private ``remove`` is basically doing a binary search through the tree looking for the value to be removed
@@ -185,7 +186,7 @@ General Remove
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 100-128
+    :lines: 88-128
 
 
 * ``findReplacementNode`` looks rather intimidating at first, but if studied carefully, it is actually rather simple
@@ -230,8 +231,8 @@ General Remove
 
 
 
-Contains
-========
+``contains``
+============
 
 * All data structures implemented have a way to check if a given element is contained within it
 * The binary search tree is no different, but here a linear search will not be used
