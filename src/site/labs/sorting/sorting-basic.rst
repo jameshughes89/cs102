@@ -2,29 +2,29 @@
 Sorting
 *******
 
-* Feel free to use your laptop if you have it
-* I strongly encourage you to work with others in the lab
+* Feel free to use your laptop
+* You are strongly encourage to work with others
 
-    * When you get stuck, do me a favour and ask those sitting around you for help
-    * I want people to get used to working together in the labs
-    * Peer teaching and peer learning is super effective
+    * When you get stuck, ask those sitting around you for help
+    * Get used to working together in the labs
+    * Peer teaching and peer learning has been empirically shown to be very effective
+
 
 .. note::
 
-    This lab is making use of integer arrays for sorting, but if you would like, feel free to use ``IndexedBags``. If
-    choose to do this, here's a tip for your method declarations:
+    This lab is making use of integer arrays for sorting, but feel free to use ``IndexedBags``. If an ``IndexedBag`` is
+    used, the method signatures will need to be updated. For example,
 
-    ``public static <T extends Comparable<T>> void bubbleSort(IndexedBag<T> toSort)``
+        ``public static <T extends Comparable<T>> void bubbleSort(IndexedBag<T> toSort)``
 
-    Also remember to use ``.compareTo``.
 
 
 Starting Point
 ==============
 
-This lab focuses on the sorts discussed in :doc:`topic 25 </topics/sorting/sorting-basic>`.
-
-The below code can be used for setting up an array to be sorted and timing the different sorting algorithms.
+* This lab focuses on the sorting algorithms discussed in the :doc:`first Sorting Topic </topics/sorting/sorting-basic>`
+* The below code can be used for setting up an array to be sorted
+* This code can also be used for timing the different sorting algorithms
 
 .. code-block:: java
 
@@ -34,7 +34,7 @@ The below code can be used for setting up an array to be sorted and timing the d
         printArray(toSort);
 
         double startTime = System.nanoTime();
-        bubbleSort(toSort);
+        //bubbleSort(toSort);
         //insertionSort(toSort);
         //selectionSort(toSort);
         double endTime = System.nanoTime();
@@ -62,8 +62,8 @@ The below code can be used for setting up an array to be sorted and timing the d
 Bubble Sort
 ===========
 
-#. Implement the bubble sort algorithm.
-#. Make sure it works and test it a few times and see what the runtimes are.
+#. Implement the bubble sort algorithm
+#. Make sure it works and run it a few times to see what the runtimes are
 
     * Change the size of the array and the max value and see how it impacts runtimes
     * For the purposes of this lab, do not worry about writing unit tests
@@ -78,8 +78,8 @@ Bubble Sort
 Insertion Sort
 ==============
 
-#. Implement the insertion sort algorithm.
-#. Make sure it works and test it a few times and see what the runtimes are.
+#. Implement the insertion sort algorithm
+#. Make sure it works and run it a few times to see what the runtimes are
 
     * Change the size of the array and the max value and see how it impacts runtimes
     * For the purposes of this lab, do not worry about writing unit tests
@@ -94,8 +94,8 @@ Insertion Sort
 Selection Sort
 ==============
 
-#. Implement the selection sort algorithm.
-#. Make sure it works and test it a few times and see what the runtimes are.
+#. Implement the selection sort algorithm
+#. Make sure it works and run it a few times to see what the runtimes are
 
     * Change the size of the array and the max value and see how it impacts runtimes
     * For the purposes of this lab, do not worry about writing unit tests
@@ -110,23 +110,21 @@ Selection Sort
 Comparing Sorts
 ===============
 
-#. Run each of the sorts a few times and take note of the runtimes.
+#. Run each of the sorts a few times and take note of the runtimes
 
     * Play around with the size of the arrays and the max value
-    * Do the times align with what you'd expect based on the computational complexities of each of the algorithms
+    * Compare the runtimes of each algorithm to what was expected based on their computational complexities
 
-#. Try throwing a counter variable into the inner loops of each of the sorts to see how many times the loops ran.
+
+#. Try adding a counter variable into the inner loops of each of the sorts to see how many times the loops ran
 
     * Calculate what the counts should be for each sort, in the worst and best cases, based on the size of the arrays you used
     * :doc:`Refer to the computational complexity analysis provided on these sorting algorithms </topics/sorting/sorting-basic>`
 
-#. Can you rationalize the differences in runtimes?
 
 
 Kattis Problems
 ===============
-
-Recommended Kattis Problems (don't worry, you don’t need to do all of them or anything):
 
 #. https://open.kattis.com/problems/quadrant
 #. https://open.kattis.com/problems/judgingmoose
