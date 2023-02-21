@@ -1,14 +1,19 @@
 **************************
 Linked Binary Search Trees
 **************************
-
-* Since we know the idea behind the binary search tree, we can now implement one
 * Given the way the binary search tree ideas were presented, a linked implementation may feel like an obvious choice
-    * Though, there is nothing stopping us from implementing one with an array
+
+    * Though, there is nothing preventing an array based implementation
 
 
 Constructors
 ============
+
+.. literalinclude:: /../main/java/LinkedBinarySearchTree.java
+    :language: java
+    :lineno-match:
+    :lines: 108-143
+
 
 .. code-block:: java
     :linenos:
