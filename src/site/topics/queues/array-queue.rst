@@ -483,6 +483,6 @@ Playing Code
 
 * If everything was done correctly, the following code from ``PlayingArrayQueue`` should work
 
-.. literalinclude:: /../main/java/PlayingLinkedQueue.java
+.. literalinclude:: /../main/java/PlayingArrayQueue.java
    :language: java
    :linenos:
