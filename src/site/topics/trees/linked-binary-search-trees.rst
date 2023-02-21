@@ -152,129 +152,82 @@ Remove Maximum
 General Remove
 ==============
 
-* This is probably the most complex functionality we will discuss
+* This is probably the most complex functionality discussed this course
 * To help, the discussion will be broken up
 
-.. code-block:: java
-    :linenos:
+.. literalinclude:: /../main/java/LinkedBinarySearchTree.java
+    :language: java
+    :lineno-match:
+    :lines: 42-59
 
-    public T remove(T element) {
-        T returnElement = null;
-        if (isEmpty()) {
-            throw new NoSuchElementException();
-        } else if (root.getData().equals(element)) {
-            returnElement = root.getData();
-            root = findReplacementNode(root);
-        } else if (root.getData().compareTo(element) > 0) {
-            returnElement = remove(element, root, root.getLeft());
-        } else {
-            returnElement = remove(element, root, root.getRight());
-        }
-        size--;
-        return returnElement;
-    }
 
 * The public ``remove`` method is similar to the public ``removeMin`` and ``removeMax``
 * It checks the root node to see if it is the value to be removed
 * Otherwise, it checks which subtree to continue the search down and calls the recursive private ``remove``
 
 
-.. code-block:: java
-    :linenos:
+.. literalinclude:: /../main/java/LinkedBinarySearchTree.java
+    :language: java
+    :lineno-match:
+    :lines: 69-86
 
-    private T remove(T element, Node<T> parent, Node<T> child) {
-        if (child == null) {
-            throw new NoSuchElementException();
-        } else if (child.getData().equals(element)) {
-            if (parent.getData().compareTo(element) > 0) {
-                parent.setLeft(findReplacementNode(child));
-            } else {
-                parent.setRight(findReplacementNode(child));
-            }
-            return child.getData();
-        } else if (child.getData().compareTo(element) > 0) {
-            return remove(element, child, child.getLeft());
-        } else {
-            return remove(element, child, child.getRight());
-        }
-    }
 
 * The private ``remove`` is basically doing a binary search through the tree looking for the value to be removed
 * Unlike the binary search however, this method must
+
     * Remove the element
     * Potentially address a gap in the tree if the node being removed is an internal node
     * Ensure the binary search tree ordering is preserved
 
-* To do this, we make use of another private method called ``findReplacementNode``
+
+* To do this, another private method called ``findReplacementNode`` is used
+
+.. literalinclude:: /../main/java/LinkedBinarySearchTree.java
+    :language: java
+    :lineno-match:
+    :lines: 100-128
 
 
-.. code-block:: java
-    :linenos:
+* ``findReplacementNode`` looks rather intimidating at first, but if studied carefully, it is actually rather simple
 
-    private Node<T> findReplacementNode(Node<T> toRemove) {
-        Node<T> replacementNode = null;
-        if (toRemove.getLeft() == null && toRemove.getRight() == null) {
-            replacementNode = null;
-        } else if (toRemove.getLeft() != null && toRemove.getRight() == null) {
-            replacementNode = toRemove.getLeft();
-        } else if (toRemove.getLeft() == null && toRemove.getRight() != null) {
-            replacementNode = toRemove.getRight();
-        } else {
-            Node<T> parent = toRemove;
-            Node<T> child = toRemove.getRight();
-
-            // Find the in order successor (right child's left
-            // most node (minimum node))
-            while (child.getLeft() != null) {
-                parent = child;
-                child = child.getLeft();
-            }
-
-            // Set replacement node's left to
-            // the node being removed's (subtree root's) left
-            child.setLeft(toRemove.getLeft());
-
-            // If the immediate in order successor is NOT the
-            // node being replaced's right child, the parent
-            // node's new left becomes the child node's right
-            // and the child node's right is replaced with
-            // the node being replaced's right
-            if (toRemove.getRight() != child) {
-                parent.setLeft(child.getRight());
-                child.setRight(toRemove.getRight());
-            }
-            replacementNode = child;
-        }
-        return replacementNode;
-    }
-
-* ``findReplacementNode`` looks rather intimidating at first, but it you take your time looking at it, you will see that it's simple
 * The first part, the first ``if`` s and ``else if`` s check if the node being removed is a leaf node, or if it has one child
+
     * If it's a leaf node, there is no replacement
     * If there is only one child, then that child becomes the replacement
 
+
 * The other case is when there are two children
 * Here, the idea is to find the in order successor node
+
     * The right child's left most node
 
-* You may see that this code is very similar to the private ``removeMax`` method
-    * Iterate down the tree until we find the left most node in the subtree
+
+* This code is very similar to the private ``removeMax`` method
+
+    * Iterate down the tree until the left most node in the subtree is found
     * This node will become the replacement node
 
+
 * The replacement node's left subtree will be the removed node's old left subtree
+
     * The replacement node contains the smallest thing in the whole right subtree
     * But since it is in the right subtree, it is bigger than everything in the removed node's left subtree
 
-* If it happens that the node being removed's right child is the replacement node, we're done
 
+* If it happens that the node being removed's right child is the replacement node, then done
 * If it is *not* the right child, then
+
     * The replacement node's parent may need to take care of the replacement node's right subtree
-    * The node being removed may have a right subtree, when all is said and done, that still needs to go somewhere
+    * The node being removed may have a right subtree, that when all is said and done, still needs to go somewhere
+
 
 * The idea is, since the parent to the replacement node must be larger than everything in its left subtree, the replacement node's right subtree is also less than the parent
+
     * Therefore, make the parent node's new left subtree the replacement node's right subtree
 
-* Since we know that the replacement node is the smallest thing in the right subtree, we know we can make the replacement node's right subtree the removed node's right subtree
+
+* Since the replacement node is the smallest thing in the right subtree, the replacement node's right subtree can be made to be the removed node's right subtree
+
 
 
 Contains
