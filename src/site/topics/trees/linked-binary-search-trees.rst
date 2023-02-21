@@ -273,10 +273,18 @@ Contains
     * Whatever the result of the search down the right subtree returns, add one to it before returning
 
 
-For next time
+For Next Time
 =============
 
-* If you have not yet, look at the :download:`BinarySearchTree </../main/java/BinarySearchTree.java>` interface
-* Look at the :download:`LinkedBinarySearchTree </../main/java/LinkedBinarySearchTree.java>` implementation
 * Read Chapter 11 Sections 1 -- 3
+
     * 17 pages
+
+
+Playing Code
+------------
+
+* Download and play with
+
+    * :download:`BinarySearchTree </../main/java/BinarySearchTree.java>`
+    * :download:`LinkedBinarySearchTree </../main/java/LinkedBinarySearchTree.java>`
