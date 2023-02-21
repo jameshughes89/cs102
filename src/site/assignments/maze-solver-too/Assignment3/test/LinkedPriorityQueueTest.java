@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
 import java.util.NoSuchElementException;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -18,17 +19,26 @@ public class LinkedPriorityQueueTest {
         preState = new LinkedPriorityQueue<>();
     }
 
-
     @Nested
     class WhenNewEmpty {
 
         @Test
-        void isEmpty_empty_returnsTrue() {
+        void enqueue_noPriority_returnsTrue() {
 
         }
 
         @Test
-        void size_empty_returnsZero() {
+        void enqueue_priority_returnsTrue() {
+
+        }
+
+        @Test
+        void enqueue_noPriority_updatesFront() {
+
+        }
+
+        @Test
+        void dequeue_empty_throwException() {
 
         }
 
@@ -38,7 +48,12 @@ public class LinkedPriorityQueueTest {
         }
 
         @Test
-        void dequeue_empty_throwException() {
+        void isEmpty_empty_returnsTrue() {
+
+        }
+
+        @Test
+        void size_empty_returnsZero() {
 
         }
 
@@ -57,12 +72,17 @@ public class LinkedPriorityQueueTest {
             }
 
             @Test
-            void isEmpty_singleton_returnsFalse() {
+            void enqueue_noPriority_returnsTrue() {
 
             }
 
             @Test
-            void size_singleton_returnsOne() {
+            void enqueue_priority_returnsTrue() {
+
+            }
+
+            @Test
+            void enqueue_noPriority_unchangedFront() {
 
             }
 
@@ -77,6 +97,16 @@ public class LinkedPriorityQueueTest {
             }
 
             @Test
+            void dequeue_singleton_returnsFront() {
+
+            }
+
+            @Test
+            void dequeue_singleton_emptyPriorityQueue() {
+
+            }
+
+            @Test
             void first_singleton_returnsFront() {
 
             }
@@ -87,12 +117,12 @@ public class LinkedPriorityQueueTest {
             }
 
             @Test
-            void dequeue_singleton_returnsFront() {
+            void isEmpty_singleton_returnsFalse() {
 
             }
 
             @Test
-            void dequeue_singleton_emptyPriorityQueue() {
+            void size_singleton_returnsOne() {
 
             }
 
@@ -119,12 +149,17 @@ public class LinkedPriorityQueueTest {
                 }
 
                 @Test
-                void isEmpty_many_returnsFalse() {
+                void enqueue_noPriority_returnsTrue() {
 
                 }
 
                 @Test
-                void size_many_returnsFive() {
+                void enqueue_priority_returnsTrue() {
+
+                }
+
+                @Test
+                void enqueue_noPriority_unchangedFront() {
 
                 }
 
@@ -139,6 +174,17 @@ public class LinkedPriorityQueueTest {
                 }
 
                 @Test
+                void dequeue_many_returnsElementsInCorrectSequence() {
+
+                }
+
+                @Test
+                void dequeue_many_changedPriorityQueue() {
+
+                }
+
+
+                @Test
                 void first_many_returnsLowestPriorityData() {
 
                 }
@@ -149,14 +195,15 @@ public class LinkedPriorityQueueTest {
                 }
 
                 @Test
-                void dequeue_many_returnsElementsInCorrectSequence() {
+                void isEmpty_many_returnsFalse() {
 
                 }
 
                 @Test
-                void dequeue_many_changedPriorityQueue() {
+                void size_many_returnsFive() {
 
                 }
+
 
                 @Test
                 void toString_many_correctString() {
@@ -187,11 +234,6 @@ public class LinkedPriorityQueueTest {
                     preState.enqueue("B", 5);
                     preState.enqueue("E", 10);
                     preState.enqueue("F", 15);
-                }
-
-                @Test
-                void size_duplicates_returnsSix() {
-
                 }
 
                 @Test
