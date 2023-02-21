@@ -12,38 +12,15 @@ Constructors
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 108-143
+    :lines: 1-20
 
 
-.. code-block:: java
-    :linenos:
+* Like the other implementations, this class ``implement`` the interface
+* The data structure is to be generic
+* Like the sorted bag, since it is concerned with the ordering, ensure that the objects are comparable
 
-    import java.util.Iterator;
-    import java.util.NoSuchElementException;
+* There is a single constructor to create an empty binary search tree
 
-    public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements BinarySearchTree<T> {
-
-        private int size;
-        private Node<T> root;
-
-        public LinkedBinarySearchTree() {
-            root = null;
-            size = 0;
-        }
-
-        public LinkedBinarySearchTree(T element) {
-            this();
-            add(element);
-        }
-
-* Like the other implementations, we will be sure to ``implement`` the interface
-* We want the data structure to be generic
-* And, like the sorted bag, since we are concerned with the ordering, we will ensure that our objects are comparable
-
-* Here we have two constructors
-    * A default constructor, which just sets up an empty binary search tree
-    * A constructor that we could give an element to be the tree's root
-        * This constructor is probably unnecessary, but let's keep it
 
 
 Static Node Class
