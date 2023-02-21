@@ -64,7 +64,7 @@ public class HuffmanCodeTest {
 
         @BeforeEach
         void create_HuffmanCode() {
-
+            classUnderTest = HuffmanCode.fromString(SIMPLE_SEED);
         }
 
         @ParameterizedTest
@@ -82,6 +82,7 @@ public class HuffmanCodeTest {
         void decode_encodedString_returnsOriginalString() {
 
         }
+
     }
 
     @Nested
@@ -106,6 +107,7 @@ public class HuffmanCodeTest {
         void encode_exampleString_returnsEncodedString() {
 
         }
+
 
         @Test
         void fromFile_encoding_sameAsFromStringEncoding() {
