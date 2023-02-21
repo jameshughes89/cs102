@@ -233,73 +233,44 @@ General Remove
 Contains
 ========
 
-* All data structures we've implemented have a way to check if a given element is within it
-* The binary search tree is no different, but here we do not need to do a linear search
-* Here, we can make use of a binary search to help find the element within the data structure
+* All data structures implemented have a way to check if a given element is contained within it
+* The binary search tree is no different, but here a linear search will not be used
+* Instead, make use of a binary search to help find the element within the data structure
 
-.. code-block:: java
-    :linenos:
+.. literalinclude:: /../main/java/LinkedBinarySearchTree.java
+    :language: java
+    :lineno-match:
+    :lines: 230-256
 
-    public boolean contains(T element) {
-        return binarySearch(element, root) != null;
-    }
 
-    private Node<T> binarySearch(T element, Node<T> current) {
-        if (current == null) {
-            return null;
-        } else if (current.getData().equals(element)) {
-            return current;
-        } else {
-            if (current.getData().compareTo(element) > 0) {
-                return binarySearch(element, current.getLeft());
-            } else {
-                return binarySearch(element, current.getRight());
-            }
-        }
-    }
-
-* Above, you will see that the method is called ``contains``, and it calls the recursive ``binarySearch`` method
+* See the above method called ``contains`` and the recursive ``binarySearch`` method
 * What's interesting here is the helper method needs to return a boolean, but the ``binarySearch`` returns a reference to a node
 * A way to address this is to simply check if ``binarySearch`` returned a reference to a node or not
-    * If ``contains`` gets a node back, then we return true
-    * Otherwise, if we get ``null`` back, return false
+
+    * If ``contains`` gets a node back, then return ``true``
+    * Otherwise, if ``null``, return ``false``
+
 
 * As this method is written, duplicate values are assumed to be in the right subtree
 
 
-Get Count
+``count``
 =========
 
-.. code-block:: java
-    :linenos:
-    :emphasize-lines: 12, 13
+.. literalinclude:: /../main/java/LinkedBinarySearchTree.java
+    :language: java
+    :lineno-match:
+    :lines: 258-286
+    :emphasize-lines: 21, 22, 23
 
-    public int getCount(T element) {
-        if (isEmpty()) {
-            return 0;
-        }
-        return getCount(element, root);
-    }
-
-    private int getCount(T element, Node<T> current) {
-        if (current == null) {
-            return 0;
-        }
-        if (current.getData().equals(element)) {
-            return 1 + getCount(element, current.getRight());
-        } else if (current.getData().compareTo(element) > 0) {
-            return getCount(element, current.getLeft());
-        } else {
-            return getCount(element, current.getRight());
-        }
-    }
 
 * Counting the number of times a given element exists within the tree will be similar to a binary search
-* The key difference will be, do a binary search, but if you find what you're looking for, continue looking in the subtree where duplicates are placed
-* The below example assumes duplicate values go to the right
-* Notice the line ``return 1 + getCount(element, current.getRight())`` for when we find what we're looking for
+* The key difference will be, do a binary search, but if the element is found, continue looking in the subtree where duplicates are added
+
+* Notice the line ``return 1 + count(element, current.getRight())``
+
     * This continues the search to the right
-    * But whatever the result of the search down the right subtree returns, we add one to it before we return
+    * Whatever the result of the search down the right subtree returns, add one to it before returning
 
 
 For next time
