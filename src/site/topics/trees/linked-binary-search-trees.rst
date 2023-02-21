@@ -62,136 +62,91 @@ Add to Binary Search Tree
 Minimum & Maximum
 =================
 
-.. code-block:: java
-    :linenos:
-
-    public T min() {
-        if (isEmpty()) {
-            throw new NoSuchElementException();
-        }
-        return min(root);
-    }
-
-    private T min(Node<T> current) {
-        if (current.getLeft() == null) {
-            return current.getData();
-        } else {
-            return min(current.getLeft());
-        }
-    }
+.. literalinclude:: /../main/java/LinkedBinarySearchTree.java
+    :language: java
+    :lineno-match:
+    :lines: 191-228
 
 
-    public T max() {
-        if (isEmpty()) {
-            throw new NoSuchElementException();
-        }
-        return max(root);
-    }
+* Fortunately the minimum and maximum methods are simple
+* Due to the ordered nature of the binary search tree, go all the way to the left/right for the minimum/maximum value
 
-    private T max(Node<T> current) {
-        if (current.getRight() == null) {
-            return current.getData();
-        } else {
-            return max(current.getRight());
-        }
-    }
+* The minimum functionality is implemented recursively and the maximum is implemented iteratively
 
-* Fortunately minimum and maximum are simple
-* Due to the ordered nature of the binary search tree, just go all the way to the left or right for the minimum or maximum value respectively
+    * This is done for demonstration purposes only
+
+
 
 
 Remove Minimum & Maximum
 ========================
 
 * Finding the minimum and maximum values in the linked binary search tree is relatively simple
-* However, *removing* from the tree adds extra complexity as we need to preserve the binary search tree ordering of our tree
+* However, *removing* from the tree adds extra complexity as there is a need to preserve the binary search tree ordering of the tree
 
-**Remove Minimum**
 
-.. code-block:: java
-    :linenos:
+Remove Minimum
+--------------
 
-    public T removeMin() {
-        T returnElement = null;
-        if (isEmpty()) {
-            throw new NoSuchElementException();
-        } else if (root.getLeft() == null) {
-            returnElement = root.getData();
-            root = root.getRight();
-        } else {
-            returnElement = removeMin(root, root.getLeft());
-        }
-        size--;
-        return returnElement;
-    }
+.. literalinclude:: /../main/java/LinkedBinarySearchTree.java
+    :language: java
+    :lineno-match:
+    :lines: 130-159
 
-    private T removeMin(Node<T> current, Node<T> leftChild) {
-        if (leftChild.getLeft() == null) {
-            current.setLeft(leftChild.getRight());
-            return leftChild.getData();
-        } else {
-            return removeMin(current.getLeft(), leftChild.getLeft());
-        }
-    }
 
 * Above are two functions that work together to remove the minimum value
 
 * First, take note of the public method
+
     * It checks if the tree is empty
     * It checks if the root happens to be the left most node
+
         * If it is, then make the root's right child the new root of the whole tree
+
+
     * Otherwise, call the private recursive method looking down the left subtree
 
+
 * If the public method doesn't remove the minimum, the recursive private method is the one that goes looking for the minimum to remove
-* At this point we know that ``leftChild`` exists (is not ``null``) since this was checked in the calling method
+* At this point, ``current`` exists (is not ``null``) since this was checked in the calling method
+
     * Remember, if the root's left child does not exist, then the root must contain the minimum value in the tree
 
-* We'll start with the recursive case --- if ``leftChild``'s left child does exist, then we call the recursive function again to keep looking down the left subtrees
 
-* If ``LeftChild``'s left subtree does **not** exist, then we know that ``leftChild`` contains the minimum value
-    * Simply replace ``current``'s left child (which ``leftChild`` also references) with ``leftChild``'s right child
-        * It does not matter if the left child's right child is ``null`` or not, it works either way
+* Start with the recursive case --- if ``current``'s left child does exist, then call the recursive function again to keep looking down the left subtrees
+
+* If ``current``'s left subtree does **not** exist, then ``current`` contains the minimum value
+
+    * Simply replace ``parent``'s left child (which ``current`` also references) with ``current``'s right child
+
+        * It does not matter if ``current``'s right child is ``null`` or not, it works either way
 
 
-**Remove Maximum**
 
-* We could implement the ``removeMax`` with the same idea, but to show an alternative idea, an iterative method will be used instead
+Remove Maximum
+--------------
 
-.. code-block:: java
-    :linenos:
+* ``removeMax`` could be implemented with the same recursive idea as ``removeMin``
+* However, for demonstration purposes, an iterative method is used instead
 
-    public T removeMax() {
-        T returnElement = null;
-        if (isEmpty()) {
-            throw new NoSuchElementException();
-        }
-        if (root.getRight() == null) {
-            returnElement = root.getData();
-            root = root.getLeft();
-        } else {
-            Node<T> parent = root;
-            Node<T> rightChild = root.getRight();
+.. literalinclude:: /../main/java/LinkedBinarySearchTree.java
+    :language: java
+    :lineno-match:
+    :lines: 161-189
 
-            // Iterate right until we find the right most node
-            while (rightChild.getRight() != null) {
-                parent = rightChild;
-                rightChild = rightChild.getRight();
-            }
-            returnElement = rightChild.getData();
-            parent.setRight(rightChild.getLeft());
-        }
-        size--;
-        return returnElement;
-    }
 
 * ``removeMax`` is similar to the public ``removeMin`` method
+
     * Check if the root exists
     * Check if the root's right exists
 
+
 * It's the else case that's different
 * The idea is, loop down to the right until there is no more right children
-* Then, once we find the right most node, set it's ``parent``'s right child to the node being removed's left child
+* Then, once the right most node is found, set it's ``parent``'s right child to the node being removed's left child
+
     * Again, it doesn't matter if the left child is ``null`` or not
+
 
 
 General Remove
