@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class HuffInternalTest {
+
     private static final HuffmanInternal LEFT_CHILD_INTERNAL = new HuffmanInternal(10, null, null);
     private static final HuffmanLeaf RIGHT_CHILD_LEAF = new HuffmanLeaf(10, 'a');
 

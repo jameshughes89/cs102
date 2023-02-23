@@ -14,7 +14,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AStarMazeSolverTest {
-
     // @formatter:off
     private static final String MAZE_NO_SOLUTION =
                     "#####\n" +
@@ -45,8 +44,9 @@ public class AStarMazeSolverTest {
                     "S  #\n" +
                     "#  E\n" +
                     "####";
-    // @formatter:on
 
+    // @formatter:on
+    
     private static final Set<Cell> PATH_NO_SOLUTION = Set.of();
     private static final Set<Cell> PATH_ONE_SOLUTION = Set.of(new Cell('S', 0, 3),
             new Cell(' ', 1, 3),
