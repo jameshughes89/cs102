@@ -25,4 +25,5 @@ public class HuffLeafTest {
     void toString_onlyUseCase_returnsString() {
 
     }
+
 }

@@ -136,6 +136,7 @@ The general idea is this
         * If it's not, find an unvisited valid neighbour and push it on the stack
 
             * When looking for a valid neighbour, consider looking in a clockwise manner starting at 12 o'clock
+            * Only consider the four directions (up, right, down, left)
 
 
         * If there are no valid neighbours, we're at a dead end --- we must backtrack

@@ -54,7 +54,7 @@ public class ArrayQueue<T> implements Queue<T> {
     @SuppressWarnings("unchecked")
     private void expandCapacity() {
         T[] newQueue = (T[]) new Object[queue.length * 2];
-        for (int i = 0; i < queue.length; ++i) {
+        for (int i = 0; i < queue.length; i++) {
             newQueue[i] = queue[front];
             front = nextIndex(front);
         }
@@ -107,7 +107,7 @@ public class ArrayQueue<T> implements Queue<T> {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         int currentIndex = front;
-        for (int i = 0; i < size(); ++i) {
+        for (int i = 0; i < size(); i++) {
             builder.append(queue[currentIndex]);
             builder.append(", ");
             currentIndex = nextIndex(currentIndex);
