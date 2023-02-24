@@ -14,6 +14,11 @@ Sorting
 * Some will more or less be the same in terms of the amount of computation required
 * And some will be much better than others
 
+.. note::
+
+    Most of the sorting images are taken directly from their wikipedia articles. Click the image to visit their
+    respective pages.
+
 
 Sorting Problem
 ===============
@@ -380,11 +385,9 @@ Best and Worse Case Scenario
 
 
 
-For next time
+For Next Time
 =============
 
-* Most sorting images are taken directly from their wikipedia articles
-    * Click the image to visit their respective pages
-
 * Read Chapter 9 Section 2
+
     * 26 pages
