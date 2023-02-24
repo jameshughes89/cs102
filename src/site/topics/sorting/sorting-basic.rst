@@ -100,26 +100,34 @@ Bogosort
 
 * Here's a fun idea
 
-1. Assume we have a function called ``isSorted(collection)`` that returns true if the collection is sorted, false otherwise
+#. Given a function called ``isSorted(collection)`` that returns true if the collection is sorted and false otherwise
+
     * :math:`O(n)`
-2. Assume we have another function called ``shuffle(collection)`` that randomly shuffles the collection
+
+
+#. And given another function called ``shuffle(collection)`` that randomly shuffles the collection
+
     * :math:`O(n)`
     * Think of shuffling a deck of cards
 
-* The algorithm is then:
+
+# The algorithm is then:
+
     ``while not isSorted(collection): shuffle(collection)``
 
-* Best case scenario, we get lucky with our collection already being sorted as we only need to use ``isSorted`` once
-* Worst case is... *forever?*
-* Really, we could get **really** unlucky and shuffle the elements such that they are the same, not in order order every time
 
-* As you can probably tell, this is not a particularly great sorting algorithm in terms of computation required
-* If your :math:`n` is very small, sure you will *probably* end up with a sorted collection after a while
+* Best case scenario, get luck with the collection already being sorted --- ``isSorted`` is called only once
+* Worst case is... *forever?*
+* It's possible to get **really** unlucky and shuffle the elements such that they are the same *not in order* order every time
+
+* This is obviously not a particularly great sorting algorithm in terms of the computation required
+
+* If :math:`n` is very small, there's a reasonable chance to end up with a sorted collection after a while
 * But to put things into perspective, there are a total :math:`8.0658175x10^{67}` permutations of a deck of 52 cards``!``
-    * To put this in perspective, there are roughly :math:`2.4x10^{67}` atoms in the Milky Way
-    * If we assigned each possible ordering to every atom in the Milky Way, we'd run out of atoms
-        * we'd have roughly :math:`5.7\times10^{67}` permutations left over
-    * `There's also a fun story to go with this <https://www.reddit.com/r/AskReddit/comments/6il1jx/comment/dj71u1v/?utm_source=share&utm_medium=web2x&context=3>`_
+
+    * To put *this* in perspective, there are roughly :math:`2.4x10^{67}` atoms in the Milky Way
+    * If assigning orderings to individual atoms in the Milky way, there would be roughly :math:`5.7\times10^{67}` orderings left over
+    * `There's also a fun story to go with this <https://www.reddit.com/r/AskReddit/comments/6il1jx/comment/dj71u1v>`_
 
 
 Bubble Sort
