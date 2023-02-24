@@ -380,16 +380,20 @@ Algorithm
 Selection Sort
 ==============
 
-.. image:: selection_sort.gif
-   :height: 333 px
-   :align: center
-   :target: https://en.wikipedia.org/wiki/Selection_sort
+.. figure:: selection_sort.gif
+    :height: 333 px
+    :align: center
+    :target: https://en.wikipedia.org/wiki/Selection_sort
+
+    Animation of Selection Sort.
 
 * The general idea is
-    * Scan the collection for the current smallest element and put it in a sorted list
-    * Scan the collection for the current smallest element and add it to the end of the sorted list
-    * Scan the collection for the current smallest element and add it to the end of the sorted list
+
+    * Scan the collection for the smallest element and put it in a sorted list
+    * Scan the collection for the next smallest element and add it to the end of the sorted list
+    * Scan the collection for the next smallest element and add it to the end of the sorted list
     * ...
+
 
 .. list-table:: Insertion Sort Example
     :widths: 50 50
@@ -414,24 +418,37 @@ Algorithm
 
 * In fact, the basic idea is more or less the algorithm
 
-* For each element in the unsorted list
-    * Scan the unsorted list for the smallest element
-        * Add element to the end of the sorted list
+
+.. code-block:: text
+    :linenos:
+
+    For each element in the unsorted list
+        Scan the unsorted list for the next smallest element
+            Add element to the end of the sorted list
+
 
 
 Computational Complexity
 ------------------------
 
-* Assuming we have a collection of :math:`n` things that need to be sorted
-* For each element, we must do a linear search through the unsorted collection for the current smallest element
+* Assuming a collection of :math:`n` elements that need to be sorted
+* For each element, do a linear search through the unsorted collection for the current smallest element
+
     * :math:`O(n)`
 
-* First time we scan :math:`n` elements
-* Next time we scan :math:`n-` elements
+
+* First time, look at :math:`n` elements
+* Next time, look at :math:`n-1` elements
 * Then :math:`n-2` elements
 * ...
 
-* Since we have :math:`n` things that need to be sorted, and we need to do a linear for each, it's :math:`O(n^{2})`
+
+* Given :math:`n` things that need to be sorted
+
+    * Each pass of the collection puts one element in its place, thus :math:`n` passes are needed
+    * Each pass requires a linear search, which takes :math:`O(n)`
+    * Therefore, it's :math:`O(n^{2})`
+
 
 
 Best and Worse Case Scenario
