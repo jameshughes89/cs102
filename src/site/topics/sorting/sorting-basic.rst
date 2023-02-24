@@ -329,7 +329,13 @@ Computational Complexity
 * ...
 * If considering the :math:`n^{th}` element from the unsorted list,  :math:`n-1` elements in the sorted list must be looked at
 
-* Therefore, if sorting :math:`n` things, and for each thing :math:`\frac{n}{2}` things are looked at on average to find the insertion spot, it's :math:`O(n^{2})`
+
+* If sorting :math:`n` things
+
+    * All :math:`n` things need to be inserted into the sorted list
+    * And :math:`\frac{n}{2}` things are looked at on average to find the insertion spot
+    * Therefore, it's :math:`O(n^{2})`
+
 
 
 Worst Case Scenario
