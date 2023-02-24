@@ -24,6 +24,7 @@ Sorting Problem
 ===============
 
 * Given a collection of *things*
+
     * Numbers
     * Strings
     * People
@@ -37,46 +38,61 @@ Order
 
 * What *in order* means however will depend on what is being sorted
 * For example
+
     * Numbers come with an intrinsic ordering
-        * Java uses the `Natural Order <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Comparable.html>`_
+
+        * Java uses the `Natural Order <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Comparable.html>`_
         * *"This ordering is referred to as the class's natural ordering, and the class's compareTo method is referred to as its natural comparison method."*
+
+
     * Strings could be ordered alphabetically
+
         * Perhaps by length?
+
+
     * Sort people based on height
+
         * Or age?
         * Or month and day of birthday?
+
+
     * Car Parts by mass?
+
         * Or production code?
         * Date they were made?
         * Volume?
         * The amount of dust particles on the surface?
 
-* With numbers, we don't feel the need to ask
-* But with other things, we need to have a well defined ordering for the *things*
+
+* With numbers, there's no need to ask
+* But with other things, a well defined ordering is needed for the *things*
+
     * The things themselves have the order-*ness* property, not a sorting algorithm
 
-* We've already discussed this a few times already in the context of an ordered bag and binary search tree
-    * `Comparable defines a natural ordering <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Comparable.html>`_
 
-* We may also want to have more complex orderings of things
+* The orderness has already been discussed a few times in the context of an ordered bag and binary search tree
+
+    * `Comparable defines a natural ordering <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Comparable.html>`_
+
+
+* More complex orderings can also be defined
+
     * For example, comparing things based on multiple values
-    * I like to sort my music by artist and year
+    * For example, sorting music by artist and year
     * `Comparator defines an unnatural ordering <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html>`_
+
 
 .. note::
 
-    For ease, we will use numbers in the examples, but the ideas are generalizable to other *things* if they have a
-    defined order.
+    For ease, numbers are used in the examples, but the ideas are generalizable to other *things* if they have a defined
+    order.
 
-    We will define a collection of numbers ordered if and only if the elements are non-decreasing order. If we want to
-    be more specific and include include duplicate values, we could say that the elements are
-    *monotonically increasing*. This is just fancy way of saying the numbers are increasing or the same/equal as we go,
-    but **never** decreasing. For example:
+    Here, a collection of numbers is considered ordered if and only if the elements are *monotonically increasing*. This
+    is just fancy way of saying the numbers are always increasing or are equal, but **never** decreasing. For example:
 
         :math:`1, 2, 3, 5, 5, 6, 8, 8, 8, 9`
 
-    There is nothing stopping us from defining the order we want to be decreasing, but here we will simply use
-    increasing.
+
 
 
 Bogosort
