@@ -111,7 +111,7 @@ Bogosort
     * Think of shuffling a deck of cards
 
 
-# The algorithm is then:
+#. The algorithm is then:
 
     ``while not isSorted(collection): shuffle(collection)``
 
@@ -123,7 +123,7 @@ Bogosort
 * This is obviously not a particularly great sorting algorithm in terms of the computation required
 
 * If :math:`n` is very small, there's a reasonable chance to end up with a sorted collection after a while
-* But to put things into perspective, there are a total :math:`8.0658175x10^{67}` permutations of a deck of 52 cards``!``
+* But to put things into perspective, there are a total :math:`8.0658175x10^{67}` permutations of a deck of 52 cards ``!``
 
     * To put *this* in perspective, there are roughly :math:`2.4x10^{67}` atoms in the Milky Way
     * If assigning orderings to individual atoms in the Milky way, there would be roughly :math:`5.7\times10^{67}` orderings left over
@@ -351,8 +351,7 @@ Worst Case Scenario
     * Take the last element, which happens to be the smallest (1), and go over the whole sorted list to find where it belongs (2, 3, 4, 5, 6, 7, 8)
 
 
-* Based on this, where it starts scanning the sorted list from the end (not the index 0), the configuration of the elements would be if the elements were in reverse order
-* However, if the list was scanned from the beginning, the worst case scenario configuration would be if the elements were already in order
+* However, if the list was scanned starting at index 0 each time, the worst case scenario configuration would be if the elements were already in order
 
 
 Best Case Scenario
@@ -368,7 +367,7 @@ Best Case Scenario
     * Look at the last element, the largest (8), and compare it to the sorted list and see that it is larger than the first thing it considers (7), therefore there is no need to look past it
 
 
-* Like the worst case scenario, the nest case scenario configuration depends on which way the elements in the sorted list are looked at
+* Like the worst case scenario, the best case scenario configuration depends on which way the elements in the sorted list are looked at
 
 
 Algorithm
