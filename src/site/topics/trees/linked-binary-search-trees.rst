@@ -16,7 +16,7 @@ Constructors
     :lines: 1-20
 
 
-* Like the other implementations, this class ``implement`` the interface
+* Like the other implementations, this class ``implements`` the interface
 * The data structure is to be generic
 * Like the sorted bag, since it is concerned with the ordering, ensure that the objects are comparable
 
