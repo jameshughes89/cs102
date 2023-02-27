@@ -52,7 +52,7 @@ Add to Binary Search Tree
     :lines: 15-40
 
 
-* A public helper method is used to setup a call to the private recursive add
+* A public method is used to call the private recursive add with initial values
 
 * This method is very similar to a binary search
 * Keep going left/right down the tree based on the ordering of the tree and value of the element being added
@@ -245,7 +245,7 @@ General Remove
 
 
 * See the above method called ``contains`` and the recursive ``binarySearch`` method
-* What's interesting here is the helper method needs to return a boolean, but the ``binarySearch`` returns a reference to a node
+* What's interesting here is ``contains`` needs to return a boolean, but the ``binarySearch`` returns a reference to a node
 * A way to address this is to simply check if ``binarySearch`` returned a reference to a node or not
 
     * If ``contains`` gets a node back, then return ``true``
