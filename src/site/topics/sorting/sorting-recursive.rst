@@ -2,21 +2,30 @@
 Sorting Recursively
 *******************
 
-* Other pretty cool sorting algorithms
+* Additional interesting sorting algorithms
+
+
+.. note::
+
+    Most of the sorting images are taken directly from their wikipedia articles. Click the image to visit their
+    respective pages.
 
 
 Mergesort
 =========
 
-.. image:: merge_sort.gif
-   :width: 333 px
-   :align: center
-   :target: https://en.wikipedia.org/wiki/Merge_sort
+.. figure:: merge_sort.gif
+    :width: 333 px
+    :align: center
+    :target: https://en.wikipedia.org/wiki/Merge_sort
+
+    Animation of Mergesort.
 
 
 * There are two important, but simple ideas at the root of mergesort
-    1. *Merging* two sorted lists, with the below idea, results in a single sorted list of all elements
-    2. An empty list, or a list of size 1, is *sorted*
+
+    #. *Merging* two sorted lists, with the below idea, results in a single sorted list of all elements
+    #. An empty list, or a list of size 1, is *sorted*
 
 
 
@@ -64,16 +73,20 @@ Merging Lists
         |
       - :math:`1, 2, 3, 4, 5, 6, 7, 8, 9`
 
-* In the last two rows, since the second list was empty, we know the remainder of the first list could simply be appended to the merged list
+
+* In the last two rows, since the second list was empty, the remainder of the first list can simply be appended to the merged list
+
 
 
 Splitting Lists
 ---------------
 
-* The merge algorithm requires sorted lists to start from
+* The merge algorithm requires sorted lists to start merging
 * However, when given an unsorted collection to sort, there are no sorted lists to start merging
 * Fortunately this is trivial to address
+
     * Keep splitting the unsorted collection in half
+
 
 * Eventually this will result in a set of lists that are either empty or size 1
 
@@ -86,6 +99,7 @@ Splitting Lists
     :math:`[a, b], [c, d], [e, f], [g]`
 
     :math:`[a], [b], [c], [d], [e], [f], [g], []`
+
 
 
 Putting it Back Together Again
@@ -103,28 +117,37 @@ Putting it Back Together Again
     :math:`[t, u, v, w, x, y, z]`
 
 
+
 Recursively Thinking
 --------------------
 
 * The beauty of this algorithm is it's simplicity when thinking about it recursively
 
-* **Mergesort**
-    * If the list is size 0 or 1
-        * Return the sorted list of size 0 or 1
-    * Otherwise
-        * Split the list into a first and second half
-        * Sort the first half with **Mergesort**
-        * Sort the second half with **Mergesort**
-        * Merge the first and second half back together
-        * Return the sorted merged list
+
+.. code-block:: text
+    :linenos:
+
+    Define MergeSort
+        If the list is of size 0 or 1
+            Return the sorted list of size 0 or 1
+
+        else
+            Split the list into a first and second half
+            Sort the first half with MergeSort
+            Sort the second half with MergeSort
+            Merge the sorted first and second half back together
+            Return the sorted merged list
+
 
 
 Complexity Analysis
 -------------------
 
 * A simple way to think about the analysis is to consider
+
     * How much work is involved for a single merging of two lists
     * How many times merging needs to happen
+
 
 * It can get more nuanced, but this level of detail is sufficient
 
@@ -132,24 +155,36 @@ Complexity Analysis
 Merging
 ^^^^^^^
 
-* We will have two lists of roughly the same size to merge into one
+* Given two lists of roughly the same size :math:`n` to merge into one
 * The algorithm compares elements and eventually adds them all to a new, sorted merged list
+
     * Interestingly, the elements in the merged list never need to be compared to one another again
+
+
 * The complexity of merging is :math:`O(n)`
+
 
 
 Number of Merges
 ^^^^^^^^^^^^^^^^
 
-.. image:: split_good.png
-   :width: 500 px
-   :align: center
+.. figure:: split_good.png
+    :width: 500 px
+    :align: center
+
+    Assuming :math:`n` is a power of :math:`2`, repeatedly splitting a list of :math:`n` elements in half until
+    :math:`n` lists of size :math:`1` exist. These
 
 
-* If you remember from binary search, we can visualize the splitting of data as a tree
+* The splitting of data can be visualized as a tree
 * On each level of the tree, there are a total of :math:`n` elements to be merged into larger lists
-* You will also remember, when repeatedly halving, the relationship between :math:`n` and the number of levels in the tree is :math:`O(log_{2}(n))`
-* Therefore, we need to do :math:`O(n)` work a total of :math:`O(log_{2}(n))` times --- :math:`O(n log_{2}(n))`
+
+    * Merging is :math:`O(n)`
+
+
+* When repeatedly halving, the relationship between :math:`n` and the number of levels in the tree is :math:`O(log_{2}(n))`
+* :math:`O(n)` work is required a total of :math:`O(log_{2}(n))` times
+* Therefore :math:`O(n log_{2}(n))`
 
 
 Quicksort
