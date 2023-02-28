@@ -135,7 +135,7 @@ Recursively Thinking
             Split the list into a first and second half
             Sort the first half with MergeSort
             Sort the second half with MergeSort
-            Merge the sorted first and second half back together
+            Merge the sorted first and second halves back together
             Return the sorted merged list
 
 
