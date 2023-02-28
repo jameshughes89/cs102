@@ -154,8 +154,8 @@ Implementing the Class
 
 * In order to complete the ``LinkedPriorityQueue``, write a constructor and implement all the required methods:
 
-    * ``void enqueue(T element, int priority)``
-    * ``void enqueue(T element)``
+    * ``boolean enqueue(T element, int priority)``
+    * ``boolean enqueue(T element)``
     * ``T dequeue()``
     * ``T first()``
     * ``int size()``
