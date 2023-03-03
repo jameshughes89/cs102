@@ -144,6 +144,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
             throw new NoSuchElementException("Empty bag");
         }
         T returnElement = bag[rear - 1];
+        bag[rear - 1] = null;
         rear--;
         return returnElement;
     }

@@ -145,7 +145,7 @@ Array Iterator
 
 .. warning::
 
-    Consider that the ``ArrayIterator`` has reference to the underlying array contained. Generally, iterators should not
+    Consider that the ``ArrayIterator`` has reference to the underlying array container. Generally, iterators should not
     modify the collections they are iterating over. Side effects like this are a recipe for disaster.
 
 
