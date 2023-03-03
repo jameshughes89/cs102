@@ -22,7 +22,7 @@ a linked version.
 #. Complete the ``LinkedSortedBag`` class by fully implementing the ``SortedBag`` interface
 #. Create a ``LinkedSortedBagTest`` class to test the ``LinkedSortedBag``
 
-    * Make use of the existing :download:`ArraySortedBagTest<../../../test/java/ArrayQueueTest.java>` class as a reference
+    * Make use of the existing :download:`ArraySortedBagTest<../../../test/java/ArraySortedBagTest.java>` class as a reference
 
 
 
