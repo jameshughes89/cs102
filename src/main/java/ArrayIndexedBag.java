@@ -71,7 +71,7 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
     private int find(T element) {
         int searchIndex = 0;
         for (T bagElement : this) {
-            if (bagElement.equals(element)) {
+            if (Objects.equals(bagElement, element)) {
                 return searchIndex;
             }
             searchIndex++;
