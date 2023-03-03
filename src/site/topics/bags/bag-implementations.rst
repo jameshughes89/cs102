@@ -103,7 +103,7 @@ Iterator Method
     Iterators are the focus of another topic, so they are only briefly presented here.
 
 
-* Iterators are used to provide a common way to iterator over a collection, regardless of the underlying contained
+* Iterators are used to provide a common way to iterator over a collection, regardless of the underlying container
 
     * Array vs. linked structure
 
