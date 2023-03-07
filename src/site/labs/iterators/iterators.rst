@@ -10,20 +10,27 @@ Iterators
     * Peer teaching and peer learning has been empirically shown to be very effective
 
 
+Playing with Iterators
+======================
+
+The goal is to redefine stacks and queues such that the collections are iterable based on the details discussed in the
+:doc:`Iterators Topic </topics/iterators/iterators>`.
+
+
 Create an Array Iterator
-========================
+------------------------
 
 
 Create an Iterable Stack
-========================
+------------------------
 
 
 Create an Iterable Queue
-========================
+------------------------
 
 
 Make the Linked Stack and Queue Iterable
-========================================
+----------------------------------------
 
 
 
