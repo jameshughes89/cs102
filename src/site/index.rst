@@ -106,6 +106,7 @@ Office Hours
     labs/linked-structures/linked-structures
     labs/queues/queues
     labs/bags/sorted-bags
+    labs/iterators/iterators
 
 
 .. toctree::
