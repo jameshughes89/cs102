@@ -356,7 +356,10 @@ Equality of Stacks (and Queues)
         if (this == o) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (o == null) {
+            return false;
+        }
+        if (!(o instanceof Stack)) {
             return false;
         }
         Stack<?> that = (Stack<?>) o;
