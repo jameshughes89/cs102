@@ -20,13 +20,39 @@ The goal is to redefine stacks and queues such that the collections are iterable
 Create an Array Iterator
 ------------------------
 
+#. Create an ``ArrayIterator`` class that implements the ``Iterator`` interface
+
+
+.. note::
+
+    Obviously one can simply download the :download:`ArrayIterator <../../../main/java/ArrayIterator.java>` code, but
+    this defeats the purpose of the lab. Instead, slowly and deliberately implement each method and take the time to
+    understand the details.
+
+
 
 Create an Iterable Stack
 ------------------------
 
+#. Download the :download:`Stack interface <../../../main/java/Stack.java>` and add it to the project
+#. Modify the interface such that ``Stack`` extends ``Iterable``
+#. Add the required ``iterator`` method to the interface
+
+#. Download the :download:`ArrayStack <../../../main/java/ArrayStack.java>` class and add it to the project
+#. Modify the ``ArrayStack`` such that it implements the ``iterator`` method
+
+    * Simply have it return the ``ArrayIterator``
+
+
+#. Modify the stack's existing ``toString`` method such that it uses an iterator
+
+    * Refer to the ``toString`` from the :download:`ArraySortedBag <../../../main/java/ArraySortedBag.java>` for help
+
+
 
 Create an Iterable Queue
 ------------------------
+
 
 
 Make the Linked Stack and Queue Iterable
