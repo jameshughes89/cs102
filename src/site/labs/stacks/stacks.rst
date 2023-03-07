@@ -14,7 +14,7 @@ Playing with Stacks
 ===================
 
 The goal is to implement an ``ArrayStack`` based on the the details discussed in the
-:doc:`Stack Interface Topic </topics/stacks/array-stack>` and the :doc:`ArrayStack Topic </topics/stacks/array-stack>`.
+:doc:`Stack Topic </topics/stacks/stack-adt>` and the :doc:`ArrayStack Topic </topics/stacks/array-stack>`.
 
 
 Implementing an ``ArrayStack``
