@@ -51,9 +51,10 @@ Create an Iterable Stack
 
 .. note::
 
-    Be mindful of the order that the elements in the ``ArrayStack`` are returned by the iterator. 
+    What order are the elements returned by the iterator for the ``ArrayStack``? Should it start at index ``0`` or at
+    the top?
 
-
+    
 
 Create an Iterable Queue
 ------------------------
