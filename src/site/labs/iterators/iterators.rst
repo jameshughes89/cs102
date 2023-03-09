@@ -49,6 +49,11 @@ Create an Iterable Stack
     * Refer to the ``toString`` from the :download:`ArraySortedBag <../../../main/java/ArraySortedBag.java>` for help
 
 
+.. note::
+
+    Be mindful of the order that the elements in the ``ArrayStack`` are returned by the iterator. 
+
+
 
 Create an Iterable Queue
 ------------------------
