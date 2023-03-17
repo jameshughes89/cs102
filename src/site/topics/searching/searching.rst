@@ -202,7 +202,7 @@ Iterative
 .. literalinclude:: /../main/java/SearchingFunctions.java
     :language: java
     :lineno-match:
-    :lines: 26-44
+    :lines: 26-43
 
 
 * Here is what's happening
@@ -238,7 +238,7 @@ Recursive
 .. literalinclude:: /../main/java/SearchingFunctions.java
     :language: java
     :lineno-match:
-    :lines: 45-58
+    :lines: 45-57
 
 
 * To call this method to initiate a search, start with ``lowIndex`` as ``0`` and ``highIndex`` as ``someHaystack.length``
