@@ -39,6 +39,13 @@ Recursion Visualization
 Factorial
 =========
 
+.. note::
+
+    Obviously one can simply copy the code from the :doc:`Recursion Topic </topics/recursion/recursion>`, but this
+    defeats the purpose of the lab. Instead, slowly and deliberately implement each method and take the time to
+    understand the details.
+
+
 #. Read up on `factorial <https://en.wikipedia.org/wiki/Factorial>`_
 #. Write an **iterative** method to return the factorial of ``n``
 
