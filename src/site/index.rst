@@ -108,6 +108,7 @@ Office Hours
     labs/bags/sorted-bags
     labs/iterators/iterators
     labs/recursion/recursion
+    labs/binary-trees/binary-trees
 
 
 .. toctree::
