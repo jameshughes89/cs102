@@ -82,7 +82,7 @@ Building a Linked Structure
 
 #. Write a **recursive** method to build a linked structure containing the numbers ``0`` -- ``(n-1)``
 
-    * This method will take an integer ``n``
+    * This method will take an integer ``n`` and any other required parameters
     * This method will return a reference to the head of the linked structure
     * The first node must contain ``0``
     * This will require a working ``Node`` class
