@@ -125,9 +125,9 @@ In-order
 
     Define InOrderTraversal
         If the node exists
-            Call PreOrderTraversal on the left child node
+            Call InOrderTraversal on the left child node
             Access the node
-            Call PreOrderTraversal on the right child node
+            Call InOrderTraversal on the right child node
 
 
 * Notice that the root of the (sub)tree is accessed *in* between any recursive calls
@@ -159,8 +159,8 @@ Post-order
 
     Define PostOrderTraversal
         If the node exists
-            Call PreOrderTraversal on the left child node
-            Call PreOrderTraversal on the right child node
+            Call PostOrderTraversal on the left child node
+            Call PostOrderTraversal on the right child node
             Access the node
 
 
