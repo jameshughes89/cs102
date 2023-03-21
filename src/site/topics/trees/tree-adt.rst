@@ -163,7 +163,7 @@ Properties
 
     * The path length between the two emphasized nodes is three (``3``)
     * The height of this tree is three (``3``)
-    * A tree with only a root is zero (``0``)
+    * A tree with only a root has a height of zero (``0``)
     * The height of an empty tree is negative one (``-1``)
 
 
