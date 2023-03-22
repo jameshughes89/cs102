@@ -115,7 +115,7 @@ Binary Search
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 235-261
+    :lines: 230-256
 
 * Notice the similarity between the naive search and the binary search
 * They are nearly the same, except that the naive search may search both subtrees
