@@ -13,7 +13,7 @@ Constructors
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 1-20
+    :lines: 1-13
 
 
 * Like the other implementations, this class ``implements`` the interface
