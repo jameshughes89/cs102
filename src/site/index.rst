@@ -109,6 +109,9 @@ Office Hours
     labs/iterators/iterators
     labs/recursion/recursion
     labs/binary-trees/binary-trees
+    labs/heaps/heaps
+    labs/sorting/sorting-basic
+    labs/sorting/sorting-recursive
 
 
 .. toctree::
