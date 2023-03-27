@@ -110,7 +110,8 @@ Office Hours
     labs/recursion/recursion
     labs/binary-trees/binary-trees
     labs/heaps/heaps
-    labs/sorting/sorting
+    labs/sorting/sorting-basic
+    labs/sorting/sorting-recursive
 
 
 .. toctree::
