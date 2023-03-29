@@ -34,7 +34,7 @@ Static Node Class
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 447-491
+    :lines: 445-489
 
 * Things of note for this node class
 
@@ -66,7 +66,7 @@ Minimum & Maximum
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 191-228
+    :lines: 189-226
 
 
 * Fortunately the minimum and maximum methods are simple
@@ -92,7 +92,7 @@ Remove Minimum
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 130-159
+    :lines: 128-157
 
 
 * Above are two functions that work together to remove the minimum value
@@ -133,7 +133,7 @@ Remove Maximum
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 161-189
+    :lines: 159-187
 
 
 * ``removeMax`` is similar to the public ``removeMin`` method
@@ -159,7 +159,7 @@ General Remove
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 42-59
+    :lines: 42-57
 
 
 * The public ``remove`` method is similar to the public ``removeMin`` and ``removeMax``
@@ -170,7 +170,7 @@ General Remove
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 61-86
+    :lines: 59-84
 
 
 * The private ``remove`` is basically doing a binary search through the tree looking for the value to be removed
@@ -186,7 +186,7 @@ General Remove
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 88-128
+    :lines: 86-126
 
 
 * ``findReplacementNode`` looks rather intimidating at first, but if studied carefully, it is actually rather simple
@@ -241,7 +241,7 @@ General Remove
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 230-256
+    :lines: 228-254
 
 
 * See the above method called ``contains`` and the recursive ``binarySearch`` method
@@ -261,7 +261,7 @@ General Remove
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 258-286
+    :lines: 256-284
     :emphasize-lines: 21, 22, 23
 
 
