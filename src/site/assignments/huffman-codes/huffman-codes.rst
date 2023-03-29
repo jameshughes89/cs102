@@ -290,7 +290,7 @@ Some Hints
 
 * Work on one method at a time
 * Get each method working perfectly before you go on to the next one
-* Test each methog as you write it
+* Test each method as you write it
 
     * This is a really nice thing about programming; you can call your methods and see what result gets returned
     * Mentally test before you even write --- what does this methods do? What problem is it solving?
