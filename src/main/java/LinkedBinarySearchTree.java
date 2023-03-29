@@ -66,7 +66,7 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
      */
     private T remove(T element, Node<T> parent, Node<T> current) {
         if (current == null) {
-            throw new NoSuchElementException("Empty Tree");
+            throw new NoSuchElementException(Objects.toString(element));
         }
         int comparison = current.getData().compareTo(element);
         if (comparison == 0) {

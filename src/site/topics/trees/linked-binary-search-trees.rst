@@ -95,7 +95,7 @@ Remove Minimum
     :lines: 128-157
 
 
-* Above are two functions that work together to remove the minimum value
+* Above are two methods that work together to remove the minimum value
 
 * First, take note of the public method
 

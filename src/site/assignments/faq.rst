@@ -41,14 +41,14 @@ General Assignment Frequently Asked Questions (FAQ)
     * Often the provided code is written in such a way for a specific reason
 
 
-* What do the provided functions do?
+* What do the provided methods do?
 
-    * Have a read of the docstrings for the functions
+    * Have a read of the docstrings for the methods
     * Trying to figure out their functionality is part of the assignment
     * Learning to look at unfamiliar code is a critically important skill to learn
 
 
-* Some of the code in the provided functions looks like magic
+* Some of the code in the provided methods looks like magic
 
     * This is normal, even with experienced programmers
     * It would be unusual if one were to look at a non-trivial block of code and immediately know what it is doing

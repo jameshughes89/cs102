@@ -16,7 +16,7 @@ Unit Testing
     * Ideally with good *coverage*
 
 
-* When doing so, individual test functions are written to test the units/components
+* When doing so, individual test methods are written to test the units/components
 * These tests can also be run automatically
 
 * By writing tests like this, it adds intentionality to the code and tests
