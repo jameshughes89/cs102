@@ -293,7 +293,7 @@ Some Hints
 * Test each method as you write it
 
     * This is a really nice thing about programming; you can call your methods and see what result gets returned
-    * Mentally test before you even write --- what does this methods do? What problem is it solving?
+    * Mentally test before you even write --- what does this method do? What problem is it solving?
 
 
 * If you need help, ask
