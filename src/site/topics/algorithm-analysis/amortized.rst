@@ -19,7 +19,7 @@ Aside --- Amortized Time Complexity
     :emphasize-lines: 4, 17, 18, 19
 
 
-* Since ``expandCapacity`` is an :math:`O(n)` function
+* Since ``expandCapacity`` is an :math:`O(n)` method
 * And since ``push`` calls ``expandCapacity``, ``push`` will at least be :math:`O(n)`
 * However, how often is ``expandCapacity`` actually called?
 
