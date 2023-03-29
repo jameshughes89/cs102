@@ -222,7 +222,7 @@ Liskov's Substitution Principle
 
 
 * Now this *solves* it
-* But, now there is a function saying: if it's a ``Square`` do one thing, if it's a ``Rectangle`` do another thing
+* But, now there is a method saying: if it's a ``Square`` do one thing, if it's a ``Rectangle`` do another thing
 
     * So... it would seem that here, a ``Square`` is **not** a ``Rectangle``
 
