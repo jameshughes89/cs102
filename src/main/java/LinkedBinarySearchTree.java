@@ -41,18 +41,16 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
 
     @Override
     public boolean remove(T element) {
-        T returnElement = null;
         if (isEmpty()) {
             throw new NoSuchElementException("Empty Tree");
         }
         int comparison = root.getData().compareTo(element);
         if (comparison == 0) {
-            returnElement = root.getData();
             root = findReplacementNode(root);
         } else if (comparison > 0) {
-            returnElement = remove(element, root, root.getLeft());
+            remove(element, root, root.getLeft());
         } else {
-            returnElement = remove(element, root, root.getRight());
+            remove(element, root, root.getRight());
         }
         size--;
         return true;
