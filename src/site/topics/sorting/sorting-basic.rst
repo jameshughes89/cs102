@@ -213,6 +213,8 @@ Bubble Sort
 
 **Pass 3**
 
+    :math:`2, 1, 3, 4`
+
     :math:`1, 2, 3, 4`
 
 
