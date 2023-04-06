@@ -101,7 +101,7 @@ within some string, and the internal nodes' weight is the sum of their left and 
 Implementing the Classes
 ------------------------
 
-A complete ``HuffmanCode`` interface is provided. This interface will be implemented by the ``HuffmanLeaf`` and
+A complete ``HuffmanNode`` interface is provided. This interface will be implemented by the ``HuffmanLeaf`` and
 ``HuffmanInternal`` classes. Notice that the interface is very short --- ``getWeight()``.
 
 Both the ``HuffmanLeaf`` and ``HuffmanInternal`` will have a ``weight`` field, but the ``HuffmanLeaf`` will also need to
