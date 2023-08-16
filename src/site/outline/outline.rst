@@ -29,24 +29,23 @@ prerequisites.
 Instructor
 ==========
 
-* Dr. James Hughes
-* Office: Annex 20B
-* Email: jhughes at stfx.ca
+* Dr. Jean-Alexis Delamer
+* Office: Annex 9C
+* Email: jdelamer at stfx.ca
 
 
 Class Times
 ===========
 
-* Tuesday   11:15 -- 12:15, MULH 2032
-* Wednesday 13:15 -- 14:15, MULH 2032
-* Friday    12:15 -- 13:15, MULH 2032
+* Tuesday 9:30 - 10:20, MULH 4024
+* Thursday 8:30 - 9:20, MULH 4024
+* Friday 10:30 - 11:20, MULH 4024
 
 
 Lab
 ===
 
-* Sec 1: Thursday 14:15 -- 16:15, MULH 4024
-* Sec 2: Monday   13:15 -- 15:15, MULH 4024
+* No labs for the fall offering
 
 
 Website
