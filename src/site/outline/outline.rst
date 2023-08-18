@@ -48,6 +48,14 @@ Lab
 * No labs for the fall offering
 
 
+Office Hours
+============
+
+* Tuesday, 1:30pm -- 3:30pm
+* Thursday, 1:30pm -- 2:30pm
+* Friday, 9am -- 10am
+
+
 Website
 =======
 
@@ -162,29 +170,6 @@ It is each student's responsibility to keep up-to-date backups of assignment dis
 inadvertently erased files. Students must keep disk copies of all material submitted, as well as the actual graded
 assignment, to guard against the possibility of errors in recording marks. It is not safe to discard these materials
 until you are satisfied that your final mark for the course has been computed properly.
-
-
-Recoupment
-----------
-
-Since mistakes are expected and lost marks are meant to provide feedback and not intended to be a penalty, students can
-redeem 50% of their lost marks via *assignment recoupment*.
-
-Students will have **1 week** after their marked assignment is returned to incorporate feedback, correct mistakes, and
-resubmit their assignments for additional marking. All corrected mistakes can recoup 50% of the lost marks on that
-assignment. For example, if a student obtained 80/100 on the assignment after the regular submission, and the student
-correctly fixes errors that account for 12 of the 20 lost marks and resubmits for recoupment, the student will gain 6
-more marks for a total of 86/100 on the assignment. As always, no late submissions will be accepted and all work will be
-checked for plagiarism or cheating.
-
-There are some conditions, however. The marker will inform the student if their assignment is eligible for recoupment;
-only assignments deemed eligible may be resubmitted. Only assignments that were completed and attempted in earnest are
-eligible. Students with missing code/functions/portions of the assignment will not be eligible. If the student has
-portions of code that demonstrate a lack of a sincere attempt, the assignment will not be eligible for recoupment.
-
-Further, it is the responsibility of the student to make clear to the marker what exactly has been updated and changed.
-If the marker is unable to quickly determine what fixes the student has made, the resubmission will not be considered
-for recoupment. This could be in the form of notes in the Moodle submission with corresponding comments within the code.
 
 
 Tests
