@@ -110,22 +110,22 @@ Student Evaluation (Tentative Dates)
       - Due Date
     * - Assignment 1
       - 5%
-      - January 30th 11:55pm
+      - September 25th 11:55pm
     * - Assignment 2
       - 5%
-      - February 27th 11:55pm
+      - October 23rd 11:55pm
     * - Assignment 3
       - 5%
-      - Mid March-ish
+      - Mid November-ish
     * - Assignment 4
       - 5%
-      - Early April-ish
+      - Early December-ish
     * - Test 1
       - 20%
-      - **February 1st, in class**
+      - **TBD, in class**
     * - Test 2
       - 20%
-      - **March 8th, in class**
+      - **TBD, in class**
     * - Final Exam
       - 40%
       - TBD
@@ -211,7 +211,7 @@ Students who encounter serious health or other personal difficulties are encoura
 Email Contact
 =============
 
-**Email etiquette** --- Emails should be addressed to Dr./Prof. Hughes.
+**Email etiquette** --- Emails should be addressed to Dr./Prof. Delamer.
 
 I may need to send email messages to the whole class or to students individually. Email will be sent to the StFX email
 address assigned to students. It is the responsibility of the student to read this email on a regular basis. You may
