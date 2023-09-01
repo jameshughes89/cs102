@@ -1,6 +1,6 @@
-************************
-CSCI 162 --- Winter 2023
-************************
+**********************
+CSCI 162 --- Fall 2023
+**********************
 
 This course emphasizes the use of abstraction in programming. Elementary data structures are introduced (stacks, queues,
 lists, trees) along with related algorithms. The data structures and other simple iterative and recursive algorithms are
@@ -10,9 +10,8 @@ used (e.g. searching and sorting) are used to introduce algorithm analysis.
 Professor
 =========
 
-* Dr. James Hughes
-* jhughes at stfx.ca
-* `YouTube <https://www.youtube.com/channel/UCIruexBZJaawh_9WF_vjTPg>`_
+* Dr. Jean-Alexis Delamer
+* jdelamer at stfx.ca
 
 
 GitHub Repo
@@ -32,16 +31,15 @@ GitHub Repo
 Class Times
 ===========
 
-* Tue 11:15 - 12:05 (K4), MULH 2032
-* Wed 13:15 - 14:05 (K5), MULH 2032
-* Fri 12:15 - 13:05 (K6), MULH 2032
+* Tue 9:30 - 10:20, MULH 4024
+* Thu 8:30 - 9:20, MULH 4024
+* Fri 10:30 - 11:20, MULH 4024
 
 
 Labs
 ====
 
-* Sec 1: Thr 14:15 -- 16:05 (L8-A9), MULH 4024
-* Sec 2: Mon 13:15 -- 15:05 (C4-A7), MULH 4024
+* No labs for the Fall offering.
 
 
 Office Hours
@@ -49,11 +47,11 @@ Office Hours
 
 `Office Hours Etiquette --- Don't Do This. <https://www.youtube.com/watch?v=lOTyUfOHgas>`_
 
-* **James Hughes**
+* **Jean-Alexis Delamer**
 
-    * Tuesday, 10am -- 11am
-    * Wednesday, 10am -- 11am
-    * Friday, 10am -- 11am
+    * Tuesday, 1:30pm -- 3:30pm
+    * Thursday, 1:30pm -- 2:30pm
+    * Friday, 9am -- 10am
 
 
 

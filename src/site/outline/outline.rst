@@ -29,24 +29,31 @@ prerequisites.
 Instructor
 ==========
 
-* Dr. James Hughes
-* Office: Annex 20B
-* Email: jhughes at stfx.ca
+* Dr. Jean-Alexis Delamer
+* Office: Annex 9C
+* Email: jdelamer at stfx.ca
 
 
 Class Times
 ===========
 
-* Tuesday   11:15 -- 12:15, MULH 2032
-* Wednesday 13:15 -- 14:15, MULH 2032
-* Friday    12:15 -- 13:15, MULH 2032
+* Tuesday 9:30 - 10:20, MULH 4024
+* Thursday 8:30 - 9:20, MULH 4024
+* Friday 10:30 - 11:20, MULH 4024
 
 
 Lab
 ===
 
-* Sec 1: Thursday 14:15 -- 16:15, MULH 4024
-* Sec 2: Monday   13:15 -- 15:15, MULH 4024
+* No labs for the fall offering
+
+
+Office Hours
+============
+
+* Tuesday, 1:30pm -- 3:30pm
+* Thursday, 1:30pm -- 2:30pm
+* Friday, 9am -- 10am
 
 
 Website
@@ -103,22 +110,22 @@ Student Evaluation (Tentative Dates)
       - Due Date
     * - Assignment 1
       - 5%
-      - January 30th 11:55pm
+      - September 25th 11:55pm
     * - Assignment 2
       - 5%
-      - February 27th 11:55pm
+      - October 23rd 11:55pm
     * - Assignment 3
       - 5%
-      - Mid March-ish
+      - Mid November-ish
     * - Assignment 4
       - 5%
-      - Early April-ish
+      - Early December-ish
     * - Test 1
       - 20%
-      - **February 1st, in class**
+      - **TBD, in class**
     * - Test 2
       - 20%
-      - **March 8th, in class**
+      - **TBD, in class**
     * - Final Exam
       - 40%
       - TBD
@@ -165,29 +172,6 @@ assignment, to guard against the possibility of errors in recording marks. It is
 until you are satisfied that your final mark for the course has been computed properly.
 
 
-Recoupment
-----------
-
-Since mistakes are expected and lost marks are meant to provide feedback and not intended to be a penalty, students can
-redeem 50% of their lost marks via *assignment recoupment*.
-
-Students will have **1 week** after their marked assignment is returned to incorporate feedback, correct mistakes, and
-resubmit their assignments for additional marking. All corrected mistakes can recoup 50% of the lost marks on that
-assignment. For example, if a student obtained 80/100 on the assignment after the regular submission, and the student
-correctly fixes errors that account for 12 of the 20 lost marks and resubmits for recoupment, the student will gain 6
-more marks for a total of 86/100 on the assignment. As always, no late submissions will be accepted and all work will be
-checked for plagiarism or cheating.
-
-There are some conditions, however. The marker will inform the student if their assignment is eligible for recoupment;
-only assignments deemed eligible may be resubmitted. Only assignments that were completed and attempted in earnest are
-eligible. Students with missing code/functions/portions of the assignment will not be eligible. If the student has
-portions of code that demonstrate a lack of a sincere attempt, the assignment will not be eligible for recoupment.
-
-Further, it is the responsibility of the student to make clear to the marker what exactly has been updated and changed.
-If the marker is unable to quickly determine what fixes the student has made, the resubmission will not be considered
-for recoupment. This could be in the form of notes in the Moodle submission with corresponding comments within the code.
-
-
 Tests
 =====
 
@@ -198,6 +182,16 @@ a reasonable person would deem as cheating is not permitted and will be investig
 
 Test format will be in person; however, if necessary, the format *may* be changed to online. Students will be informed
 of the change as soon as possible.
+
+
+Statement on Electronic Devices
+-------------------------------
+
+Unless you have medical accommodations that require you to do so, or explicit permission from the instructor of the
+course, you may not use electronic devices during any of the tests, midterms, examinations, or
+other in-class evaluations, including, but not limited to: cellphones, smart phones, smart watches, smart glasses, audio
+players or recorders of any sort, video cameras, video games, DVD players, televisions, laptop/notebook/netbook
+computers, flashlights or laser pointers.
 
 
 Missed Tests
@@ -227,7 +221,7 @@ Students who encounter serious health or other personal difficulties are encoura
 Email Contact
 =============
 
-**Email etiquette** --- Emails should be addressed to Dr./Prof. Hughes.
+**Email etiquette** --- Emails should be addressed to Dr./Prof. Delamer.
 
 I may need to send email messages to the whole class or to students individually. Email will be sent to the StFX email
 address assigned to students. It is the responsibility of the student to read this email on a regular basis. You may
@@ -251,9 +245,6 @@ Office hours are provided to students to facilitate their success --- students a
 
 Students must understand that the professors and TAs are not there to provide them answers to problems, but to assist
 students solving their problems.
-
-As per university policy, masking and proper social distancing is required. Students refusing to follow this policy will
-be required to leave.
 
 
 Attendance
@@ -284,8 +275,11 @@ violate an instructor's intellectual property rights and the Canadian Copyright 
 be subject to disciplinary actions.
 
 
-Statement of Academic Offenses
-===============================
+Statement of Academic Offenses and Academic Integrity
+=====================================================
+
+Please ensure that you are aware of the policy on Academic Integrity. Details can be found
+`here <https://www.stfx.ca/media/40111/download>`_.
 
 Scholastic offenses are taken seriously and students are directed to read the appropriate policy, specifically, the
 definition of what constitutes a Scholastic Offense. See section 3.8 of the academic calendar.
@@ -318,33 +312,31 @@ The role of tutoring is to help students understand course material. Tutors shou
 tests for the students who hire them.
 
 
-Statement on Accommodation of Religious Observances
-===================================================
+Information about Requesting an Accommodation at StFX
+=====================================================
 
-Requests for accommodation of specific religious or spiritual observance must be presented in writing to the instructor
-within the fist two weeks of class.
+If you have a different learning ability and would like to request accommodations, please contact the instructor during
+the first week of the semester so that your accommodations may be provided in a timely manner. Centre for Accessible
+Learning (CAL) provides assistance in determining and facilitating appropriate accommodations for students with verified
+disabilities.
 
 
-Statement for Students with Disabilities
-========================================
-
-Students who have a disability and who require academic accommodations must register with the Centre for Accessible
-Learning as early as possible in order to receive accommodations. http://sites.stfx.ca/accessible_learning/
+Tramble Center for Accessible Learning
+--------------------------------------
 
 The Tramble Center for Accessible Learning welcomes students with documented permanent disabilities and offers them a
-student-centered program of support. Located in Room 108 of the Angus L. MacDonald Library, new and returning students
+student-centered program of support. Located in Room 108 of the Angus L MacDonald Library, new and returning students
 meet with program staff to discuss options for support. Deadline for registering with the Center is two weeks prior to
-the end of classes each semester and 3 Business Days' notice is required for booking all accommodated tests and exams.
+the end of classes each semester and 3 Business Days’ notice is required for booking all accommodated tests and exams.
+To book an appointment please use the following link:
+`Accessible Learning | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/student-life-support/accessible-learning>`_.
 
-To book an appointment please use the following
-
-* link --- http://stfxcal.mywconline.com
 * Phone --- 902 867 5349
 * Email --- tramble@stfx.ca
 
 
 Academic Accommodation for Medical Illness
-==========================================
+------------------------------------------
 
 Those unable to attend class, submit an assignment, or write a test, should refer to sections 3.7 and 3.9 of the
 academic calendar.
@@ -357,18 +349,18 @@ For the benefit of the many students that have a scent sensitivity, my classroom
 policy.
 
 
-Equity
-======
+
+Statement on Equitable Learning
+===============================
 
 Everyone learns more effectively in a respectful, safe and equitable learning environment, free from discrimination and
-harassment. We invite you to work with me to create a classroom space – both real and virtual – that fosters and
-promotes values of human dignity, equity, non-discrimination and respect for diversity.
+harassment. Instructors and students are invited to work together to create a classroom space --- both real and virtual
+--- that fosters and promotes values of human dignity, equity, non-discrimination, and respect for diversity.
 
-Please feel free to talk with us about your questions or concerns about equity in our classroom or in the STFX community
-in general. If we cannot answer your questions or help you address your concerns, we encourage you to talk to the
-Chair/Coordinator of the Department/Program or the Human Rights and Equity Advisor. Please note that a Human Rights and
-Equity Advisor will soon be appointed. In the meantime, students, faculty, or staff may also contact the Director of
-Human Resources at hr@stfx.ca or the Office of the AVP&P.
+Please feel free to talk with your course instructor about your questions or concerns about equity in our classroom or
+in the StFX community in general. Should students have additional questions, they are encouraged to talk to the
+Chair/Coordinator of the Department/Program or the Human Rights and Equity Advisor, contact information can be found at
+`Directory | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/directory-department/921?groupid=346>`_.
 
 
 Preferred Pronouns
@@ -376,5 +368,47 @@ Preferred Pronouns
 
 Professional courtesy and sensitivity are especially important with respect to individuals and topics dealing with
 differences of race, culture, religion, politics, sexual orientation, gender, gender variance, and nationalities. Class
-rosters are provided to the instructor with the student's legal name. Please advise me of this preference early in the
-semester. See policies at http://www2.mystfx.ca/equity/policies.
+rosters are provided to the instructor with the student's legal name. I will gladly honor your request to address you by
+an alternate name or gender pronoun. Please advise me of this preference early in the semester so that I may make
+appropriate changes to my records. See policies at
+`Policies | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/human-rights-equity/policies>`_.
+
+
+Support Services
+================
+
+There are various support services around campus and these include, but are not limited to:
+
+#. Student Life: `Student Services | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/student-life-support/student-services>`_
+#. Office of the Registrar: `Registrar’s Office | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/applications-admissions/registrars-office>`_
+#. Health & Counselling Centre: `Health and Counselling Centre | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/student-life-support/health-counselling-centre>`_
+#. Academic Advising: `Academic Advising | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/student-life-support/academic-advising>`_
+#. Academic Success Centre: `Academic Success Centre | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/student-life-support/student-services/academic-success-centre>`_
+#. Student Career Centre: `Student Career Centre | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/student-life-support/student-services/student-career-centre>`_
+#. Office of Internationalization: `Internationalization | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/student-life-support/internationalization>`_
+#. Financial Aid Office: `Financial Aid Office | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/applications-admissions/financial-support/financial-aid-office>`_
+
+
+
+Health and Wellness
+===================
+
+As part of a successful undergraduate experience at St. Francis Xavier University, we encourage you to make your health
+and wellness a priority. StFX provides several on-campus health-related services to help you achieve optimum health and
+engage in healthy living while pursuing your degree. For example, to support physical activity, all students receive
+membership to the StFX Athletics & Recreation Centre as part of their registration fees. Please visit the Athletics &
+Recreation website at
+`Campus Recreation | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/student-life-support/campus-life/campus-recreation>`_
+for opportunities including intramural sports. Numerous cultural events are offered throughout the year. Please check
+out the Department of Music web page
+`Music | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/programs-courses/programs/music>`_,
+the StFX Art Gallery (https://www.stfx.ca/art-gallery) or
+Theatre Antigonish
+`(Theatre Antigonish | St. Francis Xavier University) (stfx.ca) <https://www.stfx.ca/about/theater-antigonish>`_
+for various events.
+
+Further information regarding health and wellness-related services available to students may be found at
+`Wellness@X | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/human-resources/wellnessx>`_.
+If you are in emotional or mental distress please refer to the various mental
+health supports provided through
+`Health & Counselling at Health and Counselling Services | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/student-life-support/health-counselling/services>`_.
