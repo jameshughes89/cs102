@@ -110,7 +110,7 @@ Student Evaluation (Tentative Dates)
       - Due Date
     * - Assignment 1
       - 5%
-      - September 25th 11:55pm
+      - September 28th 11:55pm
     * - Assignment 2
       - 5%
       - October 23rd 11:55pm

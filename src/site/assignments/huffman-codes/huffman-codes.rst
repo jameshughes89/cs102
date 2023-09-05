@@ -3,7 +3,7 @@
 ****************************************
 
 * **Worth**: 5%
-* **DUE DATE**: April 3rd 11:55pm; submitted on MOODLE.
+* **DUE DATE**: TBA; submitted on MOODLE
 
 
 Task
