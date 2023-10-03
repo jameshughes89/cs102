@@ -3,8 +3,8 @@ Outline for Computer Science 162 --- Programming and Data Structures
 ********************************************************************
 
 
-Winter 2023
-===========
+Fall 2023
+=========
 
 
 Course Description
