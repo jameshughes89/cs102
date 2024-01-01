@@ -25,7 +25,7 @@ jobs:
       - name: Gradle Build
         run: ./gradlew build test site
       - name: Upload Build Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: website
           path: build/site
