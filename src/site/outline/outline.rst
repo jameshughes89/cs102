@@ -3,8 +3,10 @@ Outline for Computer Science 162 --- Programming and Data Structures
 ********************************************************************
 
 
-Fall 2023
-=========
+
+Winter 2023
+===========
+
 
 
 Course Description
@@ -13,6 +15,7 @@ Course Description
 Continuing from the material in CSCI 161, this course covers memory management and data abstraction via classes and
 objects, and introduces the linear data structures lists, stacks, and queues. Structured programming is encouraged via
 modular development. Credit will be granted for only one of CSCI 162 and INFO 256. Three credits and a two-hour lab.
+
 
 
 Prerequisites
@@ -26,34 +29,40 @@ receive no adjustment to your fees in the event that you are dropped from a cour
 prerequisites.
 
 
+
 Instructor
 ==========
 
-* Dr. Jean-Alexis Delamer
-* Office: Annex 9C
-* Email: jdelamer at stfx.ca
+* Dr. James Hughes
+* Annex 20B
+* jhughes at stfx.ca
+
 
 
 Class Times
 ===========
 
-* Tuesday 9:30 - 10:20, MULH 4024
-* Thursday 8:30 - 9:20, MULH 4024
-* Friday 10:30 - 11:20, MULH 4024
+* Tue 11:30 -- 12:20 (K4), MULH 2032
+* Wed 13:30 -- 14:20 (K5), MULH 2032
+* Fri 12:30 -- 13:20 (K6), MULH 2032
+
 
 
 Lab
 ===
 
-* No labs for the fall offering
+* Lab Sec 11: Thr 14:30 -- 16:20 (L8-A9), MULH 4024
+* Lab Sec 12: Fri 14:30 -- 16:20 (C9-K9), MULH 4024
+
 
 
 Office Hours
 ============
 
-* Tuesday, 1:30pm -- 3:30pm
-* Thursday, 1:30pm -- 2:30pm
-* Friday, 9am -- 10am
+* Tue 10:00 -- 11:00, Annex 20B
+* Wed 10:00 -- 11:00, Annex 20B
+* Fri 10:00 -- 11:00, Annex 20B
+
 
 
 Website
@@ -61,6 +70,8 @@ Website
 
 * Mostly :doc:`this website </index>`
 * MOODLE
+* `YouTube <https://www.youtube.com/channel/UCIruexBZJaawh_9WF_vjTPg>`_
+
 
 
 Textbook and Lecture Notes
@@ -77,6 +88,7 @@ The textbook for this class is:
 J. Lewis and J. Chase,
 *Java Software Structures: Designing and Using Data Structures, 4th edition.*
 Upper Saddle River, NJ: Pearson, 2013.
+
 
 
 Topics
@@ -98,6 +110,7 @@ Below is a list of topics in no particular order that may or may not be covered 
 * Sorting Algorithms
 
 
+
 Student Evaluation (Tentative Dates)
 ====================================
 
@@ -110,22 +123,22 @@ Student Evaluation (Tentative Dates)
       - Due Date
     * - Assignment 1
       - 5%
-      - September 28th 11:55pm
+      - End of January-ish
     * - Assignment 2
       - 5%
-      - October 23rd 11:55pm
+      - Mid February-ish
     * - Assignment 3
       - 5%
-      - Mid November-ish
+      - Early March-ish
     * - Assignment 4
       - 5%
-      - Early December-ish
+      - Late March-ish
     * - Test 1
       - 20%
-      - **TBD, in class**
+      - End of January-ish , in class
     * - Test 2
       - 20%
-      - **TBD, in class**
+      - End of February-ish
     * - Final Exam
       - 40%
       - TBD
@@ -144,7 +157,7 @@ to read and follow the instructions. Failure to follow the submission instructio
 receiving a mark of zero.
 
 You will be required to submit each programming assignment electronically. Details will be given in the assignment
-descriptions. Similarity detection software to detect possible cheating cases will be used.
+descriptions. Similarity detection software to identify possible cheating cases will be used.
 
 
 Due Dates
@@ -170,6 +183,7 @@ It is each student's responsibility to keep up-to-date backups of assignment dis
 inadvertently erased files. Students must keep disk copies of all material submitted, as well as the actual graded
 assignment, to guard against the possibility of errors in recording marks. It is not safe to discard these materials
 until you are satisfied that your final mark for the course has been computed properly.
+
 
 
 Tests
@@ -202,6 +216,7 @@ following test or final exam, whichever comes first. If both tests are missed, t
 the final exam.
 
 
+
 Labs
 ====
 
@@ -218,10 +233,11 @@ There are no make-up labs, and students who are absent for a lab do not have the
 Students who encounter serious health or other personal difficulties are encouraged to contact the professor.
 
 
+
 Email Contact
 =============
 
-**Email etiquette** --- Emails should be addressed to Dr./Prof. Delamer.
+**Email etiquette** --- Emails should be addressed to Dr./Prof. Hughes.
 
 I may need to send email messages to the whole class or to students individually. Email will be sent to the StFX email
 address assigned to students. It is the responsibility of the student to read this email on a regular basis. You may
@@ -234,8 +250,9 @@ email is not an acceptable excuse for not knowing about the information that was
 Students are encouraged to contact their course instructor via email with brief, email appropriate questions regarding
 lecture materials or clarification of assignments. However, before sending email to an instructor, the student should
 check the course website to see if the requested information is already there. Students must send email from their StFX
-account and include CSCI 162 in the subject line of the email. Lengthy and in-depth questions are to be asked during
+account and include CSCI 161 in the subject line of the email. Lengthy and in-depth questions are to be asked during
 office hours.
+
 
 
 Office Hours
@@ -247,14 +264,14 @@ Students must understand that the professors and TAs are not there to provide th
 students solving their problems.
 
 
+
 Attendance
 ==========
 
-Students missing three classes without reasonable cause will be reported to the Associate Dean. See section 3.7 of the
-academic calendar for more details.
+Students missing three classes without reasonable cause will be reported to the Assistant Vice-President Academic
+Affairs. See section 3.7 of the academic calendar for more details. You will be reported if you are repeatedly
+delinquent in assignments or attendance at classes or laboratories.
 
-You will be reported to the Associate Dean, Academic Affairs' Office if you are repeatedly delinquent in assignments or
-attendance at classes or laboratories.
 
 
 Copyright Policy
@@ -267,12 +284,14 @@ law and is strictly prohibited.
 The course copyright policy will be aggressively enforced.
 
 
+
 Class Recording Policy
 ======================
 
 Students may not create audio and/or video recordings of classes. Students creating unauthorized recording of lectures
 violate an instructor's intellectual property rights and the Canadian Copyright Act. Students violating this policy will
 be subject to disciplinary actions.
+
 
 
 Statement of Academic Offenses and Academic Integrity
@@ -287,6 +306,7 @@ definition of what constitutes a Scholastic Offense. See section 3.8 of the acad
 It is your responsibility to understand what academic misconduct is. Ignorance of the rules is not an admissible excuse
 for academic misconduct. I will pursue academic offenses fully. I will apply -100% (not 0) as a grade. I will also
 advocate for an automatic failure in the course, or expulsion from the university when allowed.
+
 
 
 Use of Plagiarism-Checking Software
@@ -305,11 +325,13 @@ All submitted work may be subject to submission for similarity review by softwar
 coincidences in answer patterns that may indicate cheating (MOSS).
 
 
+
 Tutoring
 ========
 
 The role of tutoring is to help students understand course material. Tutors should not write assignments or take-home
 tests for the students who hire them.
+
 
 
 Information about Requesting an Accommodation at StFX
@@ -342,6 +364,7 @@ Those unable to attend class, submit an assignment, or write a test, should refe
 academic calendar.
 
 
+
 Scent Policy
 ============
 
@@ -363,6 +386,7 @@ Chair/Coordinator of the Department/Program or the Human Rights and Equity Advis
 `Directory | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/directory-department/921?groupid=346>`_.
 
 
+
 Preferred Pronouns
 ==================
 
@@ -372,6 +396,7 @@ rosters are provided to the instructor with the student's legal name. I will gla
 an alternate name or gender pronoun. Please advise me of this preference early in the semester so that I may make
 appropriate changes to my records. See policies at
 `Policies | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/human-rights-equity/policies>`_.
+
 
 
 Support Services
