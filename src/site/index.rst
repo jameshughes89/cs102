@@ -1,17 +1,21 @@
-**********************
-CSCI 162 --- Fall 2023
-**********************
+************************
+CSCI 162 --- Winter 2024
+************************
 
 This course emphasizes the use of abstraction in programming. Elementary data structures are introduced (stacks, queues,
 lists, trees) along with related algorithms. The data structures and other simple iterative and recursive algorithms are
 used (e.g. searching and sorting) are used to introduce algorithm analysis.
 
 
+
 Professor
 =========
 
-* Dr. Jean-Alexis Delamer
-* jdelamer at stfx.ca
+* Dr. James Hughes
+* jhughes at stfx.ca
+* Annex 20B
+* `YouTube <https://www.youtube.com/channel/UCIruexBZJaawh_9WF_vjTPg>`_
+
 
 
 GitHub Repo
@@ -28,18 +32,22 @@ GitHub Repo
    * In fact, I encourage this
 
 
+
 Class Times
 ===========
 
-* Tue 9:30 - 10:20, MULH 4024
-* Thu 8:30 - 9:20, MULH 4024
-* Fri 10:30 - 11:20, MULH 4024
+* Tue 11:30 -- 12:20 (K4), MULH 2032
+* Wed 13:30 -- 14:20 (K5), MULH 2032
+* Fri 12:30 -- 13:20 (K6), MULH 2032
+
 
 
 Labs
 ====
 
-* No labs for the Fall offering.
+* Lab Sec 11: Thr 14:30 -- 16:20 (L8-A9), MULH 4024
+* Lab Sec 12: Fri 14:30 -- 16:20 (C9-K9), MULH 4024
+
 
 
 Office Hours
@@ -47,11 +55,9 @@ Office Hours
 
 `Office Hours Etiquette --- Don't Do This. <https://www.youtube.com/watch?v=lOTyUfOHgas>`_
 
-* **Jean-Alexis Delamer**
-
-    * Tuesday, 1:30pm -- 3:30pm
-    * Thursday, 1:30pm -- 2:30pm
-    * Friday, 9am -- 10am
+* Tue 10:00 -- 11:00, Annex 20B
+* Wed 10:00 -- 11:00, Annex 20B
+* Fri 10:00 -- 11:00, Annex 20B
 
 
 
@@ -91,6 +97,7 @@ Office Hours
     topics/sorting/sorting-recursive
 
 
+
 .. toctree::
     :caption: Labs
     :maxdepth: 1
@@ -112,6 +119,7 @@ Office Hours
     labs/sorting/sorting-recursive
 
 
+
 .. toctree::
     :caption: Assignments
     :maxdepth: 1
@@ -123,11 +131,13 @@ Office Hours
     assignments/huffman-codes/huffman-codes
 
 
+
 .. toctree::
     :caption: Getting Started
     :maxdepth: 1
 
     getting-set/getting-set
+
 
 
 .. toctree::
