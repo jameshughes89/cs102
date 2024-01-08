@@ -32,8 +32,8 @@ public class LinkedBinarySearchTreeTest {
         }
 
         @Test
-        void remove_empty_throwsNoSuchElementException() {
-            assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(11));
+        void remove_empty_returnsFalse() {
+            assertFalse(classUnderTest.remove(11));
         }
 
         @Test
@@ -157,8 +157,8 @@ public class LinkedBinarySearchTreeTest {
             }
 
             @Test
-            void remove_nonExistentElement_throwsNoSuchElementException() {
-                assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(11));
+            void remove_nonExistentElement_returnsFalse() {
+                assertFalse(classUnderTest.remove(11));
             }
 
             @Test
@@ -345,8 +345,8 @@ public class LinkedBinarySearchTreeTest {
                 }
 
                 @Test
-                void remove_nonExistentElement_throwsNoSuchElementException() {
-                    assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(11));
+                void remove_nonExistentElement_returnsFalse() {
+                    assertFalse(classUnderTest.remove(11));
                 }
 
                 @Test
