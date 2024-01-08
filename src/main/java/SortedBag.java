@@ -23,7 +23,6 @@ public interface SortedBag<T extends Comparable<? super T>> extends Bag<T> {
      *
      * @param element Element to be removed from the bag.
      * @return True if the element was removed successfully, false otherwise.
-     * @throws NoSuchElementException If the sorted bag is empty or the provided element does not exist within the bag.
      */
     @Override
     boolean remove(T element);

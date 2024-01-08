@@ -1,5 +1,4 @@
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
 /**
  * A bag is a linear data structure. Bags have no defined ordering. Elements can be added and removed from a bag.
@@ -21,7 +20,6 @@ public interface Bag<T> extends Iterable<T> {
      *
      * @param element Element to be removed from the bag.
      * @return True if the element was removed successfully, false otherwise.
-     * @throws NoSuchElementException If the provided element does not exist within the bag.
      */
     boolean remove(T element);
 
