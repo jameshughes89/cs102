@@ -125,18 +125,16 @@ public class ContactList {
     }
 
     /**
-     * Removes the specified Friend object from the collection. If no such Friend object exists, a
-     * NoSuchElementException is thrown. The removed object is removed from the collection by being replaced in the
-     * collection with the Friend object at the end of the collection. This, remove does not preserve the order of
-     * the Friend objects within the collection.
+     * Removes the specified Friend object from the collection. The removed object is removed from the collection by
+     * being replaced in the  collection with the Friend object at the end of the collection. This, remove does not
+     * preserve the order of the Friend objects within the collection.
      *
      * @param friend Friend object to remove from the collection.
      * @return True if the object was successfully removed, false otherwise.
-     * @throws NoSuchElementException If the Friend object does not exist within the collection.
      */
     public boolean remove(Friend friend) {
         if (!contains(friend)) {
-            throw new NoSuchElementException(Objects.toString(friend));
+            return false;
         }
         int removeIndex = find(friend);
         // Although it is possible that the element being removed is replaced with itself, which happens when it is the
