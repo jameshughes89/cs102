@@ -34,7 +34,7 @@ Static Node Class
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 445-489
+    :lines: 442-486
 
 * Things of note for this node class
 
@@ -66,7 +66,7 @@ Minimum & Maximum
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 189-226
+    :lines: 186-223
 
 
 * Fortunately the minimum and maximum methods are simple
@@ -92,7 +92,7 @@ Remove Minimum
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 128-157
+    :lines: 125-154
 
 
 * Above are two methods that work together to remove the minimum value
@@ -133,7 +133,7 @@ Remove Maximum
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 159-187
+    :lines: 156-184
 
 
 * ``removeMax`` is similar to the public ``removeMin`` method
@@ -170,7 +170,7 @@ General Remove
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 59-84
+    :lines: 59-81
 
 
 * The private ``remove`` is basically doing a binary search through the tree looking for the value to be removed
@@ -186,7 +186,7 @@ General Remove
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 86-126
+    :lines: 83-123
 
 
 * ``findReplacementNode`` looks rather intimidating at first, but if studied carefully, it is actually rather simple
@@ -241,7 +241,7 @@ General Remove
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 228-254
+    :lines: 225-251
 
 
 * See the above method called ``contains`` and the recursive ``binarySearch`` method
@@ -261,7 +261,7 @@ General Remove
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 256-284
+    :lines: 253-281
     :emphasize-lines: 21, 22, 23
 
 
