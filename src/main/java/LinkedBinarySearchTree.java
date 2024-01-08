@@ -437,7 +437,7 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
     public int hashCode() {
         int result = Objects.hash(size);
         for (T element : this) {
-            result += Objects.hashCode(element);
+            result = result * 97 + Objects.hashCode(element);
         }
         return result;
     }
