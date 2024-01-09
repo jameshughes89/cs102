@@ -27,7 +27,6 @@ public interface BinarySearchTree<T extends Comparable<? super T>> extends Binar
      *
      * @param element Element to be removed from the binary search tree.
      * @return True if the element was removed successfully, false otherwise.
-     * @throws NoSuchElementException If the provided element does not exist within the binary search tree.
      */
     @Override
     boolean remove(T element);
