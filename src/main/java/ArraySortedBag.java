@@ -2,6 +2,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Objects;
+// [start-class_fields_constructor]
 
 /**
  * Implementation of a SortedBag with an array as the container. The array container will automatically "grow" to
@@ -33,6 +34,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
         bag = (T[]) new Comparable[initialCapacity];
         rear = 0;
     }
+    // [end-class_fields_constructor]
 
     /**
      * Shifts elements in an array down (towards index 0) to the starting index specified. The element at the starting
@@ -81,6 +83,19 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
         return NOT_FOUND;
     }
 
+    // [start-add]
+    @Override
+    public boolean add(T element) {
+        if (size() == bag.length) {
+            bag = Arrays.copyOf(bag, bag.length * 2);
+        }
+        int insertIndex = findInsertIndex(element);
+        shiftRight(insertIndex);
+        bag[insertIndex] = element;
+        rear++;
+        return true;
+    }
+
     /**
      * Linear search through the bag to find the index of where the element should be inserted. If equal elements
      * exist within the collection, the returned index will be after the existing equal elements.
@@ -99,18 +114,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
         // Element must belong at rear
         return rear;
     }
-
-    @Override
-    public boolean add(T element) {
-        if (size() == bag.length) {
-            bag = Arrays.copyOf(bag, bag.length * 2);
-        }
-        int insertIndex = findInsertIndex(element);
-        shiftRight(insertIndex);
-        bag[insertIndex] = element;
-        rear++;
-        return true;
-    }
+    // [end-add]
 
     @Override
     public boolean remove(T element) {
