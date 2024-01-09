@@ -93,8 +93,8 @@ Testing the Friend Class
 .. literalinclude:: /../test/java/FriendTest.java
     :language: java
     :lineno-match:
-    :lines: 9-13
-
+    :start-after: // [start-getFirstName_test]
+    :end-before: // [end-getFirstName_test]
 
 * Consider the first test within the test class as shown above
 * The method is marked with ``@Test`` to mark the method as a test method for Junit
@@ -111,7 +111,8 @@ Testing the Friend Class
 .. literalinclude:: /../test/java/FriendTest.java
     :language: java
     :lineno-match:
-    :lines: 27-39
+    :start-after: // [start-equals_test]
+    :end-before: // [end-equals_test]
 
 
 * Consider the above two tests
@@ -137,7 +138,8 @@ Testing the Friend Class
         .. literalinclude:: /../test/java/FriendTest.java
             :language: java
             :lineno-match:
-            :lines: 47-54
+            :start-after: // [start-better_equals_test]
+            :end-before: // [end-better_equals_test]
 
 
 
