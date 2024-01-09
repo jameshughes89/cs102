@@ -236,9 +236,11 @@ Iterative Pre/In/Post-Order
 Traversal Analysis
 ------------------
 
-.. image:: binary_tree_example.png
+.. figure:: binary_tree_example.png
    :width: 500 px
    :align: center
+
+   A nonlinear linked structure --- a binary tree.
 
 
 * Consider a binary tree with :math:`n` nodes

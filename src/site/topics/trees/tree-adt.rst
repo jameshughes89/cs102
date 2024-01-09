@@ -168,7 +168,7 @@ Properties
 
 
 
-.. image:: tree_levels.png
+.. figure:: tree_levels.png
    :width: 500 px
    :align: center
 
