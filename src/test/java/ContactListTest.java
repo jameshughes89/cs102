@@ -56,8 +56,8 @@ public class ContactListTest {
         }
 
         @Test
-        void remove_empty_throwsNoSuchElementException() {
-            assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(NONEXISTENT_FRIEND));
+        void remove_empty_returnsFalse() {
+            assertFalse(classUnderTest.remove(NONEXISTENT_FRIEND));
         }
 
         @Test
@@ -147,8 +147,8 @@ public class ContactListTest {
             }
 
             @Test
-            void remove_nonexistentFriend_throwsNoSuchElementException() {
-                assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(NONEXISTENT_FRIEND));
+            void remove_nonexistentFriend_returnsFalse() {
+                assertFalse(classUnderTest.remove(NONEXISTENT_FRIEND));
             }
 
             @Test
@@ -252,8 +252,8 @@ public class ContactListTest {
                 }
 
                 @Test
-                void remove_nonexistentFriend_throwsNoSuchElementException() {
-                    assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(NONEXISTENT_FRIEND));
+                void remove_nonexistentFriend_returnsFalse() {
+                    assertFalse(classUnderTest.remove(NONEXISTENT_FRIEND));
                 }
 
                 @Test

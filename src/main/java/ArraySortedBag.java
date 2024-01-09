@@ -112,16 +112,12 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
         return true;
     }
 
-
     @Override
     public boolean remove(T element) {
-        if (isEmpty()) {
-            throw new NoSuchElementException("Empty bag");
+        if (!contains(element)) {
+            return false;
         }
         int index = find(element);
-        if (index == NOT_FOUND) {
-            throw new NoSuchElementException(Objects.toString(element));
-        }
         shiftLeft(index);
         rear--;
         return true;

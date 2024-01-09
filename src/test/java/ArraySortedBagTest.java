@@ -33,8 +33,8 @@ public class ArraySortedBagTest {
         }
 
         @Test
-        void remove_empty_throwsNoSuchElementException() {
-            assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(0));
+        void remove_empty_returnsFalse() {
+            assertFalse(classUnderTest.remove(0));
         }
 
         @Test
@@ -135,8 +135,8 @@ public class ArraySortedBagTest {
             }
 
             @Test
-            void remove_nonexistentElement_throwsNoSuchElementException() {
-                assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(0));
+            void remove_nonexistentElement_returnsFalse() {
+                assertFalse(classUnderTest.remove(0));
             }
 
             @Test
@@ -278,8 +278,8 @@ public class ArraySortedBagTest {
                 }
 
                 @Test
-                void remove_nonexistentElement_throwsNoSuchElementException() {
-                    assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(0));
+                void remove_nonexistentElement_returnsFalse() {
+                    assertFalse(classUnderTest.remove(0));
                 }
 
                 @Test
