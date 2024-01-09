@@ -34,7 +34,8 @@ Setting Fields and Writing the Constructor
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
     :lineno-match:
-    :lines: 1-33
+    :start-after: // [start-class_fields_constructor]
+    :end-before: // [end-class_fields_constructor]
 
 
 * Things to notice
@@ -127,8 +128,9 @@ Setting Fields and Writing the Constructor
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
     :lineno-match:
-    :lines: 35-67
     :emphasize-lines: 9, 10, 11
+    :start-after: // [start-add]
+    :end-before: // [end-add]
 
 
 * The ``expandCapacity`` method gets called automatically by the ``add`` method if the array has run out of space
@@ -154,7 +156,8 @@ Setting Fields and Writing the Constructor
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
     :lineno-match:
-    :lines: 69-95
+    :start-after: // [start-contains_find]
+    :end-before: // [end-contains_find]
 
 
 * The ``find`` method, which is ``private``, is an internal helper method for finding the index of a given ``Friend``
@@ -183,7 +186,8 @@ Setting Fields and Writing the Constructor
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
     :lineno-match:
-    :lines: 97-110
+    :start-after: // [start-indexOf]
+    :end-before: // [end-indexOf]
 
 
 * This method checks if the ``Friend`` exists, and if it does not, it throws an exception
@@ -209,7 +213,8 @@ Setting Fields and Writing the Constructor
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
     :lineno-match:
-    :lines: 112-125
+    :start-after: // [start-get]
+    :end-before: // [end-get]
 
 * If the index is out of bounds, an exception is thrown
 
@@ -226,7 +231,8 @@ Setting Fields and Writing the Constructor
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
     :lineno-match:
-    :lines: 127-149
+    :start-after: // [start-remove]
+    :end-before: // [end-remove]
 
 
 * Remove first checks if the ``Friend`` object exists within the ``ContactList``
@@ -265,7 +271,8 @@ Setting Fields and Writing the Constructor
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
     :lineno-match:
-    :lines: 151-157
+    :start-after: // [start-clear]
+    :end-before: // [end-clear]
 
 
 * Here, simply create a new empty array and set the size to ``0``
@@ -280,7 +287,8 @@ Setting Fields and Writing the Constructor
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
     :lineno-match:
-    :lines: 159-165
+    :start-after: // [start-isEmpty_size]
+    :end-before: // [end-isEmpty_size]
 
 
 * ``isEmpty`` returns a ``boolean`` indicating if the ``ContactList`` is empty or not
@@ -315,8 +323,9 @@ Setting Fields and Writing the Constructor
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
     :lineno-match:
-    :lines: 167-181
     :emphasize-lines: 11
+    :start-after: // [start-toString]
+    :end-before: // [end-toString]
 
 
 .. note::
@@ -333,7 +342,8 @@ Setting Fields and Writing the Constructor
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
     :lineno-match:
-    :lines: 183-200
+    :start-after: // [start-equals]
+    :end-before: // [end-equals]
 
 * Here, ``Arrays.equals`` is used to check the equality on the array
 
@@ -344,7 +354,8 @@ Setting Fields and Writing the Constructor
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
     :lineno-match:
-    :lines: 202-209
+    :start-after: // [start-hashCode]
+    :end-before: // [end-hashCode]
 
 
 * Above is an example of the ``hashCode`` method for the ``ContactList`` class
