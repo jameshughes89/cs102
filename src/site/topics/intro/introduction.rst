@@ -2,7 +2,6 @@
 Introduction
 ************
 
-
 :doc:`Read the outline </outline/outline>`
 
 The main focus of this course is:
@@ -19,10 +18,11 @@ The main focus of this course is:
 * Algorithm Analysis
 
 
+
 Data Structures
 ===============
 
-* A data structure is, simple, some *structure* used to store, organize, and manage data
+* A data structure is some *structure* used to store, organize, and manage data
 
 
 Linear Data Structures
@@ -126,6 +126,7 @@ Abstract Data Types
 
     * The ``Stack`` ADT could be implemented with an array --- ``ArrayStack``
     * A ``Queue`` ADT could be implemented with a series of linked nodes --- ``LinkedQueue``
+
 
 
 Java
@@ -274,6 +275,7 @@ Can we Write Code Now?
 
     * In Java we don't use indentation to define scope, we use open and close squiggly braces
     * You will quickly realize how great this is when compared to whitespace/indentation
+
 
 
 For Next Time
