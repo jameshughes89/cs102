@@ -439,6 +439,8 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
         return result;
     }
 
+    // [start-nested_node_class]
+
     /**
      * A node class for a linked binary tree structure. Each node contains a nullable reference to data of type T, and a
      * reference to the left and right child nodes, which may be null references.
@@ -484,5 +486,6 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
             this.right = right;
         }
     }
+    // [end-nested_node_class]
 }
 
