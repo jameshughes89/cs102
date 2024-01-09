@@ -385,8 +385,9 @@ Implementing a Queue --- Array Container
 .. literalinclude:: /../main/java/ArrayQueue.java
     :language: java
     :lineno-match:
-    :lines: 38-47
     :emphasize-lines: 4, 7
+    :start-after: // [start-enqueue]
+    :end-before: // [end-enqueue]
 
 
 * Note the call to ``expandCapacity`` and ``nextIndex``
@@ -395,7 +396,8 @@ Implementing a Queue --- Array Container
 .. literalinclude:: /../main/java/ArrayQueue.java
     :language: java
     :lineno-match:
-    :lines: 95-104
+    :start-after: // [start-nextIndex]
+    :end-before: // [end-nextIndex]
 
 
 * ``nextIndex`` is a simple private helper method to return the next index for a "circular" array
@@ -404,7 +406,8 @@ Implementing a Queue --- Array Container
 .. literalinclude:: /../main/java/ArrayQueue.java
     :language: java
     :lineno-match:
-    :lines: 49-64
+    :start-after: // [start-expandCapacity]
+    :end-before: // [end-expandCapacity]
 
 
 * The ``expandCapacity`` used here is different from earlier versions
@@ -431,8 +434,9 @@ Implementing a Queue --- Array Container
 .. literalinclude:: /../main/java/ArrayQueue.java
     :language: java
     :lineno-match:
-    :lines: 66-75
     :emphasize-lines: 7
+    :start-after: // [start-dequeue]
+    :end-before: // [end-dequeue]
 
 
 * Since ``front`` may wrap around to index ``0``, the private method ``nextIndex`` is used
@@ -445,8 +449,9 @@ Implementing a Queue --- Array Container
 .. literalinclude:: /../main/java/ArrayQueue.java
     :language: java
     :lineno-match:
-    :lines: 118-141
     :emphasize-lines: 13,14,20,21
+    :start-after: // [start-equals]
+    :end-before: // [end-equals]
 
 
 * It does not matter *where* in the array the contents are
@@ -454,6 +459,7 @@ Implementing a Queue --- Array Container
 * All that matters is that the elements in the two arrays are equivalent
 
     * Starting at their respective ``front`` indices and wrapping when necessary
+
 
 
 For Next Time
