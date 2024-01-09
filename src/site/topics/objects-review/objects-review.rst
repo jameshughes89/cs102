@@ -306,7 +306,7 @@ Accessors
 
 .. warning::
 
-    The idea is that this *returns* a string; it does not just print something.
+    The idea is that this *returns* a string; it does not print something.
 
 
 ``equals``
