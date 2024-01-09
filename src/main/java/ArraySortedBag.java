@@ -116,6 +116,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
     }
     // [end-add]
 
+    // [start-remove_removeFirst]
     @Override
     public boolean remove(T element) {
         if (!contains(element)) {
@@ -137,6 +138,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
         rear--;
         return returnElement;
     }
+    // [end-remove_removeFirst]
 
     @Override
     public T removeLast() {

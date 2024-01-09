@@ -53,7 +53,8 @@ Throwing an Exception
 .. literalinclude:: /../main/java/ArraySortedBag.java
     :language: java
     :lineno-match:
-    :lines: 116-128
+    :start-after: // [start-remove_removeFirst]
+    :end-before: // [end-remove_removeFirst]
 
 
 .. note::
