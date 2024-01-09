@@ -69,7 +69,8 @@ Iterative
 .. literalinclude:: /../main/java/SearchingFunctions.java
     :language: java
     :lineno-match:
-    :lines: 7-14
+    :start-after: // [start-iterativeLinearSearch]
+    :end-before: // [end-iterativeLinearSearch]
 
 
 * This iterative implementation is fairly similar to the high-level description of the algorithm
@@ -89,7 +90,8 @@ Recursive
 .. literalinclude:: /../main/java/SearchingFunctions.java
     :language: java
     :lineno-match:
-    :lines: 16-24
+    :start-after: // [start-recursiveLinearSearch]
+    :end-before: // [end-recursiveLinearSearch]
 
 
 * If I wanted to call this method, I would start with ``currentIndex`` as ``0``
@@ -202,7 +204,8 @@ Iterative
 .. literalinclude:: /../main/java/SearchingFunctions.java
     :language: java
     :lineno-match:
-    :lines: 26-43
+    :start-after: // [start-iterativeBinarySearch]
+    :end-before: // [end-iterativeBinarySearch]
 
 
 * Here is what's happening
@@ -238,7 +241,8 @@ Recursive
 .. literalinclude:: /../main/java/SearchingFunctions.java
     :language: java
     :lineno-match:
-    :lines: 45-57
+    :start-after: // [start-recursiveBinarySearch]
+    :end-before: // [end-recursiveBinarySearch]
 
 
 * To call this method to initiate a search, start with ``lowIndex`` as ``0`` and ``highIndex`` as ``someHaystack.length``

@@ -4,6 +4,7 @@ public class SearchingFunctions {
 
     private static final int NOT_FOUND = -1;
 
+    // [start-iterativeLinearSearch]
     public static <T> int iterativeLinearSearch(T needle, T[] haystack) {
         for (int i = 0; i < haystack.length; i++) {
             if (Objects.equals(haystack[i], needle)) {
@@ -12,7 +13,9 @@ public class SearchingFunctions {
         }
         return NOT_FOUND;
     }
+    // [end-iterativeLinearSearch]
 
+    // [start-recursiveLinearSearch]
     public static <T> int recursiveLinearSearch(T needle, T[] haystack, int currentIndex) {
         if (currentIndex == haystack.length) {
             return NOT_FOUND;
@@ -22,7 +25,9 @@ public class SearchingFunctions {
             return recursiveLinearSearch(needle, haystack, currentIndex + 1);
         }
     }
+    // [end-recursiveLinearSearch]
 
+    // [start-iterativeBinarySearch]
     public static <T extends Comparable<? super T>> int iterativeBinarySearch(T needle, T[] haystack) {
         int lowIndex = 0;
         int highIndex = haystack.length;
@@ -41,7 +46,9 @@ public class SearchingFunctions {
         }
         return NOT_FOUND;
     }
+    // [end-iterativeBinarySearch]
 
+    // [start-recursiveBinarySearch]
     public static <T extends Comparable<? super T>> int recursiveBinarySearch(T needle, T[] haystack, int lowIndex, int highIndex) {
         if (lowIndex >= highIndex) {
             return NOT_FOUND;
@@ -55,4 +62,5 @@ public class SearchingFunctions {
             return recursiveBinarySearch(needle, haystack, midpoint + 1, highIndex);
         }
     }
+    // [end-recursiveBinarySearch]
 }
