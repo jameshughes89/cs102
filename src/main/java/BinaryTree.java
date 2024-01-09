@@ -1,6 +1,5 @@
 import java.util.Iterator;
 
-
 /**
  * A binary tree is a nonlinear data structure. Each node in a binary tree has no more than two children, which are
  * referred to as the left and right children. The relative position of the nodes matter (left vs. right). Additionally,
