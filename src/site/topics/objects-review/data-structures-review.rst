@@ -226,7 +226,7 @@ Setting Fields and Writing the Constructor
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
     :lineno-match:
-    :lines: 127-151
+    :lines: 127-149
 
 
 * Remove first checks if the ``Friend`` object exists within the ``ContactList``
@@ -265,7 +265,7 @@ Setting Fields and Writing the Constructor
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
     :lineno-match:
-    :lines: 153-159
+    :lines: 151-157
 
 
 * Here, simply create a new empty array and set the size to ``0``
@@ -280,7 +280,7 @@ Setting Fields and Writing the Constructor
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
     :lineno-match:
-    :lines: 161-167
+    :lines: 159-165
 
 
 * ``isEmpty`` returns a ``boolean`` indicating if the ``ContactList`` is empty or not
@@ -315,7 +315,7 @@ Setting Fields and Writing the Constructor
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
     :lineno-match:
-    :lines: 169-183
+    :lines: 167-181
     :emphasize-lines: 11
 
 
@@ -333,7 +333,7 @@ Setting Fields and Writing the Constructor
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
     :lineno-match:
-    :lines: 185-202
+    :lines: 183-200
 
 * Here, ``Arrays.equals`` is used to check the equality on the array
 
@@ -344,7 +344,7 @@ Setting Fields and Writing the Constructor
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
     :lineno-match:
-    :lines: 204-211
+    :lines: 202-209
 
 
 * Above is an example of the ``hashCode`` method for the ``ContactList`` class

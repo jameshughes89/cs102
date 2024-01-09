@@ -36,8 +36,8 @@ class CountryCatalogueTest {
         }
 
         @Test
-        void remove_empty_throwsNoSuchElementException() {
-            assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(NONEXISTENT_COUNTRY));
+        void remove_empty_returnsFalse() {
+            assertFalse(classUnderTest.remove(NONEXISTENT_COUNTRY));
         }
 
         @Test
@@ -128,8 +128,8 @@ class CountryCatalogueTest {
             }
 
             @Test
-            void remove_nonexistentCountry_throwsNoSuchElementException() {
-                assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(NONEXISTENT_COUNTRY));
+            void remove_nonexistentCountry_returnsFalse() {
+                assertFalse(classUnderTest.remove(NONEXISTENT_COUNTRY));
             }
 
             @Test
@@ -269,8 +269,8 @@ class CountryCatalogueTest {
                 }
 
                 @Test
-                void remove_nonexistentCountry_throwsNoSuchElementException() {
-                    assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(NONEXISTENT_COUNTRY));
+                void remove_nonexistentCountry_returnsFalse() {
+                    assertFalse(classUnderTest.remove(NONEXISTENT_COUNTRY));
                 }
 
                 @ParameterizedTest
