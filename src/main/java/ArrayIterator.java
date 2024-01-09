@@ -1,12 +1,15 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+// [start-class_fields]
 public class ArrayIterator<T> implements Iterator<T> {
 
     private final int size;
     private final T[] elements;
     private int index;
+    // [end-class_fields]
 
+    // [start-constructor]
     public ArrayIterator(T[] elements, int size) {
         if (size > elements.length) {
             throw new IllegalArgumentException("size exceeds array length.");
@@ -15,12 +18,16 @@ public class ArrayIterator<T> implements Iterator<T> {
         this.size = size;
         this.index = 0;
     }
+    // [end-constructor]
 
+    // [start-hasNext]
     @Override
     public boolean hasNext() {
         return index < size;
     }
+    // [end-hasNext]
 
+    // [start-next]
     @Override
     public T next() {
         if (!hasNext()) {
@@ -30,4 +37,5 @@ public class ArrayIterator<T> implements Iterator<T> {
         index++;
         return returnElement;
     }
+    // [end-next]
 }

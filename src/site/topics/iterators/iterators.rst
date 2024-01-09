@@ -87,7 +87,8 @@ Array Iterator
 .. literalinclude:: /../main/java/ArrayIterator.java
     :language: java
     :lineno-match:
-    :lines: 1-8
+    :start-after: // [start-class_fields]
+    :end-before: // [end-class_fields]
 
 
 * The fields only include
@@ -100,7 +101,8 @@ Array Iterator
 .. literalinclude:: /../main/java/ArrayIterator.java
     :language: java
     :lineno-match:
-    :lines: 10-17
+    :start-after: // [start-constructor]
+    :end-before: // [end-constructor]
 
 
 * Constructor sets the iterator up to start at the beginning of the array
@@ -109,7 +111,8 @@ Array Iterator
 .. literalinclude:: /../main/java/ArrayIterator.java
     :language: java
     :lineno-match:
-    :lines: 19-22
+    :start-after: // [start-hasNext]
+    :end-before: // [end-hasNext]
 
 
 * ``hasNext`` returns a ``boolean`` indicating if there is an element to retrieve
@@ -119,7 +122,8 @@ Array Iterator
 .. literalinclude:: /../main/java/ArrayIterator.java
     :language: java
     :lineno-match:
-    :lines: 24-33
+    :start-after: // [start-next]
+    :end-before: // [end-next]
 
 
 * ``next`` returns the next element and updates ``index``
@@ -332,13 +336,15 @@ Equality of Stacks (and Queues)
 .. literalinclude:: /../main/java/ArrayStack.java
     :language: java
     :lineno-match:
-    :lines: 98-108
+    :start-after: // [start-equals_hashCode]
+    :end-before: // [end-equals_hashCode]
 
 
 .. literalinclude:: /../main/java/LinkedStack.java
     :language: java
     :lineno-match:
-    :lines: 73-95
+    :start-after: // [start-equals_hashCode]
+    :end-before: // [end-equals_hashCode]
 
 
 * It should be possible to check equality between ``Stack`` objects, regardless of their implementation
@@ -393,7 +399,7 @@ Playing Code
 * Download and play with
 
     * :download:`ArrayIterator </../main/java/ArrayIterator.java>`
-    * :download:`tests </../test/java/ArrayIteratorTest.java>`
+    * :download:`ArrayIteratorTest </../test/java/ArrayIteratorTest.java>`
     * :download:`LinkedIterator </../main/java/LinkedIterator.java>`
-    * :download:`tests </../test/java/LinkedIteratorTest.java>`
+    * :download:`LinkedIteratorTest </../test/java/LinkedIteratorTest.java>`
 
