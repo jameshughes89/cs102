@@ -177,7 +177,11 @@ The class will also have two static constants
 
     * This method takes the ``Country`` object to be removed as a parameter
     * This method returns a ``boolean`` indicating if the remove was successful
-    * This method throws a ``NoSuchElementException`` if no matching ``Country`` object exists
+
+        * Returns ``true`` if the remove was successful
+        * Returns ``false`` if the remove was unsuccessful; if the element to be removed does not exist
+
+
     * If more than one matching ``Country`` object exists, only remove the first occurrence
     * If a ``Country`` object is removed, the order of the remaining ``Country`` objects must remain unchanged
 
