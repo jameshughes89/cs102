@@ -111,7 +111,7 @@ Iterator Method
 .. literalinclude:: /../main/java/ArrayIndexedBag.java
     :language: java
     :lineno-match:
-    :lines: 176-179
+    :lines: 175-178
 
 
 * All this method does is create an instance of an ``ArrayIterator`` and return it
@@ -150,7 +150,7 @@ Remove
 .. literalinclude:: /../main/java/ArrayIndexedBag.java
     :language: java
     :lineno-match:
-    :lines: 120-140
+    :lines: 120-139
 
 
 * The ``remove(T element)`` method delegates to the ``remove(int index)`` for ease and code/logic reuse

@@ -130,10 +130,9 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
 
     @Override
     public boolean remove(T element) {
-        if (isEmpty()) {
-            throw new NoSuchElementException("Empty bag");
+        if (!contains(element)) {
+            return false;
         }
-        // If indexOf throws an exception, this method propagates it
         int removeIndex = indexOf(element);
         remove(removeIndex);
         return true;

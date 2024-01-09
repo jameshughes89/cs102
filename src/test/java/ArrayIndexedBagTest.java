@@ -74,8 +74,8 @@ public class ArrayIndexedBagTest {
         }
 
         @Test
-        void remove_empty_throwsNoSuchElementException() {
-            assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(Integer.valueOf(0)));
+        void remove_empty_returnsFalse() {
+            assertFalse(classUnderTest.remove(Integer.valueOf(0)));
         }
 
         @Test
@@ -221,8 +221,8 @@ public class ArrayIndexedBagTest {
             }
 
             @Test
-            void remove_nonexistentElement_throwsNoSuchElementException() {
-                assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(Integer.valueOf(0)));
+            void remove_nonexistentElement_returnsFalse() {
+                assertFalse(classUnderTest.remove(Integer.valueOf(0)));
             }
 
             @Test
@@ -393,8 +393,8 @@ public class ArrayIndexedBagTest {
                 }
 
                 @Test
-                void remove_nonexistentElement_throwsNoSuchElementException() {
-                    assertThrows(NoSuchElementException.class, () -> classUnderTest.remove(Integer.valueOf(0)));
+                void remove_nonexistentElement_returnsFalse() {
+                    assertFalse(classUnderTest.remove(Integer.valueOf(0)));
                 }
 
                 @ParameterizedTest
