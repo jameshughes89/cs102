@@ -1,5 +1,6 @@
 import java.util.NoSuchElementException;
 import java.util.Objects;
+// [start-class_fields_constructor]
 
 /**
  * Implementation of a queue with a linked structure as the container. The class contains a static inner class defining
