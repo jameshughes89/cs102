@@ -1,5 +1,7 @@
 import java.util.Objects;
 
+// [start-class_fields_constructor]
+
 /***
  * A plain old java class to keep track of friends. A Friend will know its first name, last name, and email address.
  * This class provides getters/accessor methods for the attributes and can be checked for equality.
@@ -24,7 +26,9 @@ public final class Friend {
         this.lastName = lastName;
         this.email = email;
     }
+    // [end-class_fields_constructor]
 
+    // [start-accessors]
     public String getFirstName() {
         return firstName;
     }
@@ -36,10 +40,15 @@ public final class Friend {
     public String getEmail() {
         return email;
     }
+    // [end-accessors]
 
+    // [start-toString]
     public String toString() {
         return String.format("Friend(%s, %s, %s)", firstName, lastName, email);
     }
+    // [end-toString]
+
+    // [start-equals]
 
     /**
      * Checks if two Friend objects are equal. Friend objects are considered equal if all their attributes are equal.
@@ -66,9 +75,12 @@ public final class Friend {
         return Objects.equals(this.firstName, other.firstName) && Objects.equals(this.lastName, other.lastName) &&
                 Objects.equals(this.email, other.email);
     }
+    // [end-equals]
 
+    // [start-hashCode]
     @Override
     public int hashCode() {
         return Objects.hash(firstName, lastName, email);
     }
+    // [end-hashCode]
 }
