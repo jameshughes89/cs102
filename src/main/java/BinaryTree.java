@@ -1,5 +1,4 @@
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
 
 /**
@@ -24,7 +23,6 @@ public interface BinaryTree<T> extends Iterable<T> {
      *
      * @param element Element to be removed from the binary tree.
      * @return True if the element was removed successfully, false otherwise.
-     * @throws NoSuchElementException If the provided element does not exist within the binary tree.
      */
     boolean remove(T element);
 
