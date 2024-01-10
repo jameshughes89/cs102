@@ -67,7 +67,7 @@ Throwing an Exception
 
 
 * Either way, as the writers of the ``ArraySortedBag``, it is not possible to know how the user of the ``ArraySortedBag`` should address the situation
-* All that can be done is to throw the exception to inform the uservthat something exceptional happened
+* All that can be done is to throw the exception to inform the user that something exceptional happened
 
 * One may wonder why the more general ``remove`` does not throw an exception
 * This is because
