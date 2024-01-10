@@ -326,7 +326,7 @@ Below is a list of both *quantitative* and *qualitative* things we will look for
 What to Submit to Moodle
 ========================
 
-* Make sure your **NAME**, **STFX EMAIL**, and **STUDENT NUMBER** appear in a comment at the top of the classes
+* Make sure your **NAME**, **SCHOOL EMAIL**, and **STUDENT NUMBER** appear in a comment at the top of the classes
 * Submit the completed *.java* files to Moodle
 
     * *LinkedPriorityQueue.java* and *LinkedPriorityQueueTest.java*
