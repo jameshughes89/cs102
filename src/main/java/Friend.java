@@ -53,8 +53,8 @@ public final class Friend {
     /**
      * Checks if two Friend objects are equal. Friend objects are considered equal if all their attributes are equal.
      *
-     * @param o an "object" being compared to.
-     * @return True if the two objects are equal, false otherwise.
+     * @param o an "object" being compared to
+     * @return True if the two objects are equal, false otherwise
      */
     @Override
     public boolean equals(Object o) {
@@ -72,7 +72,8 @@ public final class Friend {
         }
         // Cast o as a friend
         Friend other = (Friend) o;
-        return Objects.equals(this.firstName, other.firstName) && Objects.equals(this.lastName, other.lastName) &&
+        return Objects.equals(this.firstName, other.firstName) &&
+                Objects.equals(this.lastName, other.lastName) &&
                 Objects.equals(this.email, other.email);
     }
     // [end-equals]

@@ -7,7 +7,7 @@ import java.util.NoSuchElementException;
  * elements themselves determine the ordering. All modifications to the binary search tree contents are done in such a
  * way that binary search tree property is maintained.
  *
- * @param <T> Type of elements that are to be in the binary search tree.
+ * @param <T> Type of elements that are to be in the binary search tree
  */
 public interface BinarySearchTree<T extends Comparable<? super T>> extends BinaryTree<T> {
 
@@ -15,8 +15,8 @@ public interface BinarySearchTree<T extends Comparable<? super T>> extends Binar
      * Add an element to the binary search tree such that the binary search tree property is maintained. Equal
      * elements are added to the right.
      *
-     * @param element Element to be added to the binary search tree.
-     * @return True if the element was added successfully, false otherwise.
+     * @param element Element to be added to the binary search tree
+     * @return True if the element was added successfully, false otherwise
      */
     @Override
     boolean add(T element);
@@ -25,8 +25,8 @@ public interface BinarySearchTree<T extends Comparable<? super T>> extends Binar
      * Removes a single instance of the specified element from the binary search tree such that the binary search
      * tree property is maintained.
      *
-     * @param element Element to be removed from the binary search tree.
-     * @return True if the element was removed successfully, false otherwise.
+     * @param element Element to be removed from the binary search tree
+     * @return True if the element was removed successfully, false otherwise
      */
     @Override
     boolean remove(T element);
@@ -36,8 +36,8 @@ public interface BinarySearchTree<T extends Comparable<? super T>> extends Binar
      * Removes and returns the minimum element from the binary search tree such that the binary search tree property is
      * maintained.
      *
-     * @return The minimum element currently in the binary search tree.
-     * @throws NoSuchElementException If the binary search tree is empty.
+     * @return The minimum element currently in the binary search tree
+     * @throws NoSuchElementException If the binary search tree is empty
      */
     T removeMin();
 
@@ -45,24 +45,24 @@ public interface BinarySearchTree<T extends Comparable<? super T>> extends Binar
      * Removes and returns the maximum element from the binary search tree such that the binary search tree property is
      * maintained.
      *
-     * @return The maximum element currently in the binary search tree.
-     * @throws NoSuchElementException If the binary search tree is empty.
+     * @return The maximum element currently in the binary search tree
+     * @throws NoSuchElementException If the binary search tree is empty
      */
     T removeMax();
 
     /**
      * Returns the minimum element from the binary search tree.
      *
-     * @return The minimum element currently in the binary search tree.
-     * @throws NoSuchElementException If the binary search tree is empty.
+     * @return The minimum element currently in the binary search tree
+     * @throws NoSuchElementException If the binary search tree is empty
      */
     T min();
 
     /**
      * Returns the maximum element from the binary search tree.
      *
-     * @return The maximum element currently in the binary search tree.
-     * @throws NoSuchElementException If the binary search tree is empty.
+     * @return The maximum element currently in the binary search tree
+     * @throws NoSuchElementException If the binary search tree is empty
      */
     T max();
 }

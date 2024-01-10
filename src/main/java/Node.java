@@ -2,7 +2,7 @@
  * A node class for a singly linked structure. Each node contains a nullable reference to data of type T, and a
  * reference to the next/subsequent/successor singly linked node, which may be a null reference.
  *
- * @param <T> Type of the data being stored in the node.
+ * @param <T> Type of the data being stored in the node
  */
 public class Node<T> {
 
