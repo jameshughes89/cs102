@@ -14,9 +14,8 @@ Aside --- Amortized Time Complexity
 .. literalinclude:: /../main/java/ArrayStack.java
     :language: java
     :linenos:
-    :lineno-start: 37
-    :lines: 37-57
-    :emphasize-lines: 4, 17, 18, 19
+    :start-after: // [start-push]
+    :end-before: // [end-push]
 
 
 * Since ``expandCapacity`` is an :math:`O(n)` method

@@ -13,7 +13,8 @@ Constructors
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 1-13
+    :start-after: // [start-class_fields_constructor]
+    :end-before: // [end-class_fields_constructor]
 
 
 * Like the other implementations, this class ``implements`` the interface
@@ -34,7 +35,9 @@ Static Node Class
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 442-486
+    :start-after: // [start-nested_node_class]
+    :end-before: // [end-nested_node_class]
+
 
 * Things of note for this node class
 
@@ -49,7 +52,8 @@ Add to Binary Search Tree
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 15-40
+    :start-after: // [start-add]
+    :end-before: // [end-add]
 
 
 * A public method is used to call the private recursive add with initial values
@@ -66,7 +70,8 @@ Minimum & Maximum
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 186-223
+    :start-after: // [start-min_max]
+    :end-before: // [end-min_max]
 
 
 * Fortunately the minimum and maximum methods are simple
@@ -75,7 +80,6 @@ Minimum & Maximum
 * The minimum functionality is implemented recursively and the maximum is implemented iteratively
 
     * This is done for demonstration purposes only
-
 
 
 
@@ -92,7 +96,8 @@ Remove Minimum
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 125-154
+    :start-after: // [start-removeMin]
+    :end-before: // [end-removeMin]
 
 
 * Above are two methods that work together to remove the minimum value
@@ -133,7 +138,8 @@ Remove Maximum
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 156-184
+    :start-after: // [start-removeMax]
+    :end-before: // [end-removeMax]
 
 
 * ``removeMax`` is similar to the public ``removeMin`` method
@@ -159,7 +165,8 @@ General Remove
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 42-57
+    :start-after: // [start-remove_public]
+    :end-before: // [end-remove_public]
 
 
 * The public ``remove`` method is similar to the public ``removeMin`` and ``removeMax``
@@ -170,7 +177,8 @@ General Remove
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 59-81
+    :start-after: // [start-remove_private]
+    :end-before: // [end-remove_private]
 
 
 * The private ``remove`` is basically doing a binary search through the tree looking for the value to be removed
@@ -186,7 +194,8 @@ General Remove
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 83-123
+    :start-after: // [start-findReplacementNode]
+    :end-before: // [end-findReplacementNode]
 
 
 * ``findReplacementNode`` looks rather intimidating at first, but if studied carefully, it is actually rather simple
@@ -241,7 +250,8 @@ General Remove
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 225-251
+    :start-after: // [start-contains]
+    :end-before: // [end-contains]
 
 
 * See the above method called ``contains`` and the recursive ``binarySearch`` method
@@ -261,8 +271,10 @@ General Remove
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 253-281
     :emphasize-lines: 21, 22, 23
+    :start-after: // [start-count]
+    :end-before: // [end-count]
+
 
 
 * Counting the number of times a given element exists within the tree will be similar to a binary search

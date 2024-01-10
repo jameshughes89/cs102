@@ -166,8 +166,8 @@ In Java, the class' declaration of fields, constructor, and assigning values to 
 .. literalinclude:: /../main/java/Friend.java
     :language: java
     :lineno-match:
-    :lines: 3-26
-    :emphasize-lines: 8, 9, 10, 21, 22, 23
+    :start-after: // [start-class_fields_constructor]
+    :end-before: // [end-class_fields_constructor]
 
 
 
@@ -232,7 +232,8 @@ Accessors
 .. literalinclude:: /../main/java/Friend.java
     :language: java
     :lineno-match:
-    :lines: 28-38
+    :start-after: // [start-accessors]
+    :end-before: // [end-accessors]
 
 
 * In Python, accessors were not used as one could simply access the field directly
@@ -289,7 +290,8 @@ Accessors
 .. literalinclude:: /../main/java/Friend.java
     :language: java
     :lineno-match:
-    :lines: 40-42
+    :start-after: // [start-toString]
+    :end-before: // [end-toString]
 
 
 * In the above example, ``String.format`` was used, but string concatenation could have been used
@@ -343,7 +345,8 @@ Accessors
 .. literalinclude:: /../main/java/Friend.java
     :language: java
     :lineno-match:
-    :lines: 44-68
+    :start-after: // [start-equals]
+    :end-before: // [end-equals]
 
 
 * There is a lot going on in this method
@@ -420,7 +423,8 @@ Accessors
 .. literalinclude:: /../main/java/Friend.java
     :language: java
     :lineno-match:
-    :lines: 70-73
+    :start-after: // [start-hashCode]
+    :end-before: // [end-hashCode]
 
 
 

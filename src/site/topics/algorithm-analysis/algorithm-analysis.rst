@@ -386,21 +386,21 @@ Stack Comparisons
     * ``LinkedStack`` vs ``ArrayStack``
 
 
-Popping
--------
+Popping & Peeking
+-----------------
 
 .. literalinclude:: /../main/java/LinkedStack.java
     :language: java
     :linenos:
-    :lineno-start: 32
-    :lines: 32-41
+    :start-after: // [start-pop_peek]
+    :end-before: // [end-pop_peek]
 
 
 .. literalinclude:: /../main/java/ArrayStack.java
     :language: java
     :linenos:
-    :lineno-start: 59
-    :lines: 59-68
+    :start-after: // [start-pop_peek]
+    :end-before: // [end-pop_peek]
 
 
 
@@ -410,16 +410,16 @@ Pushing
 .. literalinclude:: /../main/java/LinkedStack.java
     :language: java
     :linenos:
-    :lineno-start: 23
-    :lines: 23-30
+    :start-after: // [start-push]
+    :end-before: // [end-push]
 
 
 .. literalinclude:: /../main/java/ArrayStack.java
     :language: java
     :linenos:
-    :lineno-start: 37
-    :lines: 37-57
-    :emphasize-lines: 4, 17, 18, 19
+    :start-after: // [start-push]
+    :end-before: // [end-push]
+
 
 
 For Next Time

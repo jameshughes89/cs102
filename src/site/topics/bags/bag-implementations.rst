@@ -69,8 +69,8 @@ ArrayIndexedBag
 .. literalinclude:: /../main/java/ArrayIndexedBag.java
     :language: java
     :lineno-match:
-    :lines: 1-35
-    :emphasize-lines: 2
+    :start-after: // [start-class_fields_constructor]
+    :end-before: // [end-class_fields_constructor]
 
 
 * Note the import of ``Iterator`` and the implementation of ``Iterator<T>``
@@ -86,7 +86,8 @@ Private Methods
 .. literalinclude:: /../main/java/ArrayIndexedBag.java
     :language: java
     :lineno-match:
-    :lines: 37-62
+    :start-after: // [start-shiftLeft_shiftRight]
+    :end-before: // [end-shiftLeft_shiftRight]
 
 
 * ``shiftLeft`` and ``shiftRight``
@@ -111,7 +112,8 @@ Iterator Method
 .. literalinclude:: /../main/java/ArrayIndexedBag.java
     :language: java
     :lineno-match:
-    :lines: 175-178
+    :start-after: // [start-iterator]
+    :end-before: // [end-iterator]
 
 
 * All this method does is create an instance of an ``ArrayIterator`` and return it
@@ -124,7 +126,8 @@ Add Methods
 .. literalinclude:: /../main/java/ArrayIndexedBag.java
     :language: java
     :lineno-match:
-    :lines: 82-100
+    :start-after: // [start-add]
+    :end-before: // [end-add]
 
 
 * Note that ``add(T element)`` simply delegates to ``add(int index, T element)`` for ease and code/logic reuse
@@ -150,7 +153,8 @@ Remove
 .. literalinclude:: /../main/java/ArrayIndexedBag.java
     :language: java
     :lineno-match:
-    :lines: 120-139
+    :start-after: // [start-remove]
+    :end-before: // [end-remove]
 
 
 * The ``remove(T element)`` method delegates to the ``remove(int index)`` for ease and code/logic reuse
@@ -179,8 +183,9 @@ ArraySortedBag
 .. literalinclude:: /../main/java/ArraySortedBag.java
     :language: java
     :lineno-match:
-    :lines: 1-25
-    :emphasize-lines: 12
+    :emphasize-lines: 7
+    :start-after: // [start-class_fields_constructor]
+    :end-before: // [end-class_fields_constructor]
 
 
 * Notice ``<T extends Comparable<? super T>>``
@@ -226,8 +231,9 @@ Adding Method
 .. literalinclude:: /../main/java/ArraySortedBag.java
     :language: java
     :lineno-match:
-    :lines: 84-113
-    :emphasize-lines: 10
+    :emphasize-lines: 6
+    :start-after: // [start-add]
+    :end-before: // [end-add]
 
 
 

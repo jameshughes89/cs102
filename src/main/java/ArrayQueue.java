@@ -35,6 +35,7 @@ public class ArrayQueue<T> implements Queue<T> {
         queue = (T[]) new Object[initialCapacity];
     }
 
+    // [start-enqueue]
     @Override
     public boolean enqueue(T element) {
         if (size == queue.length) {
@@ -45,6 +46,9 @@ public class ArrayQueue<T> implements Queue<T> {
         size++;
         return true;
     }
+    // [end-enqueue]
+
+    // [start-expandCapacity]
 
     /**
      * Doubles the size of the queue array container and copy the contents from the old array to the new array. Note
@@ -62,7 +66,9 @@ public class ArrayQueue<T> implements Queue<T> {
         rear = size();
         queue = newQueue;
     }
+    // [end-expandCapacity]
 
+    // [start-dequeue]
     @Override
     public T dequeue() {
         if (isEmpty()) {
@@ -73,6 +79,7 @@ public class ArrayQueue<T> implements Queue<T> {
         size--;
         return returnElement;
     }
+    // [end-dequeue]
 
     @Override
     public T first() {
@@ -92,6 +99,8 @@ public class ArrayQueue<T> implements Queue<T> {
         return size;
     }
 
+    // [start-nextIndex]
+
     /**
      * Calculates the next valid index for the front or rear fields. This method is used to have the index increment
      * with an automatic wrapping back to index zero if there is no more room left at the end of the array.
@@ -102,6 +111,7 @@ public class ArrayQueue<T> implements Queue<T> {
     private int nextIndex(int currentIndex) {
         return (currentIndex + 1) % queue.length;
     }
+    // [end-nextIndex]
 
     @Override
     public String toString() {
@@ -115,6 +125,7 @@ public class ArrayQueue<T> implements Queue<T> {
         return builder.toString();
     }
 
+    // [start-equals]
     @Override
     public final boolean equals(Object o) {
         if (this == o) {
@@ -139,6 +150,7 @@ public class ArrayQueue<T> implements Queue<T> {
         }
         return true;
     }
+    // [end-equals]
 
     @Override
     public int hashCode() {

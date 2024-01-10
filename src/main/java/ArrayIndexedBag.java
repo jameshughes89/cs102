@@ -3,6 +3,8 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 
+// [start-class_fields_constructor]
+
 /**
  * Implementation of an IndexedBag with an array as the container. The array container will automatically "grow" to
  * accommodate adding beyond the initial capacity.
@@ -33,6 +35,9 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
         bag = (T[]) new Object[initialCapacity];
         rear = 0;
     }
+    // [end-class_fields_constructor]
+
+    // [start-shiftLeft_shiftRight]
 
     /**
      * Shifts elements in an array down (towards index 0) to the starting index specified. The element at the starting
@@ -60,6 +65,7 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
         }
         bag[start] = null;
     }
+    // [end-shiftLeft_shiftRight]
 
     /**
      * Find and return the index of a given target element within the collection. If no such element exists within the
@@ -79,6 +85,7 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
         return NOT_FOUND;
     }
 
+    // [start-add]
     @Override
     public boolean add(T element) {
         return add(rear, element);
@@ -98,6 +105,7 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
         rear++;
         return true;
     }
+    // [end-add]
 
     @Override
     public T set(int index, T element) {
@@ -117,6 +125,7 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
         return bag[index];
     }
 
+    // [start-remove]
     @Override
     public T remove(int index) {
         if (index < 0 || index >= size()) {
@@ -137,6 +146,7 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
         remove(removeIndex);
         return true;
     }
+    // [end-remove]
 
     @Override
     public int indexOf(T element) {
@@ -172,10 +182,12 @@ public class ArrayIndexedBag<T> implements IndexedBag<T> {
         return rear;
     }
 
+    // [start-iterator]
     @Override
     public Iterator<T> iterator() {
         return new ArrayIterator<>(bag, size());
     }
+    // [end-iterator]
 
     @Override
     public String toString() {

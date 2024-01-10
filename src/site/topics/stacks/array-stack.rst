@@ -111,8 +111,9 @@ Implementation
 .. literalinclude:: /../main/java/ArrayStack.java
     :language: java
     :lineno-match:
-    :lines: 11-15
-    :emphasize-lines: 1
+    :emphasize-lines: 7
+    :start-after: // [start-class_fields]
+    :end-before: // [end-class_fields]
 
 
 .. warning::
@@ -142,8 +143,9 @@ Constructors
 .. literalinclude:: /../main/java/ArrayStack.java
     :language: java
     :lineno-match:
-    :lines: 17-35
     :emphasize-lines: 5, 18
+    :start-after: // [start-constructor]
+    :end-before: // [end-constructor]
 
 
 * This is making use of :doc:`constructor chaining </topics/objects-review/chaining>`
@@ -179,8 +181,9 @@ Constructors
 .. literalinclude:: /../main/java/ArrayStack.java
     :language: java
     :lineno-match:
-    :lines: 37-57
     :emphasize-lines: 1, 3, 4, 5, 15
+    :start-after: // [start-push]
+    :end-before: // [end-push]
 
 
 * Notice the ``@Override`` annotation before the ``push`` method
@@ -207,8 +210,9 @@ Constructors
 .. literalinclude:: /../main/java/ArrayStack.java
     :language: java
     :lineno-match:
-    :lines: 59-76
     :emphasize-lines: 3, 4, 5, 14, 15, 16
+    :start-after: // [start-pop_peek]
+    :end-before: // [end-pop_peek]
 
 
 Exceptional Situations
@@ -249,8 +253,9 @@ Exceptional Situations
 .. literalinclude:: /../main/java/ArrayStack.java
     :language: java
     :lineno-match:
-    :lines: 78-86
     :emphasize-lines: 3
+    :start-after: // [start-size_isEmpty]
+    :end-before: // [end-size_isEmpty]
 
 
 * Notice how, because of zero based indexing, ``top`` is both
@@ -265,8 +270,9 @@ Exceptional Situations
 .. literalinclude:: /../main/java/ArrayStack.java
     :language: java
     :lineno-match:
-    :lines: 88-96
     :emphasize-lines: 6
+    :start-after: // [start-toString]
+    :end-before: // [end-toString]
 
 
 * Ideally the top element in the stack would be the left most element in the string representation of a stack
@@ -280,8 +286,9 @@ Exceptional Situations
 .. literalinclude:: /../main/java/ArrayStack.java
     :language: java
     :lineno-match:
-    :lines: 98-117
     :emphasize-lines: 10
+    :start-after: // [start-equals_hashCode]
+    :end-before: // [end-equals_hashCode]
 
 
 * Two ``ArrayStack`` objects are considered equal if the contents of the ``stack`` arrays are equal

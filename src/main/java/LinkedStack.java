@@ -1,6 +1,8 @@
 import java.util.NoSuchElementException;
 import java.util.Objects;
 
+// [start-class_fields_constructor]
+
 /**
  * Implementation of a stack with a linked structure as the container. The class contains a static inner class defining
  * a node for the linked structure.
@@ -19,7 +21,9 @@ public class LinkedStack<T> implements Stack<T> {
         top = null;
         size = 0;
     }
+    // [end-class_fields_constructor]
 
+    // [start-push]
     @Override
     public boolean push(T element) {
         Node<T> toPush = new Node<T>(element);
@@ -28,7 +32,9 @@ public class LinkedStack<T> implements Stack<T> {
         size++;
         return true;
     }
+    // [end-push]
 
+    // [start-pop_peek]
     @Override
     public T pop() {
         if (isEmpty()) {
@@ -47,7 +53,9 @@ public class LinkedStack<T> implements Stack<T> {
         }
         return top.getData();
     }
+    // [end-pop_peek]
 
+    // [start-isEmpty_size]
     @Override
     public boolean isEmpty() {
         return size() == 0;
@@ -57,7 +65,9 @@ public class LinkedStack<T> implements Stack<T> {
     public int size() {
         return size;
     }
+    // [end-isEmpty_size]
 
+    // [start-toString]
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
@@ -69,7 +79,9 @@ public class LinkedStack<T> implements Stack<T> {
         }
         return builder.toString();
     }
+    // [end-toString]
 
+    // [start-equals_hashCode]
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -104,6 +116,9 @@ public class LinkedStack<T> implements Stack<T> {
         }
         return result;
     }
+    // [end-equals_hashCode]
+
+    // [start-nested_node_class]
 
     /**
      * A node class for a singly linked structure. Each node contains a nullable reference to data of type T, and a
@@ -141,4 +156,5 @@ public class LinkedStack<T> implements Stack<T> {
             this.next = next;
         }
     }
+    // [end-nested_node_class]
 }

@@ -358,7 +358,8 @@ Binary Tree Node
 .. literalinclude:: /../main/java/LinkedBinarySearchTree.java
     :language: java
     :lineno-match:
-    :lines: 447-491
+    :start-after: // [start-nested_node_class]
+    :end-before: // [end-nested_node_class]
 
 
 

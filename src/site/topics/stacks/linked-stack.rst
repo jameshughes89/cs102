@@ -70,7 +70,8 @@ Implementation
 .. literalinclude:: /../main/java/LinkedStack.java
     :language: java
     :lineno-match:
-    :lines: 10-21
+    :start-after: // [start-class_fields_constructor]
+    :end-before: // [end-class_fields_constructor]
 
 
 * Like the ``ArrayStack``, the ``LinkedStack`` will implement the ``Stack`` interface
@@ -83,7 +84,8 @@ Implementation
 .. literalinclude:: /../main/java/LinkedStack.java
     :language: java
     :lineno-match:
-    :lines: 23-30
+    :start-after: // [start-push]
+    :end-before: // [end-push]
 
 
 * In ``push``, notice how this is just *adding to the front of a linked structure*
@@ -96,7 +98,8 @@ Implementation
 .. literalinclude:: /../main/java/LinkedStack.java
     :language: java
     :lineno-match:
-    :lines: 32-49
+    :start-after: // [start-pop_peek]
+    :end-before: // [end-pop_peek]
 
 
 * Like the ``ArrayStack``, popping or peeking from an empty stack throws an exception
@@ -109,7 +112,8 @@ Implementation
 .. literalinclude:: /../main/java/LinkedStack.java
     :language: java
     :lineno-match:
-    :lines: 51-59
+    :start-after: // [start-isEmpty_size]
+    :end-before: // [end-isEmpty_size]
 
 
 * The ``LinkedStack`` is empty if its ``size() == 0``
@@ -123,7 +127,8 @@ Implementation
 .. literalinclude:: /../main/java/LinkedStack.java
     :language: java
     :lineno-match:
-    :lines: 61-71
+    :start-after: // [start-toString]
+    :end-before: // [end-toString]
 
 
 * This is matching the output format that the ``ArrayStack``\'s ``toString`` had
@@ -135,7 +140,8 @@ Implementation
 .. literalinclude:: /../main/java/LinkedStack.java
     :language: java
     :lineno-match:
-    :lines: 73-106
+    :start-after: // [start-equals_hashCode]
+    :end-before: // [end-equals_hashCode]
 
 
 Nested Node Class
@@ -194,7 +200,8 @@ Nesting in LinkedStack
 .. literalinclude:: /../main/java/LinkedStack.java
     :language: java
     :lineno-match:
-    :lines: 108-143
+    :start-after: // [start-nested_node_class]
+    :end-before: // [end-nested_node_class]
 
 
 

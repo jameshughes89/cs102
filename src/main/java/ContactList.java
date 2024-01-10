@@ -2,6 +2,8 @@ import java.util.Arrays;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 
+// [start-class_fields_constructor]
+
 /**
  * Class to keep track of a collection of Friend objects. The underlying contained for the class is an array that
  * will automatically "grow" to accommodate adding beyond the initial capacity.
@@ -31,6 +33,9 @@ public class ContactList {
         size = 0;
         friends = new Friend[initialCapacity];
     }
+    // [end-class_fields_constructor]
+
+    // [start-add]
 
     /**
      * Add a new friend to the ContactList.
@@ -65,6 +70,9 @@ public class ContactList {
         // Have friends now reference the new friends
         friends = newFriends;
     }
+    // [end-add]
+
+    // [start-contains_find]
 
     /**
      * Check if a given Friend object exists within the collection.
@@ -93,6 +101,9 @@ public class ContactList {
         // -1 (NOT_FOUND constant) will signify that we didn't find what we were looking for
         return NOT_FOUND;
     }
+    // [end-contains_find]
+
+    // [start-indexOf]
 
     /**
      * Return the index of the specified Friend object within the collection. If no such Friend exists within the
@@ -108,6 +119,9 @@ public class ContactList {
         }
         return find(friend);
     }
+    // [end-indexOf]
+
+    // [start-get]
 
     /**
      * Return the Friend object at the specified index. If the provided index is out of bounds an
@@ -123,6 +137,9 @@ public class ContactList {
         }
         return friends[index];
     }
+    // [end-get]
+
+    // [start-remove]
 
     /**
      * Removes the specified Friend object from the collection. The removed object is removed from the collection by
@@ -147,6 +164,9 @@ public class ContactList {
         size--;
         return true;
     }
+    // [end-remove]
+
+    // [start-clear]
 
     /**
      * Clear the contents of the ContactList object; eliminate all Friends form the ContactList.
@@ -155,7 +175,9 @@ public class ContactList {
         friends = new Friend[friends.length];
         size = 0;
     }
+    // [end-clear]
 
+    // [start-isEmpty_size]
     public boolean isEmpty() {
         return size() == 0;
     }
@@ -163,6 +185,9 @@ public class ContactList {
     public int size() {
         return size;
     }
+    // [end-isEmpty_size]
+
+    // [start-toString]
 
     /**
      * Create a string representation of the ContactList. The string representation will be an aggregate of the
@@ -179,6 +204,9 @@ public class ContactList {
         }
         return builder.toString();
     }
+    // [end-toString]
+
+    // [start-equals]
 
     /**
      * Checks if two ContactList objects are equal. ContactList objects are considered equal if the contents of their
@@ -198,7 +226,9 @@ public class ContactList {
         ContactList that = (ContactList) o;
         return Arrays.equals(this.friends, 0, this.size(), that.friends, 0, that.size());
     }
+    // [end-equals]
 
+    // [start-hashCode]
     @Override
     public final int hashCode() {
         int result = Objects.hash(this.size);
@@ -207,6 +237,7 @@ public class ContactList {
         }
         return result;
     }
+    // [end-hashCode]
 }
 
 

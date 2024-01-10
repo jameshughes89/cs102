@@ -58,7 +58,8 @@ Implementation
 .. literalinclude:: /../main/java/LinkedQueue.java
     :language: java
     :lineno-match:
-    :lines: 10-23
+    :start-after: // [start-class_fields_constructor]
+    :end-before: // [end-class_fields_constructor]
 
 
 * Like the ``Stack`` implementations, the ``LinkedQueue`` implements the ``Queue`` interface
@@ -73,7 +74,8 @@ Implementation
 .. literalinclude:: /../main/java/LinkedQueue.java
     :language: java
     :lineno-match:
-    :lines: 25-40
+    :start-after: // [start-enqueue]
+    :end-before: // [end-enqueue]
 
 
 * The above ``enqueue`` method has some nuance to it
@@ -132,7 +134,8 @@ Enqueuing into a Nonempty Queue
 .. literalinclude:: /../main/java/LinkedQueue.java
     :language: java
     :lineno-match:
-    :lines: 42-63
+    :start-after: // [start-dequeue_first]
+    :end-before: // [end-dequeue_first]
 
 
 

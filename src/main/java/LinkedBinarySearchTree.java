@@ -2,6 +2,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 
+// [start-class_fields_constructor]
 public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements BinarySearchTree<T> {
 
     private int size;
@@ -11,7 +12,9 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
         root = null;
         size = 0;
     }
+    // [end-class_fields_constructor]
 
+    // [start-add]
     @Override
     public boolean add(T element) {
         root = add(element, root);
@@ -38,7 +41,9 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
         }
         return current;
     }
+    // [end-add]
 
+    // [start-remove_public]
     @Override
     public boolean remove(T element) {
         if (!contains(element)) {
@@ -55,6 +60,9 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
         size--;
         return true;
     }
+    // [end-remove_public]
+
+    // [start-remove_private]
 
     /**
      * Helper method for recursive remove.
@@ -79,6 +87,9 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
             return remove(element, current, current.getRight());
         }
     }
+    // [end-remove_private]
+
+    // [start-findReplacementNode]
 
     /**
      * Helper method for finding which node should be used to replace a node being removed.
@@ -121,7 +132,9 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
         }
         return replacementNode;
     }
+    // [end-findReplacementNode]
 
+    // [start-removeMin]
     @Override
     public T removeMin() {
         T returnElement = null;
@@ -152,6 +165,9 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
             return removeMin(current, current.getLeft());
         }
     }
+    // [end-removeMin]
+
+    // [start-removeMax]
 
     /**
      * An iterative implementation of finding the maximum element in a binary search tree. This method could be
@@ -182,7 +198,9 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
         size--;
         return returnElement;
     }
+    // [end-removeMax]
 
+    // [start-min_max]
     @Override
     public T min() {
         if (isEmpty()) {
@@ -221,7 +239,9 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
             return current.getData();
         }
     }
+    // [end-min_max]
 
+    // [start-contains]
     @Override
     public boolean contains(T element) {
         return binarySearch(element, root) != null;
@@ -249,7 +269,9 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
             }
         }
     }
+    // [end-contains]
 
+    // [start-count]
     @Override
     public int count(T element) {
         if (isEmpty()) {
@@ -279,6 +301,7 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
             return count(element, current.getRight());
         }
     }
+    // [end-count]
 
     @Override
     public boolean isEmpty() {
@@ -439,6 +462,8 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
         return result;
     }
 
+    // [start-nested_node_class]
+
     /**
      * A node class for a linked binary tree structure. Each node contains a nullable reference to data of type T, and a
      * reference to the left and right child nodes, which may be null references.
@@ -484,5 +509,6 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
             this.right = right;
         }
     }
+    // [end-nested_node_class]
 }
 

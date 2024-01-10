@@ -1,6 +1,8 @@
 import java.util.NoSuchElementException;
 import java.util.Objects;
 
+// [start-class_fields_constructor]
+
 /**
  * Implementation of a queue with a linked structure as the container. The class contains a static inner class defining
  * a node for the linked structure.
@@ -21,7 +23,9 @@ public class LinkedQueue<T> implements Queue<T> {
         rear = null;
         size = 0;
     }
+    // [end-class_fields_constructor]
 
+    // [start-enqueue]
     @Override
     public boolean enqueue(T element) {
         Node<T> toEnqueue = new Node<>(element);
@@ -38,7 +42,9 @@ public class LinkedQueue<T> implements Queue<T> {
         size++;
         return true;
     }
+    // [end-enqueue]
 
+    // [start-dequeue_first]
     @Override
     public T dequeue() {
         if (isEmpty()) {
@@ -61,6 +67,7 @@ public class LinkedQueue<T> implements Queue<T> {
         }
         return front.getData();
     }
+    // [end-dequeue_first]
 
     @Override
     public boolean isEmpty() {
