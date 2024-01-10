@@ -27,7 +27,7 @@ public class ContactList {
     /**
      * Create an empty ContactList with the array container's capacity being set to the specified size.
      *
-     * @param initialCapacity Starting capacity of the fixed length array.
+     * @param initialCapacity Starting capacity of the fixed length array
      */
     public ContactList(int initialCapacity) {
         size = 0;
@@ -40,8 +40,8 @@ public class ContactList {
     /**
      * Add a new friend to the ContactList.
      *
-     * @param friend Friend object to add to the ContactList.
-     * @return True if the friend was added successfully, false otherwise.
+     * @param friend Friend object to add to the ContactList
+     * @return True if the friend was added successfully, false otherwise
      */
     public boolean add(Friend friend) {
         // If we have run out of space in our array we need to deal with it by making a new array
@@ -77,8 +77,8 @@ public class ContactList {
     /**
      * Check if a given Friend object exists within the collection.
      *
-     * @param friend Friend object to check if it exists within the collection.
-     * @return True if the Friend exists within the collection, false otherwise.
+     * @param friend Friend object to check if it exists within the collection
+     * @return True if the Friend exists within the collection, false otherwise
      */
     public boolean contains(Friend friend) {
         return find(friend) != NOT_FOUND;
@@ -88,8 +88,8 @@ public class ContactList {
      * Private helper method to find and return the index of a given Friend object within the collection. If no such
      * Friend exists within the collection, a sentinel value of -1 (NOT_FOUND constant) is returned.
      *
-     * @param friend Friend to find the index of.
-     * @return Index of the Friend within the collection, or -1 (NOT_FOUND constant) if no such Friend exists.
+     * @param friend Friend to find the index of
+     * @return Index of the Friend within the collection, or -1 (NOT_FOUND constant) if no such Friend exists
      */
     private int find(Friend friend) {
         // Linear search for the friend we are trying to find
@@ -109,9 +109,9 @@ public class ContactList {
      * Return the index of the specified Friend object within the collection. If no such Friend exists within the
      * collection, a NoSuchElementException is thrown.
      *
-     * @param friend Friend object to find the index of within the collection.
-     * @return Index of the Friend object.
-     * @throws NoSuchElementException If no equal Friend object exists within the collection, throw an exception.
+     * @param friend Friend object to find the index of within the collection
+     * @return Index of the Friend object
+     * @throws NoSuchElementException If no equal Friend object exists within the collection, throw an exception
      */
     public int indexOf(Friend friend) {
         if (!contains(friend)) {
@@ -127,9 +127,9 @@ public class ContactList {
      * Return the Friend object at the specified index. If the provided index is out of bounds an
      * IndexOutOfBoundsException is thrown.
      *
-     * @param index Index of the Friend object to be returned.
-     * @return Friend object at the specified index.
-     * @throws IndexOutOfBoundsException If an invalid index is provided (negative, or too large).
+     * @param index Index of the Friend object to be returned
+     * @return Friend object at the specified index
+     * @throws IndexOutOfBoundsException If an invalid index is provided (negative, or too large)
      */
     public Friend get(int index) {
         if (index < 0 || index >= size()) {
@@ -146,8 +146,8 @@ public class ContactList {
      * being replaced in the  collection with the Friend object at the end of the collection. This, remove does not
      * preserve the order of the Friend objects within the collection.
      *
-     * @param friend Friend object to remove from the collection.
-     * @return True if the object was successfully removed, false otherwise.
+     * @param friend Friend object to remove from the collection
+     * @return True if the object was successfully removed, false otherwise
      */
     public boolean remove(Friend friend) {
         if (!contains(friend)) {
@@ -194,7 +194,7 @@ public class ContactList {
      * string representations of each of the Friend objects within the ContactList. Each Friend object's string will
      * be on its own line. If the ContactList is empty, an empty string is returned.
      *
-     * @return String representation of the ContactList.
+     * @return String representation of the ContactList
      */
     public String toString() {
         StringBuilder builder = new StringBuilder();
@@ -212,8 +212,8 @@ public class ContactList {
      * Checks if two ContactList objects are equal. ContactList objects are considered equal if the contents of their
      * friends field, an array, are all equal.
      *
-     * @param o an "object" being compared to.
-     * @return True if the two objects are equal, false otherwise.
+     * @param o an "object" being compared to
+     * @return True if the two objects are equal, false otherwise
      */
     @Override
     public boolean equals(Object o) {

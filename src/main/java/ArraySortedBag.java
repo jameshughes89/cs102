@@ -9,7 +9,7 @@ import java.util.Objects;
  * Implementation of a SortedBag with an array as the container. The array container will automatically "grow" to
  * accommodate adding beyond the initial capacity.
  *
- * @param <T> Type of elements that are to be in the SortedBag.
+ * @param <T> Type of elements that are to be in the SortedBag
  */
 public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBag<T> {
 
@@ -28,7 +28,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
     /**
      * Create an empty ArraySortedBag with the specified capacity.
      *
-     * @param initialCapacity Starting capacity of the fixed length array.
+     * @param initialCapacity Starting capacity of the fixed length array
      */
     @SuppressWarnings("unchecked")
     public ArraySortedBag(int initialCapacity) {
@@ -41,7 +41,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
      * Shifts elements in an array down (towards index 0) to the starting index specified. The element at the starting
      * index will be overwritten.
      *
-     * @param start Index of element to be overwritten and where shifting moves down to.
+     * @param start Index of element to be overwritten and where shifting moves down to
      */
     private void shiftLeft(int start) {
         for (int i = start; i < rear - 1; i++) {
@@ -55,7 +55,7 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
      * at the specified starting index will be open. This method assumes there is room in the array to facilitate the
      * shifting.
      *
-     * @param start Index of where the array has a new open location and where shifting moves up from.
+     * @param start Index of where the array has a new open location and where shifting moves up from
      */
     private void shiftRight(int start) {
         for (int i = rear; i > start; i--) {
@@ -68,8 +68,8 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
      * Find and return the index of a given target element within the collection. If no such element exists within the
      * collection, a sentinel value of -1 (NOT_FOUND constant) is returned.
      *
-     * @param element Element to find the index of.
-     * @return Index of the target element within the collection, or -1 (NOT_FOUND constant) if no such element exists.
+     * @param element Element to find the index of
+     * @return Index of the target element within the collection, or -1 (NOT_FOUND constant) if no such element exists
      */
     private int find(T element) {
         int searchIndex = 0;
@@ -101,8 +101,8 @@ public class ArraySortedBag<T extends Comparable<? super T>> implements SortedBa
      * Linear search through the bag to find the index of where the element should be inserted. If equal elements
      * exist within the collection, the returned index will be after the existing equal elements.
      *
-     * @param element Item to be inserted.
-     * @return Index where the element should be inserted.
+     * @param element Item to be inserted
+     * @return Index where the element should be inserted
      */
     private int findInsertIndex(T element) {
         int searchIndex = 0;
