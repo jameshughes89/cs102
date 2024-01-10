@@ -43,11 +43,9 @@ Throwing an Exception
 =====================
 
 * Several methods written so far have thrown exceptions
-* Below is the ``remove`` method from the ``ArraySortedBag`` implementation
+* Below are the ``remove`` and ``removeFirst`` methods from the ``ArraySortedBag`` implementation
 
-    * ``remove`` may throw an exception when removing from an empty bag, or if the element does not exist within the bag
-    * Both cases throw a ``NoSuchElementException``
-    * The only difference is the string provided to the constructor of the exception --- the  *message*
+    * ``remove`` does not throw an exception, but ``removeFirst`` will if trying to remove from an empty bag
 
 
 .. literalinclude:: /../main/java/ArraySortedBag.java
@@ -57,44 +55,51 @@ Throwing an Exception
     :end-before: // [end-remove_removeFirst]
 
 
-.. note::
-
-    Although the ``remove`` method is throwing two possible exceptions of the same type, methods can throw exceptions of
-    different types. For example, there could be a case where a certain condition would throw a
-    ``NoSuchElementException`` and another condition when a ``ArrayIndexOutOfBoundsException`` would be thrown.
-
-
-* In the ``remove`` example, the exception being thrown, ``NoSuchElementException``,  is a subclass of ``RuntimeException``
+* The exception being thrown by ``removeFirst``, ``NoSuchElementException``,  is a subclass of ``RuntimeException``
 
     * It is an unchecked exception, so the method does not need to include a ``throws NoSuchElementException`` in the method signature
 
 
-* The motivation for using an exception here is that if someone tries to ``remove`` from an empty bag, or if the element does not exist within the bag, what should happen?
-* This is going to be situational
+* The motivation for using an exception in ``removeFirst`` is, when removing from an empty bag, what should happen?
 
     * Perhaps this means some critical error happened and the program must stop immediately
     * Or maybe the program using the bag can just ignore the exception and carry on
 
 
 * Either way, as the writers of the ``ArraySortedBag``, it is not possible to know how the user of the ``ArraySortedBag`` should address the situation
-* All that can be done is to throw the exception to inform the user of the ``ArraySortedBag`` that something exceptional happened
+* All that can be done is to throw the exception to inform the user that something exceptional happened
 
+* One may wonder why the more general ``remove`` does not throw an exception
+* This is because
+
+    #. The return type of the general ``remove`` is a ``boolean``
+
+        * ``false`` is a reasonable value to return to communicate that the ``remove`` was not successful
+
+
+    #. The expected return value of ``removeFirst`` is type ``T`` --- the actual first thing in the bag
+
+        * There is no obvious explicit way to communicate a failure with the returned value
+        * One *could* return null or some other special value, but exceptions are a more appropriate tool for this scenario
+
+
+    #. `Conforms to Java's collection interface <https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Collection.html#remove(java.lang.Object)>`_
+
+
+* Ultimately, however, it would not be *wrong* to have the general ``remove`` throw an exception in this situation
+
+    * In the end it is a design decision
 
 
 Messages
 --------
 
-* Notice the strings provided the the exceptions' constructors
+* Notice the string provided the the exception's constructors
 
     * ``"Empty bag"``
-    * ``Objects.toString(element)``
 
 
-* These strings are the *messages* the exceptions provide to give details on the exception
-
-    * Without them, if ``remove`` threw a ``NoSuchElementException``, it would not be possible to know what caused it
-
-
+* The string is the *message* the exception provide to give details on the exceptional situation
 * Consider how an ``ArrayIndexOutOfBoundsException`` provides details on the index used that caused the exception
 
 
