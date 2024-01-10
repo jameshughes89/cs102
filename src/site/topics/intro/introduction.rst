@@ -281,7 +281,7 @@ Can we Write Code Now?
 For Next Time
 =============
 
-* Get your computer at home :doc:`set up for CS 162 </getting-set/getting-set>`
+* Get your computer at home :doc:`set up for the course </getting-set/getting-set>`
 * Read Chapter 1 of your text
 
     * 15 pages
