@@ -148,7 +148,7 @@ Kattis
 #. If not already done, create a *Kattis* account
 
     * https://open.kattis.com/
-    * Specify our university as the institution
+    * Specify our school as the institution
 
 #. Login to Kattis
 #. https://open.kattis.com/problems/hello
