@@ -13,8 +13,8 @@ The goal is to create a collection of ``Country`` objects. The collection, calle
 functionality to store (add/remove) the ``Country`` objects in addition to making inquiries about the data in the
 collection.
 
-Effectively, the idea is to recreate your assignment 4 from CSCI 161, but in Java. Be aware that the assignment is not
-identical and the requirements outlined here will be what is required.
+Effectively, the idea is to recreate your assignment 4 written in Python from the previous course, but in Java. Be aware
+that the assignment is not identical and the requirements outlined here will be what is required.
 
 You will
 
@@ -303,10 +303,10 @@ There are no unit tests for ``main``. To test it, simply run it and check if it 
 
 .. note::
 
-    In CSCI 161, most file IO was done by reading/writing a single line at a time from/to the file. It is entirely
-    possible to read/write one line at a time in Java, but here, when reading from a file, notice that the whole
-    contents of the file is read as a single string and then parsed. Similarly, when writing to a file, the whole string
-    is created before it is written to the file as a single string.
+    In the Python implementation in the previous course, most file IO was done by reading/writing a single line at a
+    time from/to the file. It is entirely possible to read/write one line at a time in Java, but here, when reading from
+    a file, notice that the whole contents of the file is read as a single string and then parsed. Similarly, when
+    writing to a file, the whole string is created before it is written to the file as a single string.
 
 
 .. note::
