@@ -27,10 +27,10 @@ A ``Course`` is a simple object to keeps track of data.
 
 #. Create a class called ``Course`` that has three private fields: ``programCode``, ``courseCode``, and ``courseTitle``
 
-    * For example, this course would have the following values for the fields
+    * For example, a data structures course could have the following values for the fields
 
-        * ``programCode`` --- ``"CSCI"``
-        * ``courseCode`` --- ``"162"``
+        * ``programCode`` --- ``"CS"``
+        * ``courseCode`` --- ``"102"``
         * ``courseTitle`` --- ``"Programming and Data Structures"``
 
 
