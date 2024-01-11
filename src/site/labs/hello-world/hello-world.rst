@@ -30,7 +30,7 @@ Creating a Project
             :width: 500 px
             :align: center
 
-            New project screen with appropriate settings selected. This figures shows the project named "csci162-labs"
+            New project screen with appropriate settings selected. This figures shows the project named "cs-labs"
             being created and saved to the desktop, but it is recommended to save the project to a more fitting
             location.
 
@@ -41,7 +41,7 @@ Creating a Project
             :width: 600 px
             :align: center
 
-            IntelliJ displaying the contents of a new project called "csci162-labs".
+            IntelliJ displaying the contents of a new project called "cs-labs".
 
 
 #. Add a Java class to the project
