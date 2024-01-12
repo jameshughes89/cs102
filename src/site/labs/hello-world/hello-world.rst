@@ -115,7 +115,7 @@ Kattis
     Don't know how to do things in Java?
 
         * :doc:`Introduction topic </topics/intro/introduction>`
-        * :doc:`Java vs. Python topic </topics/java-vs-python/java-vs-python>`.
+        * :doc:`Java vs. Python topic </topics/java-vs-python/java-vs-python>`
 
 
     Still stumped?
