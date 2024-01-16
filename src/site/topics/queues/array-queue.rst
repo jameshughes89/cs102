@@ -413,7 +413,7 @@ Implementing a Queue --- Array Container
 * The ``expandCapacity`` used here is different from earlier versions
 * First, notice that the copying is from index ``front`` to ``i``
 
-    * Previously, for the ``ArrayStack``, ``newStack[i] = stack[i]``
+    * Previously, for the ``ArrayStack``, ``newStack[i] = oldStack[i]``
 
 
 * Each time the loop updates both ``i`` and ``front``
