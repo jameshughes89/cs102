@@ -22,22 +22,18 @@ public class ContactListEqualsTest {
         ContactList manyC = ofCapacity(new Friend("Bob", "Smith", "bsmith@gmail.com"),
                 new Friend("Jane", "Doe", "jdoe@gmail.com"),
                 new Friend("Clarence", "Cartwrite", "treelover1523@hotmail.com"));
-
-
+        
         ContactList unequalDifferentFriends = of(
                 new Friend("Sandy", "Seaside", "boatsboatsboats@yachtclub500.com"),
                 new Friend("Adam", "Fluffson", "fluffyman28@hotmail.com"),
                 new Friend("Adrian", "Andrews", "aandrews@hotmail.com"));
-
         ContactList unequalDifferentOrder = of(
                 new Friend("Clarence", "Cartwrite", "treelover1523@hotmail.com"),
                 new Friend("Jane", "Doe", "jdoe@gmail.com"),
                 new Friend("Bob", "Smith", "bsmith@gmail.com"));
-
         ContactList unequalDifferentSize = of(
                 new Friend("Bob", "Smith", "bsmith@gmail.com"),
                 new Friend("Jane", "Doe", "jdoe@gmail.com"));
-
         ContactList unequalSomeEqualFriends = of(
                 new Friend("Bob", "Smith", "bsmith@gmail.com"),
                 new Friend("Jane", "Doe", "jdoe@gmail.com"),

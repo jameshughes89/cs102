@@ -19,13 +19,9 @@ class ArrayStackEqualsTest {
         ArrayStack<Integer> manyB = of(10, 20, 30);
         ArrayStack<Integer> manyC = ofCapacity(10, 20, 30);
 
-
         ArrayStack<Integer> unequalDifferentValues = of(110, 120, 130);
-
         ArrayStack<Integer> unequalDifferentOrder = of(30, 20, 10);
-
         ArrayStack<Integer> unequalDifferentSizes = of(10, 20);
-
         ArrayStack<Integer> unequalSomeEqual = of(20, 30, 40);
 
         new EqualsTester().addEqualityGroup(ArrayStack.class)
