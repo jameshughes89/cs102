@@ -198,7 +198,7 @@ Constructors
 
         * Make a new and larger array
         * Copy the contents of the old ``stack`` array to the new array
-        * Set the field ``stack`` to reference the new larger array
+        * Return the new array
 
 
 

@@ -46,7 +46,7 @@ public class ContactList {
     public boolean add(Friend friend) {
         // If we have run out of space in our array we need to deal with it by making a new array
         if (size() == friends.length) {
-            expandCapacity();
+            friends = expandCapacity(friends);
         }
         // Add friend to the next available spot
         friends[size] = friend;
@@ -57,18 +57,18 @@ public class ContactList {
     /**
      * Private helper method for making room in the collection for new Friend objects. This method creates a new Friend
      * array twice the size of the original (this.friends), copies over the contents of the original Friends array in
-     * order, and then assigns the friends class attribute to reference the new, bigger friends array.
+     * order, and then returns the new, bigger friends array.
      */
-    private void expandCapacity() {
+    private Friend[] expandCapacity(Friend[] oldFriends) {
         // Make a new array of twice the size of the previous
-        Friend[] newFriends = new Friend[friends.length * 2];
+        Friend[] newFriends = new Friend[oldFriends.length * 2];
 
         // Copy over the contents of the friends array to the new bigger friends array
-        for (int i = 0; i < friends.length; i++) {
-            newFriends[i] = friends[i];
+        for (int i = 0; i < oldFriends.length; i++) {
+            newFriends[i] = oldFriends[i];
         }
         // Have friends now reference the new friends
-        friends = newFriends;
+        return newFriends;
     }
     // [end-add]
 
