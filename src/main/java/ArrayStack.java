@@ -52,8 +52,8 @@ public class ArrayStack<T> implements Stack<T> {
     }
 
     /**
-     * Returns a new array double the size of the stack array container and copy the contents from the old array to the
-     * new array.
+     * Returns a new array with double the size of the stack array container and copy the contents from the old array to
+     * the new array.
      */
     @SuppressWarnings("unchecked")
     private T[] expandCapacity(T[] oldStack) {

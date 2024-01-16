@@ -51,9 +51,9 @@ public class ArrayQueue<T> implements Queue<T> {
     // [start-expandCapacity]
 
     /**
-     * Returns a new array double the size of the queue array container and copy the contents from the old array to the
-     * new array. Note that the elements are copied to the beginning (index 0) of the new array and the front and rear
-     * fields are updated.
+     * Returns a new array with double the size of the queue array container and copy the contents from the old array to
+     * the new array. Note that the elements are copied to the beginning (index 0) of the new array and the front and
+     * rear fields are updated.
      */
     @SuppressWarnings("unchecked")
     private T[] expandCapacity(T[] oldQueue) {
