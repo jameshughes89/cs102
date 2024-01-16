@@ -44,7 +44,7 @@ public class ArrayStack<T> implements Stack<T> {
     @Override
     public boolean push(T element) {
         if (size() == stack.length) {
-            expandCapacity();
+            stack = expandCapacity(stack);
         }
         stack[top] = element;
         top++;
@@ -52,15 +52,16 @@ public class ArrayStack<T> implements Stack<T> {
     }
 
     /**
-     * Doubles the size of the stack array container and copy the contents from the old array to the new array.
+     * Returns a new array double the size of the stack array container and copy the contents from the old array to the
+     * new array.
      */
     @SuppressWarnings("unchecked")
-    private void expandCapacity() {
-        T[] newStack = (T[]) new Object[stack.length * 2];
-        for (int i = 0; i < stack.length; i++) {
-            newStack[i] = stack[i];
+    private T[] expandCapacity(T[] oldStack) {
+        T[] newStack = (T[]) new Object[oldStack.length * 2];
+        for (int i = 0; i < oldStack.length; i++) {
+            newStack[i] = oldStack[i];
         }
-        stack = newStack;
+        return newStack;
     }
     // [end-push]
 

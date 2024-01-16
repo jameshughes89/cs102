@@ -39,7 +39,7 @@ public class ArrayQueue<T> implements Queue<T> {
     @Override
     public boolean enqueue(T element) {
         if (size == queue.length) {
-            expandCapacity();
+            queue = expandCapacity(queue);
         }
         queue[rear] = element;
         rear = nextIndex(rear);
@@ -51,20 +51,20 @@ public class ArrayQueue<T> implements Queue<T> {
     // [start-expandCapacity]
 
     /**
-     * Doubles the size of the queue array container and copy the contents from the old array to the new array. Note
-     * that the elements are copied to the beginning (index 0) of the new array and the front and rear fields are
-     * updated.
+     * Returns a new array double the size of the queue array container and copy the contents from the old array to the
+     * new array. Note that the elements are copied to the beginning (index 0) of the new array and the front and rear
+     * fields are updated.
      */
     @SuppressWarnings("unchecked")
-    private void expandCapacity() {
-        T[] newQueue = (T[]) new Object[queue.length * 2];
-        for (int i = 0; i < queue.length; i++) {
-            newQueue[i] = queue[front];
+    private T[] expandCapacity(T[] oldQueue) {
+        T[] newQueue = (T[]) new Object[oldQueue.length * 2];
+        for (int i = 0; i < oldQueue.length; i++) {
+            newQueue[i] = oldQueue[front];
             front = nextIndex(front);
         }
         front = 0;
         rear = size();
-        queue = newQueue;
+        return newQueue;
     }
     // [end-expandCapacity]
 
