@@ -6,48 +6,22 @@ class ArrayStackEqualsTest {
     @Test
     @SuppressWarnings("UnstableApiUsage")
     public void equals_verify_contract() {
-        ArrayStack<Integer> emptyA = new ArrayStack<>();
-        ArrayStack<Integer> emptyB = new ArrayStack<>();
-        ArrayStack<Integer> emptyC = new ArrayStack<>(1000);
+        ArrayStack<Integer> emptyA = of();
+        ArrayStack<Integer> emptyB = of();
+        ArrayStack<Integer> emptyC = ofCapacity();
 
-        ArrayStack<Integer> singletonA = new ArrayStack<>();
-        ArrayStack<Integer> singletonB = new ArrayStack<>();
-        ArrayStack<Integer> singletonC = new ArrayStack<>(1000);
-        singletonA.push(10);
-        singletonB.push(10);
-        singletonC.push(10);
+        ArrayStack<Integer> singletonA = of(10);
+        ArrayStack<Integer> singletonB = of(10);
+        ArrayStack<Integer> singletonC = ofCapacity(10);
 
-        ArrayStack<Integer> manyA = new ArrayStack<>();
-        ArrayStack<Integer> manyB = new ArrayStack<>();
-        ArrayStack<Integer> manyC = new ArrayStack<>(1000);
-        manyA.push(10);
-        manyA.push(20);
-        manyA.push(30);
-        manyB.push(10);
-        manyB.push(20);
-        manyB.push(30);
-        manyC.push(10);
-        manyC.push(20);
-        manyC.push(30);
+        ArrayStack<Integer> manyA = of(10, 20, 30);
+        ArrayStack<Integer> manyB = of(10, 20, 30);
+        ArrayStack<Integer> manyC = ofCapacity(10, 20, 30);
 
-        ArrayStack<Integer> unequalDifferentValues = new ArrayStack<>();
-        unequalDifferentValues.push(110);
-        unequalDifferentValues.push(120);
-        unequalDifferentValues.push(130);
-
-        ArrayStack<Integer> unequalDifferentOrder = new ArrayStack<>();
-        unequalDifferentOrder.push(30);
-        unequalDifferentOrder.push(20);
-        unequalDifferentOrder.push(10);
-
-        ArrayStack<Integer> unequalDifferentSizes = new ArrayStack<>();
-        unequalDifferentSizes.push(10);
-        unequalDifferentSizes.push(20);
-
-        ArrayStack<Integer> unequalSomeEqual = new ArrayStack<>();
-        unequalSomeEqual.push(20);
-        unequalSomeEqual.push(30);
-        unequalSomeEqual.push(40);
+        ArrayStack<Integer> unequalDifferentValues = of(110, 120, 130);
+        ArrayStack<Integer> unequalDifferentOrder = of(30, 20, 10);
+        ArrayStack<Integer> unequalDifferentSizes = of(10, 20);
+        ArrayStack<Integer> unequalSomeEqual = of(20, 30, 40);
 
         new EqualsTester().addEqualityGroup(ArrayStack.class)
                 .addEqualityGroup(emptyA, emptyB, emptyC)
@@ -58,5 +32,21 @@ class ArrayStackEqualsTest {
                 .addEqualityGroup(unequalDifferentSizes)
                 .addEqualityGroup(unequalSomeEqual)
                 .testEquals();
+    }
+
+    private <T> ArrayStack<T> of(T... ts) {
+        ArrayStack<T> stack = new ArrayStack<>();
+        for (T element : ts) {
+            stack.push(element);
+        }
+        return stack;
+    }
+
+    private <T> ArrayStack<T> ofCapacity(T... ts) {
+        ArrayStack<T> stack = new ArrayStack<>(1000);
+        for (T element : ts) {
+            stack.push(element);
+        }
+        return stack;
     }
 }

@@ -6,42 +6,19 @@ class LinkedQueueEqualsTest {
     @Test
     @SuppressWarnings("UnstableApiUsage")
     public void equals_verify_contract() {
-        LinkedQueue<Integer> emptyA = new LinkedQueue<>();
-        LinkedQueue<Integer> emptyB = new LinkedQueue<>();
+        LinkedQueue<Integer> emptyA = of();
+        LinkedQueue<Integer> emptyB = of();
 
-        LinkedQueue<Integer> singletonA = new LinkedQueue<>();
-        LinkedQueue<Integer> singletonB = new LinkedQueue<>();
-        singletonA.enqueue(10);
-        singletonB.enqueue(10);
+        LinkedQueue<Integer> singletonA = of(10);
+        LinkedQueue<Integer> singletonB = of(10);
 
+        LinkedQueue<Integer> manyA = of(10, 20, 30);
+        LinkedQueue<Integer> manyB = of(10, 20, 30);
 
-        LinkedQueue<Integer> manyA = new LinkedQueue<>();
-        LinkedQueue<Integer> manyB = new LinkedQueue<>();
-        manyA.enqueue(10);
-        manyA.enqueue(20);
-        manyA.enqueue(30);
-        manyB.enqueue(10);
-        manyB.enqueue(20);
-        manyB.enqueue(30);
-
-        LinkedQueue<Integer> unequalDifferentValues = new LinkedQueue<>();
-        unequalDifferentValues.enqueue(110);
-        unequalDifferentValues.enqueue(120);
-        unequalDifferentValues.enqueue(130);
-
-        LinkedQueue<Integer> unequalDifferentOrder = new LinkedQueue<>();
-        unequalDifferentOrder.enqueue(30);
-        unequalDifferentOrder.enqueue(20);
-        unequalDifferentOrder.enqueue(10);
-
-        LinkedQueue<Integer> unequalDifferentSizes = new LinkedQueue<>();
-        unequalDifferentSizes.enqueue(10);
-        unequalDifferentSizes.enqueue(20);
-
-        LinkedQueue<Integer> unequalSomeEqual = new LinkedQueue<>();
-        unequalSomeEqual.enqueue(20);
-        unequalSomeEqual.enqueue(30);
-        unequalSomeEqual.enqueue(40);
+        LinkedQueue<Integer> unequalDifferentValues = of(110, 120, 130);
+        LinkedQueue<Integer> unequalDifferentOrder = of(30, 20, 10);
+        LinkedQueue<Integer> unequalDifferentSizes = of(10, 20);
+        LinkedQueue<Integer> unequalSomeEqual = of(20, 30, 40);
 
         new EqualsTester().addEqualityGroup(LinkedQueue.class)
                 .addEqualityGroup(emptyA, emptyB)
@@ -52,5 +29,13 @@ class LinkedQueueEqualsTest {
                 .addEqualityGroup(unequalDifferentSizes)
                 .addEqualityGroup(unequalSomeEqual)
                 .testEquals();
+    }
+
+    private <T> LinkedQueue<T> of(T... ts) {
+        LinkedQueue<T> queue = new LinkedQueue<>();
+        for (T element : ts) {
+            queue.enqueue(element);
+        }
+        return queue;
     }
 }
