@@ -3,7 +3,7 @@ Playing with Objects is Still Fun
 *********************************
 
 * **Worth**: 5%
-* **DUE**: TBD 11:55pm; submitted on MOODLE.
+* **DUE**: January 29, 11:55pm; submitted on MOODLE.
 
 
 Task
@@ -98,8 +98,14 @@ instances of the ``Country`` class.
 
 
 #. Write accessor/getter methods for each class field
+
+    * Call these methods ``getX`` where ``X`` is the name specific field
+    * For example, ``getArea`` would return the field ``area``
+
+
 #. Write a method to calculate and return the population density (``population/area``)
 
+    * Call this method ``populationDensity``
     * With floating point numbers (doubles included), division by zero results in a special value --- ``Infinity``
     * If this method is called on a ``Country`` object with an ``area`` of zero, it should return ``Infinity``
     * In other words, this method should not perform any special check for ``area`` being zero
