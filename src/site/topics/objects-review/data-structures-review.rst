@@ -98,6 +98,23 @@ Setting Fields and Writing the Constructor
 
 
 
+``size`` and ``isEmpty``
+------------------------
+
+.. literalinclude:: /../main/java/ContactList.java
+    :language: java
+    :lineno-match:
+    :start-after: // [start-isEmpty_size]
+    :end-before: // [end-isEmpty_size]
+
+
+* ``isEmpty`` returns a ``boolean`` indicating if the ``ContactList`` is empty or not
+* The ``size`` method returns the number of ``Friends`` actually within the ``ContactList``
+
+    * Remember, the size of the array and the number of ``Friends`` in the ``ContactList`` are different things
+
+
+
 ``add``
 -------
 
@@ -279,22 +296,6 @@ Setting Fields and Writing the Constructor
 * Since the old array referenced by ``friends`` has no more reference to it, it get managed by the garbage collector
 * One could have gone through the array and set each index to reference ``null``, but this is easier
 * Further, setting the size to ``0`` would also be sufficient
-
-
-``size`` and ``isEmpty``
-------------------------
-
-.. literalinclude:: /../main/java/ContactList.java
-    :language: java
-    :lineno-match:
-    :start-after: // [start-isEmpty_size]
-    :end-before: // [end-isEmpty_size]
-
-
-* ``isEmpty`` returns a ``boolean`` indicating if the ``ContactList`` is empty or not
-* The ``size`` method returns the number of ``Friends`` actually within the ``ContactList``
-
-    * Remember, the size of the array and the number of ``Friends`` in the ``ContactList`` are different things
 
 
 
