@@ -271,6 +271,22 @@ Explore the Implementation
     node reference variable ``head`` will refer to the node ``someNode``, while the second means that the node
     referenced by ``head``\'s ``next`` node reference will refer to ``someNode``.
 
+    .. figure:: head_equals_someNode.png
+        :width: 333 px
+        :align: center
+
+        Result of ``head = someNode;``. The reference variable ``head`` is updated to reference the node also referenced
+        by the reference variable ``someNode``.
+
+
+    .. figure:: head_set_next_someNode.png
+        :width: 333 px
+        :align: center
+
+        Result of ``head.setNext(someNode);``. The node referenced by ``head`` is updated such that it's ``next`` field
+        refers to the node also referenced by the reference variable ``someNode``.
+
+
 
 Variations
 ==========
