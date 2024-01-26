@@ -230,7 +230,7 @@ public class ContactList {
 
     // [start-hashCode]
     @Override
-    public final int hashCode() {
+    public int hashCode() {
         int result = Objects.hash(this.size);
         for (int i = 0; i < this.size(); i++) {
             result = result * 97 + Objects.hashCode(this.friends[i]);
