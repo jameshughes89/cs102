@@ -1,8 +1,7 @@
+// [start-class_fields_constructor]
 import java.util.Arrays;
 import java.util.NoSuchElementException;
 import java.util.Objects;
-
-// [start-class_fields_constructor]
 
 /**
  * Class to keep track of a collection of Friend objects. The underlying contained for the class is an array that
