@@ -138,7 +138,7 @@ Student Evaluation (Tentative Dates)
       - February 7th, in class
     * - Test 2
       - 20%
-      - End of February-ish
+      - March 13th, in class
     * - Final Exam
       - 40%
       - TBD
