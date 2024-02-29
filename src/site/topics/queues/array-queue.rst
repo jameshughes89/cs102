@@ -233,7 +233,7 @@ Modulo --- ``%``
 
     * ``4 % 2``
 
-        * ``4/2 == 0`` remainder ``0``
+        * ``4/2 == 2`` remainder ``0``
         * Therefore, ``4 % 2`` is ``0``
 
 
