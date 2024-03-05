@@ -18,7 +18,7 @@ Inheritance
     :width: 500 px
     :align: center
 
-    Example class hierarchy for the ``Bag`` class and its subtypes --- ```SortedBag`` and ``IndexedBag``.
+    Example class hierarchy for the ``Bag`` class and its subtypes --- ``SortedBag`` and ``IndexedBag``.
 
 
 * This hierarchical thinking exists in everyday life
@@ -105,15 +105,12 @@ Abstract Class
 
 * The ``AbstractQueue`` has several important concrete methods implemented within the abstract class
 
-    * It also inherits a bunch from superclasses too
-
-
-* ``add``
-
+    * ``add``
     * ``addAll``
     * ``clear``
     * ``element``
     * ``remove``
+    * It also inherits a bunch from superclasses too
 
 
 * The ``PriorityQueue`` class, which ``extends AbstractQueue``, makes direct use of a few of these methods
