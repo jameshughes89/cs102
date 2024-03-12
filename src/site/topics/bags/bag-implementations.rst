@@ -177,7 +177,7 @@ ArraySortedBag
 .. note::
 
     For brevity, only a subset of methods are included below. See the
-    :download:`ArrayIndexedBag </../main/java/ArraySortedBag.java>` class for the full implementation.
+    :download:`ArraySortedBag </../main/java/ArraySortedBag.java>` class for the full implementation.
 
 
 .. literalinclude:: /../main/java/ArraySortedBag.java
