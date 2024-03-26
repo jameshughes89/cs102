@@ -112,7 +112,7 @@ Binary Search
 
 * Imagine looking for page 554 in a roughly 1000 page textbook
 * It would be reasonable to start by opening the textbook somewhere in the middle-ish
-* If the page landed on was page 402, which half of the book must page 553 be in?
+* If the page landed on was page 402, which half of the book must page 554 be in?
 
     * Left set of pages, or right set of pages?
 
