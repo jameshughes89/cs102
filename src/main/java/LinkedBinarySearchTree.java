@@ -228,16 +228,12 @@ public class LinkedBinarySearchTree<T extends Comparable<? super T>> implements 
         if (isEmpty()) {
             throw new NoSuchElementException("Empty Tree");
         }
-        if (root.getRight() == null) {
-            return root.getData();
-        } else {
-            Node<T> current = root.getRight();
-            // Iterate right until right most node is found
-            while (current.getRight() != null) {
-                current = current.getRight();
-            }
-            return current.getData();
+        Node<T> current = root;
+        // Iterate right until right most node is found
+        while (current.getRight() != null) {
+            current = current.getRight();
         }
+        return current.getData();
     }
     // [end-min_max]
 
