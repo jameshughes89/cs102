@@ -405,7 +405,7 @@ Degenerate vs. Balanced
 
 * A *balanced* tree has the property that for any node in the tree, the height of its left and right subtrees can differ by **at most** 1
 
-    * Remember, the height of an empty tree is 0
+    * Remember, the height of an empty tree is -1
 
 
 .. figure:: binary_search_tree_balance.png
@@ -413,7 +413,7 @@ Degenerate vs. Balanced
     :align: center
 
     The left tree is balanced as the heights of all subtrees in the tree differ by no more than 1. The tree on the right
-    is **not** balanced since the root's left subtree has a height of 0 and the right subtree has a height of 2 --- a
+    is **not** balanced since the root's left subtree has a height of -1 and the right subtree has a height of 1 --- a
     difference greater than 1.
 
 
