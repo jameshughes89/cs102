@@ -1,5 +1,5 @@
 ************************
-CSCI 162 --- Winter 2024
+CSCI 162 --- Fall 2024
 ************************
 
 This course emphasizes the use of abstraction in programming. Elementary data structures are introduced (stacks, queues,
@@ -11,10 +11,10 @@ used (e.g. searching and sorting) are used to introduce algorithm analysis.
 Professor
 =========
 
-* Dr. James Hughes
-* jhughes at stfx.ca
-* Annex 20B
-* `YouTube <https://www.youtube.com/channel/UCIruexBZJaawh_9WF_vjTPg>`_
+* Dr. Jean-Alexis Delamer
+* jdelamer at stfx.ca
+* Annex 9C
+.. * `YouTube <https://www.youtube.com/channel/UCIruexBZJaawh_9WF_vjTPg>`_
 
 
 
@@ -36,17 +36,17 @@ GitHub Repo
 Class Times
 ===========
 
-* Tue 11:30 -- 12:20 (K4), MULH 2032
-* Wed 13:30 -- 14:20 (K5), MULH 2032
-* Fri 12:30 -- 13:20 (K6), MULH 2032
+* Tue  9:30 -- 10:20 (L1), MULH 4024
+* Thu  8:30 --  9:20 (L2), MULH 4024
+* Fri 10:30 -- 11:20 (L3), MULH 4024
 
 
 
-Labs
-====
+.. Labs
+.. ====
 
-* Lab Sec 11: Thr 14:30 -- 16:20 (L8-A9), MULH 4024
-* Lab Sec 12: Fri 14:30 -- 16:20 (C9-K9), MULH 4024
+.. * Lab Sec 11: Thr 14:30 -- 16:20 (L8-A9), MULH 4024
+.. * Lab Sec 12: Fri 14:30 -- 16:20 (C9-K9), MULH 4024
 
 
 
@@ -55,9 +55,9 @@ Office Hours
 
 `Office Hours Etiquette --- Don't Do This. <https://www.youtube.com/watch?v=lOTyUfOHgas>`_
 
-* Tue 10:00 -- 11:00, Annex 20B
-* Wed 10:00 -- 11:00, Annex 20B
-* Fri 10:00 -- 11:00, Annex 20B
+* Tue 10:30 -- 11:30, Annex 9C
+* Thu 10:00 -- 11:00, Annex 9C
+* Fri  9:00 -- 10:00, Annex 9C
 
 
 

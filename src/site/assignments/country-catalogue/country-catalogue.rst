@@ -3,7 +3,7 @@ Playing with Objects is Still Fun
 *********************************
 
 * **Worth**: 5%
-* **DUE**: January 29, 11:55pm; submitted on MOODLE.
+* **DUE**: September 27, 11:55pm; submitted on MOODLE.
 
 
 Task
