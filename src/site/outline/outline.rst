@@ -4,8 +4,8 @@ Outline for Computer Science 162 --- Programming and Data Structures
 
 
 
-Winter 2023
-===========
+Fall 2024
+=========
 
 
 
@@ -33,35 +33,36 @@ prerequisites.
 Instructor
 ==========
 
-* Dr. James Hughes
-* Annex 20B
-* jhughes at stfx.ca
+* Dr. Jean-Alexis Delamer
+* jdelamer at stfx.ca
+* Annex 9C
 
 
 
 Class Times
 ===========
 
-* Tue 11:30 -- 12:20 (K4), MULH 2032
-* Wed 13:30 -- 14:20 (K5), MULH 2032
-* Fri 12:30 -- 13:20 (K6), MULH 2032
+* Tue  9:30 -- 10:20 (L1), MULH 4024
+* Thu  8:30 --  9:20 (L2), MULH 4024
+* Fri 10:30 -- 11:20 (L3), MULH 4024
 
 
 
-Lab
-===
+.. Lab
+.. ===
 
-* Lab Sec 11: Thr 14:30 -- 16:20 (L8-A9), MULH 4024
-* Lab Sec 12: Fri 14:30 -- 16:20 (C9-K9), MULH 4024
+.. * Lab Sec 11: Thr 14:30 -- 16:20 (L8-A9), MULH 4024
+.. * Lab Sec 12: Fri 14:30 -- 16:20 (C9-K9), MULH 4024
 
 
 
 Office Hours
 ============
 
-* Tue 10:00 -- 11:00, Annex 20B
-* Wed 10:00 -- 11:00, Annex 20B
-* Fri 10:00 -- 11:00, Annex 20B
+* Tue 10:30 -- 11:30, Annex 9C
+* Thu 10:00 -- 11:00, Annex 9C
+* Fri  9:00 -- 10:00, Annex 9C
+
 
 
 
@@ -123,22 +124,22 @@ Student Evaluation (Tentative Dates)
       - Due Date
     * - Assignment 1
       - 5%
-      - End of January-ish
+      - End of September
     * - Assignment 2
       - 5%
-      - Mid February-ish
+      - Mid October-ish
     * - Assignment 3
       - 5%
-      - Early March-ish
+      - Mid November-ish
     * - Assignment 4
       - 5%
-      - Late March-ish
+      - Early December
     * - Test 1
       - 20%
-      - February 7th, in class
+      - Early October, in class
     * - Test 2
       - 20%
-      - March 13th, in class
+      - Mid-November, in class
     * - Final Exam
       - 40%
       - TBD

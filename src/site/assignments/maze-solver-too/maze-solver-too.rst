@@ -3,7 +3,7 @@ Maze Solver Too --- A Better Path is Also a Path
 ************************************************
 
 * **Worth**: 5%
-* **DUE**: March 18, 11:55pm; submitted on MOODLE
+* **DUE**: November 15, 11:55pm; submitted on MOODLE
 
 
 Task
