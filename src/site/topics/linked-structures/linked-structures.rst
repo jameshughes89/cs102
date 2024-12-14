@@ -13,7 +13,7 @@ Links
     * But the ``expandCapacity`` trick can hide this
 
 
-* When using an array, data may need to me shifted around when adding and/or removing
+* When using an array, data may need to be shifted around when adding and/or removing
 * Traditionally speaking, arrays are in contiguous memory addresses
 
     * The successor value is in the next array cell
