@@ -22,7 +22,7 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-params:5.11.4'
     testImplementation 'org.assertj:assertj-core:3.26.3'
     testImplementation 'nl.jqno.equalsverifier:equalsverifier:3.17.4'
-    testImplementation 'com.google.guava:guava-testlib:33.3.1-jre'
+    testImplementation 'com.google.guava:guava-testlib:33.4.0-jre'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.11.3'
 }
 
