@@ -223,14 +223,13 @@ Labs
 The purpose of the weekly labs is to give students hands-on experience. Labs will have assigned work and will make use
 of `Kattis <https://open.kattis.com/>`_.
 
-Labs begin on the 1st week of class. Lab attendance is mandatory and it is your responsibility to ensure your attendance
-is recorded.
+Labs begin on the 1st week of class. Unless special permission is granted, you may only attend the lab session for which
+you are registered.
 
-You may only attend the lab session for which you are registered. Students must bring their student identification to
-all labs.
-
-There are no make-up labs, and students who are absent for a lab do not have the option of attending another lab.
-Students who encounter serious health or other personal difficulties are encouraged to contact the professor.
+At the end of each lab is a series of Kattis problems. Kattis is a website with programming competition style problems
+where people can submit their solutions for automated evaluation. A select set of Kattis problems related to course
+material are included at the end of each lab for students to work on. It is not necessary to complete all these problems
+for each lab as they can be quite challenging.
 
 
 
