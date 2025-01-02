@@ -4,8 +4,8 @@ Outline for Computer Science 162 --- Programming and Data Structures
 
 
 
-Fall 2024
-=========
+Winter 2025
+===========
 
 
 
@@ -21,7 +21,7 @@ modular development. Credit will be granted for only one of CSCI 162 and INFO 25
 Prerequisites
 =============
 
-CSCI 125 or 161 or ENGR 147.
+CSCI 125 or 161.
 
 Unless you have the prerequisites for this course or written special permission from your Dean to enroll in it, you
 will be removed from this course and it will be deleted from your record. This decision may not be appealed. You will
@@ -33,36 +33,36 @@ prerequisites.
 Instructor
 ==========
 
-* Dr. Jean-Alexis Delamer
-* jdelamer at stfx.ca
-* Annex 9C
+* Dr. James Hughes
+* jhughes at stfx.ca
+* Annex 20B
 
 
 
 Class Times
 ===========
 
-* Tue  9:30 -- 10:20 (L1), MULH 4024
-* Thu  8:30 --  9:20 (L2), MULH 4024
-* Fri 10:30 -- 11:20 (L3), MULH 4024
+* Tue 11:30 -- 12:20 (K4), MULH 4024
+* Wed 13:30 -- 14:20 (K5), MULH 4024
+* Fri 12:30 -- 13:20 (K6), MULH 4024
 
 
 
-.. Lab
-.. ===
+Lab
+====
 
-.. * Lab Sec 11: Thr 14:30 -- 16:20 (L8-A9), MULH 4024
-.. * Lab Sec 12: Fri 14:30 -- 16:20 (C9-K9), MULH 4024
+* Lab Sec 11: Thr 14:30 -- 16:20 (L8-A9), MULH 4024
+* Lab Sec 12: Fri 14:30 -- 16:20 (C9-K9), MULH 4024
 
 
 
 Office Hours
 ============
 
-* Tue 10:30 -- 11:30, Annex 9C
-* Thu 10:00 -- 11:00, Annex 9C
-* Fri  9:00 -- 10:00, Annex 9C
-
+* Tue 12:30 -- 13:20, Annex 20B
+* Wed 12:30 -- 13:20, Annex 20B
+* Thu 13:30 -- 14:20, Annex 20B
+* Fri 13:30 -- 14:20, Annex 20B
 
 
 
