@@ -3,7 +3,7 @@
 ****************************************
 
 * **Worth**: 5%
-* **DUE**: December 6, 11:55pm; submitted on MOODLE
+* **DUE**: TBD, 11:55pm; submitted on MOODLE
 
 
 Task
