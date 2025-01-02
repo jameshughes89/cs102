@@ -124,22 +124,22 @@ Student Evaluation (Tentative Dates)
       - Due Date
     * - Assignment 1
       - 5%
-      - End of September
+      - End of January-ish
     * - Assignment 2
       - 5%
-      - Mid October-ish
+      - Mid February-ish
     * - Assignment 3
       - 5%
-      - Mid November-ish
+      - Early March-ish
     * - Assignment 4
       - 5%
-      - Early December
-    * - Test 1
-      - 20%
-      - Early October, in class
-    * - Test 2
-      - 20%
-      - Mid-November, in class
+      - Late March-ish
+    * - Lecture & Lab Activities
+      - 10%
+      - Ongoing, in class
+    * - Midterm
+      - 30%
+      - Mid February-ish, in class
     * - Final Exam
       - 40%
       - TBD
@@ -212,9 +212,8 @@ computers, flashlights or laser pointers.
 Missed Tests
 ------------
 
-There are no make-up tests. If a student is unable to write a test, the weight of their test will be added to the
-following test or final exam, whichever comes first. If both tests are missed, the weight of the tests will be added to
-the final exam.
+There are no make-up tests. If a student does not write the midterm and obtains an approved accommodation, the weight of
+the midterm will be shifted to the final exam.
 
 
 
@@ -232,6 +231,11 @@ all labs.
 
 There are no make-up labs, and students who are absent for a lab do not have the option of attending another lab.
 Students who encounter serious health or other personal difficulties are encouraged to contact the professor.
+
+
+
+Lecture & Lab Activities
+========================
 
 
 
