@@ -4,8 +4,8 @@ Outline for Computer Science 162 --- Programming and Data Structures
 
 
 
-Fall 2024
-=========
+Winter 2025
+===========
 
 
 
@@ -21,7 +21,7 @@ modular development. Credit will be granted for only one of CSCI 162 and INFO 25
 Prerequisites
 =============
 
-CSCI 125 or 161 or ENGR 147.
+CSCI 125 or 161.
 
 Unless you have the prerequisites for this course or written special permission from your Dean to enroll in it, you
 will be removed from this course and it will be deleted from your record. This decision may not be appealed. You will
@@ -33,36 +33,36 @@ prerequisites.
 Instructor
 ==========
 
-* Dr. Jean-Alexis Delamer
-* jdelamer at stfx.ca
-* Annex 9C
+* Dr. James Hughes
+* jhughes at stfx.ca
+* Annex 20B
 
 
 
 Class Times
 ===========
 
-* Tue  9:30 -- 10:20 (L1), MULH 4024
-* Thu  8:30 --  9:20 (L2), MULH 4024
-* Fri 10:30 -- 11:20 (L3), MULH 4024
+* Tue 11:30 -- 12:20 (K4), MULH 4024
+* Wed 13:30 -- 14:20 (K5), MULH 4024
+* Fri 12:30 -- 13:20 (K6), MULH 4024
 
 
 
-.. Lab
-.. ===
+Lab
+====
 
-.. * Lab Sec 11: Thr 14:30 -- 16:20 (L8-A9), MULH 4024
-.. * Lab Sec 12: Fri 14:30 -- 16:20 (C9-K9), MULH 4024
+* Lab Sec 11: Thr 14:30 -- 16:20 (L8-A9), MULH 4024
+* Lab Sec 12: Fri 14:30 -- 16:20 (C9-K9), MULH 4024
 
 
 
 Office Hours
 ============
 
-* Tue 10:30 -- 11:30, Annex 9C
-* Thu 10:00 -- 11:00, Annex 9C
-* Fri  9:00 -- 10:00, Annex 9C
-
+* Tue 12:30 -- 13:20, Annex 20B
+* Wed 12:30 -- 13:20, Annex 20B
+* Thu 13:30 -- 14:20, Annex 20B
+* Fri 13:30 -- 14:20, Annex 20B
 
 
 
@@ -124,22 +124,22 @@ Student Evaluation (Tentative Dates)
       - Due Date
     * - Assignment 1
       - 5%
-      - End of September
+      - End of January-ish
     * - Assignment 2
       - 5%
-      - Mid October-ish
+      - Mid February-ish
     * - Assignment 3
       - 5%
-      - Mid November-ish
+      - Early March-ish
     * - Assignment 4
       - 5%
-      - Early December
-    * - Test 1
-      - 20%
-      - Early October, in class
-    * - Test 2
-      - 20%
-      - Mid-November, in class
+      - Late March-ish
+    * - Lecture & Lab Activities
+      - 10%
+      - Ongoing, in class
+    * - Midterm
+      - 30%
+      - Mid February-ish, in class
     * - Final Exam
       - 40%
       - TBD
@@ -212,9 +212,8 @@ computers, flashlights or laser pointers.
 Missed Tests
 ------------
 
-There are no make-up tests. If a student is unable to write a test, the weight of their test will be added to the
-following test or final exam, whichever comes first. If both tests are missed, the weight of the tests will be added to
-the final exam.
+There are no make-up tests. If a student does not write the midterm and obtains an approved accommodation, the weight of
+the midterm will be shifted to the final exam.
 
 
 
@@ -224,14 +223,49 @@ Labs
 The purpose of the weekly labs is to give students hands-on experience. Labs will have assigned work and will make use
 of `Kattis <https://open.kattis.com/>`_.
 
-Labs begin on the 1st week of class. Lab attendance is mandatory and it is your responsibility to ensure your attendance
-is recorded.
+Labs begin on the 1st week of class. Unless special permission is granted, you may only attend the lab session for which
+you are registered.
 
-You may only attend the lab session for which you are registered. Students must bring their student identification to
-all labs.
+At the end of each lab is a series of Kattis problems. Kattis is a website with programming competition style problems
+where people can submit their solutions for automated evaluation. A select set of Kattis problems related to course
+material are included at the end of each lab for students to work on. It is not necessary to complete all these problems
+for each lab as they can be quite challenging.
 
-There are no make-up labs, and students who are absent for a lab do not have the option of attending another lab.
-Students who encounter serious health or other personal difficulties are encouraged to contact the professor.
+
+
+Lecture & Lab Activities
+========================
+
+A total of 10 lecture & lab activities will take during certain lectures and labs. Each completed activity is worth 1%
+of the final grade.
+
+* The date and time of each activity will be determined *ad hoc*
+* These activities may take place during lecture or lab
+* Questions will be related to important concepts covered in their respective lecture or lab
+* Answers must be written legibly by hand, on a clean letter/A4 size blank paper
+
+    * Paper will not be provided
+    * Students must have their own paper
+
+
+* All submissions must include the student's name, student number, stfx email address, and date
+* All submissions must be made by the student completing the task
+
+    * You may not submit an activity on behalf of another student
+    * Similarly, you may not have another student submit an activity on your behalf
+    * Violations are considered academic misconduct and a grade of 0 will be applied to all lecture & lab activities
+
+* Activities are to be submitted to the lecturer within the allowed time
+
+If any of the requirements are violated, a mark of 0 will be applied to the specific activity. The only exception to
+this is if academic misconduct is detected, in which case a grade of 0 will be applied to the entire lecture and lab
+activity portion of the final grade.
+
+These activities are open book, students are strongly encouraged to collaborate and share ideas, and students may check
+the course content and internet; however, all submitted work must ultimately be done individually.
+
+There are no make-up activities. If a student misses an activity and obtains an approved accommodation, the weight of
+the missed activity will be shifted to the final exam.
 
 
 
