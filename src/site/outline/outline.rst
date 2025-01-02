@@ -237,6 +237,37 @@ Students who encounter serious health or other personal difficulties are encoura
 Lecture & Lab Activities
 ========================
 
+A total of 10 lecture & lab activities will take during certain lectures and labs. Each completed activity is worth 1%
+of the final grade.
+
+* The date and time of each activity will be determined *ad hoc*
+* These activities may take place during lecture or lab
+* Questions will be related to important concepts covered in their respective lecture or lab
+* Answers must be written legibly by hand, on a clean letter/A4 size blank paper
+
+    * Paper will not be provided
+    * Students must have their own paper
+
+
+* All submissions must include the student's name, student number, stfx email address, and date
+* All submissions must be made by the student completing the task
+
+    * You may not submit an activity on behalf of another student
+    * Similarly, you may not have another student submit an activity on your behalf
+    * Violations are considered academic misconduct and a grade of 0 will be applied to all lecture & lab activities
+
+* Activities are to be submitted to the lecturer within the allowed time
+
+If any of the requirements are violated, a mark of 0 will be applied to the specific activity. The only exception to
+this is if academic misconduct is detected, in which case a grade of 0 will be applied to the entire lecture and lab
+activity portion of the final grade.
+
+These activities are open book, students are strongly encouraged to collaborate and share ideas, and students may check
+the course content and internet; however, all submitted work must ultimately be done individually.
+
+There are no make-up activities. If a student misses an activity and obtains an approved accommodation, the weight of
+the missed activity will be shifted to the final exam.
+
 
 
 Email Contact
