@@ -22,7 +22,7 @@ The Queue ADT
     :width: 500 px
     :align: center
 
-    Example of a queue (lineup) of five people. The queue has two ends --- a front and a rear.
+    Example of a queue (lineup) of five ducks. The queue has two ends --- a front and a rear.
 
 
 .. figure:: queue_add.png
