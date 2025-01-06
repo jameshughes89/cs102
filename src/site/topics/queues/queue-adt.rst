@@ -17,15 +17,16 @@ The Queue ADT
 
     * Assuming people were following the rules and not cutting in line
 
+
 .. figure:: queue.png
-    :width: 300 px
+    :width: 500 px
     :align: center
 
     Example of a queue (lineup) of five people. The queue has two ends --- a front and a rear.
 
 
 .. figure:: queue_add.png
-    :width: 500 px
+    :width: 600 px
     :align: center
 
     Adding (enqueuing) to the rear of the queue.
