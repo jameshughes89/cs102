@@ -46,7 +46,7 @@ Stack
     :width: 500 px
     :align: center
 
-    Adding a plate to the top of a stack of plates.
+    Adding a pancake to the top of a stack of pancakes.
 
 
 * Adding and removing data from a stack happens from one end
