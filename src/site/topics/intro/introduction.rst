@@ -52,7 +52,7 @@ Queues
 * First person in the line will be the first person served
 
 .. figure:: /topics/queues/queue_example.png
-    :width: 666 px
+    :width: 500 px
     :align: center
 
     A first come first served queue/line.
