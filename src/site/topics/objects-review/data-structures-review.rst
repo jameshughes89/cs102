@@ -134,7 +134,7 @@ Setting Fields and Writing the Constructor
 
 
 .. figure:: expand_capacity.png
-    :width: 600 px
+    :width: 666 px
     :align: center
 
     "Expanding" the capacity. No array actually grows, but a new array that is larger is created and the contents of the
@@ -273,7 +273,7 @@ Setting Fields and Writing the Constructor
 * After the ``Friend`` has been removed, the size of the ``ContactList`` needs to be decreased by ``1``
 
 .. figure:: remove.png
-    :width: 600 px
+    :width: 666 px
     :align: center
 
     ``Friend`` objects are removed by deliberately losing reference to them. After a ``remove``, the array index that
