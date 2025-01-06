@@ -42,7 +42,7 @@ Stacks
     :width: 500 px
     :align: center
 
-    Adding a plate to the top of a stack of plates.
+    Adding a pancake to the top of a stack of pancakes.
 
 
 Queues
