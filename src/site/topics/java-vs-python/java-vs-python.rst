@@ -623,7 +623,7 @@ Temperature Converter
                 }
 
 
-* Pay special attention to the division taking place on like 2
+* Pay special attention to the division taking place on line 2
 * If one wrote ``5/9``, since both ``5`` and ``9`` are integers, it will do integer division
 * Since integers do not have decimal values, it truncates the decimal off --- ``5/9 = 0``
 
