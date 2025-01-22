@@ -26,7 +26,7 @@ Unit Testing
 
 
 * It also obviously helps with testing and debugging
-* It there are ever breaking changes to the unit/component being tested, the automated testing should find it
+* If there are ever breaking changes to the unit/component being tested, the automated testing should find it
 
 * Writing tests can be a bit of an art, so it's best to get a lot of practice
 
