@@ -172,7 +172,7 @@ Properties
    :width: 500 px
    :align: center
 
-    Tree with three levels. This tree has a height of three (``3``).
+   Tree with three levels. This tree has a height of three (``3``).
 
 
 * The **degree/arity of a given node** is the number of *children* the node has
