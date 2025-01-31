@@ -139,7 +139,7 @@ Student Evaluation (Tentative Dates)
       - Ongoing, in class
     * - Midterm
       - 30%
-      - Mid February-ish, in class
+      - Wednesday February 12, 2025, in class
     * - Final Exam
       - 40%
       - TBD
