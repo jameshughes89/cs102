@@ -1,8 +1,8 @@
-*************
-The Stack ADT
+ *************
+The ``Stack`` ADT
 *************
 
-* Stacks are a linear collection of elements
+* ``Stack``s are a linear collection of elements
 * All adding and removing of elements happens at one end of the stack --- the *top*
 
     * All elements are pushed (added) to the top of the stack
@@ -36,7 +36,7 @@ The Stack ADT
     Removing (popping) from the top of a stack.
 
 
-Stack Operations
+``Stack`` Operations
 ================
 
 Collection Operations
@@ -58,7 +58,7 @@ Collection Operations
     * Check if two collections are equal --- ``equals``
 
 
-Stack Context
+``Stack`` Context
 -------------
 
 * Push
@@ -83,18 +83,18 @@ Stack Context
 
 .. note::
 
-    It is against this definition of a stack to access anything from anywhere other than the *top* of the stack.
+    It is against this definition of a ``Stack`` to access anything from anywhere other than the *top* of the ``Stack``.
 
 
-Stack ADT
+``Stack`` ADT
 ---------
 
-* The above describes the *what* of the stack
+* The above describes the *what* of the ``Stack``
 
-    * What can a stack do
+    * What can a ``Stack`` do
 
 
-* Notice how none of the above explains a single thing about *how* the stack is implemented
+* Notice how none of the above explains a single thing about *how* the ``Stack`` is implemented
 
     * Nothing about where the data is stored
     * Nothing about how the operations do what they do
@@ -107,7 +107,7 @@ Stack ADT
     * Or ...
 
 
-* This is just the definition of the stack ADT
+* This is just the definition of the ``Stack`` ADT
 
 
 Example Use
@@ -187,27 +187,27 @@ Example
 
 
 * Try to see where the ``push``, ``pop``, and ``peek`` operations are happening
-* Again, notice that this algorithm was described with only the *what* of a stack
+* Again, notice that this algorithm was described with only the *what* of a ``Stack``
 
-    * There was no need to know how the stack was implemented in order to use it to solve a problem
+    * There was no need to know how the ``Stack`` was implemented in order to use it to solve a problem
 
 
 Interface
 =========
 
-* There are many possible ways one could implement a stack data structure
-* But, all implementations must be a *stack*
+* There are many possible ways one could implement a ``Stack`` data structure
+* But, all implementations must be a *``Stack``*
 
-    * They must follow definition of what a stack ADT is
+    * They must follow definition of what a ``Stack`` ADT is
 
 
-* In Java, one can create an **interface** that defines what the operations of the stack ADT are
+* In Java, one can create an **interface** that defines what the operations of the ``Stack`` ADT are
 * However, the interface only defines the *what*
 
     * Interfaces do not define the *how*
 
 
-* If someone wants to implement the *how* of a stack ADT, they implement the interface
+* If someone wants to implement the *how* of a ``Stack`` ADT, they implement the interface
 
     * The interface dictates what must be implemented
     * If the implementation does not implement the interface completely, a compile time error will occur
@@ -224,10 +224,10 @@ Interface
     * Relevant constants will be ``static final``
 
 
-Stack Interface
+``Stack`` Interface
 ---------------
 
-* Below is the Stack interface
+* Below is the ``Stack`` interface
 
     * It only includes the *what*
     * No actual implementation of any method is included
@@ -253,28 +253,28 @@ Generics
 * The use of ``<T>`` is something new and not an idea discussed yet
 * This is probably best explained with an example
 
-* Imagine someone wanted to have a stack of type ``Integer``
+* Imagine someone wanted to have a ``Stack`` of type ``Integer``
 
     * ``boolean push(Integer element);``
     * ``Integer pop();``
     * ...
 
 
-* Then, maybe someone else wants to make a stack of ``String`` objects
+* Then, maybe someone else wants to make a ``Stack`` of ``String`` objects
 
     * ``boolean push(String element);``
     * ``String pop();``
     * ...
 
 
-* Then maybe a stack of ``Friend`` objects
+* Then maybe a ``Stack`` of ``Friend`` objects
 
     * ``boolean push(Friend element);``
     * ``Friend pop();``
     * ...
 
 
-* This would require three unique interfaces (and implementations) for the stack
+* This would require three unique interfaces (and implementations) for the ``Stack``
 
 
 There has to be a Better Way!
