@@ -1,8 +1,8 @@
-*************
-The Stack ADT
+ *************
+The ``Stack`` ADT
 *************
 
-* Stacks are a linear collection of elements
+* ``Stack``s are a linear collection of elements
 * All adding and removing of elements happens at one end of the stack --- the *top*
 
     * All elements are pushed (added) to the top of the stack
@@ -14,7 +14,7 @@ The Stack ADT
     * LIFO
 
 
-* Consider the following examples of stacks
+* Consider the following examples of ``Stack``s
 
     * A stack of plates that you'd see at a buffet
     * Webpage history with the back button
@@ -26,17 +26,17 @@ The Stack ADT
     :width: 500 px
     :align: center
 
-    Adding (pushing) to the top of a stack.
+    Adding (pushing) to the top of a ``Stack``.
 
 
 .. figure:: stack_remove.png
     :width: 500 px
     :align: center
 
-    Removing (popping) from the top of a stack.
+    Removing (popping) from the top of a ``Stack``.
 
 
-Stack Operations
+``Stack`` Operations
 ================
 
 Collection Operations
@@ -58,43 +58,43 @@ Collection Operations
     * Check if two collections are equal --- ``equals``
 
 
-Stack Context
+``Stack`` Context
 -------------
 
 * Push
 
     * Add an element to the collection
-    * The element added will be the new top of the stack
+    * The element added will be the new top of the ``Stack``
 
 
 * Pop
 
     * Remove an element from the collection
-    * The removed element will be from the top of the stack
+    * The removed element will be from the top of the ``Stack``
     * The element after the removed element will be the new top, if it exists
     * The element removed is returned
 
 
 * Peek
 
-    * Return the element on the top of the stack, but leave it on the stack
-    * Peeking does not alter the stack
+    * Return the element on the top of the ``Stack``, but leave it on the ``Stack``
+    * Peeking does not alter the ``Stack``
 
 
 .. note::
 
-    It is against this definition of a stack to access anything from anywhere other than the *top* of the stack.
+    It is against this definition of a ``Stack`` to access anything from anywhere other than the *top* of the ``Stack``.
 
 
-Stack ADT
+``Stack`` ADT
 ---------
 
-* The above describes the *what* of the stack
+* The above describes the *what* of the ``Stack``
 
-    * What can a stack do
+    * What can a ``Stack`` do
 
 
-* Notice how none of the above explains a single thing about *how* the stack is implemented
+* Notice how none of the above explains a single thing about *how* the ``Stack`` is implemented
 
     * Nothing about where the data is stored
     * Nothing about how the operations do what they do
@@ -107,7 +107,7 @@ Stack ADT
     * Or ...
 
 
-* This is just the definition of the stack ADT
+* This is just the definition of the ``Stack`` ADT
 
 
 Example Use
@@ -137,16 +137,16 @@ Maze Solving
     * Repeat
 
 
-* The backtracking is handled by a stack
+* The backtracking is handled by a ``Stack``
 
-    * The top of the stack is the last thing (cell from a pathway) visited
+    * The top of the ``Stack`` is the last thing (cell from a pathway) visited
     * The thing after/below the top is the second last thing (cell from a pathway) visited
     * ...
 
 
 * Thus, backtracking is done by
 
-    * Popping from the stack
+    * Popping from the ``Stack``
     * Checking if the new top has any available unvisited paths
 
 
@@ -156,20 +156,20 @@ Algorithm for Traversing a Maze
 .. code-block:: text
     :linenos:
 
-    Add the start of the maze to the stack
+    Add the start of the maze to the ``Stack``
 
-    While the stack is not empty
-        Get the top of the stack with a peek (current cell)
+    While the ``Stack`` is not empty
+        Get the top of the ``Stack`` with a peek (current cell)
         If the top is the end
             done
 
         If an unvisited neighbour of the current cell exists
-            Push the neighbour onto the stack
+            Push the neighbour onto the ``Stack``
 
         Otherwise, if no admissible neighbour exists
-            Pop from the stack
+            Pop from the ``Stack``
 
-    If the loop ever exists because of an empty stack, there is no solution
+    If the loop ever exists because of an empty ``Stack``, there is no solution
 
 
 Example
@@ -181,33 +181,33 @@ Example
 
         Animation of a depth first search through a 6x7 maze. The green and red cells represent the start and end
         locations respectively. Black cells represent walls and light blue represent open spaces. Purple represents the
-        current location in the maze (top of the stack), grey represent spaces in a pathway being explored (currently
-        within the stack, but not the top), and orange represents spaces that were part of a dead end path (popped from
-        the stack).
+        current location in the maze (top of the ``Stack``), grey represent spaces in a pathway being explored (currently
+        within the ``Stack``, but not the top), and orange represents spaces that were part of a dead end path (popped from
+        the ``Stack``).
 
 
 * Try to see where the ``push``, ``pop``, and ``peek`` operations are happening
-* Again, notice that this algorithm was described with only the *what* of a stack
+* Again, notice that this algorithm was described with only the *what* of a ``Stack``
 
-    * There was no need to know how the stack was implemented in order to use it to solve a problem
+    * There was no need to know how the ``Stack`` was implemented in order to use it to solve a problem
 
 
 Interface
 =========
 
-* There are many possible ways one could implement a stack data structure
-* But, all implementations must be a *stack*
+* There are many possible ways one could implement a ``Stack`` data structure
+* But, all implementations must be a *``stack``*
 
-    * They must follow definition of what a stack ADT is
+    * They must follow definition of what a ``Stack`` ADT is
 
 
-* In Java, one can create an **interface** that defines what the operations of the stack ADT are
+* In Java, one can create an **interface** that defines what the operations of the ``Stack`` ADT are
 * However, the interface only defines the *what*
 
     * Interfaces do not define the *how*
 
 
-* If someone wants to implement the *how* of a stack ADT, they implement the interface
+* If someone wants to implement the *how* of a ``Stack`` ADT, they implement the interface
 
     * The interface dictates what must be implemented
     * If the implementation does not implement the interface completely, a compile time error will occur
@@ -224,10 +224,10 @@ Interface
     * Relevant constants will be ``static final``
 
 
-Stack Interface
+``Stack`` Interface
 ---------------
 
-* Below is the Stack interface
+* Below is the ``Stack`` interface
 
     * It only includes the *what*
     * No actual implementation of any method is included
@@ -253,28 +253,28 @@ Generics
 * The use of ``<T>`` is something new and not an idea discussed yet
 * This is probably best explained with an example
 
-* Imagine someone wanted to have a stack of type ``Integer``
+* Imagine someone wanted to have a ``Stack`` of type ``Integer``
 
     * ``boolean push(Integer element);``
     * ``Integer pop();``
     * ...
 
 
-* Then, maybe someone else wants to make a stack of ``String`` objects
+* Then, maybe someone else wants to make a ``Stack`` of ``String`` objects
 
     * ``boolean push(String element);``
     * ``String pop();``
     * ...
 
 
-* Then maybe a stack of ``Friend`` objects
+* Then maybe a ``Stack`` of ``Friend`` objects
 
     * ``boolean push(Friend element);``
     * ``Friend pop();``
     * ...
 
 
-* This would require three unique interfaces (and implementations) for the stack
+* This would require three unique interfaces (and implementations) for the ``Stack``
 
 
 There has to be a Better Way!
@@ -282,7 +282,7 @@ There has to be a Better Way!
 
 * There is --- **generics**
 
-* ``<T>`` is a stand-in for a specific type that can be specified later when the stack is created
+* ``<T>`` is a stand-in for a specific type that can be specified later when the ``Stack`` is created
 
     * It can be thought of like a variable, but for a type
 
@@ -304,14 +304,14 @@ There has to be a Better Way!
     }
 
 
-* When creating an instance of the stack, the type is specified within the ``<`` and ``>`` symbols
+* When creating an instance of the ``Stack``, the type is specified within the ``<`` and ``>`` symbols
 
     * This will be discussed more in the following topic
 
 
 * In the above example, with the use of generics
 
-    * Three different stacks are created, each with a different type of object as its contents
+    * Three different ``Stack``s are created, each with a different type of object as its contents
     * Only one interface (and implementation) is needed for all three
 
 
