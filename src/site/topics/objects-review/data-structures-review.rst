@@ -254,7 +254,7 @@ Setting Fields and Writing the Constructor
 
 * Remove first checks if the ``Friend`` object exists within the ``ContactList``
 
-    * If does not exist, an exception will be thrown
+    * If does not exist, ``remove`` returns ``false``. 
     * A string representation of the provided ``Friend`` is given to the exception for its message
 
 
@@ -271,13 +271,14 @@ Setting Fields and Writing the Constructor
 
 
 * After the ``Friend`` has been removed, the size of the ``ContactList`` needs to be decreased by ``1``
+* The method then returns ``true``.
 
 .. figure:: remove.png
     :width: 666 px
     :align: center
 
     ``Friend`` objects are removed by deliberately losing reference to them. After a ``remove``, the array index that
-    referred to the ``Friend`` that was removed now refers to the ``Friend`` that was at the end of the ``ContactList``.
+    referred to the ``Friend`` that was removed now refers to the ``Friend`` that was at the end of the ``ContactList``. 
 
 
 ``clear``
