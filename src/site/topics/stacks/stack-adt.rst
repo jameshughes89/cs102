@@ -169,7 +169,7 @@ Algorithm for Traversing a Maze
         Otherwise, if no admissible neighbour exists
             Pop from the stack
 
-    If the loop ever exists because of an empty stack, there is no solution
+    If the loop ever exits because of an empty stack, there is no solution
 
 
 Example
