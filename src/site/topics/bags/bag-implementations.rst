@@ -158,7 +158,7 @@ Remove
 
 
 * The ``remove(T element)`` method delegates to the ``remove(int index)`` for ease and code/logic reuse
-* Note that ``indexOf`` will throw an exception if the element does not exist within the bag 
+
 
 
 ArraySortedBag
