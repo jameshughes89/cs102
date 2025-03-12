@@ -110,7 +110,6 @@ Catching Exceptions
 * If someone is using the ``ArraySortedBag`` implementation two years from now, it's not possible to know what they should do to manage the exceptional situations
 * The users of the ``ArraySortedBag`` class will need to deal with them as they see fit
 
-    * What should be done if calling ``remove`` on an empty ``ArraySortedBag``?
     * What should be done if calling ``remove`` when the element does not exist within the ``ArraySortedBag``?
 
 
