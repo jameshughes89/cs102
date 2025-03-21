@@ -150,7 +150,7 @@ Properties
         * The level of a node that is not the root is the level of its parent ``+ 1``
 
 
-* The **height** of a tree is the number of levels the tree has
+* The **height** of a tree is the maximum level of the tree's nodes
 
 .. figure:: tree_path.png
     :width: 500 px
