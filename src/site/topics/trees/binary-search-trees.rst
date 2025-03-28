@@ -379,6 +379,7 @@ Contains
 --------
 
 * Like the other data structures, a way to check if a given element exists within the collection is needed
+* This would be the binary search as described above
 * Although an exhaustive depth first search through the tree would work, as discussed for the general binary tree would work
 
     * :math:`O(n)`
