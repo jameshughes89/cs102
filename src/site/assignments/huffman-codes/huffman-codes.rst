@@ -127,7 +127,7 @@ Part 3 --- Complete ``HuffmanNodeComparator``
 =============================================
 
 Although ``comparable`` was used when implementing the ``ArraySortedBag`` and ``LinkedBinarySearchTree``, here a
-`Comparator <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Comparable.html>`_  is to be used.
+`Comparator <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Comparator.html>`_  is to be used.
 A ``Comparator`` is a very similar idea to ``comparable``, but it allows for more flexibility when needing to define
 more complex orderings.
 
