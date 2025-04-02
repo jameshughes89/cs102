@@ -123,9 +123,9 @@ Bogosort
 * This is obviously not a particularly great sorting algorithm in terms of the computation required
 
 * If :math:`n` is very small, there's a reasonable chance to end up with a sorted collection after a while
-* But to put things into perspective, there are a total :math:`8.0658175 \times 10^{67}` permutations of a deck of 52 cards ``!``
+* But to put things into perspective, there are a total :math:`8.0658175x10^{67}` permutations of a deck of 52 cards ``!``
 
-    * To put *this* in perspective, there are roughly :math:`2.4 \times 10^{67}` atoms in the Milky Way
+    * To put *this* in perspective, there are roughly :math:`2.4x10^{67}` atoms in the Milky Way
     * If assigning orderings to individual atoms in the Milky way, there would be roughly :math:`5.7\times10^{67}` orderings left over
     * `There's also a fun story to go with this <https://www.reddit.com/r/AskReddit/comments/6il1jx/comment/dj71u1v>`_
 
@@ -221,7 +221,7 @@ Bubble Sort
 Worst Case Scenario
 -------------------
 
-* The above example showed the *worst case scenario* for this specific bubble sort idea --- the list is in reverse order
+* The above example showed the *worst case scenario* for this specific bubble sort idea --- the element that belongs at the beginning is at the end
 * The question is, how many passes must be done to guarantee that the list is sorted?
 
 * If the list is length :math:`n`
