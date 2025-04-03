@@ -223,7 +223,7 @@ Worst Case Scenario
 
 * The above example showed the *worst case scenario* for this specific bubble sort idea
 
-    * Theis specific case is where the list is in reverse order
+    * This case here is where the list is in reverse order
     * But the true worst case scenario is when the smallest element is at the wrong end 
 
 
