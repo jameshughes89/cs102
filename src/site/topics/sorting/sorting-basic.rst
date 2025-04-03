@@ -221,7 +221,12 @@ Bubble Sort
 Worst Case Scenario
 -------------------
 
-* The above example showed the *worst case scenario* for this specific bubble sort idea --- the list is in reverse order
+* The above example showed the *worst case scenario* for this specific bubble sort idea
+
+    * This case here is where the list is in reverse order
+    * But the true worst case scenario is when the smallest element is at the wrong end 
+
+
 * The question is, how many passes must be done to guarantee that the list is sorted?
 
 * If the list is length :math:`n`
