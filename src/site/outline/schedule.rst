@@ -80,4 +80,4 @@ Course Schedule
      * - Test 1 (Midterm)
        - Wednesday July 23, 2025
      * - Test 2 (Final)
-       - TBD
+       - Monday August 18, 2025
