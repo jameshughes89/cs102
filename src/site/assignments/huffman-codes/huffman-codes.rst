@@ -3,7 +3,7 @@
 ****************************************
 
 * **Worth**: 5%
-* **DUE**: Monday March 31, 11:55pm; submitted on MOODLE
+* **DUE**: Sunday August 17, 11:55pm; submitted on MOODLE
 
 
 Task

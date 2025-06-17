@@ -1,5 +1,5 @@
 ************************
-CSCI 162 --- Winter 2025
+CSCI 162 --- Summer 2025
 ************************
 
 This course emphasizes the use of abstraction in programming. Elementary data structures are introduced (stacks, queues,
@@ -36,29 +36,22 @@ GitHub Repo
 Class Times
 ===========
 
-* Tue 11:30 -- 12:20 (K4), MULH 4024
-* Wed 13:30 -- 14:20 (K5), MULH 4024
-* Fri 12:30 -- 13:20 (K6), MULH 4024
+* Asynchronous --- Content is to be covered independently while following the :doc:`schedule </outline/schedule>`.
+* Recordings of past lectures are available `here <https://www.youtube.com/@modsurski/playlists>`_
 
 
 
 Labs
 ====
 
-* Lab Sec 11: Thr 14:30 -- 16:20 (L8-A9), MULH 4024
-* Lab Sec 12: Fri 14:30 -- 16:20 (C9-K9), MULH 4024
+* Asynchronous --- Content is to be covered independently while following the :doc:`schedule </outline/schedule>`.
 
 
 
 Office Hours
 ============
 
-`Office Hours Etiquette --- Don't Do This. <https://www.youtube.com/watch?v=lOTyUfOHgas>`_
-
-* Tue 12:30 -- 13:20, Annex 20B
-* Wed 12:30 -- 13:20, Annex 20B
-* Thu 13:30 -- 14:20, Annex 20B
-* Fri 13:30 -- 14:20, Annex 20B
+* By appointment
 
 
 
@@ -146,3 +139,4 @@ Office Hours
     :maxdepth: 1
 
     outline/outline
+    outline/schedule
