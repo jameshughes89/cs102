@@ -288,7 +288,7 @@ Interface
 
 * For a binary tree, with add and remove, what is wanted/what it means will depend on the type of binary tree
 * Similar to the bag, elements must be able to be added and removed from the binary tree
-* But what what exactly add and remove means may differ depending on the specific type of binary tree
+* But what exactly add and remove means may differ depending on the specific type of binary tree
 
 
 .. code-block:: java
