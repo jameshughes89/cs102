@@ -139,10 +139,6 @@ Student Evaluation (Tentative Dates)
       - TBD
 
 
-Obtaining less than X% on the final exam restricts the maximum achievable course grade to 45%, irrespective of weighted
-averages from other course components.
-
-
 
 Assignments
 ===========
@@ -204,7 +200,7 @@ Unless you have medical accommodations that require you to do so, or explicit pe
 course, you may not use electronic devices during any of the tests, midterms, examinations, or
 other in-class evaluations, including, but not limited to: cellphones, smart phones, smart watches, smart glasses, audio
 players or recorders of any sort, video cameras, video games, DVD players, televisions, laptop/notebook/netbook
-computers, flashlights or laser pointers.
+computers, flashlights, or laser pointers.
 
 
 Missed Tests
@@ -224,7 +220,7 @@ of `Kattis <https://open.kattis.com/>`_.
 Labs begin on the 1st week of class. Unless special permission is granted, you may only attend the lab session for which
 you are registered.
 
-At the end of each lab is a series of Kattis problems. Kattis is a website with programming competition style problems
+At the end of each lab are a series of Kattis problems. Kattis is a website with programming competition style problems
 where people can submit their solutions for automated evaluation. A select set of Kattis problems related to course
 material are included at the end of each lab for students to work on. It is not necessary to complete all these problems
 for each lab as they can be quite challenging.
@@ -247,7 +243,7 @@ email is not an acceptable excuse for not knowing about the information that was
 Students are encouraged to contact their course instructor via email with brief, email appropriate questions regarding
 lecture materials or clarification of assignments. However, before sending email to an instructor, the student should
 check the course website to see if the requested information is already there. Students must send email from their StFX
-account and include CSCI 161 in the subject line of the email. Lengthy and in-depth questions are to be asked during
+account and include CSCI 162 in the subject line of the email. Lengthy and in-depth questions are to be asked during
 office hours.
 
 
@@ -426,7 +422,7 @@ out the Department of Music web page
 `Music | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/programs-courses/programs/music>`_,
 the StFX Art Gallery (https://www.stfx.ca/art-gallery) or
 Theatre Antigonish
-`(Theatre Antigonish | St. Francis Xavier University) (stfx.ca) <https://www.stfx.ca/about/theater-antigonish>`_
+`Theatre Antigonish | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/about/theater-antigonish>`_
 for various events.
 
 Further information regarding health and wellness-related services available to students may be found at
