@@ -2,10 +2,8 @@
 Outline for Computer Science 162 --- Programming and Data Structures
 ********************************************************************
 
-Summer 2025
+Winter 2026
 ===========
-
-This course is offered asynchronously. The course schedule can be found :doc:`here </outline/schedule>`.
 
 
 
@@ -21,7 +19,7 @@ modular development. Credit will be granted for only one of CSCI 162 and INFO 25
 Prerequisites
 =============
 
-CSCI 125 or 161.
+CSCI 161
 
 Unless you have the prerequisites for this course or written special permission from your Dean to enroll in it, you
 will be removed from this course and it will be deleted from your record. This decision may not be appealed. You will
@@ -42,21 +40,27 @@ Instructor
 Class Times
 ===========
 
-* Asynchronous --- Content is to be covered independently while following the :doc:`schedule </outline/schedule>`.
+* Tue 11:30 -- 12:20 (K4), MULH 4024
+* Wed 13:30 -- 14:20 (K5), MULH 4024
+* Fri 12:30 -- 13:20 (K6), MULH 4024
 
 
 
 Lab
 ====
 
-* Asynchronous --- Content is to be covered independently while following the :doc:`schedule </outline/schedule>`.
+* Lab Sec 11: Thr 14:30 -- 16:20 (L8-A9), MULH 4024
+* Lab Sec 12: Fri 14:30 -- 16:20 (C9-K9), MULH 4024
 
 
 
 Office Hours
 ============
 
-* By appointment
+* Tue 10:30 -- 11:30, Annex 20B
+* Wed 10:30 -- 11:30, Annex 20B
+* Thr 10:30 -- 11:30, Annex 20B
+* Fri 11:30 -- 12:30, Annex 20B
 
 
 
@@ -65,7 +69,6 @@ Website
 
 * Mostly :doc:`this website </index>`
 * MOODLE
-* `YouTube <https://www.youtube.com/channel/UCIruexBZJaawh_9WF_vjTPg>`_
 
 
 
@@ -118,22 +121,26 @@ Student Evaluation (Tentative Dates)
       - Due Date
     * - Assignment 1
       - 5%
-      - Monday July 7, 2025, 11:55pm
+      - End of January-ish
     * - Assignment 2
       - 5%
-      - Monday July 21, 2025, 11:55pm
+      - Mid February-ish
     * - Assignment 3
       - 5%
-      - Monday August 4, 2025, 11:55pm
+      - Early March-ish
     * - Assignment 4
       - 5%
-      - Sunday August 17, 2025, 11:55pm
+      - Late March-ish
     * - Midterm
       - 30%
-      - Wednesday July 23, 2025
+      - Mid February-ish, in class
     * - Final Exam
       - 50%
-      - Monday August 18, 2025
+      - TBD
+
+
+Obtaining less than X% on the final exam restricts the maximum achievable course grade to 45%, irrespective of weighted
+averages from other course components.
 
 
 
@@ -186,6 +193,9 @@ and/or similar devices are not permitted. The possession of unauthorized devices
 constitutes violation of academic integrity, as per section 3.8.2(b)(v) of the academic calendar. Further, anything that
 a reasonable person would deem as cheating is not permitted and will be investigated fully as academic misconduct.
 
+Test format will be in person; however, if necessary, the format *may* be changed to online. Students will be informed
+of the change as soon as possible.
+
 
 Statement on Electronic Devices
 -------------------------------
@@ -202,18 +212,6 @@ Missed Tests
 
 There are no make-up tests. If a student does not write the midterm and obtains an approved accommodation, the weight of
 the midterm will be shifted to the final exam.
-
-
-ProctorU
---------
-
-The online exams in this course require a proctor. For instructions on how to schedule your exam with ProctorU, please
-see the Proctoring section of your course Moodle page. For information on policies governing your use of ProctorU,
-please see
-`StFX Online / Student Support - Proctoring <https://www.stfx.ca/programs-courses/stfx-online/student-support>`_.
-
-Online proctored exams open at 5am and close at 8pm to account for time differences and schedules. Students will create
-a ProctorU account and book a time through that platform.
 
 
 
@@ -261,6 +259,15 @@ Office hours are provided to students to facilitate their success --- students a
 
 Students must understand that the professors and TAs are not there to provide them answers to problems, but to assist
 students solving their problems.
+
+
+
+Attendance
+==========
+
+Students missing three classes without reasonable cause will be reported to the Assistant Vice-President Academic
+Affairs. See section 3.7 of the academic calendar for more details. You will be reported if you are repeatedly
+delinquent in assignments or attendance at classes or laboratories.
 
 
 
