@@ -1,5 +1,5 @@
 ************************
-CSCI 162 --- Summer 2025
+CSCI 162 --- Winter 2026
 ************************
 
 This course emphasizes the use of abstraction in programming. Elementary data structures are introduced (stacks, queues,
@@ -14,7 +14,6 @@ Professor
 * Dr. James Hughes
 * jhughes at stfx.ca
 * Annex 20B
-* `YouTube <https://www.youtube.com/channel/UCIruexBZJaawh_9WF_vjTPg>`_
 
 
 
@@ -36,22 +35,27 @@ GitHub Repo
 Class Times
 ===========
 
-* Asynchronous --- Content is to be covered independently while following the :doc:`schedule </outline/schedule>`.
-* Recordings of past lectures are available `here <https://www.youtube.com/@modsurski/playlists>`_
+* Tue 11:30 -- 12:20 (K4), MULH 4024
+* Wed 13:30 -- 14:20 (K5), MULH 4024
+* Fri 12:30 -- 13:20 (K6), MULH 4024
 
 
 
 Labs
 ====
 
-* Asynchronous --- Content is to be covered independently while following the :doc:`schedule </outline/schedule>`.
+* Lab Sec 11: Thr 14:30 -- 16:20 (L8-A9), MULH 4024
+* Lab Sec 12: Fri 14:30 -- 16:20 (C9-K9), MULH 4024
 
 
 
 Office Hours
 ============
 
-* By appointment
+* Tue 10:30 -- 11:30, Annex 20B
+* Wed 10:30 -- 11:30, Annex 20B
+* Thr 10:30 -- 11:30, Annex 20B
+* Fri 11:30 -- 12:30, Annex 20B
 
 
 
@@ -139,4 +143,3 @@ Office Hours
     :maxdepth: 1
 
     outline/outline
-    outline/schedule
