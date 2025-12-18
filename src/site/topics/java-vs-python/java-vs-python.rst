@@ -519,16 +519,16 @@ Functions/Methods
 
     * ``int a`` and ``int b`` in the parameter list
 
-* In the above example, the method is ``static``, which means it is a function and not a method
+* In the above example, the method is ``static``, which effectively means it is a function and not a method
 
-    * This is a function that belongs to the class, not an instance of the class
-    * If the function is not written with ``static``, it is then an instance method
+    * This is a method that belongs to the class, not an instance of the class
+    * If the method is not written with ``static``, it is then an instance method
     * In other words, it's not a method we will call on an instance of some object
 
 
-* As seen in the above example, the function is defined *after* it is called
+* As seen in the above example, the static method is defined *after* it is called
 
-    * The function ``someFunction`` is called within ``main``, but it is written below ``main``
+    * The static method ``someFunction`` is called within ``main``, but it is written below ``main``
     * This is not required in Java, but is something one could do
     * In Python, the interpreter needed to know the function existed before it could be referenced
 
