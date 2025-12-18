@@ -61,7 +61,7 @@ Queues
 Bags
 ^^^^
 
-* Like Python lists, but we can define specific types
+* A multiset, but we can define specific types
 
     * Ordered
     * Indexed
