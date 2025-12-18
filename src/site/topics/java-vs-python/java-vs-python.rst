@@ -290,7 +290,7 @@ Arrays
 
 * One difference is that Java arrays can't contain mixed types like a Python list
 
-    * There is an asterisk added to this statement that will be discussed later
+    * There is a caveat to this statement that will be discussed later
 
 
 * One **major** difference is that the Java array used in the above example will **always** be size 4
