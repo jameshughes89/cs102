@@ -17,7 +17,7 @@ Java vs. Python
                 :linenos:
 
                 public class SomeClass {
-                    public static void main(String[] args){
+                    public static void main(String[] args) {
                         System.out.println("Hello, world!");
                     }
                 }
@@ -44,7 +44,7 @@ Variables and Types
                 :emphasize-lines: 3,4,5,6
 
                 public class SomeClass {
-                    public static void main(String[] args){
+                    public static void main(String[] args) {
                         int anInt = 5;
                         double aFloat = 5.5;    // doubles now for float
                         String aString = "5";   // Mind the double quotes
@@ -240,6 +240,7 @@ Arrays
 * Java does not come with lists ready to go like Python does
 
     * They are not provided as a *language primitive*
+    * We will build something similar to Python lists later
 
 * Java does however have *arrays*, which are similar-ish to lists
 
@@ -289,7 +290,7 @@ Arrays
 
 * One difference is that Java arrays can't contain mixed types like a Python list
 
-    * There is an asterisk added to this statement that will be discussed later
+    * There is a caveat to this statement that will be discussed later
 
 
 * One **major** difference is that the Java array used in the above example will **always** be size 4
@@ -326,7 +327,7 @@ Arrays
                 int[] anArray = new int[1000];
 
                 // Put a number in each index in the array
-                for(int i = 0; i < anArray.length; i++){
+                for(int i = 0; i < anArray.length; i++) {
                     anArray[i] = i;
                 }
 
@@ -404,7 +405,7 @@ Input & Output
                 try {
                     String theLine = reader.readLine();
                     System.out.println(theLine);
-                } catch (IOException e){
+                } catch (IOException e) {
                     System.out.println("Something bad happened.");
                 }
 
@@ -519,16 +520,16 @@ Functions/Methods
 
     * ``int a`` and ``int b`` in the parameter list
 
-* In the above example, the function is ``static``, which means it is a function and not a method
+* In the above example, the method is ``static``, which effectively means it is a function and not a method
 
-    * This is a function that belongs to the class, not an instance of the class
-    * If the function is not written with ``static``, it is then an instance method
+    * This is a method that belongs to the class, not an instance of the class
+    * If the method is not written with ``static``, it is then an instance method
     * In other words, it's not a method we will call on an instance of some object
 
 
-* As seen in the above example, the function is defined *after* it is called
+* As seen in the above example, the static method is defined *after* it is called
 
-    * The function ``someFunction`` is called within ``main``, but it is written below ``main``
+    * The static method ``someFunction`` is called within ``main``, but it is written below ``main``
     * This is not required in Java, but is something one could do
     * In Python, the interpreter needed to know the function existed before it could be referenced
 
