@@ -17,6 +17,8 @@ The main focus of this course is:
 * How to implement various data structures
 * Algorithm Analysis
 
+    * Reason about the resource cost of our data structures and algorithms
+
 
 
 Data Structures
@@ -138,7 +140,7 @@ Java
     * Don't worry, you'll quickly realize how similar Python and Java are
     * More than that, the important ideas are the same between the languages
     * There are some java-*isms* I will point out along the way
-    * Python's flexibility often gets in the way when our programs grow in complexity
+    * Python's *flexibility* can sometimes get in the way when our programs grow in complexity
 
 .. warning::
 
