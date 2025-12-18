@@ -17,7 +17,7 @@ Java vs. Python
                 :linenos:
 
                 public class SomeClass {
-                    public static void main(String[] args){
+                    public static void main(String[] args) {
                         System.out.println("Hello, world!");
                     }
                 }
@@ -44,7 +44,7 @@ Variables and Types
                 :emphasize-lines: 3,4,5,6
 
                 public class SomeClass {
-                    public static void main(String[] args){
+                    public static void main(String[] args) {
                         int anInt = 5;
                         double aFloat = 5.5;    // doubles now for float
                         String aString = "5";   // Mind the double quotes
@@ -327,7 +327,7 @@ Arrays
                 int[] anArray = new int[1000];
 
                 // Put a number in each index in the array
-                for(int i = 0; i < anArray.length; i++){
+                for(int i = 0; i < anArray.length; i++) {
                     anArray[i] = i;
                 }
 
@@ -405,7 +405,7 @@ Input & Output
                 try {
                     String theLine = reader.readLine();
                     System.out.println(theLine);
-                } catch (IOException e){
+                } catch (IOException e) {
                     System.out.println("Something bad happened.");
                 }
 
