@@ -519,7 +519,7 @@ Functions/Methods
 
     * ``int a`` and ``int b`` in the parameter list
 
-* In the above example, the function is ``static``, which means it is a function and not a method
+* In the above example, the method is ``static``, which means it is a function and not a method
 
     * This is a function that belongs to the class, not an instance of the class
     * If the function is not written with ``static``, it is then an instance method
