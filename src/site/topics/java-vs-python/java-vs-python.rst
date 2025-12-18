@@ -240,6 +240,7 @@ Arrays
 * Java does not come with lists ready to go like Python does
 
     * They are not provided as a *language primitive*
+    * We will build something similar to Python lists later
 
 * Java does however have *arrays*, which are similar-ish to lists
 
