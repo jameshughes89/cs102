@@ -193,7 +193,6 @@ constitutes violation of academic integrity, as per section 3.8.2(b)(v) of the a
 a reasonable person would deem as cheating is not permitted and will be investigated fully as academic misconduct.
 
 
-
 Statement on Electronic Devices
 -------------------------------
 
@@ -207,8 +206,9 @@ computers, flashlights, or laser pointers.
 Missed Tests
 ------------
 
-There are no make-up tests. If a student does not write the midterm and obtains an approved accommodation, the weight of
-the midterm will be shifted to the final exam.
+There are no make-up tests. If a student is unable to write a test, the weight of their test will be added to the
+following test or final exam, whichever comes first. If both tests are missed, the weight of the tests will be added to
+the final exam.
 
 
 
