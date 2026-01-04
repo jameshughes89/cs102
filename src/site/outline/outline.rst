@@ -136,7 +136,7 @@ Student Evaluation (Tentative Dates)
       - Late January-ish, in class
     * - Test 2
       - 20%
-      - Late February-ish, i class
+      - Late February-ish, in class
     * - Final Exam
       - 50%
       - TBD
