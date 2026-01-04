@@ -131,9 +131,12 @@ Student Evaluation (Tentative Dates)
     * - Assignment 4
       - 5%
       - Late March-ish
-    * - Midterm
-      - 30%
-      - Mid February-ish, in class
+    * - Test 1
+      - 10%
+      - Late January-ish, in class
+    * - Test 2
+      - 20%
+      - Late February-ish, i class
     * - Final Exam
       - 50%
       - TBD
