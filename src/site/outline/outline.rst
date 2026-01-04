@@ -192,8 +192,6 @@ and/or similar devices are not permitted. The possession of unauthorized devices
 constitutes violation of academic integrity, as per section 3.8.2(b)(v) of the academic calendar. Further, anything that
 a reasonable person would deem as cheating is not permitted and will be investigated fully as academic misconduct.
 
-Test format will be in person; however, if necessary, the format *may* be changed to online. Students will be informed
-of the change as soon as possible.
 
 
 Statement on Electronic Devices
