@@ -131,9 +131,12 @@ Student Evaluation (Tentative Dates)
     * - Assignment 4
       - 5%
       - Late March-ish
-    * - Midterm
-      - 30%
-      - Mid February-ish, in class
+    * - Test 1
+      - 10%
+      - Late January-ish, in class
+    * - Test 2
+      - 20%
+      - Late February-ish, in class
     * - Final Exam
       - 50%
       - TBD
@@ -189,9 +192,6 @@ and/or similar devices are not permitted. The possession of unauthorized devices
 constitutes violation of academic integrity, as per section 3.8.2(b)(v) of the academic calendar. Further, anything that
 a reasonable person would deem as cheating is not permitted and will be investigated fully as academic misconduct.
 
-Test format will be in person; however, if necessary, the format *may* be changed to online. Students will be informed
-of the change as soon as possible.
-
 
 Statement on Electronic Devices
 -------------------------------
@@ -206,8 +206,9 @@ computers, flashlights, or laser pointers.
 Missed Tests
 ------------
 
-There are no make-up tests. If a student does not write the midterm and obtains an approved accommodation, the weight of
-the midterm will be shifted to the final exam.
+There are no make-up tests. If a student is unable to write a test, the weight of their test will be added to the
+following test or final exam, whichever comes first. If both tests are missed, the weight of the tests will be added to
+the final exam.
 
 
 
