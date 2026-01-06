@@ -148,13 +148,13 @@ Java
     structures, and algorithms.
 
 
-How do I go about programming Java!?
+How Do I Go About Programming Java!?
 ------------------------------------
 
 * :doc:`Go here </getting-set/getting-set>`
 
 
-Can we Write Code Now?
+Can We Write Code Now?
 ----------------------
 
 * Below is an example of ``Hello, world!`` in Python and Java
