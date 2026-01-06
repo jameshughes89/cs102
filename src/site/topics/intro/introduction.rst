@@ -148,8 +148,8 @@ Java
     structures, and algorithms.
 
 
-How Do I Go About Programming With Java!?
------------------------------------------
+How Do I Go About Programming In Java!?
+---------------------------------------
 
 * :doc:`Go here </getting-set/getting-set>`
 
