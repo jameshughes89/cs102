@@ -76,31 +76,6 @@ Variables and Types
     code will **not** be included in the code examples unless necessary.
 
 
-.. warning::
-
-    In Python one could change the value stored in a variable to something of a different type. In Java, this is **not**
-    possible since we need to be explicit about what the type of the value is to be stored in a variable.
-
-    If one writes code that would put a value of a type into a variable of another type, Java will not even compile the
-    code; the code will not even run. At first this may seem frustrating, but this ends up being very helpful as it
-    protects against certain bugs before the code even starts running.
-
-    .. list-table::
-        :header-rows: 1
-
-        * - Python
-          - Java
-        * -     .. code-block:: python
-
-                    other_int = 5
-                    other_int = 'totally not 5'
-
-          -     .. code-block:: java
-                    :emphasize-lines: 2
-
-                    int otherInt = 5;
-                    otherInt = "totally not 5";     // Compiler error
-
 
 Declaring & Assigning Variables
 -------------------------------
@@ -191,6 +166,32 @@ Reusing Variables
     Consider a variable for storing a temperature in Celsius --- ``temperatureInCelsius``. The circumstances where it
     would make sense to assign a brand new value to this variable would be very limited.
 
+
+.. warning::
+
+    In Python one could change the value stored in a variable to something of a different type. In Java, this is **not**
+    possible since we need to be explicit about what the type of the value is to be stored in a variable.
+
+    If one writes code that would put a value of a type into a variable of another type, Java will not even compile the
+    code; the code will not even run. At first this may seem frustrating, but this ends up being very helpful as it
+    protects against certain bugs before the code even starts running.
+
+    .. list-table::
+        :header-rows: 1
+
+        * - Python
+          - Java
+        * -     .. code-block:: python
+
+                    other_int = 5
+                    other_int = 'totally not 5'
+
+          -     .. code-block:: java
+                    :emphasize-lines: 2
+
+                    int otherInt = 5;
+                    otherInt = "totally not 5";     // Compiler error
+                    
 
 Constants
 ---------
