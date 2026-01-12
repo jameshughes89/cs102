@@ -133,7 +133,7 @@ Student Evaluation (Tentative Dates)
       - Late March-ish
     * - Test 1
       - 10%
-      - Late January-ish, in class
+      - Wednesday January 28, in class
     * - Test 2
       - 20%
       - Late February-ish, in class
