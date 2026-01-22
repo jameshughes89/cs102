@@ -14,7 +14,7 @@ Aside --- Constructor Chaining
 .. literalinclude:: /../main/java/ContactList.java
     :language: java
     :linenos:
-    :emphasize-lines: 6
+    :emphasize-lines: 3, 11
     :start-at: public ContactList() {
     :end-before: // [end-class_fields_constructor]
 
