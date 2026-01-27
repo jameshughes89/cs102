@@ -3,7 +3,7 @@ Maze Solver --- A Path is a Path
 ********************************
 
 * **Worth**: 5%
-* **DUE**: Monday TBD, 2026, 11:55pm; submitted on MOODLE
+* **DUE**: Monday February 9, 2026, 11:55pm; submitted on MOODLE
 
 
 Task
