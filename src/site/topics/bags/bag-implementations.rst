@@ -73,12 +73,6 @@ ArrayIndexedBag
     :end-before: // [end-class_fields_constructor]
 
 
-* Note the import of ``Iterator`` and the implementation of ``Iterator<T>``
-
-    * Iterators are used for *iterating* over a collection
-    * More on this later
-
-
 
 Private Methods
 ---------------
