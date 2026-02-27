@@ -125,7 +125,7 @@ Ignore
     :linenos:
 
     // I know this may throw an exception, but whatever
-    bag.remove(element);
+    bag.removeFirst();
 
 
 
@@ -149,7 +149,7 @@ Stop Immediately
     :linenos:
 
     try {
-        bag.remove(element);
+        bag.removeFirst();
     } catch (NoSuchElementException e) {
         someCleanUpMethod();
         System.exit(1);
@@ -169,7 +169,7 @@ Carry On
     :linenos:
 
     try {
-        bag.remove(element);
+        bag.removeFirst();
     } catch (NoSuchElementException e) {
         System.out.println("Caught an Exception");
         e.printStackTrace();
@@ -186,7 +186,7 @@ Rethrow
     :linenos:
 
     try {
-        bag.remove(element);
+        bag.removeFirst();
     } catch (NoSuchElementException e) {
         throw new MySpecificException(e);
     }
