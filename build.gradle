@@ -22,6 +22,7 @@ dependencies {
     testImplementation 'nl.jqno.equalsverifier:equalsverifier:4.4.1'
     testImplementation 'com.google.guava:guava-testlib:33.5.0-jre'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:6.0.3'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 test {
