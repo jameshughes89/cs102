@@ -20,7 +20,7 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-params:6.0.3'
     testImplementation 'org.assertj:assertj-core:3.27.7'
     testImplementation 'nl.jqno.equalsverifier:equalsverifier:4.5'
-    testImplementation 'com.google.guava:guava-testlib:33.5.0-jre'
+    testImplementation 'com.google.guava:guava-testlib:33.6.0-jre'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:6.0.3'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
