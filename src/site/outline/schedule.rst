@@ -58,11 +58,11 @@ Course Schedule
      * - Assignment 1
        - Monday July 6, 2026, 11:55pm
      * - Assignment 2
-       - Monday July 20, 2025, 11:55pm
+       - Monday July 20, 2026, 11:55pm
      * - Assignment 3
-       - Monday August 3, 2025, 11:55pm
+       - Monday August 3, 2026, 11:55pm
      * - Assignment 4
-       - Sunday August 16, 2025, 11:55pm
+       - Sunday August 16, 2026, 11:55pm
 
 
 
@@ -74,6 +74,6 @@ Course Schedule
      * - Test Number
        - Date
      * - Test 1 (Midterm)
-       - Wednesday July 22, 2025
+       - Wednesday July 22, 2026
      * - Test 2 (Final)
        - TBD
