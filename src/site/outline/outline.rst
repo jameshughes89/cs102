@@ -105,36 +105,6 @@ Below is a list of topics in no particular order that may or may not be covered 
 
 
 
-Student Evaluation (Tentative Dates)
-====================================
-
-.. list-table:: Final Grade Breakdown
-    :widths: 50 50 50
-    :header-rows: 1
-
-    * - Deliverable
-      - Percentage
-      - Due Date
-    * - Assignment 1
-      - 5%
-      - Monday July 6, 11:55pm
-    * - Assignment 2
-      - 5%
-      - Monday July 20, 11:55pm
-    * - Assignment 3
-      - 5%
-      - Monday August 3, 11:55pm
-    * - Assignment 4
-      - 5%
-      - Sunday August 16, 11:55pm
-    * - Midterm
-      - 30%
-      - Wednesday July 22, 2026
-    * - Final Exam
-      - 50%
-      - TBD
-
-
 .. _label-outline-schedule:
 
 Course Schedule
@@ -145,7 +115,6 @@ well-structured and demanding workflow to which you are expected to adhere.
 
 This course is designed for a typical 12 week semester, but is being offered as an accelerated 7 week course. Students
 must be prepared for the pacing of the course.
-
 
 
 .. list-table:: Topic and Lab Schedule
@@ -184,6 +153,37 @@ must be prepared for the pacing of the course.
       - August 10
       - 24 -- 27
       - 11 -- 12
+
+
+
+Student Evaluation (Tentative Dates)
+====================================
+
+.. list-table:: Final Grade Breakdown
+    :widths: 50 50 50
+    :header-rows: 1
+
+    * - Deliverable
+      - Percentage
+      - Due Date
+    * - Assignment 1
+      - 5%
+      - Monday July 6, 11:55pm
+    * - Assignment 2
+      - 5%
+      - Monday July 20, 11:55pm
+    * - Assignment 3
+      - 5%
+      - Monday August 3, 11:55pm
+    * - Assignment 4
+      - 5%
+      - Sunday August 16, 11:55pm
+    * - Midterm
+      - 30%
+      - Wednesday July 22, 2026
+    * - Final Exam
+      - 50%
+      - TBD
 
 
 
