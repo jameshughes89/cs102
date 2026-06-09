@@ -136,6 +136,56 @@ Student Evaluation (Tentative Dates)
 
 
 
+Course Schedule
+===============
+
+ Online courses allow for some flexibility in how class time is integrated into your routine. Nevertheless, there is a
+ well-structured and demanding workflow to which you are expected to adhere.
+
+ This course is designed for a typical 12 week semester, but is being offered as an accelerated 7 week course. Students
+ must be prepared for the pacing of the course.
+
+
+
+ .. list-table:: Topic and Lab Schedule
+     :widths: 50 50 50 50
+     :header-rows: 1
+
+     * - Week Number
+       - Monday Date
+       - Topics
+       - Labs
+     * - Week 1
+       - June 29
+       - 1 -- 5
+       - 1 -- 3
+     * - Week 2
+       - July 6
+       - 6 -- 9
+       - 4 -- 5
+     * - Week 3
+       - July 13
+       - 10 -- 12
+       - 6
+     * - Week 4
+       - July 20
+       - 13 -- 15
+       - 7
+     * - Week 5
+       - July 27
+       - 16 -- 19
+       - 8 -- 9
+     * - Week 6
+       - August 3
+       - 20 -- 23
+       - 10
+     * - Week 7
+       - August 10
+       - 24 -- 27
+       - 11 -- 12
+
+
+
 Assignments
 ===========
 
