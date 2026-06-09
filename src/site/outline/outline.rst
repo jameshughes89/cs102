@@ -135,7 +135,7 @@ Student Evaluation (Tentative Dates)
       - TBD
 
 
-.. _label-outline-schedule
+.. _label-outline-schedule:
 
 Course Schedule
 ===============
