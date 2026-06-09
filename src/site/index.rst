@@ -35,7 +35,7 @@ GitHub Repo
 Class Times
 ===========
 
-* Asynchronous --- Content is to be covered independently while following the :doc:`schedule </outline/schedule>`
+* Asynchronous --- Content is to be covered independently while following the :doc:`schedule </outline/outline>`
 * Recordings of past lectures are available `here <https://www.youtube.com/@modsurski/playlists>`_
 
 
@@ -43,7 +43,7 @@ Class Times
 Labs
 ====
 
-* Asynchronous --- Content is to be covered independently while following the :doc:`schedule </outline/schedule>`.
+* Asynchronous --- Content is to be covered independently while following the :doc:`schedule </outline/outline>`.
 
 
 
@@ -138,4 +138,3 @@ Office Hours
     :maxdepth: 1
 
     outline/outline
-    outline/schedule

@@ -42,14 +42,14 @@ Instructor
 Class Times
 ===========
 
-* Asynchronous --- Content is to be covered independently while following the :doc:`schedule </outline/schedule>`
+* Asynchronous --- Content is to be covered independently while following the schedule
 
 
 
 Lab
 ====
 
-* Asynchronous --- Content is to be covered independently while following the :doc:`schedule </outline/schedule>`
+* Asynchronous --- Content is to be covered independently while following the schedule
 
 
 
