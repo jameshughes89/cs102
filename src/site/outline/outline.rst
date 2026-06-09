@@ -2,8 +2,10 @@
 Outline for Computer Science 162 --- Programming and Data Structures
 ********************************************************************
 
-Winter 2026
+Summer 2026
 ===========
+
+This course is offered asynchronously. The course schedule can be found :ref:`here <label-outline-schedule>`
 
 
 
@@ -40,27 +42,21 @@ Instructor
 Class Times
 ===========
 
-* Tue 11:30 -- 12:20 (K4), MULH 4024
-* Wed 13:30 -- 14:20 (K5), MULH 4024
-* Fri 12:30 -- 13:20 (K6), MULH 4024
+* Asynchronous --- Content is to be covered independently while following the :ref:`schedule <label-outline-schedule>`
 
 
 
 Lab
 ====
 
-* Lab Sec 11: Thr 14:30 -- 16:20 (L8-A9), MULH 4024
-* Lab Sec 12: Fri 14:30 -- 16:20 (C9-K9), MULH 4024
+* Asynchronous --- Content is to be covered independently while following the :ref:`schedule <label-outline-schedule>`
 
 
 
 Office Hours
 ============
 
-* Tue 10:30 -- 11:30, Annex 20B
-* Wed 10:30 -- 11:30, Annex 20B
-* Thr 10:30 -- 11:30, Annex 20B
-* Fri 11:30 -- 12:30, Annex 20B
+* By appointment
 
 
 
@@ -109,6 +105,57 @@ Below is a list of topics in no particular order that may or may not be covered 
 
 
 
+.. _label-outline-schedule:
+
+Course Schedule
+===============
+
+Online courses allow for some flexibility in how class time is integrated into your routine. Nevertheless, there is a
+well-structured and demanding workflow to which you are expected to adhere.
+
+This course is designed for a typical 12 week semester, but is being offered as an accelerated 7 week course. Students
+must be prepared for the pacing of the course.
+
+
+.. list-table:: Topic and Lab Schedule
+    :widths: 50 50 50 50
+    :header-rows: 1
+
+    * - Week Number
+      - Monday Date
+      - Topics
+      - Labs
+    * - Week 1
+      - June 29
+      - 1 -- 5
+      - 1 -- 3
+    * - Week 2
+      - July 6
+      - 6 -- 9
+      - 4 -- 5
+    * - Week 3
+      - July 13
+      - 10 -- 12
+      - 6
+    * - Week 4
+      - July 20
+      - 13 -- 15
+      - 7
+    * - Week 5
+      - July 27
+      - 16 -- 19
+      - 8 -- 9
+    * - Week 6
+      - August 3
+      - 20 -- 23
+      - 10
+    * - Week 7
+      - August 10
+      - 24 -- 27
+      - 11 -- 12
+
+
+
 Student Evaluation (Tentative Dates)
 ====================================
 
@@ -121,22 +168,19 @@ Student Evaluation (Tentative Dates)
       - Due Date
     * - Assignment 1
       - 5%
-      - End of January-ish
+      - Monday July 6, 11:55pm
     * - Assignment 2
       - 5%
-      - Mid February-ish
+      - Monday July 20, 11:55pm
     * - Assignment 3
       - 5%
-      - Early March-ish
+      - Monday August 3, 11:55pm
     * - Assignment 4
       - 5%
-      - Late March-ish
-    * - Test 1
-      - 10%
-      - Wednesday January 28, in class
-    * - Test 2
-      - 20%
-      - Late February-ish, in class
+      - Sunday August 16, 11:55pm
+    * - Midterm
+      - 30%
+      - Wednesday July 22, 2026
     * - Final Exam
       - 50%
       - TBD
@@ -211,6 +255,17 @@ following test or final exam, whichever comes first. If both tests are missed, t
 the final exam.
 
 
+ProctorU
+--------
+
+The online exams in this course require a proctor. For instructions on how to schedule your exam with ProctorU, please
+see the Proctoring section of your course Moodle page. For information on policies governing your use of ProctorU,
+please see
+`StFX Online / Student Support - Proctoring <https://www.stfx.ca/programs-courses/stfx-online/student-support>`_.
+
+Online proctored exams open at 5am and close at 8pm to account for time differences and schedules. Students will create
+a ProctorU account and book a time through that platform.
+
 
 Labs
 ====
@@ -255,16 +310,7 @@ Office Hours
 Office hours are provided to students to facilitate their success --- students are encouraged to come to office hours.
 
 Students must understand that the professors and TAs are not there to provide them answers to problems, but to assist
-students solving their problems.
-
-
-
-Attendance
-==========
-
-Students missing three classes without reasonable cause will be reported to the Assistant Vice-President Academic
-Affairs. See section 3.7 of the academic calendar for more details. You will be reported if you are repeatedly
-delinquent in assignments or attendance at classes or laboratories.
+students in solving their problems.
 
 
 
@@ -300,7 +346,6 @@ definition of what constitutes a Scholastic Offense. See section 3.8 of the acad
 It is your responsibility to understand what academic misconduct is. Ignorance of the rules is not an admissible excuse
 for academic misconduct. I will pursue academic offenses fully. I will apply -100% (not 0) as a grade. I will also
 advocate for an automatic failure in the course, or expulsion from the university when allowed.
-
 
 
 Use of Plagiarism-Checking Software
@@ -343,9 +388,9 @@ Tramble Center for Accessible Learning
 The Tramble Center for Accessible Learning welcomes students with documented permanent disabilities and offers them a
 student-centered program of support. Located in Room 108 of the Angus L MacDonald Library, new and returning students
 meet with program staff to discuss options for support. Deadline for registering with the Center is two weeks prior to
-the end of classes each semester and 3 Business Days’ notice is required for booking all accommodated tests and exams.
+the end of classes each semester and 3 Business Days' notice is required for booking all accommodated tests and exams.
 To book an appointment please use the following link:
-`Accessible Learning | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/student-life-support/accessible-learning>`_.
+`Accessible Learning | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/student-services/academic-services/accessible-learning>`_.
 
 * Phone --- 902 867 5349
 * Email --- tramble@stfx.ca
@@ -389,22 +434,21 @@ differences of race, culture, religion, politics, sexual orientation, gender, ge
 rosters are provided to the instructor with the student's legal name. I will gladly honor your request to address you by
 an alternate name or gender pronoun. Please advise me of this preference early in the semester so that I may make
 appropriate changes to my records. See policies at
-`Policies | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/human-rights-equity/policies>`_.
-
+`Policies | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/student-services/support-services/human-rights-equity/policies>`_.
 
 
 Support Services
 ================
 
-There are various support services around campus and these include, but are not limited to:
+There are various support services around campus, including:
 
-#. Student Life: `Student Services | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/student-life-support/student-services>`_
-#. Office of the Registrar: `Registrar’s Office | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/applications-admissions/registrars-office>`_
-#. Health & Counselling Centre: `Health and Counselling Centre | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/student-life-support/health-counselling-centre>`_
-#. Academic Advising: `Academic Advising | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/student-life-support/academic-advising>`_
-#. Academic Success Centre: `Academic Success Centre | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/student-life-support/student-services/academic-success-centre>`_
-#. Student Career Centre: `Student Career Centre | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/student-life-support/student-services/student-career-centre>`_
-#. Office of Internationalization: `Internationalization | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/student-life-support/internationalization>`_
+#. Student Life: `Student Services | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/student-life-support/student-services-department>`_
+#. Office of the Registrar: `Registrarâ€™s Office | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/applications-admissions/registrars-office>`_
+#. Health & Counselling Centre: `Health and Counselling Centre | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/student-services/support-services/health-counselling>`_
+#. Academic Advising: `Academic Advising | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/student-services/academic-services/academic-advising>`_
+#. Academic Success Centre: `Academic Success Centre | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/student-services/academic-services/academic-success-centre>`_
+#. Student Career Centre: `Student Career Centre | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/student-services/support-services/student-career-centre>`_
+#. Office of Internationalization: `Internationalization | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/student-services/international>`_
 #. Financial Aid Office: `Financial Aid Office | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/applications-admissions/financial-support/financial-aid-office>`_
 
 
@@ -417,17 +461,16 @@ and wellness a priority. StFX provides several on-campus health-related services
 engage in healthy living while pursuing your degree. For example, to support physical activity, all students receive
 membership to the StFX Athletics & Recreation Centre as part of their registration fees. Please visit the Athletics &
 Recreation website at
-`Campus Recreation | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/student-life-support/campus-life/campus-recreation>`_
+`Campus Recreation | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/student-services/recreation-active-living>`_
 for opportunities including intramural sports. Numerous cultural events are offered throughout the year. Please check
 out the Department of Music web page
 `Music | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/programs-courses/programs/music>`_,
 the StFX Art Gallery (https://www.stfx.ca/art-gallery) or
 Theatre Antigonish
-`Theatre Antigonish | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/about/theater-antigonish>`_
+`(Theatre Antigonish | St. Francis Xavier University) (stfx.ca) <https://www.stfx.ca/about/theatre-antigonish>`_
 for various events.
-
 Further information regarding health and wellness-related services available to students may be found at
-`Wellness@X | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/human-resources/wellnessx>`_.
+`Wellness@X | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/people-culture/wellnessx>`_.
 If you are in emotional or mental distress please refer to the various mental
 health supports provided through
-`Health & Counselling at Health and Counselling Services | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/student-life-support/health-counselling/services>`_.
+`Health & Counselling at Health and Counselling Services | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/student-services/support-services/health-counselling/medical-health>`_.
