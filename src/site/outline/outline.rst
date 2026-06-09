@@ -5,7 +5,7 @@ Outline for Computer Science 162 --- Programming and Data Structures
 Summer 2026
 ===========
 
-This course is offered asynchronously. The course schedule can be found :doc:`here </outline/schedule>`.
+This course is offered asynchronously. The course schedule can be found :ref:`here <label-outline-schedule>`
 
 
 
@@ -42,14 +42,14 @@ Instructor
 Class Times
 ===========
 
-* Asynchronous --- Content is to be covered independently while following the schedule
+* Asynchronous --- Content is to be covered independently while following the :ref:`schedule <label-outline-schedule>`
 
 
 
 Lab
 ====
 
-* Asynchronous --- Content is to be covered independently while following the schedule
+* Asynchronous --- Content is to be covered independently while following the :ref:`schedule <label-outline-schedule>`
 
 
 
