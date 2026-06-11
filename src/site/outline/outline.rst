@@ -183,7 +183,7 @@ Student Evaluation (Tentative Dates)
       - Wednesday July 22, 2026
     * - Final Exam
       - 50%
-      - TBD
+      - Tuesday August 18, 2026
 
 
 
