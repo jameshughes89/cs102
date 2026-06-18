@@ -140,12 +140,16 @@ Java
     * Don't worry, you'll quickly realize how similar Python and Java are
     * More than that, the important ideas are the same between the languages
     * There are some java-*isms* I will point out along the way
-    * Python's *flexibility* can sometimes get in the way when our programs grow in complexity
+    * Python's *flexibility* is wonderful, but it can sometimes get in the way as programs grow in complexity
 
-.. warning::
+        * Java's stricter rules will help here
 
-    Programming and Java are **not** a direct learning objective of this course. We are learning abstraction, data
-    structures, and algorithms.
+
+.. note::
+
+    Don't stress too much about mastering every bit of Java syntax. Java is the *tool* we use here --- the real goals
+    are abstraction, data structures, and algorithms. The Java will come with practice, and these ideas carry over to
+    whatever language you use next.
 
 
 How Do I Go About Programming In Java!?
@@ -276,7 +280,7 @@ Can We Write Code Now?
 ``{`` ... ``}``
 
     * In Java we don't use indentation to define scope, we use open and close squiggly braces
-    * You will quickly realize how great this is when compared to whitespace/indentation
+    * If you found Python's indentation rules finicky, you may come to appreciate how explicit the braces are
 
 
 
